@@ -1,0 +1,77 @@
+{
+  "framework": null,
+  "buildCommand": "",
+  "installCommand": "",
+  "outputDirectory": "public",
+  "functions": {
+    "api/redacao.js": {
+      "maxDuration": 60
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/jogar",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/jogar/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/cadastro",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/cadastro/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/entrar",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/entrar/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/privacidade",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/privacidade/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/redacao",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/redacao/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/missoes",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/missoes/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/ranking",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/ranking/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/dados",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/dados/",
+      "destination": "/index.html"
+    }
+  ]
+}

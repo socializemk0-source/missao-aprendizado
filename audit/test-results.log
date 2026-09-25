@@ -1,0 +1,94 @@
+[Config] SUPABASE_URL/SUPABASE_ANON_KEY não configuradas no ambiente.
+✔ GET /api/config/supabase devolve a URL e a anon key quando configuradas (0.9336ms)
+✔ GET /api/config/supabase responde 503 (nunca finge sucesso) quando a configuração falta (0.6691ms)
+(node:2084) ExperimentalWarning: Module mocking is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:2084) DeprecationWarning: mock.module(): options.namedExports is deprecated. Use options.exports instead.
+✔ 1. get-profile para um uid autenticado sem linha em users/profiles cria o perfil em vez de devolver null (2.3042ms)
+✔ 2. get-profile chamado de novo para o mesmo uid não duplica nem apaga dados já personalizados (0.4485ms)
+[Auth Server] Plano do aluno user_A revertido para o modo gratuito.
+(node:21524) ExperimentalWarning: Module mocking is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:21524) DeprecationWarning: mock.module(): options.namedExports is deprecated. Use options.exports instead.
+✔ 1. request sem token → 401 (get-profile) (4.5132ms)
+✔ 2. token inválido no header Authorization → 401 (get-essays) (0.9249ms)
+✔ 3. usuário A acessando os próprios dados (get-essays) → permitido (0.9536ms)
+✔ 4. usuário A autenticado enviando userId=B não recebe dados de B (get-essays) (0.4283ms)
+✔ 5. usuário A não consegue gravar progresso de B via body.userId (save-progress) (0.4891ms)
+✔ 6. usuário A não lê progresso de B via query.userId (get-progress) (0.3944ms)
+✔ 7. usuário B não consegue atualizar o perfil de A (update-profile) (0.5921ms)
+✔ 8. usuário B não consegue gravar progresso de A (save-progress) (0.5103ms)
+✔ 9. usuário B não consegue ler as redações de A (get-essays) (0.9328ms)
+✔ 10. GET /api/data sem action e sem token → 401 (antes vazava tudo) (0.3265ms)
+✔ 11. GET /api/data sem action, autenticado → nunca inclui texto de redação de terceiros (0.4367ms)
+✔ 12. /api/auth não deixa mais nenhum usuário autenticado se autopromover a PRO (0.2265ms)
+✔ 13. downgrade-to-free continua funcionando normalmente (autosserviço, sem risco) (0.8293ms)
+[Leaderboard] Erro ao consultar o ranking: connect ECONNREFUSED 127.0.0.1:5432
+(node:21116) ExperimentalWarning: Module mocking is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:21116) DeprecationWarning: mock.module(): options.namedExports is deprecated. Use options.exports instead.
+✔ GET /api/data/leaderboard não exige autenticação e nunca inclui campos sensíveis (1.2185ms)
+✔ [honestidade] quando o banco falha, a rota NUNCA finge sucesso com lista vazia — responde erro explícito (1.0779ms)
+✔ assinatura válida (mesmo segredo, mesmo manifest) é aceita (2.1124ms)
+✔ [segurança] assinatura calculada com segredo ERRADO é rejeitada (0.3267ms)
+✔ [segurança] payment id trocado depois de assinado é rejeitado (não dá pra reaproveitar assinatura de outro pagamento) (0.2554ms)
+✔ header x-signature ausente é rejeitado (0.1636ms)
+✔ secret ausente (webhook mal configurado) é rejeitado, nunca aceito por padrão (0.2306ms)
+✔ header x-signature malformado (sem v1) é rejeitado (0.1614ms)
+[Payments Webhook] Assinatura inválida ou ausente — notificação rejeitada.
+[Payments] Assinatura sub_42 autorizada — usuário user_A promovido a PRO.
+[Payments] Assinatura sub_9 (cancelled) — usuário user_A revertido para o modo gratuito.
+[Auth Server] Plano do aluno user_A revertido para o modo gratuito.
+[Auth Server] Plano do aluno user_A revertido para o modo gratuito.
+(node:24288) ExperimentalWarning: Module mocking is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:24288) DeprecationWarning: mock.module(): options.namedExports is deprecated. Use options.exports instead.
+✔ checkout sem token → 401, não cria assinatura (2.1964ms)
+✔ checkout autenticado usa req.user.uid como external_reference, nunca um uid do body (0.5925ms)
+✔ checkout envia payer_email do usuário autenticado — o Mercado Pago rejeita a criação da assinatura sem ele (0.3367ms)
+✔ checkout constrói a notification_url apontando para /api/payments/webhook (a rota que a Vercel de fato serve) (0.3743ms)
+✔ [segurança] webhook sem assinatura válida → 401, plano NÃO é alterado (1.7453ms)
+✔ webhook subscription_preapproval com status "authorized" → usuário promovido a PRO (0.6696ms)
+✔ webhook subscription_preapproval com status "pending" → é registrado, mas plano NÃO muda para pro (0.4636ms)
+✔ webhook subscription_preapproval com status "cancelled" → usuário revertido para o modo gratuito (0.6207ms)
+✔ webhook subscription_authorized_payment → grava histórico da cobrança recorrente (0.5781ms)
+✔ [idempotência] a mesma cobrança recorrente reenviada duas vezes só processa uma vez (0.4584ms)
+✔ webhook de outro tópico (ex: merchant_order) é apenas confirmado, sem processar nada (0.3039ms)
+✔ downgrade-to-free com assinatura ativa cancela de verdade no Mercado Pago (1.5207ms)
+✔ downgrade-to-free sem assinatura ativa não tenta chamar o Mercado Pago (0.268ms)
+(node:3844) ExperimentalWarning: Module mocking is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:3844) DeprecationWarning: mock.module(): options.namedExports is deprecated. Use options.exports instead.
+✔ changing banca preserves unrelated profile fields (1.7293ms)
+✔ repeated registration sync preserves PRO, XP and custom profile (0.3802ms)
+✔ name changes are reflected in both profile and user record (0.4569ms)
+✔ invalid profile fields fail before writing (0.7006ms)
+✔ profile mutation is refused on GET (0.5852ms)
+(node:19356) ExperimentalWarning: Module mocking is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:19356) DeprecationWarning: mock.module(): options.namedExports is deprecated. Use options.exports instead.
+✔ POST /api/redacao sem token → 401, nunca chama a OpenAI (2.1733ms)
+✔ Plano Grátis: primeira correção da semana é aceita e fica registrada (29.2559ms)
+✔ Plano Grátis: segunda correção dentro de 7 dias é bloqueada ANTES de chamar a OpenAI (2.1169ms)
+✔ Plano PRO: sem limite, várias correções na mesma semana são todas aceitas (2.1788ms)
+✔ Plano Grátis: uma correção de mais de 7 dias atrás não conta para o limite atual (0.8827ms)
+✔ GET /api/redacao (consulta de bancas/temas) continua público, sem exigir login (0.5319ms)
+essay_correction { code: 'IA_TRECHO_DIVERGENTE', status: 502 }
+(node:14832) ExperimentalWarning: Module mocking is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:14832) DeprecationWarning: mock.module(): options.namedExports is deprecated. Use options.exports instead.
+✔ trecho citado igual ao texto do aluno, mas com quebra de linha trocada por espaço, ainda é aceito (mesmo conteúdo) (30.0657ms)
+✔ trecho citado com acentuação Unicode decomposta (mesmo texto visível, representação diferente) ainda é aceito (1.8938ms)
+✔ [guarda-corpo intacto] trecho inventado (que não existe de forma alguma no texto) ainda é rejeitado (1.8712ms)
+✔ 1. request sem token → 401 e next() não é chamado (1.2037ms)
+✔ 2. token inválido → 401 e next() não é chamado (0.2721ms)
+✔ 3. token válido → req.user.uid populado e next() chamado (sem 401) (1.5149ms)
+✔ 4. header sem "Bearer " → 401 (formato inválido) (0.1398ms)
+ℹ tests 56
+ℹ suites 0
+ℹ pass 56
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 249.7907
