@@ -1,24 +1,42 @@
 {
-  "name": "missao-redacao",
+  "name": "missao-aprendizado",
   "private": true,
+  "version": "2.0.0",
   "type": "module",
   "engines": {
     "node": ">=22"
   },
   "scripts": {
-    "dev": "node server.js",
-    "build": "node -e \"console.log('Build complete')\"",
-    "lint": "node --check server.js api/redacao.js api/auth.js api/data.js middleware/requireAuth.js public/supabase-client.js src/db/schema.js src/db/index.js src/db/queries.js",
-    "test": "node --experimental-test-module-mocks --test tests/*.test.js",
-    "start": "node server.js"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -b",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check:api": "rm -rf .api-check && tsc -p tsconfig.api.json && node scripts/check-api.mjs",
+    "ci": "npm run typecheck && npm test && npm run check:api && npm run build"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.116.0",
+    "@supabase/supabase-js": "^2.117.2",
+    "drizzle-orm": "^0.45.3",
+    "pg": "^8.23.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-router": "^8.4.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.7",
+    "@types/node": "^26.6.2",
     "@types/pg": "^8.23.1",
-    "dotenv": "^17.4.2",
-    "drizzle-kit": "^0.31.10",
-    "drizzle-orm": "^0.45.2",
-    "express": "^5.2.1",
-    "pg": "^8.23.0"
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vercel/node": "^15.0.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "jsdom": "^30.1.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.1",
+    "vitest": "^5.0.2"
   }
 }
