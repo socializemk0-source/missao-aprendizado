@@ -1,0 +1,93 @@
+/* Identidade visual — mesmas cores e medidas do V1. */
+:root {
+  --bg: #f9fbfd;
+  --fg: #263d52;
+  --muted-fg: #6e8296;
+  --muted: #e8eef4;
+  --border: #e1e9ef;
+  --primary: #1688e8;
+  --primary-strong: #1581d6;
+  --primary-soft: #edf7ff;
+  --primary-soft-border: #c7e6ff;
+  --green: #72c93d;
+  --green-strong: #58a92a;
+  --orange: #f7931e;
+  --gold: #f5b700;
+  --danger: #dc2626;
+  --danger-soft: #fef2f2;
+  --radius: 16px;
+  --sidebar-w: 230px;
+  --topbar-h: 85px;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  color: var(--fg);
+  background: var(--bg);
+}
+
+* { box-sizing: border-box; }
+html, body, #root { min-height: 100%; }
+body { margin: 0; background: var(--bg); font-size: 16px; line-height: 1.45; }
+a { color: var(--primary-strong); }
+button, input, select, textarea { font: inherit; color: inherit; }
+img { max-width: 100%; height: auto; }
+:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* ---------- Botões ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  border: 2px solid transparent; border-radius: 14px; padding: 12px 20px;
+  font-weight: 800; font-size: 16px; cursor: pointer; text-decoration: none;
+  transition: transform .05s ease, filter .15s ease;
+}
+.btn:active { transform: translateY(2px); }
+.btn:disabled { opacity: .6; cursor: not-allowed; }
+.btn-primary { background: var(--green); color: #fff; box-shadow: 0 4px 0 var(--green-strong); }
+.btn-primary:hover:not(:disabled) { filter: brightness(1.05); }
+.btn-secondary { background: #fff; color: var(--primary-strong); border-color: var(--primary-soft-border); }
+.btn-secondary:hover:not(:disabled) { background: var(--primary-soft); }
+.btn-danger { background: #fff; color: var(--danger); border-color: #fecaca; }
+.btn-danger:hover:not(:disabled) { background: var(--danger-soft); }
+.btn-block { width: 100%; }
+
+/* ---------- Cartões e textos ---------- */
+.card { background: #fff; border: 2px solid var(--border); border-radius: 22px; padding: 24px; }
+.eyebrow { letter-spacing: 1.6px; color: #91a2b2; font-size: 11px; font-weight: 800; text-transform: uppercase; margin: 0 0 6px; }
+.page-title { font-size: 28px; line-height: 1.15; margin: 0 0 8px; color: #1d3348; }
+.muted { color: var(--muted-fg); }
+
+.hero {
+  display: flex; align-items: center; gap: 24px;
+  background: linear-gradient(120deg, #e5f6ff, #ecfae5);
+  border: 2px solid #d2eaf3; border-radius: 25px; padding: 26px 28px;
+}
+.hero-text { flex: 1; min-width: 0; }
+.hero-text p { margin: 0; color: #4d6478; }
+.hero .tico { width: 170px; flex-shrink: 0; }
+
+/* ---------- Formulários ---------- */
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.field label { font-weight: 700; font-size: 14px; }
+.field input, .field select {
+  border: 2px solid var(--border); border-radius: 12px; padding: 12px 14px; background: #fff;
+}
+.field input:focus, .field select:focus { border-color: var(--primary); outline: none; }
+.field-hint { font-size: 13px; color: var(--muted-fg); }
+.alert { border-radius: 12px; padding: 12px 14px; font-size: 14px; margin: 0 0 14px; }
+.alert-error { background: var(--danger-soft); color: #991b1b; border: 1px solid #fecaca; }
+.alert-success { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+.divider { display: flex; align-items: center; gap: 10px; color: var(--muted-fg); font-size: 13px; margin: 16px 0; }
+.divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* ---------- Tela de carregamento ---------- */
+.center-screen { min-height: 100vh; display: grid; place-items: center; padding: 24px; text-align: center; }
+.spinner {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 4px solid var(--primary-soft-border); border-top-color: var(--primary);
+  animation: spin .8s linear infinite; margin: 0 auto 12px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .spinner { animation-duration: 2s; } }
