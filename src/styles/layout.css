@@ -58,7 +58,7 @@
     padding: 6px 6px calc(6px + env(safe-area-inset-bottom)); border-right: 0; border-top: 2px solid #eaf0f5;
     overflow-x: auto; overflow-y: hidden;
   }
-  .brand, .nav-section { display: none; }
+  .sidebar .brand, .nav-section { display: none; }
   .nav-item {
     flex-direction: column; gap: 2px; min-width: 68px; padding: 6px 4px;
     font-size: 11px; justify-content: center; text-align: center; border-radius: 12px;

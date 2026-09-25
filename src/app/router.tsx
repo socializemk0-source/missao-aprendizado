@@ -7,6 +7,7 @@ import { EmConstrucao } from '../pages/EmConstrucao';
 import { Entrar } from '../pages/Entrar';
 import { Landing } from '../pages/Landing';
 import { Perfil } from '../pages/Perfil';
+import { Privacidade } from '../pages/Privacidade';
 import { RedefinirSenha } from '../pages/RedefinirSenha';
 import { Trilha } from '../pages/Trilha';
 import { NAV } from './nav';
@@ -29,6 +30,7 @@ export const routes: RouteObject[] = [
   { path: '/entrar', element: <Entrar /> },
   { path: '/cadastro', element: <Cadastro /> },
   { path: '/redefinir-senha', element: <RedefinirSenha /> },
+  { path: '/privacidade', element: <Privacidade /> },
   {
     element: <RequireAuth><AppLayout /></RequireAuth>,
     children: NAV.map((item) => ({

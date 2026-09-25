@@ -22,3 +22,17 @@ describe.runIf(process.env.PG_TEST === '1')('postgresProfiles (Postgres real)', 
     await expect(postgresProfiles.update(id, { displayName: '' })).rejects.toThrow();
   });
 });
+
+describe.runIf(process.env.PG_TEST === '1')('postgresLeads (Postgres real)', () => {
+  it('grava uma vez; repetir o e-mail não dá erro', async () => {
+    const { postgresLeads } = await import('../../server/leads.js');
+    const email = `lead-${Date.now()}@teste.dev`;
+    await postgresLeads.save({ email, name: 'Lead', source: 'landing' });
+    await expect(postgresLeads.save({ email, name: 'Outro', source: 'landing' })).resolves.toBeUndefined();
+  });
+
+  it('o banco recusa e-mail com maiúscula (a API sempre normaliza)', async () => {
+    const { postgresLeads } = await import('../../server/leads.js');
+    await expect(postgresLeads.save({ email: 'X@Y.com', name: null, source: 'landing' })).rejects.toThrow();
+  });
+});

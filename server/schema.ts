@@ -17,3 +17,11 @@ export const profiles = v2.table('profiles', {
 });
 
 export type ProfileRow = typeof profiles.$inferSelect;
+
+export const leads = v2.table('leads', {
+  email: text('email').primaryKey(),
+  name: text('name'),
+  source: text('source').notNull(),
+  consentAt: timestamp('consent_at', { withTimezone: true }).notNull().defaultNow(),
+  createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+});

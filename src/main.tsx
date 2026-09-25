@@ -6,6 +6,7 @@ import { AuthProvider } from './auth/AuthProvider';
 import './styles/global.css';
 import './styles/layout.css';
 import './styles/pages.css';
+import './styles/landing.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
