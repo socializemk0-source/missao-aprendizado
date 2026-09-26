@@ -173,6 +173,7 @@ export function QuizSession({ session, timeLimitSec, exitTo = '/jogar', nextLabe
           <div className="quiz-feedback" role="status">
             <strong>{result.correct ? `Acertou!${result.xpGanho ? ` +${result.xpGanho} XP` : ''}` : `Resposta certa: ${String.fromCharCode(65 + result.correta)}`}</strong>
             <p>{result.explicacao}</p>
+            {result.acerto !== null && <p className="quiz-rate">{result.acerto}% dos alunos acertam esta questão</p>}
             {!result.correct && retries && <p className="quiz-hint"><Icon name="rotate" size={16} /> Esta questão volta no fim para você acertar.</p>}
           </div>
         ) : <span className="muted quiz-kbd">Dica: teclas 1–{current.alternativas.length} e Enter</span>}

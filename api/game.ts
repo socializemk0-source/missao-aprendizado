@@ -2,7 +2,10 @@
 // Vercel permite poucas funções por projeto).
 //   GET  progresso | trilha | fase&id= | revisar | pratica&disciplina= | desafio
 //        missoes | conquistas | disciplinas | ranking
+//        simulados | simulado&id=
 //   POST responder { questionId, choice, mode } | resgatar { missionId }
+//        simulado-iniciar { nivel, disciplinas, banca, quantidade, cronometro }
+//        simulado-entregar { id, respostas: { [questionId]: alternativa } }
 
 import type { DisciplinaId } from '../content/types.js';
 import { authenticate, type VerifyToken } from '../server/auth.js';
@@ -11,6 +14,7 @@ import {
   getPracticeSession, getProgress, getRanking, getReviewSession, getSubjects, getTrail, type GameStore,
 } from '../server/game.js';
 import { postgresGame } from '../server/game-pg.js';
+import { deliverSimulado, getSimulado, getSimuladoOptions, parseSimuladoInput, startSimulado } from '../server/simulado.js';
 import { jsonBody, methodNotAllowed, type ApiRequest, type ApiResponse } from '../server/http.js';
 import { verifySupabaseToken } from '../server/supabase.js';
 import type { Mode } from '../shared/game.js';
@@ -40,6 +44,8 @@ export function createGameHandler(deps: { verifyToken: VerifyToken; store: GameS
           case 'conquistas': return res.status(200).json({ conquistas: await getAchievements(store, user.id) });
           case 'disciplinas': return res.status(200).json({ disciplinas: await getSubjects(store, user.id) });
           case 'ranking': return res.status(200).json(await getRanking(store, user.id));
+          case 'simulados': return res.status(200).json(await getSimuladoOptions(store, user.id));
+          case 'simulado': return res.status(200).json(await getSimulado(store, user.id, one(req.query.id)));
         }
       } else {
         const body = jsonBody(req);
@@ -50,6 +56,16 @@ export function createGameHandler(deps: { verifyToken: VerifyToken; store: GameS
             return res.status(400).json({ error: 'Envio inválido.', code: 'ACAO_INVALIDA' });
           }
           return res.status(200).json(await answer(store, user.id, { questionId: body.questionId, choice: body.choice, mode }));
+        }
+        if (action === 'simulado-iniciar') {
+          const input = parseSimuladoInput(body);
+          if (!input) return res.status(400).json({ error: 'Escolha nível, matérias e quantidade.', code: 'ACAO_INVALIDA' });
+          return res.status(200).json(await startSimulado(store, user.id, input));
+        }
+        if (action === 'simulado-entregar') {
+          const respostas = body.respostas && typeof body.respostas === 'object' && !Array.isArray(body.respostas) ? body.respostas as Record<string, unknown> : null;
+          if (typeof body.id !== 'string' || !respostas) return res.status(400).json({ error: 'Envio inválido.', code: 'ACAO_INVALIDA' });
+          return res.status(200).json(await deliverSimulado(store, user.id, body.id, respostas));
         }
         if (action === 'resgatar' && typeof body.missionId === 'string') {
           return res.status(200).json(await claimMission(store, user.id, body.missionId));

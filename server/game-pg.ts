@@ -2,11 +2,13 @@
 // por usuário (pg_advisory_xact_lock): dois pedidos do mesmo aluno ao mesmo
 // tempo — mesmo em instâncias diferentes da Vercel — acontecem em fila.
 
-import { and, desc, eq, gt, sql } from 'drizzle-orm';
-import type { Plan } from '../shared/game.js';
+import { and, desc, eq, gt, inArray, isNotNull, lt, ne, sql } from 'drizzle-orm';
+import type { DisciplinaId } from '../content/types.js';
+import type { Nivel, Plan } from '../shared/game.js';
 import { db } from './db.js';
-import type { GameStore, UserTx } from './game.js';
-import { answers, missionClaims, phaseCompletions, profiles, questionState, userStats } from './schema.js';
+import { PERCENTILE_MIN, type GameStore, type SimuladoRow, type SimuladoStored, type UserTx } from './game.js';
+import { postgresQuestions } from './questions-pg.js';
+import { answers, missionClaims, phaseCompletions, profiles, questionState, questionStats, simulados, userStats } from './schema.js';
 
 type Tx = Parameters<Parameters<ReturnType<typeof db>['transaction']>[0]>[0];
 
@@ -56,6 +58,48 @@ function userTx(tx: Tx, userId: string): UserTx {
     async claimMission(day, missionId) {
       await tx.insert(missionClaims).values({ userId, day, missionId });
     },
+    async bumpQuestionStats(questionId, correct) {
+      const hit = correct ? 1 : 0;
+      await tx.insert(questionStats).values({ questionId, respostas: 1, acertos: hit })
+        .onConflictDoUpdate({
+          target: questionStats.questionId,
+          set: { respostas: sql`${questionStats.respostas} + 1`, acertos: sql`${questionStats.acertos} + ${hit}`, updatedAt: new Date() },
+        });
+    },
+    async simulados(limit) {
+      const rows = await tx.select().from(simulados).where(eq(simulados.userId, userId)).orderBy(desc(simulados.startedAt)).limit(limit);
+      return rows.map(toRow);
+    },
+    async simulado(id) {
+      if (!UUID.test(id)) return null;
+      const [row] = await tx.select().from(simulados).where(and(eq(simulados.id, id), eq(simulados.userId, userId)));
+      return row ? toRow(row) : null;
+    },
+    async simuladosOnDay(day) {
+      const [row] = await tx.select({ n: sql<number>`count(*)::int` }).from(simulados).where(and(eq(simulados.userId, userId), eq(simulados.day, day)));
+      return row?.n ?? 0;
+    },
+    async createSimulado(r) {
+      const [row] = await tx.insert(simulados).values({
+        userId, day: r.day, nivel: r.nivel, disciplinas: r.disciplinas, banca: r.banca,
+        questionIds: r.questionIds, timeLimitSec: r.timeLimitSec, startedAt: r.startedAt,
+      }).returning({ id: simulados.id });
+      return row!.id;
+    },
+    async finishSimulado(id, done) {
+      await tx.update(simulados).set({ finishedAt: done.finishedAt, acertos: done.acertos, pct: done.pct, result: done.result })
+        .where(and(eq(simulados.id, id), eq(simulados.userId, userId)));
+    },
+  };
+}
+
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+function toRow(r: typeof simulados.$inferSelect): SimuladoRow {
+  return {
+    id: r.id, nivel: r.nivel as Nivel, disciplinas: r.disciplinas as DisciplinaId[], banca: r.banca, questionIds: r.questionIds,
+    timeLimitSec: r.timeLimitSec, startedAt: r.startedAt, day: r.day, finishedAt: r.finishedAt,
+    acertos: r.acertos, pct: r.pct, result: (r.result as SimuladoStored | null) ?? null,
   };
 }
 
@@ -76,5 +120,18 @@ export const postgresGame: GameStore = {
   async rankOf(xp) {
     const [row] = await db().select({ n: sql<number>`count(*)::int` }).from(userStats).where(gt(userStats.xp, xp));
     return (row?.n ?? 0) + 1;
+  },
+  questions: postgresQuestions,
+  async questionStats(ids) {
+    if (ids.length === 0) return new Map();
+    const rows = await db().select().from(questionStats).where(inArray(questionStats.questionId, ids));
+    return new Map(rows.map((r) => [r.questionId, { respostas: r.respostas, acertos: r.acertos }]));
+  },
+  async simuladoPercentile(nivel, pct, userId) {
+    const [row] = await db()
+      .select({ total: sql<number>`count(*)::int`, lower: sql<number>`count(*) filter (where ${lt(simulados.pct, pct)})::int` })
+      .from(simulados)
+      .where(and(eq(simulados.nivel, nivel), isNotNull(simulados.finishedAt), ne(simulados.userId, userId)));
+    return row && row.total >= PERCENTILE_MIN ? Math.round((row.lower / row.total) * 100) : null;
   },
 };

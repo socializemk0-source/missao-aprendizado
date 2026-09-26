@@ -10,6 +10,10 @@ export type Banca = 'Cebraspe' | 'FGV' | 'FCC' | 'Vunesp' | 'Cesgranrio';
 
 export type DisciplinaId = 'portugues' | 'rlm' | 'informatica' | 'constitucional' | 'administrativo';
 
+// 1 fácil · 2 média · 3 difícil. É a estimativa de quem escreveu/importou;
+// com respostas suficientes, vale o % de acerto real (server/questions.ts).
+export type Dificuldade = 1 | 2 | 3;
+
 export type Fonte =
   | { tipo: 'oficial'; banca: Banca; orgao: string; cargo: string; ano: number }
   | { tipo: 'autoral'; estilo?: Banca };
@@ -22,6 +26,7 @@ export interface Questao {
   // "Certo/Errado" (estilo Cebraspe) é só uma questão com essas 2 alternativas.
   alternativas: string[];
   correta: number; // índice em alternativas
+  dificuldade: Dificuldade;
   explicacao: string;
   fonte: Fonte;
 }

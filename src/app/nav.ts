@@ -10,6 +10,7 @@ export interface NavEntry {
 export const NAV: NavEntry[] = [
   { path: '/jogar', label: 'Trilha', icon: 'compass' },
   { path: '/redacao', label: 'Redação', icon: 'pen' },
+  { path: '/simulados', label: 'Simulados', icon: 'clipboard' },
   { path: '/aventura', label: 'Aventura', icon: 'map' },
   { path: '/missoes', label: 'Missões', icon: 'target' },
   { path: '/ranking', label: 'Ranking', icon: 'trophy' },

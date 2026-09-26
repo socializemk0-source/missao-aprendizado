@@ -100,3 +100,42 @@ export const payments = v2.table('payments', {
   createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
   updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
 });
+
+// ---- Banco de questões e simulados (migração 0006) ----
+export const questions = v2.table('questions', {
+  id: text('id').primaryKey(),
+  disciplina: text('disciplina').notNull(),
+  assunto: text('assunto').notNull(),
+  enunciado: text('enunciado').notNull(),
+  alternativas: jsonb('alternativas').notNull(),
+  correta: smallint('correta').notNull(),
+  explicacao: text('explicacao').notNull(),
+  fonte: jsonb('fonte').notNull(),
+  dificuldade: smallint('dificuldade').notNull(),
+  status: text('status').notNull().default('ativa'), // 'ativa' | 'revisao' | 'anulada'
+  createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
+});
+
+export const questionStats = v2.table('question_stats', {
+  questionId: text('question_id').primaryKey(),
+  respostas: integer('respostas').notNull().default(0),
+  acertos: integer('acertos').notNull().default(0),
+  updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
+});
+
+export const simulados = v2.table('simulados', {
+  id: uuid('id').primaryKey().defaultRandom(),
+  userId: text('user_id').notNull(),
+  day: date('day', { mode: 'string' }).notNull(),
+  nivel: text('nivel').notNull(),
+  disciplinas: text('disciplinas').array().notNull(),
+  banca: text('banca'),
+  questionIds: text('question_ids').array().notNull(),
+  timeLimitSec: integer('time_limit_sec'),
+  startedAt: timestamp('started_at', { withTimezone: true }).notNull().defaultNow(),
+  finishedAt: timestamp('finished_at', { withTimezone: true }),
+  acertos: integer('acertos'),
+  pct: smallint('pct'),
+  result: jsonb('result'),
+});
