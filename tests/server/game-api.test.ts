@@ -61,3 +61,26 @@ describe('/api/game', () => {
     expect((await call('DELETE', 'trilha')).statusCode).toBe(405);
   });
 });
+
+describe('/api/game — simulado', () => {
+  it('opções, iniciar (sem gabarito), entregar, ver; erros com código', async () => {
+    const { call } = setup();
+    const opts = await call('GET', 'simulados');
+    expect(opts.body).toMatchObject({ limite: { plano: 'free', porDia: 1, usadosHoje: 0 }, aberto: null });
+    expect((await call('POST', 'simulado-iniciar', { body: { nivel: 'x', disciplinas: ['rlm'], quantidade: 10 } })).statusCode).toBe(400);
+    const start = await call('POST', 'simulado-iniciar', { body: { nivel: 'misto', disciplinas: ['portugues', 'rlm'], quantidade: 10, cronometro: true } });
+    expect(start.statusCode).toBe(200);
+    expect(start.body.questoes).toHaveLength(10);
+    expect(start.body.questoes[0]).not.toHaveProperty('correta');
+    const again = await call('POST', 'simulado-iniciar', { body: { nivel: 'misto', disciplinas: ['rlm'], quantidade: 5 } });
+    expect([again.statusCode, again.body.code, again.body.id]).toEqual([409, 'SIMULADO_ABERTO', start.body.id]);
+    const done = await call('POST', 'simulado-entregar', { body: { id: start.body.id, respostas: {} } });
+    expect(done.body.resultado).toMatchObject({ total: 10, respondidas: 0, acertos: 0 });
+    const view = await call('GET', 'simulado', { query: { id: start.body.id } });
+    expect(view.body.estado).toBe('entregue');
+    const limit = await call('POST', 'simulado-iniciar', { body: { nivel: 'misto', disciplinas: ['rlm'], quantidade: 5 } });
+    expect([limit.statusCode, limit.body.code]).toEqual([403, 'LIMITE_SIMULADO']);
+    expect((await call('GET', 'simulado', { query: { id: start.body.id }, token: 'ok:u2' })).statusCode).toBe(404);
+    expect((await call('POST', 'simulado-entregar', { body: { id: start.body.id } })).statusCode).toBe(400);
+  });
+});

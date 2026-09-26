@@ -26,8 +26,17 @@ describe('conteúdo da trilha', () => {
       expect(Number.isInteger(q.correta) && q.correta >= 0 && q.correta < q.alternativas.length, q.id).toBe(true);
       expect(q.enunciado.trim().length, q.id).toBeGreaterThan(10);
       expect(q.explicacao.trim().length, q.id).toBeGreaterThan(20);
+      expect([1, 2, 3], q.id).toContain(q.dificuldade);
       if (q.fonte.tipo === 'oficial') {
         expect(q.fonte.orgao && q.fonte.cargo && q.fonte.ano >= 1990, q.id).toBeTruthy();
+      }
+    }
+  });
+
+  it('dá para montar simulado fácil, médio e difícil: cada nível tem questões em toda disciplina', () => {
+    for (const d of DISCIPLINAS) {
+      for (const nivel of [1, 2, 3]) {
+        expect(QUESTOES.filter((q) => q.disciplina === d.id && q.dificuldade === nivel).length, `${d.id} nível ${nivel}`).toBeGreaterThan(0);
       }
     }
   });

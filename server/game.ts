@@ -7,6 +7,7 @@
 
 import { CAPITULOS_GRATIS, DISCIPLINAS, FASES, QUESTOES, TRILHA, fase, faseDaQuestao, questao, nomeDisciplina } from '../content/trilha.js';
 import type { DisciplinaId, Questao } from '../content/types.js';
+import { acertoPct, type QuestionSource, type QuestionStats } from './questions.js';
 import {
   HEART_REGEN_MS, MAX_HEARTS, XP_FIRST_CORRECT, XP_PHASE_BONUS,
   type Achievement, type AnswerResult, type GameErrorCode, type Mission, type Mode, type PhaseStatus,
@@ -42,6 +43,41 @@ export interface UserTx {
   completePhase(phaseId: string, day: string): Promise<void>;
   claimedMissions(day: string): Promise<Set<string>>;
   claimMission(day: string, missionId: string): Promise<void>;
+  // Conta a 1ª resposta de cada aluno a uma questão (dificuldade real).
+  bumpQuestionStats(questionId: string, correct: boolean): Promise<void>;
+  // Simulados deste aluno.
+  simulados(limit: number): Promise<SimuladoRow[]>; // mais recentes primeiro
+  simulado(id: string): Promise<SimuladoRow | null>;
+  simuladosOnDay(day: string): Promise<number>;
+  createSimulado(row: NewSimulado): Promise<string>;
+  finishSimulado(id: string, done: { finishedAt: Date; acertos: number; pct: number; result: SimuladoStored }): Promise<void>;
+}
+
+export interface NewSimulado {
+  nivel: import('../shared/game.js').Nivel;
+  disciplinas: DisciplinaId[];
+  banca: string | null;
+  questionIds: string[];
+  timeLimitSec: number | null;
+  startedAt: Date;
+  day: string;
+}
+
+// O que fica guardado da entrega; o resto (percentil, % de acerto) é
+// calculado na hora de mostrar, porque muda com o tempo.
+export interface SimuladoStored {
+  escolhas: Record<string, number | null>;
+  respondidas: number;
+  tempoSeg: number;
+  xpGanho: number;
+}
+
+export interface SimuladoRow extends NewSimulado {
+  id: string;
+  finishedAt: Date | null;
+  acertos: number | null;
+  pct: number | null;
+  result: SimuladoStored | null;
 }
 
 export interface GameStore {
@@ -50,7 +86,15 @@ export interface GameStore {
   withUser<T>(userId: string, fn: (tx: UserTx) => Promise<T>): Promise<T>;
   topXp(limit: number): Promise<{ userId: string; displayName: string; xp: number }[]>;
   rankOf(xp: number): Promise<number>; // quantos têm mais XP + 1
+  questions: QuestionSource;
+  questionStats(ids: string[]): Promise<Map<string, QuestionStats>>;
+  // % dos simulados entregues por OUTROS alunos neste nível com nota menor
+  // (null se ainda há poucos para comparar).
+  simuladoPercentile(nivel: import('../shared/game.js').Nivel, pct: number, userId: string): Promise<number | null>;
 }
+
+// Percentil só com pelo menos 10 simulados de outros alunos no mesmo nível.
+export const PERCENTILE_MIN = 10;
 
 export class GameError extends Error {
   constructor(readonly code: GameErrorCode, readonly status: number, message: string, readonly extra: Record<string, unknown> = {}) {
@@ -65,7 +109,7 @@ export function studyDay(now: Date): string {
   return dayFormat.format(now); // AAAA-MM-DD
 }
 
-function previousDay(day: string): string {
+export function previousDay(day: string): string {
   const d = new Date(`${day}T12:00:00Z`);
   d.setUTCDate(d.getUTCDate() - 1);
   return d.toISOString().slice(0, 10);
@@ -92,7 +136,7 @@ function effectiveStreak(stats: Stats, today: string): number {
   return stats.lastStudyDay === today || stats.lastStudyDay === previousDay(today) ? stats.streak : 0;
 }
 
-function toProgress(stats: Stats, plan: Plan, now: Date): Progress {
+export function toProgress(stats: Stats, plan: Plan, now: Date): Progress {
   const today = studyDay(now);
   const pro = plan === 'pro';
   return {
@@ -106,7 +150,14 @@ function toProgress(stats: Stats, plan: Plan, now: Date): Progress {
   };
 }
 
-async function loadStats(tx: UserTx, now: Date): Promise<Stats> {
+// Sequência de dias: conta o primeiro estudo de cada dia.
+export function touchStreak(stats: Stats, today: string): Stats {
+  if (stats.lastStudyDay === today) return stats;
+  const streak = stats.lastStudyDay === previousDay(today) ? stats.streak + 1 : 1;
+  return { ...stats, streak, bestStreak: Math.max(stats.bestStreak, streak), lastStudyDay: today };
+}
+
+export async function loadStats(tx: UserTx, now: Date): Promise<Stats> {
   return regenHearts((await tx.stats()) ?? freshStats(now), now);
 }
 
@@ -128,6 +179,12 @@ function phaseStatusMap(done: Map<string, string>, plan: Plan): Map<string, Phas
 }
 
 const isOpen = (status: PhaseStatus | undefined) => status === 'done' || status === 'available';
+
+// Questão já vista pode ser revisada, menos as de capítulo PRO no grátis.
+function reviewAllowed(questionId: string, plan: Plan): boolean {
+  const f = faseDaQuestao(questionId);
+  return plan === 'pro' || !f || f.capituloIndex < CAPITULOS_GRATIS;
+}
 
 export async function getTrail(store: GameStore, userId: string): Promise<TrailChapter[]> {
   return store.withUser(userId, async (tx) => {
@@ -176,19 +233,29 @@ export async function answer(
   input: { questionId: string; choice: number; mode: Mode },
   now = new Date(),
 ): Promise<AnswerResult> {
-  const q = questao(input.questionId);
+  if (input.mode === 'simulado') throw new GameError('ACAO_INVALIDA', 400, 'Simulado é entregue de uma vez.');
+  const q = questao(input.questionId) ?? (await store.questions.get([input.questionId])).get(input.questionId);
   const f = faseDaQuestao(input.questionId);
-  if (!q || !f) throw new GameError('QUESTAO_INEXISTENTE', 404, 'Questão não encontrada.');
+  if (!q) throw new GameError('QUESTAO_INEXISTENTE', 404, 'Questão não encontrada.');
   if (!Number.isInteger(input.choice) || input.choice < 0 || input.choice >= q.alternativas.length) {
     throw new GameError('ALTERNATIVA_INVALIDA', 400, 'Alternativa inválida.');
   }
 
-  return store.withUser(userId, async (tx) => {
+  const result = await store.withUser(userId, async (tx) => {
     const plan = await tx.plan();
     const done = await tx.completedPhases();
-    const status = phaseStatusMap(done, plan).get(f.id);
-    if (status === 'pro') throw new GameError('PLANO_PRO', 403, 'Este capítulo é do plano PRO.');
-    if (!isOpen(status)) throw new GameError('FASE_BLOQUEADA', 403, 'Conclua a fase anterior para abrir esta.');
+    const states = await tx.questionStates();
+    // Revisar vale para qualquer questão que o aluno já viu (inclusive no
+    // simulado, fora da ordem da trilha), menos capítulo PRO no grátis.
+    const reviewing = input.mode === 'revisar' && states.has(q.id);
+    if (f) {
+      const status = phaseStatusMap(done, plan).get(f.id);
+      if (status === 'pro' || (reviewing && !reviewAllowed(q.id, plan))) throw new GameError('PLANO_PRO', 403, 'Este capítulo é do plano PRO.');
+      if (!isOpen(status) && !reviewing) throw new GameError('FASE_BLOQUEADA', 403, 'Conclua a fase anterior para abrir esta.');
+    } else if (!reviewing) {
+      // Questão do banco (fora da trilha): chega pelo simulado e volta na revisão.
+      throw new GameError('QUESTAO_INEXISTENTE', 404, 'Questão não encontrada.');
+    }
 
     let stats = await loadStats(tx, now);
     // Só a trilha gasta vidas; revisar e praticar são o jeito de estudar
@@ -201,7 +268,6 @@ export async function answer(
     }
 
     const correct = input.choice === q.correta;
-    const states = await tx.questionStates();
     const prev = states.get(q.id);
     const firstCorrect = correct && !prev?.everCorrect;
     let xpGanho = firstCorrect ? XP_FIRST_CORRECT : 0;
@@ -211,12 +277,8 @@ export async function answer(
       stats = { ...stats, hearts: stats.hearts - 1, heartsUpdatedAt: wasFull ? now : stats.heartsUpdatedAt };
     }
 
-    // Sequência de dias: conta o primeiro estudo de cada dia.
     const today = studyDay(now);
-    if (stats.lastStudyDay !== today) {
-      const streak = stats.lastStudyDay === previousDay(today) ? stats.streak + 1 : 1;
-      stats = { ...stats, streak, bestStreak: Math.max(stats.bestStreak, streak), lastStudyDay: today };
-    }
+    stats = touchStreak(stats, today);
 
     const state: QuestionState = {
       questionId: q.id,
@@ -226,11 +288,12 @@ export async function answer(
     };
     await tx.saveQuestionState(state);
     await tx.addAnswer({ questionId: q.id, choice: input.choice, correct, mode: input.mode, day: today });
+    if (!prev) await tx.bumpQuestionStats(q.id, correct);
     states.set(q.id, state);
 
     // Fase concluída = todas as questões dela acertadas pelo menos uma vez.
     let faseConcluida: AnswerResult['faseConcluida'] = null;
-    if (!done.has(f.id) && f.questoes.every((id) => states.get(id)?.everCorrect)) {
+    if (f && !done.has(f.id) && f.questoes.every((id) => states.get(id)?.everCorrect)) {
       await tx.completePhase(f.id, today);
       xpGanho += XP_PHASE_BONUS;
       faseConcluida = { id: f.id, titulo: f.titulo, bonus: XP_PHASE_BONUS };
@@ -240,6 +303,7 @@ export async function answer(
     await tx.saveStats(stats);
     return { correct, correta: q.correta, explicacao: q.explicacao, xpGanho, faseConcluida, progress: toProgress(stats, plan, now) };
   });
+  return { ...result, acerto: acertoPct((await store.questionStats([q.id])).get(q.id)) };
 }
 
 // ---------------------------------------------------------------- Revisar, praticar, desafio
@@ -250,15 +314,17 @@ async function openQuestionIds(tx: UserTx): Promise<Set<string>> {
 
 export async function getReviewSession(store: GameStore, userId: string, limit = 10): Promise<Session> {
   return store.withUser(userId, async (tx) => {
-    const open = await openQuestionIds(tx);
+    const plan = await tx.plan();
     const pending = [...(await tx.questionStates()).values()]
-      .filter((s) => !s.lastCorrect && open.has(s.questionId))
+      .filter((s) => !s.lastCorrect && reviewAllowed(s.questionId, plan))
       .sort((a, b) => b.timesWrong - a.timesWrong)
       .slice(0, limit);
+    const found = await store.questions.get(pending.map((s) => s.questionId));
+    const questoes = pending.flatMap((s) => (found.has(s.questionId) ? [toPublic(found.get(s.questionId)!)] : []));
     return {
       mode: 'revisar', faseId: null, titulo: 'Revisar erros',
-      subtitulo: pending.length ? `${pending.length} questão(ões) para acertar` : 'Nenhum erro pendente',
-      questoes: pending.map((s) => toPublic(questao(s.questionId)!)),
+      subtitulo: questoes.length ? `${questoes.length} questão(ões) para acertar` : 'Nenhum erro pendente',
+      questoes,
     };
   });
 }

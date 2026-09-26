@@ -1,6 +1,8 @@
 import type {
-  Achievement, AnswerResult, Mission, Mode, Progress, RankingEntry, Session, SubjectStats, TrailChapter,
+  Achievement, AnswerResult, Mission, Mode, Nivel, Progress, RankingEntry, Session, SimuladoOpcoes, SimuladoResultado,
+  SimuladoSessao, SubjectStats, TrailChapter,
 } from '../../shared/game';
+import type { DisciplinaId } from '../../content/types';
 import type { Fonte } from '../../content/types';
 import { api } from './api';
 
@@ -22,6 +24,12 @@ export const game = {
   ranking: () => get<{ top: RankingEntry[]; voce: RankingEntry }>('ranking'),
   answer: (questionId: string, choice: number, mode: Mode) => post<AnswerResult>('responder', { questionId, choice, mode }),
   claim: (missionId: string) => post<{ xpGanho: number; progress: Progress }>('resgatar', { missionId }),
+  simulados: () => get<SimuladoOpcoes>('simulados'),
+  simulado: (id: string) => get<{ estado: 'aberto'; sessao: SimuladoSessao } | { estado: 'entregue'; resultado: SimuladoResultado }>('simulado', { id }),
+  startSimulado: (input: { nivel: Nivel; disciplinas: DisciplinaId[]; banca: string | null; quantidade: number; cronometro: boolean }) =>
+    post<SimuladoSessao>('simulado-iniciar', input),
+  deliverSimulado: (id: string, respostas: Record<string, number>) =>
+    post<{ resultado: SimuladoResultado; progress: Progress }>('simulado-entregar', { id, respostas }),
 };
 
 export function fonteLabel(fonte: Fonte): string {

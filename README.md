@@ -16,7 +16,7 @@ npm run ci             # o mesmo que o GitHub Actions roda
 ## Colocar no ar (Vercel + Supabase)
 
 1. **Banco** — no Supabase, *SQL Editor*: rode cada arquivo de
-   `supabase/migrations/` em ordem (`0001` … `0005`). Todos podem ser rodados
+   `supabase/migrations/` em ordem (`0001` … `0006`). Todos podem ser rodados
    de novo sem estragar nada. As tabelas ficam no schema `v2`, separadas do V1.
 2. **Vercel** — importe o repositório (framework **Vite**, detectado sozinho).
 3. **Variáveis** (*Settings → Environment Variables*), direto na Vercel,
@@ -46,6 +46,14 @@ npm run ci             # o mesmo que o GitHub Actions roda
   concluir a fase; 5 vidas no grátis (só a trilha gasta; 1 volta a cada 30 min);
   sequência de dias pelo horário de Brasília. Tudo decidido no servidor, com
   trava por aluno contra envios simultâneos; o gabarito só vai depois da resposta.
+- **Simulados** (`server/simulado.ts`, `server/questions.ts`): o aluno escolhe
+  dificuldade (fácil, médio, difícil ou misto 30/50/20), matérias, banca,
+  tamanho e cronômetro (3 min por questão). Gabarito só na entrega; os erros
+  vão para a revisão. Grátis: 1 por dia. A dificuldade de cada questão é a
+  estimada até ela ter 30 respostas; depois vale o % de alunos que acertam de
+  primeira (70%+ fácil, 40–69% média, abaixo de 40% difícil).
+- **Banco de questões** (`v2.questions`): as questões importadas das provas
+  ficam no banco; as da trilha continuam no código. As duas entram no simulado.
 - **Redação** (`server/essay.ts`, `api/redacao.ts`): IA com JSON Schema estrito;
   notas e trechos citados conferidos antes de mostrar. Grátis: 1 correção a cada
   7 dias (vaga reservada antes de chamar a IA e devolvida se ela falhar).
