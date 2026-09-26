@@ -15,16 +15,15 @@ export const PRO_OPTIONS: PlanOption[] = [
 ];
 
 export const FREE_FEATURES = [
-  '5 vidas, que recarregam com o tempo',
-  'Primeiros capítulos da trilha',
-  '1 correção de redação com IA por semana',
-  'Missões diárias, sequência e ranking',
+  '5 vidas, que recarregam (1 a cada 30 minutos)',
+  'Os 5 primeiros capítulos da trilha',
+  '1 correção de redação com IA a cada 7 dias',
+  'Revisão de erros, prática, desafios, missões e ranking',
 ];
 
 export const PRO_FEATURES = [
   'Vidas ilimitadas: erre sem medo e aprenda',
-  'Todos os capítulos e fases liberados',
+  'Todos os capítulos da trilha liberados',
   'Correções de redação com IA ilimitadas',
-  'Revisão de erros e estatísticas por assunto',
-  'Selo PRO no perfil e no ranking',
+  'Tudo o que o plano grátis tem',
 ];

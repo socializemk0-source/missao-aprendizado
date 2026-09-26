@@ -4,8 +4,6 @@ export interface NavEntry {
   path: string;
   label: string;
   icon: IconName;
-  // Etapa do plano em que a tela fica pronta (enquanto isso: "em construção").
-  readyIn?: string;
 }
 
 // Mesma estrutura do V1. A trilha é a tela inicial do app.
@@ -19,7 +17,7 @@ export const NAV: NavEntry[] = [
   { path: '/jogos', label: 'Jogos', icon: 'gamepad' },
   { path: '/revisar', label: 'Revisar', icon: 'rotate' },
   { path: '/conquistas', label: 'Conquistas', icon: 'medal' },
-  { path: '/planos', label: 'Planos', icon: 'crown', readyIn: 'etapa 5' },
+  { path: '/planos', label: 'Planos', icon: 'crown' },
   { path: '/perfil', label: 'Meu Perfil', icon: 'user' },
 ];
 

@@ -171,3 +171,12 @@ a.phase-node:hover { border-color: var(--primary-soft-border); background: #f7fb
   .essay-layout, .essay-report-grid { grid-template-columns: 1fr; }
   .essay-side { position: static; }
 }
+
+/* ---------- Planos ---------- */
+.plans-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; align-items: start; margin-top: 8px; }
+.plans-grid .lp-plan h2 { margin: 0; font-size: 20px; color: #1d3348; }
+.plans-grid .lp-plan.is-current { border-color: var(--primary-soft-border); }
+.plans-grid .pill { align-self: flex-start; }
+.plans-note { font-size: 13px; margin-top: 14px; }
+.alert-info { background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; }
+@media (max-width: 980px) { .plans-grid { grid-template-columns: 1fr; } }

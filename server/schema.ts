@@ -2,7 +2,7 @@
 // (que usa "public") no mesmo projeto Supabase sem que um altere o outro.
 // Toda mudança aqui precisa de uma migração em supabase/migrations/.
 
-import { bigserial, boolean, date, integer, jsonb, pgSchema, primaryKey, smallint, text, timestamp, uuid } from 'drizzle-orm/pg-core';
+import { bigserial, boolean, date, integer, jsonb, numeric, pgSchema, primaryKey, smallint, text, timestamp, uuid } from 'drizzle-orm/pg-core';
 
 export const v2 = pgSchema('v2');
 
@@ -87,4 +87,16 @@ export const essays = v2.table('essays', {
   report: jsonb('report'),
   createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
   gradedAt: timestamp('graded_at', { withTimezone: true }),
+});
+
+// ---- Pagamentos (migração 0005) ----
+export const payments = v2.table('payments', {
+  paymentId: text('payment_id').primaryKey(),
+  userId: text('user_id').notNull(),
+  cycle: text('cycle').notNull(),
+  days: integer('days').notNull(),
+  amount: numeric('amount', { precision: 10, scale: 2 }).notNull(),
+  status: text('status').notNull(), // 'approved' | 'refunded'
+  createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
 });
