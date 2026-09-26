@@ -26,9 +26,18 @@ export function Planos() {
   // Volta do Mercado Pago: /planos?payment_id=...&status=...
   const paymentId = params.get('payment_id') ?? params.get('collection_id');
   const returnStatus = params.get('status') ?? params.get('collection_status');
+  // Voltar do checkout pelo botão "voltar" restaura a página da memória
+  // do navegador: destrava os botões.
+  useEffect(() => {
+    const onShow = () => setGoing(null);
+    window.addEventListener('pageshow', onShow);
+    return () => window.removeEventListener('pageshow', onShow);
+  }, []);
+
   useEffect(() => {
     if (confirmed.current || (!paymentId && !returnStatus)) return;
     confirmed.current = true;
+    setGoing(null);
     navigate('/planos', { replace: true });
     if (!paymentId || paymentId === 'null') {
       setBanner({ kind: 'error', text: 'O pagamento não foi concluído. Nada foi cobrado; você pode tentar de novo.' });
@@ -104,7 +113,7 @@ export function Planos() {
                     <p className="muted lp-plan-note">{o.note}</p>
                     <ul className="lp-checks">{PRO_FEATURES.map((f) => <li key={f}>{f}</li>)}</ul>
                     <button type="button" className="btn btn-primary btn-block" disabled={!s.enabled || going !== null} onClick={() => void buy(o.id)}>
-                      {going === o.id ? 'Abrindo o pagamento…' : `${s.plano === 'pro' ? 'Somar' : 'Assinar'} ${o.label} — ${server ? brl(server.valor) : `R$ ${o.price}`}`}
+                      {going === o.id ? 'Abrindo o pagamento…' : `${s.plano === 'pro' ? 'Somar' : 'Comprar'} ${o.label} — ${server ? brl(server.valor) : `R$ ${o.price}`}`}
                     </button>
                   </article>
                 );

@@ -40,7 +40,7 @@ describe('planos', () => {
     const user = userEvent.setup();
     renderAt('/planos', signedIn);
     expect(await screen.findByText('Seu plano atual')).toBeInTheDocument();
-    await user.click(screen.getByRole('button', { name: /Assinar 1 ano — R\$\s239,90/ }));
+    await user.click(screen.getByRole('button', { name: /Comprar 1 ano — R\$\s239,90/ }));
     await waitFor(() => expect(go).toHaveBeenCalledWith('https://mp.test/checkout'));
     expect(client.createPreference).toHaveBeenCalledWith(expect.objectContaining({ cycle: 'annual', userId: 'u1' }));
   });

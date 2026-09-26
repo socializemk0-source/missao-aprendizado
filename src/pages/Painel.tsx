@@ -64,10 +64,12 @@ export function Missoes() {
                 </div>
                 {m.resgatada ? (
                   <span className="pill pill-done">Resgatada ✓</span>
-                ) : (
-                  <button type="button" className="btn btn-primary" disabled={!complete || claiming === m.id} onClick={() => void claim(m.id)}>
-                    {claiming === m.id ? 'Resgatando…' : complete ? 'Resgatar' : 'Em andamento'}
+                ) : complete ? (
+                  <button type="button" className="btn btn-primary" disabled={claiming === m.id} onClick={() => void claim(m.id)}>
+                    {claiming === m.id ? 'Resgatando…' : 'Resgatar'}
                   </button>
+                ) : (
+                  <span className="pill">Em andamento</span>
                 )}
               </li>
             );

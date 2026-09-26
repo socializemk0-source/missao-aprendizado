@@ -106,6 +106,9 @@ a.phase-node:hover { border-color: var(--primary-soft-border); background: #f7fb
   .trail-phases { margin-left: 16px; padding-left: 28px; }
   .phase-dot { margin-left: -50px; width: 42px; height: 42px; }
   .quiz-question { font-size: 18px; }
+  /* Verificar/Continuar sempre à mão, logo acima do menu de baixo. */
+  .quiz-footer { position: sticky; bottom: calc(76px + env(safe-area-inset-bottom)); z-index: 5; box-shadow: 0 -6px 18px rgba(29, 51, 72, .08); }
+  .quiz-feedback p { font-size: 14px; }
   .mission, .subject { flex-wrap: wrap; }
 }
 
