@@ -10,11 +10,20 @@ import { Perfil } from '../pages/Perfil';
 import { Privacidade } from '../pages/Privacidade';
 import { RedefinirSenha } from '../pages/RedefinirSenha';
 import { Trilha } from '../pages/Trilha';
+import { Fase, Jogos, Praticar, Revisar } from '../pages/Sessoes';
+import { Aventura, Conquistas, Disciplinas, Missoes, Ranking } from '../pages/Painel';
 import { NAV } from './nav';
 
 const READY: Record<string, ReactElement> = {
   '/jogar': <Trilha />,
   '/perfil': <Perfil />,
+  '/aventura': <Aventura />,
+  '/missoes': <Missoes />,
+  '/ranking': <Ranking />,
+  '/disciplinas': <Disciplinas />,
+  '/jogos': <Jogos />,
+  '/revisar': <Revisar />,
+  '/conquistas': <Conquistas />,
 };
 
 function NotFound() {
@@ -33,10 +42,14 @@ export const routes: RouteObject[] = [
   { path: '/privacidade', element: <Privacidade /> },
   {
     element: <RequireAuth><AppLayout /></RequireAuth>,
-    children: NAV.map((item) => ({
-      path: item.path,
-      element: READY[item.path] ?? <EmConstrucao title={item.label} readyIn={item.readyIn} />,
-    })),
+    children: [
+      ...NAV.map((item) => ({
+        path: item.path,
+        element: READY[item.path] ?? <EmConstrucao title={item.label} readyIn={item.readyIn} />,
+      })),
+      { path: '/fase/:id', element: <Fase /> },
+      { path: '/praticar/:disciplina', element: <Praticar /> },
+    ],
   },
   { path: '*', element: <NotFound /> },
 ];
