@@ -108,3 +108,66 @@ a.phase-node:hover { border-color: var(--primary-soft-border); background: #f7fb
   .quiz-question { font-size: 18px; }
   .mission, .subject { flex-wrap: wrap; }
 }
+
+/* ---------- Redação ---------- */
+.section-title { font-size: 18px; color: #1d3348; margin: 22px 0 10px; }
+.essay-layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 22px; align-items: start; }
+.chip-group { border: 0; padding: 0; margin: 0 0 14px; display: flex; flex-wrap: wrap; gap: 8px; }
+.chip-group legend { font-weight: 700; font-size: 14px; margin-bottom: 8px; padding: 0; }
+.chip {
+  cursor: pointer; padding: 8px 14px; border-radius: 999px; border: 2px solid var(--border); background: #fff;
+  font-weight: 700; font-size: 14px;
+}
+.chip:hover { border-color: var(--primary-soft-border); }
+.chip.is-on { border-color: var(--primary); background: var(--primary-soft); color: var(--primary-strong); }
+.chip:has(input:focus-visible) { outline: 3px solid var(--primary); outline-offset: 2px; }
+.field select, .essay-text { width: 100%; }
+.essay-prompt { padding: 18px 20px; margin-bottom: 16px; }
+.essay-prompt h2 { font-size: 18px; margin: 0 0 8px; color: #1d3348; }
+.essay-prompt ul, .essay-guide ul, .essay-report ul { margin: 4px 0 8px; padding-left: 20px; display: grid; gap: 4px; }
+.essay-support { background: var(--muted); border-radius: 12px; padding: 10px 12px; font-size: 15px; }
+.essay-text {
+  min-height: 320px; resize: vertical; padding: 14px 16px; border-radius: 14px; border: 2px solid var(--border);
+  background: #fff; line-height: 1.6; font-size: 16px;
+}
+.essay-text:focus { border-color: var(--primary); outline: none; }
+.field-hint.is-bad { color: #b91c1c; font-weight: 700; }
+.essay-quota { margin: 0 0 12px; padding: 10px 14px; border-radius: 12px; background: #f0fdf4; color: #166534; font-size: 14px; }
+.essay-quota.is-used { background: #fff7ed; color: #9a3412; }
+.essay-quota.is-pro { background: #f5f3ff; color: #6d28d9; font-weight: 700; }
+.essay-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.essay-privacy { font-size: 13px; }
+.essay-side { display: grid; gap: 16px; position: sticky; top: 90px; }
+.essay-guide { padding: 16px 18px; font-size: 14px; }
+.essay-guide summary { font-weight: 800; cursor: pointer; color: #1d3348; }
+.essay-guide p { margin: 8px 0; }
+.essay-guide .pill { display: inline-block; white-space: normal; }
+.essay-history { padding: 16px 18px; }
+.essay-history h2 { font-size: 16px; margin: 0 0 10px; }
+.essay-history ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.essay-history a { display: flex; justify-content: space-between; gap: 10px; align-items: center; text-decoration: none; color: inherit; padding: 8px 10px; border-radius: 12px; }
+.essay-history a:hover { background: var(--muted); }
+.essay-history a > span:first-child { display: grid; gap: 2px; font-size: 14px; }
+.essay-history .muted { font-size: 12px; }
+.essay-score-sm { font-weight: 800; color: var(--primary-strong); background: var(--primary-soft); border-radius: 10px; padding: 4px 8px; }
+.essay-report-head .hero-text p:not(.eyebrow) { max-width: 640px; }
+.essay-score { display: grid; justify-items: center; align-content: center; min-width: 160px; }
+.essay-score strong { font-size: 56px; line-height: 1; color: var(--primary-strong); }
+.essay-score span { color: var(--muted-fg); font-weight: 700; }
+.essay-score-tico { width: 110px; margin-top: 8px; }
+.essay-report-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 8px; }
+.essay-report-grid > .card { padding: 16px 20px; }
+.essay-report-grid > .card .section-title { margin-top: 0; }
+.essay-annotated { padding: 18px 20px; white-space: pre-wrap; line-height: 1.7; }
+.essay-annotated mark { background: #fef3c7; border-bottom: 2px solid #f59e0b; border-radius: 3px; padding: 0 1px; }
+.essay-annotated sup { font-weight: 800; color: #b45309; margin-left: 2px; }
+.essay-notes { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.essay-notes li { padding: 14px 16px; font-size: 15px; }
+.essay-notes p { margin: 4px 0; }
+.essay-quote { font-style: italic; color: #4d6478; }
+.essay-quote a { font-style: normal; font-weight: 800; color: #b45309; margin-right: 6px; text-decoration: none; }
+
+@media (max-width: 980px) {
+  .essay-layout, .essay-report-grid { grid-template-columns: 1fr; }
+  .essay-side { position: static; }
+}

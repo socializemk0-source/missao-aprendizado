@@ -11,7 +11,7 @@ export interface NavEntry {
 // Mesma estrutura do V1. A trilha é a tela inicial do app.
 export const NAV: NavEntry[] = [
   { path: '/jogar', label: 'Trilha', icon: 'compass' },
-  { path: '/redacao', label: 'Redação', icon: 'pen', readyIn: 'etapa 4' },
+  { path: '/redacao', label: 'Redação', icon: 'pen' },
   { path: '/aventura', label: 'Aventura', icon: 'map' },
   { path: '/missoes', label: 'Missões', icon: 'target' },
   { path: '/ranking', label: 'Ranking', icon: 'trophy' },

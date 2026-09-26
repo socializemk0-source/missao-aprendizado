@@ -9,6 +9,7 @@ import { Landing } from '../pages/Landing';
 import { Perfil } from '../pages/Perfil';
 import { Privacidade } from '../pages/Privacidade';
 import { RedefinirSenha } from '../pages/RedefinirSenha';
+import { Redacao, RedacaoRelatorio } from '../pages/Redacao';
 import { Trilha } from '../pages/Trilha';
 import { Fase, Jogos, Praticar, Revisar } from '../pages/Sessoes';
 import { Aventura, Conquistas, Disciplinas, Missoes, Ranking } from '../pages/Painel';
@@ -17,6 +18,7 @@ import { NAV } from './nav';
 const READY: Record<string, ReactElement> = {
   '/jogar': <Trilha />,
   '/perfil': <Perfil />,
+  '/redacao': <Redacao />,
   '/aventura': <Aventura />,
   '/missoes': <Missoes />,
   '/ranking': <Ranking />,
@@ -49,6 +51,7 @@ export const routes: RouteObject[] = [
       })),
       { path: '/fase/:id', element: <Fase /> },
       { path: '/praticar/:disciplina', element: <Praticar /> },
+      { path: '/redacao/:id', element: <RedacaoRelatorio /> },
     ],
   },
   { path: '*', element: <NotFound /> },

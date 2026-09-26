@@ -34,9 +34,9 @@ describe('acesso às telas do app', () => {
   });
 
   it('telas ainda não feitas mostram "em construção" com a etapa', () => {
-    renderAt('/redacao', signedIn);
-    expect(screen.getByRole('heading', { name: 'Redação' })).toBeInTheDocument();
-    expect(screen.getByText(/etapa 4/)).toBeInTheDocument();
+    renderAt('/planos', signedIn);
+    expect(screen.getByRole('heading', { name: 'Planos' })).toBeInTheDocument();
+    expect(screen.getByText(/etapa 5/)).toBeInTheDocument();
   });
 
   it('página inicial logado: oferece "Continuar", sem redirecionar sozinha', () => {
