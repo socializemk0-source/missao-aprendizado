@@ -4,7 +4,7 @@
 import { getSupabase } from './supabase';
 
 export class ApiError extends Error {
-  constructor(message: string, readonly status: number) {
+  constructor(message: string, readonly status: number, readonly code?: string, readonly data: Record<string, unknown> = {}) {
     super(message);
   }
 }
@@ -17,8 +17,8 @@ export async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
   if (data.session) headers.set('Authorization', `Bearer ${data.session.access_token}`);
 
   const res = await fetch(path, { ...init, headers });
-  const payload = (await res.json().catch(() => ({}))) as { error?: string };
-  if (!res.ok) throw new ApiError(payload.error ?? 'Algo deu errado. Tente de novo.', res.status);
+  const payload = (await res.json().catch(() => ({}))) as { error?: string; code?: string } & Record<string, unknown>;
+  if (!res.ok) throw new ApiError(payload.error ?? 'Algo deu errado. Tente de novo.', res.status, payload.code, payload);
   return payload as T;
 }
 
