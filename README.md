@@ -1,7 +1,7 @@
 # Missão Aprendizado V2
 
 Estudo para concursos públicos em forma de aventura, com o Tico: trilha guiada
-com questões de provas oficiais, redação com IA, missões diárias e ranking.
+com questões no estilo das bancas, redação com IA, missões diárias e ranking.
 
 ## Rodar localmente
 

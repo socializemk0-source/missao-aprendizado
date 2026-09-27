@@ -1,0 +1,99 @@
+[
+  {
+    "id": "info-atalhos-001",
+    "subject": "informatica",
+    "topic": "Atalhos de teclado",
+    "level": "medio",
+    "difficulty": 1,
+    "statement": "No Microsoft Word e na maioria dos programas para Windows, o atalho Ctrl + Z serve para:",
+    "options": [
+      "copiar o trecho selecionado.",
+      "colar o conteúdo da área de transferência.",
+      "salvar o documento.",
+      "recortar o trecho selecionado.",
+      "desfazer a última ação."
+    ],
+    "correctIndex": 4,
+    "explanation": "Ctrl + Z desfaz a última ação. Vale gravar os vizinhos no teclado: Ctrl + X recorta, Ctrl + C copia, Ctrl + V cola. Para salvar, o atalho é Ctrl + B no Word em português (Ctrl + S na versão em inglês).",
+    "origin": "propria",
+    "style": "FCC",
+    "status": "rascunho"
+  },
+  {
+    "id": "info-seguranca-001",
+    "subject": "informatica",
+    "topic": "Segurança da informação",
+    "level": "medio",
+    "difficulty": 1,
+    "statement": "Um servidor recebe um e-mail que imita a comunicação do seu banco e pede que ele clique em um link para \"atualizar os dados\" da conta. Essa tentativa de golpe é chamada de:",
+    "options": [
+      "phishing.",
+      "backup.",
+      "firewall.",
+      "worm.",
+      "spam de propaganda."
+    ],
+    "correctIndex": 0,
+    "explanation": "Phishing é a mensagem falsa que se passa por uma empresa ou pessoa confiável para enganar a vítima e roubar dados, como senhas e números de cartão. Worm é um programa que se espalha sozinho pela rede; firewall é uma proteção; backup é cópia de segurança.",
+    "origin": "propria",
+    "style": "Cebraspe",
+    "status": "rascunho"
+  },
+  {
+    "id": "info-planilha-001",
+    "subject": "informatica",
+    "topic": "Planilhas (Excel/Calc)",
+    "level": "medio",
+    "difficulty": 1,
+    "statement": "Em uma planilha, as células A1, A2 e A3 contêm os valores 2, 3 e 5. Qual é o resultado da fórmula =SOMA(A1:A3)?",
+    "options": [
+      "5",
+      "7",
+      "10",
+      "30",
+      "3"
+    ],
+    "correctIndex": 2,
+    "explanation": "Os dois-pontos indicam um intervalo: A1:A3 significa \"de A1 até A3\". A fórmula soma 2 + 3 + 5 = 10. Se fosse =SOMA(A1;A3), com ponto e vírgula, somaria só A1 e A3 (2 + 5 = 7).",
+    "origin": "propria",
+    "style": "FGV",
+    "status": "rascunho"
+  },
+  {
+    "id": "info-email-001",
+    "subject": "informatica",
+    "topic": "Correio eletrônico",
+    "level": "medio",
+    "difficulty": 2,
+    "statement": "Ao enviar um e-mail, o remetente coloca um endereço no campo Cco (cópia oculta). Assinale a afirmação correta.",
+    "options": [
+      "A mensagem só é entregue depois que o destinatário principal a abrir.",
+      "Os destinatários dos campos Para e Cc não veem o endereço colocado em Cco.",
+      "Quem está em Cco não recebe os anexos da mensagem.",
+      "O campo Cco criptografa a mensagem.",
+      "Quem está em Cco não pode responder à mensagem."
+    ],
+    "correctIndex": 1,
+    "explanation": "Cco quer dizer \"com cópia oculta\": quem está nesse campo recebe a mesma mensagem, com anexos, mas os demais destinatários não ficam sabendo. Ele pode responder normalmente. O Cco não tem relação com criptografia.",
+    "origin": "propria",
+    "style": "FCC",
+    "status": "rascunho"
+  },
+  {
+    "id": "info-internet-001",
+    "subject": "informatica",
+    "topic": "Internet e navegadores",
+    "level": "medio",
+    "difficulty": 1,
+    "statement": "Quando o endereço de um site começa com https://, a comunicação entre o navegador e o site é criptografada.",
+    "options": [
+      "Certo",
+      "Errado"
+    ],
+    "correctIndex": 0,
+    "explanation": "Certo. O \"s\" de https vem de \"seguro\": os dados trafegam criptografados entre o navegador e o site. Atenção: isso protege a conexão, mas não garante que o site seja honesto. Sites de golpe também podem usar https.",
+    "origin": "propria",
+    "style": "Cebraspe",
+    "status": "rascunho"
+  }
+]

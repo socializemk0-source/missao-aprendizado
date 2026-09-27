@@ -1,0 +1,102 @@
+[
+  {
+    "id": "port-crase-001",
+    "subject": "portugues",
+    "topic": "Crase",
+    "level": "medio",
+    "difficulty": 1,
+    "statement": "Assinale a alternativa em que o acento indicativo de crase está empregado corretamente.",
+    "options": [
+      "O relatório foi entregue à diretora antes do prazo.",
+      "Começou à chover logo cedo.",
+      "Ficaram frente à frente na reunião.",
+      "Enviei o documento à todos os setores.",
+      "Depois do expediente, ela voltou à casa."
+    ],
+    "correctIndex": 0,
+    "explanation": "Crase é a junção da preposição \"a\" com o artigo \"a\". Quem entrega, entrega algo A alguém, e \"diretora\" aceita o artigo \"a\": a + a = à. Nas outras frases não há os dois \"a\": antes de verbo (chover) e antes de pronome como \"todos\" não vai artigo; em palavras repetidas (frente a frente) também não; e \"casa\" no sentido de lar, sem nada que a especifique, dispensa o artigo.",
+    "origin": "propria",
+    "style": "FGV",
+    "status": "rascunho"
+  },
+  {
+    "id": "port-concordancia-001",
+    "subject": "portugues",
+    "topic": "Concordância verbal",
+    "level": "medio",
+    "difficulty": 2,
+    "statement": "Assinale a frase que está de acordo com a norma-padrão quanto à concordância verbal.",
+    "options": [
+      "Fazem dois anos que ele trabalha no setor.",
+      "Houveram muitos problemas na reunião.",
+      "Existem várias soluções para o caso.",
+      "Aluga-se salas comerciais no centro.",
+      "Precisam-se de funcionários para o turno da noite."
+    ],
+    "correctIndex": 2,
+    "explanation": "\"Existir\" concorda normalmente com o sujeito: várias soluções existem. Já \"fazer\" indicando tempo e \"haver\" no sentido de existir não têm sujeito e ficam no singular (\"Faz dois anos\", \"Houve muitos problemas\"). Em \"Alugam-se salas\" o verbo vai ao plural porque \"salas\" é o sujeito. E em \"Precisa-se de funcionários\" o verbo fica no singular, porque depois vem preposição (\"de\").",
+    "origin": "propria",
+    "style": "FCC",
+    "status": "rascunho"
+  },
+  {
+    "id": "port-regencia-001",
+    "subject": "portugues",
+    "topic": "Regência verbal",
+    "level": "medio",
+    "difficulty": 2,
+    "statement": "Assinale a alternativa em que a regência do verbo está de acordo com a norma-padrão.",
+    "options": [
+      "Todos assistiram o jogo no auditório.",
+      "Prefiro estudar de manhã do que à noite.",
+      "Os funcionários devem obedecer as normas internas.",
+      "Os candidatos aspiram ao cargo de técnico.",
+      "Ele namora com a vizinha há três anos."
+    ],
+    "correctIndex": 3,
+    "explanation": "\"Aspirar\" no sentido de desejar pede a preposição \"a\": aspirar AO cargo. Na norma-padrão também se diz \"assistir AO jogo\" (no sentido de ver), \"preferir uma coisa A outra\" (sem \"do que\"), \"obedecer ÀS normas\" e \"namorar a vizinha\" (sem \"com\").",
+    "origin": "propria",
+    "style": "FGV",
+    "status": "rascunho"
+  },
+  {
+    "id": "port-acentuacao-001",
+    "subject": "portugues",
+    "topic": "Ortografia e acentuação",
+    "level": "medio",
+    "difficulty": 1,
+    "statement": "De acordo com o Acordo Ortográfico em vigor, assinale a palavra escrita corretamente.",
+    "options": [
+      "idéia",
+      "vôo",
+      "lingüiça",
+      "pára (do verbo parar)",
+      "heroico"
+    ],
+    "correctIndex": 4,
+    "explanation": "Com o Acordo Ortográfico, os ditongos abertos \"ei\" e \"oi\" em palavras paroxítonas perderam o acento: heroico, ideia, assembleia. Também caíram o acento de \"voo\" (vogal dobrada), o trema (linguiça) e o acento diferencial de \"para\" (verbo).",
+    "origin": "propria",
+    "style": "Cebraspe",
+    "status": "rascunho"
+  },
+  {
+    "id": "port-conectivos-001",
+    "subject": "portugues",
+    "topic": "Conectivos e sentido",
+    "level": "medio",
+    "difficulty": 1,
+    "statement": "Na frase \"Estudou durante meses; no entanto, não foi aprovado\", a expressão \"no entanto\" estabelece entre as orações uma relação de",
+    "options": [
+      "causa.",
+      "oposição.",
+      "conclusão.",
+      "condição.",
+      "finalidade."
+    ],
+    "correctIndex": 1,
+    "explanation": "\"No entanto\" liga duas ideias que se contrariam: era de esperar que quem estudou meses fosse aprovado, mas isso não aconteceu. É uma relação de oposição (adversativa), a mesma de \"mas\", \"porém\" e \"contudo\".",
+    "origin": "propria",
+    "style": "FGV",
+    "status": "rascunho"
+  }
+]

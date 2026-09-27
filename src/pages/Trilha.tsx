@@ -17,7 +17,7 @@ export function Trilha() {
         <div className="hero-text">
           <p className="eyebrow">Sua trilha</p>
           <h1 className="page-title">{firstName ? `Olá, ${firstName}!` : 'Olá!'} Sua trilha está sendo preparada.</h1>
-          <p>Em breve: capítulos, fases e questões de provas oficiais, com explicação em cada resposta.</p>
+          <p>Em breve: capítulos, fases e questões no estilo da sua banca, com explicação em cada resposta.</p>
         </div>
         <Tico pose="acenando" />
       </section>

@@ -1,0 +1,104 @@
+[
+  {
+    "id": "dconst-domicilio-001",
+    "subject": "direito_constitucional",
+    "topic": "Direitos e garantias fundamentais",
+    "level": "medio",
+    "difficulty": 2,
+    "statement": "Segundo a Constituição Federal, a casa é asilo inviolável do indivíduo, e ninguém nela pode entrar sem consentimento do morador. A Constituição admite a entrada sem consentimento nas situações abaixo, EXCETO:",
+    "options": [
+      "em caso de flagrante delito.",
+      "em caso de desastre.",
+      "para prestar socorro.",
+      "durante o dia, por determinação judicial.",
+      "durante a noite, por determinação judicial."
+    ],
+    "correctIndex": 4,
+    "explanation": "A ordem do juiz só autoriza a entrada durante o dia. Flagrante delito, desastre e socorro permitem a entrada a qualquer hora, de dia ou de noite. Truque para lembrar: \"juiz só de dia\".",
+    "legalBasis": "CF/88, art. 5º, XI",
+    "origin": "propria",
+    "style": "FGV",
+    "status": "rascunho"
+  },
+  {
+    "id": "dconst-fundamentos-001",
+    "subject": "direito_constitucional",
+    "topic": "Princípios fundamentais",
+    "level": "medio",
+    "difficulty": 1,
+    "statement": "Assinale a alternativa que NÃO é um dos fundamentos da República Federativa do Brasil previstos no art. 1º da Constituição Federal.",
+    "options": [
+      "A soberania.",
+      "A cidadania.",
+      "Garantir o desenvolvimento nacional.",
+      "A dignidade da pessoa humana.",
+      "O pluralismo político."
+    ],
+    "correctIndex": 2,
+    "explanation": "Garantir o desenvolvimento nacional é um OBJETIVO da República (art. 3º), não um fundamento. Os fundamentos do art. 1º formam a sigla SO-CI-DI-VA-PLU: soberania, cidadania, dignidade da pessoa humana, valores sociais do trabalho e da livre iniciativa e pluralismo político. Dica: os objetivos do art. 3º começam com verbos (construir, garantir, erradicar, promover).",
+    "legalBasis": "CF/88, arts. 1º e 3º",
+    "origin": "propria",
+    "style": "FCC",
+    "status": "rascunho"
+  },
+  {
+    "id": "dconst-remedios-001",
+    "subject": "direito_constitucional",
+    "topic": "Remédios constitucionais",
+    "level": "medio",
+    "difficulty": 2,
+    "statement": "Uma cidadã quer saber quais informações sobre ela constam em um cadastro de um órgão público, e o órgão se recusa a mostrar. A ação prevista na Constituição para garantir esse conhecimento é o",
+    "options": [
+      "habeas data.",
+      "habeas corpus.",
+      "mandado de injunção.",
+      "mandado de segurança coletivo.",
+      "ação popular."
+    ],
+    "correctIndex": 0,
+    "explanation": "O habeas data serve para a pessoa conhecer ou corrigir informações sobre ela mesma em registros de órgãos públicos ou de caráter público. O habeas corpus protege a liberdade de ir e vir; o mandado de injunção é usado quando falta a lei que regulamenta um direito; a ação popular busca anular ato que prejudique o patrimônio público.",
+    "legalBasis": "CF/88, art. 5º, LXXII",
+    "origin": "propria",
+    "style": "FGV",
+    "status": "rascunho"
+  },
+  {
+    "id": "dconst-nacionalidade-001",
+    "subject": "direito_constitucional",
+    "topic": "Nacionalidade",
+    "level": "medio",
+    "difficulty": 2,
+    "statement": "A Constituição reserva alguns cargos a brasileiros natos. Assinale o cargo que NÃO é privativo de brasileiro nato.",
+    "options": [
+      "Presidente da República.",
+      "Ministro do Supremo Tribunal Federal.",
+      "Oficial das Forças Armadas.",
+      "Senador da República.",
+      "Cargo da carreira diplomática."
+    ],
+    "correctIndex": 3,
+    "explanation": "Um brasileiro naturalizado pode ser senador. O que é privativo de nato é a PRESIDÊNCIA do Senado (e da Câmara), porque quem ocupa esses cargos pode chegar a substituir o Presidente da República. A lista completa: Presidente e Vice-Presidente da República, Presidente da Câmara, Presidente do Senado, Ministro do STF, carreira diplomática, oficial das Forças Armadas e Ministro de Estado da Defesa.",
+    "legalBasis": "CF/88, art. 12, § 3º",
+    "origin": "propria",
+    "style": "Cebraspe",
+    "status": "rascunho"
+  },
+  {
+    "id": "dconst-sociais-001",
+    "subject": "direito_constitucional",
+    "topic": "Direitos sociais",
+    "level": "medio",
+    "difficulty": 1,
+    "statement": "O transporte está expressamente previsto como direito social no art. 6º da Constituição Federal.",
+    "options": [
+      "Certo",
+      "Errado"
+    ],
+    "correctIndex": 0,
+    "explanation": "Certo. O transporte foi incluído no art. 6º pela Emenda Constitucional nº 90, de 2015. Hoje a lista é: educação, saúde, alimentação, trabalho, moradia, transporte, lazer, segurança, previdência social, proteção à maternidade e à infância e assistência aos desamparados.",
+    "legalBasis": "CF/88, art. 6º (redação da EC 90/2015)",
+    "origin": "propria",
+    "style": "Cebraspe",
+    "status": "rascunho"
+  }
+]

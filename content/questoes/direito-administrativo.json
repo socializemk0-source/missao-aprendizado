@@ -1,0 +1,123 @@
+[
+  {
+    "id": "dadm-principios-001",
+    "subject": "direito_administrativo",
+    "topic": "Princípios da Administração Pública",
+    "level": "medio",
+    "difficulty": 1,
+    "statement": "O caput do art. 37 da Constituição Federal lista, de forma expressa, os princípios da Administração Pública. Assinale o princípio que NÃO está nessa lista.",
+    "options": [
+      "Legalidade.",
+      "Impessoalidade.",
+      "Moralidade.",
+      "Razoabilidade.",
+      "Eficiência."
+    ],
+    "correctIndex": 3,
+    "explanation": "Os princípios expressos no art. 37 formam a sigla LIMPE: Legalidade, Impessoalidade, Moralidade, Publicidade e Eficiência. A razoabilidade também orienta a Administração, mas não está escrita nesse artigo. Ela aparece, por exemplo, na Lei nº 9.784/1999.",
+    "legalBasis": "CF/88, art. 37, caput",
+    "origin": "propria",
+    "style": "FGV",
+    "status": "rascunho"
+  },
+  {
+    "id": "dadm-recurso-prazo-001",
+    "subject": "direito_administrativo",
+    "topic": "Processo administrativo (Lei nº 9.784/1999)",
+    "level": "medio",
+    "difficulty": 2,
+    "statement": "Pela Lei nº 9.784/1999, que regula o processo administrativo federal, salvo disposição legal específica, o prazo para apresentar recurso administrativo é de",
+    "options": [
+      "5 dias.",
+      "10 dias.",
+      "15 dias.",
+      "30 dias.",
+      "60 dias."
+    ],
+    "correctIndex": 1,
+    "explanation": "O prazo geral é de 10 dias, contados da ciência ou da divulgação oficial da decisão. Cuidado com o número parecido: a autoridade tem até 30 dias para decidir o recurso, prazo que pode ser prorrogado por mais 30.",
+    "legalBasis": "Lei nº 9.784/1999, art. 59, caput e §§ 1º e 2º",
+    "origin": "propria",
+    "style": "FCC",
+    "status": "rascunho"
+  },
+  {
+    "id": "dadm-decadencia-001",
+    "subject": "direito_administrativo",
+    "topic": "Anulação de atos (Lei nº 9.784/1999)",
+    "level": "medio",
+    "difficulty": 2,
+    "statement": "Segundo a Lei nº 9.784/1999, o direito da Administração de anular atos administrativos que trouxeram vantagem para o cidadão termina, salvo comprovada má-fé, em",
+    "options": [
+      "1 ano.",
+      "2 anos.",
+      "3 anos.",
+      "5 anos.",
+      "10 anos."
+    ],
+    "correctIndex": 3,
+    "explanation": "O prazo é de 5 anos, contados da data em que o ato foi praticado. Depois disso, o ato favorável ao cidadão não pode mais ser anulado, a não ser que ele tenha agido de má-fé. A regra protege quem confiou, de boa-fé, na decisão da Administração.",
+    "legalBasis": "Lei nº 9.784/1999, art. 54",
+    "origin": "propria",
+    "style": "Cebraspe",
+    "status": "rascunho"
+  },
+  {
+    "id": "dadm-atributos-001",
+    "subject": "direito_administrativo",
+    "topic": "Atos administrativos",
+    "level": "medio",
+    "difficulty": 1,
+    "statement": "O atributo do ato administrativo que permite à Administração executar diretamente suas decisões, sem precisar antes de uma ordem judicial, é a",
+    "options": [
+      "autoexecutoriedade.",
+      "presunção de legitimidade.",
+      "tipicidade.",
+      "imperatividade.",
+      "discricionariedade."
+    ],
+    "correctIndex": 0,
+    "explanation": "Autoexecutoriedade é poder executar a própria decisão, como apreender mercadoria estragada, sem pedir antes ao juiz. Imperatividade é impor obrigações mesmo sem a concordância do cidadão. Presunção de legitimidade quer dizer que o ato vale como correto até prova em contrário. Tipicidade é o ato corresponder a um modelo previsto em lei.",
+    "origin": "propria",
+    "style": "FGV",
+    "status": "rascunho"
+  },
+  {
+    "id": "dadm-poderes-001",
+    "subject": "direito_administrativo",
+    "topic": "Poderes administrativos",
+    "level": "medio",
+    "difficulty": 1,
+    "statement": "A vigilância sanitária interdita um restaurante por falta de higiene. Essa atuação é exemplo do poder",
+    "options": [
+      "hierárquico.",
+      "disciplinar.",
+      "regulamentar.",
+      "de polícia.",
+      "vinculado."
+    ],
+    "correctIndex": 3,
+    "explanation": "Poder de polícia é o que a Administração usa para limitar a atividade dos particulares em nome do interesse público, como saúde e segurança. O poder disciplinar pune servidores e quem tem vínculo especial com a Administração. O hierárquico organiza chefes e subordinados. O regulamentar serve para editar normas que detalham as leis.",
+    "origin": "propria",
+    "style": "FCC",
+    "status": "rascunho"
+  },
+  {
+    "id": "dadm-revogacao-001",
+    "subject": "direito_administrativo",
+    "topic": "Anulação e revogação",
+    "level": "medio",
+    "difficulty": 1,
+    "statement": "A Administração pode revogar seus próprios atos por motivo de conveniência ou oportunidade, respeitados os direitos adquiridos.",
+    "options": [
+      "Certo",
+      "Errado"
+    ],
+    "correctIndex": 0,
+    "explanation": "Certo. Revogar é desfazer um ato válido porque deixou de ser conveniente ou oportuno, respeitando os direitos adquiridos. Anular é desfazer um ato ilegal, e a Administração DEVE fazer isso. Resumo: ato ilegal é anulado, ato inconveniente é revogado.",
+    "legalBasis": "Lei nº 9.784/1999, art. 53",
+    "origin": "propria",
+    "style": "Cebraspe",
+    "status": "rascunho"
+  }
+]

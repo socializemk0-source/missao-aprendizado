@@ -1,0 +1,122 @@
+[
+  {
+    "id": "rl-negacao-001",
+    "subject": "raciocinio_logico",
+    "topic": "Negação de proposições",
+    "level": "medio",
+    "difficulty": 1,
+    "statement": "A negação lógica da afirmação \"Todos os candidatos estudaram\" é:",
+    "options": [
+      "Nenhum candidato estudou.",
+      "Todos os candidatos não estudaram.",
+      "Algum candidato estudou.",
+      "Algum candidato não estudou.",
+      "Nenhum candidato deixou de estudar."
+    ],
+    "correctIndex": 3,
+    "explanation": "Para mostrar que \"todos estudaram\" é falso, basta existir um candidato que não estudou. Por isso a negação de \"todos são\" é \"algum não é\". \"Nenhum estudou\" é uma afirmação mais forte do que o necessário.",
+    "origin": "propria",
+    "style": "FGV",
+    "status": "rascunho"
+  },
+  {
+    "id": "rl-condicional-001",
+    "subject": "raciocinio_logico",
+    "topic": "Negação da condicional",
+    "level": "medio",
+    "difficulty": 2,
+    "statement": "Assinale a negação lógica da proposição \"Se chove, então a rua fica molhada\".",
+    "options": [
+      "Se não chove, então a rua não fica molhada.",
+      "Se a rua não fica molhada, então não chove.",
+      "Chove e a rua não fica molhada.",
+      "Não chove ou a rua fica molhada.",
+      "Não chove e a rua fica molhada."
+    ],
+    "correctIndex": 2,
+    "explanation": "A frase \"se chove, a rua fica molhada\" só é desmentida quando chove e, mesmo assim, a rua não fica molhada. Então a negação de \"se P, então Q\" é \"P e não Q\". Atenção: \"Se a rua não fica molhada, então não chove\" e \"Não chove ou a rua fica molhada\" dizem o mesmo que a frase original, não o contrário.",
+    "origin": "propria",
+    "style": "Cebraspe",
+    "status": "rascunho"
+  },
+  {
+    "id": "rl-porcentagem-001",
+    "subject": "raciocinio_logico",
+    "topic": "Porcentagem",
+    "level": "medio",
+    "difficulty": 1,
+    "statement": "Um produto custava R$ 200,00. O preço subiu 10% e, depois, o novo preço teve um desconto de 10%. O preço final é:",
+    "options": [
+      "R$ 180,00",
+      "R$ 198,00",
+      "R$ 200,00",
+      "R$ 202,00",
+      "R$ 220,00"
+    ],
+    "correctIndex": 1,
+    "explanation": "Aumento de 10%: 200 × 1,10 = 220. Desconto de 10% sobre 220: 220 × 0,90 = 198. O desconto é calculado sobre um valor maior do que o aumento, por isso o preço não volta a 200.",
+    "origin": "propria",
+    "style": "FCC",
+    "status": "rascunho"
+  },
+  {
+    "id": "rl-regra-de-tres-001",
+    "subject": "raciocinio_logico",
+    "topic": "Regra de três composta",
+    "level": "medio",
+    "difficulty": 2,
+    "statement": "Três servidores analisam 60 processos em 4 dias. Mantido o mesmo ritmo de trabalho, em quantos dias 5 servidores analisam 100 processos?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6",
+      "8"
+    ],
+    "correctIndex": 1,
+    "explanation": "Primeiro, descubra o ritmo de um servidor: 3 servidores × 4 dias = 12 \"dias de trabalho\" para 60 processos, ou seja, 5 processos por servidor por dia. Com 5 servidores, são 25 processos por dia. Para 100 processos: 100 ÷ 25 = 4 dias.",
+    "origin": "propria",
+    "style": "FGV",
+    "status": "rascunho"
+  },
+  {
+    "id": "rl-sequencia-001",
+    "subject": "raciocinio_logico",
+    "topic": "Sequências",
+    "level": "medio",
+    "difficulty": 1,
+    "statement": "Observe a sequência: 2, 6, 12, 20, 30, ... O próximo termo é:",
+    "options": [
+      "36",
+      "40",
+      "44",
+      "42",
+      "48"
+    ],
+    "correctIndex": 3,
+    "explanation": "As diferenças entre termos vizinhos crescem de 2 em 2: +4, +6, +8, +10. A próxima diferença é +12, então 30 + 12 = 42. Outra forma de ver: cada termo é n × (n + 1): 1×2, 2×3, 3×4, 4×5, 5×6 e depois 6×7 = 42.",
+    "origin": "propria",
+    "style": "FCC",
+    "status": "rascunho"
+  },
+  {
+    "id": "rl-contagem-001",
+    "subject": "raciocinio_logico",
+    "topic": "Princípio da contagem",
+    "level": "medio",
+    "difficulty": 2,
+    "statement": "Quantas senhas de 3 algarismos distintos podem ser formadas usando apenas os algarismos 1, 2, 3, 4 e 5?",
+    "options": [
+      "10",
+      "15",
+      "60",
+      "120",
+      "125"
+    ],
+    "correctIndex": 2,
+    "explanation": "Na senha a ordem importa (123 é diferente de 321) e os algarismos não se repetem. Há 5 escolhas para o primeiro, 4 para o segundo e 3 para o terceiro: 5 × 4 × 3 = 60. O 125 seria a resposta se pudesse repetir (5 × 5 × 5).",
+    "origin": "propria",
+    "style": "Cebraspe",
+    "status": "rascunho"
+  }
+]

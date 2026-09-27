@@ -19,10 +19,16 @@ lógica de servidor compartilhada em `server/`, banco Postgres do Supabase.
    `npm run check:api` confere isso.
 5. **Teste antes de corrigir/criar**: escreva o teste que falha, depois o
    código. `npm run ci` precisa passar antes de qualquer push.
-6. **Conteúdo com origem limpa.** Questões vêm de provas oficiais publicadas
-   pelas bancas (guardar banca, ano, órgão, cargo). Explicações são nossas.
-   Nunca copiar comentários, explicações ou o banco organizado de sites como
-   TecConcursos, QConcursos etc. (direitos autorais e termos de uso).
+6. **Conteúdo com origem limpa.** Por padrão as questões são **próprias**
+   (escritas por nós, no estilo da banca, `origin: "propria"`). Os termos de
+   uso das bancas (ex.: FGV Conhecimento, itens 3.1 e 4) proíbem reproduzir
+   as provas e usar robôs nos sites delas: questão de prova oficial
+   (`origin: "oficial"`) só entra com autorização por escrito da banca
+   registrada em `authorizationNote`, mais banca, ano, órgão, cargo e link.
+   Nada de raspar sites de banca. Explicações são sempre nossas. Nunca copiar
+   comentários, explicações ou o banco organizado de sites como TecConcursos,
+   QConcursos etc. Questão nova entra como `rascunho` e só vira `publicada`
+   depois da revisão de um professor da matéria.
 7. **Textos em português**, claros, sem jargão técnico para o aluno.
 
 ## Comandos
@@ -31,10 +37,14 @@ lógica de servidor compartilhada em `server/`, banco Postgres do Supabase.
 - `npm test` — testes (servidor e telas)
 - `PG_TEST=1 SQL_SSL=false SQL_HOST=... npm test` — inclui testes com Postgres real
 - `npm run ci` — tudo que o GitHub Actions roda
+- `node scripts/seed-questions.mjs` — valida e carrega `content/questoes/*.json`
+  em `v2.questions` (lê `SQL_*` do ambiente; nada é gravado se algo falhar)
 
 ## Estrutura
 
 - `src/app/` rotas e menu · `src/auth/` login · `src/pages/` telas ·
   `src/layouts/` moldura do app · `src/lib/` cliente Supabase e `api()`
 - `api/` uma função por rota · `server/` auth, banco, regras
+- `content/questoes/` questões (uma lista JSON por matéria; formato e regras
+  em `server/questions.ts`)
 - `tests/server/` rotas com banco em memória · `tests/web/` telas (jsdom)
