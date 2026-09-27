@@ -48,7 +48,7 @@ describe('trilha', () => {
     renderAt('/jogar', signedIn, { progress: true });
     expect(await screen.findByRole('link', { name: /Acentuação gráfica — 0\/4 questões dominadas/ })).toHaveAttribute('href', '/fase/fase-01-1');
     expect(screen.getByLabelText('Crase — bloqueada')).toBeInTheDocument();
-    expect(screen.getAllByText(/ · PRO$/)).toHaveLength(5);
+    expect(screen.getAllByText(/ · PRO$/)).toHaveLength(6);
     expect(screen.getByRole('button', { name: 'Continuar trilha' })).toBeInTheDocument();
   });
 

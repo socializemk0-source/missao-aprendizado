@@ -25,7 +25,7 @@ describe('/api/game', () => {
     const { call } = setup();
     const trail = await call('GET', 'trilha');
     expect(trail.statusCode).toBe(200);
-    expect(trail.body.capitulos).toHaveLength(10);
+    expect(trail.body.capitulos).toHaveLength(11);
     expect(trail.body.progress).toMatchObject({ xp: 0, hearts: 5 });
     const ok = await call('GET', 'fase', { query: { id: 'fase-01-1' } });
     expect(ok.body.questoes[0]).not.toHaveProperty('correta');

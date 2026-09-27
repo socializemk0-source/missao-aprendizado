@@ -41,7 +41,7 @@ npm run ci             # o mesmo que o GitHub Actions roda
 
 ## Como funciona
 
-- **Trilha** (`content/`, `server/game.ts`): 10 capítulos alternando as
+- **Trilha** (`content/`, `server/game.ts`): 11 capítulos alternando as
   disciplinas, 5 grátis. XP só no primeiro acerto de cada questão, +20 ao
   concluir a fase; 5 vidas no grátis (só a trilha gasta; 1 volta a cada 30 min);
   sequência de dias pelo horário de Brasília. Tudo decidido no servidor, com

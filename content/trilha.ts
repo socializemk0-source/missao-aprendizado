@@ -3,6 +3,7 @@
 
 import { ADMINISTRATIVO } from './questoes/administrativo.js';
 import { CONSTITUCIONAL } from './questoes/constitucional.js';
+import { IMPROBIDADE } from './questoes/improbidade.js';
 import { INFORMATICA } from './questoes/informatica.js';
 import { PORTUGUES } from './questoes/portugues.js';
 import { RLM } from './questoes/rlm.js';
@@ -17,6 +18,7 @@ export const DISCIPLINAS: Disciplina[] = [
 ];
 
 const ids = (prefix: string) => [1, 2, 3, 4].map((n) => `${prefix}-${n}`);
+const range = (prefix: string, from: number, to: number) => Array.from({ length: to - from + 1 }, (_, i) => `${prefix}-${from + i}`);
 
 export const TRILHA: Capitulo[] = [
   {
@@ -99,12 +101,22 @@ export const TRILHA: Capitulo[] = [
       { id: 'fase-10-2', titulo: 'Atributos', questoes: ids('adm-atr') },
     ],
   },
+  {
+    id: 'cap-11', titulo: 'Improbidade administrativa', disciplina: 'administrativo',
+    descricao: 'A Lei 8.429/1992 como ficou depois da Lei 14.230/2021: dolo, modalidades, sanções e prescrição.',
+    fases: [
+      { id: 'fase-11-1', titulo: 'Dolo e sujeitos', questoes: range('adm-imp', 1, 4) },
+      { id: 'fase-11-2', titulo: 'Modalidades', questoes: range('adm-imp', 5, 8) },
+      { id: 'fase-11-3', titulo: 'Sanções', questoes: range('adm-imp', 9, 12) },
+      { id: 'fase-11-4', titulo: 'Processo e prescrição', questoes: range('adm-imp', 13, 16) },
+    ],
+  },
 ];
 
 // Capítulos liberados no plano Grátis (os demais pedem PRO).
 export const CAPITULOS_GRATIS = 5;
 
-export const QUESTOES: Questao[] = [...PORTUGUES, ...RLM, ...INFORMATICA, ...CONSTITUCIONAL, ...ADMINISTRATIVO];
+export const QUESTOES: Questao[] = [...PORTUGUES, ...RLM, ...INFORMATICA, ...CONSTITUCIONAL, ...ADMINISTRATIVO, ...IMPROBIDADE];
 
 // ---------- Consultas ----------
 const questaoPorId = new Map(QUESTOES.map((q) => [q.id, q]));
