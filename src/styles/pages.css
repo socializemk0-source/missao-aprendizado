@@ -19,3 +19,18 @@
   .auth-tico { width: 140px; }
   .auth-card { width: 100%; }
 }
+
+/* ---------- Treino na trilha ---------- */
+.practice { margin-top: 20px; max-width: 720px; }
+.practice-title { font-size: 22px; margin: 0 0 4px; }
+.practice-lead { margin: 0 0 14px; color: #4d6478; }
+.practice-subjects { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.practice-subject {
+  background: #fff; border: 2px solid var(--border); border-radius: 999px; padding: 8px 14px;
+  font-weight: 700; color: #1d3348; cursor: pointer;
+}
+.practice-subject:hover:not(:disabled) { border-color: var(--primary-soft-border); background: #f7fbff; }
+.practice-subject.is-active { border-color: var(--primary); background: var(--primary-soft); color: var(--primary-strong); }
+.practice-subject:disabled { cursor: wait; }
+.practice-basis { font-size: 14px; font-weight: 700; }
+.practice-done { display: grid; gap: 12px; justify-items: start; }

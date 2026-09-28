@@ -2,6 +2,7 @@
 // 0003 aplicada): o banco recusa sozinho o que o validador recusa.
 import { afterAll, describe, expect, it } from 'vitest';
 import pg from 'pg';
+import { postgresQuestions } from '../../server/question-store.js';
 import { loadBank, upsertStatement, type Question } from '../../server/questions.js';
 
 describe.runIf(process.env.PG_TEST === '1')('v2.questions (Postgres real)', () => {
@@ -42,5 +43,21 @@ describe.runIf(process.env.PG_TEST === '1')('v2.questions (Postgres real)', () =
   it('recusa gabarito fora das alternativas', async () => {
     const q: Question = { ...base, id: 'pg-gabarito-fora', correctIndex: base.options.length };
     await expect(pool.query(upsertStatement(q))).rejects.toThrow(/questions_correct_in_range/);
+  });
+
+  it('as rotas só enxergam questões publicadas, e o gabarito fica fora da lista', async () => {
+    const pub: Question = { ...base, id: 'pg-publicada', status: 'publicada' };
+    const draft: Question = { ...base, id: 'pg-rascunho', status: 'rascunho' };
+    await pool.query(upsertStatement(pub));
+    await pool.query(upsertStatement(draft));
+
+    const list = await postgresQuestions.listPublished({ subject: base.subject, limit: 20 });
+    const ids = list.map((q) => q.id);
+    expect(ids).toContain('pg-publicada');
+    expect(ids).not.toContain('pg-rascunho');
+    expect(list.find((q) => q.id === 'pg-publicada')).not.toHaveProperty('correctIndex');
+
+    expect(await postgresQuestions.answerKey('pg-publicada')).toMatchObject({ correctIndex: base.correctIndex, optionsCount: base.options.length });
+    expect(await postgresQuestions.answerKey('pg-rascunho')).toBeNull();
   });
 });

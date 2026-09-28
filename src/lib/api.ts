@@ -33,3 +33,32 @@ export interface Me {
   user: { id: string; email: string | null };
   profile: Profile;
 }
+
+// Banco de questões. O gabarito nunca vem junto com a questão: ele só
+// chega depois de responder (POST /api/answer).
+export const SUBJECTS = [
+  { id: 'portugues', label: 'Português' },
+  { id: 'raciocinio_logico', label: 'Raciocínio Lógico' },
+  { id: 'informatica', label: 'Informática' },
+  { id: 'direito_constitucional', label: 'Direito Constitucional' },
+  { id: 'direito_administrativo', label: 'Direito Administrativo' },
+] as const;
+
+export type SubjectId = (typeof SUBJECTS)[number]['id'];
+
+export interface PublicQuestion {
+  id: string;
+  subject: SubjectId;
+  topic: string;
+  difficulty: number;
+  statement: string;
+  options: string[];
+  style: string | null;
+}
+
+export interface AnswerResult {
+  correct: boolean;
+  correctIndex: number;
+  explanation: string;
+  legalBasis: string | null;
+}

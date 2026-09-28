@@ -1,7 +1,9 @@
 import { useAuth } from '../auth/AuthProvider';
 import { Tico } from '../components/Tico';
+import { Practice } from './trilha/Practice';
 
-// Tela inicial do app. O motor de questões chega na etapa 2.
+// Tela inicial do app. Por enquanto: treino rápido por matéria. Capítulos,
+// fases, XP e vidas chegam no resto da etapa 2.
 export function Trilha() {
   const { me, meError, refreshMe } = useAuth();
   const firstName = me?.profile.displayName.split(/\s+/)[0];
@@ -17,10 +19,11 @@ export function Trilha() {
         <div className="hero-text">
           <p className="eyebrow">Sua trilha</p>
           <h1 className="page-title">{firstName ? `Olá, ${firstName}!` : 'Olá!'} Sua trilha está sendo preparada.</h1>
-          <p>Em breve: capítulos, fases e questões no estilo da sua banca, com explicação em cada resposta.</p>
+          <p>Em breve: capítulos e fases. Enquanto isso, treine abaixo com questões no estilo da sua banca.</p>
         </div>
         <Tico pose="acenando" />
       </section>
+      <Practice />
     </>
   );
 }

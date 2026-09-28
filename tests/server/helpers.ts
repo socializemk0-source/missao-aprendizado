@@ -1,6 +1,8 @@
 import type { ApiRequest, ApiResponse } from '../../server/http.js';
 import type { Identity, VerifyToken } from '../../server/auth.js';
 import { defaultDisplayName, type Profile, type ProfileStore } from '../../server/profiles.js';
+import { toPublicQuestion, type QuestionStore } from '../../server/question-store.js';
+import type { Question } from '../../server/questions.js';
 
 export interface CapturedResponse extends ApiResponse {
   statusCode: number;
@@ -61,6 +63,24 @@ export function memoryProfiles(): ProfileStore & { rows: Map<string, Profile> } 
       const next = { ...current, ...fields };
       rows.set(userId, next);
       return { ...next };
+    },
+  };
+}
+
+// Banco de questões em memória, com as mesmas regras do Postgres: só o que
+// está publicado aparece ou pode ser respondido.
+export function memoryQuestions(all: Question[]): QuestionStore {
+  const published = () => all.filter((q) => q.status === 'publicada');
+  return {
+    async listPublished({ subject, limit }) {
+      return published()
+        .filter((q) => !subject || q.subject === subject)
+        .slice(0, limit)
+        .map(toPublicQuestion);
+    },
+    async answerKey(id) {
+      const q = published().find((item) => item.id === id);
+      return q ? { correctIndex: q.correctIndex, optionsCount: q.options.length, explanation: q.explanation, legalBasis: q.legalBasis ?? null } : null;
     },
   };
 }
