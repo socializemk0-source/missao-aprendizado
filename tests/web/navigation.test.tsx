@@ -1,5 +1,6 @@
 // @vitest-environment jsdom
-import { screen, within } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
+import { createMemoryRouter, RouterProvider } from 'react-router';
 import userEvent from '@testing-library/user-event';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { cleanup } from '@testing-library/react';
@@ -78,5 +79,19 @@ describe('safeNext', () => {
   it('só aceita caminhos internos', () => {
     expect(safeNext('/redacao?a=1')).toBe('/redacao?a=1');
     for (const bad of [null, '', 'https://golpe.com', '//golpe.com', '/\\golpe.com', 'jogar']) expect(safeNext(bad)).toBe('/jogar');
+  });
+});
+
+describe('tela quebrada', () => {
+  it('mostra uma mensagem em português com saída, não a página de erro do React Router', async () => {
+    const spy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    const Boom = () => { throw new Error('falhou'); };
+    const router = createMemoryRouter([{ ...routes[0]!, element: <Boom /> }], { initialEntries: ['/'] });
+    render(<RouterProvider router={router} />);
+    expect(await screen.findByRole('heading', { name: 'Algo deu errado nesta tela' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Recarregar a página' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Ir para o início' })).toHaveAttribute('href', '/');
+    expect(screen.queryByText(/Unexpected Application Error/)).toBeNull();
+    spy.mockRestore();
   });
 });

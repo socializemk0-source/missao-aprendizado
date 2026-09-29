@@ -39,7 +39,20 @@ function NotFound() {
   );
 }
 
-export const routes: RouteObject[] = [
+// Se uma tela quebrar, a pessoa vê isto em vez da página de erro do React Router.
+function ErrorScreen() {
+  return (
+    <FullScreenMessage title="Algo deu errado nesta tela">
+      <p className="muted">Seu progresso continua salvo. Recarregue a página ou volte para o início.</p>
+      <div className="quiz-end-actions">
+        <button type="button" className="btn btn-primary" onClick={() => window.location.reload()}>Recarregar a página</button>
+        <Link to="/" className="btn btn-secondary">Ir para o início</Link>
+      </div>
+    </FullScreenMessage>
+  );
+}
+
+const pages: RouteObject[] = [
   { path: '/', element: <Landing /> },
   { path: '/entrar', element: <Entrar /> },
   { path: '/cadastro', element: <Cadastro /> },
@@ -60,5 +73,7 @@ export const routes: RouteObject[] = [
   },
   { path: '*', element: <NotFound /> },
 ];
+
+export const routes: RouteObject[] = pages.map((r) => ({ ...r, errorElement: <ErrorScreen /> }));
 
 export const router = () => createBrowserRouter(routes);
