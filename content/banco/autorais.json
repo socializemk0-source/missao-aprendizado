@@ -1,0 +1,560 @@
+[
+  {
+    "id": "port-crase-001",
+    "disciplina": "portugues",
+    "assunto": "Crase",
+    "enunciado": "Assinale a alternativa em que o acento indicativo de crase está empregado corretamente.",
+    "alternativas": [
+      "O relatório foi entregue à diretora antes do prazo.",
+      "Começou à chover logo cedo.",
+      "Ficaram frente à frente na reunião.",
+      "Enviei o documento à todos os setores.",
+      "Depois do expediente, ela voltou à casa."
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Crase é a junção da preposição \"a\" com o artigo \"a\". Quem entrega, entrega algo A alguém, e \"diretora\" aceita o artigo \"a\": a + a = à. Nas outras frases não há os dois \"a\": antes de verbo (chover) e antes de pronome como \"todos\" não vai artigo; em palavras repetidas (frente a frente) também não; e \"casa\" no sentido de lar, sem nada que a especifique, dispensa o artigo.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "port-concordancia-001",
+    "disciplina": "portugues",
+    "assunto": "Concordância verbal",
+    "enunciado": "Assinale a frase que está de acordo com a norma-padrão quanto à concordância verbal.",
+    "alternativas": [
+      "Fazem dois anos que ele trabalha no setor.",
+      "Houveram muitos problemas na reunião.",
+      "Existem várias soluções para o caso.",
+      "Aluga-se salas comerciais no centro.",
+      "Precisam-se de funcionários para o turno da noite."
+    ],
+    "correta": 2,
+    "dificuldade": 2,
+    "explicacao": "\"Existir\" concorda normalmente com o sujeito: várias soluções existem. Já \"fazer\" indicando tempo e \"haver\" no sentido de existir não têm sujeito e ficam no singular (\"Faz dois anos\", \"Houve muitos problemas\"). Em \"Alugam-se salas\" o verbo vai ao plural porque \"salas\" é o sujeito. E em \"Precisa-se de funcionários\" o verbo fica no singular, porque depois vem preposição (\"de\").",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "port-regencia-001",
+    "disciplina": "portugues",
+    "assunto": "Regência verbal",
+    "enunciado": "Assinale a alternativa em que a regência do verbo está de acordo com a norma-padrão.",
+    "alternativas": [
+      "Todos assistiram o jogo no auditório.",
+      "Prefiro estudar de manhã do que à noite.",
+      "Os funcionários devem obedecer as normas internas.",
+      "Os candidatos aspiram ao cargo de técnico.",
+      "Ele namora com a vizinha há três anos."
+    ],
+    "correta": 3,
+    "dificuldade": 2,
+    "explicacao": "\"Aspirar\" no sentido de desejar pede a preposição \"a\": aspirar AO cargo. Na norma-padrão também se diz \"assistir AO jogo\" (no sentido de ver), \"preferir uma coisa A outra\" (sem \"do que\"), \"obedecer ÀS normas\" e \"namorar a vizinha\" (sem \"com\").",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "port-acentuacao-001",
+    "disciplina": "portugues",
+    "assunto": "Ortografia e acentuação",
+    "enunciado": "De acordo com o Acordo Ortográfico em vigor, assinale a palavra escrita corretamente.",
+    "alternativas": [
+      "idéia",
+      "vôo",
+      "lingüiça",
+      "pára (do verbo parar)",
+      "heroico"
+    ],
+    "correta": 4,
+    "dificuldade": 1,
+    "explicacao": "Com o Acordo Ortográfico, os ditongos abertos \"ei\" e \"oi\" em palavras paroxítonas perderam o acento: heroico, ideia, assembleia. Também caíram o acento de \"voo\" (vogal dobrada), o trema (linguiça) e o acento diferencial de \"para\" (verbo).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "port-conectivos-001",
+    "disciplina": "portugues",
+    "assunto": "Conectivos e sentido",
+    "enunciado": "Na frase \"Estudou durante meses; no entanto, não foi aprovado\", a expressão \"no entanto\" estabelece entre as orações uma relação de",
+    "alternativas": [
+      "causa.",
+      "oposição.",
+      "conclusão.",
+      "condição.",
+      "finalidade."
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "\"No entanto\" liga duas ideias que se contrariam: era de esperar que quem estudou meses fosse aprovado, mas isso não aconteceu. É uma relação de oposição (adversativa), a mesma de \"mas\", \"porém\" e \"contudo\".",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "rl-negacao-001",
+    "disciplina": "rlm",
+    "assunto": "Negação de proposições",
+    "enunciado": "A negação lógica da afirmação \"Todos os candidatos estudaram\" é:",
+    "alternativas": [
+      "Nenhum candidato estudou.",
+      "Todos os candidatos não estudaram.",
+      "Algum candidato estudou.",
+      "Algum candidato não estudou.",
+      "Nenhum candidato deixou de estudar."
+    ],
+    "correta": 3,
+    "dificuldade": 1,
+    "explicacao": "Para mostrar que \"todos estudaram\" é falso, basta existir um candidato que não estudou. Por isso a negação de \"todos são\" é \"algum não é\". \"Nenhum estudou\" é uma afirmação mais forte do que o necessário.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "rl-condicional-001",
+    "disciplina": "rlm",
+    "assunto": "Negação da condicional",
+    "enunciado": "Assinale a negação lógica da proposição \"Se chove, então a rua fica molhada\".",
+    "alternativas": [
+      "Se não chove, então a rua não fica molhada.",
+      "Se a rua não fica molhada, então não chove.",
+      "Chove e a rua não fica molhada.",
+      "Não chove ou a rua fica molhada.",
+      "Não chove e a rua fica molhada."
+    ],
+    "correta": 2,
+    "dificuldade": 2,
+    "explicacao": "A frase \"se chove, a rua fica molhada\" só é desmentida quando chove e, mesmo assim, a rua não fica molhada. Então a negação de \"se P, então Q\" é \"P e não Q\". Atenção: \"Se a rua não fica molhada, então não chove\" e \"Não chove ou a rua fica molhada\" dizem o mesmo que a frase original, não o contrário.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "rl-porcentagem-001",
+    "disciplina": "rlm",
+    "assunto": "Porcentagem",
+    "enunciado": "Um produto custava R$ 200,00. O preço subiu 10% e, depois, o novo preço teve um desconto de 10%. O preço final é:",
+    "alternativas": [
+      "R$ 180,00",
+      "R$ 198,00",
+      "R$ 200,00",
+      "R$ 202,00",
+      "R$ 220,00"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Aumento de 10%: 200 × 1,10 = 220. Desconto de 10% sobre 220: 220 × 0,90 = 198. O desconto é calculado sobre um valor maior do que o aumento, por isso o preço não volta a 200.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "rl-regra-de-tres-001",
+    "disciplina": "rlm",
+    "assunto": "Regra de três composta",
+    "enunciado": "Três servidores analisam 60 processos em 4 dias. Mantido o mesmo ritmo de trabalho, em quantos dias 5 servidores analisam 100 processos?",
+    "alternativas": [
+      "3",
+      "4",
+      "5",
+      "6",
+      "8"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Primeiro, descubra o ritmo de um servidor: 3 servidores × 4 dias = 12 \"dias de trabalho\" para 60 processos, ou seja, 5 processos por servidor por dia. Com 5 servidores, são 25 processos por dia. Para 100 processos: 100 ÷ 25 = 4 dias.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "rl-sequencia-001",
+    "disciplina": "rlm",
+    "assunto": "Sequências",
+    "enunciado": "Observe a sequência: 2, 6, 12, 20, 30, ... O próximo termo é:",
+    "alternativas": [
+      "36",
+      "40",
+      "44",
+      "42",
+      "48"
+    ],
+    "correta": 3,
+    "dificuldade": 1,
+    "explicacao": "As diferenças entre termos vizinhos crescem de 2 em 2: +4, +6, +8, +10. A próxima diferença é +12, então 30 + 12 = 42. Outra forma de ver: cada termo é n × (n + 1): 1×2, 2×3, 3×4, 4×5, 5×6 e depois 6×7 = 42.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "rl-contagem-001",
+    "disciplina": "rlm",
+    "assunto": "Princípio da contagem",
+    "enunciado": "Quantas senhas de 3 algarismos distintos podem ser formadas usando apenas os algarismos 1, 2, 3, 4 e 5?",
+    "alternativas": [
+      "10",
+      "15",
+      "60",
+      "120",
+      "125"
+    ],
+    "correta": 2,
+    "dificuldade": 2,
+    "explicacao": "Na senha a ordem importa (123 é diferente de 321) e os algarismos não se repetem. Há 5 escolhas para o primeiro, 4 para o segundo e 3 para o terceiro: 5 × 4 × 3 = 60. O 125 seria a resposta se pudesse repetir (5 × 5 × 5).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "info-atalhos-001",
+    "disciplina": "informatica",
+    "assunto": "Atalhos de teclado",
+    "enunciado": "No Microsoft Word e na maioria dos programas para Windows, o atalho Ctrl + Z serve para:",
+    "alternativas": [
+      "copiar o trecho selecionado.",
+      "colar o conteúdo da área de transferência.",
+      "salvar o documento.",
+      "recortar o trecho selecionado.",
+      "desfazer a última ação."
+    ],
+    "correta": 4,
+    "dificuldade": 1,
+    "explicacao": "Ctrl + Z desfaz a última ação. Vale gravar os vizinhos no teclado: Ctrl + X recorta, Ctrl + C copia, Ctrl + V cola. Para salvar, o atalho é Ctrl + B no Word em português (Ctrl + S na versão em inglês).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "info-seguranca-001",
+    "disciplina": "informatica",
+    "assunto": "Segurança da informação",
+    "enunciado": "Um servidor recebe um e-mail que imita a comunicação do seu banco e pede que ele clique em um link para \"atualizar os dados\" da conta. Essa tentativa de golpe é chamada de:",
+    "alternativas": [
+      "phishing.",
+      "backup.",
+      "firewall.",
+      "worm.",
+      "spam de propaganda."
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Phishing é a mensagem falsa que se passa por uma empresa ou pessoa confiável para enganar a vítima e roubar dados, como senhas e números de cartão. Worm é um programa que se espalha sozinho pela rede; firewall é uma proteção; backup é cópia de segurança.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "info-planilha-001",
+    "disciplina": "informatica",
+    "assunto": "Planilhas (Excel/Calc)",
+    "enunciado": "Em uma planilha, as células A1, A2 e A3 contêm os valores 2, 3 e 5. Qual é o resultado da fórmula =SOMA(A1:A3)?",
+    "alternativas": [
+      "5",
+      "7",
+      "10",
+      "30",
+      "3"
+    ],
+    "correta": 2,
+    "dificuldade": 1,
+    "explicacao": "Os dois-pontos indicam um intervalo: A1:A3 significa \"de A1 até A3\". A fórmula soma 2 + 3 + 5 = 10. Se fosse =SOMA(A1;A3), com ponto e vírgula, somaria só A1 e A3 (2 + 5 = 7).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "info-email-001",
+    "disciplina": "informatica",
+    "assunto": "Correio eletrônico",
+    "enunciado": "Ao enviar um e-mail, o remetente coloca um endereço no campo Cco (cópia oculta). Assinale a afirmação correta.",
+    "alternativas": [
+      "A mensagem só é entregue depois que o destinatário principal a abrir.",
+      "Os destinatários dos campos Para e Cc não veem o endereço colocado em Cco.",
+      "Quem está em Cco não recebe os anexos da mensagem.",
+      "O campo Cco criptografa a mensagem.",
+      "Quem está em Cco não pode responder à mensagem."
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Cco quer dizer \"com cópia oculta\": quem está nesse campo recebe a mesma mensagem, com anexos, mas os demais destinatários não ficam sabendo. Ele pode responder normalmente. O Cco não tem relação com criptografia.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "info-internet-001",
+    "disciplina": "informatica",
+    "assunto": "Internet e navegadores",
+    "enunciado": "Quando o endereço de um site começa com https://, a comunicação entre o navegador e o site é criptografada.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. O \"s\" de https vem de \"seguro\": os dados trafegam criptografados entre o navegador e o site. Atenção: isso protege a conexão, mas não garante que o site seja honesto. Sites de golpe também podem usar https.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "dconst-domicilio-001",
+    "disciplina": "constitucional",
+    "assunto": "Direitos e garantias fundamentais",
+    "enunciado": "Segundo a Constituição Federal, a casa é asilo inviolável do indivíduo, e ninguém nela pode entrar sem consentimento do morador. A Constituição admite a entrada sem consentimento nas situações abaixo, EXCETO:",
+    "alternativas": [
+      "em caso de flagrante delito.",
+      "em caso de desastre.",
+      "para prestar socorro.",
+      "durante o dia, por determinação judicial.",
+      "durante a noite, por determinação judicial."
+    ],
+    "correta": 4,
+    "dificuldade": 2,
+    "explicacao": "A ordem do juiz só autoriza a entrada durante o dia. Flagrante delito, desastre e socorro permitem a entrada a qualquer hora, de dia ou de noite. Truque para lembrar: \"juiz só de dia\". Base legal: CF/88, art. 5º, XI.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "dconst-fundamentos-001",
+    "disciplina": "constitucional",
+    "assunto": "Princípios fundamentais",
+    "enunciado": "Assinale a alternativa que NÃO é um dos fundamentos da República Federativa do Brasil previstos no art. 1º da Constituição Federal.",
+    "alternativas": [
+      "A soberania.",
+      "A cidadania.",
+      "Garantir o desenvolvimento nacional.",
+      "A dignidade da pessoa humana.",
+      "O pluralismo político."
+    ],
+    "correta": 2,
+    "dificuldade": 1,
+    "explicacao": "Garantir o desenvolvimento nacional é um OBJETIVO da República (art. 3º), não um fundamento. Os fundamentos do art. 1º formam a sigla SO-CI-DI-VA-PLU: soberania, cidadania, dignidade da pessoa humana, valores sociais do trabalho e da livre iniciativa e pluralismo político. Dica: os objetivos do art. 3º começam com verbos (construir, garantir, erradicar, promover). Base legal: CF/88, arts. 1º e 3º.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "dconst-remedios-001",
+    "disciplina": "constitucional",
+    "assunto": "Remédios constitucionais",
+    "enunciado": "Uma cidadã quer saber quais informações sobre ela constam em um cadastro de um órgão público, e o órgão se recusa a mostrar. A ação prevista na Constituição para garantir esse conhecimento é o",
+    "alternativas": [
+      "habeas data.",
+      "habeas corpus.",
+      "mandado de injunção.",
+      "mandado de segurança coletivo.",
+      "ação popular."
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "O habeas data serve para a pessoa conhecer ou corrigir informações sobre ela mesma em registros de órgãos públicos ou de caráter público. O habeas corpus protege a liberdade de ir e vir; o mandado de injunção é usado quando falta a lei que regulamenta um direito; a ação popular busca anular ato que prejudique o patrimônio público. Base legal: CF/88, art. 5º, LXXII.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "dconst-nacionalidade-001",
+    "disciplina": "constitucional",
+    "assunto": "Nacionalidade",
+    "enunciado": "A Constituição reserva alguns cargos a brasileiros natos. Assinale o cargo que NÃO é privativo de brasileiro nato.",
+    "alternativas": [
+      "Presidente da República.",
+      "Ministro do Supremo Tribunal Federal.",
+      "Oficial das Forças Armadas.",
+      "Senador da República.",
+      "Cargo da carreira diplomática."
+    ],
+    "correta": 3,
+    "dificuldade": 2,
+    "explicacao": "Um brasileiro naturalizado pode ser senador. O que é privativo de nato é a PRESIDÊNCIA do Senado (e da Câmara), porque quem ocupa esses cargos pode chegar a substituir o Presidente da República. A lista completa: Presidente e Vice-Presidente da República, Presidente da Câmara, Presidente do Senado, Ministro do STF, carreira diplomática, oficial das Forças Armadas e Ministro de Estado da Defesa. Base legal: CF/88, art. 12, § 3º.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "dconst-sociais-001",
+    "disciplina": "constitucional",
+    "assunto": "Direitos sociais",
+    "enunciado": "O transporte está expressamente previsto como direito social no art. 6º da Constituição Federal.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. O transporte foi incluído no art. 6º pela Emenda Constitucional nº 90, de 2015. Hoje a lista é: educação, saúde, alimentação, trabalho, moradia, transporte, lazer, segurança, previdência social, proteção à maternidade e à infância e assistência aos desamparados. Base legal: CF/88, art. 6º (redação da EC 90/2015).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "dadm-principios-001",
+    "disciplina": "administrativo",
+    "assunto": "Princípios da Administração Pública",
+    "enunciado": "O caput do art. 37 da Constituição Federal lista, de forma expressa, os princípios da Administração Pública. Assinale o princípio que NÃO está nessa lista.",
+    "alternativas": [
+      "Legalidade.",
+      "Impessoalidade.",
+      "Moralidade.",
+      "Razoabilidade.",
+      "Eficiência."
+    ],
+    "correta": 3,
+    "dificuldade": 1,
+    "explicacao": "Os princípios expressos no art. 37 formam a sigla LIMPE: Legalidade, Impessoalidade, Moralidade, Publicidade e Eficiência. A razoabilidade também orienta a Administração, mas não está escrita nesse artigo. Ela aparece, por exemplo, na Lei nº 9.784/1999. Base legal: CF/88, art. 37, caput.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "dadm-recurso-prazo-001",
+    "disciplina": "administrativo",
+    "assunto": "Processo administrativo (Lei nº 9.784/1999)",
+    "enunciado": "Pela Lei nº 9.784/1999, que regula o processo administrativo federal, salvo disposição legal específica, o prazo para apresentar recurso administrativo é de",
+    "alternativas": [
+      "5 dias.",
+      "10 dias.",
+      "15 dias.",
+      "30 dias.",
+      "60 dias."
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "O prazo geral é de 10 dias, contados da ciência ou da divulgação oficial da decisão. Cuidado com o número parecido: a autoridade tem até 30 dias para decidir o recurso, prazo que pode ser prorrogado por mais 30. Base legal: Lei nº 9.784/1999, art. 59, caput e §§ 1º e 2º.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "dadm-decadencia-001",
+    "disciplina": "administrativo",
+    "assunto": "Anulação de atos (Lei nº 9.784/1999)",
+    "enunciado": "Segundo a Lei nº 9.784/1999, o direito da Administração de anular atos administrativos que trouxeram vantagem para o cidadão termina, salvo comprovada má-fé, em",
+    "alternativas": [
+      "1 ano.",
+      "2 anos.",
+      "3 anos.",
+      "5 anos.",
+      "10 anos."
+    ],
+    "correta": 3,
+    "dificuldade": 2,
+    "explicacao": "O prazo é de 5 anos, contados da data em que o ato foi praticado. Depois disso, o ato favorável ao cidadão não pode mais ser anulado, a não ser que ele tenha agido de má-fé. A regra protege quem confiou, de boa-fé, na decisão da Administração. Base legal: Lei nº 9.784/1999, art. 54.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "dadm-atributos-001",
+    "disciplina": "administrativo",
+    "assunto": "Atos administrativos",
+    "enunciado": "O atributo do ato administrativo que permite à Administração executar diretamente suas decisões, sem precisar antes de uma ordem judicial, é a",
+    "alternativas": [
+      "autoexecutoriedade.",
+      "presunção de legitimidade.",
+      "tipicidade.",
+      "imperatividade.",
+      "discricionariedade."
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Autoexecutoriedade é poder executar a própria decisão, como apreender mercadoria estragada, sem pedir antes ao juiz. Imperatividade é impor obrigações mesmo sem a concordância do cidadão. Presunção de legitimidade quer dizer que o ato vale como correto até prova em contrário. Tipicidade é o ato corresponder a um modelo previsto em lei.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "dadm-poderes-001",
+    "disciplina": "administrativo",
+    "assunto": "Poderes administrativos",
+    "enunciado": "A vigilância sanitária interdita um restaurante por falta de higiene. Essa atuação é exemplo do poder",
+    "alternativas": [
+      "hierárquico.",
+      "disciplinar.",
+      "regulamentar.",
+      "de polícia.",
+      "vinculado."
+    ],
+    "correta": 3,
+    "dificuldade": 1,
+    "explicacao": "Poder de polícia é o que a Administração usa para limitar a atividade dos particulares em nome do interesse público, como saúde e segurança. O poder disciplinar pune servidores e quem tem vínculo especial com a Administração. O hierárquico organiza chefes e subordinados. O regulamentar serve para editar normas que detalham as leis.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "dadm-revogacao-001",
+    "disciplina": "administrativo",
+    "assunto": "Anulação e revogação",
+    "enunciado": "A Administração pode revogar seus próprios atos por motivo de conveniência ou oportunidade, respeitados os direitos adquiridos.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. Revogar é desfazer um ato válido porque deixou de ser conveniente ou oportuno, respeitando os direitos adquiridos. Anular é desfazer um ato ilegal, e a Administração DEVE fazer isso. Resumo: ato ilegal é anulado, ato inconveniente é revogado. Base legal: Lei nº 9.784/1999, art. 53.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  }
+]
