@@ -20,7 +20,7 @@ Prioridade: P0 bloqueia o uso · P1 jornada principal · P2 medição e retenç�
 | Plano de estudos | — | Ausente | Não há plano nem recálculo pelo desempenho | P1 | Marco 1 |
 | Trilha (capítulos e fases) | 6 disciplinas, fases com vidas, XP e bônus de fase; parte dos capítulos é PRO | OK | — | — | — |
 | Questões da trilha | 96 questões autorais em `content/questoes/*.ts` (16 por arquivo), com explicação | OK | Direito ainda não passou por revisão de professor | P1 | Revisão por professor (conteúdo do dono) |
-| Banco de questões (`v2.questions`) | Catálogo 5 min em memória; só `status = 'ativa'` chega ao aluno | Parcial | 27 questões autorais do PR #5 estavam fora do formato da `main` | P1 | Este PR: migração 0007 coloca as 27 como `revisao` |
+| Banco de questões (`v2.questions`) | Catálogo 5 min em memória; só `status = 'ativa'` chega ao aluno. 327 questões autorais em `revisao`: 27 do PR #5 (migração 0007) e o piloto de 300 (150 de Português e 150 de RLM, 10 por assunto, migração 0008), conferidas por resolução às cegas | Parcial | Nenhuma questão do banco foi revisada por professor; não há tela para revisar | P1 | Professor revisa uma amostra do piloto; se a taxa de correção for baixa, escalar para as outras matérias. Tela de revisão para professores |
 | Correção com explicação | Servidor confere a resposta e devolve gabarito e explicação | OK | — | — | — |
 | Caderno de erros / revisão | `/revisar`: fila das questões erradas | Parcial | Sem espaçamento (hoje, amanhã, 7 e 30 dias) | P1 | Marco 1: revisão espaçada |
 | Domínio por assunto | Acertos por disciplina em `/disciplinas` | Parcial | Não há score por assunto (acerto, dificuldade, recência, repetição) | P1 | Marco 1 |

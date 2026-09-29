@@ -33,8 +33,9 @@ lógica de servidor compartilhada em `server/`, banco Postgres do Supabase.
 - `npm test` — testes (servidor e telas)
 - `PG_TEST=1 SQL_SSL=false SQL_HOST=... npm test` — inclui testes com Postgres real
 - `npm run ci` — tudo que o GitHub Actions roda
-- `node scripts/banco-sql.mjs` — regenera a migração 0007 a partir de
-  `content/banco/autorais.json` (rode ao mudar o arquivo)
+- `node scripts/banco-sql.mjs` — regenera as migrações das questões do banco
+  a partir de `content/banco/*.json` (lista de lotes em `content/banco/lotes.json`;
+  rode ao mudar um arquivo)
 
 ## Estrutura
 

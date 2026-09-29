@@ -1,0 +1,3059 @@
+[
+  {
+    "id": "pt-acento-p01",
+    "disciplina": "portugues",
+    "assunto": "Acentuação e ortografia",
+    "enunciado": "Assinale a palavra escrita de acordo com o Acordo Ortográfico em vigor.",
+    "alternativas": [
+      "lêem",
+      "vôo",
+      "tranqüilo",
+      "heróico",
+      "ideia"
+    ],
+    "correta": 4,
+    "dificuldade": 1,
+    "explicacao": "Pelo Acordo Ortográfico, obrigatório no Brasil desde 2016, os ditongos abertos éi e ói das paroxítonas perderam o acento (ideia, heroico), o hiato oo também (voo), a forma leem perdeu o circunflexo e o trema foi abolido (tranquilo).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-acento-p02",
+    "disciplina": "portugues",
+    "assunto": "Acentuação e ortografia",
+    "enunciado": "Todas as palavras estão corretamente acentuadas em:",
+    "alternativas": [
+      "saúde, baú, juízes",
+      "raíz, ruído, viúva",
+      "juíz, egoísta, faísca",
+      "rúbrica, técnica, prótese",
+      "ítens, álbum, órfã"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "O i e o u tônicos de hiato levam acento quando ficam sozinhos na sílaba ou com s: sa-ú-de, ba-ú, ju-í-zes. Em juiz e raiz, o i forma sílaba com o z, por isso não há acento. Rubrica é paroxítona (ru-BRI-ca) e itens, paroxítona terminada em -ens, não leva acento.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-acento-p03",
+    "disciplina": "portugues",
+    "assunto": "Acentuação e ortografia",
+    "enunciado": "Na frase “Eles têm razão, mas o professor não vem hoje”, o acento em “têm” marca o plural do verbo ter, e “vem” está corretamente sem acento, porque o sujeito está no singular.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. Os verbos ter e vir levam acento circunflexo na 3ª pessoa do plural (eles têm, eles vêm) e ficam sem acento no singular (ele tem, ele vem).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-acento-p04",
+    "disciplina": "portugues",
+    "assunto": "Acentuação e ortografia",
+    "enunciado": "Assinale a alternativa em que o hífen está empregado corretamente, segundo o Acordo Ortográfico.",
+    "alternativas": [
+      "auto-escola",
+      "micro-ondas",
+      "semi-círculo",
+      "co-autor",
+      "extra-oficial"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Usa-se hífen quando o prefixo termina com a mesma vogal que começa a palavra seguinte: micro-ondas. Quando as vogais são diferentes, as palavras se juntam: autoescola, semicírculo, extraoficial. Com o prefixo co, a regra também é juntar: coautor.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Vunesp"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-acento-p05",
+    "disciplina": "portugues",
+    "assunto": "Acentuação e ortografia",
+    "enunciado": "Assinale a frase sem erro de grafia.",
+    "alternativas": [
+      "Ele agiu com muita descrição ao guardar o segredo.",
+      "Houve uma paralização dos serviços.",
+      "A análise do processo exigiu uma pesquisa minuciosa.",
+      "A excessão confirma a regra.",
+      "O candidato teve previlégio na fila."
+    ],
+    "correta": 2,
+    "dificuldade": 2,
+    "explicacao": "As formas corretas são exceção, paralisação (de paralisar) e privilégio. Descrição é o ato de descrever; quem guarda segredo age com discrição. Análise e pesquisa estão bem escritas.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-acento-p06",
+    "disciplina": "portugues",
+    "assunto": "Acentuação e ortografia",
+    "enunciado": "As palavras “pólo”, “pára” (do verbo parar) e “pêlo” (substantivo) perderam o acento diferencial com o Acordo Ortográfico.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. Hoje se escreve polo, para e pelo. O acento diferencial continua obrigatório só em pôr (verbo) e pôde (passado de poder).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-acento-p07",
+    "disciplina": "portugues",
+    "assunto": "Acentuação e ortografia",
+    "enunciado": "Está correta a grafia de todas as palavras em:",
+    "alternativas": [
+      "O rapaz analizou o contrato com calma.",
+      "Ele quiz ajudar, mas ninguém percebeu.",
+      "A empresa pesquizou os preços antes da compra.",
+      "Ele pôs a mesa e quis ajudar, mas ninguém percebeu.",
+      "Ela tem uma gentilesa rara."
+    ],
+    "correta": 3,
+    "dificuldade": 2,
+    "explicacao": "Os verbos pôr e querer se escrevem com s no passado (pôs, quis). Pesquisar e analisar vêm de pesquisa e análise, com s. Substantivos formados a partir de adjetivos terminam em -eza: gentil, gentileza.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-acento-p08",
+    "disciplina": "portugues",
+    "assunto": "Acentuação e ortografia",
+    "enunciado": "Qual palavra é acentuada pela mesma regra que “lâmpada”?",
+    "alternativas": [
+      "fácil",
+      "médico",
+      "órfão",
+      "café",
+      "saída"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Lâmpada e médico são proparoxítonas, e todas as proparoxítonas levam acento. Café é oxítona terminada em e; fácil é paroxítona terminada em l; saída tem hiato; órfão é paroxítona terminada em ão.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cesgranrio"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-acento-p09",
+    "disciplina": "portugues",
+    "assunto": "Acentuação e ortografia",
+    "enunciado": "Assinale a alternativa em que todas as palavras seguem as regras de acentuação atuais.",
+    "alternativas": [
+      "feiúra, jóia, enjôo",
+      "saúva, idéia, assembléia",
+      "feiura, boia, voo",
+      "Piauí, jibóia, vêem",
+      "baiúca, heróico, crêem"
+    ],
+    "correta": 2,
+    "dificuldade": 3,
+    "explicacao": "Pelo Acordo, perderam o acento: o i e o u tônicos depois de ditongo em paroxítonas (feiura, baiuca), os ditongos abertos ói e éi das paroxítonas (boia, joia, jiboia, ideia, assembleia), o hiato oo (voo, enjoo) e as formas creem e veem.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Vunesp"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-acento-p10",
+    "disciplina": "portugues",
+    "assunto": "Acentuação e ortografia",
+    "enunciado": "Assinale a frase em que a palavra “porque” (ou suas variações) está grafada corretamente.",
+    "alternativas": [
+      "Ele desistiu por que estava cansado.",
+      "Ninguém entendeu o por que da decisão.",
+      "Porquê você desistiu?",
+      "Você desistiu porquê?",
+      "Não sei por que ele desistiu do concurso."
+    ],
+    "correta": 4,
+    "dificuldade": 3,
+    "explicacao": "Por que (separado e sem acento) aparece em perguntas e quando equivale a pelo qual ou por qual motivo, como em não sei por que. Porque (junto) dá explicação ou causa. Por quê vem no fim da frase. Porquê (junto e com acento) é substantivo: o porquê da decisão.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-crase-p01",
+    "disciplina": "portugues",
+    "assunto": "Crase",
+    "enunciado": "Assinale a frase em que o acento grave está empregado corretamente.",
+    "alternativas": [
+      "Chegamos à uma conclusão.",
+      "Refiro-me à esta proposta.",
+      "Vou à pé para o trabalho.",
+      "Entreguei o relatório à gerente.",
+      "Ele começou à estudar cedo."
+    ],
+    "correta": 3,
+    "dificuldade": 1,
+    "explicacao": "Crase é a junção da preposição a com o artigo a. Quem entrega, entrega algo a alguém, e gerente, aqui, é feminino e aceita o artigo: à gerente. Não há crase antes de palavra masculina (pé), de verbo (estudar), do pronome esta e do artigo indefinido uma.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-crase-p02",
+    "disciplina": "portugues",
+    "assunto": "Crase",
+    "enunciado": "O acento indicativo de crase é obrigatório na lacuna em:",
+    "alternativas": [
+      "Ele se dedicou ___ pesquisa durante anos.",
+      "O documento foi enviado ___ Vossa Senhoria.",
+      "Ficaram frente ___ frente.",
+      "Voltou ___ Brasília ontem.",
+      "O diretor chegou ___ uma decisão."
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Quem se dedica, dedica-se a algo, e pesquisa aceita artigo: dedicou-se à pesquisa. Não há crase antes de artigo indefinido (uma), de pronome de tratamento (Vossa Senhoria), entre palavras repetidas (frente a frente) nem antes de cidade que não usa artigo (vim de Brasília, voltou a Brasília).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-crase-p03",
+    "disciplina": "portugues",
+    "assunto": "Crase",
+    "enunciado": "Em “O servidor voltou à casa dos pais depois do expediente”, o acento grave está correto porque a palavra “casa” está especificada.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. A palavra casa, no sentido de lar, só aceita artigo quando vem especificada. Sem especificação não há crase (voltou a casa); com especificação, há (voltou à casa dos pais).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-crase-p04",
+    "disciplina": "portugues",
+    "assunto": "Crase",
+    "enunciado": "Em “A reunião vai das 14h as 16h”, não se deve empregar o acento grave antes de “as 16h”.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. Se o começo do intervalo usa das (de + as), o fim deve usar às (a + as): das 14h às 16h. Sem artigo no começo, também não há crase no fim: de 14h a 16h.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-crase-p05",
+    "disciplina": "portugues",
+    "assunto": "Crase",
+    "enunciado": "Há erro no emprego do acento grave em:",
+    "alternativas": [
+      "Chegou às 8h em ponto.",
+      "Fomos à Bahia nas férias.",
+      "Fez referência à nova lei.",
+      "Obedeça às normas do edital.",
+      "Assisti à um filme excelente."
+    ],
+    "correta": 4,
+    "dificuldade": 1,
+    "explicacao": "Não existe crase antes de artigo indefinido nem de palavra masculina: assisti a um filme. Nas outras frases há preposição a mais artigo a: obedecer às normas, ir à Bahia (quem volta, volta da Bahia), referência à lei, chegar às 8h.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Vunesp"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-crase-p06",
+    "disciplina": "portugues",
+    "assunto": "Crase",
+    "enunciado": "O acento indicativo de crase é facultativo em:",
+    "alternativas": [
+      "Saiu às pressas.",
+      "Referiu-se àquela lei.",
+      "Comprou a geladeira a prazo.",
+      "Entreguei o livro à minha irmã.",
+      "Dirigiu-se à secretária."
+    ],
+    "correta": 3,
+    "dificuldade": 2,
+    "explicacao": "Antes de pronome possessivo feminino no singular, o artigo é opcional, e por isso a crase também: à minha irmã ou a minha irmã. Nas outras frases a crase é obrigatória (à secretária, às pressas, àquela) ou proibida (a prazo, palavra masculina).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-crase-p07",
+    "disciplina": "portugues",
+    "assunto": "Crase",
+    "enunciado": "A crase está empregada corretamente em:",
+    "alternativas": [
+      "Este prêmio é destinado à quem se inscreveu primeiro.",
+      "A proposta é semelhante à que discutimos ontem.",
+      "O candidato aspirava à um cargo público.",
+      "Ela não assistiu à nada naquela noite.",
+      "O fiscal pediu à todas as pessoas que saíssem."
+    ],
+    "correta": 1,
+    "dificuldade": 3,
+    "explicacao": "Semelhante pede a preposição a, e à que equivale a à proposta que: preposição a mais o pronome a. Não há crase antes de artigo indefinido (um), dos pronomes quem e nada, nem de todas.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-crase-p08",
+    "disciplina": "portugues",
+    "assunto": "Crase",
+    "enunciado": "Em qual frase NÃO se usa o acento grave?",
+    "alternativas": [
+      "Ela saiu às pressas.",
+      "Entregue a carta à diretora.",
+      "Ele passou a trabalhar em casa.",
+      "O ônibus parte às 7h.",
+      "Chegamos à escola cedo."
+    ],
+    "correta": 2,
+    "dificuldade": 1,
+    "explicacao": "Antes de verbo não há crase, porque verbo não aceita artigo: passou a trabalhar. Nas demais há preposição mais artigo: à escola, às pressas, à diretora, às 7h.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cesgranrio"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-crase-p09",
+    "disciplina": "portugues",
+    "assunto": "Crase",
+    "enunciado": "Assinale a frase correta quanto ao uso do acento grave.",
+    "alternativas": [
+      "Fez uma crítica àquilo que foi decidido.",
+      "Mandei um convite à cada participante.",
+      "Estamos à espera de uma resposta desde às 10h.",
+      "Pintou o quadro à óleo.",
+      "Os fiscais foram à pé até a obra."
+    ],
+    "correta": 0,
+    "dificuldade": 3,
+    "explicacao": "Quem faz crítica, faz crítica a algo: a + aquilo = àquilo. Não há crase antes de palavra masculina (óleo, pé), do pronome cada, nem depois de outra preposição (desde as 10h).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Vunesp"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-crase-p10",
+    "disciplina": "portugues",
+    "assunto": "Crase",
+    "enunciado": "Na frase “O prêmio foi dado ___ candidata que apresentou ___ melhor redação, e não ___ que chegou primeiro”, as lacunas são preenchidas, respectivamente, por:",
+    "alternativas": [
+      "à – à – a",
+      "a – a – a",
+      "à – a – a",
+      "à – a – à",
+      "a – à – à"
+    ],
+    "correta": 3,
+    "dificuldade": 3,
+    "explicacao": "Dado a alguém: à candidata (a + a). Quem apresenta, apresenta algo, sem preposição: a melhor redação (só artigo). E não à que chegou primeiro equivale a e não à candidata que chegou: preposição a mais o pronome a.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-cverbal-p01",
+    "disciplina": "portugues",
+    "assunto": "Concordância verbal",
+    "enunciado": "Assinale a frase em que a concordância verbal está correta.",
+    "alternativas": [
+      "Aluga-se salas comerciais.",
+      "Faz dois anos que ele estuda para o concurso.",
+      "Fazem dois anos que ele estuda para o concurso.",
+      "Houveram muitas dúvidas na prova.",
+      "Existe muitos candidatos inscritos."
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Fazer indicando tempo e haver no sentido de existir não têm sujeito e ficam no singular: faz dois anos, houve dúvidas. Existir concorda com o sujeito: existem candidatos. Com verbo que pede objeto direto e o se, o termo é sujeito: alugam-se salas.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-cverbal-p02",
+    "disciplina": "portugues",
+    "assunto": "Concordância verbal",
+    "enunciado": "A concordância está de acordo com a norma-padrão em:",
+    "alternativas": [
+      "Ocorreu vários problemas na obra.",
+      "Choveu muitas críticas ao projeto.",
+      "Mais de um candidato faltou à prova.",
+      "Os Estados Unidos é um país grande.",
+      "Vende-se casas no centro."
+    ],
+    "correta": 2,
+    "dificuldade": 2,
+    "explicacao": "Com mais de um, o verbo fica no singular. Vendem-se casas (casas é sujeito). Com artigo no plural, Os Estados Unidos pede verbo no plural (são). Chover no sentido figurado concorda com o sujeito (choveram críticas), e ocorrer também (ocorreram problemas).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-cverbal-p03",
+    "disciplina": "portugues",
+    "assunto": "Concordância verbal",
+    "enunciado": "Na frase “Deve haver candidatos aprovados na segunda chamada”, o verbo “dever” deveria estar no plural, concordando com “candidatos”.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. Haver no sentido de existir não tem sujeito e fica no singular. Em locução, o auxiliar acompanha essa regra: deve haver candidatos. Com existir seria diferente: devem existir candidatos.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-cverbal-p04",
+    "disciplina": "portugues",
+    "assunto": "Concordância verbal",
+    "enunciado": "Em “Fui eu que resolvi o problema”, a concordância está correta, pois, com o pronome relativo “que”, o verbo concorda com o antecedente “eu”.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. Depois do relativo que, o verbo concorda com a palavra a que ele se refere: fui eu que resolvi, fomos nós que resolvemos.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-cverbal-p05",
+    "disciplina": "portugues",
+    "assunto": "Concordância verbal",
+    "enunciado": "Assinale a alternativa em que a concordância verbal segue a norma-padrão.",
+    "alternativas": [
+      "Sobrou poucas vagas no concurso.",
+      "Tratam-se de questões difíceis.",
+      "Já é dez horas.",
+      "Haviam dois fiscais na sala.",
+      "Nem o diretor nem o vice compareceram à reunião."
+    ],
+    "correta": 4,
+    "dificuldade": 2,
+    "explicacao": "Com nem... nem, o verbo vai para o plural quando a ação vale para os dois. Tratar-se de fica no singular (trata-se de questões). Sobrar concorda com o sujeito (sobraram vagas). Haver como existir fica no singular (havia fiscais). Para horas, ser concorda com o número: são dez horas.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Vunesp"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-cverbal-p06",
+    "disciplina": "portugues",
+    "assunto": "Concordância verbal",
+    "enunciado": "Assinale a frase com concordância INCORRETA.",
+    "alternativas": [
+      "Necessitam-se de mais servidores no setor.",
+      "Consertam-se computadores.",
+      "Precisa-se de técnicos.",
+      "Mais de dez pessoas se inscreveram.",
+      "Um ou outro candidato desistiu."
+    ],
+    "correta": 0,
+    "dificuldade": 3,
+    "explicacao": "Necessitar de pede preposição, então o se indetermina o sujeito e o verbo fica no singular: necessita-se de servidores. Consertar pede objeto direto, então computadores é sujeito e o verbo vai ao plural. Mais de dez pede plural; um ou outro, singular.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-cverbal-p07",
+    "disciplina": "portugues",
+    "assunto": "Concordância verbal",
+    "enunciado": "Considerando a concordância, a frase correta é:",
+    "alternativas": [
+      "Existia, naquela época, muitas oportunidades.",
+      "Faltou cinco candidatos na prova.",
+      "Segue anexo as cópias dos documentos.",
+      "Seguem anexas as cópias dos documentos.",
+      "Houveram reclamações sobre a prova."
+    ],
+    "correta": 3,
+    "dificuldade": 2,
+    "explicacao": "O sujeito as cópias leva o verbo e o adjetivo ao plural: seguem anexas. Faltar e existir concordam com o sujeito (faltaram candidatos, existiam oportunidades). Haver no sentido de existir fica no singular (houve reclamações).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-cverbal-p08",
+    "disciplina": "portugues",
+    "assunto": "Concordância verbal",
+    "enunciado": "Complete corretamente: “Na sala, ___ duas cadeiras vazias.”",
+    "alternativas": [
+      "houveram",
+      "havia",
+      "tinham havido",
+      "haviam",
+      "existia"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Haver no sentido de existir não tem sujeito e fica sempre no singular: havia duas cadeiras. Já o verbo existir concorda com o sujeito: existiam duas cadeiras.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cesgranrio"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-cverbal-p09",
+    "disciplina": "portugues",
+    "assunto": "Concordância verbal",
+    "enunciado": "A frase correta quanto à concordância é:",
+    "alternativas": [
+      "Vendem-se apartamentos na planta.",
+      "Aluga-se quartos para estudantes.",
+      "Vende-se apartamentos na planta.",
+      "Conserta-se bicicletas.",
+      "Compra-se livros usados."
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Com verbo que pede objeto direto mais o se, a frase está na voz passiva e o termo é o sujeito: apartamentos são vendidos, vendem-se apartamentos. O mesmo vale para alugam-se quartos, consertam-se bicicletas e compram-se livros.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Vunesp"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-cverbal-p10",
+    "disciplina": "portugues",
+    "assunto": "Concordância verbal",
+    "enunciado": "Em “O pessoal do setor chegou cedo, mas a maior parte dos servidores ainda não havia chegado”, a concordância:",
+    "alternativas": [
+      "está correta apenas porque os dois verbos estão no passado.",
+      "está errada: “pessoal” exige verbo no plural.",
+      "está errada: “a maior parte dos servidores” exige verbo no plural.",
+      "está errada: o verbo “haver” deveria estar no plural.",
+      "está correta: “pessoal” é coletivo no singular, e “a maior parte dos” admite verbo no singular."
+    ],
+    "correta": 4,
+    "dificuldade": 2,
+    "explicacao": "Coletivo no singular leva o verbo ao singular: o pessoal chegou. Com expressões como a maior parte de ou a maioria de, o verbo pode ficar no singular ou ir ao plural. Haver, aqui, é auxiliar de chegar e acompanha o sujeito singular.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-cnominal-p01",
+    "disciplina": "portugues",
+    "assunto": "Concordância nominal",
+    "enunciado": "Assinale a frase correta quanto à concordância nominal.",
+    "alternativas": [
+      "É proibido a entrada de pessoas estranhas.",
+      "Elas mesmo organizaram a festa.",
+      "É proibida a entrada de pessoas estranhas.",
+      "Seguem anexo as fotos do evento.",
+      "Ela ficou meia confusa com a notícia."
+    ],
+    "correta": 2,
+    "dificuldade": 1,
+    "explicacao": "Quando o substantivo vem com artigo, a expressão concorda com ele: é proibida a entrada. Anexo concorda (seguem anexas as fotos). Meio, com sentido de um pouco, não varia (meio confusa). Mesmo, com sentido de próprio, concorda (elas mesmas).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-cnominal-p02",
+    "disciplina": "portugues",
+    "assunto": "Concordância nominal",
+    "enunciado": "A concordância nominal está correta em:",
+    "alternativas": [
+      "Havia menas pessoas na fila.",
+      "Bastante alunos faltaram à aula.",
+      "Água é bom para a saúde.",
+      "Eles estavam quite com a tesouraria.",
+      "A água é bom para a saúde."
+    ],
+    "correta": 2,
+    "dificuldade": 2,
+    "explicacao": "Sem artigo, a expressão fica no masculino singular: água é bom. Com artigo, concorda: a água é boa. Bastante, antes de substantivo, concorda (bastantes alunos). Quite concorda (quites). Menos nunca varia.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-cnominal-p03",
+    "disciplina": "portugues",
+    "assunto": "Concordância nominal",
+    "enunciado": "Na frase “Ela comeu meio melão e ficou meio cansada”, as duas ocorrências de “meio” estão corretas.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. No primeiro caso, meio indica metade e concorda com melão (meio melão, meia laranja). No segundo, significa um pouco e não varia: meio cansada.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-cnominal-p04",
+    "disciplina": "portugues",
+    "assunto": "Concordância nominal",
+    "enunciado": "Em “Os documentos seguem inclusos no envelope”, o adjetivo “inclusos” deveria ficar no singular, por ser palavra invariável.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. Incluso, anexo e obrigado são adjetivos e concordam com o substantivo: os documentos seguem inclusos, as notas seguem inclusas.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-cnominal-p05",
+    "disciplina": "portugues",
+    "assunto": "Concordância nominal",
+    "enunciado": "Assinale a alternativa correta quanto à concordância.",
+    "alternativas": [
+      "Foram feitas bastante críticas ao projeto.",
+      "Comprei uma blusa e uma saia vermelhas.",
+      "Muito obrigado, disse a professora.",
+      "Vão anexo os relatórios.",
+      "Elas próprio fizeram o trabalho."
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Adjetivo depois de dois substantivos pode ir ao plural (blusa e saia vermelhas). Obrigado e próprio concordam com quem fala ou com o termo a que se referem (obrigada, disse a professora; elas próprias). Anexo concorda (vão anexos) e bastante, antes de substantivo, também (bastantes críticas).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Vunesp"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-cnominal-p06",
+    "disciplina": "portugues",
+    "assunto": "Concordância nominal",
+    "enunciado": "Em qual frase a palavra entre aspas está corretamente flexionada?",
+    "alternativas": [
+      "Remeto “anexo” as planilhas.",
+      "Elas “mesmo” corrigiram as provas.",
+      "Havia “menas” vagas este ano.",
+      "As candidatas estavam “sós” na sala.",
+      "Ficamos “quite” com a loja."
+    ],
+    "correta": 3,
+    "dificuldade": 3,
+    "explicacao": "Só, com sentido de sozinho, é adjetivo e concorda: elas estavam sós. Mesmo e anexo também concordam (elas mesmas, anexas as planilhas), assim como quite (quites). Menos não varia.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-cnominal-p07",
+    "disciplina": "portugues",
+    "assunto": "Concordância nominal",
+    "enunciado": "Está de acordo com a norma-padrão:",
+    "alternativas": [
+      "É necessário paciência para estudar.",
+      "Bastante pessoas compareceram.",
+      "É proibido a venda de bebidas.",
+      "Está permitido a entrada de menores.",
+      "É necessário a sua presença na reunião."
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Sem artigo ou outro determinante, expressões como é necessário e é proibido ficam invariáveis: é necessário paciência. Com determinante, concordam: é necessária a sua presença, é proibida a venda, está permitida a entrada. Bastante, antes de substantivo, concorda: bastantes pessoas.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-cnominal-p08",
+    "disciplina": "portugues",
+    "assunto": "Concordância nominal",
+    "enunciado": "Uma professora agradece a ajuda de um aluno. Ela deve dizer: “Muito ___ pela ajuda.”",
+    "alternativas": [
+      "obrigado",
+      "obrigadinho",
+      "obrigadas",
+      "obrigados",
+      "obrigada"
+    ],
+    "correta": 4,
+    "dificuldade": 1,
+    "explicacao": "Obrigado é adjetivo e concorda com quem fala. Uma mulher diz obrigada; um homem, obrigado.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cesgranrio"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-cnominal-p09",
+    "disciplina": "portugues",
+    "assunto": "Concordância nominal",
+    "enunciado": "Assinale a frase correta.",
+    "alternativas": [
+      "As passagens custaram caro.",
+      "As passagens custaram caras.",
+      "Os sapatos custaram caros.",
+      "As roupas custaram baratas.",
+      "Elas pagaram caras pelos erros."
+    ],
+    "correta": 0,
+    "dificuldade": 3,
+    "explicacao": "Com verbos como custar e pagar, caro e barato funcionam como advérbios e não variam: custaram caro, pagaram caro. Como adjetivos, junto do substantivo, concordam: roupas caras, sapatos baratos.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Vunesp"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-cnominal-p10",
+    "disciplina": "portugues",
+    "assunto": "Concordância nominal",
+    "enunciado": "Na frase “Seguem, em anexo, os comprovantes”, a expressão “em anexo”:",
+    "alternativas": [
+      "deveria ser “em anexos”.",
+      "está errada, pois a norma não aceita “em anexo”.",
+      "é invariável e está correta.",
+      "deveria ser “anexa”.",
+      "deveria concordar com “comprovantes”."
+    ],
+    "correta": 2,
+    "dificuldade": 2,
+    "explicacao": "A locução em anexo não varia: seguem em anexo os comprovantes. Sem o em, anexo é adjetivo e concorda: seguem anexos os comprovantes.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-regencia-p01",
+    "disciplina": "portugues",
+    "assunto": "Regência",
+    "enunciado": "Assinale a frase correta quanto à regência verbal.",
+    "alternativas": [
+      "Esqueci do seu nome.",
+      "Obedeça o regulamento.",
+      "Prefiro estudar do que trabalhar.",
+      "Assisti ao jogo pela televisão.",
+      "Assisti o jogo pela televisão."
+    ],
+    "correta": 3,
+    "dificuldade": 1,
+    "explicacao": "Assistir, com sentido de ver, pede a preposição a: assisti ao jogo. Preferir pede a (prefiro estudar a trabalhar). Obedecer pede a (obedeça ao regulamento). Esquecer sem pronome não tem preposição (esqueci o seu nome); com pronome, tem (esqueci-me do seu nome).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-regencia-p02",
+    "disciplina": "portugues",
+    "assunto": "Regência",
+    "enunciado": "A regência está correta em:",
+    "alternativas": [
+      "O técnico visou o sucesso da equipe.",
+      "Aspiro uma vaga no tribunal.",
+      "Chegamos em casa tarde.",
+      "Namoro com ela há dois anos.",
+      "Aspiro a uma vaga no tribunal."
+    ],
+    "correta": 4,
+    "dificuldade": 2,
+    "explicacao": "Aspirar, com sentido de desejar, pede a preposição a. Visar, com sentido de ter como objetivo, também (visou ao sucesso). Namorar não pede preposição (namoro-a). Chegar pede a na norma-padrão (chegamos a casa).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-regencia-p03",
+    "disciplina": "portugues",
+    "assunto": "Regência",
+    "enunciado": "Na frase “O médico assistiu o paciente durante a madrugada”, o verbo “assistir” foi empregado corretamente, sem preposição, com o sentido de prestar assistência.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. Com sentido de ajudar ou prestar assistência, assistir não pede preposição: assistiu o paciente. Com sentido de ver, pede a: assistiu ao filme.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-regencia-p04",
+    "disciplina": "portugues",
+    "assunto": "Regência",
+    "enunciado": "Em “Esta é a vaga que eu mais aspiro”, a regência está de acordo com a norma-padrão.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. Aspirar, com sentido de desejar, pede a preposição a, que deve vir antes do relativo: esta é a vaga a que eu mais aspiro (ou à qual eu mais aspiro).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-regencia-p05",
+    "disciplina": "portugues",
+    "assunto": "Regência",
+    "enunciado": "Assinale a alternativa em que o pronome relativo está empregado de acordo com a regência.",
+    "alternativas": [
+      "O livro que eu gosto esgotou.",
+      "O cargo a que me candidatei exige nível médio.",
+      "O filme que eu assisti era longo.",
+      "A cidade que eu moro é pequena.",
+      "As regras que obedecemos são antigas."
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Quem se candidata, candidata-se a algo: o cargo a que me candidatei. As outras frases perderam a preposição exigida pelo verbo: a que assisti, em que moro, de que gosto, a que obedecemos.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Vunesp"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-regencia-p06",
+    "disciplina": "portugues",
+    "assunto": "Regência",
+    "enunciado": "Em qual frase há ERRO de regência?",
+    "alternativas": [
+      "Lembrei o compromisso.",
+      "Informamos aos candidatos que a prova foi adiada.",
+      "Informamos aos candidatos de que a prova foi adiada.",
+      "Informamos os candidatos de que a prova foi adiada.",
+      "Lembrei-me do compromisso."
+    ],
+    "correta": 2,
+    "dificuldade": 3,
+    "explicacao": "Informar tem dois modelos: informar alguém de algo (informamos os candidatos de que...) ou informar algo a alguém (informamos aos candidatos que...). Usar as duas preposições ao mesmo tempo está errado. Lembrar-se de e lembrar algo estão corretos.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-regencia-p07",
+    "disciplina": "portugues",
+    "assunto": "Regência",
+    "enunciado": "Quanto à regência do verbo “implicar” no sentido de “acarretar”, está correto:",
+    "alternativas": [
+      "A mudança implicará em aumento de custos.",
+      "A mudança implicará no aumento de custos.",
+      "A mudança implicará por aumento de custos.",
+      "A mudança implicará com aumento de custos.",
+      "A mudança implicará aumento de custos."
+    ],
+    "correta": 4,
+    "dificuldade": 3,
+    "explicacao": "Com sentido de acarretar ou trazer como consequência, implicar não pede preposição na norma-padrão: implicará aumento. A forma implicar em é comum na fala, mas as bancas costumam considerá-la errada.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-regencia-p08",
+    "disciplina": "portugues",
+    "assunto": "Regência",
+    "enunciado": "Complete de acordo com a norma-padrão: “Prefiro café ___ chá.”",
+    "alternativas": [
+      "mais que",
+      "a",
+      "que",
+      "do que",
+      "do que o"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Preferir pede a preposição a: prefiro uma coisa a outra. Construções como prefiro mais e prefiro do que são comuns na fala, mas contrariam a norma-padrão.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cesgranrio"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-regencia-p09",
+    "disciplina": "portugues",
+    "assunto": "Regência",
+    "enunciado": "Qual frase segue a norma-padrão?",
+    "alternativas": [
+      "Simpatizei-me com ele logo.",
+      "Obedeço as regras do edital.",
+      "Aspiro o cargo de analista.",
+      "Obedeço às regras do edital.",
+      "Paguei o pedreiro ontem."
+    ],
+    "correta": 3,
+    "dificuldade": 1,
+    "explicacao": "Obedecer pede a (obedeço às regras). Pagar pede a quando o complemento é pessoa (paguei ao pedreiro). Aspirar, com sentido de desejar, pede a (aspiro ao cargo). Simpatizar não é pronominal: simpatizei com ele.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Vunesp"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-regencia-p10",
+    "disciplina": "portugues",
+    "assunto": "Regência",
+    "enunciado": "O verbo “custar”, no sentido de “ser difícil”, está empregado de acordo com a norma-padrão em:",
+    "alternativas": [
+      "Custou ao candidato entender a questão.",
+      "O candidato custou a entender a questão.",
+      "Custou o candidato a entender a questão.",
+      "O candidato custou em entender a questão.",
+      "O candidato custou entender a questão."
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Com sentido de ser difícil, o sujeito de custar é aquilo que é difícil (entender a questão), e a pessoa vem com a preposição a: custou ao candidato entender. A forma o candidato custou a entender é comum, mas a gramática tradicional a condena.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-pontuacao-p01",
+    "disciplina": "portugues",
+    "assunto": "Pontuação",
+    "enunciado": "Assinale a frase pontuada corretamente.",
+    "alternativas": [
+      "Maria, estuda todos os dias.",
+      "Os candidatos, que chegaram atrasados, não puderam entrar.",
+      "Quando a prova terminou os fiscais, recolheram as folhas.",
+      "Os candidatos, chegaram cedo.",
+      "O diretor disse, que a prova foi adiada."
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Não se separa por vírgula o sujeito do verbo (os candidatos chegaram; Maria estuda) nem o verbo do complemento (disse que...). A oração que chegaram atrasados, entre vírgulas, é uma explicação e está bem pontuada. Na última frase, a vírgula deveria vir depois de terminou, não depois de fiscais.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-pontuacao-p02",
+    "disciplina": "portugues",
+    "assunto": "Pontuação",
+    "enunciado": "A vírgula foi empregada para isolar um aposto em:",
+    "alternativas": [
+      "Comprei pão, leite e café.",
+      "Estudei muito, mas não passei.",
+      "Brasília, a capital do país, fica no Centro-Oeste.",
+      "Em 2020, a prova foi adiada.",
+      "Maria, venha até aqui."
+    ],
+    "correta": 2,
+    "dificuldade": 2,
+    "explicacao": "Aposto é o termo que explica outro: a capital do país explica Brasília. Nas outras frases a vírgula separa vocativo (Maria), oração com mas, expressão de tempo deslocada (em 2020) e itens de uma enumeração.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-pontuacao-p03",
+    "disciplina": "portugues",
+    "assunto": "Pontuação",
+    "enunciado": "Em “Os servidores que faltaram à reunião serão advertidos”, a inserção de vírgulas depois de “servidores” e depois de “reunião” manteria o sentido original do período.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. Sem vírgulas, a oração restringe: só os servidores que faltaram serão advertidos. Com vírgulas, ela passa a explicar e dá a entender que todos os servidores faltaram e todos serão advertidos.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-pontuacao-p04",
+    "disciplina": "portugues",
+    "assunto": "Pontuação",
+    "enunciado": "Na frase “Pedro, traga os documentos”, a vírgula separa o vocativo e é obrigatória.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. Vocativo é o termo usado para chamar alguém, e deve sempre vir separado por vírgula, esteja no começo, no meio ou no fim da frase.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-pontuacao-p05",
+    "disciplina": "portugues",
+    "assunto": "Pontuação",
+    "enunciado": "A frase corretamente pontuada é:",
+    "alternativas": [
+      "Os resultados foram divulgados, no final do ano, pela, banca.",
+      "Os resultados foram, divulgados no final do ano.",
+      "No final do ano os resultados, foram divulgados.",
+      "Os, resultados foram divulgados no final do ano.",
+      "No final do ano, os resultados foram divulgados."
+    ],
+    "correta": 4,
+    "dificuldade": 2,
+    "explicacao": "A expressão de tempo deslocada para o começo da frase pode vir seguida de vírgula: no final do ano, os resultados... As outras frases colocam vírgula entre sujeito e verbo, dentro da locução verbal ou entre palavras que não se separam.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Vunesp"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-pontuacao-p06",
+    "disciplina": "portugues",
+    "assunto": "Pontuação",
+    "enunciado": "Em “O concurso, que teve milhares de inscritos, foi adiado”, se as vírgulas forem retiradas:",
+    "alternativas": [
+      "o verbo “foi” passa a concordar com “inscritos”.",
+      "a oração passa a ser vocativo.",
+      "não há alteração de sentido.",
+      "a oração passa a restringir o sentido, indicando que há outros concursos.",
+      "a frase fica gramaticalmente incorreta."
+    ],
+    "correta": 3,
+    "dificuldade": 3,
+    "explicacao": "Com vírgulas, a oração só acrescenta uma informação sobre o concurso. Sem vírgulas, ela passa a especificar qual concurso foi adiado (o que teve milhares de inscritos), dando a entender que existem outros. A frase continua correta, mas o sentido muda.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-pontuacao-p07",
+    "disciplina": "portugues",
+    "assunto": "Pontuação",
+    "enunciado": "O uso do ponto e vírgula está correto em:",
+    "alternativas": [
+      "Alguns candidatos estudaram português; outros, matemática.",
+      "Português; matemática e informática caíram na prova.",
+      "Alguns candidatos; estudaram português.",
+      "Estudei; muito para a prova.",
+      "Os fiscais chegaram; cedo e organizaram a sala."
+    ],
+    "correta": 0,
+    "dificuldade": 3,
+    "explicacao": "O ponto e vírgula separa orações coordenadas, principalmente quando uma delas já tem vírgula. Em outros, matemática, a vírgula marca o verbo omitido (outros estudaram matemática). Nas demais frases, o ponto e vírgula separa termos que não podem ser separados.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-pontuacao-p08",
+    "disciplina": "portugues",
+    "assunto": "Pontuação",
+    "enunciado": "Em qual frase a vírgula está ERRADA?",
+    "alternativas": [
+      "Ele estudou, mas não foi aprovado.",
+      "Ontem, choveu muito.",
+      "Quero saber, meu amigo, se você vem.",
+      "O fiscal do concurso, anunciou o início da prova.",
+      "Maria, João e Pedro passaram."
+    ],
+    "correta": 3,
+    "dificuldade": 1,
+    "explicacao": "A vírgula não pode separar o sujeito (o fiscal do concurso) do verbo (anunciou). As demais estão corretas: expressão de tempo no começo, enumeração, vocativo e oração com mas.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cesgranrio"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-pontuacao-p09",
+    "disciplina": "portugues",
+    "assunto": "Pontuação",
+    "enunciado": "Assinale a alternativa em que o uso dos dois-pontos está correto.",
+    "alternativas": [
+      "Ele disse que: viria amanhã.",
+      "Os aprovados foram: chamados ontem.",
+      "Na prova, cai de tudo: gramática, interpretação e redação.",
+      "O candidato: estudou muito.",
+      "Precisamos de: calma."
+    ],
+    "correta": 2,
+    "dificuldade": 3,
+    "explicacao": "Os dois-pontos anunciam uma enumeração, uma explicação ou uma citação. Em de tudo: gramática, interpretação e redação, eles introduzem a lista. Nas outras frases, eles separam termos que andam juntos.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Vunesp"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-pontuacao-p10",
+    "disciplina": "portugues",
+    "assunto": "Pontuação",
+    "enunciado": "A frase “Estudou muito; no entanto não foi aprovado” fica de acordo com a norma-padrão em:",
+    "alternativas": [
+      "Estudou muito; no entanto, não foi aprovado.",
+      "Estudou muito no entanto; não foi aprovado.",
+      "Estudou, muito no entanto, não foi aprovado.",
+      "Estudou muito, no entanto não foi, aprovado.",
+      "Estudou muito: no entanto, não, foi aprovado."
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Conectivos como no entanto, porém e contudo, no começo da oração, costumam vir seguidos de vírgula. O ponto e vírgula antes dele separa as duas orações.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-colocacao-p01",
+    "disciplina": "portugues",
+    "assunto": "Colocação pronominal",
+    "enunciado": "Assinale a frase correta quanto à colocação do pronome.",
+    "alternativas": [
+      "Me empresta a caneta?",
+      "Não me esqueci do compromisso.",
+      "Quem disse-te isso?",
+      "Não esqueci-me do compromisso.",
+      "Ninguém avisou-me do horário."
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Palavras negativas (não, ninguém) e interrogativas (quem) atraem o pronome para antes do verbo: não me esqueci, ninguém me avisou, quem te disse. Na norma-padrão, a frase não começa com pronome átono: empresta-me a caneta?",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-colocacao-p02",
+    "disciplina": "portugues",
+    "assunto": "Colocação pronominal",
+    "enunciado": "A colocação pronominal está correta em:",
+    "alternativas": [
+      "Se fará a revisão das provas amanhã.",
+      "Fará-se a revisão das provas amanhã.",
+      "Far-a-se a revisão das provas amanhã.",
+      "Faria-se a revisão das provas amanhã.",
+      "Far-se-á a revisão das provas amanhã."
+    ],
+    "correta": 4,
+    "dificuldade": 2,
+    "explicacao": "Com verbo no futuro do presente ou do pretérito e sem palavra que atraia o pronome, usa-se a mesóclise: far-se-á, far-se-ia. Nunca se usa o pronome depois de verbo nesses tempos (fará-se, faria-se).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-colocacao-p03",
+    "disciplina": "portugues",
+    "assunto": "Colocação pronominal",
+    "enunciado": "Em “Os candidatos que se inscreveram receberão o cartão”, a próclise é obrigatória por causa do pronome relativo “que”.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. Pronomes relativos, como que, atraem o pronome átono para antes do verbo: que se inscreveram.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-colocacao-p04",
+    "disciplina": "portugues",
+    "assunto": "Colocação pronominal",
+    "enunciado": "A frase “Tudo se resolveu rapidamente” tem erro de colocação pronominal, pois o pronome deveria vir depois do verbo.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. Pronomes indefinidos, como tudo, atraem o pronome átono para antes do verbo. A frase está correta: tudo se resolveu.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-colocacao-p05",
+    "disciplina": "portugues",
+    "assunto": "Colocação pronominal",
+    "enunciado": "Assinale a frase em que o pronome depois do verbo (ênclise) está correto.",
+    "alternativas": [
+      "Talvez entregassem-me os documentos.",
+      "Quando entregaram-me os documentos, conferi tudo.",
+      "Eles não entregaram-me os documentos.",
+      "Entregaram-me os documentos ontem.",
+      "Jamais entregaram-me os documentos."
+    ],
+    "correta": 3,
+    "dificuldade": 2,
+    "explicacao": "Sem palavra atrativa, com verbo no começo da frase, usa-se a ênclise: entregaram-me. Advérbios como jamais, talvez e não, e conjunções como quando, atraem o pronome para antes do verbo: jamais me entregaram, quando me entregaram.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Vunesp"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-colocacao-p06",
+    "disciplina": "portugues",
+    "assunto": "Colocação pronominal",
+    "enunciado": "Assinale a frase com colocação pronominal de acordo com a norma-padrão.",
+    "alternativas": [
+      "Nunca se viu tanto esforço na preparação.",
+      "Se viu nunca tanto esforço na preparação.",
+      "Nunca viu-se tanto esforço na preparação.",
+      "Nunca ver-se-ia tanto esforço na preparação.",
+      "Nunca tinha-se visto tanto esforço na preparação."
+    ],
+    "correta": 0,
+    "dificuldade": 3,
+    "explicacao": "Nunca é palavra negativa e atrai o pronome para antes do verbo: nunca se viu, nunca se tinha visto, nunca se veria. A mesóclise (ver-se-ia) só é usada quando não há palavra atrativa.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-colocacao-p07",
+    "disciplina": "portugues",
+    "assunto": "Colocação pronominal",
+    "enunciado": "Com locução verbal, a colocação pronominal está correta em:",
+    "alternativas": [
+      "Não devem-se atrasar os candidatos.",
+      "Os candidatos não se devem atrasar.",
+      "Os candidatos não se devem-se atrasar.",
+      "Os candidatos não deviam-se ter atrasado.",
+      "Os candidatos não devem-se atrasar."
+    ],
+    "correta": 1,
+    "dificuldade": 3,
+    "explicacao": "A negação atrai o pronome para antes do verbo auxiliar: não se devem atrasar. Outra forma correta é colocá-lo depois do verbo principal: não devem atrasar-se. Ligar o pronome ao auxiliar por hífen depois de não está errado.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-colocacao-p08",
+    "disciplina": "portugues",
+    "assunto": "Colocação pronominal",
+    "enunciado": "Qual frase está de acordo com a norma-padrão?",
+    "alternativas": [
+      "Lhe entreguei o livro.",
+      "Te espero amanhã.",
+      "Diga-me a verdade.",
+      "Nos vemos na prova.",
+      "Me diga a verdade."
+    ],
+    "correta": 2,
+    "dificuldade": 1,
+    "explicacao": "Na norma-padrão, a frase não começa com pronome átono (me, te, se, nos, lhe). Por isso: diga-me, espero-te, vemo-nos, entreguei-lhe. Começar com o pronome é comum na fala, mas as provas cobram a regra formal.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cesgranrio"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-colocacao-p09",
+    "disciplina": "portugues",
+    "assunto": "Colocação pronominal",
+    "enunciado": "Assinale a frase com colocação pronominal correta.",
+    "alternativas": [
+      "Direi a verdade-lhe quando chegar.",
+      "Direi-lhe a verdade quando chegar.",
+      "Dir-se-lhe-ei a verdade quando chegar.",
+      "Lhe direi a verdade quando chegar.",
+      "Dir-lhe-ei a verdade quando chegar."
+    ],
+    "correta": 4,
+    "dificuldade": 3,
+    "explicacao": "No futuro do presente, sem palavra atrativa, usa-se a mesóclise: dir-lhe-ei. Pronome depois de verbo no futuro (direi-lhe) está errado, assim como começar a frase com lhe.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Vunesp"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-colocacao-p10",
+    "disciplina": "portugues",
+    "assunto": "Colocação pronominal",
+    "enunciado": "Em “Espero que me avisem com antecedência”, o pronome vem antes do verbo porque:",
+    "alternativas": [
+      "o verbo está no futuro do presente.",
+      "a frase é interrogativa.",
+      "a conjunção “que” atrai o pronome.",
+      "o pronome é reto.",
+      "o verbo está no infinitivo."
+    ],
+    "correta": 2,
+    "dificuldade": 2,
+    "explicacao": "Conjunções subordinativas, como que, atraem o pronome átono para antes do verbo: que me avisem. O verbo avisem está no presente do subjuntivo, e me é pronome oblíquo, não reto.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-pronomes-p01",
+    "disciplina": "portugues",
+    "assunto": "Emprego de pronomes",
+    "enunciado": "Assinale a frase com o pronome empregado corretamente.",
+    "alternativas": [
+      "Ele trouxe o livro para mim ler.",
+      "Isto é para eu fazer.",
+      "Entre eu e você não há segredos.",
+      "Vi ele na fila do concurso.",
+      "Isto é para mim fazer."
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Antes de verbo no infinitivo, quando o pronome é quem faz a ação, usa-se eu: para eu fazer, para eu ler. Depois de preposição sem verbo em seguida, usa-se mim: entre mim e você. Como objeto, a norma-padrão pede o pronome oblíquo: vi-o na fila.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-pronomes-p02",
+    "disciplina": "portugues",
+    "assunto": "Emprego de pronomes",
+    "enunciado": "Os pronomes demonstrativos estão empregados de acordo com a norma-padrão em:",
+    "alternativas": [
+      "Nesta cidade onde você mora faz frio.",
+      "Aquilo que estou segurando é meu.",
+      "Essa prova que tenho em mãos é difícil.",
+      "Em 1990, nesta época, não havia internet.",
+      "Estudei português e matemática; esta me parece mais fácil que aquele."
+    ],
+    "correta": 4,
+    "dificuldade": 2,
+    "explicacao": "Para retomar dois itens, este se refere ao mais próximo (matemática) e aquele ao mais distante (português). Este e isto indicam o que está perto de quem fala (esta prova em minhas mãos, isto que estou segurando); esse, o que está perto de quem ouve (nessa cidade onde você mora); aquele, o que está longe no tempo (naquela época).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-pronomes-p03",
+    "disciplina": "portugues",
+    "assunto": "Emprego de pronomes",
+    "enunciado": "Na frase “O concurso cujo edital saiu ontem terá mil vagas”, o pronome “cujo” está correto e poderia ser substituído por “cujo o” sem prejuízo gramatical.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. O pronome cujo está correto, mas nunca vem seguido de artigo. As formas cujo o e cuja a são sempre erradas.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-pronomes-p04",
+    "disciplina": "portugues",
+    "assunto": "Emprego de pronomes",
+    "enunciado": "Em “Vossa Excelência está convocado para a sessão”, o verbo está na 3ª pessoa porque os pronomes de tratamento levam o verbo para a 3ª pessoa.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. Mesmo quando nos dirigimos diretamente à pessoa, os pronomes de tratamento (Vossa Excelência, Vossa Senhoria, você) levam o verbo e os possessivos para a 3ª pessoa: Vossa Excelência está, seu gabinete.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-pronomes-p05",
+    "disciplina": "portugues",
+    "assunto": "Emprego de pronomes",
+    "enunciado": "O pronome relativo está empregado de acordo com a norma-padrão em:",
+    "alternativas": [
+      "A situação onde nos encontramos é difícil.",
+      "O momento onde percebi o erro foi tarde demais.",
+      "A lei na qual me refiro foi alterada.",
+      "A empresa onde trabalho fica no centro.",
+      "O candidato cujo o nome foi chamado saiu."
+    ],
+    "correta": 3,
+    "dificuldade": 2,
+    "explicacao": "Onde só se usa para lugar físico: a empresa onde trabalho. Para tempo ou situação, usa-se em que (o momento em que, a situação em que). Cujo não aceita artigo depois dele. Referir-se pede a: a lei à qual me refiro.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Vunesp"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-pronomes-p06",
+    "disciplina": "portugues",
+    "assunto": "Emprego de pronomes",
+    "enunciado": "Na frase “Entreguei os documentos ao fiscal”, substituindo “os documentos” por um pronome, a forma correta é:",
+    "alternativas": [
+      "Entreguei-os ao fiscal.",
+      "Entreguei-lhe os documentos ao fiscal.",
+      "Entreguei eles ao fiscal.",
+      "Entreguei-lhes ao fiscal.",
+      "Entreguei-nos ao fiscal."
+    ],
+    "correta": 0,
+    "dificuldade": 3,
+    "explicacao": "Os documentos é objeto direto, sem preposição, e é substituído por o, a, os, as: entreguei-os. Lhe e lhes substituem objeto indireto (a alguém). Eles, como objeto, é marca da fala e não da norma-padrão.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-pronomes-p07",
+    "disciplina": "portugues",
+    "assunto": "Emprego de pronomes",
+    "enunciado": "Substituindo “ao fiscal” por pronome na frase “Entreguei os documentos ao fiscal”, obtém-se:",
+    "alternativas": [
+      "Entreguei-a os documentos.",
+      "Entreguei ele os documentos.",
+      "Entreguei-lhe os documentos.",
+      "Entreguei-o os documentos.",
+      "Entreguei-lhes os documentos."
+    ],
+    "correta": 2,
+    "dificuldade": 3,
+    "explicacao": "Ao fiscal é objeto indireto (entregar algo a alguém), no singular, e é substituído por lhe: entreguei-lhe os documentos. Lhes seria para o plural (aos fiscais).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-pronomes-p08",
+    "disciplina": "portugues",
+    "assunto": "Emprego de pronomes",
+    "enunciado": "Complete: “Este livro é para ___ e para você.”",
+    "alternativas": [
+      "me",
+      "meu",
+      "eu",
+      "mim",
+      "comigo"
+    ],
+    "correta": 3,
+    "dificuldade": 1,
+    "explicacao": "Depois de preposição, usa-se o pronome oblíquo tônico: para mim. O pronome eu só aparece depois de para quando é sujeito de um verbo no infinitivo (para eu ler).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cesgranrio"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-pronomes-p09",
+    "disciplina": "portugues",
+    "assunto": "Emprego de pronomes",
+    "enunciado": "Na frase “Fizeram o trabalho”, a substituição de “o trabalho” por pronome resulta em:",
+    "alternativas": [
+      "Fizeram-lhe.",
+      "Fizeram-lo.",
+      "Fizeram-o.",
+      "Fizeram ele.",
+      "Fizeram-no."
+    ],
+    "correta": 4,
+    "dificuldade": 3,
+    "explicacao": "Depois de verbo terminado em som nasal (-am, -em, -ão, -õe), os pronomes o, a, os, as viram no, na, nos, nas: fizeram-no, põe-na, dão-nos.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Vunesp"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-pronomes-p10",
+    "disciplina": "portugues",
+    "assunto": "Emprego de pronomes",
+    "enunciado": "Na frase “Vou encontrar os amigos”, a substituição de “os amigos” por pronome, de acordo com a norma-padrão, é:",
+    "alternativas": [
+      "Vou encontrar-lhes.",
+      "Vou encontrá-los.",
+      "Vou encontrar-os.",
+      "Vou encontrá-lhes.",
+      "Vou encontrar eles."
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Depois de verbo terminado em r, s ou z, essa letra cai e o pronome vira lo, la, los, las: encontrar + os = encontrá-los. Lhes é para objeto indireto, e encontrar pede objeto direto.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-verbos-p01",
+    "disciplina": "portugues",
+    "assunto": "Tempos e modos verbais",
+    "enunciado": "Assinale a frase com o verbo conjugado corretamente.",
+    "alternativas": [
+      "Se eu vir o edital, aviso você.",
+      "Quando ele pôr os documentos na mesa, confira.",
+      "Quando eu fazer a prova, conto como foi.",
+      "Se eu ver o edital, aviso você.",
+      "Se ele manter a calma, vai passar."
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "O futuro do subjuntivo de ver é vir (se eu vir), o de pôr é puser (quando ele puser), o de manter é mantiver e o de fazer é fizer. Trocar essas formas pelo infinitivo é um dos erros mais cobrados em prova.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-verbos-p02",
+    "disciplina": "portugues",
+    "assunto": "Tempos e modos verbais",
+    "enunciado": "Está correta a forma verbal em:",
+    "alternativas": [
+      "Se ele propor um acordo, aceitaremos.",
+      "Eles intervieram na discussão.",
+      "Quando você dispor de tempo, ligue.",
+      "Eles interviram na discussão.",
+      "O juiz reaveu os bens."
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Verbos derivados seguem o verbo de origem. Intervir vem de vir (vieram, intervieram). Reaver vem de haver (houve, reouve). Propor e dispor vêm de pôr (quando ele puser, propuser, dispuser).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-verbos-p03",
+    "disciplina": "portugues",
+    "assunto": "Tempos e modos verbais",
+    "enunciado": "Em “Se o candidato manter o foco, será aprovado”, a forma “manter” está correta no futuro do subjuntivo.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. Manter vem de ter e segue sua conjugação: se ele tiver, se ele mantiver. A forma correta é se o candidato mantiver o foco.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-verbos-p04",
+    "disciplina": "portugues",
+    "assunto": "Tempos e modos verbais",
+    "enunciado": "Na frase “Eu estudava todas as noites quando era jovem”, o pretérito imperfeito indica uma ação habitual no passado.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. O pretérito imperfeito (estudava, era) expressa ações que se repetiam ou duravam no passado, diferente do perfeito (estudei), que indica ação concluída.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-verbos-p05",
+    "disciplina": "portugues",
+    "assunto": "Tempos e modos verbais",
+    "enunciado": "O verbo está no futuro do pretérito em:",
+    "alternativas": [
+      "Eu farei a prova amanhã.",
+      "Quando eu fizer a prova, aviso.",
+      "Eu fiz a prova ontem.",
+      "Eu faria a prova se tivesse tempo.",
+      "Eu fazia provas todo mês."
+    ],
+    "correta": 3,
+    "dificuldade": 2,
+    "explicacao": "O futuro do pretérito (faria) indica algo que aconteceria sob uma condição. Farei é futuro do presente, fiz é pretérito perfeito, fazia é pretérito imperfeito e fizer é futuro do subjuntivo.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Vunesp"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-verbos-p06",
+    "disciplina": "portugues",
+    "assunto": "Tempos e modos verbais",
+    "enunciado": "Assinale a frase com correlação de tempos verbais correta.",
+    "alternativas": [
+      "Se eu tiver estudado, teria sido aprovado.",
+      "Se eu estudasse, serei aprovado.",
+      "Se eu tivesse estudado, teria sido aprovado.",
+      "Se eu estudar, teria sido aprovado.",
+      "Se eu tivesse estudado, serei aprovado."
+    ],
+    "correta": 2,
+    "dificuldade": 3,
+    "explicacao": "Condição no passado que não aconteceu (se eu tivesse estudado) combina com o futuro do pretérito composto (teria sido). Condição possível no futuro (se eu estudar) combina com o futuro do presente (serei aprovado).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-verbos-p07",
+    "disciplina": "portugues",
+    "assunto": "Tempos e modos verbais",
+    "enunciado": "O verbo “reaver” está corretamente conjugado em:",
+    "alternativas": [
+      "Ele reouve o dinheiro perdido.",
+      "Nós reavimos a casa ontem.",
+      "Ele reaveu o dinheiro perdido.",
+      "Eu reavejo meus documentos.",
+      "Ela reaviu o celular roubado."
+    ],
+    "correta": 0,
+    "dificuldade": 3,
+    "explicacao": "Reaver só se conjuga nas formas em que o verbo haver tem a letra v: houve, reouve; houvemos, reouvemos. No presente, existem apenas reavemos e reaveis. Formas como reaveu, reavejo e reaviu não existem.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-verbos-p08",
+    "disciplina": "portugues",
+    "assunto": "Tempos e modos verbais",
+    "enunciado": "Qual frase está no modo imperativo?",
+    "alternativas": [
+      "Talvez eu leia o edital.",
+      "Eu li o edital.",
+      "Se eu lesse o edital, saberia.",
+      "Eu lerei o edital.",
+      "Leia o edital com atenção."
+    ],
+    "correta": 4,
+    "dificuldade": 1,
+    "explicacao": "O imperativo expressa ordem, pedido ou conselho: leia o edital. As outras frases estão no indicativo (li, lerei) e no subjuntivo (talvez eu leia, se eu lesse).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cesgranrio"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-verbos-p09",
+    "disciplina": "portugues",
+    "assunto": "Tempos e modos verbais",
+    "enunciado": "Assinale a forma correta do imperativo quando se trata a pessoa por “você”.",
+    "alternativas": [
+      "Faz sua inscrição e traga o documento.",
+      "Fazes sua inscrição e trazes o documento.",
+      "Fazei sua inscrição e trazei o documento.",
+      "Faça sua inscrição e traz o documento.",
+      "Faça sua inscrição e traga o documento."
+    ],
+    "correta": 4,
+    "dificuldade": 3,
+    "explicacao": "Com você, o imperativo usa as formas do presente do subjuntivo: faça, traga. Faz e traz são formas de tu; fazei e trazei, de vós. Na mesma frase, não se misturam tratamentos.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Vunesp"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-verbos-p10",
+    "disciplina": "portugues",
+    "assunto": "Tempos e modos verbais",
+    "enunciado": "Em “O edital foi publicado ontem”, a locução verbal está na voz:",
+    "alternativas": [
+      "reflexiva.",
+      "passiva sintética.",
+      "ativa.",
+      "passiva analítica.",
+      "média."
+    ],
+    "correta": 3,
+    "dificuldade": 2,
+    "explicacao": "Ser mais particípio (foi publicado) forma a voz passiva analítica: o sujeito (o edital) recebe a ação. A passiva sintética usa o pronome se: publicou-se o edital.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-coesao-p01",
+    "disciplina": "portugues",
+    "assunto": "Conectivos e coesão",
+    "enunciado": "Na frase “Estudou muito, porém não foi aprovado”, a conjunção “porém” indica:",
+    "alternativas": [
+      "condição.",
+      "causa.",
+      "oposição.",
+      "conclusão.",
+      "tempo."
+    ],
+    "correta": 2,
+    "dificuldade": 1,
+    "explicacao": "Porém é conjunção adversativa: liga ideias que se opõem, como mas, contudo, todavia e no entanto.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-coesao-p02",
+    "disciplina": "portugues",
+    "assunto": "Conectivos e coesão",
+    "enunciado": "Em “Embora estivesse cansado, continuou estudando”, o conectivo “embora” pode ser substituído, sem mudança de sentido, por:",
+    "alternativas": [
+      "Porque",
+      "Ainda que",
+      "Portanto",
+      "À medida que",
+      "Desde que"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Embora e ainda que são concessivos: apresentam um obstáculo que não impede a ação. Porque indica causa; portanto, conclusão; desde que, condição; à medida que, proporção.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-coesao-p03",
+    "disciplina": "portugues",
+    "assunto": "Conectivos e coesão",
+    "enunciado": "Em “O candidato estudou bastante, logo estava confiante”, a palavra “logo” tem valor conclusivo e poderia ser substituída por “portanto”.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. Logo, nessa frase, introduz uma conclusão, como portanto, por isso e assim. Em outro contexto, logo pode indicar tempo (chego logo).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-coesao-p04",
+    "disciplina": "portugues",
+    "assunto": "Conectivos e coesão",
+    "enunciado": "Na frase “Como choveu muito, a prova foi adiada”, o termo “como” expressa comparação.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. No começo da frase e antes da consequência, como indica causa: a chuva foi o motivo do adiamento. Equivale a porque ou já que.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-coesao-p05",
+    "disciplina": "portugues",
+    "assunto": "Conectivos e coesão",
+    "enunciado": "Na frase “Caso o candidato se atrase, não poderá entrar”, o termo “caso” expressa:",
+    "alternativas": [
+      "condição.",
+      "finalidade.",
+      "proporção.",
+      "concessão.",
+      "causa."
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Caso introduz uma condição, como se: só não entra se atrasar.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Vunesp"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-coesao-p06",
+    "disciplina": "portugues",
+    "assunto": "Conectivos e coesão",
+    "enunciado": "Assinale a alternativa que mantém o sentido de “À medida que estudava, sentia-se mais seguro”.",
+    "alternativas": [
+      "Para que estudasse, sentia-se mais seguro.",
+      "Porque estudava, sentia-se mais seguro.",
+      "Conforme estudava, sentia-se mais seguro.",
+      "Embora estudasse, sentia-se mais seguro.",
+      "Caso estudasse, sentia-se mais seguro."
+    ],
+    "correta": 2,
+    "dificuldade": 3,
+    "explicacao": "À medida que e conforme indicam proporção: quanto mais estudava, mais seguro ficava. Porque indica causa, embora indica concessão, para que indica finalidade e caso indica condição.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-coesao-p07",
+    "disciplina": "portugues",
+    "assunto": "Conectivos e coesão",
+    "enunciado": "No período “O concurso foi adiado a fim de que todos pudessem se inscrever”, a locução “a fim de que” estabelece relação de:",
+    "alternativas": [
+      "concessão.",
+      "finalidade.",
+      "tempo.",
+      "consequência.",
+      "causa."
+    ],
+    "correta": 1,
+    "dificuldade": 3,
+    "explicacao": "A fim de que indica o objetivo da ação, como para que. Cuidado com a grafia: a fim de (com o objetivo de) é diferente de afim (parecido, com afinidade).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-coesao-p08",
+    "disciplina": "portugues",
+    "assunto": "Conectivos e coesão",
+    "enunciado": "Qual conectivo completa a frase com sentido de explicação: “Leve o guarda-chuva, ___ vai chover.”",
+    "alternativas": [
+      "portanto",
+      "mas",
+      "se",
+      "embora",
+      "pois"
+    ],
+    "correta": 4,
+    "dificuldade": 1,
+    "explicacao": "Pois, antes da oração, introduz uma explicação para o pedido: leve o guarda-chuva porque vai chover. Mas indica oposição; embora, concessão; se, condição; portanto, conclusão.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cesgranrio"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-coesao-p09",
+    "disciplina": "portugues",
+    "assunto": "Conectivos e coesão",
+    "enunciado": "Em “Ele é tão dedicado que foi o primeiro colocado”, a oração introduzida por “que” expressa:",
+    "alternativas": [
+      "comparação.",
+      "finalidade.",
+      "condição.",
+      "consequência.",
+      "causa."
+    ],
+    "correta": 3,
+    "dificuldade": 3,
+    "explicacao": "A estrutura tão... que indica consequência: foi o primeiro colocado por ser tão dedicado. O mesmo vale para tanto... que e tal... que.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Vunesp"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-coesao-p10",
+    "disciplina": "portugues",
+    "assunto": "Conectivos e coesão",
+    "enunciado": "Na frase “Não só estudou português, mas também revisou matemática”, a relação estabelecida é de:",
+    "alternativas": [
+      "adição.",
+      "alternância.",
+      "conclusão.",
+      "explicação.",
+      "oposição."
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Não só... mas também é uma expressão aditiva: soma duas ações, como e. Apesar da palavra mas, não há oposição.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-semantica-p01",
+    "disciplina": "portugues",
+    "assunto": "Semântica",
+    "enunciado": "Assinale a frase em que a palavra está empregada com o sentido correto.",
+    "alternativas": [
+      "A cessão da Câmara começou às 9h.",
+      "O perfume tinha um flagrante agradável.",
+      "O funcionário foi descriminado por ser jovem.",
+      "O juiz vai ratificar a decisão anterior, confirmando-a.",
+      "Quem infligir a lei será punido."
+    ],
+    "correta": 3,
+    "dificuldade": 1,
+    "explicacao": "Ratificar é confirmar. Nas outras frases há troca de palavras parecidas: o cheiro é fragrante (flagrante é o que se vê no momento), quem sofre preconceito é discriminado (descriminar é deixar de considerar crime), quem desobedece a lei a infringe (infligir é aplicar pena) e reunião de órgão é sessão (cessão é o ato de ceder).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-semantica-p02",
+    "disciplina": "portugues",
+    "assunto": "Semântica",
+    "enunciado": "A palavra “ratificar” significa:",
+    "alternativas": [
+      "adiar.",
+      "rasurar.",
+      "confirmar.",
+      "corrigir.",
+      "anular."
+    ],
+    "correta": 2,
+    "dificuldade": 2,
+    "explicacao": "Ratificar é confirmar, validar. Não confunda com retificar, que é corrigir. Dica: retificar lembra reta, deixar certo.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-semantica-p03",
+    "disciplina": "portugues",
+    "assunto": "Semântica",
+    "enunciado": "Na frase “O perigo era iminente”, a palavra “iminente” significa “que está prestes a acontecer”.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. Iminente é o que está para acontecer. Eminente, com e, significa importante ou elevado, como em um eminente professor.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-semantica-p04",
+    "disciplina": "portugues",
+    "assunto": "Semântica",
+    "enunciado": "Em “O diretor deferiu o pedido do servidor”, o verbo “deferiu” indica que o pedido foi negado.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. Deferir é atender, aprovar o pedido. Indeferir é negar. E diferir, com i, significa adiar ou ser diferente.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-semantica-p05",
+    "disciplina": "portugues",
+    "assunto": "Semântica",
+    "enunciado": "Em “O candidato ficou exausto após a prova”, um sinônimo de “exausto” é:",
+    "alternativas": [
+      "esgotado.",
+      "atento.",
+      "animado.",
+      "ansioso.",
+      "satisfeito."
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Exausto quer dizer muito cansado, sem energia: esgotado. As outras palavras não têm esse sentido.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Vunesp"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-semantica-p06",
+    "disciplina": "portugues",
+    "assunto": "Semântica",
+    "enunciado": "Assinale a frase que apresenta ambiguidade.",
+    "alternativas": [
+      "A prova foi considerada fácil por todos.",
+      "O policial prendeu o suspeito na casa do suspeito.",
+      "Ontem choveu muito na cidade.",
+      "Os candidatos chegaram cedo ao local da prova.",
+      "O policial prendeu o suspeito em sua casa."
+    ],
+    "correta": 4,
+    "dificuldade": 3,
+    "explicacao": "Em sua casa pode ser a casa do policial ou a do suspeito: a frase tem dois sentidos possíveis. Na segunda opção, a ambiguidade foi desfeita ao se dizer de quem é a casa.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-semantica-p07",
+    "disciplina": "portugues",
+    "assunto": "Semântica",
+    "enunciado": "Em “A proposta foi acolhida com reservas pela banca”, a expressão “com reservas” significa:",
+    "alternativas": [
+      "com entusiasmo.",
+      "com restrições ou dúvidas.",
+      "com dinheiro guardado.",
+      "em segredo.",
+      "com lugares marcados."
+    ],
+    "correta": 1,
+    "dificuldade": 3,
+    "explicacao": "Aceitar algo com reservas é aceitar sem concordar totalmente, mantendo restrições ou desconfiança. O sentido depende do contexto: aqui não se trata de reserva de lugar ou de dinheiro.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-semantica-p08",
+    "disciplina": "portugues",
+    "assunto": "Semântica",
+    "enunciado": "A palavra de sentido contrário (antônimo) a “efêmero” é:",
+    "alternativas": [
+      "breve.",
+      "duradouro.",
+      "rápido.",
+      "passageiro.",
+      "fugaz."
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Efêmero é o que dura pouco. Passageiro, rápido, breve e fugaz são sinônimos. O antônimo é duradouro, o que dura muito.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cesgranrio"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-semantica-p09",
+    "disciplina": "portugues",
+    "assunto": "Semântica",
+    "enunciado": "A palavra “sessão” está empregada corretamente em:",
+    "alternativas": [
+      "A sessão de brinquedos fica no térreo.",
+      "Ele trabalha na sessão de pessoal.",
+      "Houve a sessão das hostilidades.",
+      "A sessão da Câmara começou às 14h.",
+      "A sessão dos direitos autorais foi assinada."
+    ],
+    "correta": 3,
+    "dificuldade": 2,
+    "explicacao": "Sessão é reunião ou tempo de um evento (sessão da Câmara, sessão de cinema). Seção é parte ou setor (seção de brinquedos, seção de pessoal). Cessão é o ato de ceder (cessão de direitos). O fim das hostilidades é a cessação.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Vunesp"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-semantica-p10",
+    "disciplina": "portugues",
+    "assunto": "Semântica",
+    "enunciado": "Em “O relatório era prolixo”, a palavra “prolixo” indica que o texto era:",
+    "alternativas": [
+      "cheio de erros de grafia.",
+      "confidencial.",
+      "escrito à mão.",
+      "curto e objetivo.",
+      "longo e cansativo, com palavras demais."
+    ],
+    "correta": 4,
+    "dificuldade": 2,
+    "explicacao": "Prolixo é o texto que usa palavras demais para dizer pouco. O contrário é conciso.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-interpretacao-p01",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Leia o texto: “Quem estuda para concurso costuma medir o progresso pelo número de horas sentado à mesa. Mas horas, sozinhas, dizem pouco. Duas horas de leitura distraída valem menos que quarenta minutos resolvendo questões e revisando os erros. O que conta não é o tempo gasto, e sim o que fica na memória depois dele.” A ideia principal do texto é:",
+    "alternativas": [
+      "estudar sentado à mesa prejudica a memória.",
+      "ler é a única forma de estudar.",
+      "a qualidade do estudo importa mais que a quantidade de horas.",
+      "quem estuda mais horas é sempre aprovado.",
+      "resolver questões é perda de tempo."
+    ],
+    "correta": 2,
+    "dificuldade": 1,
+    "explicacao": "O texto critica medir o estudo só pelas horas e defende que importa o que se aprende: quarenta minutos bem usados valem mais que duas horas distraídas. As outras opções dizem o contrário do texto ou algo que ele não afirma.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-interpretacao-p02",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Leia o texto: “Quem estuda para concurso costuma medir o progresso pelo número de horas sentado à mesa. Mas horas, sozinhas, dizem pouco. Duas horas de leitura distraída valem menos que quarenta minutos resolvendo questões e revisando os erros.” De acordo com o texto, duas horas de leitura distraída produzem mais resultado que quarenta minutos de questões com revisão dos erros.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. O texto diz o oposto: duas horas de leitura distraída valem menos que quarenta minutos resolvendo questões e revisando os erros.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-interpretacao-p03",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Leia o texto: “Quem estuda para concurso costuma medir o progresso pelo número de horas sentado à mesa. Mas horas, sozinhas, dizem pouco.” No trecho “Mas horas, sozinhas, dizem pouco”, a palavra “sozinhas” tem o sentido de:",
+    "alternativas": [
+      "isoladamente, sem considerar mais nada.",
+      "em silêncio.",
+      "de madrugada.",
+      "com tristeza.",
+      "sem a companhia de outras pessoas."
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "No contexto, sozinhas se refere às horas: o número de horas, isolado, sem olhar a qualidade do estudo, diz pouco. Não se trata de estudar sem companhia.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-interpretacao-p04",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Leia o texto: “A cidade decidiu fechar a rua principal para carros aos domingos. Nas primeiras semanas, comerciantes reclamaram, temendo perder clientes. Três meses depois, o movimento nas lojas havia crescido, e as famílias passaram a ocupar a rua com bicicletas e cadeiras. Os mesmos comerciantes agora pedem que a medida valha também aos sábados.” Segundo o texto, a reação dos comerciantes:",
+    "alternativas": [
+      "não é mencionada.",
+      "manteve-se contrária até o fim.",
+      "foi de apoio desde o início.",
+      "levou a prefeitura a cancelar a medida.",
+      "mudou de resistência para apoio à medida."
+    ],
+    "correta": 4,
+    "dificuldade": 2,
+    "explicacao": "No começo, os comerciantes reclamaram. Depois que o movimento cresceu, passaram a pedir que a medida valesse também aos sábados: a posição deles mudou de contra para a favor.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Vunesp"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-interpretacao-p05",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Leia o texto: “A cidade decidiu fechar a rua principal para carros aos domingos. Nas primeiras semanas, comerciantes reclamaram, temendo perder clientes. Três meses depois, o movimento nas lojas havia crescido, e as famílias passaram a ocupar a rua com bicicletas e cadeiras. Os mesmos comerciantes agora pedem que a medida valha também aos sábados.” Infere-se do texto que:",
+    "alternativas": [
+      "os carros voltaram a circular aos domingos.",
+      "a medida já vale para todos os dias da semana.",
+      "o receio inicial dos comerciantes não se confirmou.",
+      "o comércio da cidade passou a fechar aos domingos.",
+      "as famílias reclamaram da medida."
+    ],
+    "correta": 2,
+    "dificuldade": 3,
+    "explicacao": "Os comerciantes temiam perder clientes, mas o movimento das lojas cresceu. Logo, o medo não se confirmou. O texto não diz que os carros voltaram, que as famílias reclamaram ou que a medida vale para todos os dias: os comerciantes apenas pedem que valha aos sábados.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-interpretacao-p06",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Leia o texto: “A cidade decidiu fechar a rua principal para carros aos domingos. Nas primeiras semanas, comerciantes reclamaram, temendo perder clientes. Três meses depois, o movimento nas lojas havia crescido. Os mesmos comerciantes agora pedem que a medida valha também aos sábados.” O texto informa que a medida já foi estendida aos sábados.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. O texto diz apenas que os comerciantes pedem que a medida valha aos sábados. Um pedido não significa que ela foi estendida.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-interpretacao-p07",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Leia o texto: “Muita gente acha que ler um parágrafo várias vezes é a melhor forma de aprender. Pesquisas em psicologia da educação indicam outra coisa: tentar lembrar o conteúdo sem olhar o material, mesmo errando, fixa mais do que reler. O esforço de buscar a informação na memória é justamente o que a fortalece.” Segundo o texto, o que mais ajuda a fixar o conteúdo é:",
+    "alternativas": [
+      "reler o mesmo parágrafo várias vezes.",
+      "tentar lembrar o conteúdo sem consultar o material.",
+      "estudar apenas psicologia da educação.",
+      "copiar o material à mão.",
+      "evitar errar durante o estudo."
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "O texto afirma que tentar lembrar sem olhar o material, mesmo errando, fixa mais do que reler, porque o esforço de buscar na memória a fortalece.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-interpretacao-p08",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Leia o texto: “Muita gente acha que ler um parágrafo várias vezes é a melhor forma de aprender. Pesquisas em psicologia da educação indicam outra coisa: tentar lembrar o conteúdo sem olhar o material fixa mais do que reler.” A expressão “outra coisa” refere-se a:",
+    "alternativas": [
+      "a memória de longo prazo.",
+      "um parágrafo diferente do texto.",
+      "um novo livro de psicologia.",
+      "uma conclusão diferente da ideia de que reler é o melhor método.",
+      "a opinião da maioria das pessoas."
+    ],
+    "correta": 3,
+    "dificuldade": 1,
+    "explicacao": "Outra coisa se opõe ao que muita gente acha (que reler é o melhor método). O que vem depois dos dois-pontos explica qual é essa outra conclusão: tentar lembrar fixa mais.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cesgranrio"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-interpretacao-p09",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Leia o texto: “Pesquisas em psicologia da educação indicam que tentar lembrar o conteúdo sem olhar o material, mesmo errando, fixa mais do que reler. O esforço de buscar a informação na memória é justamente o que a fortalece.” Depreende-se do texto que errar ao tentar lembrar o conteúdo anula o benefício do exercício.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 3,
+    "explicacao": "Errado. O texto diz que tentar lembrar fixa mais mesmo errando. O erro não anula o benefício; o que fortalece a memória é o esforço de buscar a informação.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-interpretacao-p10",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Leia o texto: “O servidor público não é dono do cargo que ocupa: ele o exerce em nome de todos. Por isso, a pressa em atender um amigo, quando passa à frente da fila, não é gentileza — é injustiça com quem esperava.” O travessão no trecho “— é injustiça com quem esperava” serve para:",
+    "alternativas": [
+      "dar ênfase à correção feita pelo autor: o que parece gentileza é, na verdade, injustiça.",
+      "marcar uma enumeração.",
+      "substituir as aspas de uma citação.",
+      "separar o sujeito do verbo.",
+      "indicar a fala de um personagem."
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "O travessão destaca a retificação que o autor faz: ele nega que a atitude seja gentileza e afirma que é injustiça. Não há diálogo, enumeração ou citação no trecho.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Vunesp"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-quese-p01",
+    "disciplina": "portugues",
+    "assunto": "Funções do que e do se",
+    "enunciado": "Em “O livro que comprei é ótimo”, a palavra “que” é:",
+    "alternativas": [
+      "advérbio de intensidade.",
+      "conjunção integrante.",
+      "conjunção consecutiva.",
+      "pronome relativo.",
+      "preposição."
+    ],
+    "correta": 3,
+    "dificuldade": 2,
+    "explicacao": "O que retoma livro e pode ser trocado por o qual: o livro o qual comprei. Essa é a marca do pronome relativo.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-quese-p02",
+    "disciplina": "portugues",
+    "assunto": "Funções do que e do se",
+    "enunciado": "Em “Espero que você seja aprovado”, o “que” é:",
+    "alternativas": [
+      "pronome interrogativo.",
+      "conjunção integrante.",
+      "conjunção causal.",
+      "pronome relativo.",
+      "partícula expletiva."
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "A conjunção integrante inicia uma oração que completa o verbo: espero isso (que você seja aprovado). Ela não retoma nenhuma palavra, por isso não é pronome relativo.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-quese-p03",
+    "disciplina": "portugues",
+    "assunto": "Funções do que e do se",
+    "enunciado": "Em “Vendem-se casas”, o “se” é pronome apassivador, e a frase equivale a “Casas são vendidas”.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. Com verbo que pede objeto direto (vender algo), o se forma a voz passiva sintética: casas é o sujeito, e o verbo concorda com ele.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-quese-p04",
+    "disciplina": "portugues",
+    "assunto": "Funções do que e do se",
+    "enunciado": "Na frase “Precisa-se de professores”, o “se” é pronome apassivador, e por isso o verbo poderia ir ao plural.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 3,
+    "explicacao": "Errado. Precisar de pede preposição, então o se indetermina o sujeito, e o verbo fica sempre no singular: precisa-se de professores.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-quese-p05",
+    "disciplina": "portugues",
+    "assunto": "Funções do que e do se",
+    "enunciado": "O “se” é conjunção condicional em:",
+    "alternativas": [
+      "Não sei se ele virá.",
+      "Vive-se bem nesta cidade.",
+      "Se chover, a prova será adiada.",
+      "Ele se feriu no treino.",
+      "Aluga-se casa na praia."
+    ],
+    "correta": 2,
+    "dificuldade": 2,
+    "explicacao": "Em se chover, o se indica condição (caso chova). Nas outras frases ele é pronome reflexivo (se feriu), pronome apassivador (aluga-se casa), índice de indeterminação do sujeito (vive-se bem) e conjunção integrante (não sei se ele virá).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Vunesp"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-quese-p06",
+    "disciplina": "portugues",
+    "assunto": "Funções do que e do se",
+    "enunciado": "Em “Não sei se ele virá”, o “se” é:",
+    "alternativas": [
+      "conjunção integrante.",
+      "pronome reflexivo.",
+      "pronome apassivador.",
+      "conjunção condicional.",
+      "índice de indeterminação do sujeito."
+    ],
+    "correta": 0,
+    "dificuldade": 3,
+    "explicacao": "A oração se ele virá completa o verbo saber (não sei isso). O se que inicia oração que completa um verbo é conjunção integrante, como o que em espero que ele venha.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-quese-p07",
+    "disciplina": "portugues",
+    "assunto": "Funções do que e do se",
+    "enunciado": "Em “Ela é mais alta que o irmão”, o “que” é:",
+    "alternativas": [
+      "preposição.",
+      "conjunção consecutiva.",
+      "conjunção integrante.",
+      "pronome relativo.",
+      "conjunção comparativa."
+    ],
+    "correta": 4,
+    "dificuldade": 3,
+    "explicacao": "A estrutura mais... que compara duas coisas: é conjunção comparativa. Também pode ser escrita como mais alta do que o irmão.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-quese-p08",
+    "disciplina": "portugues",
+    "assunto": "Funções do que e do se",
+    "enunciado": "Em “Ela se penteou”, o “se” indica que:",
+    "alternativas": [
+      "o sujeito é indeterminado.",
+      "o sujeito pratica e recebe a ação.",
+      "há uma condição.",
+      "a frase está na voz passiva.",
+      "há uma comparação."
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "O se é pronome reflexivo: ela penteou a si mesma. Quem faz a ação também a recebe.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cesgranrio"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-quese-p09",
+    "disciplina": "portugues",
+    "assunto": "Funções do que e do se",
+    "enunciado": "Em “Fale baixo, que o bebê está dormindo”, o “que” tem valor:",
+    "alternativas": [
+      "comparativo.",
+      "consecutivo.",
+      "explicativo, equivalente a “pois”.",
+      "de pronome relativo.",
+      "condicional."
+    ],
+    "correta": 2,
+    "dificuldade": 3,
+    "explicacao": "Depois de um pedido, o que explica o motivo: fale baixo, pois o bebê está dormindo. Ele não retoma nenhuma palavra, então não é pronome relativo.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Vunesp"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-quese-p10",
+    "disciplina": "portugues",
+    "assunto": "Funções do que e do se",
+    "enunciado": "O “se” é índice de indeterminação do sujeito em:",
+    "alternativas": [
+      "Trata-se de questões difíceis.",
+      "Se estudar, passará.",
+      "Perguntei se ele vinha.",
+      "Vendem-se carros usados.",
+      "Ele se machucou no jogo."
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Tratar-se de pede preposição, e o se não deixa identificar quem faz a ação: o sujeito é indeterminado e o verbo fica no singular. Nas outras frases o se é apassivador, reflexivo, condicional e integrante.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-reescrita-p01",
+    "disciplina": "portugues",
+    "assunto": "Reescrita e vozes verbais",
+    "enunciado": "A passagem de “A banca corrigiu as provas” para a voz passiva é:",
+    "alternativas": [
+      "As provas corrigiram a banca.",
+      "Corrigiu-se as provas pela banca.",
+      "As provas foram corrigido pela banca.",
+      "As provas foram corrigidas pela banca.",
+      "A banca foi corrigida pelas provas."
+    ],
+    "correta": 3,
+    "dificuldade": 2,
+    "explicacao": "Na voz passiva, o objeto (as provas) vira sujeito, o verbo ser vai para o mesmo tempo do original (corrigiu, foram corrigidas) e quem fez a ação vira agente (pela banca). O particípio concorda com o sujeito: corrigidas.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-reescrita-p02",
+    "disciplina": "portugues",
+    "assunto": "Reescrita e vozes verbais",
+    "enunciado": "Mantém o sentido e a correção de “Os candidatos que chegarem atrasados não entrarão”:",
+    "alternativas": [
+      "Os candidatos, que chegarem atrasados, não entrarão.",
+      "Os candidatos não entrarão, que chegarem atrasados.",
+      "Os candidatos chegaram atrasados e não entraram.",
+      "Os candidatos que chegarão atrasados não entram.",
+      "Não entrarão os candidatos que chegarem atrasados."
+    ],
+    "correta": 4,
+    "dificuldade": 2,
+    "explicacao": "Mudar a ordem dos termos mantém o sentido. Colocar a oração entre vírgulas daria a entender que todos chegarão atrasados. Trocar os tempos verbais muda o que se afirma: de uma regra para o futuro para um fato já ocorrido.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-reescrita-p03",
+    "disciplina": "portugues",
+    "assunto": "Reescrita e vozes verbais",
+    "enunciado": "A frase “Aprovaram-se os novos editais” pode ser reescrita, com correção e sem alteração de sentido, como “Os novos editais foram aprovados”.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. Aprovaram-se os editais está na voz passiva sintética (com se). A reescrita usa a passiva analítica (foram aprovados), com o mesmo sujeito e o mesmo sentido.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-reescrita-p04",
+    "disciplina": "portugues",
+    "assunto": "Reescrita e vozes verbais",
+    "enunciado": "A reescrita de “Embora estivesse cansado, terminou a prova” como “Estava cansado, portanto terminou a prova” mantém o sentido original.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. Embora indica que o cansaço não impediu a ação (concessão). Portanto indicaria que ele terminou a prova por estar cansado (conclusão), o que muda o sentido.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-reescrita-p05",
+    "disciplina": "portugues",
+    "assunto": "Reescrita e vozes verbais",
+    "enunciado": "A voz ativa correspondente a “O prêmio foi entregue pelo diretor” é:",
+    "alternativas": [
+      "O prêmio tinha sido entregue.",
+      "Entregou-se o prêmio.",
+      "O diretor foi entregue ao prêmio.",
+      "O diretor entregou o prêmio.",
+      "O prêmio entregou o diretor."
+    ],
+    "correta": 3,
+    "dificuldade": 2,
+    "explicacao": "Na voz ativa, o agente (pelo diretor) vira sujeito e o sujeito da passiva (o prêmio) vira objeto: o diretor entregou o prêmio. O tempo verbal se mantém (foi entregue, entregou).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Vunesp"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-reescrita-p06",
+    "disciplina": "portugues",
+    "assunto": "Reescrita e vozes verbais",
+    "enunciado": "Assinale a reescrita que mantém o sentido de “Mal terminou a prova, o candidato saiu da sala”.",
+    "alternativas": [
+      "Assim que terminou a prova, o candidato saiu da sala.",
+      "Antes de terminar a prova, o candidato saiu da sala.",
+      "Embora tenha terminado a prova, o candidato saiu da sala.",
+      "O candidato terminou mal a prova e saiu da sala.",
+      "O candidato saiu da sala porque terminou mal a prova."
+    ],
+    "correta": 0,
+    "dificuldade": 3,
+    "explicacao": "Aqui mal é conjunção de tempo e significa assim que ou logo que. Não tem o sentido de de forma ruim.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-reescrita-p07",
+    "disciplina": "portugues",
+    "assunto": "Reescrita e vozes verbais",
+    "enunciado": "Passando “Os fiscais tinham recolhido as folhas” para a voz passiva, obtém-se:",
+    "alternativas": [
+      "Recolheram-se as folhas pelos fiscais.",
+      "As folhas tinham recolhido os fiscais.",
+      "As folhas tinham sido recolhidas pelos fiscais.",
+      "As folhas haviam sido recolhido pelos fiscais.",
+      "As folhas foram recolhidas pelos fiscais."
+    ],
+    "correta": 2,
+    "dificuldade": 3,
+    "explicacao": "O tempo composto (tinham recolhido) se mantém com o verbo ser: tinham sido recolhidas. Foram recolhidas muda o tempo. O particípio concorda com o sujeito (recolhidas), e a passiva com se não costuma trazer agente.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-reescrita-p08",
+    "disciplina": "portugues",
+    "assunto": "Reescrita e vozes verbais",
+    "enunciado": "Qual frase está na voz passiva?",
+    "alternativas": [
+      "Assinamos o contrato pela manhã.",
+      "O contrato foi assinado ontem.",
+      "O contrato estava na mesa.",
+      "O diretor se cortou com o papel.",
+      "O diretor assinou o contrato."
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Na voz passiva, o sujeito recebe a ação: o contrato foi assinado (por alguém). Assinou e assinamos estão na voz ativa; se cortou é voz reflexiva; estava na mesa não indica ação.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cesgranrio"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-reescrita-p09",
+    "disciplina": "portugues",
+    "assunto": "Reescrita e vozes verbais",
+    "enunciado": "A reescrita de “Se não estudar, não passará” que mantém o sentido é:",
+    "alternativas": [
+      "Quando estudar, não passará.",
+      "Porque não estuda, passará.",
+      "Não estudou, portanto passou.",
+      "Embora não estude, não passará.",
+      "Caso não estude, não passará."
+    ],
+    "correta": 4,
+    "dificuldade": 3,
+    "explicacao": "Se e caso indicam condição. Com caso, o verbo vai para o presente do subjuntivo: caso não estude. Embora indica concessão, porque indica causa, e as outras opções mudam o sentido ou o tempo.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Vunesp"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-reescrita-p10",
+    "disciplina": "portugues",
+    "assunto": "Reescrita e vozes verbais",
+    "enunciado": "A frase “É preciso que todos leiam o edital” pode ser reescrita, com o mesmo sentido, como:",
+    "alternativas": [
+      "Todos leram o edital.",
+      "Ninguém precisa ler o edital.",
+      "O edital precisa de todos.",
+      "Todos leem o edital porque é preciso.",
+      "Todos precisam ler o edital."
+    ],
+    "correta": 4,
+    "dificuldade": 2,
+    "explicacao": "As duas frases expressam necessidade: é preciso que todos leiam equivale a todos precisam ler. As outras opções mudam o tempo, negam a necessidade ou transformam a necessidade em fato.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-figuras-p01",
+    "disciplina": "portugues",
+    "assunto": "Figuras de linguagem",
+    "enunciado": "Em “Ele tem um coração de pedra”, há:",
+    "alternativas": [
+      "hipérbole.",
+      "pleonasmo.",
+      "metáfora.",
+      "antítese.",
+      "ironia."
+    ],
+    "correta": 2,
+    "dificuldade": 1,
+    "explicacao": "Metáfora é uma comparação sem a palavra como: o coração é tratado como pedra para indicar que a pessoa é fria e insensível.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-figuras-p02",
+    "disciplina": "portugues",
+    "assunto": "Figuras de linguagem",
+    "enunciado": "Em “Li Machado de Assis nas férias”, a figura de linguagem é:",
+    "alternativas": [
+      "prosopopeia.",
+      "metonímia.",
+      "hipérbole.",
+      "metáfora.",
+      "eufemismo."
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Metonímia é trocar uma palavra por outra com a qual tem relação próxima. Aqui o autor está no lugar da obra: quem leu, leu os livros de Machado de Assis.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-figuras-p03",
+    "disciplina": "portugues",
+    "assunto": "Figuras de linguagem",
+    "enunciado": "Na frase “Já te disse um milhão de vezes”, há hipérbole, ou seja, exagero intencional para dar ênfase.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. Ninguém disse algo um milhão de vezes: o exagero serve para reforçar a ideia de que já foi dito muitas vezes. Isso é hipérbole.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-figuras-p04",
+    "disciplina": "portugues",
+    "assunto": "Figuras de linguagem",
+    "enunciado": "Em “Ele partiu desta para melhor”, a expressão usada é exemplo de ironia.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. Partir desta para melhor é um eufemismo: suaviza uma ideia dura (a morte). Ironia é dizer o contrário do que se pensa.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cebraspe"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-figuras-p05",
+    "disciplina": "portugues",
+    "assunto": "Figuras de linguagem",
+    "enunciado": "Em “O vento sussurrava segredos na janela”, há:",
+    "alternativas": [
+      "metonímia.",
+      "hipérbole.",
+      "ironia.",
+      "prosopopeia (personificação).",
+      "catacrese."
+    ],
+    "correta": 3,
+    "dificuldade": 2,
+    "explicacao": "Prosopopeia, ou personificação, é dar ações humanas a seres que não são humanos. Sussurrar segredos é algo que pessoas fazem, não o vento.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Vunesp"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-figuras-p06",
+    "disciplina": "portugues",
+    "assunto": "Figuras de linguagem",
+    "enunciado": "Alguém diz a um colega que acabou de se atrasar: “Que bonito, chegou atrasado de novo!”. A figura predominante é:",
+    "alternativas": [
+      "ironia.",
+      "eufemismo.",
+      "hipérbole.",
+      "comparação.",
+      "pleonasmo."
+    ],
+    "correta": 0,
+    "dificuldade": 3,
+    "explicacao": "Ironia é dizer o contrário do que se quer expressar. Que bonito, nesse contexto, é uma crítica ao atraso, não um elogio.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-figuras-p07",
+    "disciplina": "portugues",
+    "assunto": "Figuras de linguagem",
+    "enunciado": "Há antítese em:",
+    "alternativas": [
+      "Estou morrendo de fome.",
+      "Subiu para cima correndo.",
+      "Ela é como uma flor.",
+      "Nasceu pobre e morreu rico.",
+      "O pé da mesa quebrou."
+    ],
+    "correta": 3,
+    "dificuldade": 3,
+    "explicacao": "Antítese é a aproximação de ideias opostas: nasceu e morreu, pobre e rico. Nas outras frases há pleonasmo (subir para cima), catacrese (pé da mesa), hipérbole (morrendo de fome) e comparação (como uma flor).",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FCC"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-figuras-p08",
+    "disciplina": "portugues",
+    "assunto": "Figuras de linguagem",
+    "enunciado": "Em “Ela é linda como uma flor”, há:",
+    "alternativas": [
+      "antítese.",
+      "comparação.",
+      "metáfora.",
+      "metonímia.",
+      "ironia."
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Quando a semelhança vem marcada por uma palavra como como, feito ou tal qual, a figura é comparação. Sem essa palavra (ela é uma flor), seria metáfora.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Cesgranrio"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-figuras-p09",
+    "disciplina": "portugues",
+    "assunto": "Figuras de linguagem",
+    "enunciado": "Em “O braço da cadeira está solto”, a expressão “braço da cadeira” é exemplo de:",
+    "alternativas": [
+      "eufemismo.",
+      "antítese.",
+      "catacrese.",
+      "prosopopeia.",
+      "hipérbole."
+    ],
+    "correta": 2,
+    "dificuldade": 3,
+    "explicacao": "Catacrese é uma metáfora que ficou tão comum que já não se percebe como figura, usada por falta de palavra própria: braço da cadeira, pé da mesa, céu da boca.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "Vunesp"
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "pt-figuras-p10",
+    "disciplina": "portugues",
+    "assunto": "Figuras de linguagem",
+    "enunciado": "Há pleonasmo vicioso (repetição desnecessária) em:",
+    "alternativas": [
+      "A prova começou às 9h.",
+      "Ela sorriu ao ver o resultado.",
+      "Todos chegaram cedo.",
+      "O candidato estudou muito.",
+      "Vou entrar para dentro da sala."
+    ],
+    "correta": 4,
+    "dificuldade": 1,
+    "explicacao": "Entrar já indica ir para dentro, então para dentro repete a ideia sem acrescentar nada. O mesmo acontece em subir para cima e sair para fora.",
+    "fonte": {
+      "tipo": "autoral",
+      "estilo": "FGV"
+    },
+    "status": "revisao"
+  }
+]

@@ -108,17 +108,17 @@
     "id": "rl-negacao-001",
     "disciplina": "rlm",
     "assunto": "Negação de proposições",
-    "enunciado": "A negação lógica da afirmação \"Todos os candidatos estudaram\" é:",
+    "enunciado": "A negação lógica da afirmação \"Todo servidor do setor usa crachá\" é:",
     "alternativas": [
-      "Nenhum candidato estudou.",
-      "Todos os candidatos não estudaram.",
-      "Algum candidato estudou.",
-      "Algum candidato não estudou.",
-      "Nenhum candidato deixou de estudar."
+      "Nenhum servidor do setor usa crachá.",
+      "Todo servidor do setor não usa crachá.",
+      "Algum servidor do setor usa crachá.",
+      "Algum servidor do setor não usa crachá.",
+      "Nenhum servidor do setor deixa de usar crachá."
     ],
     "correta": 3,
     "dificuldade": 1,
-    "explicacao": "Para mostrar que \"todos estudaram\" é falso, basta existir um candidato que não estudou. Por isso a negação de \"todos são\" é \"algum não é\". \"Nenhum estudou\" é uma afirmação mais forte do que o necessário.",
+    "explicacao": "Para mostrar que \"todo servidor usa crachá\" é falso, basta existir um servidor que não usa. Por isso a negação de \"todo é\" é \"algum não é\". \"Nenhum usa\" é uma afirmação mais forte do que o necessário.",
     "fonte": {
       "tipo": "autoral",
       "estilo": "FGV"
