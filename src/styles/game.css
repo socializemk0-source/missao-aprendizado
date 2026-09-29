@@ -54,8 +54,8 @@ a.phase-node:hover { border-color: var(--primary-soft-border); background: var(-
   display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
   padding: 16px 18px; border-radius: 18px; background: var(--surface); border: 2px solid var(--border);
 }
-.quiz-footer.is-right { background: var(--ok-soft); border-color: var(--ok-border); }
-.quiz-footer.is-wrong { background: var(--warn-soft); border-color: var(--warn-border); }
+.quiz-footer.is-right { background: var(--feedback-ok-bg); border-color: var(--ok-border); }
+.quiz-footer.is-wrong { background: var(--feedback-bad-bg); border-color: var(--warn-border); }
 .quiz-feedback { flex: 1; min-width: 240px; display: grid; gap: 6px; }
 .quiz-feedback p { margin: 0; }
 .quiz-footer.is-right .quiz-feedback strong { color: var(--ok-fg); }

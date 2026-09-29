@@ -5,19 +5,19 @@
 import type { CSSProperties } from 'react';
 
 export const TICO_ANIMS = {
-  parado: { frames: 6, w: 68, h: 95, fps: 6 },
-  acenar: { frames: 6, w: 90, h: 94, fps: 8 },
-  palmas: { frames: 6, w: 85, h: 96, fps: 9 },
-  rir: { frames: 6, w: 81, h: 93, fps: 8 },
-  decepcionar: { frames: 6, w: 85, h: 93, fps: 6 },
-  motivar: { frames: 6, w: 88, h: 96, fps: 7 },
-  apontar: { frames: 6, w: 87, h: 95, fps: 7 },
-  pular: { frames: 8, w: 105, h: 118, fps: 9 },
-  correr: { frames: 6, w: 97, h: 91, fps: 12 },
-  andar: { frames: 7, w: 77, h: 94, fps: 9 },
-  voar: { frames: 6, w: 121, h: 108, fps: 8 },
+  parado: { frames: 6, w: 70, h: 95, fps: 6 },
+  acenar: { frames: 6, w: 100, h: 94, fps: 8 },
+  palmas: { frames: 6, w: 93, h: 96, fps: 9 },
+  rir: { frames: 6, w: 83, h: 93, fps: 8 },
+  decepcionar: { frames: 6, w: 87, h: 93, fps: 6 },
+  motivar: { frames: 6, w: 96, h: 96, fps: 7 },
+  apontar: { frames: 6, w: 101, h: 95, fps: 7 },
+  pular: { frames: 8, w: 113, h: 118, fps: 9 },
+  correr: { frames: 6, w: 103, h: 91, fps: 12 },
+  andar: { frames: 7, w: 79, h: 94, fps: 9 },
+  voar: { frames: 6, w: 131, h: 108, fps: 8 },
   cair: { frames: 7, w: 119, h: 92, fps: 8 },
-  dano: { frames: 3, w: 87, h: 102, fps: 6 },
+  dano: { frames: 3, w: 91, h: 102, fps: 6 },
   interagir: { frames: 4, w: 115, h: 103, fps: 6 },
 } as const;
 
