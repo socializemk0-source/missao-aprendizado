@@ -209,7 +209,7 @@ describe('/api/pagamentos', () => {
   it('verificar só olha as compras do próprio aluno', async () => {
     const payments: Record<string, MpPayment> = {};
     const { call, client } = setup(payments);
-    await call('POST', 'checkout', { cycle: 'monthly' }, undefined, 'ok:u2');
+    await call('POST', 'checkout', { cycle: 'monthly' }, 'ok:u2');
     payments['902'] = { id: 902, status: 'approved', transaction_amount: 29.9, currency_id: 'BRL', external_reference: client.created[0]!.reference };
     expect((await call('POST', 'verificar')).body).toMatchObject({ resultado: 'none', plano: 'free' });
   });
