@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
 import { Icon } from '../components/Icon';
-import { Tico } from '../components/Tico';
+import { TicoAnim } from '../components/TicoAnim';
 import { useProgress } from '../game/ProgressProvider';
 import { LoadState, useLoad } from '../game/useLoad';
 import { game } from '../lib/game';
@@ -184,7 +184,7 @@ export function Aventura() {
             );
           })}
         </ol>
-        <div className="map-foot"><Tico pose="apontando" className="tico map-tico" /></div>
+        <div className="map-foot"><TicoAnim name="andar" height={120} className="map-tico" /></div>
       </LoadState>
     </>
   );

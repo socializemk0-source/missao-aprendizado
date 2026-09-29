@@ -9,7 +9,7 @@ import {
   type Nivel, type SimuladoOpcoes, type SimuladoResultado, type SimuladoSessao,
 } from '../../shared/game';
 import { useAuth } from '../auth/AuthProvider';
-import { Tico } from '../components/Tico';
+import { TicoAnim } from '../components/TicoAnim';
 import { useProgress } from '../game/ProgressProvider';
 import { LoadState, useLoad } from '../game/useLoad';
 import { ApiError } from '../lib/api';
@@ -357,7 +357,7 @@ function Resultado({ r }: { r: SimuladoResultado }) {
             <Link to="/simulados" className={`btn ${erros > 0 ? 'btn-secondary' : 'btn-primary'}`}>Novo simulado</Link>
           </div>
         </div>
-        <Tico pose={r.pct >= 70 ? 'comemorando' : r.pct >= 40 ? 'joinha' : 'apontando'} />
+        <TicoAnim name={r.pct >= 70 ? 'palmas' : r.pct >= 40 ? 'motivar' : 'apontar'} height={150} className="hero-tico" />
       </section>
 
       <h2 className="section-title">Por matéria</h2>
