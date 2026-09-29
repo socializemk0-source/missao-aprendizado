@@ -3,13 +3,21 @@
 //   POST ?action=checkout     { cycle } → link do Checkout Pro
 //   POST ?action=confirmar    { paymentId } → na volta do checkout, consulta
 //                             o pagamento no Mercado Pago e aplica
+//   POST ?action=verificar    procura pagamentos das compras do aluno (últimos
+//                             30 dias) no Mercado Pago: libera o PRO se o
+//                             aviso automático não chegou
 // O webhook fica em /api/pagamentos/webhook.
 
 import { authenticate, type VerifyToken } from '../server/auth.js';
 import { header, jsonBody, methodNotAllowed, type ApiRequest, type ApiResponse } from '../server/http.js';
-import { MercadoPagoError, PLANS, applyPayment, isCycle, mercadoPagoClient, parseReference, type MpClient, type PaymentStore } from '../server/payments.js';
+import { MercadoPagoError, PLANS, applyPayment, isCycle, makeReference, mercadoPagoClient, parseReference, type MpClient, type PaymentStore } from '../server/payments.js';
 import { postgresPayments } from '../server/payments-pg.js';
 import { verifySupabaseToken } from '../server/supabase.js';
+
+const DAY = 86_400_000;
+// Quantas compras recentes o "verificar" consulta (cada uma é uma busca no
+// Mercado Pago).
+const VERIFY_LIMIT = 5;
 
 export function baseUrlFrom(req: ApiRequest, configured = process.env.APP_BASE_URL): string {
   if (configured) return configured.replace(/\/$/, '');
@@ -56,8 +64,25 @@ export function createPagamentosHandler(deps: {
 
       if (action === 'checkout') {
         if (!isCycle(body?.cycle)) return res.status(400).json({ error: 'Escolha 30 dias ou 1 ano.', code: 'ENVIO_INVALIDO' });
-        const pref = await deps.client.createPreference({ cycle: body.cycle, userId: user.id, payerEmail: user.email, baseUrl: baseUrl(req) });
+        const reference = makeReference(body.cycle, user.id);
+        await deps.store.recordCheckout({ reference, userId: user.id, cycle: body.cycle, now: now() });
+        const pref = await deps.client.createPreference({ cycle: body.cycle, reference, payerEmail: user.email, baseUrl: baseUrl(req) });
         return res.status(200).json({ url: pref.url });
+      }
+
+      if (action === 'verificar') {
+        const refs = await deps.store.openCheckouts(user.id, new Date(now().getTime() - 30 * DAY), VERIFY_LIMIT);
+        let resultado: 'granted' | 'pending' | 'none' = 'none';
+        for (const reference of refs) {
+          for (const payment of await deps.client.searchPayments(reference)) {
+            // A referência é do próprio aluno, mas confere de novo o que veio da API.
+            if (parseReference(payment.external_reference)?.userId !== user.id) continue;
+            const r = await applyPayment(deps.store, payment, now());
+            if (r.status === 'granted' || r.status === 'already') resultado = 'granted';
+            else if (r.status === 'pending' && resultado === 'none') resultado = 'pending';
+          }
+        }
+        return res.status(200).json({ resultado, ...(await status(user.id)) });
       }
 
       if (action === 'confirmar') {

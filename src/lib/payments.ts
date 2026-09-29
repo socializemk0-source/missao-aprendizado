@@ -11,6 +11,7 @@ export interface PaymentStatus {
 export const payApi = {
   status: () => api<PaymentStatus>('/api/pagamentos'),
   checkout: (cycle: 'monthly' | 'annual') => api<{ url: string }>('/api/pagamentos?action=checkout', { method: 'POST', body: JSON.stringify({ cycle }) }),
+  verify: () => api<{ resultado: 'granted' | 'pending' | 'none'; plano: 'free' | 'pro'; proAte: string | null }>('/api/pagamentos?action=verificar', { method: 'POST' }),
   confirm: (paymentId: string) =>
     api<{ resultado: string; plano: 'free' | 'pro'; proAte: string | null }>('/api/pagamentos?action=confirmar', { method: 'POST', body: JSON.stringify({ paymentId }) }),
 };

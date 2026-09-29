@@ -101,6 +101,16 @@ export const payments = v2.table('payments', {
   updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
 });
 
+// Compras iniciadas no Mercado Pago (migração 0009): a referência liga o
+// pagamento ao aluno e permite achá-lo depois se o aviso não chegar.
+export const checkouts = v2.table('checkouts', {
+  reference: text('reference').primaryKey(),
+  userId: text('user_id').notNull(),
+  cycle: text('cycle').notNull(),
+  paid: boolean('paid').notNull().default(false),
+  createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+});
+
 // ---- Banco de questões e simulados (migração 0006) ----
 export const questions = v2.table('questions', {
   id: text('id').primaryKey(),

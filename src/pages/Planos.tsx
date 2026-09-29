@@ -21,6 +21,7 @@ export function Planos() {
   const navigate = useNavigate();
   const [banner, setBanner] = useState<Banner | null>(null);
   const [going, setGoing] = useState<string | null>(null);
+  const [verifying, setVerifying] = useState(false);
   const confirmed = useRef(false);
 
   // Volta do Mercado Pago: /planos?payment_id=...&status=...
@@ -48,7 +49,7 @@ export function Planos() {
       if (r.resultado === 'granted' || r.resultado === 'already') {
         setBanner({ kind: 'ok', text: `PRO liberado${r.proAte ? ` até ${formatDate(r.proAte)}` : ''}! Bons estudos.` });
       } else if (r.resultado === 'pending') {
-        setBanner({ kind: 'wait', text: 'Pagamento em processamento. No PIX costuma levar poucos segundos; o PRO é liberado sozinho assim que ele for aprovado.' });
+        setBanner({ kind: 'wait', text: 'Pagamento em processamento. No PIX costuma levar poucos segundos; o PRO é liberado sozinho assim que ele for aprovado. Se demorar, use “Verificar meu pagamento” mais abaixo.' });
       } else {
         setBanner({ kind: 'error', text: 'O pagamento não foi aprovado. Nada foi liberado; você pode tentar de novo.' });
       }
@@ -56,6 +57,29 @@ export function Planos() {
       void refresh();
     }).catch((err: unknown) => setBanner({ kind: 'error', text: err instanceof Error ? err.message : 'Não foi possível conferir o pagamento.' }));
   }, [paymentId, returnStatus, navigate, loaded, refresh]);
+
+  // Plano B quando o aviso do Mercado Pago não chega: o servidor procura os
+  // pagamentos das compras recentes do aluno e libera o que estiver aprovado.
+  async function verify() {
+    setVerifying(true);
+    setBanner({ kind: 'wait', text: 'Procurando seu pagamento no Mercado Pago…' });
+    try {
+      const r = await payApi.verify();
+      if (r.resultado === 'granted') {
+        setBanner({ kind: 'ok', text: `Encontramos seu pagamento. PRO liberado${r.proAte ? ` até ${formatDate(r.proAte)}` : ''}!` });
+        loaded.reload();
+        void refresh();
+      } else if (r.resultado === 'pending') {
+        setBanner({ kind: 'wait', text: 'Seu pagamento ainda está em processamento no Mercado Pago. Assim que for aprovado, o PRO é liberado. Tente verificar de novo em alguns minutos.' });
+      } else {
+        setBanner({ kind: 'error', text: 'Não encontramos pagamento aprovado nas suas compras dos últimos 30 dias. Se você acabou de pagar, espere alguns minutos e tente de novo.' });
+      }
+    } catch (err) {
+      setBanner({ kind: 'error', text: err instanceof Error ? err.message : 'Não foi possível verificar agora.' });
+    } finally {
+      setVerifying(false);
+    }
+  }
 
   async function buy(cycle: 'monthly' | 'annual') {
     setGoing(cycle);
@@ -120,6 +144,16 @@ export function Planos() {
               })}
             </div>
             <p className="muted plans-note">Pagamento processado pelo Mercado Pago. O Aprova Tico não vê nem guarda os dados do seu cartão.</p>
+
+            {s.enabled && (
+              <section className="card plans-verify" aria-labelledby="verify-title">
+                <h2 id="verify-title" className="section-title">Já pagou e o PRO não apareceu?</h2>
+                <p className="muted">No PIX a liberação costuma levar poucos segundos. Se passou disso, procuramos no Mercado Pago as suas compras dos últimos 30 dias.</p>
+                <button type="button" className="btn btn-secondary" disabled={verifying} onClick={() => void verify()}>
+                  {verifying ? 'Verificando…' : 'Verificar meu pagamento'}
+                </button>
+              </section>
+            )}
 
             {s.pagamentos.length > 0 && (
               <section aria-labelledby="hist-pag">
