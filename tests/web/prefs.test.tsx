@@ -19,11 +19,20 @@ afterEach(() => {
 });
 
 describe('preferências', () => {
-  it('padrão: tema automático, som e animações ligados; modo foco silencia', () => {
+  it('padrão: tema claro (o escuro só liga quando o aluno escolhe), som e animações ligados', () => {
     expect(getPrefs()).toEqual(DEFAULT_PREFS);
-    expect(DEFAULT_PREFS).toMatchObject({ theme: 'auto', sound: true, motion: true, focusQuiet: true });
-    expect(html().theme).toBe('light'); // jsdom não tem preferência de sistema: claro
+    expect(DEFAULT_PREFS).toMatchObject({ theme: 'light', sound: true, motion: true, focusQuiet: true });
+    expect(html().theme).toBe('light');
     expect(html().motion).toBe('on');
+  });
+
+  it('sistema no escuro não liga o tema escuro sozinho; só com "Automático"', () => {
+    vi.stubGlobal('matchMedia', (q: string) => ({ matches: q.includes('dark'), addEventListener() {} }));
+    resetPrefsForTests();
+    expect(html().theme).toBe('light');
+    setPrefs({ theme: 'auto' });
+    expect(html().theme).toBe('dark');
+    vi.unstubAllGlobals();
   });
 
   it('muda, aplica no <html> e guarda no aparelho', () => {

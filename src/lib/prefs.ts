@@ -6,6 +6,8 @@
 
 import { useSyncExternalStore } from 'react';
 
+// Padrão: claro. O escuro só liga quando o aluno escolhe (botão da lua ou
+// Perfil); "auto" segue o sistema e também é escolha do aluno.
 export type Theme = 'auto' | 'light' | 'dark';
 export type ReadingTone = 'normal' | 'sepia';
 
@@ -17,7 +19,7 @@ export interface Prefs {
   readingTone: ReadingTone;
 }
 
-export const DEFAULT_PREFS: Prefs = { theme: 'auto', sound: true, motion: true, focusQuiet: true, readingTone: 'normal' };
+export const DEFAULT_PREFS: Prefs = { theme: 'light', sound: true, motion: true, focusQuiet: true, readingTone: 'normal' };
 
 const KEY = 'aprova-tico:prefs';
 
@@ -44,8 +46,9 @@ let focus = false;
 let version = 0;
 const listeners = new Set<() => void>();
 
-const darkQuery = () => (typeof window !== 'undefined' && typeof window.matchMedia === 'function' ? window.matchMedia('(prefers-color-scheme: dark)') : null);
-const reducedQuery = () => (typeof window !== 'undefined' && typeof window.matchMedia === 'function' ? window.matchMedia('(prefers-reduced-motion: reduce)') : null);
+const media = (q: string) => (typeof globalThis.matchMedia === 'function' ? globalThis.matchMedia(q) : null);
+const darkQuery = () => media('(prefers-color-scheme: dark)');
+const reducedQuery = () => media('(prefers-reduced-motion: reduce)');
 
 export function resolvedTheme(): 'light' | 'dark' {
   if (prefs.theme !== 'auto') return prefs.theme;

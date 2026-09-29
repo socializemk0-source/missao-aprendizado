@@ -4,9 +4,9 @@
 import { setPrefs, usePrefs, type Theme } from '../lib/prefs';
 
 const THEMES: { id: Theme; label: string }[] = [
-  { id: 'auto', label: 'Automático' },
   { id: 'light', label: 'Claro' },
   { id: 'dark', label: 'Escuro' },
+  { id: 'auto', label: 'Automático' },
 ];
 
 export function AppearanceSettings() {
@@ -25,7 +25,7 @@ export function AppearanceSettings() {
           </label>
         ))}
       </fieldset>
-      <p className="field-hint settings-hint">Automático segue o claro/escuro do seu celular ou computador.</p>
+      <p className="field-hint settings-hint">O app começa no claro. Automático segue o claro/escuro do seu celular ou computador.</p>
 
       <label className="switch-row">
         <input type="checkbox" checked={prefs.sound} onChange={(e) => setPrefs({ sound: e.target.checked })} />
