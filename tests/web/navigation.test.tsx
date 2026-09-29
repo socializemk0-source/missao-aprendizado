@@ -5,6 +5,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import { cleanup } from '@testing-library/react';
 import { NAV } from '../../src/app/nav';
 import { safeNext } from '../../src/auth/RequireAuth';
+import { routes } from '../../src/app/router';
 import { me, renderAt, session } from './render';
 
 afterEach(cleanup);
@@ -33,10 +34,9 @@ describe('acesso às telas do app', () => {
     expect(screen.getByRole('heading', { name: /Olá, Maria!/ })).toBeInTheDocument();
   });
 
-  it('telas ainda não feitas mostram "em construção" com a etapa', () => {
-    renderAt('/ranking', signedIn);
-    expect(screen.getByRole('heading', { name: 'Ranking' })).toBeInTheDocument();
-    expect(screen.getByText(/etapa 3/)).toBeInTheDocument();
+  it('toda tela do menu existe (nenhuma "em construção")', () => {
+    const app = routes.find((r) => r.children)!;
+    for (const item of NAV) expect(app.children!.some((r) => r.path === item.path && r.element)).toBe(true);
   });
 
   it('página inicial logado: oferece "Continuar", sem redirecionar sozinha', () => {

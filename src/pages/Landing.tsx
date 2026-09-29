@@ -24,7 +24,7 @@ const STEPS = [
 
 const FEATURES: { icon: IconName; title: string; text: string }[] = [
   { icon: 'compass', title: 'Trilha guiada', text: 'Capítulos e fases em ordem, do básico ao nível de prova.' },
-  { icon: 'book', title: 'Questões de provas oficiais', text: 'Tiradas das provas publicadas pelas bancas, com banca, órgão e ano.' },
+  { icon: 'book', title: 'Questões no estilo das bancas', text: 'No padrão Cebraspe, FGV, FCC e outras, cada uma com a explicação da resposta.' },
   { icon: 'pen', title: 'Redação com IA', text: 'Nota por critério no padrão da sua banca e os trechos para melhorar.' },
   { icon: 'rotate', title: 'Revisão dos seus erros', text: 'O que você errou volta para revisão até virar acerto.' },
   { icon: 'target', title: 'Missões diárias', text: 'Metas pequenas todo dia e uma sequência de dias para manter o ritmo.' },
@@ -33,7 +33,7 @@ const FEATURES: { icon: IconName; title: string; text: string }[] = [
 
 const FAQ = [
   { q: 'É grátis mesmo?', a: 'Sim. O plano grátis não pede cartão e não expira. O PRO libera tudo, sem limites, para quem quiser acelerar.' },
-  { q: 'De onde vêm as questões?', a: 'Das provas oficiais publicadas pelas bancas, sempre com banca, órgão e ano. As explicações são escritas pela nossa equipe.' },
+  { q: 'De onde vêm as questões?', a: 'Hoje são questões autorais, escritas pela nossa equipe no estilo das principais bancas, sempre com explicação. Questões de provas oficiais entram identificadas com banca, órgão e ano, conferidas com o gabarito publicado.' },
   { q: 'Serve para o meu concurso?', a: 'Começamos pelas disciplinas que mais caem em concursos: Português, Raciocínio Lógico, Informática, Direito Constitucional e Direito Administrativo. Novos conteúdos entram na trilha com frequência.' },
   { q: 'Como funciona a correção de redação?', a: 'Você escreve no app e a IA avalia pelos critérios da banca escolhida, com nota por critério e trechos para revisar. É uma nota estimada para treino, que não substitui a correção de um professor.' },
   { q: 'O PRO renova sozinho?', a: 'Não. O PRO é um pagamento único (PIX ou cartão) que vale por 30 dias ou por 1 ano. Quando acabar, você escolhe se quer continuar.' },
@@ -80,7 +80,7 @@ export function Landing() {
           <div className="lp-hero-text">
             <p className="eyebrow">Estudo para concursos em forma de aventura</p>
             <h1 className="landing-title">Sua aprovação, uma fase de cada vez.</h1>
-            <p className="lp-lead">Questões de provas oficiais, explicação em cada resposta e uma trilha que mostra exatamente o próximo passo. Com o Tico do seu lado todos os dias.</p>
+            <p className="lp-lead">Questões no estilo das bancas, explicação em cada resposta e uma trilha que mostra exatamente o próximo passo. Com o Tico do seu lado todos os dias.</p>
             <div className="landing-cta">
               {primaryCta}
               {!signedIn && <a href="#experimente" className="btn btn-secondary btn-lg">Testar uma questão</a>}

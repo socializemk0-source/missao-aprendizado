@@ -4,6 +4,7 @@ import type { Session, SupabaseClient } from '@supabase/supabase-js';
 import { vi } from 'vitest';
 import { routes } from '../../src/app/router';
 import { AuthTestProvider } from '../../src/auth/AuthProvider';
+import { ProgressProvider } from '../../src/game/ProgressProvider';
 import type { Me } from '../../src/lib/api';
 import { setSupabaseForTests } from '../../src/lib/supabase';
 
@@ -15,11 +16,12 @@ export const me: Me = {
 
 type AuthValue = Parameters<typeof AuthTestProvider>[0]['value'];
 
-export function renderAt(path: string, auth: AuthValue = {}) {
+export function renderAt(path: string, auth: AuthValue = {}, options: { progress?: boolean } = {}) {
   const router = createMemoryRouter(routes, { initialEntries: [path] });
+  const app = <RouterProvider router={router} />;
   const utils = render(
     <AuthTestProvider value={auth}>
-      <RouterProvider router={router} />
+      {options.progress ? <ProgressProvider>{app}</ProgressProvider> : app}
     </AuthTestProvider>,
   );
   return { ...utils, router };

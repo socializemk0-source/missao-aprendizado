@@ -19,8 +19,10 @@ lógica de servidor compartilhada em `server/`, banco Postgres do Supabase.
    `npm run check:api` confere isso.
 5. **Teste antes de corrigir/criar**: escreva o teste que falha, depois o
    código. `npm run ci` precisa passar antes de qualquer push.
-6. **Conteúdo com origem limpa.** Questões vêm de provas oficiais publicadas
-   pelas bancas (guardar banca, ano, órgão, cargo). Explicações são nossas.
+6. **Conteúdo com origem limpa.** Questões são autorais (`fonte.tipo:
+   'autoral'`) ou de provas oficiais conferidas com a prova e o gabarito
+   publicados (`'oficial'`, com banca, ano, órgão, cargo). Nunca atribuir a
+   uma banca uma questão que não saiu da prova dela. Explicações são nossas.
    Nunca copiar comentários, explicações ou o banco organizado de sites como
    TecConcursos, QConcursos etc. (direitos autorais e termos de uso).
 7. **Textos em português**, claros, sem jargão técnico para o aluno.
@@ -35,6 +37,11 @@ lógica de servidor compartilhada em `server/`, banco Postgres do Supabase.
 ## Estrutura
 
 - `src/app/` rotas e menu · `src/auth/` login · `src/pages/` telas ·
-  `src/layouts/` moldura do app · `src/lib/` cliente Supabase e `api()`
-- `api/` uma função por rota · `server/` auth, banco, regras
-- `tests/server/` rotas com banco em memória · `tests/web/` telas (jsdom)
+  `src/game/` progresso e sessão de questões · `src/layouts/` moldura do app ·
+  `src/lib/` cliente Supabase, `api()` e clientes de cada rota
+- `content/` questões, trilha e temas de redação · `shared/` tipos usados
+  pelo servidor e pelas telas
+- `api/` uma função por rota (plano Hobby da Vercel: no máximo 12) ·
+  `server/` auth, banco, regras (cada store tem versão Postgres e em memória)
+- `tests/server/` rotas com banco em memória (`*.pg.test.ts`: Postgres real) ·
+  `tests/web/` telas (jsdom) ligadas às rotas de verdade por `api-bridge.ts`
