@@ -28,14 +28,20 @@ html { scroll-behavior: smooth; }
 .lp-section h3 { font-size: 19px; margin: 10px 0 6px; color: #1d3348; }
 
 /* ---------- Hero ---------- */
-.lp-hero { display: flex; align-items: center; gap: 32px; padding-top: 40px; }
-.lp-hero-text { flex: 1; min-width: 0; }
+.lp-hero-band { position: relative; background: var(--bg) url('/landing/hero.webp') right bottom / auto 100% no-repeat; }
+/* Esfuma a borda esquerda da ilustração no fundo da página (sem linha visível). */
+.lp-hero-band::before {
+  content: ''; position: absolute; top: 0; bottom: 0; right: 0; aspect-ratio: 1672 / 941;
+  background: linear-gradient(90deg, var(--bg), rgba(249, 251, 253, 0) 30%); pointer-events: none;
+}
+.lp-hero { position: relative; display: flex; align-items: center; min-height: min(620px, 82vh); padding-top: 48px; padding-bottom: 72px; }
+.lp-hero-text { flex: 0 1 540px; min-width: 0; }
+.lp-hero-img { display: none; }
 .landing-title { font-size: 50px; line-height: 1.04; margin: 0 0 16px; color: #1d3348; letter-spacing: -1px; text-wrap: balance; }
 .lp-lead { font-size: 19px; color: #4d6478; margin: 0; max-width: 34em; }
 .landing-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px; }
 .lp-trust { display: flex; align-items: center; gap: 6px; margin: 16px 0 0; font-size: 14px; color: var(--muted-fg); font-weight: 700; }
 .lp-trust svg { color: var(--gold); }
-.lp-hero-tico { width: 360px; flex-shrink: 0; }
 
 .lp-bancas {
   display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px 22px;
@@ -154,15 +160,22 @@ html { scroll-behavior: smooth; }
   .landing-nav { display: none; }
   .lp-try, .lp-capture { grid-template-columns: 1fr; }
   .lp-pains, .lp-steps, .feature-grid { grid-template-columns: 1fr 1fr; }
-  .lp-hero-tico { width: 260px; }
+  .lp-hero-band { background: var(--bg); }
+  .lp-hero-band::before { display: none; }
+  .lp-hero { flex-direction: column; align-items: stretch; min-height: 0; padding-bottom: 24px; }
+  .lp-hero-text { flex: none; }
+  .lp-hero-img {
+    display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: 72% 55%;
+    margin-top: 24px; border-radius: 22px;
+  }
 }
 @media (max-width: 640px) {
   .landing-header { padding: 10px 16px; }
   .landing-actions .btn { padding: 9px 12px; font-size: 14px; }
   .lp-section { padding: 36px 16px; }
   .lp-bancas { padding: 12px 16px; }
-  .lp-hero { flex-direction: column-reverse; text-align: center; gap: 8px; padding-top: 16px; }
-  .lp-hero-tico { width: 180px; }
+  .lp-hero { text-align: center; padding-top: 16px; }
+  .lp-hero-img { aspect-ratio: 1 / 1; }
   .landing-title { font-size: 34px; }
   .lp-lead { font-size: 17px; }
   .landing-cta, .lp-trust { justify-content: center; }

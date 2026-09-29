@@ -18,6 +18,13 @@ describe('página inicial', () => {
     }
   });
 
+  it('hero usa a ilustração nova e não diz que as questões saíram em provas', () => {
+    const { container } = renderAt('/', { status: 'signedOut' });
+    expect(container.querySelector('img.lp-hero-img')).toHaveAttribute('src', '/landing/hero.webp');
+    expect(screen.getByText('Questões no estilo de')).toBeInTheDocument();
+    expect(screen.queryByText(/Questões das provas de/)).toBeNull();
+  });
+
   it('logado: as chamadas levam para a trilha, sem redirecionar sozinho', () => {
     const { router } = renderAt('/', { status: 'signedIn', session, me });
     expect(router.state.location.pathname).toBe('/');
