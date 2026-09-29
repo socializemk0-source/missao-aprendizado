@@ -43,7 +43,7 @@ describe('planos', () => {
     expect(await screen.findByText('Seu plano atual')).toBeInTheDocument();
     await user.click(screen.getByRole('button', { name: /Comprar 1 ano — R\$\s239,90/ }));
     await waitFor(() => expect(go).toHaveBeenCalledWith('https://mp.test/checkout'));
-    expect(client.createPreference).toHaveBeenCalledWith(expect.objectContaining({ cycle: 'annual', userId: 'u1' }));
+    expect(client.createPreference).toHaveBeenCalledWith(expect.objectContaining({ cycle: 'annual', reference: expect.stringMatching(/^v2:annual:u1:[0-9a-f]{8}$/) }));
   });
 
   it('volta do checkout aprovada: confere no servidor, libera o PRO e o cabeçalho vira ∞', async () => {
