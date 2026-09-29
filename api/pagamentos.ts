@@ -81,7 +81,10 @@ export function createPagamentosHandler(deps: {
       res.status(400).json({ error: 'Ação inválida.', code: 'ACAO_INVALIDA' });
     } catch (err) {
       console.error('[pagamentos] erro:', err instanceof Error ? err.message : err);
-      res.status(502).json({ error: 'Não foi possível falar com o Mercado Pago agora. Tente de novo em instantes.', code: 'MERCADO_PAGO_INDISPONIVEL' });
+      if (err instanceof MercadoPagoError) {
+        return res.status(502).json({ error: 'Não foi possível falar com o Mercado Pago agora. Tente de novo em instantes.', code: 'MERCADO_PAGO_INDISPONIVEL' });
+      }
+      res.status(500).json({ error: 'Não foi possível carregar seus pagamentos agora. Tente de novo em instantes.' });
     }
   };
 }

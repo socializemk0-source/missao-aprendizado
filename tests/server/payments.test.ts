@@ -106,6 +106,11 @@ describe('cliente do Mercado Pago', () => {
     const client = mercadoPagoClient('x', (async () => new Response('{"message":"not found"}', { status: 404 })) as unknown as typeof fetch);
     await expect(client.getPayment('1')).rejects.toMatchObject({ status: 404 });
   });
+
+  it('falha de rede (sem resposta) também vira MercadoPagoError', async () => {
+    const client = mercadoPagoClient('x', (async () => { throw new TypeError('fetch failed'); }) as unknown as typeof fetch);
+    await expect(client.getPayment('1')).rejects.toBeInstanceOf(MercadoPagoError);
+  });
 });
 
 function fakeClient(payments: Record<string, MpPayment> = {}): MpClient & { created: unknown[] } {
@@ -164,6 +169,18 @@ describe('/api/pagamentos', () => {
     const { call } = setup({}, false);
     expect((await call('GET')).body.enabled).toBe(false);
     expect((await call('POST', 'checkout', { cycle: 'monthly' })).statusCode).toBe(503);
+  });
+
+  it('Mercado Pago fora do ar → 502; falha no nosso banco → 500 (não culpa o Mercado Pago)', async () => {
+    const { call, client, store } = setup();
+    client.createPreference = async () => { throw new MercadoPagoError('HTTP 500', 500); };
+    const mp = await call('POST', 'checkout', { cycle: 'monthly' });
+    expect(mp.statusCode).toBe(502);
+    expect(mp.body.code).toBe('MERCADO_PAGO_INDISPONIVEL');
+    store.history = async () => { throw new Error('column "pro_until" does not exist'); };
+    const db = await call('GET');
+    expect(db.statusCode).toBe(500);
+    expect(db.body.error).not.toMatch(/Mercado Pago/);
   });
 });
 

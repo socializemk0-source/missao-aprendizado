@@ -55,10 +55,16 @@ export function mercadoPagoClient(accessToken: string, send: typeof fetch = fetc
     if (init.body !== undefined) headers['Content-Type'] = 'application/json';
     // Uma criação repetida (nova tentativa de rede) não vira duas cobranças.
     if (method === 'POST') headers['X-Idempotency-Key'] = crypto.randomUUID();
-    const res = await send(`https://api.mercadopago.com${path}`, {
-      method, headers, signal: AbortSignal.timeout(15_000),
-      ...(init.body !== undefined ? { body: JSON.stringify(init.body) } : {}),
-    });
+    let res: Response;
+    try {
+      res = await send(`https://api.mercadopago.com${path}`, {
+        method, headers, signal: AbortSignal.timeout(15_000),
+        ...(init.body !== undefined ? { body: JSON.stringify(init.body) } : {}),
+      });
+    } catch (err) {
+      // Sem resposta (rede, tempo esgotado): status 0.
+      throw new MercadoPagoError(`Mercado Pago ${method} ${path}: ${err instanceof Error ? err.message : 'sem resposta'}`, 0);
+    }
     const data = (await res.json().catch(() => null)) as (T & { message?: string }) | null;
     if (!res.ok || !data) throw new MercadoPagoError(`Mercado Pago ${method} ${path}: HTTP ${res.status} ${data?.message ?? ''}`.trim(), res.status);
     return data;
