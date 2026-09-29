@@ -4,6 +4,7 @@
 
 import { header, jsonBody, methodNotAllowed, type ApiRequest, type ApiResponse } from '../server/http.js';
 import { postgresLeads, type LeadStore } from '../server/leads.js';
+import { errorText } from '../server/log.js';
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const SOURCES = new Set(['landing', 'landing-final']);
@@ -53,7 +54,7 @@ export function createLeadsHandler({ store, now = Date.now, limitPerMinute = 5 }
       await store.save({ email, name: name || null, source });
       res.status(201).json({ ok: true });
     } catch (err) {
-      console.error('[leads] erro ao salvar:', err instanceof Error ? err.message : err);
+      console.error('[leads] erro ao salvar:', errorText(err));
       res.status(500).json({ error: 'Não foi possível salvar agora. Tente de novo.' });
     }
   };

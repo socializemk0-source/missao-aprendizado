@@ -12,6 +12,7 @@ import { jsonBody, methodNotAllowed, type ApiRequest, type ApiResponse } from '.
 import { verifySupabaseToken } from '../server/supabase.js';
 import type { EssayQuota } from '../shared/essay.js';
 import type { BancaRedacao, Tema } from '../content/redacao.js';
+import { errorText } from '../server/log.js';
 
 export const FREE_LIMIT = 1;
 export const WINDOW_MS = 7 * 24 * 60 * 60 * 1000;
@@ -104,13 +105,13 @@ export function createRedacaoHandler(deps: {
         // aluno recebe a correção mesmo assim (só não vai para o histórico).
         delivered = true;
         await deps.store.complete(id, result.report, score)
-          .catch((err: unknown) => console.error('[redacao] falha ao gravar a correção:', err instanceof Error ? err.message : err));
+          .catch((err: unknown) => console.error('[redacao] falha ao gravar a correção:', errorText(err)));
         return res.status(200).json({ id, score, report: result.report, cota: await quota(user.id) });
       } finally {
-        if (!delivered) await deps.store.release(id).catch((err: unknown) => console.error('[redacao] falha ao devolver a vaga:', err instanceof Error ? err.message : err));
+        if (!delivered) await deps.store.release(id).catch((err: unknown) => console.error('[redacao] falha ao devolver a vaga:', errorText(err)));
       }
     } catch (err) {
-      console.error('[redacao] erro:', err instanceof Error ? err.message : err);
+      console.error('[redacao] erro:', errorText(err));
       res.status(500).json({ error: 'Algo deu errado. Seu texto continua salvo; tente de novo.' });
     }
   };

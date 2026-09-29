@@ -3,6 +3,7 @@
 // rota confia em id de usuário vindo do corpo ou da URL.
 
 import { header, type ApiRequest, type ApiResponse } from './http.js';
+import { errorText } from './log.js';
 
 export interface Identity {
   id: string;
@@ -29,7 +30,7 @@ export async function authenticate(req: ApiRequest, res: ApiResponse, verifyToke
   try {
     identity = await verifyToken(token);
   } catch (err) {
-    console.warn('[auth] falha ao verificar token:', err instanceof Error ? err.message : err);
+    console.warn('[auth] falha ao verificar token:', errorText(err));
   }
   if (!identity?.id) {
     res.status(401).json({ error: 'Sua sessão expirou. Entre de novo.' });

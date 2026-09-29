@@ -18,6 +18,7 @@ import { deliverSimulado, getSimulado, getSimuladoOptions, parseSimuladoInput, s
 import { jsonBody, methodNotAllowed, type ApiRequest, type ApiResponse } from '../server/http.js';
 import { verifySupabaseToken } from '../server/supabase.js';
 import type { Mode } from '../shared/game.js';
+import { errorText } from '../server/log.js';
 
 const MODES: Mode[] = ['trilha', 'revisar', 'pratica', 'desafio'];
 const one = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v) ?? '';
@@ -77,7 +78,7 @@ export function createGameHandler(deps: { verifyToken: VerifyToken; store: GameS
         res.status(err.status).json({ error: err.message, code: err.code, ...err.extra });
         return;
       }
-      console.error('[game] erro:', err instanceof Error ? err.message : err);
+      console.error('[game] erro:', errorText(err));
       res.status(500).json({ error: 'Algo deu errado. Tente de novo.' });
     }
   };

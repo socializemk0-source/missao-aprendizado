@@ -6,6 +6,7 @@
 import { header, jsonBody, methodNotAllowed, type ApiRequest, type ApiResponse } from '../../server/http.js';
 import { MercadoPagoError, applyPayment, mercadoPagoClient, verifyWebhookSignature, type MpClient, type PaymentStore } from '../../server/payments.js';
 import { postgresPayments } from '../../server/payments-pg.js';
+import { errorText } from '../../server/log.js';
 
 const one = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v);
 
@@ -44,7 +45,7 @@ export function createWebhookHandler(deps: { store: PaymentStore; client: MpClie
       console.info('[webhook] pagamento', { dataId, status: result.status });
       res.status(200).json({ ok: true, resultado: result.status });
     } catch (err) {
-      console.error('[webhook] erro:', err instanceof Error ? err.message : err);
+      console.error('[webhook] erro:', errorText(err));
       res.status(500).json({ error: 'Falha ao processar; tente de novo.' });
     }
   };
