@@ -4,6 +4,7 @@ import { RouterProvider } from 'react-router';
 import { router } from './app/router';
 import { AuthProvider } from './auth/AuthProvider';
 import { ProgressProvider } from './game/ProgressProvider';
+import './lib/prefs'; // aplica tema, animações e modo foco no <html>
 import './styles/global.css';
 import './styles/layout.css';
 import './styles/pages.css';

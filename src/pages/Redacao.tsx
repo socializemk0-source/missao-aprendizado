@@ -6,7 +6,8 @@ import { Link, useLocation, useNavigate, useParams } from 'react-router';
 import { CRITERIOS, type BancaRedacao } from '../../content/redacao';
 import type { Essay, EssayQuota } from '../../shared/essay';
 import { useAuth } from '../auth/AuthProvider';
-import { Tico } from '../components/Tico';
+import { FocusToggle } from '../components/FocusToggle';
+import { TicoAnim } from '../components/TicoAnim';
 import { LoadState, useLoad } from '../game/useLoad';
 import { ApiError } from '../lib/api';
 import { countWords, drafts, essayApi, formatDate, highlight, type EssayConfig } from '../lib/essay';
@@ -118,7 +119,10 @@ function Editor({ config }: { config: EssayConfig }) {
         )}
 
         <div className="field">
-          <label htmlFor="texto">Seu texto</label>
+          <div className="field-row">
+            <label htmlFor="texto">Seu texto</label>
+            <FocusToggle />
+          </div>
           <textarea
             id="texto" className="essay-text" value={text} onChange={(e) => setText(e.target.value)} rows={16}
             placeholder="Escreva aqui. O rascunho fica salvo neste navegador enquanto você escreve."
@@ -204,7 +208,7 @@ function Report({ essay }: { essay: Essay }) {
         </div>
         <div className="essay-score" aria-label={`Nota ${essay.score} de 100`}>
           <strong>{essay.score}</strong><span>/100</span>
-          <Tico pose={essay.score >= 70 ? 'comemorando' : 'joinha'} className="tico essay-score-tico" />
+          <TicoAnim name={essay.score >= 70 ? 'palmas' : 'motivar'} height={120} className="essay-score-tico" />
         </div>
       </header>
 
