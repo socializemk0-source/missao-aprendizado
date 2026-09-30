@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useState, type ReactNode } from 'react';
-import { TicoAnim } from '../components/TicoAnim';
 import { ApiError } from '../lib/api';
 
 export interface Loaded<T> {
@@ -36,7 +35,7 @@ export function useLoad<T>(load: () => Promise<T>, deps: unknown[]): Loaded<T> {
 
 export function LoadState({ loaded, children }: { loaded: Loaded<unknown>; children: ReactNode }) {
   if (loaded.loading && !loaded.data) {
-    return <div className="load-state" role="status"><TicoAnim name="correr" height={64} label="Tico correndo enquanto carrega" /><p className="muted">Carregando…</p></div>;
+    return <div className="load-state" role="status"><div className="spinner" /><p className="muted">Carregando…</p></div>;
   }
   if (loaded.error) {
     return (

@@ -4,7 +4,7 @@
 import { useState, type ReactNode } from 'react';
 import { Link, useParams } from 'react-router';
 import type { Session } from '../../shared/game';
-import { TicoAnim } from '../components/TicoAnim';
+import { Tico } from '../components/Tico';
 import { QuizSession } from '../game/QuizSession';
 import { LoadState, useLoad } from '../game/useLoad';
 import { ApiError } from '../lib/api';
@@ -14,7 +14,7 @@ function Blocked({ error }: { error: Error }) {
   const code = error instanceof ApiError ? error.code : undefined;
   return (
     <div className="quiz-end card" role="alert">
-      <TicoAnim name="apontar" height={120} className="quiz-end-tico" />
+      <Tico pose="apontando" className="quiz-end-tico" />
       <h2>{code === 'PLANO_PRO' ? 'Capítulo do plano PRO' : code === 'FASE_BLOQUEADA' ? 'Fase ainda bloqueada' : 'Não deu para abrir'}</h2>
       <p className="muted">{error.message}</p>
       <div className="quiz-end-actions">
@@ -68,7 +68,7 @@ export function Revisar() {
             <p>Quando você errar uma questão, ela aparece aqui para você acertar depois. Revisar não gasta vidas.</p>
             <Link to="/jogar" className="btn btn-primary trail-cta">Voltar à trilha</Link>
           </div>
-          <TicoAnim name="palmas" height={150} className="hero-tico" />
+          <Tico pose="joinha" />
         </section>
       )}
     />
@@ -88,7 +88,7 @@ export function Jogos() {
         <p>10 questões das fases que você já concluiu, em 90 segundos. Treine a velocidade de prova. Não gasta vidas.</p>
         <button type="button" className="btn btn-primary trail-cta" onClick={() => setStarted((n) => n + 1)}>Começar desafio</button>
       </div>
-      <TicoAnim name="correr" height={140} className="hero-tico" />
+      <Tico pose="estrela" />
     </section>
   );
 }

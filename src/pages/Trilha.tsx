@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router';
 import type { TrailChapter, TrailPhase } from '../../shared/game';
 import { useAuth } from '../auth/AuthProvider';
 import { Icon } from '../components/Icon';
-import { TicoAnim } from '../components/TicoAnim';
+import { Tico } from '../components/Tico';
 import { useProgress } from '../game/ProgressProvider';
 import { LoadState, useLoad } from '../game/useLoad';
 import { game } from '../lib/game';
@@ -42,7 +42,7 @@ export function Trilha() {
           {next && <button type="button" className="btn btn-primary trail-cta" onClick={() => navigate(`/fase/${next.phase.id}`)}>Continuar trilha</button>}
           {!next && proBlocked && <Link to="/planos" className="btn btn-primary trail-cta">Conhecer o PRO</Link>}
         </div>
-        <TicoAnim name={next ? 'acenar' : 'pular'} height={150} className="hero-tico" />
+        <Tico pose={next ? 'acenando' : 'comemorando'} />
       </section>
 
       <LoadState loaded={loaded}>

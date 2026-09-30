@@ -8,7 +8,7 @@ import type { AnswerResult, Session } from '../../shared/game';
 import { Confetti } from '../components/Confetti';
 import { FocusToggle } from '../components/FocusToggle';
 import { Icon } from '../components/Icon';
-import { TicoAnim } from '../components/TicoAnim';
+import { Tico } from '../components/Tico';
 import { ApiError } from '../lib/api';
 import { fonteLabel, game, timeUntil } from '../lib/game';
 import { play } from '../lib/sound';
@@ -34,7 +34,7 @@ export function QuizSession({ session, timeLimitSec, exitTo = '/jogar', nextLabe
   const [summary, setSummary] = useState<Summary>({ answered: 0, correct: 0, xp: 0, phaseDone: null });
   const [finished, setFinished] = useState(session.questoes.length === 0);
   const [secondsLeft, setSecondsLeft] = useState(timeLimitSec ?? 0);
-  // Acertos seguidos nesta sessão: o Tico comemora mais a partir de 3.
+  // Acertos seguidos nesta sessão: a partir de 3 aparece o selo de sequência.
   const [combo, setCombo] = useState(0);
   const byId = useMemo(() => new Map(session.questoes.map((q) => [q.id, q])), [session]);
   const current = byId.get(queue[0] ?? '');
@@ -113,7 +113,7 @@ export function QuizSession({ session, timeLimitSec, exitTo = '/jogar', nextLabe
   if (noHearts !== null) {
     return (
       <div className="quiz-end card" role="alert">
-        <TicoAnim name="cair" height={110} className="quiz-end-tico" />
+        <Tico pose="apontando" className="quiz-end-tico" />
         <h2>Suas vidas acabaram</h2>
         <p className="muted">{noHearts ? `A próxima vida chega em ${timeUntil(noHearts)}.` : 'Elas recarregam sozinhas: 1 a cada 30 minutos.'} Enquanto isso, revisar seus erros não gasta vidas.</p>
         <div className="quiz-end-actions">
@@ -130,7 +130,7 @@ export function QuizSession({ session, timeLimitSec, exitTo = '/jogar', nextLabe
     return (
       <div className="quiz-end card" role="status">
         {celebrate && <Confetti />}
-        <TicoAnim name={summary.phaseDone ? 'voar' : perfect ? 'palmas' : 'motivar'} height={130} className="quiz-end-tico" />
+        <Tico pose={summary.phaseDone || perfect ? 'comemorando' : 'joinha'} className="quiz-end-tico" />
         <h2>{summary.phaseDone ? 'Fase concluída!' : timeLimitSec && secondsLeft === 0 ? 'Tempo esgotado!' : 'Sessão concluída!'}</h2>
         {summary.answered === 0 ? (
           <p className="muted">{session.subtitulo}</p>
@@ -186,9 +186,6 @@ export function QuizSession({ session, timeLimitSec, exitTo = '/jogar', nextLabe
       </article>
 
       <div className={`quiz-footer ${result ? (result.correct ? 'is-right' : 'is-wrong') : ''}`}>
-        {result && (
-          <TicoAnim name={result.correct ? (combo >= 3 ? 'rir' : 'palmas') : 'decepcionar'} height={72} className="quiz-footer-tico" />
-        )}
         {result?.correct && result.xpGanho > 0 && <span className="xp-float" aria-hidden="true">+{result.xpGanho} XP</span>}
         {result ? (
           <div className="quiz-feedback" role="status">

@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react';
 import { Navigate, useLocation } from 'react-router';
-import { TicoAnim } from '../components/TicoAnim';
 import { useAuth } from './AuthProvider';
 
 export function FullScreenMessage({ title, children }: { title: string; children?: ReactNode }) {
@@ -17,7 +16,7 @@ export function FullScreenMessage({ title, children }: { title: string; children
 export function Loading() {
   return (
     <div className="center-screen" role="status" aria-live="polite">
-      <div><TicoAnim name="correr" height={70} label="Tico correndo enquanto carrega" /><p className="muted">Carregando…</p></div>
+      <div><div className="spinner" /><p className="muted">Carregando…</p></div>
     </div>
   );
 }

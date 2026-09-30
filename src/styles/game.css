@@ -255,15 +255,6 @@ a.phase-node:hover { border-color: var(--primary-soft-border); background: var(-
   .sim-nav { position: sticky; bottom: calc(76px + env(safe-area-inset-bottom)); background: var(--bg); padding: 8px 0; z-index: 4; }
 }
 
-/* ---------- Tico animado (tiras de quadros) ---------- */
-.tico-anim {
-  display: inline-block; flex-shrink: 0; background-repeat: no-repeat; background-position: 0 0;
-  animation-name: tico-frames; animation-iteration-count: infinite;
-}
-@keyframes tico-frames { to { background-position: var(--tico-end) 0; } }
-html[data-motion='off'] .tico-anim { animation: none; }
-@media (prefers-reduced-motion: reduce) { .tico-anim { animation: none; } }
-
 /* ---------- Movimento ---------- */
 /* Tudo aqui desliga com animações desligadas (preferência ou modo foco) e com
    "reduzir movimento" do sistema. */
@@ -292,7 +283,6 @@ a.phase-node, .island a, .lp-plan { transition: transform .15s ease, box-shadow 
 a.phase-node:hover, .island a:hover { transform: translateY(-2px); }
 
 .quiz-footer { position: relative; }
-.quiz-footer-tico { align-self: flex-end; margin: -18px 0 -4px; }
 .xp-float {
   position: absolute; right: 22px; top: -8px; pointer-events: none;
   font-weight: 800; color: var(--gold-strong); font-size: 18px; animation: float-up 1.1s ease-out forwards;
@@ -305,15 +295,10 @@ a.phase-node:hover, .island a:hover { transform: translateY(-2px); }
   position: absolute; top: -12px; left: var(--x); width: 8px; height: 12px; border-radius: 2px;
   background: var(--c); animation: fall 2.2s cubic-bezier(.2, .6, .4, 1) var(--d) forwards;
 }
-.hero .hero-tico { flex-shrink: 0; }
 
 html[data-motion='off'] :is(.page-enter, .demo-option, .quiz-footer, .stat-num, .stat-flame svg, .list-cards > li, .trail-phases > li, .badge-grid > li, .map > li, .xp-float, .confetti i) { animation: none; }
 html[data-motion='off'] .xp-float { display: none; }
 @media (prefers-reduced-motion: reduce) {
   :is(.page-enter, .demo-option, .quiz-footer, .stat-num, .stat-flame svg, .list-cards > li, .trail-phases > li, .badge-grid > li, .map > li, .confetti i) { animation: none; }
   .xp-float { display: none; }
-}
-@media (max-width: 820px) {
-  /* No celular o Tico espia por cima do rodapé, sem ocupar uma linha. */
-  .quiz-footer-tico { position: absolute; left: 12px; top: -58px; margin: 0; transform: scale(.8); transform-origin: bottom left; }
 }

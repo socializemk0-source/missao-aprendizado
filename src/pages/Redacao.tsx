@@ -7,7 +7,7 @@ import { CRITERIOS, type BancaRedacao } from '../../content/redacao';
 import type { Essay, EssayQuota } from '../../shared/essay';
 import { useAuth } from '../auth/AuthProvider';
 import { FocusToggle } from '../components/FocusToggle';
-import { TicoAnim } from '../components/TicoAnim';
+import { Tico } from '../components/Tico';
 import { LoadState, useLoad } from '../game/useLoad';
 import { ApiError } from '../lib/api';
 import { countWords, drafts, essayApi, formatDate, highlight, type EssayConfig } from '../lib/essay';
@@ -208,7 +208,7 @@ function Report({ essay }: { essay: Essay }) {
         </div>
         <div className="essay-score" aria-label={`Nota ${essay.score} de 100`}>
           <strong>{essay.score}</strong><span>/100</span>
-          <TicoAnim name={essay.score >= 70 ? 'palmas' : 'motivar'} height={120} className="essay-score-tico" />
+          <Tico pose={essay.score >= 70 ? 'comemorando' : 'joinha'} className="tico essay-score-tico" />
         </div>
       </header>
 

@@ -149,16 +149,18 @@ describe('sessão de questões', () => {
     expect(document.documentElement.dataset.focus).toBeUndefined();
   });
 
-  it('acertar mostra o Tico comemorando; errar, o Tico desapontado', async () => {
+  it('acerto e erro aparecem no rodapé sem imagem extra (tela leve no celular)', async () => {
     setup();
     const user = userEvent.setup();
     renderAt('/fase/fase-01-1', signedIn, { progress: true });
     await screen.findByRole('heading', { name: 'Acentuação gráfica' });
     await answer(user, 'right');
-    expect(screen.getByRole('img', { name: 'Tico batendo palmas' })).toBeInTheDocument();
+    const footer = screen.getByText(/^Acertou!/).closest('.quiz-footer')!;
+    expect(footer).toHaveClass('is-right');
+    expect(footer.querySelector('img, [role="img"]')).toBeNull();
     await user.click(screen.getByRole('button', { name: 'Continuar' }));
     await answer(user, 'wrong');
-    expect(screen.getByRole('img', { name: 'Tico desapontado' })).toBeInTheDocument();
+    expect(screen.getByText(/^Resposta certa:/).closest('.quiz-footer')).toHaveClass('is-wrong');
   });
 
   it('teclado: número escolhe, Enter confere e continua', async () => {

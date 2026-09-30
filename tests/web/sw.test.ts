@@ -169,12 +169,12 @@ describe('service worker', () => {
 
   it('imagens do Tico: mostra a guardada e atualiza por trás; sem internet, continua aparecendo', async () => {
     env.fetch.mockImplementation(async () => page('v1', 'image/webp'));
-    expect(await (await get('/tico/anim/palmas.webp'))!.text()).toBe('v1');
+    expect(await (await get('/tico/acenando.webp'))!.text()).toBe('v1');
     env.fetch.mockImplementation(async () => page('v2', 'image/webp'));
-    expect(await (await get('/tico/anim/palmas.webp'))!.text()).toBe('v1');
-    expect(await (await get('/tico/anim/palmas.webp'))!.text()).toBe('v2');
+    expect(await (await get('/tico/acenando.webp'))!.text()).toBe('v1');
+    expect(await (await get('/tico/acenando.webp'))!.text()).toBe('v2');
     offline();
-    expect(await (await get('/tico/anim/palmas.webp'))!.text()).toBe('v2');
+    expect(await (await get('/tico/acenando.webp'))!.text()).toBe('v2');
   });
 
   it('sem internet, o ícone da página "Sem conexão" aparece mesmo que nunca tenha sido pedido antes', async () => {
