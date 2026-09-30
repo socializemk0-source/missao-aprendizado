@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router';
 import { useAuth } from '../auth/AuthProvider';
 import { AppearanceSettings } from '../components/AppearanceSettings';
 import { Icon } from '../components/Icon';
+import { InstallCard } from '../components/InstallCard';
 
 export const BANCAS = ['Cebraspe', 'FGV', 'FCC', 'Vunesp', 'Cesgranrio', 'Outra'];
 
@@ -85,6 +86,7 @@ export function Perfil() {
       </form>
 
       <AppearanceSettings />
+      <InstallCard />
 
       <button type="button" className="btn btn-danger signout-btn" onClick={() => void onSignOut()}>
         <Icon name="logout" size={20} /> Sair da conta

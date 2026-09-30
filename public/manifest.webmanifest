@@ -1,0 +1,23 @@
+{
+  "id": "/",
+  "name": "Aprova Tico",
+  "short_name": "Aprova Tico",
+  "description": "Estude para concursos públicos em forma de aventura: trilha guiada, questões no estilo das bancas, simulados e redação com IA.",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "start_url": "/jogar",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f9fbfd",
+  "theme_color": "#1688e8",
+  "categories": ["education"],
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Simulados", "short_name": "Simulados", "url": "/simulados" },
+    { "name": "Revisar erros", "short_name": "Revisar", "url": "/revisar" }
+  ]
+}

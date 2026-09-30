@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#1688e8" />
+    <title>Sem conexão — Aprova Tico</title>
+    <!-- Mostrada pelo service worker quando não há internet. Tudo que ela usa
+         fica guardado no aparelho (sem arquivos de fora). -->
+    <style>
+      :root { --bg: #f9fbfd; --card: #ffffff; --text: #1f2d3a; --muted: #5b6b7b; --border: #dfe8f0; --primary: #1688e8; color-scheme: light; }
+      @media (prefers-color-scheme: dark) {
+        :root { --bg: #0e1822; --card: #16222e; --text: #eef4f9; --muted: #92a6b8; --border: #2a3b4b; color-scheme: dark; }
+      }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0; display: grid; place-items: center; padding: 24px 16px calc(24px + env(safe-area-inset-bottom));
+        background: var(--bg); color: var(--text); font: 16px/1.5 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      }
+      main {
+        width: 100%; max-width: 420px; text-align: center; background: var(--card);
+        border: 2px solid var(--border); border-radius: 24px; padding: 32px 24px;
+      }
+      img { width: 96px; height: 96px; border-radius: 22px; }
+      h1 { font-size: 24px; margin: 18px 0 8px; }
+      p { margin: 0 0 22px; color: var(--muted); }
+      button {
+        font: inherit; font-weight: 800; color: #fff; background: #72c93d; border: 0; border-radius: 14px;
+        padding: 12px 22px; box-shadow: 0 4px 0 #58a92a; cursor: pointer;
+      }
+      button:active { transform: translateY(2px); box-shadow: 0 2px 0 #58a92a; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img src="/icons/icon-192.png" alt="Tico" width="96" height="96" />
+      <h1>Sem conexão</h1>
+      <p>O Tico não conseguiu falar com a internet. Confira o Wi-Fi ou os dados móveis e tente de novo. Seu progresso está salvo.</p>
+      <button type="button" onclick="location.reload()">Tentar de novo</button>
+    </main>
+    <script>
+      // Quando a internet voltar, tenta sozinho.
+      window.addEventListener('online', function () { location.reload(); });
+    </script>
+  </body>
+</html>

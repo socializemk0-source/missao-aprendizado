@@ -2,6 +2,7 @@ import { Link, NavLink, Outlet, useLocation } from 'react-router';
 import { useAuth } from '../auth/AuthProvider';
 import { BRAND, NAV } from '../app/nav';
 import { Icon } from '../components/Icon';
+import { InstallBanner } from '../components/InstallBanner';
 import { useProgress } from '../game/ProgressProvider';
 import { resolvedTheme, setPrefs, usePrefs } from '../lib/prefs';
 
@@ -50,6 +51,7 @@ export function AppLayout() {
           </div>
         </header>
         <main className="content" id="conteudo">
+          {pathname === '/jogar' && <InstallBanner />}
           {/* key: cada tela entra com uma transição suave */}
           <div key={pathname} className="page-enter"><Outlet /></div>
         </main>

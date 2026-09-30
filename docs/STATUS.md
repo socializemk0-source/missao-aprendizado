@@ -37,7 +37,8 @@ Prioridade: P0 bloqueia o uso · P1 jornada principal · P2 medição e retenç�
 | Notificações no app | — | Ausente | — | P2 | Marco 3 |
 | Analytics (`v2.events`) | — | Ausente | — | P2 | Marco 2 |
 | Admin | — | Ausente | Questões só mudam de status direto no banco | P3 | Marco 4 |
-| Termos, privacidade, SEO, PWA | `/privacidade` e meta description | Parcial | Faltam termos de uso, manifest/PWA e imagem de compartilhamento | P3 | Marco 4 |
+| App instalável (PWA) | Manifesto, ícones do Tico (inclusive o adaptável do Android e o do iPhone), service worker (`public/sw.js`), página "Sem conexão", aviso "Sem internet", aviso "Tem uma versão nova do app — Atualizar", botão "Instalar o app" no Perfil (passo a passo no iPhone) e aviso de instalar na Trilha. API, XP, PRO e pagamentos nunca passam pelo cache | OK | Login com Google e volta do Mercado Pago dentro do app instalado no iPhone ainda não foram testados num aparelho | P1 | Dono testa no Android e no iPhone (roteiro no PR). Depois: notificações (Marco 3) e estudar sem internet |
+| Termos, privacidade, SEO | `/privacidade` e meta description | Parcial | Faltam termos de uso e imagem de compartilhamento | P3 | Marco 4 |
 
 ## Base técnica
 

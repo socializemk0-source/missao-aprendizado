@@ -28,3 +28,41 @@
 .switch-row { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-top: 1px solid var(--border); cursor: pointer; font-weight: 700; }
 .switch-row input { width: 20px; height: 20px; accent-color: var(--primary); flex-shrink: 0; }
 .field-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+
+/* ---------- App instalável (PWA) ---------- */
+.install-done { margin: 0; font-weight: 700; color: var(--ok-fg); }
+.install-card .btn { display: inline-flex; align-items: center; gap: 8px; }
+.install-steps { margin: 0; padding-left: 22px; display: grid; gap: 8px; }
+.install-inline-icon { vertical-align: -3px; color: var(--primary-strong); }
+
+.install-banner {
+  display: flex; align-items: center; gap: 12px; margin: 0 0 18px; padding: 12px 12px 12px 14px;
+  background: var(--surface); border: 2px solid var(--primary-soft-border); border-radius: 18px;
+}
+.install-banner p { flex: 1; min-width: 0; margin: 0; font-size: 14px; color: var(--text-2); }
+.install-banner strong { color: var(--heading); }
+.install-banner-icon { width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0; }
+.install-banner-btn { flex-shrink: 0; padding: 8px 14px; font-size: 14px; text-decoration: none; }
+.install-banner-close { flex-shrink: 0; }
+
+/* Avisos de qualquer tela: sem internet / versão nova. Ficam acima da barra
+   de baixo do celular. */
+.pwa-notices {
+  position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(16px + env(safe-area-inset-bottom));
+  z-index: 60; display: grid; gap: 8px; width: min(520px, calc(100% - 32px)); pointer-events: none;
+}
+.pwa-notice {
+  pointer-events: auto; margin: 0; padding: 12px 14px; border-radius: 14px; font-size: 14px; font-weight: 700;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .18);
+}
+.pwa-offline { background: var(--warn-soft); color: var(--warn-fg); border: 1px solid var(--warn-border); }
+.pwa-update {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  background: var(--surface); color: var(--heading); border: 2px solid var(--primary-soft-border);
+}
+.pwa-update .btn { padding: 8px 14px; font-size: 14px; flex-shrink: 0; }
+@media (max-width: 820px) {
+  .pwa-notices { bottom: calc(84px + env(safe-area-inset-bottom)); }
+  .install-banner { flex-wrap: wrap; }
+  .install-banner p { flex-basis: calc(100% - 110px); }
+}
