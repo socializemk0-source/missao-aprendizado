@@ -10,7 +10,7 @@ import type { DisciplinaId, Questao } from '../content/types.js';
 import { acertoPct, type QuestionSource, type QuestionStats } from './questions.js';
 import {
   HEART_REGEN_MS, MAX_HEARTS, XP_FIRST_CORRECT, XP_PHASE_BONUS,
-  type Achievement, type AnswerResult, type GameErrorCode, type Mission, type Mode, type PhaseStatus,
+  type Achievement, type AnswerResult, type GameErrorCode, type JogoTipo, type Mission, type Mode, type PhaseStatus,
   type Plan, type Progress, type PublicQuestion, type RankingEntry, type Session, type SubjectStats, type TrailChapter,
 } from '../shared/game.js';
 
@@ -51,6 +51,27 @@ export interface UserTx {
   simuladosOnDay(day: string): Promise<number>;
   createSimulado(row: NewSimulado): Promise<string>;
   finishSimulado(id: string, done: { finishedAt: Date; acertos: number; pct: number; result: SimuladoStored }): Promise<void>;
+  // Rodadas dos jogos (server/minigames.ts).
+  createRound(row: NewRound): Promise<string>;
+  round(id: string): Promise<RoundRow | null>;
+  saveRound(id: string, patch: { estado?: unknown; finishedAt?: Date; pontos?: number | null; xp?: number }): Promise<void>;
+  roundsCompletedOnDay(day: string): Promise<{ tipo: JogoTipo; n: number }[]>;
+  roundRecords(): Promise<{ tipo: JogoTipo; max: number | null; min: number | null }[]>;
+}
+
+export interface NewRound {
+  tipo: JogoTipo;
+  disciplina: DisciplinaId | null;
+  day: string;
+  startedAt: Date;
+  estado: unknown; // gabarito e andamento: só o servidor vê
+}
+
+export interface RoundRow extends NewRound {
+  id: string;
+  finishedAt: Date | null;
+  pontos: number | null; // null = não completou
+  xp: number;
 }
 
 export interface NewSimulado {

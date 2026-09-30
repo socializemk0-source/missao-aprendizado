@@ -1,6 +1,6 @@
 import type {
-  Achievement, AnswerResult, Mission, Mode, Nivel, Progress, RankingEntry, Session, SimuladoOpcoes, SimuladoResultado,
-  SimuladoSessao, SubjectStats, TrailChapter,
+  Achievement, AnswerResult, JogadaResultado, JogoFim, JogoResumo, JogoRodada, JogoTipo, Mission, Mode, Nivel, Progress,
+  RankingEntry, Session, SimuladoOpcoes, SimuladoResultado, SimuladoSessao, SubjectStats, TrailChapter,
 } from '../../shared/game';
 import type { DisciplinaId } from '../../content/types';
 import type { Fonte } from '../../content/types';
@@ -30,6 +30,10 @@ export const game = {
     post<SimuladoSessao>('simulado-iniciar', input),
   deliverSimulado: (id: string, respostas: Record<string, number>) =>
     post<{ resultado: SimuladoResultado; progress: Progress }>('simulado-entregar', { id, respostas }),
+  jogos: () => get<{ jogos: JogoResumo[] }>('jogos'),
+  startJogo: (tipo: JogoTipo, disciplina: DisciplinaId | null) => post<JogoRodada>('jogo-iniciar', { tipo, disciplina }),
+  jogada: (id: string, jogada: Record<string, unknown>) => post<JogadaResultado>('jogo-jogada', { ...jogada, id }),
+  endJogo: (id: string, jogadas?: number) => post<JogoFim>('jogo-terminar', { id, jogadas }),
 };
 
 export function fonteLabel(fonte: Fonte): string {

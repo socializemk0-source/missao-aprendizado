@@ -53,6 +53,7 @@ a.phase-node:hover { border-color: var(--primary-soft-border); background: var(-
 .quiz-footer {
   display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
   padding: 16px 18px; border-radius: 18px; background: var(--surface); border: 2px solid var(--border);
+  position: relative; /* referência do "+10 XP"; no celular vira sticky (abaixo) */
 }
 .quiz-footer.is-right { background: var(--feedback-ok-bg); border-color: var(--ok-border); }
 .quiz-footer.is-wrong { background: var(--feedback-bad-bg); border-color: var(--warn-border); }
@@ -282,7 +283,6 @@ a.phase-node:hover { border-color: var(--primary-soft-border); background: var(-
 a.phase-node, .island a, .lp-plan { transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease; }
 a.phase-node:hover, .island a:hover { transform: translateY(-2px); }
 
-.quiz-footer { position: relative; }
 .xp-float {
   position: absolute; right: 22px; top: -8px; pointer-events: none;
   font-weight: 800; color: var(--gold-strong); font-size: 18px; animation: float-up 1.1s ease-out forwards;
@@ -301,4 +301,104 @@ html[data-motion='off'] .xp-float { display: none; }
 @media (prefers-reduced-motion: reduce) {
   :is(.page-enter, .demo-option, .quiz-footer, .stat-num, .stat-flame svg, .list-cards > li, .trail-phases > li, .badge-grid > li, .map > li, .confetti i) { animation: none; }
   .xp-float { display: none; }
+}
+
+/* ---------- Jogos ---------- */
+.jogos-lista { margin-top: 20px; }
+.jogo-card { display: grid; gap: 6px; text-decoration: none; color: inherit; padding: 18px 20px; transition: border-color .15s ease, transform .15s ease; }
+.jogo-card:hover { border-color: var(--primary-soft-border); transform: translateY(-2px); }
+.jogo-card-nome { font-size: 18px; color: var(--heading); }
+.jogo-card-meta { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; font-weight: 700; color: var(--primary-strong); }
+.jogo-materia { max-width: 340px; margin: 14px 0 4px; }
+.jogo-inicio-acoes { justify-content: flex-start; }
+.jogo-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.jogo-head .page-title { margin: 0; }
+.jogo-info { margin: 0 0 12px; font-size: 14px; font-variant-numeric: tabular-nums; }
+.jogo-msg { min-height: 1.5em; margin: 10px 0; font-size: 14px; font-weight: 700; color: var(--text-2); }
+.jogo-xp { margin: 0; font-size: 22px; color: var(--gold-strong); }
+.jogo-fim p { margin: 0; }
+
+/* Radar do Tico */
+.radar { display: grid; gap: 14px; max-width: 760px; }
+.radar-top { display: flex; align-items: center; gap: 12px; font-variant-numeric: tabular-nums; }
+.radar-top .bar { flex: 1; }
+.radar-card { display: grid; gap: 16px; }
+.radar-card .eyebrow { margin: 0; }
+.radar-texto { margin: 0; font-size: 20px; line-height: 1.4; color: var(--heading); font-weight: 700; }
+.radar-botoes { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.radar-btn { padding: 16px; font-size: 18px; background: var(--surface); border: 2px solid var(--border); color: var(--heading); }
+.radar-btn.is-certo:not(:disabled):hover { border-color: var(--ok-border); }
+.radar-btn.is-errado:not(:disabled):hover { border-color: var(--danger-border); }
+.radar-btn:disabled { opacity: .55; cursor: default; }
+.radar-btn.is-gabarito { opacity: 1; border-color: var(--green); box-shadow: 0 0 0 2px var(--green) inset; }
+
+/* Memória do Tico */
+.memoria-info { margin: 0 0 12px; font-size: 14px; font-variant-numeric: tabular-nums; }
+.memoria-grade { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; max-width: 760px; }
+.mem-carta {
+  min-height: 118px; padding: 10px; border-radius: 16px; border: 2px solid var(--primary-strong); cursor: pointer;
+  background: linear-gradient(145deg, var(--primary), var(--primary-strong)); color: #fff;
+  display: grid; place-items: center; text-align: center; font-size: 13px; line-height: 1.3;
+  transition: transform .2s ease, background-color .2s ease;
+}
+.mem-carta:active { transform: scale(.97); }
+.mem-verso { font-size: 34px; font-weight: 800; opacity: .9; }
+.mem-carta.is-aberta { background: var(--surface); color: var(--fg); border-color: var(--primary-soft-border); }
+.mem-carta span { min-width: 0; overflow-wrap: anywhere; }
+.mem-carta.is-aberta.is-termo span { font-size: clamp(12px, 3.4vw, 16px); font-weight: 800; color: var(--heading); }
+.mem-carta.is-achada { background: var(--ok-soft); border-color: var(--ok-border); cursor: default; }
+html[data-motion='on'] .mem-carta.is-aberta { animation: pop .3s ease-out; }
+
+/* Caça-palavras */
+.caca { display: grid; grid-template-columns: minmax(0, 440px) minmax(0, 1fr); gap: 8px 28px; align-items: start; }
+.caca .jogo-info { grid-column: 1 / -1; }
+.caca-esq { display: grid; min-width: 0; }
+.caca-grade { display: grid; gap: 4px; }
+.caca-linha { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 4px; }
+.caca-casa {
+  aspect-ratio: 1; min-width: 0; padding: 0; border-radius: 8px; border: 1px solid var(--border); background: var(--surface);
+  color: var(--heading); font-weight: 800; font-size: clamp(14px, 4vw, 18px); cursor: pointer;
+}
+.caca-casa.is-achada { background: var(--ok-soft); border-color: var(--ok-border); color: var(--ok-fg); }
+.caca-casa.is-inicio { background: var(--primary-soft); border-color: var(--primary); color: var(--primary-strong); }
+.caca-lista { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.caca-lista li { display: grid; gap: 2px; padding: 8px 12px; border-radius: 12px; background: var(--surface); border: 1px solid var(--border); font-size: 13px; }
+.caca-lista strong { letter-spacing: 1px; color: var(--heading); font-size: 15px; }
+.caca-lista span { color: var(--muted-fg); }
+.caca-lista li.is-found { background: var(--ok-soft); border-color: var(--ok-border); }
+.caca-lista li.is-found strong { text-decoration: line-through; color: var(--ok-fg); }
+
+/* Cruzadinha */
+.cruz { --cruz-casa: 36px; display: grid; gap: 12px; }
+.cruz-grade { display: grid; gap: 3px; width: max-content; max-width: 100%; }
+.cruz-vazia { width: var(--cruz-casa); height: var(--cruz-casa); }
+.cruz-casa { position: relative; width: var(--cruz-casa); height: var(--cruz-casa); }
+.cruz-casa input {
+  width: 100%; height: 100%; padding: 0; text-align: center; text-transform: uppercase; font-weight: 800;
+  font-size: 16px; /* 16 px: o iPhone não dá zoom ao tocar */ border: 1.5px solid var(--border); border-radius: 6px;
+  background: var(--surface); color: var(--heading); caret-color: transparent;
+}
+.cruz-casa input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 2px var(--primary); }
+.cruz-casa.is-ativa input { background: var(--primary-soft); }
+.cruz-casa.is-certa input { background: var(--ok-soft); border-color: var(--ok-border); color: var(--ok-fg); }
+.cruz-num { position: absolute; top: 1px; left: 3px; font-size: 9px; font-weight: 800; color: var(--muted-fg); pointer-events: none; line-height: 1; }
+.cruz-dica-ativa { margin: 0; padding: 10px 14px; border-radius: 12px; background: var(--surface-2); font-size: 14px; }
+.cruz-acoes { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.cruz-acoes .jogo-msg { margin: 0; }
+.cruz-pistas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.cruz-pistas h3 { margin: 0 0 6px; font-size: 15px; color: var(--heading); }
+.cruz-pistas ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.cruz-pistas button { width: 100%; text-align: left; background: none; border: 0; padding: 6px 8px; border-radius: 8px; font-size: 14px; cursor: pointer; color: var(--fg); }
+.cruz-pistas li.is-ativa button { background: var(--primary-soft); }
+.cruz-pistas li.is-certa button { color: var(--ok-fg); }
+
+@media (max-width: 820px) {
+  .memoria-grade { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .mem-carta { min-height: 104px; font-size: 12px; padding: 8px 6px; }
+  .mem-carta.is-aberta.is-termo span { font-size: min(11.5px, 3.05vw); }
+  .caca { grid-template-columns: minmax(0, 1fr); }
+  /* 11 casas + espaços cabem na largura do celular */
+  .cruz { --cruz-casa: min(36px, calc((100vw - 32px - 30px) / 11)); }
+  .cruz-pistas { grid-template-columns: minmax(0, 1fr); }
+  .radar-texto { font-size: 18px; }
 }

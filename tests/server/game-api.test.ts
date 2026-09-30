@@ -84,3 +84,27 @@ describe('/api/game — simulado', () => {
     expect((await call('POST', 'simulado-entregar', { body: { id: start.body.id } })).statusCode).toBe(400);
   });
 });
+
+describe('/api/game — jogos', () => {
+  it('resumo, iniciar (sem gabarito), jogar, terminar; erros com código', async () => {
+    const { call } = setup();
+    const hub = await call('GET', 'jogos');
+    expect(hub.statusCode).toBe(200);
+    expect(hub.body.jogos.map((j: { tipo: string }) => j.tipo)).toEqual(['radar', 'memoria', 'caca', 'cruzadinha']);
+    expect((await call('POST', 'jogo-iniciar', { body: { tipo: 'xadrez' } })).body.code).toBe('ACAO_INVALIDA');
+    const start = await call('POST', 'jogo-iniciar', { body: { tipo: 'radar', disciplina: 'rlm' } });
+    expect(start.statusCode).toBe(200);
+    expect(start.body.itens[0]).not.toHaveProperty('certo');
+    expect(start.body.itens[0]).not.toHaveProperty('explicacao');
+    const jogada = await call('POST', 'jogo-jogada', { body: { id: start.body.id, indice: 0, resposta: true } });
+    expect(jogada.statusCode).toBe(200);
+    expect(jogada.body).toHaveProperty('explicacao');
+    expect((await call('POST', 'jogo-jogada', { body: { indice: 0 } })).statusCode).toBe(400);
+    expect((await call('POST', 'jogo-jogada', { body: { id: start.body.id, indice: 0, resposta: true }, token: 'ok:u2' })).statusCode).toBe(404);
+    const fim = await call('POST', 'jogo-terminar', { body: { id: start.body.id } });
+    expect(fim.body).toMatchObject({ completo: false, xpGanho: 0 });
+    const again = await call('POST', 'jogo-terminar', { body: { id: start.body.id } });
+    expect([again.statusCode, again.body.code]).toEqual([409, 'JOGO_ENCERRADO']);
+    expect((await call('POST', 'jogo-iniciar', { body: { tipo: 'cruzadinha' } })).body.pistas[0]).not.toHaveProperty('resposta');
+  });
+});

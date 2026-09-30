@@ -12,7 +12,9 @@ import { RedefinirSenha } from '../pages/RedefinirSenha';
 import { Redacao, RedacaoRelatorio } from '../pages/Redacao';
 import { SimuladoTela, Simulados } from '../pages/Simulados';
 import { Trilha } from '../pages/Trilha';
-import { Fase, Jogos, Praticar, Revisar } from '../pages/Sessoes';
+import { Fase, Praticar, Revisar } from '../pages/Sessoes';
+import { Desafio, JogosHub } from '../pages/Jogos';
+import { JogoTela } from '../games/JogoTela';
 import { Aventura, Conquistas, Disciplinas, Missoes, Ranking } from '../pages/Painel';
 import { NAV } from './nav';
 
@@ -26,7 +28,7 @@ const READY: Record<string, ReactElement> = {
   '/missoes': <Missoes />,
   '/ranking': <Ranking />,
   '/disciplinas': <Disciplinas />,
-  '/jogos': <Jogos />,
+  '/jogos': <JogosHub />,
   '/revisar': <Revisar />,
   '/conquistas': <Conquistas />,
 };
@@ -69,6 +71,8 @@ const pages: RouteObject[] = [
       { path: '/praticar/:disciplina', element: <Praticar /> },
       { path: '/redacao/:id', element: <RedacaoRelatorio /> },
       { path: '/simulado/:id', element: <SimuladoTela /> },
+      { path: '/jogos/desafio', element: <Desafio /> },
+      { path: '/jogos/:slug', element: <JogoTela /> },
     ],
   },
   { path: '*', element: <NotFound /> },

@@ -1,7 +1,7 @@
-// Telas que abrem uma sessão de questões: fase da trilha, revisão,
-// prática por disciplina e desafio relâmpago.
+// Telas que abrem uma sessão de questões: fase da trilha, revisão e
+// prática por disciplina (o desafio relâmpago usa SessionScreen em Jogos).
 
-import { useState, type ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { Link, useParams } from 'react-router';
 import type { Session } from '../../shared/game';
 import { Tico } from '../components/Tico';
@@ -25,7 +25,7 @@ function Blocked({ error }: { error: Error }) {
   );
 }
 
-function SessionScreen({ load, deps, exitTo, timeLimitSec, empty, nextLabel, onNext }: {
+export function SessionScreen({ load, deps, exitTo, timeLimitSec, empty, nextLabel, onNext }: {
   load: () => Promise<Session>; deps: unknown[]; exitTo: string; timeLimitSec?: number; empty?: ReactNode;
   nextLabel?: string; onNext?: () => void;
 }) {
@@ -72,23 +72,5 @@ export function Revisar() {
         </section>
       )}
     />
-  );
-}
-
-export function Jogos() {
-  const [started, setStarted] = useState(0);
-  if (started) {
-    return <SessionScreen load={game.challenge} deps={[started]} exitTo="/jogar" timeLimitSec={90} nextLabel="Jogar de novo" onNext={() => setStarted((n) => n + 1)} />;
-  }
-  return (
-    <section className="hero">
-      <div className="hero-text">
-        <p className="eyebrow">Jogos</p>
-        <h1 className="page-title">Desafio relâmpago</h1>
-        <p>10 questões das fases que você já concluiu, em 90 segundos. Treine a velocidade de prova. Não gasta vidas.</p>
-        <button type="button" className="btn btn-primary trail-cta" onClick={() => setStarted((n) => n + 1)}>Começar desafio</button>
-      </div>
-      <Tico pose="estrela" />
-    </section>
   );
 }

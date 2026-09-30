@@ -32,7 +32,7 @@ Prioridade: P0 bloqueia o uso · P1 jornada principal · P2 medição e retenç�
 | Perfil | Nome, plano e progresso | Parcial | Não há exclusão de conta | P3 | Marco 4 |
 | Aparência e conforto | Tema claro/escuro/automático, sons (Web Audio), animações, modo foco/leitura (com tom creme) e "Aparência e som" no Perfil; tudo guardado no aparelho | OK | — | — | — |
 | Tico e movimento | Tico em imagem fixa e leve (6 poses em WebP, ~40 KB cada; antes ~130 KB em PNG). Movimento só em CSS: transições de tela, pulso/tremida nas alternativas, XP voando, selo de sequência, confete | OK | A animação do Tico por quadros foi retirada a pedido do dono (qualidade e peso no celular) | P3 | Depois da validação, um artista faz as animações do Tico |
-| Jogos | Só o Desafio relâmpago | Parcial | O V1 tinha Memória do Tico, Caça-palavras, Cruzadinha, Radar do Tico e Escalada | P2 | Entrega 2: jogos de volta, com XP e recordes no servidor |
+| Jogos | Desafio relâmpago + Radar do Tico (certo ou errado com explicação), Memória do Tico, Caça-palavras e Cruzadinha. Conteúdo autoral (`content/jogos.ts`: 83 termos e 80 afirmações). Servidor sorteia, guarda o gabarito e decide XP (só nas 3 primeiras rodadas completas de cada jogo por dia) e recorde; jogo não gasta vida e conta para a sequência de dias | OK | Precisa da migração 0010 aplicada no Supabase. Conteúdo dos jogos ainda sem revisão de professor | P2 | Dono aplica a 0010; professor revisa glossário e afirmações; depois, ranking semanal dos jogos |
 | Tutor IA | — | Ausente | — | P2 | Marco 3 |
 | Notificações no app | — | Ausente | — | P2 | Marco 3 |
 | Analytics (`v2.events`) | — | Ausente | — | P2 | Marco 2 |
@@ -44,7 +44,7 @@ Prioridade: P0 bloqueia o uso · P1 jornada principal · P2 medição e retenç�
 
 | Item | Situação | Observação |
 |---|---|---|
-| Banco | OK | Migrações 0001–0006 aplicadas em produção (13 tabelas em `v2`). A 0007 (este PR) precisa ser aplicada pelo dono. `v2.questoes_proprias` é a cópia antiga das 27 questões; pode ser apagada depois que a 0007 for aplicada |
+| Banco | Parcial | Migrações 0001–0009 aplicadas em produção. A 0010 (jogos) precisa ser aplicada pelo dono no SQL Editor do Supabase. `v2.questoes_proprias` é a cópia antiga das 27 questões; pode ser apagada |
 | Auth no servidor | OK | Identidade só pelo token (`server/auth.ts`); pagamentos confirmados pelo servidor |
 | RLS | OK | Ligado em todas as tabelas `v2` (acesso só pelo servidor) |
 | Estados de carregando, vazio e erro | Parcial | As telas do app tratam carregando e erro das chamadas; faltava a tela de erro geral (corrigido neste PR) |

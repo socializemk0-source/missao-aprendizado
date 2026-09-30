@@ -4,11 +4,11 @@
 
 import { and, desc, eq, gt, inArray, isNotNull, lt, ne, sql } from 'drizzle-orm';
 import type { DisciplinaId } from '../content/types.js';
-import type { Nivel, Plan } from '../shared/game.js';
+import type { JogoTipo, Nivel, Plan } from '../shared/game.js';
 import { db } from './db.js';
-import { PERCENTILE_MIN, type GameStore, type SimuladoRow, type SimuladoStored, type UserTx } from './game.js';
+import { PERCENTILE_MIN, type GameStore, type RoundRow, type SimuladoRow, type SimuladoStored, type UserTx } from './game.js';
 import { postgresQuestions } from './questions-pg.js';
-import { answers, missionClaims, phaseCompletions, profiles, questionState, questionStats, simulados, userStats } from './schema.js';
+import { answers, gameRounds, missionClaims, phaseCompletions, profiles, questionState, questionStats, simulados, userStats } from './schema.js';
 
 type Tx = Parameters<Parameters<ReturnType<typeof db>['transaction']>[0]>[0];
 
@@ -90,6 +90,45 @@ function userTx(tx: Tx, userId: string): UserTx {
       await tx.update(simulados).set({ finishedAt: done.finishedAt, acertos: done.acertos, pct: done.pct, result: done.result })
         .where(and(eq(simulados.id, id), eq(simulados.userId, userId)));
     },
+    async createRound(r) {
+      const [row] = await tx.insert(gameRounds).values({
+        userId, tipo: r.tipo, disciplina: r.disciplina, day: r.day, estado: r.estado, startedAt: r.startedAt,
+      }).returning({ id: gameRounds.id });
+      return row!.id;
+    },
+    async round(id) {
+      if (!UUID.test(id)) return null;
+      const [row] = await tx.select().from(gameRounds).where(and(eq(gameRounds.id, id), eq(gameRounds.userId, userId)));
+      return row ? toRound(row) : null;
+    },
+    async saveRound(id, patch) {
+      const set: Partial<typeof gameRounds.$inferInsert> = {};
+      if (patch.estado !== undefined) set.estado = patch.estado;
+      if (patch.finishedAt !== undefined) set.finishedAt = patch.finishedAt;
+      if (patch.pontos !== undefined) set.pontos = patch.pontos;
+      if (patch.xp !== undefined) set.xp = patch.xp;
+      if (Object.keys(set).length === 0) return;
+      await tx.update(gameRounds).set(set).where(and(eq(gameRounds.id, id), eq(gameRounds.userId, userId)));
+    },
+    async roundsCompletedOnDay(day) {
+      const rows = await tx.select({ tipo: gameRounds.tipo, n: sql<number>`count(*)::int` }).from(gameRounds)
+        .where(and(eq(gameRounds.userId, userId), eq(gameRounds.day, day), isNotNull(gameRounds.pontos)))
+        .groupBy(gameRounds.tipo);
+      return rows.map((r) => ({ tipo: r.tipo as JogoTipo, n: r.n }));
+    },
+    async roundRecords() {
+      const rows = await tx.select({ tipo: gameRounds.tipo, max: sql<number | null>`max(${gameRounds.pontos})`, min: sql<number | null>`min(${gameRounds.pontos})` })
+        .from(gameRounds).where(and(eq(gameRounds.userId, userId), isNotNull(gameRounds.pontos)))
+        .groupBy(gameRounds.tipo);
+      return rows.map((r) => ({ tipo: r.tipo as JogoTipo, max: r.max === null ? null : Number(r.max), min: r.min === null ? null : Number(r.min) }));
+    },
+  };
+}
+
+function toRound(r: typeof gameRounds.$inferSelect): RoundRow {
+  return {
+    id: r.id, tipo: r.tipo as JogoTipo, disciplina: r.disciplina as DisciplinaId | null, day: r.day, startedAt: r.startedAt,
+    finishedAt: r.finishedAt, estado: r.estado, pontos: r.pontos, xp: r.xp,
   };
 }
 

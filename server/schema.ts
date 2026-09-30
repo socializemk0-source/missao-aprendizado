@@ -149,3 +149,17 @@ export const simulados = v2.table('simulados', {
   pct: smallint('pct'),
   result: jsonb('result'),
 });
+
+// ---- Jogos (migração 0010) ----
+export const gameRounds = v2.table('game_rounds', {
+  id: uuid('id').primaryKey().defaultRandom(),
+  userId: text('user_id').notNull(),
+  tipo: text('tipo').notNull(),
+  disciplina: text('disciplina'),
+  day: date('day', { mode: 'string' }).notNull(),
+  estado: jsonb('estado').notNull(),
+  startedAt: timestamp('started_at', { withTimezone: true }).notNull().defaultNow(),
+  finishedAt: timestamp('finished_at', { withTimezone: true }),
+  pontos: integer('pontos'),
+  xp: integer('xp').notNull().default(0),
+});
