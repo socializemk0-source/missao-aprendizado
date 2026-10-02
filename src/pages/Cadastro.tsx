@@ -99,6 +99,7 @@ export function Cadastro() {
         </div>
         {captcha.element}
         <button className="btn btn-primary btn-block" disabled={busy || !email.trim() || !password || !captcha.ready}>{busy ? 'Criando conta…' : 'Criar conta'}</button>
+        <p className="field-hint auth-termos">Ao criar a conta, você concorda com os <Link to="/termos">Termos de uso</Link> e a <Link to="/privacidade">Política de privacidade</Link>.</p>
       </form>
       <p className="auth-footer">Já tem conta? <Link to="/entrar">Entrar</Link></p>
     </AuthLayout>

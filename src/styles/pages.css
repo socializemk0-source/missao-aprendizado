@@ -69,3 +69,13 @@
 
 /* CAPTCHA (Cloudflare Turnstile) nas telas de login e cadastro */
 .captcha { display: grid; gap: 6px; justify-items: center; margin: 4px 0 14px; min-height: 24px; }
+
+/* Termos no cadastro e aviso na página inicial */
+.auth-termos { text-align: center; margin: 12px 0 0; }
+.landing-aviso { max-width: 760px; margin: 16px auto 0; }
+
+/* Excluir a conta (Perfil) */
+.danger-zone { margin-top: 28px; border-color: var(--danger-border); display: grid; gap: 10px; max-width: 640px; }
+.danger-zone h2 { margin: 0; font-size: 18px; color: var(--danger-fg); }
+.danger-zone p { margin: 0; }
+.danger-zone .field { margin: 0; }

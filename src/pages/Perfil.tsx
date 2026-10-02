@@ -1,9 +1,10 @@
 import { useEffect, useState, type FormEvent } from 'react';
-import { useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { useAuth } from '../auth/AuthProvider';
 import { AppearanceSettings } from '../components/AppearanceSettings';
 import { Icon } from '../components/Icon';
 import { InstallCard } from '../components/InstallCard';
+import { api } from '../lib/api';
 
 export const BANCAS = ['Cebraspe', 'FGV', 'FCC', 'Vunesp', 'Cesgranrio', 'Outra'];
 
@@ -51,6 +52,28 @@ export function Perfil() {
     await signOut();
   }
 
+  const [confirmacao, setConfirmacao] = useState('');
+  const [excluindo, setExcluindo] = useState(false);
+  const [erroExcluir, setErroExcluir] = useState<string | null>(null);
+
+  async function onExcluir(e: FormEvent) {
+    e.preventDefault();
+    if (confirmacao !== 'EXCLUIR') return;
+    setExcluindo(true);
+    setErroExcluir(null);
+    try {
+      await api('/api/me', { method: 'DELETE', body: JSON.stringify({ confirmar: confirmacao }) });
+    } catch (err) {
+      setErroExcluir(err instanceof Error ? err.message : 'Não foi possível excluir a conta agora.');
+      setExcluindo(false);
+      return;
+    }
+    // A conta não existe mais: sai desta tela antes de encerrar a sessão
+    // (senão a proteção das telas do app levaria para /entrar).
+    navigate('/', { replace: true, state: { aviso: 'Sua conta foi excluída. Seus dados de estudo foram apagados.' } });
+    await signOut().catch(() => {});
+  }
+
   const set = (key: keyof typeof form) => (e: { target: { value: string } }) => setForm((f) => ({ ...f, [key]: e.target.value }));
 
   return (
@@ -91,6 +114,21 @@ export function Perfil() {
       <button type="button" className="btn btn-danger signout-btn" onClick={() => void onSignOut()}>
         <Icon name="logout" size={20} /> Sair da conta
       </button>
+
+      <form className="card danger-zone" onSubmit={(e) => void onExcluir(e)} aria-labelledby="excluir-conta">
+        <h2 id="excluir-conta">Excluir minha conta</h2>
+        <p className="muted">
+          Apaga para sempre seu perfil, progresso, XP, respostas, plano de estudos, redações, simulados e jogos, e remove seu
+          login. Não dá para desfazer. Os registros de pagamento do PRO ficam guardados, sem seu nome e e-mail, porque a
+          lei exige. Veja a <Link to="/privacidade">Política de privacidade</Link>.
+        </p>
+        {erroExcluir && <p className="alert alert-error" role="alert">{erroExcluir}</p>}
+        <div className="field">
+          <label htmlFor="confirmar-exclusao">Digite EXCLUIR para confirmar</label>
+          <input id="confirmar-exclusao" autoComplete="off" value={confirmacao} onChange={(e) => setConfirmacao(e.target.value)} />
+        </div>
+        <button className="btn btn-danger" disabled={excluindo || confirmacao !== 'EXCLUIR'}>{excluindo ? 'Excluindo…' : 'Excluir minha conta'}</button>
+      </form>
     </>
   );
 }

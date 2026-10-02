@@ -19,6 +19,7 @@ antes de lançar e antes de um teste de invasão (pentest).
 | CAPTCHA | Cloudflare Turnstile no login, cadastro e "esqueci a senha", ligado pela variável `TURNSTILE_SITE_KEY` (ver abaixo) |
 | Cabeçalhos | CSP restrita (só o próprio site, o Supabase e o CAPTCHA; sem `eval`; o script do tema entra por hash), HSTS, `X-Frame-Options: DENY` (o app não abre dentro de outro site), `nosniff`, Referrer-Policy, Permissions-Policy e COOP (`vercel.json`, conferido em `tests/server/headers.test.ts`) |
 | Dados pessoais | O ranking mostra só o primeiro nome. Os logs de erro não levam nome, e-mail nem id (`server/log.ts`) |
+| Excluir a conta (LGPD) | Perfil → Excluir minha conta (confirmação escrita). Apaga perfil, progresso, respostas, plano, redações, simulados, jogos, compras não pagas, contadores de limite e o e-mail da lista; depois remove o login no Supabase. Ficam só os registros de pagamento, exigidos por lei, sem nome nem e-mail (`server/conta.ts`) |
 | Dependências | Dependabot abre PR quando sai correção; o CI roda `npm audit` e barra falha alta ou crítica nas dependências do app |
 
 ## O que configurar (dono do projeto)
@@ -41,6 +42,7 @@ Se fizer o passo 3 antes do 2, ninguém consegue entrar até o passo 2 ser feito
 
 ### 3. Vercel
 - *Production Branch* = `main`.
+- `SUPABASE_SERVICE_ROLE_KEY` (Supabase → *Project Settings → API → service_role*): necessária para o aluno excluir a própria conta. É a chave mais poderosa do projeto: só na Vercel, nunca em código nem no navegador.
 - `APP_BASE_URL` com o domínio final (`https://...`).
 - *Firewall*: deixe a proteção contra DDoS (já vem ligada); em ataque, ligue o *Attack Challenge Mode*. Se o plano permitir, crie uma regra de *Rate Limit* para `/api/*` por IP; ela barra o excesso antes de chegar ao código.
 - Plano Pro antes de cobrar (o Hobby é só para uso não comercial).
@@ -49,7 +51,11 @@ Se fizer o passo 3 antes do 2, ninguém consegue entrar até o passo 2 ser feito
 - Tornar o repositório **privado** (*Settings → General → Danger Zone*). Não há segredo nele, mas o banco de questões com gabarito é o produto.
 - Ligar *Settings → Code security → Secret scanning* e *Dependabot alerts*.
 
-### 5. OpenAI e Mercado Pago
+### 5. Termos e contato
+- Preencher `CONTACT_EMAIL` em `src/app/nav.ts` (e-mail de contato para privacidade, reembolso e erros).
+- Pedir a um advogado que revise `/termos` e `/privacidade` antes de cobrar.
+
+### 6. OpenAI e Mercado Pago
 - OpenAI: limite de gasto mensal no painel (*Settings → Limits*).
 - Mercado Pago: credenciais e webhook conforme `docs/mercado-pago.md`. A chave secreta do webhook fica só na Vercel.
 
