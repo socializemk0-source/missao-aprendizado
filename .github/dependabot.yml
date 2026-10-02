@@ -1,0 +1,18 @@
+# Avisa (com um PR) quando sai correção de segurança ou versão nova das
+# dependências. Cada PR passa pela mesma verificação do CI antes de entrar.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    groups:
+      dependencias:
+        patterns: ['*']
+        update-types: [minor, patch]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly

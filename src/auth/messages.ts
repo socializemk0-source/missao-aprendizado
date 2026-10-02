@@ -9,6 +9,7 @@ const RULES: [RegExp, string][] = [
   [/rate limit|too many requests|security purposes/i, 'Muitas tentativas seguidas. Espere um minuto e tente de novo.'],
   [/invalid email|unable to validate email/i, 'Confira o e-mail digitado.'],
   [/same password|different from the old password/i, 'A nova senha precisa ser diferente da atual.'],
+  [/captcha/i, 'Não conseguimos confirmar que você não é um robô. Tente de novo.'],
   [/network|failed to fetch/i, 'Sem conexão com o servidor. Confira sua internet.'],
 ];
 

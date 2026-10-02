@@ -3,6 +3,7 @@ import { Link, Navigate, useSearchParams } from 'react-router';
 import { useAuth } from '../auth/AuthProvider';
 import { authErrorMessage } from '../auth/messages';
 import { Loading, safeNext } from '../auth/RequireAuth';
+import { useCaptcha } from '../components/Captcha';
 import { Icon } from '../components/Icon';
 import { getSupabase } from '../lib/supabase';
 import { AuthLayout } from './AuthLayout';
@@ -19,6 +20,7 @@ export function Entrar() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
+  const captcha = useCaptcha(mode);
 
   // Já logado (inclusive voltando do Google): direto para o app.
   if (status === 'signedIn') return <Navigate to={next} replace />;
@@ -37,25 +39,36 @@ export function Entrar() {
     }
   }
 
+  // Token do CAPTCHA vale uma vez: recomeça a verificação depois de usar.
+  async function comCaptcha(action: () => Promise<void>) {
+    try {
+      await action();
+    } finally {
+      captcha.reset();
+    }
+  }
+
   function onLogin(e: FormEvent) {
     e.preventDefault();
-    void run(async () => {
-      const { error: err } = await (await getSupabase()).auth.signInWithPassword({ email: email.trim(), password });
+    void run(() => comCaptcha(async () => {
+      const { error: err } = await (await getSupabase()).auth.signInWithPassword({
+        email: email.trim(), password, ...(captcha.options.captchaToken ? { options: captcha.options } : {}),
+      });
       if (err) throw err;
       // O AuthProvider percebe a sessão nova e esta tela redireciona.
-    });
+    }));
   }
 
   function onReset(e: FormEvent) {
     e.preventDefault();
-    void run(async () => {
+    void run(() => comCaptcha(async () => {
       const { error: err } = await (await getSupabase()).auth.resetPasswordForEmail(email.trim(), {
-        redirectTo: `${window.location.origin}/redefinir-senha`,
+        redirectTo: `${window.location.origin}/redefinir-senha`, ...captcha.options,
       });
       if (err) throw err;
       // Mesma mensagem exista ou não a conta (não revela quem é cadastrado).
       setNotice(`Se houver uma conta com ${email.trim()}, você vai receber um link para criar uma nova senha.`);
-    });
+    }));
   }
 
   function onGoogle() {
@@ -78,7 +91,8 @@ export function Entrar() {
             <label htmlFor="email">E-mail</label>
             <input id="email" type="email" autoComplete="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
           </div>
-          <button className="btn btn-primary btn-block" disabled={busy || !email.trim()}>{busy ? 'Enviando…' : 'Enviar link'}</button>
+          {captcha.element}
+          <button className="btn btn-primary btn-block" disabled={busy || !email.trim() || !captcha.ready}>{busy ? 'Enviando…' : 'Enviar link'}</button>
         </form>
         <p className="auth-footer"><button type="button" className="link-btn" onClick={() => setMode('login')}>Voltar para entrar</button></p>
       </AuthLayout>
@@ -101,12 +115,13 @@ export function Entrar() {
           <label htmlFor="password">Senha</label>
           <input id="password" type="password" autoComplete="current-password" required value={password} onChange={(e) => setPassword(e.target.value)} />
         </div>
-        <button className="btn btn-primary btn-block" disabled={busy || !email.trim() || !password}>{busy ? 'Entrando…' : 'Entrar'}</button>
+        {captcha.element}
+        <button className="btn btn-primary btn-block" disabled={busy || !email.trim() || !password || !captcha.ready}>{busy ? 'Entrando…' : 'Entrar'}</button>
       </form>
       <p className="auth-footer">
         <button type="button" className="link-btn" onClick={() => setMode('reset')}>Esqueci minha senha</button>
         <span> · </span>
-        <Link to={`/cadastro${next !== '/jogar' ? `?next=${encodeURIComponent(next)}` : ''}`}>Criar conta grátis</Link>
+        <Link to={`/cadastro${next !== '/hoje' ? `?next=${encodeURIComponent(next)}` : ''}`}>Criar conta grátis</Link>
       </p>
     </AuthLayout>
   );

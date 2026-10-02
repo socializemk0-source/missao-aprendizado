@@ -39,6 +39,6 @@ export function RequireAuth({ children }: { children: ReactNode }) {
 
 // Só aceita caminhos internos em ?next= (nunca redireciona para outro site).
 export function safeNext(raw: string | null): string {
-  if (!raw || !raw.startsWith('/') || raw.startsWith('//') || raw.startsWith('/\\')) return '/jogar';
+  if (!raw || !raw.startsWith('/') || raw.startsWith('//') || raw.startsWith('/\\')) return '/hoje';
   return raw;
 }

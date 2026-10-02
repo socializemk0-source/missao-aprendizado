@@ -1,6 +1,7 @@
 // GET /api/config/supabase — URL e chave pública (anon) do Supabase para o
-// navegador. A chave anon é feita para ser pública; a proteção real está
-// no servidor, que valida o token de cada requisição.
+// navegador, e a chave pública do CAPTCHA (Cloudflare Turnstile), se houver.
+// As duas são feitas para serem públicas; a proteção real está no servidor
+// (que valida o token de cada requisição) e no Supabase (que confere o CAPTCHA).
 
 import type { ApiRequest, ApiResponse } from '../../server/http.js';
 
@@ -13,5 +14,5 @@ export default function handler(_req: ApiRequest, res: ApiResponse): void {
     return;
   }
   res.setHeader('Cache-Control', 'public, max-age=300');
-  res.status(200).json({ supabaseUrl, supabaseAnonKey });
+  res.status(200).json({ supabaseUrl, supabaseAnonKey, captchaSiteKey: process.env.TURNSTILE_SITE_KEY?.trim() || null });
 }

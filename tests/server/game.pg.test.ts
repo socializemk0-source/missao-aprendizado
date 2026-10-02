@@ -35,7 +35,7 @@ describe.runIf(run)('jogo no Postgres', async () => {
     expect(claims.filter((c) => c.status === 'fulfilled')).toHaveLength(1);
     expect((await getProgress(postgresGame, u)).xp).toBe(60 + 25);
     const ranking = await getRanking(postgresGame, u, 100);
-    expect(ranking.top.some((t) => t.voce && t.nome === 'Rank PG')).toBe(true);
+    expect(ranking.top.some((t) => t.voce && t.nome === 'Rank')).toBe(true); // só o primeiro nome
   });
 
   it('PRO vem de pro_until no perfil; vencido volta a ser grátis', async () => {

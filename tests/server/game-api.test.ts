@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { createGameHandler } from '../../api/game.js';
 import { questao } from '../../content/trilha.js';
 import { memoryGameStore } from '../../server/game-memory.js';
+import { LIMITES, memoryLimiter } from '../../server/limite.js';
 import { fakeVerify, makeReq, makeRes } from './helpers.js';
 
 function setup() {
@@ -106,5 +107,68 @@ describe('/api/game — jogos', () => {
     const again = await call('POST', 'jogo-terminar', { body: { id: start.body.id } });
     expect([again.statusCode, again.body.code]).toEqual([409, 'JOGO_ENCERRADO']);
     expect((await call('POST', 'jogo-iniciar', { body: { tipo: 'cruzadinha' } })).body.pistas[0]).not.toHaveProperty('resposta');
+  });
+});
+
+describe('/api/game — plano de estudos', () => {
+  const perfil = { prova: 'INSS — Técnico', banca: 'Cebraspe', dataProva: null, minutosDia: 30, nivel: 'iniciante', disciplinas: ['portugues', 'rlm'] };
+
+  it('antes do onboarding o plano vem "não configurado"; salvar valida e devolve o plano', async () => {
+    const { call } = setup();
+    expect((await call('GET', 'plano')).body).toEqual({ configurado: false });
+
+    const bad = await call('POST', 'plano-salvar', { body: { ...perfil, minutosDia: 7 } });
+    expect([bad.statusCode, bad.body.code]).toEqual([400, 'ACAO_INVALIDA']);
+    expect(bad.body.error).toMatch(/tempo/);
+    expect((await call('GET', 'plano')).body).toEqual({ configurado: false });
+
+    const ok = await call('POST', 'plano-salvar', { body: perfil });
+    expect(ok.statusCode).toBe(200);
+    expect(ok.body).toMatchObject({ configurado: true, perfil: { prova: 'INSS — Técnico', minutosDia: 30 }, metaQuestoes: 10 });
+    const plano = await call('GET', 'plano');
+    expect(plano.body.tarefas.map((t: { tipo: string }) => t.tipo)).toEqual(['trilha', 'praticar']);
+  });
+
+  it('o plano é de quem está logado: outro aluno não vê', async () => {
+    const { call } = setup();
+    await call('POST', 'plano-salvar', { body: perfil });
+    expect((await call('GET', 'plano', { token: 'ok:u2' })).body).toEqual({ configurado: false });
+  });
+
+  it('disciplinas trazem o domínio por assunto; revisar traz a agenda', async () => {
+    const { call } = setup();
+    const q = 'pt-acent-1';
+    await call('POST', 'responder', { body: { questionId: q, choice: (questao(q)!.correta + 1) % 2, mode: 'trilha' } });
+    const d = await call('GET', 'disciplinas');
+    expect(d.body.assuntos.find((a: { assunto: string }) => a.assunto === 'Acentuação gráfica')).toMatchObject({ respondidas: 1, score: 0, situacao: 'fraco' });
+    const r = await call('GET', 'revisar');
+    expect(r.body.agenda).toMatchObject({ hoje: 1 });
+  });
+});
+
+describe('/api/game — limite de chamadas', () => {
+  it('por aluno: passou do limite do minuto → 429; outro aluno segue normal', async () => {
+    const handler = createGameHandler({ verifyToken: fakeVerify, store: memoryGameStore(), limiter: memoryLimiter(() => new Date('2026-10-02T12:00:00Z')) });
+    const call = async (token: string, ip = '1.1.1.1') => {
+      const res = makeRes();
+      await handler(makeReq({ method: 'GET', query: { action: 'progresso' }, token, headers: { 'x-real-ip': ip } }), res);
+      return res;
+    };
+    for (let i = 0; i < LIMITES.jogoPorMinuto; i++) expect((await call('ok:u1')).statusCode).toBe(200);
+    const blocked = await call('ok:u1');
+    expect([blocked.statusCode, blocked.body.code]).toEqual([429, 'MUITAS_TENTATIVAS']);
+    expect((await call('ok:u2', '2.2.2.2')).statusCode).toBe(200);
+  });
+
+  it('por IP, antes do login: tokens falsos em massa param no limite', async () => {
+    const handler = createGameHandler({ verifyToken: fakeVerify, store: memoryGameStore(), limiter: memoryLimiter(() => new Date('2026-10-02T12:00:00Z')) });
+    const statuses: number[] = [];
+    for (let i = 0; i <= LIMITES.ipPorMinuto; i++) {
+      const res = makeRes();
+      await handler(makeReq({ method: 'GET', query: { action: 'progresso' }, token: `falso-${i}`, headers: { 'x-real-ip': '6.6.6.6' } }), res);
+      statuses.push(res.statusCode);
+    }
+    expect(statuses.slice(0, -1).every((s) => s === 401)).toBe(true);
+    expect(statuses.at(-1)).toBe(429);
   });
 });

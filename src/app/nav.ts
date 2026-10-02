@@ -6,8 +6,9 @@ export interface NavEntry {
   icon: IconName;
 }
 
-// Mesma estrutura do V1. A trilha é a tela inicial do app.
+// "Hoje" (o plano do dia) é a tela inicial do app; depois, a trilha.
 export const NAV: NavEntry[] = [
+  { path: '/hoje', label: 'Hoje', icon: 'calendar' },
   { path: '/jogar', label: 'Trilha', icon: 'compass' },
   { path: '/redacao', label: 'Redação', icon: 'pen' },
   { path: '/simulados', label: 'Simulados', icon: 'clipboard' },

@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { createRedacaoHandler, WINDOW_MS } from '../../api/redacao.js';
+import { createRedacaoHandler, PRO_POR_DIA, WINDOW_MS } from '../../api/redacao.js';
 import { memoryEssays } from '../../server/essays.js';
 import type { GradeResult } from '../../server/essay.js';
 import type { Plan } from '../../shared/game.js';
@@ -99,6 +99,20 @@ describe('/api/redacao', () => {
     const { call } = setup({ plan: 'pro' });
     for (let i = 0; i < 3; i++) expect((await call('POST', { body: valid })).statusCode).toBe(200);
     expect((await call('GET')).body.cota).toEqual({ plano: 'pro', limite: null, usadas: 0, proximaEm: null });
+  });
+
+  it('PRO: até 20 correções a cada 24 horas (protege a conta da IA); depois abre de novo', async () => {
+    const { call, advance, grade } = setup({ plan: 'pro' });
+    for (let i = 0; i < PRO_POR_DIA; i++) {
+      expect((await call('POST', { body: valid })).statusCode).toBe(200);
+      advance(61_000); // fora do limite por minuto
+    }
+    const res = await call('POST', { body: valid });
+    expect([res.statusCode, res.body.code]).toEqual([429, 'LIMITE_DIARIO']);
+    expect(res.body.error).toMatch(/20 correções/);
+    expect(grade).toHaveBeenCalledTimes(PRO_POR_DIA);
+    advance(24 * 60 * 60_000);
+    expect((await call('POST', { body: valid })).statusCode).toBe(200);
   });
 
   it('limite por minuto (5) contra abuso, mesmo no PRO', async () => {

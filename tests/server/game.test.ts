@@ -119,12 +119,12 @@ describe('vidas', () => {
     const store = setup();
     const q = 'pt-acent-1';
     for (let i = 0; i < MAX_HEARTS; i++) await answer(store, 'u1', { questionId: q, choice: wrong(q), mode: 'trilha' }, T0);
-    const review = await getReviewSession(store, 'u1');
+    const review = await getReviewSession(store, 'u1', 10, T0);
     expect(review.questoes.map((x) => x.id)).toEqual([q]);
     const res = await answer(store, 'u1', { questionId: q, choice: right(q), mode: 'revisar' }, T0);
     expect(res.correct).toBe(true);
     expect(res.progress.hearts).toBe(0);
-    expect((await getReviewSession(store, 'u1')).questoes).toHaveLength(0);
+    expect((await getReviewSession(store, 'u1', 10, T0)).questoes).toHaveLength(0); // volta amanhã
   });
 
   it('recarga: 1 vida a cada 30 minutos, até o máximo', () => {
@@ -212,5 +212,13 @@ describe('praticar, desafio, disciplinas e ranking', () => {
     const { top, voce } = await getRanking(store, 'u1', 20, T0);
     expect(top.map((t) => [t.nome, t.xp])).toEqual([['Bruno', 60], ['Ana', 10]]);
     expect(voce).toMatchObject({ posicao: 2, xp: 10 });
+  });
+
+  it('ranking mostra só o primeiro nome (o resto é dado pessoal que ninguém precisa ver)', async () => {
+    const store = memoryGameStore({ names: { u1: '  Carla Mendes  Souza ', u2: 'Zé' } });
+    await answer(store, 'u1', { questionId: 'pt-acent-1', choice: right('pt-acent-1'), mode: 'trilha' }, T0);
+    await answer(store, 'u2', { questionId: 'pt-acent-1', choice: right('pt-acent-1'), mode: 'trilha' }, T0);
+    const { top } = await getRanking(store, 'u2', 20, T0);
+    expect(top.map((t) => t.nome).sort()).toEqual(['Carla', 'Zé']);
   });
 });

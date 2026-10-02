@@ -3,6 +3,7 @@
 
 import type { ReactNode } from 'react';
 import { Link, useParams } from 'react-router';
+import type { AgendaRevisao } from '../../shared/estudo';
 import type { Session } from '../../shared/game';
 import { Tico } from '../components/Tico';
 import { QuizSession } from '../game/QuizSession';
@@ -25,19 +26,21 @@ function Blocked({ error }: { error: Error }) {
   );
 }
 
-export function SessionScreen({ load, deps, exitTo, timeLimitSec, empty, nextLabel, onNext }: {
-  load: () => Promise<Session>; deps: unknown[]; exitTo: string; timeLimitSec?: number; empty?: ReactNode;
+export function SessionScreen({ load, deps, exitTo, timeLimitSec, empty, header, nextLabel, onNext }: {
+  load: () => Promise<Session>; deps: unknown[]; exitTo: string; timeLimitSec?: number;
+  empty?: ReactNode | ((session: Session) => ReactNode); header?: (session: Session) => ReactNode;
   nextLabel?: string; onNext?: () => void;
 }) {
   const loaded = useLoad(load, deps);
   if (loaded.error && loaded.error instanceof ApiError && [403, 404].includes(loaded.error.status)) return <Blocked error={loaded.error} />;
   return (
     <LoadState loaded={loaded}>
-      {loaded.data && (loaded.data.questoes.length === 0 && empty ? empty : (
+      {loaded.data && (loaded.data.questoes.length === 0 && empty ? (typeof empty === 'function' ? empty(loaded.data) : empty) : (
         <>
           <header className="session-head">
             <p className="eyebrow">{loaded.data.subtitulo}</p>
             <h1 className="page-title">{loaded.data.titulo}</h1>
+            {header?.(loaded.data)}
           </header>
           <QuizSession key={loaded.data.titulo + deps.join()} session={loaded.data} exitTo={exitTo} timeLimitSec={timeLimitSec} nextLabel={nextLabel} onNext={onNext} />
         </>
@@ -59,18 +62,39 @@ export function Praticar() {
 export function Revisar() {
   return (
     <SessionScreen
-      load={game.review} deps={[]} exitTo="/jogar"
-      empty={(
+      load={game.review} deps={[]} exitTo="/hoje"
+      header={(session) => session.agenda && <AgendaLinha agenda={session.agenda} />}
+      empty={(session) => (
         <section className="hero">
           <div className="hero-text">
             <p className="eyebrow">Revisar erros</p>
-            <h1 className="page-title">Nenhum erro pendente. Mandou bem!</h1>
-            <p>Quando você errar uma questão, ela aparece aqui para você acertar depois. Revisar não gasta vidas.</p>
-            <Link to="/jogar" className="btn btn-primary trail-cta">Voltar à trilha</Link>
+            {session.agenda && session.agenda.amanha + session.agenda.semana + session.agenda.depois > 0 ? (
+              <>
+                <h1 className="page-title">Nenhuma revisão para hoje</h1>
+                <p>Cada questão que você erra volta para revisão hoje, amanhã, em 7 dias e em 30 dias. Assim ela não some da memória.</p>
+                <AgendaLinha agenda={session.agenda} />
+              </>
+            ) : (
+              <>
+                <h1 className="page-title">Nenhum erro pendente. Mandou bem!</h1>
+                <p>Quando você errar uma questão, ela aparece aqui para você acertar depois. Revisar não gasta vidas.</p>
+              </>
+            )}
+            <Link to="/hoje" className="btn btn-primary trail-cta">Voltar para o plano de hoje</Link>
           </div>
           <Tico pose="joinha" />
         </section>
       )}
     />
   );
+}
+
+function AgendaLinha({ agenda }: { agenda: AgendaRevisao }) {
+  const partes = [
+    agenda.amanha > 0 && `amanhã ${agenda.amanha}`,
+    agenda.semana > 0 && `nos próximos 7 dias ${agenda.semana}`,
+    agenda.depois > 0 && `mais adiante ${agenda.depois}`,
+  ].filter(Boolean);
+  if (partes.length === 0) return null;
+  return <p className="muted revisao-agenda">Próximas revisões: {partes.join(' · ')}</p>;
 }

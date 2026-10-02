@@ -4,13 +4,16 @@
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 
 let clientPromise: Promise<SupabaseClient> | null = null;
+let captchaSiteKey: string | null = null;
 
 export class LoginUnavailableError extends Error {}
 
 async function createFromServerConfig(): Promise<SupabaseClient> {
   const res = await fetch('/api/config/supabase');
   if (!res.ok) throw new LoginUnavailableError('Login indisponível no momento.');
-  const { supabaseUrl, supabaseAnonKey } = (await res.json()) as { supabaseUrl: string; supabaseAnonKey: string };
+  const config = (await res.json()) as { supabaseUrl: string; supabaseAnonKey: string; captchaSiteKey?: string | null };
+  const { supabaseUrl, supabaseAnonKey } = config;
+  captchaSiteKey = config.captchaSiteKey ?? null;
   return createClient(supabaseUrl, supabaseAnonKey, {
     auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true },
   });
@@ -24,7 +27,14 @@ export function getSupabase(): Promise<SupabaseClient> {
   return clientPromise;
 }
 
-// Só para os testes injetarem um cliente falso.
-export function setSupabaseForTests(client: SupabaseClient | null): void {
+// Chave pública do CAPTCHA (null = CAPTCHA desligado).
+export async function getCaptchaSiteKey(): Promise<string | null> {
+  await getSupabase();
+  return captchaSiteKey;
+}
+
+// Só para os testes injetarem um cliente falso (e, se quiserem, o CAPTCHA).
+export function setSupabaseForTests(client: SupabaseClient | null, captcha: string | null = null): void {
   clientPromise = client ? Promise.resolve(client) : null;
+  captchaSiteKey = captcha;
 }
