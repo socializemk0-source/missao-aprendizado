@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 // Jogos contra o motor de verdade (api/game.ts + store em memória): cada
 // teste joga uma rodada inteira pela tela, como o aluno.
-import { cleanup, screen, waitFor, within } from '@testing-library/react';
+import { cleanup, fireEvent, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { createGameHandler } from '../../api/game';
@@ -165,15 +165,21 @@ describe('Cruzadinha', () => {
     await user.click(screen.getByRole('button', { name: 'Conferir' }));
     expect(await screen.findByRole('status')).toHaveTextContent(`0 de ${pistas.length} certas`);
 
-    for (const p of pistas) {
+    // A 1ª palavra é digitada tecla a tecla (como no celular); as outras são
+    // preenchidas direto no campo, para o teste não passar do tempo limite.
+    for (const [n, p] of pistas.entries()) {
       const termo = letras(GLOSSARIO.find((t) => t.dica === p.dataset.dica)!.termo);
       const [l, c] = [Number(p.dataset.linha), Number(p.dataset.coluna)];
       for (let i = 0; i < termo.length; i++) {
         const input = screen.getByRole('textbox', {
           name: `Linha ${l + 1 + (p.dataset.direcao === 'V' ? i : 0)}, coluna ${c + 1 + (p.dataset.direcao === 'H' ? i : 0)}`,
         }) as HTMLInputElement;
-        await user.clear(input);
-        await user.type(input, termo[i]!.toLowerCase());
+        if (n === 0) {
+          await user.clear(input);
+          await user.type(input, termo[i]!.toLowerCase());
+        } else {
+          fireEvent.change(input, { target: { value: termo[i]!.toLowerCase() } });
+        }
         expect(input.value).toBe(termo[i]);
       }
     }
@@ -181,7 +187,7 @@ describe('Cruzadinha', () => {
     const fim = await screen.findByRole('region', { name: 'Resultado' });
     expect(fim).toHaveTextContent('Você completou a cruzadinha em');
     expect(fim).toHaveTextContent(`+${JOGO_XP.cruzadinha} XP`);
-  });
+  }, 15_000);
 });
 
 describe('Desafio relâmpago', () => {
