@@ -102,7 +102,7 @@ export interface RankingEntry {
 export type GameErrorCode =
   | 'QUESTAO_INEXISTENTE' | 'FASE_BLOQUEADA' | 'PLANO_PRO' | 'SEM_VIDAS' | 'ALTERNATIVA_INVALIDA' | 'MISSAO_INCOMPLETA'
   | 'MISSAO_RESGATADA' | 'SEM_CONTEUDO' | 'ACAO_INVALIDA' | 'LIMITE_SIMULADO' | 'POUCAS_QUESTOES' | 'SIMULADO_ABERTO'
-  | 'SIMULADO_INEXISTENTE';
+  | 'SIMULADO_INEXISTENTE' | 'JOGO_INEXISTENTE' | 'JOGO_ENCERRADO' | 'JOGO_RAPIDO';
 
 // ---------------------------------------------------------------- Simulado
 export type Nivel = 'facil' | 'medio' | 'dificil' | 'misto';
@@ -163,4 +163,53 @@ export interface SimuladoResultado {
   percentil: number | null; // melhor que X% dos simulados deste nível
   porDisciplina: { disciplina: DisciplinaId; nome: string; acertos: number; total: number }[];
   questoes: SimuladoQuestaoResultado[];
+}
+
+// ---------------------------------------------------------------- Jogos
+// Radar do Tico (certo ou errado), Memória do Tico, Caça-palavras e
+// Cruzadinha. O servidor sorteia, guarda o gabarito e decide XP e recorde.
+export type JogoTipo = 'radar' | 'memoria' | 'caca' | 'cruzadinha';
+export const JOGOS: JogoTipo[] = ['radar', 'memoria', 'caca', 'cruzadinha'];
+// XP de uma rodada completa (no Radar, 1 por acerto, até este máximo).
+export const JOGO_XP: Record<JogoTipo, number> = { radar: 10, memoria: 10, caca: 10, cruzadinha: 15 };
+export const JOGO_RODADAS_COM_XP = 3; // por jogo, por dia
+export const RADAR_TAMANHO = 10;
+export const MEMORIA_PARES = 6;
+export const CACA_TAMANHO = 10; // grade 10 × 10
+// Recorde: no Radar vale mais acertos; nos outros, menos jogadas/segundos.
+export const JOGO_RECORDE_MAIOR: Record<JogoTipo, boolean> = { radar: true, memoria: false, caca: false, cruzadinha: false };
+
+export interface JogoResumo {
+  tipo: JogoTipo;
+  recorde: number | null;
+  rodadasHoje: number; // completas hoje
+  rodadasComXp: number;
+}
+
+export interface CruzPista {
+  n: number;
+  direcao: 'H' | 'V';
+  linha: number;
+  coluna: number;
+  tamanho: number;
+  dica: string;
+}
+
+export type JogoRodada =
+  | { id: string; tipo: 'radar'; disciplina: DisciplinaId | null; itens: { texto: string; disciplina: DisciplinaId }[] }
+  | { id: string; tipo: 'memoria'; disciplina: DisciplinaId | null; cartas: { id: string; texto: string; par: string; lado: 'termo' | 'dica' }[] }
+  | { id: string; tipo: 'caca'; disciplina: DisciplinaId | null; grade: string[]; palavras: { palavra: string; dica: string }[] }
+  | { id: string; tipo: 'cruzadinha'; disciplina: DisciplinaId | null; largura: number; altura: number; pistas: CruzPista[] };
+
+export type JogadaResultado =
+  | { tipo: 'radar'; indice: number; acertou: boolean; certo: boolean; explicacao: string }
+  | { tipo: 'caca'; palavra: string; valida: boolean; encontradas: number; total: number }
+  | { tipo: 'cruzadinha'; corretas: string[]; completa: boolean }; // "1H", "2V"...
+
+export interface JogoFim {
+  completo: boolean;
+  pontos: number | null;
+  xpGanho: number;
+  recorde: boolean;
+  progress: Progress;
 }

@@ -76,22 +76,24 @@ export function Landing() {
 
       <main>
         {/* 1. Promessa + prova imediata */}
-        <section className="lp-section lp-hero">
-          <div className="lp-hero-text">
-            <p className="eyebrow">Estudo para concursos em forma de aventura</p>
-            <h1 className="landing-title">Sua aprovação, uma fase de cada vez.</h1>
-            <p className="lp-lead">Questões no estilo das bancas, explicação em cada resposta e uma trilha que mostra exatamente o próximo passo. Com o Tico do seu lado todos os dias.</p>
-            <div className="landing-cta">
-              {primaryCta}
-              {!signedIn && <a href="#experimente" className="btn btn-secondary btn-lg">Testar uma questão</a>}
+        <div className="lp-hero-band">
+          <section className="lp-section lp-hero">
+            <div className="lp-hero-text">
+              <p className="eyebrow">Estudo para concursos em forma de aventura</p>
+              <h1 className="landing-title">Sua aprovação, uma fase de cada vez.</h1>
+              <p className="lp-lead">Questões no estilo das bancas, explicação em cada resposta e uma trilha que mostra exatamente o próximo passo. Com o Tico do seu lado todos os dias.</p>
+              <div className="landing-cta">
+                {primaryCta}
+                {!signedIn && <a href="#experimente" className="btn btn-secondary btn-lg">Testar uma questão</a>}
+              </div>
+              <p className="lp-trust"><Icon name="star" size={16} /> Grátis para começar · sem cartão de crédito</p>
             </div>
-            <p className="lp-trust"><Icon name="star" size={16} /> Grátis para começar · sem cartão de crédito</p>
-          </div>
-          <Tico pose="acenando" className="tico lp-hero-tico" />
-        </section>
+            <img src="/landing/hero.webp" alt="" className="lp-hero-img" width={1672} height={941} />
+          </section>
+        </div>
 
         <section className="lp-bancas" aria-label="Bancas">
-          <span>Questões das provas de</span>
+          <span>Questões no estilo de</span>
           <ul>{BANCAS.map((b) => <li key={b}>{b}</li>)}</ul>
         </section>
 

@@ -1,10 +1,10 @@
 // PaymentStore no Postgres: conceder e estornar em transação, com trava
 // por aluno, para dois avisos do mesmo pagamento não somarem dias duas vezes.
 
-import { and, desc, eq, sql } from 'drizzle-orm';
+import { and, desc, eq, gte, sql } from 'drizzle-orm';
 import { db } from './db.js';
 import type { Cycle, PaymentStore } from './payments.js';
-import { payments, profiles } from './schema.js';
+import { checkouts, payments, profiles } from './schema.js';
 
 const lock = (userId: string) => sql`select pg_advisory_xact_lock(hashtext(${`v2:user:${userId}`}))`;
 
@@ -48,6 +48,21 @@ export const postgresPayments: PaymentStore = {
         .where(eq(profiles.userId, row.userId));
       return { status: 'revoked' as const, userId: row.userId };
     });
+  },
+
+  async recordCheckout({ reference, userId, cycle, now }) {
+    await db().insert(checkouts).values({ reference, userId, cycle, createdAt: now }).onConflictDoNothing();
+  },
+
+  async openCheckouts(userId, since, limit) {
+    const rows = await db().select({ reference: checkouts.reference }).from(checkouts)
+      .where(and(eq(checkouts.userId, userId), eq(checkouts.paid, false), gte(checkouts.createdAt, since)))
+      .orderBy(desc(checkouts.createdAt)).limit(limit);
+    return rows.map((r) => r.reference);
+  },
+
+  async markCheckoutPaid(reference) {
+    await db().update(checkouts).set({ paid: true }).where(eq(checkouts.reference, reference));
   },
 
   async history(userId) {

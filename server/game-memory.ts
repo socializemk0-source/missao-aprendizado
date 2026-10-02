@@ -2,7 +2,7 @@
 // operação por usuário de cada vez). Usado nos testes e na demonstração.
 
 import type { Plan } from '../shared/game.js';
-import { PERCENTILE_MIN, type GameStore, type QuestionState, type SimuladoRow, type Stats, type UserTx } from './game.js';
+import { PERCENTILE_MIN, type GameStore, type QuestionState, type RoundRow, type SimuladoRow, type Stats, type UserTx } from './game.js';
 import { contentSource, type QuestionSource, type QuestionStats } from './questions.js';
 
 interface UserData {
@@ -12,6 +12,7 @@ interface UserData {
   phases: Map<string, string>;
   claims: Set<string>;
   simulados: SimuladoRow[];
+  rounds: RoundRow[];
 }
 
 export function memoryGameStore(options: { plan?: (userId: string) => Plan; names?: Record<string, string>; questions?: QuestionSource } = {}) {
@@ -20,7 +21,7 @@ export function memoryGameStore(options: { plan?: (userId: string) => Plan; name
   let seq = 0;
   const locks = new Map<string, Promise<unknown>>();
   const data = (id: string): UserData => {
-    if (!users.has(id)) users.set(id, { stats: null, states: new Map(), answers: [], phases: new Map(), claims: new Set(), simulados: [] });
+    if (!users.has(id)) users.set(id, { stats: null, states: new Map(), answers: [], phases: new Map(), claims: new Set(), simulados: [], rounds: [] });
     return users.get(id)!;
   };
 
@@ -60,6 +61,33 @@ export function memoryGameStore(options: { plan?: (userId: string) => Plan; name
         finishSimulado: async (id, done) => {
           const r = d.simulados.find((x) => x.id === id);
           if (r) Object.assign(r, done);
+        },
+        createRound: async (row) => {
+          const id = `jogo-${++seq}`;
+          d.rounds.push({ ...row, estado: structuredClone(row.estado), id, finishedAt: null, pontos: null, xp: 0 });
+          return id;
+        },
+        round: async (id) => {
+          const r = d.rounds.find((x) => x.id === id);
+          return r ? { ...r, estado: structuredClone(r.estado) } : null;
+        },
+        saveRound: async (id, patch) => {
+          const r = d.rounds.find((x) => x.id === id);
+          if (!r) return;
+          if (patch.estado !== undefined) r.estado = structuredClone(patch.estado);
+          if (patch.finishedAt !== undefined) r.finishedAt = patch.finishedAt;
+          if (patch.pontos !== undefined) r.pontos = patch.pontos;
+          if (patch.xp !== undefined) r.xp = patch.xp;
+        },
+        roundsCompletedOnDay: async (day) => {
+          const counts = new Map<RoundRow['tipo'], number>();
+          for (const r of d.rounds) if (r.day === day && r.pontos !== null) counts.set(r.tipo, (counts.get(r.tipo) ?? 0) + 1);
+          return [...counts].map(([tipo, n]) => ({ tipo, n }));
+        },
+        roundRecords: async () => {
+          const by = new Map<RoundRow['tipo'], number[]>();
+          for (const r of d.rounds) if (r.pontos !== null) by.set(r.tipo, [...(by.get(r.tipo) ?? []), r.pontos]);
+          return [...by].map(([tipo, list]) => ({ tipo, max: Math.max(...list), min: Math.min(...list) }));
         },
       };
       const previous = locks.get(userId) ?? Promise.resolve();

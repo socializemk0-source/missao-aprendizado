@@ -132,6 +132,37 @@ describe('sessão de questões', () => {
     await waitFor(() => expect(screen.getByTitle('Vidas ilimitadas (PRO)')).toHaveTextContent('∞'));
   });
 
+  it('modo foco: liga pelo botão, Esc sai, e sair da questão desliga', async () => {
+    setup();
+    const user = userEvent.setup();
+    const { unmount } = renderAt('/fase/fase-01-1', signedIn, { progress: true });
+    await screen.findByRole('heading', { name: 'Acentuação gráfica' });
+    const foco = screen.getByRole('button', { name: /Modo foco/ });
+    expect(foco).toHaveAttribute('aria-pressed', 'false');
+    await user.click(foco);
+    expect(document.documentElement.dataset.focus).toBe('on');
+    expect(screen.getByRole('button', { name: /Sair do foco/ })).toHaveAttribute('aria-pressed', 'true');
+    await user.keyboard('{Escape}');
+    expect(document.documentElement.dataset.focus).toBeUndefined();
+    await user.click(screen.getByRole('button', { name: /Modo foco/ }));
+    unmount();
+    expect(document.documentElement.dataset.focus).toBeUndefined();
+  });
+
+  it('acerto e erro aparecem no rodapé sem imagem extra (tela leve no celular)', async () => {
+    setup();
+    const user = userEvent.setup();
+    renderAt('/fase/fase-01-1', signedIn, { progress: true });
+    await screen.findByRole('heading', { name: 'Acentuação gráfica' });
+    await answer(user, 'right');
+    const footer = screen.getByText(/^Acertou!/).closest('.quiz-footer')!;
+    expect(footer).toHaveClass('is-right');
+    expect(footer.querySelector('img, [role="img"]')).toBeNull();
+    await user.click(screen.getByRole('button', { name: 'Continuar' }));
+    await answer(user, 'wrong');
+    expect(screen.getByText(/^Resposta certa:/).closest('.quiz-footer')).toHaveClass('is-wrong');
+  });
+
   it('teclado: número escolhe, Enter confere e continua', async () => {
     setup();
     const user = userEvent.setup();

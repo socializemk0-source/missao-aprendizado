@@ -21,6 +21,7 @@ function setup(payments: Record<string, MpPayment> = {}) {
   const client: MpClient = {
     createPreference: vi.fn(async () => ({ id: 'pref', url: 'https://mp.test/checkout' })),
     getPayment: async (id) => payments[id]!,
+    searchPayments: async (reference) => Object.values(payments).filter((p) => p.external_reference === reference),
   };
   const game = memoryGameStore({ plan: (u) => ((store.pro.get(u)?.getTime() ?? 0) > Date.now() ? 'pro' : 'free') });
   fakeSupabase({ getSession: async () => ({ data: { session: tokenSession } }) });
@@ -42,7 +43,7 @@ describe('planos', () => {
     expect(await screen.findByText('Seu plano atual')).toBeInTheDocument();
     await user.click(screen.getByRole('button', { name: /Comprar 1 ano — R\$\s239,90/ }));
     await waitFor(() => expect(go).toHaveBeenCalledWith('https://mp.test/checkout'));
-    expect(client.createPreference).toHaveBeenCalledWith(expect.objectContaining({ cycle: 'annual', userId: 'u1' }));
+    expect(client.createPreference).toHaveBeenCalledWith(expect.objectContaining({ cycle: 'annual', reference: expect.stringMatching(/^v2:annual:u1:[0-9a-f]{8}$/) }));
   });
 
   it('volta do checkout aprovada: confere no servidor, libera o PRO e o cabeçalho vira ∞', async () => {
@@ -62,6 +63,22 @@ describe('planos', () => {
     cleanup();
     renderAt('/planos?collection_id=null&collection_status=null', signedIn);
     expect(await screen.findByText(/Nada foi cobrado/)).toBeInTheDocument();
+  });
+
+  it('"Verificar meu pagamento": acha o pagamento aprovado da compra e libera o PRO', async () => {
+    const payments: Record<string, MpPayment> = {};
+    const { store } = setup(payments);
+    const reference = makeReference('monthly', 'u1');
+    await store.recordCheckout({ reference, userId: 'u1', cycle: 'monthly', now: new Date() });
+    const user = userEvent.setup();
+    renderAt('/planos', signedIn);
+    const verificar = await screen.findByRole('button', { name: 'Verificar meu pagamento' });
+    await user.click(verificar);
+    expect(await screen.findByText(/Não encontramos pagamento aprovado/)).toBeInTheDocument();
+    payments['990'] = { id: 990, status: 'approved', transaction_amount: 29.9, currency_id: 'BRL', external_reference: reference };
+    await user.click(screen.getByRole('button', { name: 'Verificar meu pagamento' }));
+    expect(await screen.findByText(/Encontramos seu pagamento\. PRO liberado até/)).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { name: /Você é PRO até/ })).toBeInTheDocument();
   });
 
   it('pagamento de outra pessoa não libera nada', async () => {

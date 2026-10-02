@@ -5,10 +5,13 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router';
 import type { AnswerResult, Session } from '../../shared/game';
+import { Confetti } from '../components/Confetti';
+import { FocusToggle } from '../components/FocusToggle';
 import { Icon } from '../components/Icon';
 import { Tico } from '../components/Tico';
 import { ApiError } from '../lib/api';
 import { fonteLabel, game, timeUntil } from '../lib/game';
+import { play } from '../lib/sound';
 import { useProgress } from './ProgressProvider';
 
 interface Summary { answered: number; correct: number; xp: number; phaseDone: AnswerResult['faseConcluida'] }
@@ -31,6 +34,8 @@ export function QuizSession({ session, timeLimitSec, exitTo = '/jogar', nextLabe
   const [summary, setSummary] = useState<Summary>({ answered: 0, correct: 0, xp: 0, phaseDone: null });
   const [finished, setFinished] = useState(session.questoes.length === 0);
   const [secondsLeft, setSecondsLeft] = useState(timeLimitSec ?? 0);
+  // Acertos seguidos nesta sessão: a partir de 3 aparece o selo de sequência.
+  const [combo, setCombo] = useState(0);
   const byId = useMemo(() => new Map(session.questoes.map((q) => [q.id, q])), [session]);
   const current = byId.get(queue[0] ?? '');
   const total = session.questoes.length;
@@ -51,6 +56,8 @@ export function QuizSession({ session, timeLimitSec, exitTo = '/jogar', nextLabe
       const r = await game.answer(current.id, selected, session.mode);
       setResult(r);
       setProgress(r.progress);
+      setCombo((c) => (r.correct ? c + 1 : 0));
+      play(r.correct ? 'acerto' : 'erro');
       setSummary((s) => ({
         answered: s.answered + 1,
         correct: s.correct + (r.correct ? 1 : 0),
@@ -96,6 +103,13 @@ export function QuizSession({ session, timeLimitSec, exitTo = '/jogar', nextLabe
     return () => window.removeEventListener('keydown', onKey);
   });
 
+  // Som do fim da sessão, uma vez.
+  const ended = finished || !current;
+  useEffect(() => {
+    if (ended && summary.answered > 0) play(summary.phaseDone || summary.correct === summary.answered ? 'fase' : 'fim');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ended]);
+
   if (noHearts !== null) {
     return (
       <div className="quiz-end card" role="alert">
@@ -112,8 +126,10 @@ export function QuizSession({ session, timeLimitSec, exitTo = '/jogar', nextLabe
 
   if (finished || !current) {
     const perfect = summary.answered > 0 && summary.correct === summary.answered;
+    const celebrate = Boolean(summary.phaseDone) || perfect;
     return (
       <div className="quiz-end card" role="status">
+        {celebrate && <Confetti />}
         <Tico pose={summary.phaseDone || perfect ? 'comemorando' : 'joinha'} className="quiz-end-tico" />
         <h2>{summary.phaseDone ? 'Fase concluída!' : timeLimitSec && secondsLeft === 0 ? 'Tempo esgotado!' : 'Sessão concluída!'}</h2>
         {summary.answered === 0 ? (
@@ -150,6 +166,7 @@ export function QuizSession({ session, timeLimitSec, exitTo = '/jogar', nextLabe
         ) : progress && progress.hearts !== null && session.mode === 'trilha' ? (
           <span className="quiz-hearts" title="Vidas">❤ {progress.hearts}</span>
         ) : null}
+        <FocusToggle />
       </div>
 
       <article className="quiz-card card" aria-labelledby="quiz-q">
@@ -169,9 +186,11 @@ export function QuizSession({ session, timeLimitSec, exitTo = '/jogar', nextLabe
       </article>
 
       <div className={`quiz-footer ${result ? (result.correct ? 'is-right' : 'is-wrong') : ''}`}>
+        {result?.correct && result.xpGanho > 0 && <span className="xp-float" aria-hidden="true">+{result.xpGanho} XP</span>}
         {result ? (
           <div className="quiz-feedback" role="status">
             <strong>{result.correct ? `Acertou!${result.xpGanho ? ` +${result.xpGanho} XP` : ''}` : `Resposta certa: ${String.fromCharCode(65 + result.correta)}`}</strong>
+            {result.correct && combo >= 3 && <span className="combo-badge">{combo} acertos seguidos!</span>}
             <p>{result.explicacao}</p>
             {result.acerto !== null && <p className="quiz-rate">{result.acerto}% dos alunos acertam esta questão</p>}
             {!result.correct && retries && <p className="quiz-hint"><Icon name="rotate" size={16} /> Esta questão volta no fim para você acertar.</p>}

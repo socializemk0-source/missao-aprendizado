@@ -4,8 +4,9 @@
 // 3) aplica (idempotente). Erro nosso → 500, e o Mercado Pago tenta de novo.
 
 import { header, jsonBody, methodNotAllowed, type ApiRequest, type ApiResponse } from '../../server/http.js';
-import { applyPayment, mercadoPagoClient, verifyWebhookSignature, type MpClient, type PaymentStore } from '../../server/payments.js';
+import { MercadoPagoError, applyPayment, mercadoPagoClient, verifyWebhookSignature, type MpClient, type PaymentStore } from '../../server/payments.js';
 import { postgresPayments } from '../../server/payments-pg.js';
+import { errorText } from '../../server/log.js';
 
 const one = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v);
 
@@ -28,11 +29,23 @@ export function createWebhookHandler(deps: { store: PaymentStore; client: MpClie
     if (type !== 'payment' || !dataId || !/^\d{1,30}$/.test(dataId)) return res.status(200).json({ ok: true, ignored: true });
 
     try {
-      const result = await applyPayment(deps.store, await deps.client.getPayment(dataId));
+      let payment;
+      try {
+        payment = await deps.client.getPayment(dataId);
+      } catch (err) {
+        // Pagamento que não existe (ex.: "Simular notificação" do painel):
+        // não adianta o Mercado Pago tentar de novo.
+        if (err instanceof MercadoPagoError && err.status === 404) {
+          console.warn('[webhook] pagamento não encontrado', { dataId });
+          return res.status(200).json({ ok: true, ignored: true });
+        }
+        throw err;
+      }
+      const result = await applyPayment(deps.store, payment);
       console.info('[webhook] pagamento', { dataId, status: result.status });
       res.status(200).json({ ok: true, resultado: result.status });
     } catch (err) {
-      console.error('[webhook] erro:', err instanceof Error ? err.message : err);
+      console.error('[webhook] erro:', errorText(err));
       res.status(500).json({ error: 'Falha ao processar; tente de novo.' });
     }
   };

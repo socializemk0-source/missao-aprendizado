@@ -1,7 +1,9 @@
 import { useEffect, useState, type FormEvent } from 'react';
 import { useNavigate } from 'react-router';
 import { useAuth } from '../auth/AuthProvider';
+import { AppearanceSettings } from '../components/AppearanceSettings';
 import { Icon } from '../components/Icon';
+import { InstallCard } from '../components/InstallCard';
 
 export const BANCAS = ['Cebraspe', 'FGV', 'FCC', 'Vunesp', 'Cesgranrio', 'Outra'];
 
@@ -82,6 +84,9 @@ export function Perfil() {
         </div>
         <button className="btn btn-primary" disabled={saving || !me || !form.displayName.trim()}>{saving ? 'Salvando…' : 'Salvar'}</button>
       </form>
+
+      <AppearanceSettings />
+      <InstallCard />
 
       <button type="button" className="btn btn-danger signout-btn" onClick={() => void onSignOut()}>
         <Icon name="logout" size={20} /> Sair da conta

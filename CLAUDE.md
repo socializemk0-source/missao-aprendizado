@@ -33,13 +33,21 @@ lógica de servidor compartilhada em `server/`, banco Postgres do Supabase.
 - `npm test` — testes (servidor e telas)
 - `PG_TEST=1 SQL_SSL=false SQL_HOST=... npm test` — inclui testes com Postgres real
 - `npm run ci` — tudo que o GitHub Actions roda
+- `node scripts/banco-sql.mjs` — regenera as migrações das questões do banco
+  a partir de `content/banco/*.json` (lista de lotes em `content/banco/lotes.json`;
+  rode ao mudar um arquivo)
 
 ## Estrutura
+
+Situação de cada funcionalidade: `docs/STATUS.md` (leia primeiro, atualize a
+cada PR).
 
 - `src/app/` rotas e menu · `src/auth/` login · `src/pages/` telas ·
   `src/game/` progresso e sessão de questões · `src/layouts/` moldura do app ·
   `src/lib/` cliente Supabase, `api()` e clientes de cada rota
-- `content/` questões, trilha e temas de redação · `shared/` tipos usados
+- `content/` questões, trilha e temas de redação · `content/banco/` questões
+  autorais que entram em `v2.questions` como `revisao` e só chegam ao aluno
+  depois de revisadas (`ativa`) · `shared/` tipos usados
   pelo servidor e pelas telas
 - `api/` uma função por rota (plano Hobby da Vercel: no máximo 12) ·
   `server/` auth, banco, regras (cada store tem versão Postgres e em memória)

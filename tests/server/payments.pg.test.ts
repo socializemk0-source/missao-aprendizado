@@ -25,6 +25,20 @@ describe.runIf(run)('pagamentos no Postgres', async () => {
     expect(await postgresPayments.history(u)).toHaveLength(2);
   });
 
+  it('compras iniciadas: grava uma vez, lista as abertas do aluno (mais nova primeiro) e sai da lista quando paga', async () => {
+    const u = id('c');
+    const now = new Date();
+    const older = new Date(now.getTime() - 60_000);
+    await postgresPayments.recordCheckout({ reference: `v2:monthly:${u}:aaaaaaaa`, userId: u, cycle: 'monthly', now: older });
+    await postgresPayments.recordCheckout({ reference: `v2:annual:${u}:bbbbbbbb`, userId: u, cycle: 'annual', now });
+    await postgresPayments.recordCheckout({ reference: `v2:annual:${u}:bbbbbbbb`, userId: u, cycle: 'annual', now });
+    await postgresPayments.recordCheckout({ reference: `v2:monthly:${id('outro')}:cccccccc`, userId: id('outro'), cycle: 'monthly', now });
+    expect(await postgresPayments.openCheckouts(u, new Date(now.getTime() - DAY), 5)).toEqual([`v2:annual:${u}:bbbbbbbb`, `v2:monthly:${u}:aaaaaaaa`]);
+    expect(await postgresPayments.openCheckouts(u, new Date(now.getTime() - 1000), 5)).toEqual([`v2:annual:${u}:bbbbbbbb`]);
+    await postgresPayments.markCheckoutPaid(`v2:annual:${u}:bbbbbbbb`);
+    expect(await postgresPayments.openCheckouts(u, new Date(now.getTime() - DAY), 5)).toEqual([`v2:monthly:${u}:aaaaaaaa`]);
+  });
+
   it('estorno tira os dias uma vez só; pagamento desconhecido é ignorado', async () => {
     const u = id('b');
     const pid = id('p1');

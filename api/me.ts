@@ -6,6 +6,7 @@ import { authenticate, type VerifyToken } from '../server/auth.js';
 import { jsonBody, methodNotAllowed, type ApiRequest, type ApiResponse } from '../server/http.js';
 import { postgresProfiles, type ProfileStore, type ProfileUpdate } from '../server/profiles.js';
 import { verifySupabaseToken } from '../server/supabase.js';
+import { errorText } from '../server/log.js';
 
 // Campo editável → tamanho máximo. Obrigatórios não aceitam vazio/null.
 const EDITABLE: Record<keyof ProfileUpdate, { max: number; required: boolean }> = {
@@ -55,7 +56,7 @@ export function createMeHandler(deps: { verifyToken: VerifyToken; profiles: Prof
       res.setHeader('Cache-Control', 'no-store');
       res.status(200).json({ user: { id: user.id, email: user.email }, profile });
     } catch (err) {
-      console.error('[me] erro:', err instanceof Error ? err.message : err);
+      console.error('[me] erro:', errorText(err));
       res.status(500).json({ error: 'Não foi possível carregar seu perfil agora.' });
     }
   };

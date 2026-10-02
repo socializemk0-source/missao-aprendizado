@@ -38,8 +38,11 @@ export interface MpPayment {
 }
 
 export interface MpClient {
-  createPreference(input: { cycle: Cycle; userId: string; payerEmail: string | null; baseUrl: string }): Promise<{ id: string; url: string }>;
+  // reference: a mesma external_reference guardada em v2.checkouts.
+  createPreference(input: { cycle: Cycle; reference: string; payerEmail: string | null; baseUrl: string }): Promise<{ id: string; url: string }>;
   getPayment(id: string): Promise<MpPayment>;
+  // Pagamentos feitos a partir de uma compra (para o "verificar meu pagamento").
+  searchPayments(reference: string): Promise<MpPayment[]>;
 }
 
 export class MercadoPagoError extends Error {
@@ -55,24 +58,30 @@ export function mercadoPagoClient(accessToken: string, send: typeof fetch = fetc
     if (init.body !== undefined) headers['Content-Type'] = 'application/json';
     // Uma criação repetida (nova tentativa de rede) não vira duas cobranças.
     if (method === 'POST') headers['X-Idempotency-Key'] = crypto.randomUUID();
-    const res = await send(`https://api.mercadopago.com${path}`, {
-      method, headers, signal: AbortSignal.timeout(15_000),
-      ...(init.body !== undefined ? { body: JSON.stringify(init.body) } : {}),
-    });
+    let res: Response;
+    try {
+      res = await send(`https://api.mercadopago.com${path}`, {
+        method, headers, signal: AbortSignal.timeout(15_000),
+        ...(init.body !== undefined ? { body: JSON.stringify(init.body) } : {}),
+      });
+    } catch (err) {
+      // Sem resposta (rede, tempo esgotado): status 0.
+      throw new MercadoPagoError(`Mercado Pago ${method} ${path}: ${err instanceof Error ? err.message : 'sem resposta'}`, 0);
+    }
     const data = (await res.json().catch(() => null)) as (T & { message?: string }) | null;
     if (!res.ok || !data) throw new MercadoPagoError(`Mercado Pago ${method} ${path}: HTTP ${res.status} ${data?.message ?? ''}`.trim(), res.status);
     return data;
   }
 
   return {
-    async createPreference({ cycle, userId, payerEmail, baseUrl }) {
+    async createPreference({ cycle, reference, payerEmail, baseUrl }) {
       const plan = PLANS[cycle];
       const back = `${baseUrl}/planos`;
       const pref = await request<{ id: string; init_point: string; sandbox_init_point?: string }>('/checkout/preferences', {
         method: 'POST',
         body: {
           items: [{ id: `pro-${cycle}`, title: plan.title, quantity: 1, unit_price: plan.amount, currency_id: 'BRL' }],
-          external_reference: makeReference(cycle, userId),
+          external_reference: reference,
           ...(payerEmail ? { payer: { email: payerEmail } } : {}),
           back_urls: { success: back, pending: back, failure: back },
           auto_return: 'approved',
@@ -87,6 +96,11 @@ export function mercadoPagoClient(accessToken: string, send: typeof fetch = fetc
       return { id: pref.id, url };
     },
     getPayment: (id) => request<MpPayment>(`/v1/payments/${encodeURIComponent(id)}`),
+    async searchPayments(reference) {
+      const q = `external_reference=${encodeURIComponent(reference)}&sort=date_created&criteria=desc`;
+      const data = await request<{ results?: MpPayment[] }>(`/v1/payments/search?${q}`);
+      return Array.isArray(data.results) ? data.results : [];
+    },
   };
 }
 
@@ -126,6 +140,11 @@ export interface PaymentStore {
   grant(input: { paymentId: string; userId: string; cycle: Cycle; days: number; amount: number; now: Date }): Promise<{ status: 'granted' | 'already'; proUntil: Date | null }>;
   revoke(input: { paymentId: string; now: Date }): Promise<{ status: 'revoked' | 'ignored'; userId?: string }>;
   history(userId: string): Promise<PaymentRecord[]>;
+  // Compras iniciadas (antes de ir ao Mercado Pago). Servem para achar um
+  // pagamento aprovado cujo aviso não chegou.
+  recordCheckout(input: { reference: string; userId: string; cycle: Cycle; now: Date }): Promise<void>;
+  openCheckouts(userId: string, since: Date, limit: number): Promise<string[]>;
+  markCheckoutPaid(reference: string): Promise<void>;
 }
 
 export type ApplyResult =
@@ -146,6 +165,7 @@ export async function applyPayment(store: PaymentStore, payment: MpPayment, now 
       return { status: 'ignored', userId: ref.userId };
     }
     const r = await store.grant({ paymentId, userId: ref.userId, cycle: ref.cycle, days: plan.days, amount, now });
+    await store.markCheckoutPaid(payment.external_reference!);
     return { ...r, userId: ref.userId };
   }
   if (payment.status === 'refunded' || payment.status === 'charged_back') {
@@ -159,11 +179,27 @@ export async function applyPayment(store: PaymentStore, payment: MpPayment, now 
 // ---------------------------------------------------------------- Memória
 const DAY = 86_400_000;
 
-export function memoryPayments(): PaymentStore & { pro: Map<string, Date>; rows: Map<string, PaymentRecord & { userId: string; days: number }> } {
+export function memoryPayments(): PaymentStore & {
+  pro: Map<string, Date>;
+  rows: Map<string, PaymentRecord & { userId: string; days: number }>;
+  checkouts: Map<string, { userId: string; cycle: Cycle; paid: boolean; createdAt: Date }>;
+} {
   const pro = new Map<string, Date>();
   const rows = new Map<string, PaymentRecord & { userId: string; days: number }>();
+  const checkouts = new Map<string, { userId: string; cycle: Cycle; paid: boolean; createdAt: Date }>();
   return {
-    pro, rows,
+    pro, rows, checkouts,
+    async recordCheckout({ reference, userId, cycle, now }) {
+      if (!checkouts.has(reference)) checkouts.set(reference, { userId, cycle, paid: false, createdAt: now });
+    },
+    openCheckouts: async (userId, since, limit) => [...checkouts.entries()]
+      .filter(([, c]) => c.userId === userId && !c.paid && c.createdAt >= since)
+      .sort(([, a], [, b]) => b.createdAt.getTime() - a.createdAt.getTime())
+      .slice(0, limit).map(([ref]) => ref),
+    async markCheckoutPaid(reference) {
+      const c = checkouts.get(reference);
+      if (c) c.paid = true;
+    },
     proUntil: async (userId) => pro.get(userId) ?? null,
     async grant({ paymentId, userId, cycle, days, amount, now }) {
       if (rows.has(paymentId)) return { status: 'already', proUntil: pro.get(userId) ?? null };

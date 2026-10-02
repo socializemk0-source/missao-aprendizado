@@ -6,6 +6,7 @@ import { Link, useLocation, useNavigate, useParams } from 'react-router';
 import { CRITERIOS, type BancaRedacao } from '../../content/redacao';
 import type { Essay, EssayQuota } from '../../shared/essay';
 import { useAuth } from '../auth/AuthProvider';
+import { FocusToggle } from '../components/FocusToggle';
 import { Tico } from '../components/Tico';
 import { LoadState, useLoad } from '../game/useLoad';
 import { ApiError } from '../lib/api';
@@ -118,7 +119,10 @@ function Editor({ config }: { config: EssayConfig }) {
         )}
 
         <div className="field">
-          <label htmlFor="texto">Seu texto</label>
+          <div className="field-row">
+            <label htmlFor="texto">Seu texto</label>
+            <FocusToggle />
+          </div>
           <textarea
             id="texto" className="essay-text" value={text} onChange={(e) => setText(e.target.value)} rows={16}
             placeholder="Escreva aqui. O rascunho fica salvo neste navegador enquanto você escreve."

@@ -12,7 +12,9 @@ import { RedefinirSenha } from '../pages/RedefinirSenha';
 import { Redacao, RedacaoRelatorio } from '../pages/Redacao';
 import { SimuladoTela, Simulados } from '../pages/Simulados';
 import { Trilha } from '../pages/Trilha';
-import { Fase, Jogos, Praticar, Revisar } from '../pages/Sessoes';
+import { Fase, Praticar, Revisar } from '../pages/Sessoes';
+import { Desafio, JogosHub } from '../pages/Jogos';
+import { JogoTela } from '../games/JogoTela';
 import { Aventura, Conquistas, Disciplinas, Missoes, Ranking } from '../pages/Painel';
 import { NAV } from './nav';
 
@@ -26,7 +28,7 @@ const READY: Record<string, ReactElement> = {
   '/missoes': <Missoes />,
   '/ranking': <Ranking />,
   '/disciplinas': <Disciplinas />,
-  '/jogos': <Jogos />,
+  '/jogos': <JogosHub />,
   '/revisar': <Revisar />,
   '/conquistas': <Conquistas />,
 };
@@ -39,7 +41,20 @@ function NotFound() {
   );
 }
 
-export const routes: RouteObject[] = [
+// Se uma tela quebrar, a pessoa vê isto em vez da página de erro do React Router.
+function ErrorScreen() {
+  return (
+    <FullScreenMessage title="Algo deu errado nesta tela">
+      <p className="muted">Seu progresso continua salvo. Recarregue a página ou volte para o início.</p>
+      <div className="quiz-end-actions">
+        <button type="button" className="btn btn-primary" onClick={() => window.location.reload()}>Recarregar a página</button>
+        <Link to="/" className="btn btn-secondary">Ir para o início</Link>
+      </div>
+    </FullScreenMessage>
+  );
+}
+
+const pages: RouteObject[] = [
   { path: '/', element: <Landing /> },
   { path: '/entrar', element: <Entrar /> },
   { path: '/cadastro', element: <Cadastro /> },
@@ -56,9 +71,13 @@ export const routes: RouteObject[] = [
       { path: '/praticar/:disciplina', element: <Praticar /> },
       { path: '/redacao/:id', element: <RedacaoRelatorio /> },
       { path: '/simulado/:id', element: <SimuladoTela /> },
+      { path: '/jogos/desafio', element: <Desafio /> },
+      { path: '/jogos/:slug', element: <JogoTela /> },
     ],
   },
   { path: '*', element: <NotFound /> },
 ];
+
+export const routes: RouteObject[] = pages.map((r) => ({ ...r, errorElement: <ErrorScreen /> }));
 
 export const router = () => createBrowserRouter(routes);

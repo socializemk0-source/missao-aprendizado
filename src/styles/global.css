@@ -1,26 +1,189 @@
-/* Identidade visual — mesmas cores e medidas do V1. */
+/* Identidade visual — mesmas cores e medidas do V1.
+   Tema: as cores de fundo, texto e borda são variáveis. O tema escuro
+   (html[data-theme='dark'], ver src/lib/prefs.ts) só troca os valores. */
 :root {
   --bg: #f9fbfd;
   --fg: #263d52;
   --muted-fg: #6e8296;
   --muted: #e8eef4;
   --border: #e1e9ef;
+  --surface: #fff;
+  --surface-2: #f7fbff;
+  --heading: #1d3348;
+  --text-2: #4d6478;
+  --subtle: #91a2b2;
+  --link: #3a82c4;
+  --topbar-bg: rgba(255, 255, 255, .85);
   --primary: #1688e8;
   --primary-strong: #1581d6;
   --primary-soft: #edf7ff;
   --primary-soft-border: #c7e6ff;
+  --primary-deep: #1e40af;
   --green: #72c93d;
   --green-strong: #58a92a;
+  --green-soft: #ecfae5;
+  --sky-soft: #e5f6ff;
+  --sky-border: #d2eaf3;
   --orange: #f7931e;
   --gold: #f5b700;
+  --gold-strong: #d99a00;
+  --gold-soft: #fef3c7;
+  --gold-border: #fde68a;
+  --gold-fg: #b45309;
+  --ok-soft: #f0fdf4;
+  --ok-soft-2: #dcfce7;
+  --ok-border: #bbf7d0;
+  --ok-fg: #166534;
+  --warn-soft: #fff7ed;
+  --warn-border: #fed7aa;
+  --warn-fg: #9a3412;
+  --feedback-ok-bg: #f0fdf4;
+  --feedback-bad-bg: #fff7ed;
   --danger: #dc2626;
   --danger-soft: #fef2f2;
+  --danger-border: #fecaca;
+  --danger-fg: #991b1b;
+  --violet-soft: #f5f3ff;
+  --violet-fg: #6d28d9;
+  --locked: #cbd5e1;
   --radius: 16px;
   --sidebar-w: 230px;
   --topbar-h: 85px;
   font-family: 'Trebuchet MS', Arial, sans-serif;
   color: var(--fg);
   background: var(--bg);
+  color-scheme: light;
+}
+
+/* Tema escuro. A página inicial (.landing) continua clara: a ilustração
+   do hero foi feita para fundo claro. */
+html[data-theme='dark'] {
+  --bg: #0e1822;
+  --fg: #dbe6ef;
+  --muted-fg: #92a6b8;
+  --muted: #243443;
+  --border: #2a3b4b;
+  --surface: #16222e;
+  --surface-2: #1b2a38;
+  --heading: #eef4f9;
+  --text-2: #b0c1d0;
+  --subtle: #7d91a4;
+  --link: #7cb8ee;
+  --topbar-bg: rgba(14, 24, 34, .85);
+  --primary-strong: #4aa3f0;
+  --primary-soft: #133049;
+  --primary-soft-border: #24527a;
+  --primary-deep: #93c5fd;
+  --green-soft: #16283a; /* degradês decorativos: azul, sem verde */
+  --sky-soft: #132b3f;
+  --sky-border: #23445a;
+  --gold-strong: #f5b700;
+  --gold-soft: #352b0e;
+  --gold-border: #6b5313;
+  --gold-fg: #fcd34d;
+  --ok-soft: #10301d;
+  --ok-soft-2: #154127;
+  --ok-border: #1f5c37;
+  --ok-fg: #86efac;
+  --warn-soft: #3a2311;
+  --warn-border: #7c3a12;
+  --warn-fg: #fdba74;
+  /* Rodapé de acerto/erro: fundo neutro no escuro (a cor fica na borda e no
+     título), para o Tico não aparecer num bloco verde ou marrom. */
+  --feedback-ok-bg: #152433;
+  --feedback-bad-bg: #152433;
+  --danger-soft: #3b1518;
+  --danger-border: #7f1d1d;
+  --danger-fg: #fca5a5;
+  --violet-soft: #261f45;
+  --violet-fg: #c4b5fd;
+  --locked: #3b4b5a;
+  color-scheme: dark;
+}
+
+/* Modo foco em tom creme (papel), nos dois temas: volta tudo ao claro. */
+html[data-focus='on'][data-reading='sepia'] {
+  --bg: #f6efe0;
+  --fg: #3b2f22;
+  --muted-fg: #7a6a55;
+  --muted: #ece2cb;
+  --border: #e4d8bf;
+  --surface: #fbf6ea;
+  --surface-2: #f3ead6;
+  --heading: #2e2418;
+  --text-2: #5a4a38;
+  --subtle: #8f7f69;
+  --link: #3a82c4;
+  --topbar-bg: rgba(255, 255, 255, .85);
+  --primary-strong: #1581d6;
+  --primary-soft: #edf7ff;
+  --primary-soft-border: #c7e6ff;
+  --primary-deep: #1e40af;
+  --green-soft: #ecfae5;
+  --sky-soft: #e5f6ff;
+  --sky-border: #d2eaf3;
+  --gold-strong: #d99a00;
+  --gold-soft: #fef3c7;
+  --gold-border: #fde68a;
+  --gold-fg: #b45309;
+  --ok-soft: #f0fdf4;
+  --ok-soft-2: #dcfce7;
+  --ok-border: #bbf7d0;
+  --ok-fg: #166534;
+  --warn-soft: #fff7ed;
+  --warn-border: #fed7aa;
+  --warn-fg: #9a3412;
+  --feedback-ok-bg: #f0fdf4;
+  --feedback-bad-bg: #fff7ed;
+  --danger-soft: #fef2f2;
+  --danger-border: #fecaca;
+  --danger-fg: #991b1b;
+  --violet-soft: #f5f3ff;
+  --violet-fg: #6d28d9;
+  --locked: #cbd5e1;
+  color-scheme: light;
+}
+
+html[data-theme='dark'] .landing {
+  --bg: #f9fbfd;
+  --fg: #263d52;
+  --muted-fg: #6e8296;
+  --muted: #e8eef4;
+  --border: #e1e9ef;
+  --surface: #fff;
+  --surface-2: #f7fbff;
+  --heading: #1d3348;
+  --text-2: #4d6478;
+  --subtle: #91a2b2;
+  --link: #3a82c4;
+  --topbar-bg: rgba(255, 255, 255, .85);
+  --primary-strong: #1581d6;
+  --primary-soft: #edf7ff;
+  --primary-soft-border: #c7e6ff;
+  --primary-deep: #1e40af;
+  --green-soft: #ecfae5;
+  --sky-soft: #e5f6ff;
+  --sky-border: #d2eaf3;
+  --gold-strong: #d99a00;
+  --gold-soft: #fef3c7;
+  --gold-border: #fde68a;
+  --gold-fg: #b45309;
+  --ok-soft: #f0fdf4;
+  --ok-soft-2: #dcfce7;
+  --ok-border: #bbf7d0;
+  --ok-fg: #166534;
+  --warn-soft: #fff7ed;
+  --warn-border: #fed7aa;
+  --warn-fg: #9a3412;
+  --feedback-ok-bg: #f0fdf4;
+  --feedback-bad-bg: #fff7ed;
+  --danger-soft: #fef2f2;
+  --danger-border: #fecaca;
+  --danger-fg: #991b1b;
+  --violet-soft: #f5f3ff;
+  --violet-fg: #6d28d9;
+  --locked: #cbd5e1;
+  color-scheme: light; background: var(--bg); color: var(--fg);
 }
 
 * { box-sizing: border-box; }
@@ -47,38 +210,38 @@ img { max-width: 100%; height: auto; }
 .btn:disabled { opacity: .6; cursor: not-allowed; }
 .btn-primary { background: var(--green); color: #fff; box-shadow: 0 4px 0 var(--green-strong); }
 .btn-primary:hover:not(:disabled) { filter: brightness(1.05); }
-.btn-secondary { background: #fff; color: var(--primary-strong); border-color: var(--primary-soft-border); }
+.btn-secondary { background: var(--surface); color: var(--primary-strong); border-color: var(--primary-soft-border); }
 .btn-secondary:hover:not(:disabled) { background: var(--primary-soft); }
-.btn-danger { background: #fff; color: var(--danger); border-color: #fecaca; }
+.btn-danger { background: var(--surface); color: var(--danger); border-color: var(--danger-border); }
 .btn-danger:hover:not(:disabled) { background: var(--danger-soft); }
 .btn-block { width: 100%; }
 
 /* ---------- Cartões e textos ---------- */
-.card { background: #fff; border: 2px solid var(--border); border-radius: 22px; padding: 24px; }
-.eyebrow { letter-spacing: 1.6px; color: #91a2b2; font-size: 11px; font-weight: 800; text-transform: uppercase; margin: 0 0 6px; }
-.page-title { font-size: 28px; line-height: 1.15; margin: 0 0 8px; color: #1d3348; }
+.card { background: var(--surface); border: 2px solid var(--border); border-radius: 22px; padding: 24px; }
+.eyebrow { letter-spacing: 1.6px; color: var(--subtle); font-size: 11px; font-weight: 800; text-transform: uppercase; margin: 0 0 6px; }
+.page-title { font-size: 28px; line-height: 1.15; margin: 0 0 8px; color: var(--heading); }
 .muted { color: var(--muted-fg); }
 
 .hero {
   display: flex; align-items: center; gap: 24px;
-  background: linear-gradient(120deg, #e5f6ff, #ecfae5);
-  border: 2px solid #d2eaf3; border-radius: 25px; padding: 26px 28px;
+  background: linear-gradient(120deg, var(--sky-soft), var(--green-soft));
+  border: 2px solid var(--sky-border); border-radius: 25px; padding: 26px 28px;
 }
 .hero-text { flex: 1; min-width: 0; }
-.hero-text p { margin: 0; color: #4d6478; }
+.hero-text p { margin: 0; color: var(--text-2); }
 .hero .tico { width: 170px; flex-shrink: 0; }
 
 /* ---------- Formulários ---------- */
 .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
 .field label { font-weight: 700; font-size: 14px; }
 .field input, .field select {
-  border: 2px solid var(--border); border-radius: 12px; padding: 12px 14px; background: #fff;
+  border: 2px solid var(--border); border-radius: 12px; padding: 12px 14px; background: var(--surface);
 }
 .field input:focus, .field select:focus { border-color: var(--primary); outline: none; }
 .field-hint { font-size: 13px; color: var(--muted-fg); }
 .alert { border-radius: 12px; padding: 12px 14px; font-size: 14px; margin: 0 0 14px; }
-.alert-error { background: var(--danger-soft); color: #991b1b; border: 1px solid #fecaca; }
-.alert-success { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+.alert-error { background: var(--danger-soft); color: var(--danger-fg); border: 1px solid var(--danger-border); }
+.alert-success { background: var(--ok-soft); color: var(--ok-fg); border: 1px solid var(--ok-border); }
 .divider { display: flex; align-items: center; gap: 10px; color: var(--muted-fg); font-size: 13px; margin: 16px 0; }
 .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 

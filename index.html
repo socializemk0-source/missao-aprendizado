@@ -6,6 +6,22 @@
     <meta name="theme-color" content="#1688e8" />
     <meta name="description" content="Estude para concursos públicos em forma de aventura: trilha guiada com questões no estilo das bancas, redação com IA, missões diárias e ranking." />
     <link rel="icon" href="/favicon.svg" />
+    <!-- App instalável (PWA): manifesto, ícone e nome na tela inicial do celular. -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Aprova Tico" />
+    <script>
+      // Tema antes de desenhar a página (evita piscar claro no tema escuro).
+      try {
+        var p = JSON.parse(localStorage.getItem('aprova-tico:prefs') || '{}');
+        // Padrão claro; escuro só se o aluno escolheu (ou escolheu "Automático" e o sistema está escuro).
+        document.documentElement.dataset.theme = p.theme === 'dark'
+          || (p.theme === 'auto' && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+      } catch (e) {}
+    </script>
     <title>Aprova Tico — Estude para concursos em forma de aventura</title>
   </head>
   <body>

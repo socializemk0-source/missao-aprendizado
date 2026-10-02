@@ -101,6 +101,16 @@ export const payments = v2.table('payments', {
   updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
 });
 
+// Compras iniciadas no Mercado Pago (migração 0009): a referência liga o
+// pagamento ao aluno e permite achá-lo depois se o aviso não chegar.
+export const checkouts = v2.table('checkouts', {
+  reference: text('reference').primaryKey(),
+  userId: text('user_id').notNull(),
+  cycle: text('cycle').notNull(),
+  paid: boolean('paid').notNull().default(false),
+  createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+});
+
 // ---- Banco de questões e simulados (migração 0006) ----
 export const questions = v2.table('questions', {
   id: text('id').primaryKey(),
@@ -138,4 +148,18 @@ export const simulados = v2.table('simulados', {
   acertos: integer('acertos'),
   pct: smallint('pct'),
   result: jsonb('result'),
+});
+
+// ---- Jogos (migração 0010) ----
+export const gameRounds = v2.table('game_rounds', {
+  id: uuid('id').primaryKey().defaultRandom(),
+  userId: text('user_id').notNull(),
+  tipo: text('tipo').notNull(),
+  disciplina: text('disciplina'),
+  day: date('day', { mode: 'string' }).notNull(),
+  estado: jsonb('estado').notNull(),
+  startedAt: timestamp('started_at', { withTimezone: true }).notNull().defaultNow(),
+  finishedAt: timestamp('finished_at', { withTimezone: true }),
+  pontos: integer('pontos'),
+  xp: integer('xp').notNull().default(0),
 });

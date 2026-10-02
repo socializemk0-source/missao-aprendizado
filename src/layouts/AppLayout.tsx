@@ -1,13 +1,18 @@
-import { Link, NavLink, Outlet } from 'react-router';
+import { Link, NavLink, Outlet, useLocation } from 'react-router';
 import { useAuth } from '../auth/AuthProvider';
 import { BRAND, NAV } from '../app/nav';
 import { Icon } from '../components/Icon';
+import { InstallBanner } from '../components/InstallBanner';
 import { useProgress } from '../game/ProgressProvider';
+import { resolvedTheme, setPrefs, usePrefs } from '../lib/prefs';
 
 export function AppLayout() {
   const { me } = useAuth();
   const { progress } = useProgress();
   const firstName = me?.profile.displayName.split(/\s+/)[0] ?? '';
+  const { pathname } = useLocation();
+  usePrefs(); // redesenha o botão de tema quando ele muda
+  const dark = resolvedTheme() === 'dark';
 
   return (
     <>
@@ -30,8 +35,15 @@ export function AppLayout() {
           <Link to="/" className="topbar-home"><Icon name="home" size={18} /><span>Página inicial</span></Link>
           <div className="topbar-stats">
             <span className={`stat stat-flame${progress?.studiedToday ? ' is-lit' : ''}`} title="Dias seguidos estudando"><Icon name="flame" size={20} />{progress?.streak ?? 0} <small>{progress?.streak === 1 ? 'dia' : 'dias'}</small></span>
-            <span className="stat stat-star" title="Pontos de experiência"><Icon name="star" size={20} />{progress?.xp ?? 0} <small>XP</small></span>
+            {/* key: o número "pula" quando o XP muda */}
+            <span className="stat stat-star" title="Pontos de experiência"><Icon name="star" size={20} /><span key={progress?.xp ?? 0} className="stat-num">{progress?.xp ?? 0}</span> <small>XP</small></span>
             <span className="stat stat-heart" title={progress?.hearts === null ? 'Vidas ilimitadas (PRO)' : 'Vidas'}>❤ {progress ? (progress.hearts ?? '∞') : 5}</span>
+            <button
+              type="button" className="icon-btn" onClick={() => setPrefs({ theme: dark ? 'light' : 'dark' })}
+              aria-label={dark ? 'Usar tema claro' : 'Usar tema escuro'} title={dark ? 'Tema claro' : 'Tema escuro'}
+            >
+              <Icon name={dark ? 'sun' : 'moon'} size={20} />
+            </button>
             <Link to="/perfil" className="account-btn" title="Minha conta">
               <span className="avatar" aria-hidden="true">👤</span>
               <span className="name">{firstName || 'Minha conta'}</span>
@@ -39,7 +51,9 @@ export function AppLayout() {
           </div>
         </header>
         <main className="content" id="conteudo">
-          <Outlet />
+          {pathname === '/jogar' && <InstallBanner />}
+          {/* key: cada tela entra com uma transição suave */}
+          <div key={pathname} className="page-enter"><Outlet /></div>
         </main>
       </div>
     </>
