@@ -35,7 +35,8 @@ lógica de servidor compartilhada em `server/`, banco Postgres do Supabase.
 - `npm run ci` — tudo que o GitHub Actions roda
 - `node scripts/banco-sql.mjs` — regenera as migrações das questões do banco
   a partir de `content/banco/*.json` (lista de lotes em `content/banco/lotes.json`;
-  rode ao mudar um arquivo)
+  rode ao mudar um arquivo). Também gera `0013_v2_banco_sincroniza.sql`, que leva
+  as correções para as questões que ainda estão em `revisao` (rodar no Supabase)
 
 ## Estrutura
 

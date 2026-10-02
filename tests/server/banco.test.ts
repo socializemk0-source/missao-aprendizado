@@ -51,6 +51,8 @@ describe('banco de questões autorais', () => {
       if (q.alternativas.join() === 'Certo,Errado') expect(q.explicacao.startsWith(q.alternativas[q.correta]!), q.id).toBe(true);
       // As alternativas são embaralhadas: a explicação não pode citar letra.
       expect(q.explicacao, q.id).not.toMatch(/\b(letra|alternativa|op[cç][aã]o) [A-E]\b/);
+      // Nem a posição ("a terceira opção", "na última frase"): muda a cada embaralhamento.
+      expect(q.explicacao, q.id).not.toMatch(/(?<!\p{L})(primeir|segund|terceir|quart|quint|[uú]ltim|pen[uú]ltim)[ao]s? (op[cç]|alternativ|frase|item)/iu);
     }
   });
 
@@ -81,6 +83,17 @@ describe('banco de questões autorais', () => {
       expect(sql, lote.migracao).toContain('ON CONFLICT (id) DO NOTHING');
       expect(sql.match(/^ {2}\('/gm), lote.migracao).toHaveLength(doLote.length);
       for (const q of doLote) expect(sql, q.id).toContain(`('${q.id}', '${q.disciplina}'`);
+    }
+  });
+
+  it('a migração de sincronização leva o texto atual de cada questão (só as que ainda estão em revisão)', () => {
+    const sql = readFileSync('supabase/migrations/0013_v2_banco_sincroniza.sql', 'utf8');
+    expect(sql).toContain('ON CONFLICT (id) DO UPDATE SET');
+    expect(sql).toContain("WHERE v2.questions.status = 'revisao'");
+    expect(sql.match(/^ {2}\('/gm)).toHaveLength(itens.length);
+    const lit = (s: string) => `'${s.replace(/'/g, "''")}'`;
+    for (const q of itens) {
+      expect(sql, q.id).toContain(`(${lit(q.id)}, ${lit(q.disciplina)}, ${lit(q.assunto)}, ${lit(q.enunciado)}, ${lit(JSON.stringify(q.alternativas))}::jsonb, ${q.correta}, ${lit(q.explicacao)},`);
     }
   });
 });
