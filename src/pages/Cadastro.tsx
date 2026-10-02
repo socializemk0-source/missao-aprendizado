@@ -3,6 +3,7 @@ import { Link, Navigate } from 'react-router';
 import { useAuth } from '../auth/AuthProvider';
 import { authErrorMessage, passwordProblem } from '../auth/messages';
 import { Loading } from '../auth/RequireAuth';
+import { useCaptcha } from '../components/Captcha';
 import { Icon } from '../components/Icon';
 import { getSupabase } from '../lib/supabase';
 import { AuthLayout } from './AuthLayout';
@@ -16,8 +17,9 @@ export function Cadastro() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [sentTo, setSentTo] = useState<string | null>(null);
+  const captcha = useCaptcha();
 
-  if (status === 'signedIn') return <Navigate to="/jogar" replace />;
+  if (status === 'signedIn') return <Navigate to="/hoje" replace />;
   if (status === 'loading') return <Loading />;
 
   async function onSubmit(e: FormEvent) {
@@ -35,7 +37,7 @@ export function Cadastro() {
       const { data, error: err } = await (await getSupabase()).auth.signUp({
         email: email.trim(),
         password,
-        options: { data: { name: name.trim() }, emailRedirectTo: `${window.location.origin}/entrar` },
+        options: { data: { name: name.trim() }, emailRedirectTo: `${window.location.origin}/entrar`, ...captcha.options },
       });
       if (err) throw err;
       // O Supabase não dá erro para e-mail já cadastrado (anti-enumeração):
@@ -48,6 +50,7 @@ export function Cadastro() {
       setError(authErrorMessage(err));
     } finally {
       setBusy(false);
+      captcha.reset(); // o token do CAPTCHA vale uma vez
     }
   }
 
@@ -94,7 +97,8 @@ export function Cadastro() {
           <label htmlFor="confirm">Confirme a senha</label>
           <input id="confirm" type="password" autoComplete="new-password" required value={confirm} onChange={(e) => setConfirm(e.target.value)} />
         </div>
-        <button className="btn btn-primary btn-block" disabled={busy || !email.trim() || !password}>{busy ? 'Criando conta…' : 'Criar conta'}</button>
+        {captcha.element}
+        <button className="btn btn-primary btn-block" disabled={busy || !email.trim() || !password || !captcha.ready}>{busy ? 'Criando conta…' : 'Criar conta'}</button>
       </form>
       <p className="auth-footer">Já tem conta? <Link to="/entrar">Entrar</Link></p>
     </AuthLayout>

@@ -13,9 +13,14 @@ import { verifySupabaseToken } from '../server/supabase.js';
 import type { EssayQuota } from '../shared/essay.js';
 import type { BancaRedacao, Tema } from '../content/redacao.js';
 import { errorText } from '../server/log.js';
+import { LIMITES, limitarAluno, limitarIp, postgresLimiter, type RateLimiter } from '../server/limite.js';
 
 export const FREE_LIMIT = 1;
 export const WINDOW_MS = 7 * 24 * 60 * 60 * 1000;
+// PRO: "ilimitado" para o aluno, mas com um teto por 24 horas que protege a
+// conta da OpenAI de um uso automatizado.
+export const PRO_POR_DIA = 20;
+const DIA_MS = 24 * 60 * 60 * 1000;
 const STALE_MS = 5 * 60 * 1000; // reserva de uma função que morreu no meio
 const PER_MINUTE = 5;
 
@@ -26,6 +31,7 @@ export function createRedacaoHandler(deps: {
   store: EssayStore;
   grade: Grade | null; // null = correção desligada (sem chave da OpenAI)
   now?: () => Date;
+  limiter?: RateLimiter | null;
 }) {
   const now = deps.now ?? (() => new Date());
   const recent = new Map<string, number[]>();
@@ -49,8 +55,10 @@ export function createRedacaoHandler(deps: {
 
   return async function redacaoHandler(req: ApiRequest, res: ApiResponse): Promise<void> {
     if (req.method !== 'GET' && req.method !== 'POST') return methodNotAllowed(res, ['GET', 'POST']);
+    if (!(await limitarIp(deps.limiter, req, res))) return;
     const user = await authenticate(req, res, deps.verifyToken);
     if (!user) return;
+    if (!(await limitarAluno(deps.limiter, res, 'redacao', user.id, LIMITES.redacaoPorMinuto))) return;
     res.setHeader('Cache-Control', 'no-store');
 
     try {
@@ -84,8 +92,16 @@ export function createRedacaoHandler(deps: {
       recent.set(user.id, [...times, at.getTime()]);
 
       const plan = await deps.store.plan(user.id);
-      const window = plan === 'pro' ? null : { ...windowAt(at), limit: FREE_LIMIT };
+      const window = plan === 'pro'
+        ? { since: new Date(at.getTime() - DIA_MS), staleBefore: new Date(at.getTime() - STALE_MS), limit: PRO_POR_DIA }
+        : { ...windowAt(at), limit: FREE_LIMIT };
       const id = await deps.store.reserve(user.id, { topicId: topic.id, topicTitle: topic.title, banca: bank, content: text }, window, at);
+      if (!id && plan === 'pro') {
+        return res.status(429).json({
+          error: `Você chegou a ${PRO_POR_DIA} correções nas últimas 24 horas. Esse é o limite diário de segurança; amanhã libera de novo. Seu texto continua salvo.`,
+          code: 'LIMITE_DIARIO',
+        });
+      }
       if (!id) {
         return res.status(403).json({
           error: `O Plano Grátis tem ${FREE_LIMIT} correção por IA a cada 7 dias. Com o PRO as correções são ilimitadas. Seu texto continua salvo.`,
@@ -123,4 +139,5 @@ export default createRedacaoHandler({
   verifyToken: verifySupabaseToken,
   store: postgresEssays,
   grade: apiKey ? (input) => gradeEssay({ ...input, apiKey, model: process.env.OPENAI_MODEL }) : null,
+  limiter: postgresLimiter,
 });

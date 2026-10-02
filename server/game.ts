@@ -494,12 +494,15 @@ export async function getSubjects(store: GameStore, userId: string): Promise<Sub
   });
 }
 
+// No ranking (que todo aluno vê) aparece só o primeiro nome.
+const primeiroNome = (nome: string) => nome.trim().split(/\s+/)[0] || 'Aluno';
+
 export async function getRanking(store: GameStore, userId: string, limit = 20, now = new Date()): Promise<{ top: RankingEntry[]; voce: RankingEntry }> {
   const top = await store.topXp(limit);
   const myXp = (await getProgress(store, userId, now)).xp;
-  const myName = top.find((t) => t.userId === userId)?.displayName ?? 'Você';
+  const myName = primeiroNome(top.find((t) => t.userId === userId)?.displayName ?? 'Você');
   return {
-    top: top.map((t, i) => ({ posicao: i + 1, nome: t.displayName, xp: t.xp, voce: t.userId === userId })),
+    top: top.map((t, i) => ({ posicao: i + 1, nome: primeiroNome(t.displayName), xp: t.xp, voce: t.userId === userId })),
     voce: { posicao: await store.rankOf(myXp), nome: myName, xp: myXp, voce: true },
   };
 }

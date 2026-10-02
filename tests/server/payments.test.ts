@@ -1,6 +1,6 @@
 import crypto from 'node:crypto';
 import { describe, expect, it, vi } from 'vitest';
-import { createPagamentosHandler } from '../../api/pagamentos.js';
+import { baseUrlFrom, createPagamentosHandler } from '../../api/pagamentos.js';
 import { createWebhookHandler } from '../../api/pagamentos/webhook.js';
 import {
   MercadoPagoError, applyPayment, makeReference, memoryPayments, mercadoPagoClient, parseReference, verifyWebhookSignature,
@@ -278,5 +278,23 @@ describe('/api/pagamentos/webhook', () => {
   it('sem segredo configurado → 503', async () => {
     const { call } = setup({}, '');
     expect((await call({ 'data.id': '1', type: 'payment' }, {})).statusCode).toBe(503);
+  });
+});
+
+describe('endereço de volta do checkout', () => {
+  const req = makeReq({ headers: { host: 'golpe.com', 'x-forwarded-host': 'golpe.com' } });
+
+  it('usa APP_BASE_URL quando configurado', () => {
+    expect(baseUrlFrom(req, 'https://aprovatico.com.br/', {})).toBe('https://aprovatico.com.br');
+  });
+
+  it('na Vercel, sem APP_BASE_URL, usa o endereço que a Vercel informa — nunca o cabeçalho da requisição', () => {
+    expect(baseUrlFrom(req, undefined, { VERCEL_ENV: 'production', VERCEL_PROJECT_PRODUCTION_URL: 'missao-aprendizado.vercel.app', VERCEL_URL: 'x-123.vercel.app' }))
+      .toBe('https://missao-aprendizado.vercel.app');
+    expect(baseUrlFrom(req, undefined, { VERCEL_ENV: 'preview', VERCEL_URL: 'missao-git-x.vercel.app' })).toBe('https://missao-git-x.vercel.app');
+  });
+
+  it('fora da Vercel (desenvolvimento) usa o cabeçalho', () => {
+    expect(baseUrlFrom(makeReq({ headers: { host: 'localhost:5173', 'x-forwarded-proto': 'http' } }), undefined, {})).toBe('http://localhost:5173');
   });
 });

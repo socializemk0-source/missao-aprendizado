@@ -213,4 +213,12 @@ describe('praticar, desafio, disciplinas e ranking', () => {
     expect(top.map((t) => [t.nome, t.xp])).toEqual([['Bruno', 60], ['Ana', 10]]);
     expect(voce).toMatchObject({ posicao: 2, xp: 10 });
   });
+
+  it('ranking mostra só o primeiro nome (o resto é dado pessoal que ninguém precisa ver)', async () => {
+    const store = memoryGameStore({ names: { u1: '  Carla Mendes  Souza ', u2: 'Zé' } });
+    await answer(store, 'u1', { questionId: 'pt-acent-1', choice: right('pt-acent-1'), mode: 'trilha' }, T0);
+    await answer(store, 'u2', { questionId: 'pt-acent-1', choice: right('pt-acent-1'), mode: 'trilha' }, T0);
+    const { top } = await getRanking(store, 'u2', 20, T0);
+    expect(top.map((t) => t.nome).sort()).toEqual(['Carla', 'Zé']);
+  });
 });

@@ -14,8 +14,7 @@ export function db() {
       user: process.env.SQL_USER,
       password: process.env.SQL_PASSWORD,
       database: process.env.SQL_DB_NAME ?? 'postgres',
-      // Supabase exige SSL; SQL_SSL=false só para um Postgres local de teste.
-      ssl: process.env.SQL_SSL === 'false' ? false : { rejectUnauthorized: false },
+      ssl: sslConfig(),
       max: 3,
       connectionTimeoutMillis: 15_000,
     });
@@ -23,4 +22,14 @@ export function db() {
     instance = drizzle(pool);
   }
   return instance;
+}
+
+// Supabase exige SSL; SQL_SSL=false só para um Postgres local de teste.
+// Com SQL_CA_CERT (o certificado do Supabase, em Project Settings →
+// Database → SSL Configuration) o servidor confere quem está do outro
+// lado; sem ele a conexão é criptografada, mas sem essa conferência.
+export function sslConfig(env: NodeJS.ProcessEnv = process.env): false | { rejectUnauthorized: boolean; ca?: string } {
+  if (env.SQL_SSL === 'false') return false;
+  const ca = env.SQL_CA_CERT?.replace(/\\n/g, '\n').trim();
+  return ca ? { rejectUnauthorized: true, ca } : { rejectUnauthorized: false };
 }

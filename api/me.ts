@@ -7,6 +7,7 @@ import { jsonBody, methodNotAllowed, type ApiRequest, type ApiResponse } from '.
 import { postgresProfiles, type ProfileStore, type ProfileUpdate } from '../server/profiles.js';
 import { verifySupabaseToken } from '../server/supabase.js';
 import { errorText } from '../server/log.js';
+import { LIMITES, limitarAluno, limitarIp, postgresLimiter, type RateLimiter } from '../server/limite.js';
 
 // Campo editável → tamanho máximo. Obrigatórios não aceitam vazio/null.
 const EDITABLE: Record<keyof ProfileUpdate, { max: number; required: boolean }> = {
@@ -36,12 +37,14 @@ export function parseProfileUpdate(body: Record<string, unknown> | null): Profil
   return update;
 }
 
-export function createMeHandler(deps: { verifyToken: VerifyToken; profiles: ProfileStore }) {
+export function createMeHandler(deps: { verifyToken: VerifyToken; profiles: ProfileStore; limiter?: RateLimiter | null }) {
   return async function meHandler(req: ApiRequest, res: ApiResponse): Promise<void> {
     if (req.method !== 'GET' && req.method !== 'PATCH') return methodNotAllowed(res, ['GET', 'PATCH']);
+    if (!(await limitarIp(deps.limiter, req, res))) return;
 
     const user = await authenticate(req, res, deps.verifyToken);
     if (!user) return;
+    if (!(await limitarAluno(deps.limiter, res, 'perfil', user.id, LIMITES.perfilPorMinuto))) return;
 
     try {
       let profile = await deps.profiles.ensure(user);
@@ -62,4 +65,4 @@ export function createMeHandler(deps: { verifyToken: VerifyToken; profiles: Prof
   };
 }
 
-export default createMeHandler({ verifyToken: verifySupabaseToken, profiles: postgresProfiles });
+export default createMeHandler({ verifyToken: verifySupabaseToken, profiles: postgresProfiles, limiter: postgresLimiter });

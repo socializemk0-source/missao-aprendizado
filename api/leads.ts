@@ -2,21 +2,24 @@
 // Público (sem login), então: consentimento obrigatório, campo-isca para
 // robôs, limite de envios por IP e resposta igual para e-mail repetido.
 
-import { header, jsonBody, methodNotAllowed, type ApiRequest, type ApiResponse } from '../server/http.js';
+import { jsonBody, methodNotAllowed, type ApiRequest, type ApiResponse } from '../server/http.js';
 import { postgresLeads, type LeadStore } from '../server/leads.js';
 import { errorText } from '../server/log.js';
+import { LIMITES, clientIp, limitar, postgresLimiter, type RateLimiter } from '../server/limite.js';
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const SOURCES = new Set(['landing', 'landing-final']);
 
-export function createLeadsHandler({ store, now = Date.now, limitPerMinute = 5 }: { store: LeadStore; now?: () => number; limitPerMinute?: number }) {
+export function createLeadsHandler({ store, now = Date.now, limitPerMinute = LIMITES.leadsPorMinuto, limiter }: { store: LeadStore; now?: () => number; limitPerMinute?: number; limiter?: RateLimiter | null }) {
   // Limite em memória por instância: freio contra abuso, não cota exata.
   const hits = new Map<string, number[]>();
 
   return async function leadsHandler(req: ApiRequest, res: ApiResponse): Promise<void> {
     if (req.method !== 'POST') return methodNotAllowed(res, ['POST']);
 
-    const ip = (header(req, 'x-forwarded-for') ?? 'desconhecido').split(',')[0]!.trim();
+    const ip = clientIp(req);
+    // Conta no banco (vale entre instâncias) e também em memória (se o banco falhar).
+    if (!(await limitar(limiter, res, `leads:${ip}`, limitPerMinute, 60, new Date(now())))) return;
     const recent = (hits.get(ip) ?? []).filter((t) => now() - t < 60_000);
     if (recent.length >= limitPerMinute) {
       res.status(429).json({ error: 'Muitos envios seguidos. Tente de novo em um minuto.' });
@@ -60,4 +63,4 @@ export function createLeadsHandler({ store, now = Date.now, limitPerMinute = 5 }
   };
 }
 
-export default createLeadsHandler({ store: postgresLeads });
+export default createLeadsHandler({ store: postgresLeads, limiter: postgresLimiter });

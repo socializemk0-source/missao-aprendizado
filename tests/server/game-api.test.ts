@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { createGameHandler } from '../../api/game.js';
 import { questao } from '../../content/trilha.js';
 import { memoryGameStore } from '../../server/game-memory.js';
+import { LIMITES, memoryLimiter } from '../../server/limite.js';
 import { fakeVerify, makeReq, makeRes } from './helpers.js';
 
 function setup() {
@@ -142,5 +143,32 @@ describe('/api/game — plano de estudos', () => {
     expect(d.body.assuntos.find((a: { assunto: string }) => a.assunto === 'Acentuação gráfica')).toMatchObject({ respondidas: 1, score: 0, situacao: 'fraco' });
     const r = await call('GET', 'revisar');
     expect(r.body.agenda).toMatchObject({ hoje: 1 });
+  });
+});
+
+describe('/api/game — limite de chamadas', () => {
+  it('por aluno: passou do limite do minuto → 429; outro aluno segue normal', async () => {
+    const handler = createGameHandler({ verifyToken: fakeVerify, store: memoryGameStore(), limiter: memoryLimiter(() => new Date('2026-10-02T12:00:00Z')) });
+    const call = async (token: string, ip = '1.1.1.1') => {
+      const res = makeRes();
+      await handler(makeReq({ method: 'GET', query: { action: 'progresso' }, token, headers: { 'x-real-ip': ip } }), res);
+      return res;
+    };
+    for (let i = 0; i < LIMITES.jogoPorMinuto; i++) expect((await call('ok:u1')).statusCode).toBe(200);
+    const blocked = await call('ok:u1');
+    expect([blocked.statusCode, blocked.body.code]).toEqual([429, 'MUITAS_TENTATIVAS']);
+    expect((await call('ok:u2', '2.2.2.2')).statusCode).toBe(200);
+  });
+
+  it('por IP, antes do login: tokens falsos em massa param no limite', async () => {
+    const handler = createGameHandler({ verifyToken: fakeVerify, store: memoryGameStore(), limiter: memoryLimiter(() => new Date('2026-10-02T12:00:00Z')) });
+    const statuses: number[] = [];
+    for (let i = 0; i <= LIMITES.ipPorMinuto; i++) {
+      const res = makeRes();
+      await handler(makeReq({ method: 'GET', query: { action: 'progresso' }, token: `falso-${i}`, headers: { 'x-real-ip': '6.6.6.6' } }), res);
+      statuses.push(res.statusCode);
+    }
+    expect(statuses.slice(0, -1).every((s) => s === 401)).toBe(true);
+    expect(statuses.at(-1)).toBe(429);
   });
 });

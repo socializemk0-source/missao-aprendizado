@@ -66,3 +66,6 @@
   .install-banner { flex-wrap: wrap; }
   .install-banner p { flex-basis: calc(100% - 110px); }
 }
+
+/* CAPTCHA (Cloudflare Turnstile) nas telas de login e cadastro */
+.captcha { display: grid; gap: 6px; justify-items: center; margin: 4px 0 14px; min-height: 24px; }

@@ -31,6 +31,8 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Dependências do app sem falha de segurança alta ou crítica
+        run: npm audit --omit=dev --audit-level=high
       - name: Migrações no Postgres de teste
         run: for f in supabase/migrations/*.sql; do PGPASSWORD=pg psql -h localhost -U postgres -v ON_ERROR_STOP=1 -f "$f"; done
       - run: npm run typecheck

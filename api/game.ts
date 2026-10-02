@@ -17,6 +17,7 @@ import {
   getPracticeSession, getProgress, getRanking, getReviewSession, getSubjects, getTrail, studyDay, type GameStore,
 } from '../server/game.js';
 import { postgresGame } from '../server/game-pg.js';
+import { LIMITES, limitarAluno, limitarIp, postgresLimiter, type RateLimiter } from '../server/limite.js';
 import { getDominio, getPlano, parsePerfilEstudo, saveStudyProfile } from '../server/estudo.js';
 import { getJogos, jogar, startJogo, terminarJogo } from '../server/minigames.js';
 import { deliverSimulado, getSimulado, getSimuladoOptions, parseSimuladoInput, startSimulado } from '../server/simulado.js';
@@ -28,12 +29,14 @@ import { errorText } from '../server/log.js';
 const MODES: Mode[] = ['trilha', 'revisar', 'pratica', 'desafio'];
 const one = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v) ?? '';
 
-export function createGameHandler(deps: { verifyToken: VerifyToken; store: GameStore }) {
+export function createGameHandler(deps: { verifyToken: VerifyToken; store: GameStore; limiter?: RateLimiter | null }) {
   const { store } = deps;
   return async function gameHandler(req: ApiRequest, res: ApiResponse): Promise<void> {
     if (req.method !== 'GET' && req.method !== 'POST') return methodNotAllowed(res, ['GET', 'POST']);
+    if (!(await limitarIp(deps.limiter, req, res))) return;
     const user = await authenticate(req, res, deps.verifyToken);
     if (!user) return;
+    if (!(await limitarAluno(deps.limiter, res, 'jogo', user.id, LIMITES.jogoPorMinuto))) return;
     const action = one(req.query.action);
     res.setHeader('Cache-Control', 'no-store');
 
@@ -105,4 +108,4 @@ export function createGameHandler(deps: { verifyToken: VerifyToken; store: GameS
   };
 }
 
-export default createGameHandler({ verifyToken: verifySupabaseToken, store: postgresGame });
+export default createGameHandler({ verifyToken: verifySupabaseToken, store: postgresGame, limiter: postgresLimiter });

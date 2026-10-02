@@ -14,14 +14,22 @@ import { MercadoPagoError, PLANS, applyPayment, isCycle, makeReference, mercadoP
 import { postgresPayments } from '../server/payments-pg.js';
 import { verifySupabaseToken } from '../server/supabase.js';
 import { errorText } from '../server/log.js';
+import { LIMITES, limitarAluno, limitarIp, postgresLimiter, type RateLimiter } from '../server/limite.js';
 
 const DAY = 86_400_000;
 // Quantas compras recentes o "verificar" consulta (cada uma é uma busca no
 // Mercado Pago).
 const VERIFY_LIMIT = 5;
 
-export function baseUrlFrom(req: ApiRequest, configured = process.env.APP_BASE_URL): string {
+// Endereço do app para a volta do checkout e o aviso do Mercado Pago. Vem
+// da configuração (APP_BASE_URL) ou do endereço que a própria Vercel informa
+// (VERCEL_PROJECT_PRODUCTION_URL / VERCEL_URL) — nunca dos cabeçalhos da
+// requisição em produção, que quem chama pode inventar.
+export function baseUrlFrom(req: ApiRequest, configured = process.env.APP_BASE_URL, env: NodeJS.ProcessEnv = process.env): string {
   if (configured) return configured.replace(/\/$/, '');
+  const vercel = env.VERCEL_ENV === 'production' ? env.VERCEL_PROJECT_PRODUCTION_URL : env.VERCEL_URL;
+  if (vercel) return `https://${vercel}`;
+  // Só no desenvolvimento local (fora da Vercel).
   const proto = header(req, 'x-forwarded-proto') ?? 'https';
   const host = header(req, 'x-forwarded-host') ?? header(req, 'host');
   return `${proto}://${host}`;
@@ -33,6 +41,7 @@ export function createPagamentosHandler(deps: {
   client: MpClient | null; // null = pagamentos não configurados
   baseUrl?: (req: ApiRequest) => string;
   now?: () => Date;
+  limiter?: RateLimiter | null;
 }) {
   const now = deps.now ?? (() => new Date());
   const baseUrl = deps.baseUrl ?? ((req: ApiRequest) => baseUrlFrom(req));
@@ -45,8 +54,10 @@ export function createPagamentosHandler(deps: {
 
   return async function pagamentosHandler(req: ApiRequest, res: ApiResponse): Promise<void> {
     if (req.method !== 'GET' && req.method !== 'POST') return methodNotAllowed(res, ['GET', 'POST']);
+    if (!(await limitarIp(deps.limiter, req, res))) return;
     const user = await authenticate(req, res, deps.verifyToken);
     if (!user) return;
+    if (!(await limitarAluno(deps.limiter, res, 'pagamentos', user.id, LIMITES.pagamentosPorMinuto))) return;
     res.setHeader('Cache-Control', 'no-store');
 
     try {
@@ -121,4 +132,5 @@ export default createPagamentosHandler({
   verifyToken: verifySupabaseToken,
   store: postgresPayments,
   client: token ? mercadoPagoClient(token) : null,
+  limiter: postgresLimiter,
 });
