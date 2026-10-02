@@ -19,7 +19,7 @@ describe('/entrar', () => {
 
   it('?next= para outro site é ignorado', () => {
     const { router } = renderAt('/entrar?next=https%3A%2F%2Fgolpe.com', { status: 'signedIn', session, me });
-    expect(router.state.location.pathname).toBe('/hoje');
+    expect(router.state.location.pathname).toBe('/jogar');
   });
 
   it('senha errada mostra a mensagem em português', async () => {

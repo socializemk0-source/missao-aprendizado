@@ -13,8 +13,6 @@ import {
   type Achievement, type AnswerResult, type GameErrorCode, type JogoTipo, type Mission, type Mode, type PhaseStatus,
   type Plan, type Progress, type PublicQuestion, type RankingEntry, type Session, type SubjectStats, type TrailChapter,
 } from '../shared/game.js';
-import type { AgendaRevisao, PerfilEstudo } from '../shared/estudo.js';
-import { addDays, aposResposta } from './revisao.js';
 
 // ---------------------------------------------------------------- Store
 export interface Stats {
@@ -31,12 +29,6 @@ export interface QuestionState {
   everCorrect: boolean;
   lastCorrect: boolean;
   timesWrong: number;
-  timesRight: number;
-  // Revisão espaçada (server/revisao.ts): etapa e dia da próxima revisão
-  // (null = fora da fila).
-  reviewStage: number;
-  reviewDue: string | null;
-  lastAnsweredAt: Date | null;
 }
 
 export interface UserTx {
@@ -47,11 +39,6 @@ export interface UserTx {
   saveQuestionState(state: QuestionState): Promise<void>;
   addAnswer(answer: { questionId: string; choice: number; correct: boolean; mode: Mode; day: string }): Promise<void>;
   answersOnDay(day: string): Promise<{ total: number; correct: number }>;
-  // Respostas desde um dia (inclusive): plano de estudos e ritmo da semana.
-  answersSince(day: string): Promise<{ questionId: string; correct: boolean; mode: Mode; day: string }[]>;
-  // Plano de estudos (onboarding). null = ainda não respondeu.
-  studyProfile(): Promise<PerfilEstudo | null>;
-  saveStudyProfile(perfil: PerfilEstudo): Promise<void>;
   completedPhases(): Promise<Map<string, string>>; // faseId → dia em que concluiu
   completePhase(phaseId: string, day: string): Promise<void>;
   claimedMissions(day: string): Promise<Set<string>>;
@@ -208,14 +195,14 @@ function statusOf(ordem: number, capituloIndex: number, done: Map<string, string
   return capituloIndex >= CAPITULOS_GRATIS && plan !== 'pro' ? 'pro' : 'available';
 }
 
-export function phaseStatusMap(done: Map<string, string>, plan: Plan): Map<string, PhaseStatus> {
+function phaseStatusMap(done: Map<string, string>, plan: Plan): Map<string, PhaseStatus> {
   return new Map(FASES.map((f) => [f.id, statusOf(f.ordem, f.capituloIndex, done, plan)]));
 }
 
-export const isOpen = (status: PhaseStatus | undefined) => status === 'done' || status === 'available';
+const isOpen = (status: PhaseStatus | undefined) => status === 'done' || status === 'available';
 
 // Questão já vista pode ser revisada, menos as de capítulo PRO no grátis.
-export function reviewAllowed(questionId: string, plan: Plan): boolean {
+function reviewAllowed(questionId: string, plan: Plan): boolean {
   const f = faseDaQuestao(questionId);
   return plan === 'pro' || !f || f.capituloIndex < CAPITULOS_GRATIS;
 }
@@ -314,7 +301,12 @@ export async function answer(
     const today = studyDay(now);
     stats = touchStreak(stats, today);
 
-    const state = aposResposta(prev, q.id, correct, today, now);
+    const state: QuestionState = {
+      questionId: q.id,
+      everCorrect: Boolean(prev?.everCorrect) || correct,
+      lastCorrect: correct,
+      timesWrong: (prev?.timesWrong ?? 0) + (correct ? 0 : 1),
+    };
     await tx.saveQuestionState(state);
     await tx.addAnswer({ questionId: q.id, choice: input.choice, correct, mode: input.mode, day: today });
     if (!prev) await tx.bumpQuestionStats(q.id, correct);
@@ -336,47 +328,26 @@ export async function answer(
 }
 
 // ---------------------------------------------------------------- Revisar, praticar, desafio
-export async function openQuestionIds(tx: UserTx): Promise<Set<string>> {
+async function openQuestionIds(tx: UserTx): Promise<Set<string>> {
   const statuses = phaseStatusMap(await tx.completedPhases(), await tx.plan());
   return new Set(FASES.filter((f) => isOpen(statuses.get(f.id))).flatMap((f) => f.questoes));
 }
 
-// Fila de revisão de hoje: questões com revisão marcada para hoje ou antes
-// (as mais atrasadas primeiro), menos as de capítulo PRO no grátis.
-export async function getReviewSession(store: GameStore, userId: string, limit = 10, now = new Date()): Promise<Session> {
-  const today = studyDay(now);
+export async function getReviewSession(store: GameStore, userId: string, limit = 10): Promise<Session> {
   return store.withUser(userId, async (tx) => {
     const plan = await tx.plan();
-    const states = [...(await tx.questionStates()).values()].filter((s) => reviewAllowed(s.questionId, plan));
-    const pending = states
-      .filter((s) => s.reviewDue !== null && s.reviewDue <= today)
-      .sort((a, b) => a.reviewDue!.localeCompare(b.reviewDue!) || b.timesWrong - a.timesWrong)
+    const pending = [...(await tx.questionStates()).values()]
+      .filter((s) => !s.lastCorrect && reviewAllowed(s.questionId, plan))
+      .sort((a, b) => b.timesWrong - a.timesWrong)
       .slice(0, limit);
     const found = await store.questions.get(pending.map((s) => s.questionId));
     const questoes = pending.flatMap((s) => (found.has(s.questionId) ? [toPublic(found.get(s.questionId)!)] : []));
     return {
       mode: 'revisar', faseId: null, titulo: 'Revisar erros',
-      subtitulo: questoes.length === 1 ? '1 questão para revisar hoje' : questoes.length ? `${questoes.length} questões para revisar hoje` : 'Nenhuma revisão para hoje',
+      subtitulo: questoes.length ? `${questoes.length} questão(ões) para acertar` : 'Nenhum erro pendente',
       questoes,
-      agenda: agendaRevisao(states, today),
     };
   });
-}
-
-// Quantas revisões vencem hoje (ou estão atrasadas), amanhã, do 2º ao 7º
-// dia e depois disso.
-export function agendaRevisao(states: Iterable<QuestionState>, today: string): AgendaRevisao {
-  const amanha = addDays(today, 1);
-  const semana = addDays(today, 7);
-  const agenda: AgendaRevisao = { hoje: 0, amanha: 0, semana: 0, depois: 0 };
-  for (const s of states) {
-    if (s.reviewDue === null) continue;
-    if (s.reviewDue <= today) agenda.hoje++;
-    else if (s.reviewDue === amanha) agenda.amanha++;
-    else if (s.reviewDue <= semana) agenda.semana++;
-    else agenda.depois++;
-  }
-  return agenda;
 }
 
 export async function getPracticeSession(store: GameStore, userId: string, disciplina: DisciplinaId, limit = 10): Promise<Session> {

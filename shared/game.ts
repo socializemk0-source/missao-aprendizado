@@ -55,7 +55,6 @@ export interface Session {
   subtitulo: string;
   faseId: string | null;
   questoes: PublicQuestion[];
-  agenda?: import('./estudo.js').AgendaRevisao; // só na revisão
 }
 
 export interface AnswerResult {

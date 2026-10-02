@@ -10,7 +10,6 @@ import {
   MISTO, NIVEIS, NIVEL_DE, SIMULADOS_GRATIS_POR_DIA, SIMULADO_SEG_POR_QUESTAO, SIMULADO_TAMANHOS, XP_FIRST_CORRECT,
   type Nivel, type Progress, type SimuladoOpcoes, type SimuladoResultado, type SimuladoSessao,
 } from '../shared/game.js';
-import { aposResposta } from './revisao.js';
 import { GameError, loadStats, studyDay, toProgress, toPublic, touchStreak, type GameStore, type SimuladoRow } from './game.js';
 import { acertoPct, nivelAtual, type CatalogItem } from './questions.js';
 
@@ -199,7 +198,10 @@ export async function deliverSimulado(
       if (correct) acertos++;
       const prev = states.get(qid);
       if (correct && !prev?.everCorrect) xpGanho += XP_FIRST_CORRECT;
-      await tx.saveQuestionState(aposResposta(prev, qid, correct, today, now));
+      await tx.saveQuestionState({
+        questionId: qid, everCorrect: Boolean(prev?.everCorrect) || correct, lastCorrect: correct,
+        timesWrong: (prev?.timesWrong ?? 0) + (correct ? 0 : 1),
+      });
       await tx.addAnswer({ questionId: qid, choice, correct, mode: 'simulado', day: today });
       if (!prev) await tx.bumpQuestionStats(qid, correct);
     }

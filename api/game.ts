@@ -2,22 +2,20 @@
 // Vercel permite poucas funções por projeto).
 //   GET  progresso | trilha | fase&id= | revisar | pratica&disciplina= | desafio
 //        missoes | conquistas | disciplinas | ranking
-//        simulados | simulado&id= | jogos | plano
+//        simulados | simulado&id= | jogos
 //   POST responder { questionId, choice, mode } | resgatar { missionId }
 //        simulado-iniciar { nivel, disciplinas, banca, quantidade, cronometro }
 //        simulado-entregar { id, respostas: { [questionId]: alternativa } }
 //        jogo-iniciar { tipo, disciplina? } | jogo-jogada { id, ...jogada }
 //        jogo-terminar { id, jogadas? }
-//        plano-salvar { prova, banca, dataProva, minutosDia, nivel, disciplinas }
 
 import type { DisciplinaId } from '../content/types.js';
 import { authenticate, type VerifyToken } from '../server/auth.js';
 import {
   GameError, answer, claimMission, getAchievements, getChallengeSession, getMissions, getPhaseSession,
-  getPracticeSession, getProgress, getRanking, getReviewSession, getSubjects, getTrail, studyDay, type GameStore,
+  getPracticeSession, getProgress, getRanking, getReviewSession, getSubjects, getTrail, type GameStore,
 } from '../server/game.js';
 import { postgresGame } from '../server/game-pg.js';
-import { getDominio, getPlano, parsePerfilEstudo, saveStudyProfile } from '../server/estudo.js';
 import { getJogos, jogar, startJogo, terminarJogo } from '../server/minigames.js';
 import { deliverSimulado, getSimulado, getSimuladoOptions, parseSimuladoInput, startSimulado } from '../server/simulado.js';
 import { jsonBody, methodNotAllowed, type ApiRequest, type ApiResponse } from '../server/http.js';
@@ -48,12 +46,11 @@ export function createGameHandler(deps: { verifyToken: VerifyToken; store: GameS
           case 'desafio': return res.status(200).json(await getChallengeSession(store, user.id));
           case 'missoes': return res.status(200).json({ missoes: await getMissions(store, user.id) });
           case 'conquistas': return res.status(200).json({ conquistas: await getAchievements(store, user.id) });
-          case 'disciplinas': return res.status(200).json({ disciplinas: await getSubjects(store, user.id), assuntos: await getDominio(store, user.id) });
+          case 'disciplinas': return res.status(200).json({ disciplinas: await getSubjects(store, user.id) });
           case 'ranking': return res.status(200).json(await getRanking(store, user.id));
           case 'simulados': return res.status(200).json(await getSimuladoOptions(store, user.id));
           case 'simulado': return res.status(200).json(await getSimulado(store, user.id, one(req.query.id)));
           case 'jogos': return res.status(200).json(await getJogos(store, user.id));
-          case 'plano': return res.status(200).json(await getPlano(store, user.id));
         }
       } else {
         const body = jsonBody(req);
@@ -74,12 +71,6 @@ export function createGameHandler(deps: { verifyToken: VerifyToken; store: GameS
           const respostas = body.respostas && typeof body.respostas === 'object' && !Array.isArray(body.respostas) ? body.respostas as Record<string, unknown> : null;
           if (typeof body.id !== 'string' || !respostas) return res.status(400).json({ error: 'Envio inválido.', code: 'ACAO_INVALIDA' });
           return res.status(200).json(await deliverSimulado(store, user.id, body.id, respostas));
-        }
-        if (action === 'plano-salvar') {
-          const perfil = parsePerfilEstudo(body, studyDay(new Date()));
-          if (typeof perfil === 'string') return res.status(400).json({ error: perfil, code: 'ACAO_INVALIDA' });
-          await saveStudyProfile(store, user.id, perfil);
-          return res.status(200).json(await getPlano(store, user.id));
         }
         if (action === 'jogo-iniciar') {
           return res.status(200).json(await startJogo(store, user.id, { tipo: body.tipo as JogoTipo, disciplina: (body.disciplina ?? null) as DisciplinaId | null }));

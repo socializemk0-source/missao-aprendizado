@@ -120,7 +120,7 @@ describe('simulado', () => {
     const ids = s.questoes.map((q) => q.id);
     const known = ids[4]!;
     // Já dominada antes (e já contada na estatística): sem XP nem contagem de novo.
-    await store.withUser('u1', (tx) => tx.saveQuestionState({ questionId: known, everCorrect: true, lastCorrect: true, timesWrong: 0, timesRight: 1, reviewStage: 0, reviewDue: null, lastAnsweredAt: null }));
+    await store.withUser('u1', (tx) => tx.saveQuestionState({ questionId: known, everCorrect: true, lastCorrect: true, timesWrong: 0 }));
     const respostas: Record<string, unknown> = allRight(ids);
     const erradas = ids.slice(0, 2);
     for (const id of erradas) respostas[id] = (questao(id)!.correta + 1) % questao(id)!.alternativas.length;

@@ -3,7 +3,6 @@ import type {
   RankingEntry, Session, SimuladoOpcoes, SimuladoResultado, SimuladoSessao, SubjectStats, TrailChapter,
 } from '../../shared/game';
 import type { DisciplinaId } from '../../content/types';
-import type { DominioAssunto, PerfilEstudo, Plano, PlanoResposta } from '../../shared/estudo';
 import type { Fonte } from '../../content/types';
 import { api } from './api';
 
@@ -21,9 +20,7 @@ export const game = {
   challenge: () => get<Session>('desafio'),
   missions: () => get<{ missoes: Mission[] }>('missoes'),
   achievements: () => get<{ conquistas: Achievement[] }>('conquistas'),
-  subjects: () => get<{ disciplinas: SubjectStats[]; assuntos: DominioAssunto[] }>('disciplinas'),
-  plano: () => get<PlanoResposta>('plano'),
-  salvarPlano: (perfil: PerfilEstudo) => post<Plano>('plano-salvar', perfil),
+  subjects: () => get<{ disciplinas: SubjectStats[] }>('disciplinas'),
   ranking: () => get<{ top: RankingEntry[]; voce: RankingEntry }>('ranking'),
   answer: (questionId: string, choice: number, mode: Mode) => post<AnswerResult>('responder', { questionId, choice, mode }),
   claim: (missionId: string) => post<{ xpGanho: number; progress: Progress }>('resgatar', { missionId }),

@@ -106,7 +106,7 @@ export function Entrar() {
       <p className="auth-footer">
         <button type="button" className="link-btn" onClick={() => setMode('reset')}>Esqueci minha senha</button>
         <span> · </span>
-        <Link to={`/cadastro${next !== '/hoje' ? `?next=${encodeURIComponent(next)}` : ''}`}>Criar conta grátis</Link>
+        <Link to={`/cadastro${next !== '/jogar' ? `?next=${encodeURIComponent(next)}` : ''}`}>Criar conta grátis</Link>
       </p>
     </AuthLayout>
   );

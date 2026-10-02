@@ -5,7 +5,7 @@
   "description": "Estude para concursos públicos em forma de aventura: trilha guiada, questões no estilo das bancas, simulados e redação com IA.",
   "lang": "pt-BR",
   "dir": "ltr",
-  "start_url": "/hoje",
+  "start_url": "/jogar",
   "scope": "/",
   "display": "standalone",
   "background_color": "#f9fbfd",

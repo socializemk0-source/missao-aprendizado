@@ -50,7 +50,7 @@ export function RedefinirSenha() {
   if (done) {
     return (
       <AuthLayout title="Senha atualizada!" pose="joinha">
-        <button type="button" className="btn btn-primary btn-block" onClick={() => navigate('/hoje', { replace: true })}>Continuar estudando</button>
+        <button type="button" className="btn btn-primary btn-block" onClick={() => navigate('/jogar', { replace: true })}>Continuar estudando</button>
       </AuthLayout>
     );
   }

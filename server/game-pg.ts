@@ -2,14 +2,13 @@
 // por usuário (pg_advisory_xact_lock): dois pedidos do mesmo aluno ao mesmo
 // tempo — mesmo em instâncias diferentes da Vercel — acontecem em fila.
 
-import { and, desc, eq, gt, gte, inArray, isNotNull, lt, ne, sql } from 'drizzle-orm';
+import { and, desc, eq, gt, inArray, isNotNull, lt, ne, sql } from 'drizzle-orm';
 import type { DisciplinaId } from '../content/types.js';
-import type { PerfilEstudo } from '../shared/estudo.js';
-import type { JogoTipo, Mode, Nivel, Plan } from '../shared/game.js';
+import type { JogoTipo, Nivel, Plan } from '../shared/game.js';
 import { db } from './db.js';
 import { PERCENTILE_MIN, type GameStore, type RoundRow, type SimuladoRow, type SimuladoStored, type UserTx } from './game.js';
 import { postgresQuestions } from './questions-pg.js';
-import { answers, gameRounds, missionClaims, phaseCompletions, profiles, questionState, questionStats, simulados, studyPlans, userStats } from './schema.js';
+import { answers, gameRounds, missionClaims, phaseCompletions, profiles, questionState, questionStats, simulados, userStats } from './schema.js';
 
 type Tx = Parameters<Parameters<ReturnType<typeof db>['transaction']>[0]>[0];
 
@@ -29,16 +28,10 @@ function userTx(tx: Tx, userId: string): UserTx {
     },
     async questionStates() {
       const rows = await tx.select().from(questionState).where(eq(questionState.userId, userId));
-      return new Map(rows.map((r) => [r.questionId, {
-        questionId: r.questionId, everCorrect: r.everCorrect, lastCorrect: r.lastCorrect, timesWrong: r.timesWrong,
-        timesRight: r.timesRight, reviewStage: r.reviewStage, reviewDue: r.reviewDue, lastAnsweredAt: r.lastAnswerAt,
-      }]));
+      return new Map(rows.map((r) => [r.questionId, { questionId: r.questionId, everCorrect: r.everCorrect, lastCorrect: r.lastCorrect, timesWrong: r.timesWrong }]));
     },
     async saveQuestionState(s) {
-      const values = {
-        everCorrect: s.everCorrect, lastCorrect: s.lastCorrect, timesWrong: s.timesWrong, timesRight: s.timesRight,
-        reviewStage: s.reviewStage, reviewDue: s.reviewDue, lastAnswerAt: s.lastAnsweredAt, updatedAt: new Date(),
-      };
+      const values = { everCorrect: s.everCorrect, lastCorrect: s.lastCorrect, timesWrong: s.timesWrong, updatedAt: new Date() };
       await tx.insert(questionState).values({ userId, questionId: s.questionId, ...values })
         .onConflictDoUpdate({ target: [questionState.userId, questionState.questionId], set: values });
     },
@@ -50,22 +43,6 @@ function userTx(tx: Tx, userId: string): UserTx {
         .select({ total: sql<number>`count(*)::int`, correct: sql<number>`count(*) filter (where ${answers.correct})::int` })
         .from(answers).where(and(eq(answers.userId, userId), eq(answers.day, day)));
       return { total: row?.total ?? 0, correct: row?.correct ?? 0 };
-    },
-    async answersSince(day) {
-      const rows = await tx.select({ questionId: answers.questionId, correct: answers.correct, mode: answers.mode, day: answers.day })
-        .from(answers).where(and(eq(answers.userId, userId), gte(answers.day, day)));
-      return rows.map((r) => ({ ...r, mode: r.mode as Mode }));
-    },
-    async studyProfile() {
-      const [row] = await tx.select().from(studyPlans).where(eq(studyPlans.userId, userId)).limit(1);
-      return row ? {
-        prova: row.prova, banca: row.banca as PerfilEstudo['banca'], dataProva: row.dataProva, minutosDia: row.minutosDia,
-        nivel: row.nivel as PerfilEstudo['nivel'], disciplinas: row.disciplinas as DisciplinaId[],
-      } : null;
-    },
-    async saveStudyProfile(p) {
-      const values = { prova: p.prova, banca: p.banca, dataProva: p.dataProva, minutosDia: p.minutosDia, nivel: p.nivel, disciplinas: p.disciplinas, updatedAt: new Date() };
-      await tx.insert(studyPlans).values({ userId, ...values }).onConflictDoUpdate({ target: studyPlans.userId, set: values });
     },
     async completedPhases() {
       const rows = await tx.select({ phaseId: phaseCompletions.phaseId, day: phaseCompletions.day }).from(phaseCompletions).where(eq(phaseCompletions.userId, userId));
