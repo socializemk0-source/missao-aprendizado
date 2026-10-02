@@ -1666,7 +1666,7 @@
     ],
     "correta": 3,
     "dificuldade": 2,
-    "explicacao": "Para negar uma disjunção (ou), negam-se as duas partes e troca-se ou por e. Atenção: não ser alta não é o mesmo que ser baixa, por isso a terceira opção está errada.",
+    "explicacao": "Para negar uma disjunção (ou), negam-se as duas partes e troca-se ou por e. Atenção: não ser alta não é o mesmo que ser baixa, por isso Ana é baixa e Bia é alta está errada.",
     "fonte": {
       "tipo": "autoral",
       "estilo": "FCC"
@@ -1744,7 +1744,7 @@
     ],
     "correta": 2,
     "dificuldade": 3,
-    "explicacao": "Negar uma condicional é mostrar o único caso em que ela falha: a primeira parte acontece e a segunda não. A negação não é outra condicional. A última opção é equivalente à frase original, não sua negação.",
+    "explicacao": "Negar uma condicional é mostrar o único caso em que ela falha: a primeira parte acontece e a segunda não. A negação não é outra condicional. Já o candidato não estudou ou foi aprovado é equivalente à frase original, não sua negação.",
     "fonte": {
       "tipo": "autoral",
       "estilo": "FGV"

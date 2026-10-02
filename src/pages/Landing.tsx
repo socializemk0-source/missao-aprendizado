@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router';
+import { Link, useLocation } from 'react-router';
 import { useAuth } from '../auth/AuthProvider';
 import { BRAND } from '../app/nav';
 import { FREE_FEATURES, PRO_FEATURES, PRO_OPTIONS } from '../app/plans';
@@ -42,6 +42,8 @@ const FAQ = [
 
 export function Landing() {
   const { status } = useAuth();
+  // Aviso deixado por outra tela (ex.: "Sua conta foi excluída").
+  const aviso = (useLocation().state as { aviso?: string } | null)?.aviso;
   const signedIn = status === 'signedIn';
   const [cycle, setCycle] = useState<(typeof PRO_OPTIONS)[number]['id']>('monthly');
   const pro = PRO_OPTIONS.find((o) => o.id === cycle)!;
@@ -75,6 +77,7 @@ export function Landing() {
       </header>
 
       <main>
+        {aviso && <p className="alert alert-success landing-aviso" role="status">{aviso}</p>}
         {/* 1. Promessa + prova imediata */}
         <div className="lp-hero-band">
           <section className="lp-section lp-hero">
@@ -214,6 +217,7 @@ export function Landing() {
         <nav aria-label="Rodapé">
           <a href="#duvidas">Dúvidas</a>
           <Link to="/privacidade">Privacidade</Link>
+          <Link to="/termos">Termos</Link>
           {!signedIn && <Link to="/entrar">Entrar</Link>}
         </nav>
       </footer>
