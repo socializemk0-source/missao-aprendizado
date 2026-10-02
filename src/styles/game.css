@@ -402,3 +402,87 @@ html[data-motion='on'] .mem-carta.is-aberta { animation: pop .3s ease-out; }
   .cruz-pistas { grid-template-columns: minmax(0, 1fr); }
   .radar-texto { font-size: 18px; }
 }
+
+/* ---------- Marco 1: onboarding, "Hoje", domínio por assunto ---------- */
+.btn-sm { padding: 8px 14px; font-size: 14px; }
+.check { display: flex; align-items: center; gap: 10px; font-weight: 600; cursor: pointer; }
+.check input { width: 20px; height: 20px; accent-color: var(--primary); }
+
+.onboarding { max-width: 620px; margin: 0 auto; display: grid; gap: 16px; }
+.onboarding-head { display: flex; align-items: center; gap: 14px; }
+.onboarding-head > div { flex: 1; min-width: 0; display: grid; gap: 8px; }
+.onboarding-tico { width: 72px; height: auto; flex: none; }
+.onboarding-steps { display: flex; gap: 6px; }
+.onboarding-steps span { flex: 1; height: 6px; border-radius: 999px; background: var(--muted); }
+.onboarding-steps span.is-on { background: var(--green); }
+.onboarding-card { display: grid; gap: 14px; }
+.onboarding-card .page-title { font-size: clamp(22px, 5vw, 28px); margin: 0; text-wrap: balance; }
+.onboarding-card .field { margin: 0; }
+.onboarding-actions { display: flex; justify-content: space-between; gap: 12px; margin-top: 4px; }
+.choice-list { border: 0; padding: 0; margin: 0; display: grid; gap: 10px; }
+.choice-list legend { padding: 0; margin-bottom: 12px; }
+.choice {
+  display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 16px; cursor: pointer;
+  border: 2px solid var(--border); background: var(--surface);
+}
+.choice > span { display: grid; gap: 2px; }
+.choice input { width: 20px; height: 20px; flex: none; accent-color: var(--primary); }
+.choice:hover { border-color: var(--primary-soft-border); }
+.choice.is-on { border-color: var(--primary); background: var(--primary-soft); }
+.choice:has(input:focus-visible) { outline: 3px solid var(--primary); outline-offset: 2px; }
+
+.hoje-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+.hoje-head .page-title { margin: 2px 0 4px; }
+.hoje-head .eyebrow::first-letter { text-transform: uppercase; }
+.hoje-meta { display: grid; gap: 10px; padding: 18px 20px; max-width: 760px; margin-bottom: 12px; }
+.hoje-meta-text { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.hoje-tarefas { margin-bottom: 10px; }
+.tarefa { display: flex; align-items: center; gap: 14px; padding: 16px 18px; }
+.tarefa-icone {
+  width: 44px; height: 44px; flex: none; border-radius: 14px; display: grid; place-items: center;
+  background: var(--primary-soft); color: var(--primary-strong);
+}
+.tarefa.is-done { background: var(--ok-soft); }
+.tarefa.is-done .tarefa-icone { background: var(--ok-soft-2); color: var(--ok-fg); }
+.hoje-agenda, .revisao-agenda { margin: 0 0 18px; font-size: 14px; }
+.hoje-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; max-width: 980px; margin-top: 8px; }
+.hoje-bloco { display: grid; gap: 10px; align-content: start; padding: 18px 20px; position: relative; }
+.hoje-bloco h2 { font-size: 18px; margin: 0; color: var(--heading); }
+.hoje-bloco p { margin: 0; }
+.hoje-numeros { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 0; }
+.hoje-numeros div { background: var(--muted); border-radius: 14px; padding: 10px 12px; }
+.hoje-numeros dt { font-size: 13px; color: var(--muted-fg); }
+.hoje-numeros dd { margin: 2px 0 0; font-size: 20px; font-weight: 800; font-variant-numeric: tabular-nums; color: var(--heading); }
+.hoje-previsao { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
+.hoje-link { font-weight: 700; font-size: 14px; }
+.hoje-tico { position: absolute; right: 12px; top: 10px; width: 44px; height: auto; }
+.semana { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.semana li { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; padding: 6px 10px; border-radius: 12px; }
+.semana li.is-hoje { background: var(--primary-soft); }
+.semana-dia { width: 44px; font-weight: 800; font-size: 13px; text-transform: uppercase; color: var(--muted-fg); }
+.semana li.is-hoje .semana-dia { color: var(--primary-strong); }
+.semana-materia { font-weight: 700; font-size: 14px; }
+.semana-materia + .semana-materia::before { content: '+ '; color: var(--muted-fg); }
+
+.assuntos { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.assuntos li { display: flex; align-items: center; gap: 12px; }
+.assunto-info { flex: 1; min-width: 0; display: grid; gap: 4px; }
+.assuntos li.is-fraco .bar span { background: var(--danger-fg); }
+.assuntos li.is-progresso .bar span { background: var(--warn-fg); }
+.dominio { margin-top: 28px; max-width: 760px; display: grid; gap: 12px; }
+.dominio h2 { margin: 0; font-size: 20px; color: var(--heading); }
+.dominio > p { margin: 0; }
+.dominio-grupo { padding: 18px 20px; }
+.dominio-grupo h3 { margin: 0 0 12px; font-size: 16px; }
+.situacao-fraco { background: var(--danger-soft); color: var(--danger-fg); }
+.situacao-progresso { background: var(--warn-soft); color: var(--warn-fg); }
+.situacao-dominado { background: var(--ok-soft-2); color: var(--ok-fg); }
+
+@media (max-width: 820px) {
+  .hoje-grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 480px) {
+  .tarefa { flex-wrap: wrap; }
+  .tarefa .btn { width: 100%; }
+  .assuntos li { flex-wrap: wrap; }
+}

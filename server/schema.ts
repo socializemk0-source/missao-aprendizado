@@ -46,6 +46,11 @@ export const questionState = v2.table('question_state', {
   everCorrect: boolean('ever_correct').notNull(),
   lastCorrect: boolean('last_correct').notNull(),
   timesWrong: integer('times_wrong').notNull(),
+  // Migração 0011: acertos, revisão espaçada e hora da última resposta.
+  timesRight: integer('times_right').notNull().default(0),
+  reviewStage: smallint('review_stage').notNull().default(0),
+  reviewDue: date('review_due', { mode: 'string' }),
+  lastAnswerAt: timestamp('last_answer_at', { withTimezone: true }),
   updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
 }, (t) => [primaryKey({ columns: [t.userId, t.questionId] })]);
 
@@ -162,4 +167,17 @@ export const gameRounds = v2.table('game_rounds', {
   finishedAt: timestamp('finished_at', { withTimezone: true }),
   pontos: integer('pontos'),
   xp: integer('xp').notNull().default(0),
+});
+
+// ---- Plano de estudos (migração 0011) ----
+export const studyPlans = v2.table('study_plans', {
+  userId: text('user_id').primaryKey(),
+  prova: text('prova').notNull(),
+  banca: text('banca'),
+  dataProva: date('data_prova', { mode: 'string' }),
+  minutosDia: smallint('minutos_dia').notNull(),
+  nivel: text('nivel').notNull(),
+  disciplinas: text('disciplinas').array().notNull(),
+  createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
 });

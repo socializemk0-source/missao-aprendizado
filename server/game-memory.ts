@@ -1,14 +1,16 @@
 // GameStore em memória: mesmas regras de serialização do Postgres (uma
 // operação por usuário de cada vez). Usado nos testes e na demonstração.
 
-import type { Plan } from '../shared/game.js';
+import type { PerfilEstudo } from '../shared/estudo.js';
+import type { Mode, Plan } from '../shared/game.js';
 import { PERCENTILE_MIN, type GameStore, type QuestionState, type RoundRow, type SimuladoRow, type Stats, type UserTx } from './game.js';
 import { contentSource, type QuestionSource, type QuestionStats } from './questions.js';
 
 interface UserData {
   stats: Stats | null;
   states: Map<string, QuestionState>;
-  answers: { day: string; correct: boolean }[];
+  answers: { questionId: string; correct: boolean; mode: Mode; day: string }[];
+  perfil: PerfilEstudo | null;
   phases: Map<string, string>;
   claims: Set<string>;
   simulados: SimuladoRow[];
@@ -21,7 +23,7 @@ export function memoryGameStore(options: { plan?: (userId: string) => Plan; name
   let seq = 0;
   const locks = new Map<string, Promise<unknown>>();
   const data = (id: string): UserData => {
-    if (!users.has(id)) users.set(id, { stats: null, states: new Map(), answers: [], phases: new Map(), claims: new Set(), simulados: [], rounds: [] });
+    if (!users.has(id)) users.set(id, { stats: null, states: new Map(), answers: [], phases: new Map(), claims: new Set(), simulados: [], rounds: [], perfil: null });
     return users.get(id)!;
   };
 
@@ -37,7 +39,10 @@ export function memoryGameStore(options: { plan?: (userId: string) => Plan; name
         saveStats: async (s) => { d.stats = { ...s }; },
         questionStates: async () => new Map([...d.states].map(([k, v]) => [k, { ...v }])),
         saveQuestionState: async (s) => { d.states.set(s.questionId, { ...s }); },
-        addAnswer: async (a) => { d.answers.push({ day: a.day, correct: a.correct }); },
+        addAnswer: async (a) => { d.answers.push({ questionId: a.questionId, correct: a.correct, mode: a.mode, day: a.day }); },
+        answersSince: async (day) => d.answers.filter((a) => a.day >= day).map((a) => ({ ...a })),
+        studyProfile: async () => (d.perfil ? structuredClone(d.perfil) : null),
+        saveStudyProfile: async (p) => { d.perfil = structuredClone(p); },
         answersOnDay: async (day) => {
           const list = d.answers.filter((a) => a.day === day);
           return { total: list.length, correct: list.filter((a) => a.correct).length };

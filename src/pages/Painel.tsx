@@ -7,6 +7,7 @@ import { Tico } from '../components/Tico';
 import { useProgress } from '../game/ProgressProvider';
 import { LoadState, useLoad } from '../game/useLoad';
 import { game } from '../lib/game';
+import type { Situacao } from '../../shared/estudo';
 
 function PageHead({ eyebrow, title, text }: { eyebrow: string; title: string; text?: string }) {
   return (
@@ -18,7 +19,7 @@ function PageHead({ eyebrow, title, text }: { eyebrow: string; title: string; te
   );
 }
 
-function Bar({ value, max, label }: { value: number; max: number; label: string }) {
+export function Bar({ value, max, label }: { value: number; max: number; label: string }) {
   return (
     <div className="bar" role="progressbar" aria-label={label} aria-valuemin={0} aria-valuemax={max} aria-valuenow={value}>
       <span style={{ width: `${max ? (value / max) * 100 : 0}%` }} />
@@ -135,6 +136,8 @@ export function Ranking() {
   );
 }
 
+const SITUACAO: Record<Situacao, string> = { 'nao-visto': 'Ainda não visto', fraco: 'Fraco', progresso: 'Em progresso', dominado: 'Dominado' };
+
 export function Disciplinas() {
   const loaded = useLoad(game.subjects, []);
   return (
@@ -157,6 +160,39 @@ export function Disciplinas() {
             </li>
           ))}
         </ul>
+
+        {loaded.data && loaded.data.assuntos.length > 0 && (
+          <section className="dominio" aria-labelledby="dominio-assunto">
+            <h2 id="dominio-assunto">Domínio por assunto</h2>
+            <p className="muted">
+              A nota junta seus acertos em todas as tentativas, a última resposta, a dificuldade das questões e há quanto tempo você
+              não vê o assunto. Dominado: 80% ou mais, tendo respondido pelo menos metade das questões do assunto.
+            </p>
+            {loaded.data.disciplinas.map((d) => {
+              const assuntos = loaded.data!.assuntos.filter((a) => a.disciplina === d.disciplina);
+              if (assuntos.length === 0) return null;
+              return (
+                <div key={d.disciplina} className="card dominio-grupo">
+                  <h3>{d.nome}</h3>
+                  <ul className="assuntos">
+                    {assuntos.map((a) => (
+                      <li key={a.assunto} className={`is-${a.situacao}`}>
+                        <div className="assunto-info">
+                          <strong>{a.assunto}</strong>
+                          <span className="muted">
+                            {a.score === null ? 'Nenhuma questão respondida' : `Domínio ${a.score}% · ${a.respondidas} de ${a.total} questões vistas`}
+                          </span>
+                          {a.score !== null && <Bar value={a.score} max={100} label={`${a.assunto}: domínio de ${a.score}%`} />}
+                        </div>
+                        <span className={`pill situacao-${a.situacao}`}>{SITUACAO[a.situacao]}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </section>
+        )}
       </LoadState>
     </>
   );

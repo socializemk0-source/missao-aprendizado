@@ -28,7 +28,7 @@ describe('manifesto do app', () => {
     expect(manifest.lang).toBe('pt-BR');
     expect(manifest.scope).toBe('/');
     expect(manifest.id).toBe('/');
-    expect(manifest.start_url).toMatch(/^\/jogar/);
+    expect(manifest.start_url).toMatch(/^\/hoje/);
     expect(manifest.theme_color).toMatch(/^#[0-9a-f]{6}$/i);
     expect(manifest.background_color).toMatch(/^#[0-9a-f]{6}$/i);
   });
