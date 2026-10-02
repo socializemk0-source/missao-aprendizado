@@ -43,7 +43,7 @@ describe('acesso às telas do app', () => {
   it('página inicial logado: oferece "Continuar", sem redirecionar sozinha', () => {
     const { router } = renderAt('/', signedIn);
     expect(router.state.location.pathname).toBe('/');
-    expect(screen.getByRole('link', { name: 'Continuar estudando' })).toHaveAttribute('href', '/jogar');
+    expect(screen.getByRole('link', { name: 'Continuar estudando' })).toHaveAttribute('href', '/hoje');
   });
 
   it('endereço inexistente → página não encontrada', () => {
@@ -78,7 +78,7 @@ describe('sair da conta', () => {
 describe('safeNext', () => {
   it('só aceita caminhos internos', () => {
     expect(safeNext('/redacao?a=1')).toBe('/redacao?a=1');
-    for (const bad of [null, '', 'https://golpe.com', '//golpe.com', '/\\golpe.com', 'jogar']) expect(safeNext(bad)).toBe('/jogar');
+    for (const bad of [null, '', 'https://golpe.com', '//golpe.com', '/\\golpe.com', 'jogar']) expect(safeNext(bad)).toBe('/hoje');
   });
 });
 

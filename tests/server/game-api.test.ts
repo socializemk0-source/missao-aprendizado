@@ -108,3 +108,39 @@ describe('/api/game — jogos', () => {
     expect((await call('POST', 'jogo-iniciar', { body: { tipo: 'cruzadinha' } })).body.pistas[0]).not.toHaveProperty('resposta');
   });
 });
+
+describe('/api/game — plano de estudos', () => {
+  const perfil = { prova: 'INSS — Técnico', banca: 'Cebraspe', dataProva: null, minutosDia: 30, nivel: 'iniciante', disciplinas: ['portugues', 'rlm'] };
+
+  it('antes do onboarding o plano vem "não configurado"; salvar valida e devolve o plano', async () => {
+    const { call } = setup();
+    expect((await call('GET', 'plano')).body).toEqual({ configurado: false });
+
+    const bad = await call('POST', 'plano-salvar', { body: { ...perfil, minutosDia: 7 } });
+    expect([bad.statusCode, bad.body.code]).toEqual([400, 'ACAO_INVALIDA']);
+    expect(bad.body.error).toMatch(/tempo/);
+    expect((await call('GET', 'plano')).body).toEqual({ configurado: false });
+
+    const ok = await call('POST', 'plano-salvar', { body: perfil });
+    expect(ok.statusCode).toBe(200);
+    expect(ok.body).toMatchObject({ configurado: true, perfil: { prova: 'INSS — Técnico', minutosDia: 30 }, metaQuestoes: 10 });
+    const plano = await call('GET', 'plano');
+    expect(plano.body.tarefas.map((t: { tipo: string }) => t.tipo)).toEqual(['trilha', 'praticar']);
+  });
+
+  it('o plano é de quem está logado: outro aluno não vê', async () => {
+    const { call } = setup();
+    await call('POST', 'plano-salvar', { body: perfil });
+    expect((await call('GET', 'plano', { token: 'ok:u2' })).body).toEqual({ configurado: false });
+  });
+
+  it('disciplinas trazem o domínio por assunto; revisar traz a agenda', async () => {
+    const { call } = setup();
+    const q = 'pt-acent-1';
+    await call('POST', 'responder', { body: { questionId: q, choice: (questao(q)!.correta + 1) % 2, mode: 'trilha' } });
+    const d = await call('GET', 'disciplinas');
+    expect(d.body.assuntos.find((a: { assunto: string }) => a.assunto === 'Acentuação gráfica')).toMatchObject({ respondidas: 1, score: 0, situacao: 'fraco' });
+    const r = await call('GET', 'revisar');
+    expect(r.body.agenda).toMatchObject({ hoje: 1 });
+  });
+});

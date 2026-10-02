@@ -14,11 +14,14 @@ import { SimuladoTela, Simulados } from '../pages/Simulados';
 import { Trilha } from '../pages/Trilha';
 import { Fase, Praticar, Revisar } from '../pages/Sessoes';
 import { Desafio, JogosHub } from '../pages/Jogos';
+import { Comecar } from '../pages/Comecar';
+import { Hoje } from '../pages/Hoje';
 import { JogoTela } from '../games/JogoTela';
 import { Aventura, Conquistas, Disciplinas, Missoes, Ranking } from '../pages/Painel';
 import { NAV } from './nav';
 
 const READY: Record<string, ReactElement> = {
+  '/hoje': <Hoje />,
   '/jogar': <Trilha />,
   '/perfil': <Perfil />,
   '/redacao': <Redacao />,
@@ -67,6 +70,7 @@ const pages: RouteObject[] = [
         path: item.path,
         element: READY[item.path],
       })),
+      { path: '/comecar', element: <Comecar /> },
       { path: '/fase/:id', element: <Fase /> },
       { path: '/praticar/:disciplina', element: <Praticar /> },
       { path: '/redacao/:id', element: <RedacaoRelatorio /> },

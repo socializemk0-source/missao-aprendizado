@@ -119,12 +119,12 @@ describe('vidas', () => {
     const store = setup();
     const q = 'pt-acent-1';
     for (let i = 0; i < MAX_HEARTS; i++) await answer(store, 'u1', { questionId: q, choice: wrong(q), mode: 'trilha' }, T0);
-    const review = await getReviewSession(store, 'u1');
+    const review = await getReviewSession(store, 'u1', 10, T0);
     expect(review.questoes.map((x) => x.id)).toEqual([q]);
     const res = await answer(store, 'u1', { questionId: q, choice: right(q), mode: 'revisar' }, T0);
     expect(res.correct).toBe(true);
     expect(res.progress.hearts).toBe(0);
-    expect((await getReviewSession(store, 'u1')).questoes).toHaveLength(0);
+    expect((await getReviewSession(store, 'u1', 10, T0)).questoes).toHaveLength(0); // volta amanhã
   });
 
   it('recarga: 1 vida a cada 30 minutos, até o máximo', () => {

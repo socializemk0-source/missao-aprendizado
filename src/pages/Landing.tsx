@@ -64,7 +64,7 @@ export function Landing() {
         </nav>
         <div className="landing-actions">
           {signedIn ? (
-            <Link to="/jogar" className="btn btn-primary">Continuar estudando</Link>
+            <Link to="/hoje" className="btn btn-primary">Continuar estudando</Link>
           ) : (
             <>
               <Link to="/entrar" className="btn btn-secondary">Entrar</Link>

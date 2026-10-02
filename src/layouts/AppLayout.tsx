@@ -17,7 +17,7 @@ export function AppLayout() {
   return (
     <>
       <nav className="sidebar" aria-label="Navegação principal">
-        <Link to="/jogar" className="brand" aria-label={`${BRAND.first} ${BRAND.second} — início`}>
+        <Link to="/hoje" className="brand" aria-label={`${BRAND.first} ${BRAND.second} — início`}>
           <span className="brand-mark"><Icon name="compass" /></span>
           <span>{BRAND.first}<br />{BRAND.second}<span className="brand-accent">.</span></span>
         </Link>
@@ -51,7 +51,7 @@ export function AppLayout() {
           </div>
         </header>
         <main className="content" id="conteudo">
-          {pathname === '/jogar' && <InstallBanner />}
+          {(pathname === '/hoje' || pathname === '/jogar') && <InstallBanner />}
           {/* key: cada tela entra com uma transição suave */}
           <div key={pathname} className="page-enter"><Outlet /></div>
         </main>
