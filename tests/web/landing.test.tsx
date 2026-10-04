@@ -126,6 +126,9 @@ describe('/termos', () => {
     const footer = screen.getByRole('navigation', { name: 'Rodapé' });
     expect(within(footer).getByRole('link', { name: 'Termos' })).toHaveAttribute('href', '/termos');
     expect(screen.getByText(/CNPJ 69\.457\.590\/0001-82/)).toBeInTheDocument();
+    const insta = within(footer).getByRole('link', { name: 'Instagram' });
+    expect(insta).toHaveAttribute('href', 'https://www.instagram.com/aprovatico/');
+    expect(insta).toHaveAttribute('rel', expect.stringContaining('noopener'));
     cleanup();
     renderAt('/privacidade', { status: 'signedOut' });
     expect(screen.getByText(/contato@aprovatico\.com\.br/)).toBeInTheDocument();

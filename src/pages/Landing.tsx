@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
 import { useAuth } from '../auth/AuthProvider';
-import { BRAND, COMPANY } from '../app/nav';
+import { BRAND, COMPANY, INSTAGRAM_URL } from '../app/nav';
 import { FREE_FEATURES, PRO_FEATURES, PRO_OPTIONS } from '../app/plans';
 import { Icon, type IconName } from '../components/Icon';
 import { Tico } from '../components/Tico';
@@ -215,6 +215,7 @@ export function Landing() {
           <a href="#duvidas">Dúvidas</a>
           <Link to="/privacidade">Privacidade</Link>
           <Link to="/termos">Termos</Link>
+          <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">Instagram</a>
           {!signedIn && <Link to="/entrar">Entrar</Link>}
         </nav>
       </footer>
