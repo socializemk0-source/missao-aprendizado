@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { BRAND, CONTACT_EMAIL } from '../app/nav';
+import { BRAND, COMPANY, CONTACT_EMAIL } from '../app/nav';
 import { Icon } from '../components/Icon';
 
 const UPDATED = '04/10/2026';
@@ -20,6 +20,7 @@ export function Termos() {
 
         <h2>O que é o Aprova Tico</h2>
         <p>Um app de estudo para concursos públicos, com questões, trilha de fases, simulados e correção de redação. Ele ajuda você a estudar, mas não garante aprovação em nenhum concurso. Não temos ligação com bancas, órgãos públicos ou governo.</p>
+        <p>O {BRAND.first} {BRAND.second} é oferecido por {COMPANY.name}, CNPJ {COMPANY.cnpj}.</p>
 
         <h2>Sua conta</h2>
         <ul>

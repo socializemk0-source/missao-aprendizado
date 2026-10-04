@@ -118,12 +118,14 @@ describe('/termos', () => {
     expect(screen.getByText(/7 dias/)).toBeInTheDocument();
     expect(screen.getAllByText(/contato@aprovatico\.com\.br/).length).toBeGreaterThan(0);
     expect(screen.getByRole('link', { name: 'política de privacidade' })).toHaveAttribute('href', '/privacidade');
+    expect(screen.getByText(/69\.457\.590 VITOR FERNANDES DOS SANTOS, CNPJ 69\.457\.590\/0001-82/)).toBeInTheDocument();
   });
 
   it('rodapé da página inicial leva aos termos; privacidade mostra o e-mail de contato', () => {
     renderAt('/', { status: 'signedOut' });
     const footer = screen.getByRole('navigation', { name: 'Rodapé' });
     expect(within(footer).getByRole('link', { name: 'Termos' })).toHaveAttribute('href', '/termos');
+    expect(screen.getByText(/CNPJ 69\.457\.590\/0001-82/)).toBeInTheDocument();
     cleanup();
     renderAt('/privacidade', { status: 'signedOut' });
     expect(screen.getByText(/contato@aprovatico\.com\.br/)).toBeInTheDocument();

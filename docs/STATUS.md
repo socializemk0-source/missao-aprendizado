@@ -38,7 +38,7 @@ Prioridade: P0 bloqueia o uso · P1 jornada principal · P2 medição e retenç�
 | Analytics (`v2.events`) | — | Ausente | — | P2 | Marco 2 |
 | Admin | — | Ausente | Questões só mudam de status direto no banco | P3 | Marco 4 |
 | App instalável (PWA) | Manifesto, ícones do Tico (inclusive o adaptável do Android e o do iPhone), service worker (`public/sw.js`), página "Sem conexão", aviso "Sem internet", aviso "Tem uma versão nova do app — Atualizar", botão "Instalar o app" no Perfil (passo a passo no iPhone) e aviso de instalar na Trilha. API, XP, PRO e pagamentos nunca passam pelo cache | OK | Login com Google e volta do Mercado Pago dentro do app instalado no iPhone ainda não foram testados num aparelho | P1 | Dono testa no Android e no iPhone (roteiro no PR). Depois: notificações (Marco 3) e estudar sem internet |
-| Termos, privacidade, SEO | `/privacidade`, `/termos` (conta, PRO, desistência em 7 dias, conteúdo, redação por IA; link no rodapé e no Branding do Google), e-mail de contato `contato@aprovatico.com.br` e meta description | Parcial | Termos ainda sem revisão de advogado e sem razão social/CNPJ. Faltam imagem de compartilhamento, `robots.txt` e `sitemap.xml` | P3 | Dono revisa os termos com advogado. Resto no Marco 4 |
+| Termos, privacidade, SEO | `/privacidade`, `/termos` (conta, PRO, desistência em 7 dias, conteúdo, redação por IA; link no rodapé e no Branding do Google), e-mail de contato `contato@aprovatico.com.br` e meta description | Parcial | Razão social e CNPJ (MEI) nos termos e no rodapé. Termos ainda sem revisão de advogado e sem endereço. Faltam imagem de compartilhamento, `robots.txt` e `sitemap.xml` | P3 | Dono revisa os termos com advogado. Resto no Marco 4 |
 
 ## Base técnica
 

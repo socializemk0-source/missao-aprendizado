@@ -27,3 +27,6 @@ export const BRAND = { first: 'Aprova', second: 'Tico' };
 
 // E-mail de contato para dúvidas e pedidos de privacidade (LGPD).
 export const CONTACT_EMAIL = 'contato@aprovatico.com.br';
+
+// Quem vende (Decreto 7.962/2013): aparece nos termos e no rodapé.
+export const COMPANY = { name: '69.457.590 VITOR FERNANDES DOS SANTOS', cnpj: '69.457.590/0001-82' };

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
 import { useAuth } from '../auth/AuthProvider';
-import { BRAND } from '../app/nav';
+import { BRAND, COMPANY } from '../app/nav';
 import { FREE_FEATURES, PRO_FEATURES, PRO_OPTIONS } from '../app/plans';
 import { Icon, type IconName } from '../components/Icon';
 import { Tico } from '../components/Tico';
@@ -210,7 +210,7 @@ export function Landing() {
       </main>
 
       <footer className="landing-footer">
-        <span>© {new Date().getFullYear()} {BRAND.first} {BRAND.second}</span>
+        <span>© {new Date().getFullYear()} {BRAND.first} {BRAND.second} · CNPJ {COMPANY.cnpj}</span>
         <nav aria-label="Rodapé">
           <a href="#duvidas">Dúvidas</a>
           <Link to="/privacidade">Privacidade</Link>
