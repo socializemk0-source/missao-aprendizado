@@ -5,7 +5,6 @@ import { Icon } from '../components/Icon';
 const UPDATED = '25/09/2026';
 
 export function Privacidade() {
-  const contact = CONTACT_EMAIL || 'o e-mail de contato (em definição)';
   return (
     <div className="landing">
       <header className="landing-header">
@@ -37,7 +36,7 @@ export function Privacidade() {
         </ul>
 
         <h2>Seus direitos</h2>
-        <p>Você pode pedir acesso, correção ou exclusão dos seus dados, e sair da lista de e-mails a qualquer momento, pelo link no próprio e-mail ou escrevendo para {contact}.</p>
+        <p>Você pode pedir acesso, correção ou exclusão dos seus dados, e sair da lista de e-mails a qualquer momento, pelo link no próprio e-mail ou escrevendo para {CONTACT_EMAIL}.</p>
 
         <p><Link to="/">Voltar para a página inicial</Link></p>
       </main>

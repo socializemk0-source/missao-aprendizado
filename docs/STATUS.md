@@ -28,7 +28,7 @@ Prioridade: P0 bloqueia o uso · P1 jornada principal · P2 medição e retenç�
 | Filtros de questões | Prática por disciplina | Parcial | Faltam assunto, dificuldade, erradas, não respondidas, favoritas | P2 | Marco 2 |
 | Progresso | XP, sequência, vidas, missões diárias, conquistas, ranking | OK | Não há visão semanal/mensal | P2 | Marco 2 |
 | Redação com IA | OpenAI no servidor; nota por critério; grátis: 1 correção a cada 7 dias | OK | Sem `OPENAI_API_KEY` a correção fica desligada (com aviso) | — | — |
-| Pagamentos (PRO) | Checkout Pro do Mercado Pago, 30 dias ou 1 ano, webhook com assinatura, confirmação na volta, compras registradas (`v2.checkouts`, migração 0009) e botão "Verificar meu pagamento" quando o aviso não chega | Parcial | Credenciais e webhook ainda não configurados no Mercado Pago e na Vercel. Falta cupom | P0 | Dono segue `docs/mercado-pago.md` (teste na prévia, depois produção). Cupom no Marco 4 |
+| Pagamentos (PRO) | Checkout Pro do Mercado Pago, 30 dias ou 1 ano, webhook com assinatura, confirmação na volta, compras registradas (`v2.checkouts`, migração 0009) e botão "Verificar meu pagamento" quando o aviso não chega | Parcial | Produção configurada e testada com PIX real (compra e devolução). Falta cupom | P1 | Cupom no Marco 4 |
 | Perfil | Nome, plano e progresso | Parcial | Não há exclusão de conta | P3 | Marco 4 |
 | Aparência e conforto | Tema claro/escuro/automático, sons (Web Audio), animações, modo foco/leitura (com tom creme) e "Aparência e som" no Perfil; tudo guardado no aparelho | OK | — | — | — |
 | Tico e movimento | Tico em imagem fixa e leve (6 poses em WebP, ~40 KB cada; antes ~130 KB em PNG). Movimento só em CSS: transições de tela, pulso/tremida nas alternativas, XP voando, selo de sequência, confete | OK | A animação do Tico por quadros foi retirada a pedido do dono (qualidade e peso no celular) | P3 | Depois da validação, um artista faz as animações do Tico |
@@ -38,7 +38,7 @@ Prioridade: P0 bloqueia o uso · P1 jornada principal · P2 medição e retenç�
 | Analytics (`v2.events`) | — | Ausente | — | P2 | Marco 2 |
 | Admin | — | Ausente | Questões só mudam de status direto no banco | P3 | Marco 4 |
 | App instalável (PWA) | Manifesto, ícones do Tico (inclusive o adaptável do Android e o do iPhone), service worker (`public/sw.js`), página "Sem conexão", aviso "Sem internet", aviso "Tem uma versão nova do app — Atualizar", botão "Instalar o app" no Perfil (passo a passo no iPhone) e aviso de instalar na Trilha. API, XP, PRO e pagamentos nunca passam pelo cache | OK | Login com Google e volta do Mercado Pago dentro do app instalado no iPhone ainda não foram testados num aparelho | P1 | Dono testa no Android e no iPhone (roteiro no PR). Depois: notificações (Marco 3) e estudar sem internet |
-| Termos, privacidade, SEO | `/privacidade` e meta description | Parcial | Faltam termos de uso e imagem de compartilhamento | P3 | Marco 4 |
+| Termos, privacidade, SEO | `/privacidade`, `/termos` (conta, PRO, desistência em 7 dias, conteúdo, redação por IA; link no rodapé e no Branding do Google), e-mail de contato `contato@aprovatico.com.br` e meta description | Parcial | Termos ainda sem revisão de advogado e sem razão social/CNPJ. Faltam imagem de compartilhamento, `robots.txt` e `sitemap.xml` | P3 | Dono revisa os termos com advogado. Resto no Marco 4 |
 
 ## Base técnica
 

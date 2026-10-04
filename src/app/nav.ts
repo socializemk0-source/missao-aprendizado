@@ -26,5 +26,4 @@ export const NAV: NavEntry[] = [
 export const BRAND = { first: 'Aprova', second: 'Tico' };
 
 // E-mail de contato para dúvidas e pedidos de privacidade (LGPD).
-// Preencher antes do lançamento.
-export const CONTACT_EMAIL = '';
+export const CONTACT_EMAIL = 'contato@aprovatico.com.br';

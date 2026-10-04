@@ -8,6 +8,7 @@ import { Landing } from '../pages/Landing';
 import { Perfil } from '../pages/Perfil';
 import { Planos } from '../pages/Planos';
 import { Privacidade } from '../pages/Privacidade';
+import { Termos } from '../pages/Termos';
 import { RedefinirSenha } from '../pages/RedefinirSenha';
 import { Redacao, RedacaoRelatorio } from '../pages/Redacao';
 import { SimuladoTela, Simulados } from '../pages/Simulados';
@@ -63,6 +64,7 @@ const pages: RouteObject[] = [
   { path: '/cadastro', element: <Cadastro /> },
   { path: '/redefinir-senha', element: <RedefinirSenha /> },
   { path: '/privacidade', element: <Privacidade /> },
+  { path: '/termos', element: <Termos /> },
   {
     element: <RequireAuth><AppLayout /></RequireAuth>,
     children: [
