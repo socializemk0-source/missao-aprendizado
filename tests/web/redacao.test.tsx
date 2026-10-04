@@ -111,7 +111,9 @@ describe('redação', () => {
 
     expect(await screen.findByText(`<script>alert(1)</script>Resumo ${ataque}`)).toBeInTheDocument();
     const relatorio = document.querySelector('.essay-report')!;
-    expect(relatorio.querySelectorAll('script, img, iframe, b, h1 h1, a[href^="javascript"]')).toHaveLength(0);
+    expect(relatorio.querySelectorAll('script, iframe, b, h1 h1, a[href^="javascript"], [onerror]')).toHaveLength(0);
+    // A única imagem é o Tico ao lado da nota.
+    expect([...relatorio.querySelectorAll('img')].map((img) => img.getAttribute('src'))).toEqual([expect.stringMatching(/^\/tico\//)]);
     expect(screen.getByText(`Atende. ${ataque}`)).toBeInTheDocument();
     expect(screen.getByText('<script>alert(1)</script>', { selector: 'mark' })).toHaveAttribute('id', 'trecho-1');
     expect(screen.getByText('<b>Genérico</b>')).toBeInTheDocument();
