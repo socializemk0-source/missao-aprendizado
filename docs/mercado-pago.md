@@ -70,6 +70,7 @@ automático (webhook) e o botão "Verificar meu pagamento".
 | Planos mostra "Os pagamentos ainda estão sendo configurados" | `MERCADOPAGO_ACCESS_TOKEN` ausente no ambiente | Cadastrar na Vercel e fazer novo deploy |
 | Clicar em comprar mostra "Não foi possível falar com o Mercado Pago" | Token inválido ou de outro ambiente | Conferir o token (teste na prévia, produção na produção) |
 | Pagou, mas o PRO só aparece depois de "Verificar meu pagamento" | O aviso automático não está chegando | Conferir a URL do webhook e a assinatura secreta. Nos logs da Vercel, `[webhook] assinatura inválida` indica segredo errado |
+| Nos logs, `[webhook] assinatura inválida` com `topic` na URL e agente `MercadoPago Feed v2.0` | Aviso no formato antigo (IPN), que não tem assinatura. Compras novas pedem só o aviso assinado (`source_news=webhooks`) e o app ignora o formato antigo | Nada. Se ainda aparecer com `401`, conferir se o deploy com essa correção está no ar |
 | O aluno voltou do checkout para o endereço errado | `APP_BASE_URL` ausente ou errado | Corrigir e fazer novo deploy |
 
 ## O que o app garante

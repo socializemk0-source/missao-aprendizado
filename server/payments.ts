@@ -85,7 +85,9 @@ export function mercadoPagoClient(accessToken: string, send: typeof fetch = fetc
           ...(payerEmail ? { payer: { email: payerEmail } } : {}),
           back_urls: { success: back, pending: back, failure: back },
           auto_return: 'approved',
-          notification_url: `${baseUrl}/api/pagamentos/webhook`,
+          // source_news=webhooks: o Mercado Pago manda só o aviso assinado, sem a
+          // cópia no formato antigo (IPN/Feed), que não tem assinatura.
+          notification_url: `${baseUrl}/api/pagamentos/webhook?source_news=webhooks`,
           // Boleto leva dias para compensar; o aluno ficaria esperando.
           payment_methods: { excluded_payment_types: [{ id: 'ticket' }] },
           statement_descriptor: 'APROVATICO',

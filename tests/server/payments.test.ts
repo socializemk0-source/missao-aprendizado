@@ -98,7 +98,8 @@ describe('cliente do Mercado Pago', () => {
     expect(body.external_reference).toBe(reference);
     expect(parseReference(body.external_reference)).toEqual({ cycle: 'annual', userId: 'u1' });
     expect(body.back_urls.success).toBe('https://app.dev/planos');
-    expect(body.notification_url).toBe('https://app.dev/api/pagamentos/webhook');
+    // source_news=webhooks: só o aviso assinado (Webhooks), sem a cópia antiga sem assinatura (IPN/Feed).
+    expect(body.notification_url).toBe('https://app.dev/api/pagamentos/webhook?source_news=webhooks');
     expect(body.payment_methods.excluded_payment_types).toEqual([{ id: 'ticket' }]);
     const prod = mercadoPagoClient('APP_USR-x', send as unknown as typeof fetch);
     expect((await prod.createPreference({ cycle: 'monthly', reference: makeReference('monthly', 'u1'), payerEmail: null, baseUrl: 'https://app.dev' })).url).toBe('https://mp/prod');
@@ -273,6 +274,20 @@ describe('/api/pagamentos/webhook', () => {
     expect(missing.body).toMatchObject({ ok: true, ignored: true });
     client.getPayment = async () => { throw new MercadoPagoError('HTTP 500', 500); };
     expect((await call({ 'data.id': '405', type: 'payment' }, { 'x-signature': sign('405', 'r'), 'x-request-id': 'r' })).statusCode).toBe(500);
+  });
+
+  it('aviso no formato antigo (IPN/Feed: ?topic=&id=, sem assinatura) → 200 ignorado, sem consultar nada', async () => {
+    const { store, client, call } = setup({ '111': payment() });
+    let consultas = 0;
+    const original = client.getPayment;
+    client.getPayment = async (id) => { consultas++; return original(id); };
+    for (const topic of ['payment', 'merchant_order']) {
+      const res = await call({ id: '111', topic }, {});
+      expect(res.statusCode).toBe(200);
+      expect(res.body).toMatchObject({ ok: true, ignored: true });
+    }
+    expect(consultas).toBe(0);
+    expect(store.pro.size).toBe(0);
   });
 
   it('sem segredo configurado → 503', async () => {
