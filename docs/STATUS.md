@@ -46,7 +46,7 @@ Prioridade: P0 bloqueia o uso · P1 jornada principal · P2 medição e retenç�
 |---|---|---|
 | Banco | Parcial | Migrações 0001–0011 aplicadas. A 0012 (limite de chamadas) precisa ser aplicada pelo dono no SQL Editor do Supabase (sem ela o app funciona, só sem o limite). `v2.questoes_proprias` é a cópia antiga das 27 questões; pode ser apagada |
 | Auth no servidor | OK | Identidade só pelo token (`server/auth.ts`); pagamentos confirmados pelo servidor |
-| Segurança | OK no código; painéis pendentes (dono) | Limite de chamadas no banco (migração 0012), teto diário de redação no PRO, CSP e cabeçalhos, CAPTCHA (liga com `TURNSTILE_SITE_KEY`), ranking só com o primeiro nome, Dependabot e `npm audit` no CI. O que configurar e a ordem: `docs/seguranca.md` |
+| Segurança | OK no código; painéis pendentes (dono) | Limite de chamadas no banco (migração 0012), teto diário de redação no PRO, CSP e cabeçalhos, teste que garante que HTML no texto do aluno ou da IA aparece como texto (relatório da redação), CAPTCHA (liga com `TURNSTILE_SITE_KEY`), ranking só com o primeiro nome, Dependabot e `npm audit` no CI. O que configurar e a ordem: `docs/seguranca.md` |
 | RLS | OK | Ligado em todas as tabelas `v2` (acesso só pelo servidor) |
 | Estados de carregando, vazio e erro | Parcial | As telas do app tratam carregando e erro das chamadas; faltava a tela de erro geral (corrigido neste PR) |
 | Responsividade | OK | Landing e app conferidos em 390, 1024 e 1440 px |
