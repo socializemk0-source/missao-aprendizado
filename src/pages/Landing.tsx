@@ -214,6 +214,7 @@ export function Landing() {
         <nav aria-label="Rodapé">
           <a href="#duvidas">Dúvidas</a>
           <Link to="/privacidade">Privacidade</Link>
+          <Link to="/termos">Termos</Link>
           {!signedIn && <Link to="/entrar">Entrar</Link>}
         </nav>
       </footer>

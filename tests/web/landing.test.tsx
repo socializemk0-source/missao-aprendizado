@@ -108,3 +108,24 @@ describe('/privacidade', () => {
     }
   });
 });
+
+describe('/termos', () => {
+  it('abre sem login e explica conta, PRO, desistência, conteúdo e contato', () => {
+    renderAt('/termos', { status: 'signedOut' });
+    for (const name of ['Termos de uso', 'O que é o Aprova Tico', 'Sua conta', 'Plano grátis e PRO', 'Desistência e reembolso', 'Conteúdo e direitos', 'Correção de redação', 'Contato']) {
+      expect(screen.getByRole('heading', { name })).toBeInTheDocument();
+    }
+    expect(screen.getByText(/7 dias/)).toBeInTheDocument();
+    expect(screen.getAllByText(/contato@aprovatico\.com\.br/).length).toBeGreaterThan(0);
+    expect(screen.getByRole('link', { name: 'política de privacidade' })).toHaveAttribute('href', '/privacidade');
+  });
+
+  it('rodapé da página inicial leva aos termos; privacidade mostra o e-mail de contato', () => {
+    renderAt('/', { status: 'signedOut' });
+    const footer = screen.getByRole('navigation', { name: 'Rodapé' });
+    expect(within(footer).getByRole('link', { name: 'Termos' })).toHaveAttribute('href', '/termos');
+    cleanup();
+    renderAt('/privacidade', { status: 'signedOut' });
+    expect(screen.getByText(/contato@aprovatico\.com\.br/)).toBeInTheDocument();
+  });
+});
