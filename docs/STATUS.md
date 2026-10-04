@@ -3,7 +3,7 @@
 Leia este arquivo no começo de cada sessão, em vez de refazer o diagnóstico.
 Atualize a linha da funcionalidade em todo PR que mexer nela.
 
-Última atualização: 04/10/2026 (revisão de segurança: painéis do Supabase conferidos, V1 desligado do banco).
+Última atualização: 04/10/2026 (revisão de segurança: painéis do Supabase conferidos, V1 desligado).
 
 Legenda: **OK** = funcionando · **Parcial** = existe, mas falta parte · **Ausente** = não existe.
 Prioridade: P0 bloqueia o uso · P1 jornada principal · P2 medição e retenção · P3 operação.
@@ -47,7 +47,7 @@ Prioridade: P0 bloqueia o uso · P1 jornada principal · P2 medição e retenç�
 | Banco | OK | Migrações 0001–0012 aplicadas (conferido no SQL Editor em 04/10/2026: 17 tabelas no `v2`). `v2.questoes_proprias` é a cópia antiga das 27 questões; pode ser apagada |
 | Auth no servidor | OK | Identidade só pelo token (`server/auth.ts`); pagamentos confirmados pelo servidor |
 | Segurança | OK (código e painéis) | Limite de chamadas no banco (migração 0012), teto diário de redação no PRO, CSP e cabeçalhos, teste que garante que HTML no texto do aluno ou da IA aparece como texto (relatório da redação), CAPTCHA Turnstile ligado no site e no Supabase, limites de login do Supabase (30 a cada 5 min por IP), confirmação de e-mail ligada, ranking só com o primeiro nome, Dependabot e `npm audit` no CI. Data API do Supabase desligada (0 schemas expostos): a chave pública não lê nenhuma tabela. Pendente (dono): backup (plano grátis não tem) e proteção contra senhas vazadas (plano pago). O que configurar e a ordem: `docs/seguranca.md` |
-| RLS | OK | Ligado em todas as tabelas `v2`, sem políticas, e a chave pública sem acesso ao schema (acesso só pelo servidor). V1 (`public`): RLS em todas as tabelas; o ranking antigo (`leaderboard`) deixou de ser lido sem login. O site do V1 (projeto `missao-aprovacao` na Vercel) deve ser apagado; as tabelas do V1 têm só dados de teste e podem ser removidas depois |
+| RLS | OK | Ligado em todas as tabelas `v2`, sem políticas, e a chave pública sem acesso ao schema (acesso só pelo servidor). V1 (`public`): RLS em todas as tabelas; o ranking antigo (`leaderboard`) deixou de ser lido sem login. O site do V1 (projeto `missao-aprovacao` na Vercel) foi apagado em 04/10/2026; as tabelas do V1 têm só dados de teste e podem ser removidas depois |
 | Estados de carregando, vazio e erro | Parcial | As telas do app tratam carregando e erro das chamadas; faltava a tela de erro geral (corrigido neste PR) |
 | Responsividade | OK | Landing e app conferidos em 390, 1024 e 1440 px |
 | Acessibilidade | Parcial | Rótulos e `aria-*` nas telas principais; falta uma revisão completa de teclado e contraste |
