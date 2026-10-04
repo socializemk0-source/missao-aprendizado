@@ -49,6 +49,7 @@ Prioridade: P0 bloqueia o uso · P1 jornada principal · P2 medição e retenç�
 | Segurança | OK no código; painéis pendentes (dono) | Limite de chamadas no banco (migração 0012), teto diário de redação no PRO, CSP e cabeçalhos, CAPTCHA (liga com `TURNSTILE_SITE_KEY`), ranking só com o primeiro nome, Dependabot e `npm audit` no CI. O que configurar e a ordem: `docs/seguranca.md` |
 | RLS | OK | Ligado em todas as tabelas `v2` (acesso só pelo servidor) |
 | Estados de carregando, vazio e erro | Parcial | As telas do app tratam carregando e erro das chamadas; faltava a tela de erro geral (corrigido neste PR) |
+| Velocidade | OK | PageSpeed no celular: 94 (antes desta mudança). Telas do app sob demanda (`src/app/lazyPage.tsx`): a página inicial não baixa o app. Imagem principal com prioridade alta e recorte de 33 KB no celular (`hero-mobile.webp`) |
 | Responsividade | OK | Landing e app conferidos em 390, 1024 e 1440 px |
 | Acessibilidade | Parcial | Rótulos e `aria-*` nas telas principais; falta uma revisão completa de teclado e contraste |
 | Testes e CI | OK | vitest (servidor e telas, Postgres real no CI), typecheck, `check:api` e build no GitHub Actions |

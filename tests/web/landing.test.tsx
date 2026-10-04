@@ -134,3 +134,15 @@ describe('/termos', () => {
     expect(screen.getByText(/contato@aprovatico\.com\.br/)).toBeInTheDocument();
   });
 });
+
+describe('imagem principal', () => {
+  it('no celular usa o recorte leve; a imagem tem prioridade alta', () => {
+    const { container } = renderAt('/', { status: 'signedOut' });
+    const source = container.querySelector('picture.lp-hero-picture source');
+    expect(source).toHaveAttribute('media', '(max-width: 640px)');
+    expect(source).toHaveAttribute('srcset', '/landing/hero-mobile.webp');
+    const img = container.querySelector('picture.lp-hero-picture img');
+    expect(img).toHaveAttribute('src', '/landing/hero.webp');
+    expect(img).toHaveAttribute('fetchpriority', 'high');
+  });
+});

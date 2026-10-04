@@ -37,6 +37,8 @@ html { scroll-behavior: smooth; }
 .lp-hero { position: relative; display: flex; align-items: center; min-height: min(620px, 82vh); padding-top: 48px; padding-bottom: 72px; }
 .lp-hero-text { flex: 0 1 540px; min-width: 0; }
 .lp-hero-img { display: none; }
+/* A <picture> não muda o layout: a imagem continua sendo o item do flex. */
+.lp-hero-picture { display: contents; }
 .landing-title { font-size: 50px; line-height: 1.04; margin: 0 0 16px; color: var(--heading); letter-spacing: -1px; text-wrap: balance; }
 .lp-lead { font-size: 19px; color: var(--text-2); margin: 0; max-width: 34em; }
 .landing-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px; }

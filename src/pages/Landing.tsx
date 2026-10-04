@@ -88,7 +88,11 @@ export function Landing() {
               </div>
               <p className="lp-trust"><Icon name="star" size={16} /> Grátis para começar · sem cartão de crédito</p>
             </div>
-            <img src="/landing/hero.webp" alt="" className="lp-hero-img" width={1672} height={941} />
+            {/* No celular, um recorte quadrado e leve; no computador, a imagem inteira. */}
+            <picture className="lp-hero-picture">
+              <source media="(max-width: 640px)" srcSet="/landing/hero-mobile.webp" width={800} height={800} />
+              <img src="/landing/hero.webp" alt="" className="lp-hero-img" width={1672} height={941} fetchPriority="high" />
+            </picture>
           </section>
         </div>
 
