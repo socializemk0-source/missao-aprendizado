@@ -1,0 +1,38 @@
+name: Backup do banco
+
+# Toda segunda-feira às 03:17 (horário de Brasília) e quando o dono clicar em
+# "Run workflow" (Actions → Backup do banco). Como configurar: docs/backup.md.
+on:
+  schedule:
+    - cron: '17 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cliente do Postgres 17 (mesma versão do Supabase, ou mais nova)
+        run: |
+          sudo install -d /usr/share/postgresql-common/pgdg
+          sudo curl -fsSo /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc https://www.postgresql.org/media/keys/ACCC4CF8.asc
+          echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list > /dev/null
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq postgresql-client-17
+      - name: Backup criptografado
+        run: bash scripts/backup.sh
+        env:
+          BACKUP_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+          BACKUP_PASSPHRASE: ${{ secrets.BACKUP_PASSPHRASE }}
+          PG_BIN: /usr/lib/postgresql/17/bin
+          BACKUP_DIR: backups
+      - uses: actions/upload-artifact@v4
+        with:
+          name: backup-${{ github.run_number }}
+          path: backups/*.gpg
+          retention-days: 90
+          if-no-files-found: error

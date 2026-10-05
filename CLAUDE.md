@@ -38,6 +38,9 @@ lógica de servidor compartilhada em `server/`, banco Postgres do Supabase.
   rode ao mudar um arquivo). Também gera `0013_v2_banco_sincroniza.sql`, que leva
   as correções para as questões que ainda estão em `revisao` (rodar no Supabase)
 
+- `bash scripts/backup.sh` — backup criptografado do banco (roda sozinho toda
+  semana pelo GitHub Actions; ver `docs/backup.md`)
+
 ## Estrutura
 
 Situação de cada funcionalidade: `docs/STATUS.md` (leia primeiro, atualize a
@@ -48,7 +51,8 @@ cada PR).
   `src/lib/` cliente Supabase, `api()` e clientes de cada rota
 - `content/` questões, trilha e temas de redação · `content/banco/` questões
   autorais que entram em `v2.questions` como `revisao` e só chegam ao aluno
-  depois de revisadas (`ativa`) · `shared/` tipos usados
+  depois que um professor aprova em `/professor` (`ativa`; ver
+  `docs/revisao-professores.md`) · `shared/` tipos usados
   pelo servidor e pelas telas
 - `api/` uma função por rota (plano Hobby da Vercel: no máximo 12) ·
   `server/` auth, banco, regras (cada store tem versão Postgres e em memória)

@@ -37,7 +37,7 @@ Se fizer o passo 3 antes do 2, ninguém consegue entrar até o passo 2 ser feito
 - *Authentication → Emails → SMTP Settings*: **SMTP próprio** (Resend ou Brevo). O envio padrão do Supabase manda pouquíssimos e-mails por hora; sem SMTP próprio, cadastro e "esqueci a senha" falham com alunos de verdade.
 - *Authentication → URL Configuration*: Site URL com o domínio, e as Redirect URLs (`https://SEU_DOMINIO/**`).
 - *Advisors → Security Advisor*: rodar e corrigir o que aparecer, **principalmente nas tabelas do V1 (schema `public`)**, que continuam no mesmo projeto e não passam por este código. Ao lançar o V2, desligar o V1.
-- Backups: o plano grátis não tem. O Pro faz backup diário.
+- Backups: o plano grátis não tem. Backup semanal criptografado pelo GitHub Actions (`docs/backup.md`); o Pro do Supabase faz backup diário.
 - Certificado do banco: em *Project Settings → Database → SSL Configuration*, baixe o certificado e cole o conteúdo na variável `SQL_CA_CERT` da Vercel. Com ele, o servidor confere que está falando com o banco certo.
 
 ### 3. Vercel
