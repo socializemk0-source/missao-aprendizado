@@ -1,12 +1,10 @@
 import { Link } from 'react-router';
-import { COMPANY, CONTACT_EMAIL } from '../app/nav';
+import { CONTACT_EMAIL } from '../app/nav';
 import { LegalShell } from './LegalShell';
 
 export function Privacidade() {
   return (
     <LegalShell title="Política de privacidade" updated="05/10/2026">
-      <p>Quem cuida dos seus dados (controlador) é {COMPANY.name}, CNPJ {COMPANY.cnpj}.</p>
-
       <h2>Quais dados guardamos</h2>
       <ul>
         <li><strong>Conta:</strong> nome, e-mail e, se você preencher, concurso, banca e cidade.</li>
@@ -27,6 +25,7 @@ export function Privacidade() {
         <li><strong>OpenAI:</strong> recebe só o texto da redação que você pede para corrigir.</li>
         <li><strong>Mercado Pago:</strong> processa os pagamentos do plano PRO.</li>
         <li><strong>Cloudflare (Turnstile):</strong> confere, no login e no cadastro, que quem está entrando não é um robô.</li>
+        <li><strong>Resend:</strong> envia os e-mails de confirmação de cadastro e de troca de senha.</li>
       </ul>
       <p>No ranking, os outros alunos veem só o seu primeiro nome e o seu XP.</p>
 
