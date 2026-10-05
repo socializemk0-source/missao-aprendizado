@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router';
 import { useAuth } from '../auth/AuthProvider';
-import { BRAND } from '../app/nav';
+import { BRAND, COMPANY, INSTAGRAM_URL } from '../app/nav';
 import { FREE_FEATURES, PRO_FEATURES, PRO_OPTIONS } from '../app/plans';
 import { Icon, type IconName } from '../components/Icon';
 import { Tico } from '../components/Tico';
@@ -91,7 +91,11 @@ export function Landing() {
               </div>
               <p className="lp-trust"><Icon name="star" size={16} /> Grátis para começar · sem cartão de crédito</p>
             </div>
-            <img src="/landing/hero.webp" alt="" className="lp-hero-img" width={1672} height={941} />
+            {/* No celular, um recorte quadrado e leve; no computador, a imagem inteira. */}
+            <picture className="lp-hero-picture">
+              <source media="(max-width: 640px)" srcSet="/landing/hero-mobile.webp" width={800} height={800} />
+              <img src="/landing/hero.webp" alt="" className="lp-hero-img" width={1672} height={941} fetchPriority="high" />
+            </picture>
           </section>
         </div>
 
@@ -213,11 +217,12 @@ export function Landing() {
       </main>
 
       <footer className="landing-footer">
-        <span>© {new Date().getFullYear()} {BRAND.first} {BRAND.second}</span>
+        <span>© {new Date().getFullYear()} {BRAND.first} {BRAND.second} · CNPJ {COMPANY.cnpj}</span>
         <nav aria-label="Rodapé">
           <a href="#duvidas">Dúvidas</a>
           <Link to="/privacidade">Privacidade</Link>
           <Link to="/termos">Termos</Link>
+          <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">Instagram</a>
           {!signedIn && <Link to="/entrar">Entrar</Link>}
         </nav>
       </footer>

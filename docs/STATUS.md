@@ -3,7 +3,7 @@
 Leia este arquivo no começo de cada sessão, em vez de refazer o diagnóstico.
 Atualize a linha da funcionalidade em todo PR que mexer nela.
 
-Última atualização: 02/10/2026 (Marco 1: onboarding, "Hoje", plano de estudos, revisão espaçada e domínio por assunto).
+Última atualização: 04/10/2026 (domínio próprio, termos com CNPJ, pagamentos em produção, prévia do link e SEO).
 
 Legenda: **OK** = funcionando · **Parcial** = existe, mas falta parte · **Ausente** = não existe.
 Prioridade: P0 bloqueia o uso · P1 jornada principal · P2 medição e retenção · P3 operação.
@@ -28,7 +28,7 @@ Prioridade: P0 bloqueia o uso · P1 jornada principal · P2 medição e retenç�
 | Filtros de questões | Prática por disciplina | Parcial | Faltam assunto, dificuldade, erradas, não respondidas, favoritas | P2 | Marco 2 |
 | Progresso | XP, sequência, vidas, missões diárias, conquistas, ranking | OK | Não há visão semanal/mensal | P2 | Marco 2 |
 | Redação com IA | OpenAI no servidor; nota por critério; grátis: 1 correção a cada 7 dias | OK | Sem `OPENAI_API_KEY` a correção fica desligada (com aviso) | — | — |
-| Pagamentos (PRO) | Checkout Pro do Mercado Pago, 30 dias ou 1 ano, webhook com assinatura, confirmação na volta, compras registradas (`v2.checkouts`, migração 0009) e botão "Verificar meu pagamento" quando o aviso não chega | Parcial | Credenciais e webhook ainda não configurados no Mercado Pago e na Vercel. Falta cupom | P0 | Dono segue `docs/mercado-pago.md` (teste na prévia, depois produção). Cupom no Marco 4 |
+| Pagamentos (PRO) | Checkout Pro do Mercado Pago, 30 dias ou 1 ano, webhook com assinatura, confirmação na volta, compras registradas (`v2.checkouts`, migração 0009) e botão "Verificar meu pagamento" quando o aviso não chega | Parcial | Produção configurada e testada com PIX real (compra e devolução). Falta cupom | P1 | Cupom no Marco 4 |
 | Perfil | Nome, plano, aparência, instalar o app e **excluir a conta** (LGPD: confirmação escrita, apaga os dados do V2 e o login; pagamentos ficam por obrigação legal) | OK | Exclusão precisa de `SUPABASE_SERVICE_ROLE_KEY` na Vercel (sem ela, avisa e não apaga) | P1 | Dono configura a chave |
 | Aparência e conforto | Tema claro/escuro/automático, sons (Web Audio), animações, modo foco/leitura (com tom creme) e "Aparência e som" no Perfil; tudo guardado no aparelho | OK | — | — | — |
 | Tico e movimento | Tico em imagem fixa e leve (6 poses em WebP, ~40 KB cada; antes ~130 KB em PNG). Movimento só em CSS: transições de tela, pulso/tremida nas alternativas, XP voando, selo de sequência, confete | OK | A animação do Tico por quadros foi retirada a pedido do dono (qualidade e peso no celular) | P3 | Depois da validação, um artista faz as animações do Tico |
@@ -38,7 +38,7 @@ Prioridade: P0 bloqueia o uso · P1 jornada principal · P2 medição e retenç�
 | Analytics (`v2.events`) | — | Ausente | — | P2 | Marco 2 |
 | Admin | — | Ausente | Questões só mudam de status direto no banco | P3 | Marco 4 |
 | App instalável (PWA) | Manifesto, ícones do Tico (inclusive o adaptável do Android e o do iPhone), service worker (`public/sw.js`), página "Sem conexão", aviso "Sem internet", aviso "Tem uma versão nova do app — Atualizar", botão "Instalar o app" no Perfil (passo a passo no iPhone) e aviso de instalar na Trilha. API, XP, PRO e pagamentos nunca passam pelo cache | OK | Login com Google e volta do Mercado Pago dentro do app instalado no iPhone ainda não foram testados num aparelho | P1 | Dono testa no Android e no iPhone (roteiro no PR). Depois: notificações (Marco 3) e estudar sem internet |
-| Termos, privacidade, SEO | `/termos` (PRO sem renovação, arrependimento em 7 dias, IA, conduta, exclusão), `/privacidade` atualizada (plano de estudos, Turnstile, retenção, exclusão), aceite no cadastro, links no rodapé; meta description | Parcial | `CONTACT_EMAIL` vazio; textos sem revisão de advogado; falta imagem de compartilhamento | P1 | Dono define o e-mail de contato e pede revisão jurídica |
+| Termos, privacidade, SEO | `/termos` (conta, PRO sem renovação, desistência em 7 dias, conteúdo, redação por IA, exclusão da conta), `/privacidade` (controlador com CNPJ, plano de estudos, Turnstile, retenção, exclusão), aceite no cadastro, links no rodapé e no Branding do Google, e-mail de contato `contato@aprovatico.com.br`, meta description, Open Graph (`public/og.jpg`), `robots.txt`, `sitemap.xml` e Instagram (@aprovatico) no rodapé | Parcial | Razão social e CNPJ (MEI) nos termos, na privacidade e no rodapé. Textos ainda sem revisão de advogado e sem endereço | P3 | Dono revisa os termos com advogado e envia o sitemap no Search Console |
 
 ## Base técnica
 
@@ -49,8 +49,9 @@ Prioridade: P0 bloqueia o uso · P1 jornada principal · P2 medição e retenç�
 | Segurança | OK no código; painéis pendentes (dono) | Limite de chamadas no banco (migração 0012), teto diário de redação no PRO, CSP e cabeçalhos, CAPTCHA (liga com `TURNSTILE_SITE_KEY`), ranking só com o primeiro nome, Dependabot e `npm audit` no CI. O que configurar e a ordem: `docs/seguranca.md` |
 | RLS | OK | Ligado em todas as tabelas `v2` (acesso só pelo servidor) |
 | Estados de carregando, vazio e erro | Parcial | As telas do app tratam carregando e erro das chamadas; faltava a tela de erro geral (corrigido neste PR) |
+| Velocidade | OK | PageSpeed no celular: 94 (antes desta mudança). Telas do app sob demanda (`src/app/lazyPage.tsx`): a página inicial não baixa o app. Imagem principal com prioridade alta e recorte de 33 KB no celular (`hero-mobile.webp`) |
 | Responsividade | OK | Landing e app conferidos em 390, 1024 e 1440 px |
 | Acessibilidade | Parcial | Rótulos e `aria-*` nas telas principais; falta uma revisão completa de teclado e contraste |
 | Testes e CI | OK | vitest (servidor e telas, Postgres real no CI), typecheck, `check:api` e build no GitHub Actions |
 | Ambiente do agente | Limitado | O registro do npm está bloqueado aqui: testes, typecheck e build são validados pelo CI do PR. Postgres local e Chromium disponíveis |
-| Deploy | Pendente (dono) | A Vercel publica a branch `claude/youthful-ramanujan-4efsgw`; trocar a *Production Branch* para `main` |
+| Deploy | OK | Produção em `https://www.aprovatico.com.br` (Vercel, branch `main`). Mercado Pago na conta do CNPJ, e-mails pelo Resend, `contato@` pelo ImprovMX |

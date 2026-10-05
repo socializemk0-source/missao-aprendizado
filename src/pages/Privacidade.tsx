@@ -1,11 +1,12 @@
 import { Link } from 'react-router';
-import { CONTACT_EMAIL } from '../app/nav';
+import { COMPANY, CONTACT_EMAIL } from '../app/nav';
 import { LegalShell } from './LegalShell';
 
 export function Privacidade() {
-  const contact = CONTACT_EMAIL || 'o e-mail de contato (em definição)';
   return (
-    <LegalShell title="Política de privacidade" updated="02/10/2026">
+    <LegalShell title="Política de privacidade" updated="05/10/2026">
+      <p>Quem cuida dos seus dados (controlador) é {COMPANY.name}, CNPJ {COMPANY.cnpj}.</p>
+
       <h2>Quais dados guardamos</h2>
       <ul>
         <li><strong>Conta:</strong> nome, e-mail e, se você preencher, concurso, banca e cidade.</li>
@@ -33,7 +34,7 @@ export function Privacidade() {
       <p>Enquanto sua conta existir. Ao excluir a conta, apagamos seus dados de estudo e o seu login. Os registros de pagamento ficam guardados pelo prazo que a lei exige (obrigações fiscais e do Código de Defesa do Consumidor), sem nome nem e-mail.</p>
 
       <h2>Seus direitos</h2>
-      <p>Você pode ver e corrigir seus dados no Perfil e excluir a conta a qualquer momento em <strong>Perfil → Excluir minha conta</strong>. Também pode pedir acesso, correção ou exclusão, e sair da lista de e-mails (pelo link no próprio e-mail), escrevendo para {contact}.</p>
+      <p>Você pode ver e corrigir seus dados no Perfil e excluir a conta a qualquer momento em <strong>Perfil → Excluir minha conta</strong>. Também pode pedir acesso, correção ou exclusão, e sair da lista de e-mails (pelo link no próprio e-mail), escrevendo para {CONTACT_EMAIL}.</p>
       <p>Veja também os <Link to="/termos">Termos de uso</Link>.</p>
     </LegalShell>
   );
