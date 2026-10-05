@@ -86,4 +86,39 @@ describe('redação', () => {
     expect(screen.getByLabelText('Seu texto')).toHaveValue(essay);
     expect(screen.getByRole('button', { name: 'Corrigir com IA' })).toBeEnabled();
   });
+
+  // Texto do aluno e da IA com HTML: aparece como texto, nunca vira elemento
+  // (se alguém trocar por dangerouslySetInnerHTML, este teste avisa).
+  it('relatório com HTML no texto do aluno e da IA mostra o HTML como texto', async () => {
+    const { store } = setup();
+    const ataque = '<img src=x onerror="alert(1)">';
+    const texto = `${essay}\n<script>alert(1)</script> ${ataque}`;
+    const xss = report({
+      summary: `<script>alert(1)</script>Resumo ${ataque}`,
+      criteria: [
+        { id: 'tema', score: 16, reason: `Atende. ${ataque}` },
+        { id: 'argumentos', score: 22, reason: 'Argumentos consistentes.' },
+        { id: 'organizacao', score: 15, reason: 'Boa coesão.' },
+        { id: 'linguagem', score: 25, reason: 'Poucos desvios.' },
+      ],
+      annotations: [{ quote: '<script>alert(1)</script>', issue: `<b>Genérico</b>`, suggestion: `Cite ${ataque}` }],
+      strengths: [`<a href="javascript:alert(1)">forte</a>`],
+      nextSteps: [`<iframe src="//x"></iframe>`],
+    });
+    await store.reserve('u1', { topicId: 'cebraspe-seguranca', topicTitle: '<h1>Tema</h1>', banca: 'Cebraspe', content: texto }, null, new Date());
+    await store.complete(store.rows[0]!.id, xss, 78);
+    renderAt(`/redacao/${store.rows[0]!.id}`, signedIn);
+
+    expect(await screen.findByText(`<script>alert(1)</script>Resumo ${ataque}`)).toBeInTheDocument();
+    const relatorio = document.querySelector('.essay-report')!;
+    expect(relatorio.querySelectorAll('script, iframe, b, h1 h1, a[href^="javascript"], [onerror]')).toHaveLength(0);
+    // A única imagem é o Tico ao lado da nota.
+    expect([...relatorio.querySelectorAll('img')].map((img) => img.getAttribute('src'))).toEqual([expect.stringMatching(/^\/tico\//)]);
+    expect(screen.getByText(`Atende. ${ataque}`)).toBeInTheDocument();
+    expect(screen.getByText('<script>alert(1)</script>', { selector: 'mark' })).toHaveAttribute('id', 'trecho-1');
+    expect(screen.getByText('<b>Genérico</b>')).toBeInTheDocument();
+    expect(screen.getByText('<a href="javascript:alert(1)">forte</a>')).toBeInTheDocument();
+    expect(screen.getByText('<iframe src="//x"></iframe>')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 1, name: '<h1>Tema</h1>' })).toBeInTheDocument();
+  });
 });
