@@ -5,6 +5,7 @@ import { router } from './app/router';
 import { AuthProvider } from './auth/AuthProvider';
 import { PwaNotices } from './components/PwaNotices';
 import { ProgressProvider } from './game/ProgressProvider';
+import { mostrarTicoNoConsole } from './lib/easter-egg';
 import './lib/prefs'; // aplica tema, animações e modo foco no <html>
 import { initPwa, registerServiceWorker } from './lib/pwa';
 import './styles/global.css';
@@ -17,6 +18,9 @@ import './styles/game.css';
 // site publicado (em desenvolvimento ele guardaria arquivos que mudam a toda hora).
 initPwa();
 if (import.meta.env.PROD) window.addEventListener('load', () => void registerServiceWorker());
+
+// Surpresa para quem abre o F12 / "Inspecionar".
+mostrarTicoNoConsole();
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
