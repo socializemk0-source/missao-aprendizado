@@ -5,6 +5,7 @@ import { cleanup, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { createMeHandler } from '../../api/me';
+import { COMPANY } from '../../src/app/nav';
 import { fakeVerify, memoryProfiles } from '../server/helpers';
 import { bridgeApi } from './api-bridge';
 import { fakeSupabase, me, renderAt, session } from './render';
@@ -52,6 +53,14 @@ describe('excluir a conta', () => {
     expect(await screen.findByRole('alert')).toHaveTextContent(/não está disponível agora/);
     expect(router.state.location.pathname).toBe('/perfil');
     expect(signOut).not.toHaveBeenCalled();
+  });
+});
+
+describe('política de privacidade', () => {
+  it('diz quem é o controlador dos dados (empresa e CNPJ) e por quanto tempo ficam as cópias de segurança', () => {
+    renderAt('/privacidade', { status: 'signedOut' });
+    expect(screen.getByText(new RegExp(`controlador.*${COMPANY.cnpj.replace(/[./]/g, '\\$&')}`))).toBeInTheDocument();
+    expect(screen.getByText(/cópias de segurança criptografadas do banco, guardadas por até 90 dias/)).toBeInTheDocument();
   });
 });
 

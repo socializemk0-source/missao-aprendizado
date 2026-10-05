@@ -26,6 +26,7 @@ const Revisar = lazyPage(() => import('../pages/Sessoes').then((m) => m.Revisar)
 const JogosHub = lazyPage(() => import('../pages/Jogos').then((m) => m.JogosHub));
 const Desafio = lazyPage(() => import('../pages/Jogos').then((m) => m.Desafio));
 const JogoTela = lazyPage(() => import('../games/JogoTela').then((m) => m.JogoTela));
+const Professor = lazyPage(() => import('../pages/Professor').then((m) => m.Professor));
 const Comecar = lazyPage(() => import('../pages/Comecar').then((m) => m.Comecar));
 const Aventura = lazyPage(() => import('../pages/Painel').then((m) => m.Aventura));
 const Conquistas = lazyPage(() => import('../pages/Painel').then((m) => m.Conquistas));
@@ -85,6 +86,7 @@ const pages: RouteObject[] = [
         element: READY[item.path],
       })),
       { path: '/comecar', element: <Comecar /> },
+      { path: '/professor', element: <Professor /> },
       { path: '/fase/:id', element: <Fase /> },
       { path: '/praticar/:disciplina', element: <Praticar /> },
       { path: '/redacao/:id', element: <RedacaoRelatorio /> },

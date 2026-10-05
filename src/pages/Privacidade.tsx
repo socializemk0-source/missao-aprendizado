@@ -1,10 +1,12 @@
 import { Link } from 'react-router';
-import { CONTACT_EMAIL } from '../app/nav';
+import { COMPANY, CONTACT_EMAIL } from '../app/nav';
 import { LegalShell } from './LegalShell';
 
 export function Privacidade() {
   return (
     <LegalShell title="Política de privacidade" updated="05/10/2026">
+      <p>Quem cuida dos seus dados (o controlador, pela LGPD) é {COMPANY.name}, CNPJ {COMPANY.cnpj}.</p>
+
       <h2>Quais dados guardamos</h2>
       <ul>
         <li><strong>Conta:</strong> nome, e-mail e, se você preencher, concurso, banca e cidade.</li>
@@ -25,12 +27,14 @@ export function Privacidade() {
         <li><strong>OpenAI:</strong> recebe só o texto da redação que você pede para corrigir.</li>
         <li><strong>Mercado Pago:</strong> processa os pagamentos do plano PRO.</li>
         <li><strong>Cloudflare (Turnstile):</strong> confere, no login e no cadastro, que quem está entrando não é um robô.</li>
+        <li><strong>GitHub:</strong> guarda as cópias de segurança do banco, criptografadas (só nós temos a senha).</li>
         <li><strong>Resend:</strong> envia os e-mails de confirmação de cadastro e de troca de senha.</li>
       </ul>
       <p>No ranking, os outros alunos veem só o seu primeiro nome e o seu XP.</p>
 
       <h2>Por quanto tempo guardamos</h2>
       <p>Enquanto sua conta existir. Ao excluir a conta, apagamos seus dados de estudo e o seu login. Os registros de pagamento ficam guardados pelo prazo que a lei exige (obrigações fiscais e do Código de Defesa do Consumidor), sem nome nem e-mail.</p>
+      <p>Uma vez por semana fazemos cópias de segurança criptografadas do banco, guardadas por até 90 dias. Depois que você exclui a conta, seus dados somem dessas cópias nesse prazo.</p>
 
       <h2>Seus direitos</h2>
       <p>Você pode ver e corrigir seus dados no Perfil e excluir a conta a qualquer momento em <strong>Perfil → Excluir minha conta</strong>. Também pode pedir acesso, correção ou exclusão, e sair da lista de e-mails (pelo link no próprio e-mail), escrevendo para {CONTACT_EMAIL}.</p>

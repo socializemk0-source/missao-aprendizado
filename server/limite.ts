@@ -81,6 +81,7 @@ export const LIMITES = {
   perfilPorMinuto: 30, // /api/me por aluno
   pagamentosPorMinuto: 20, // /api/pagamentos por aluno (cada uma fala com o Mercado Pago)
   redacaoPorMinuto: 30, // /api/redacao por aluno (a correção em si tem limite próprio)
+  professorPorMinuto: 60, // /api/professor por professor
   leadsPorMinuto: 5, // /api/leads por IP
 } as const;
 
