@@ -5,7 +5,7 @@ import { LegalShell } from './LegalShell';
 export function Privacidade() {
   return (
     <LegalShell title="Política de privacidade" updated="05/10/2026">
-      <p>Quem cuida dos seus dados (o controlador, pela LGPD) é {COMPANY.name}, CNPJ {COMPANY.cnpj}. Fale com a gente em {CONTACT_EMAIL}.</p>
+      <p>Quem cuida dos seus dados (o controlador, pela LGPD) é {COMPANY.name}, CNPJ {COMPANY.cnpj}.</p>
 
       <h2>Quais dados guardamos</h2>
       <ul>
