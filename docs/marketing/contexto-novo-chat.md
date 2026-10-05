@@ -128,32 +128,96 @@ promessas de renda/emprego garantido ("salário de R$ 10 mil garantido").
     Mercado Pago no app instalado no iPhone.
   - Termos e privacidade sem revisão de advogado.
 
-## 6. O que eu (dono) ainda preciso definir no novo chat
+## 6. Modelo de negócio: o que já se sabe e o que precisa ser decidido
 
-- Orçamento mensal e por fase de teste.
-- Primeiro público/concurso foco (ex.: nível médio administrativo, tribunais,
-  INSS, bancários, polícia... só se a trilha cobrir as matérias).
-- Plataformas: Meta (Instagram/Facebook), Google (Pesquisa/YouTube), TikTok.
-- Objetivo da 1ª fase: cadastros grátis (mais barato, aprende-se o público) ou
-  venda direta do PRO.
-- Quem grava/edita: eu, freelancer, só animação do Tico, ou UGC.
-- Material que já tenho: fotos, vídeos, prints do app, artes.
+Hoje o modelo é **freemium**: o aluno entra grátis e o PRO é um **pagamento
+único** (30 dias ou 1 ano), **sem renovação automática**. Pontos de atenção
+para o plano de marketing:
 
-## 7. O que pedir ao Claude no novo chat
+- **Sem recorrência, o faturamento depende de recompra.** Quem compra os 30
+  dias precisa comprar de novo no mês seguinte. A receita por cliente (LTV)
+  depende de quantos renovam e por quanto tempo estudam. Avaliar: lembrete de
+  renovação por e-mail, oferta de troca para o anual, assinatura com renovação
+  automática (exige mudança no Mercado Pago e nos Termos).
+- **Conta que precisa fechar:** custo por cadastro ÷ % de cadastros que viram
+  PRO = custo por cliente (CAC). Comparar com a receita líquida por cliente
+  (preço − taxa do Mercado Pago − impostos − custo da IA de redação).
+  Ex. ilustrativo: cadastro a R$ 3 e 3% virando PRO → CAC R$ 100, maior que
+  um PRO de 30 dias (R$ 29,90). Fecha só com recompra, plano anual ou
+  conversão maior. **Esses números são hipóteses; os reais vêm do teste.**
+- Possíveis alavancas: oferta de lançamento/cupom (cupom ainda não existe no
+  app), período de teste do PRO, plano anual em destaque, indicação de amigo,
+  e-mails de ativação (Resend já está configurado), parcerias com
+  professores/criadores de concurso.
+- Concorrência (só para estudo interno, **nunca citar nos anúncios**):
+  plataformas grandes de questões e de cursos para concurso. Diferencial do
+  Tico: trilha guiada estilo jogo, humor, explicação na hora, revisão dos
+  erros, redação com IA e preço baixo.
 
-1. Ler este arquivo e `tico.md`; fazer perguntas do item 6.
-2. Plano de mídia: estrutura de campanhas, públicos, orçamento por fase,
-   métricas-alvo (CPL, custo por cadastro, conversão para PRO, CAC x preço).
-3. Matriz de criativos: ângulos (dores do concurseiro, pegadinha, família,
-   capivara calma, preço/grátis) × formatos (Reels/TikTok 9:16, feed 4:5,
-   stories, carrossel, pesquisa).
-4. Textos prontos (títulos, textos principais, CTAs) e roteiros de vídeo com
-   tempo, imagem e fala.
-5. Calendário de testes e de conteúdo orgânico no @aprovatico.
-6. Lista do que precisa mudar no site/código para o tráfego (medição, UTM,
-   landing por público) — isso volta para o Claude Code no repositório.
+## 7. Escopo completo do novo chat (marketing do zero)
 
-## 8. Arquivos para colocar na pasta
+Ordem sugerida, para não gastar antes da hora:
+
+1. **Diagnóstico e modelo de negócio** — público e tamanho do mercado,
+   concorrência, posicionamento, proposta de valor, preços e oferta, contas de
+   CAC/LTV/ponto de equilíbrio, metas e orçamento.
+2. **Posicionamento e mensagem** — para quem é (e para quem não é), promessa
+   principal, ângulos de comunicação, objeções e respostas, provas que temos
+   (sem inventar), mensagens por etapa do funil.
+3. **Funil** — anúncio → página de destino (landing atual, questão demo ou
+   páginas por público) → cadastro → onboarding → 1ª fase → hábito → PRO →
+   renovação. Onde cada um pode cair e o que fazer.
+4. **Medição (antes de qualquer verba)** — plano de eventos, padrão de UTM,
+   pixel + API de Conversões da Meta, GA4/Google Ads, TikTok, consentimento de
+   cookies (LGPD), painel de números. **O novo chat escreve a especificação;
+   a implementação é código e volta para o Claude Code no repositório**
+   (eu levo a especificação para lá).
+5. **Contas e estrutura** — Gerenciador de Negócios da Meta, verificação do
+   domínio aprovatico.com.br, 2FA, forma de pagamento, Google Ads, TikTok Ads,
+   nomes padronizados de campanha/conjunto/anúncio.
+6. **Plataformas e posicionamentos** — onde começar (Meta: Reels, Stories,
+   Feed; Google: Pesquisa e YouTube; TikTok), estrutura de campanhas,
+   públicos, lances, orçamento por fase (teste → validação → escala) e
+   critérios de corte e de escala.
+7. **Criativos** — matriz ângulo × formato, roteiros, textos, briefing para
+   quem grava/edita/ilustra, ritmo de produção, nomenclatura e testes.
+8. **Orgânico e comunidade** — @aprovatico (Reels, carrossel), conteúdo que
+   alimenta os anúncios, prova social real, e-mail.
+9. **Rotina de operação** — o que olhar todo dia/semana, relatório semanal,
+   regras de pausa e escala, registro dos testes e aprendizados.
+10. **Jurídico e políticas** — LGPD, políticas de anúncio da Meta/Google/
+    TikTok, CONAR (sem promessa enganosa), uso de imagem e depoimentos.
+
+Peça para o Claude guardar as decisões em arquivos na pasta (ex.:
+`01-modelo-de-negocio.md`, `02-posicionamento.md`, `03-funil.md`,
+`04-medicao-e-utm.md`, `05-campanhas.md`, `06-criativos/`,
+`07-rotina.md`, `decisoes.md`), para cada chat seguinte continuar de onde
+parou.
+
+## 8. Primeira mensagem sugerida para o novo chat
+
+> Leia o `contexto-novo-chat.md` e o `tico.md` desta pasta antes de tudo.
+> Vamos montar do zero toda a operação de marketing do Aprova Tico: modelo de
+> negócio, posicionamento, funil, medição e UTM, contas, campanhas e
+> posicionamentos, criativos, orgânico e rotina, na ordem da seção 7. O
+> objetivo é não desperdiçar verba: nada de anúncio no ar antes da medição
+> funcionando. Antes de propor qualquer coisa, me faça as perguntas que
+> faltam (orçamento, público foco, plataformas, quem produz os vídeos, o que
+> já tenho de material). Não invente números: o que for estimativa, marque
+> como hipótese. Guarde cada decisão em arquivo na pasta.
+
+## 9. Perguntas que o dono vai responder no começo
+
+- Orçamento mensal de mídia e quanto aceita gastar só para aprender (teste).
+- Prazo e meta (ex.: X cadastros ou X vendas em 60 dias).
+- Público foco inicial (nível médio/superior, área, concurso).
+- Plataformas preferidas e contas que já existem (Meta, Google, TikTok).
+- Quem grava, edita e ilustra; aparece rosto de alguém ou só o Tico?
+- Material que já tem: fotos, vídeos, prints, artes.
+- Topa mudar o modelo de cobrança (renovação automática, cupom, teste grátis
+  do PRO) se os números pedirem.
+
+## 10. Arquivos para colocar na pasta
 
 - Este arquivo (`contexto-novo-chat.md`).
 - `docs/marca/tico.md` (guia do personagem).
