@@ -80,7 +80,63 @@ describe('PATCH /api/me', () => {
   it('outros métodos → 405', async () => {
     const { handler } = setup();
     const res = makeRes();
-    await handler(makeReq({ method: 'DELETE', token: 'ok:u1' }), res);
+    await handler(makeReq({ method: 'PUT', token: 'ok:u1' }), res);
     expect(res.statusCode).toBe(405);
+    expect(res.headers.Allow).toBe('GET, PATCH, DELETE');
+  });
+});
+
+describe('DELETE /api/me — excluir a conta (LGPD)', () => {
+  function setupExcluir(opts: { authFalha?: boolean; semAdmin?: boolean } = {}) {
+    const profiles = memoryProfiles();
+    const apagados: { userId: string; email: string | null }[] = [];
+    const loginsRemovidos: string[] = [];
+    const handler = createMeHandler({
+      verifyToken: fakeVerify, profiles,
+      conta: { excluir: async (userId, email) => { apagados.push({ userId, email }); } },
+      removerLogin: opts.semAdmin ? null : async (userId) => {
+        if (opts.authFalha) throw new Error('HTTP 500');
+        loginsRemovidos.push(userId);
+      },
+    });
+    const call = async (body: unknown, token = 'ok:u1') => {
+      const res = makeRes();
+      await handler(makeReq({ method: 'DELETE', token, body }), res);
+      return res;
+    };
+    return { call, apagados, loginsRemovidos };
+  }
+
+  it('sem login → 401; sem a confirmação escrita → 400 e nada é apagado', async () => {
+    const { call, apagados } = setupExcluir();
+    expect((await call({ confirmar: 'EXCLUIR' }, 'forjado')).statusCode).toBe(401);
+    for (const body of [{}, { confirmar: 'excluir ' }, { confirmar: 'sim' }, null]) {
+      const res = await call(body);
+      expect([res.statusCode, res.body.code]).toEqual([400, 'CONFIRMACAO']);
+    }
+    expect(apagados).toEqual([]);
+  });
+
+  it('apaga os dados do app e depois o login; só os do próprio aluno', async () => {
+    const { call, apagados, loginsRemovidos } = setupExcluir();
+    const res = await call({ confirmar: 'EXCLUIR' });
+    expect(res.statusCode).toBe(200);
+    expect(res.body).toEqual({ excluida: true });
+    expect(apagados).toEqual([{ userId: 'u1', email: 'u1@teste.dev' }]);
+    expect(loginsRemovidos).toEqual(['u1']);
+  });
+
+  it('se o login não puder ser removido, avisa (os dados do app já foram apagados; tentar de novo funciona)', async () => {
+    const { call, apagados } = setupExcluir({ authFalha: true });
+    const res = await call({ confirmar: 'EXCLUIR' });
+    expect([res.statusCode, res.body.code]).toEqual([502, 'LOGIN_NAO_REMOVIDO']);
+    expect(apagados).toHaveLength(1);
+  });
+
+  it('sem a chave de administrador configurada, não apaga nada e explica', async () => {
+    const { call, apagados } = setupExcluir({ semAdmin: true });
+    const res = await call({ confirmar: 'EXCLUIR' });
+    expect([res.statusCode, res.body.code]).toEqual([503, 'EXCLUSAO_INDISPONIVEL']);
+    expect(apagados).toEqual([]);
   });
 });

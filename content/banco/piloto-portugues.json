@@ -112,7 +112,7 @@
     ],
     "correta": 0,
     "dificuldade": 1,
-    "explicacao": "Certo. Hoje se escreve polo, para e pelo. O acento diferencial continua obrigatório só em pôr (verbo) e pôde (passado de poder).",
+    "explicacao": "Certo. Hoje se escreve polo, para e pelo. O acento diferencial continua obrigatório em pôr (verbo), em pôde (passado de poder) e no plural de ter e vir e seus derivados (eles têm, eles vêm, eles mantêm).",
     "fonte": {
       "tipo": "autoral",
       "estilo": "Cebraspe"
@@ -842,7 +842,7 @@
     "assunto": "Regência",
     "enunciado": "A regência está correta em:",
     "alternativas": [
-      "O técnico visou o sucesso da equipe.",
+      "O técnico obedeceu o regulamento.",
       "Aspiro uma vaga no tribunal.",
       "Chegamos em casa tarde.",
       "Namoro com ela há dois anos.",
@@ -850,7 +850,7 @@
     ],
     "correta": 4,
     "dificuldade": 2,
-    "explicacao": "Aspirar, com sentido de desejar, pede a preposição a. Visar, com sentido de ter como objetivo, também (visou ao sucesso). Namorar não pede preposição (namoro-a). Chegar pede a na norma-padrão (chegamos a casa).",
+    "explicacao": "Aspirar, com sentido de desejar, pede a preposição a. Obedecer também pede a (obedeceu ao regulamento). Namorar não pede preposição (namoro-a). Chegar pede a na norma-padrão (chegamos a casa).",
     "fonte": {
       "tipo": "autoral",
       "estilo": "FCC"
@@ -1033,7 +1033,7 @@
     ],
     "correta": 1,
     "dificuldade": 1,
-    "explicacao": "Não se separa por vírgula o sujeito do verbo (os candidatos chegaram; Maria estuda) nem o verbo do complemento (disse que...). A oração que chegaram atrasados, entre vírgulas, é uma explicação e está bem pontuada. Na última frase, a vírgula deveria vir depois de terminou, não depois de fiscais.",
+    "explicacao": "Não se separa por vírgula o sujeito do verbo (os candidatos chegaram; Maria estuda) nem o verbo do complemento (disse que...). A oração que chegaram atrasados, entre vírgulas, é uma explicação e está bem pontuada. Em quando a prova terminou os fiscais, recolheram as folhas, a vírgula deveria vir depois de terminou, não depois de fiscais.",
     "fonte": {
       "tipo": "autoral",
       "estilo": "FGV"
@@ -2053,7 +2053,7 @@
     ],
     "correta": 3,
     "dificuldade": 1,
-    "explicacao": "Ratificar é confirmar. Nas outras frases há troca de palavras parecidas: o cheiro é fragrante (flagrante é o que se vê no momento), quem sofre preconceito é discriminado (descriminar é deixar de considerar crime), quem desobedece a lei a infringe (infligir é aplicar pena) e reunião de órgão é sessão (cessão é o ato de ceder).",
+    "explicacao": "Ratificar é confirmar. Nas outras frases há troca de palavras parecidas: o perfume tem uma fragrância (flagrante é o que se vê no momento), quem sofre preconceito é discriminado (descriminar é deixar de considerar crime), quem desobedece a lei a infringe (infligir é aplicar pena) e reunião de órgão é sessão (cessão é o ato de ceder).",
     "fonte": {
       "tipo": "autoral",
       "estilo": "FGV"
@@ -2152,7 +2152,7 @@
     ],
     "correta": 4,
     "dificuldade": 3,
-    "explicacao": "Em sua casa pode ser a casa do policial ou a do suspeito: a frase tem dois sentidos possíveis. Na segunda opção, a ambiguidade foi desfeita ao se dizer de quem é a casa.",
+    "explicacao": "Em sua casa pode ser a casa do policial ou a do suspeito: a frase tem dois sentidos possíveis. Em na casa do suspeito, a ambiguidade é desfeita porque se diz de quem é a casa.",
     "fonte": {
       "tipo": "autoral",
       "estilo": "FGV"
