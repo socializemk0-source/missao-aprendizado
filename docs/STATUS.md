@@ -3,7 +3,7 @@
 Leia este arquivo no começo de cada sessão, em vez de refazer o diagnóstico.
 Atualize a linha da funcionalidade em todo PR que mexer nela.
 
-Última atualização: 02/10/2026 (Marco 1: onboarding, "Hoje", plano de estudos, revisão espaçada e domínio por assunto).
+Última atualização: 04/10/2026 (domínio próprio, termos com CNPJ, pagamentos em produção, prévia do link e SEO).
 
 Legenda: **OK** = funcionando · **Parcial** = existe, mas falta parte · **Ausente** = não existe.
 Prioridade: P0 bloqueia o uso · P1 jornada principal · P2 medição e retenção · P3 operação.
@@ -38,7 +38,7 @@ Prioridade: P0 bloqueia o uso · P1 jornada principal · P2 medição e retenç�
 | Analytics (`v2.events`) | — | Ausente | — | P2 | Marco 2 |
 | Admin | — | Ausente | Questões só mudam de status direto no banco | P3 | Marco 4 |
 | App instalável (PWA) | Manifesto, ícones do Tico (inclusive o adaptável do Android e o do iPhone), service worker (`public/sw.js`), página "Sem conexão", aviso "Sem internet", aviso "Tem uma versão nova do app — Atualizar", botão "Instalar o app" no Perfil (passo a passo no iPhone) e aviso de instalar na Trilha. API, XP, PRO e pagamentos nunca passam pelo cache | OK | Login com Google e volta do Mercado Pago dentro do app instalado no iPhone ainda não foram testados num aparelho | P1 | Dono testa no Android e no iPhone (roteiro no PR). Depois: notificações (Marco 3) e estudar sem internet |
-| Termos, privacidade, SEO | `/privacidade`, `/termos` (conta, PRO, desistência em 7 dias, conteúdo, redação por IA; link no rodapé e no Branding do Google), e-mail de contato `contato@aprovatico.com.br` e meta description | Parcial | Termos ainda sem revisão de advogado e sem razão social/CNPJ. Faltam imagem de compartilhamento, `robots.txt` e `sitemap.xml` | P3 | Dono revisa os termos com advogado. Resto no Marco 4 |
+| Termos, privacidade, SEO | `/privacidade`, `/termos` (conta, PRO, desistência em 7 dias, conteúdo, redação por IA; link no rodapé e no Branding do Google), e-mail de contato `contato@aprovatico.com.br` e meta description | Parcial | Razão social e CNPJ (MEI) nos termos e no rodapé. Termos ainda sem revisão de advogado e sem endereço. Prévia do link (Open Graph, `public/og.jpg`), `robots.txt`, `sitemap.xml` e link do Instagram (@aprovatico) no rodapé estão prontos | P3 | Dono revisa os termos com advogado e envia o sitemap no Search Console |
 
 ## Base técnica
 
@@ -49,8 +49,9 @@ Prioridade: P0 bloqueia o uso · P1 jornada principal · P2 medição e retenç�
 | Segurança | OK no código; painéis pendentes (dono) | Limite de chamadas no banco (migração 0012), teto diário de redação no PRO, CSP e cabeçalhos, CAPTCHA (liga com `TURNSTILE_SITE_KEY`), ranking só com o primeiro nome, Dependabot e `npm audit` no CI. O que configurar e a ordem: `docs/seguranca.md` |
 | RLS | OK | Ligado em todas as tabelas `v2` (acesso só pelo servidor) |
 | Estados de carregando, vazio e erro | Parcial | As telas do app tratam carregando e erro das chamadas; faltava a tela de erro geral (corrigido neste PR) |
+| Velocidade | OK | PageSpeed no celular: 94 (antes desta mudança). Telas do app sob demanda (`src/app/lazyPage.tsx`): a página inicial não baixa o app. Imagem principal com prioridade alta e recorte de 33 KB no celular (`hero-mobile.webp`) |
 | Responsividade | OK | Landing e app conferidos em 390, 1024 e 1440 px |
 | Acessibilidade | Parcial | Rótulos e `aria-*` nas telas principais; falta uma revisão completa de teclado e contraste |
 | Testes e CI | OK | vitest (servidor e telas, Postgres real no CI), typecheck, `check:api` e build no GitHub Actions |
 | Ambiente do agente | Limitado | O registro do npm está bloqueado aqui: testes, typecheck e build são validados pelo CI do PR. Postgres local e Chromium disponíveis |
-| Deploy | Pendente (dono) | A Vercel publica a branch `claude/youthful-ramanujan-4efsgw`; trocar a *Production Branch* para `main` |
+| Deploy | OK | Produção em `https://www.aprovatico.com.br` (Vercel, branch `main`). Mercado Pago na conta do CNPJ, e-mails pelo Resend, `contato@` pelo ImprovMX |

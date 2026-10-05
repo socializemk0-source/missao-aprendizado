@@ -118,14 +118,31 @@ describe('/termos', () => {
     expect(screen.getByText(/7 dias/)).toBeInTheDocument();
     expect(screen.getAllByText(/contato@aprovatico\.com\.br/).length).toBeGreaterThan(0);
     expect(screen.getByRole('link', { name: 'política de privacidade' })).toHaveAttribute('href', '/privacidade');
+    expect(screen.getByText(/69\.457\.590 VITOR FERNANDES DOS SANTOS, CNPJ 69\.457\.590\/0001-82/)).toBeInTheDocument();
   });
 
   it('rodapé da página inicial leva aos termos; privacidade mostra o e-mail de contato', () => {
     renderAt('/', { status: 'signedOut' });
     const footer = screen.getByRole('navigation', { name: 'Rodapé' });
     expect(within(footer).getByRole('link', { name: 'Termos' })).toHaveAttribute('href', '/termos');
+    expect(screen.getByText(/CNPJ 69\.457\.590\/0001-82/)).toBeInTheDocument();
+    const insta = within(footer).getByRole('link', { name: 'Instagram' });
+    expect(insta).toHaveAttribute('href', 'https://www.instagram.com/aprovatico/');
+    expect(insta).toHaveAttribute('rel', expect.stringContaining('noopener'));
     cleanup();
     renderAt('/privacidade', { status: 'signedOut' });
     expect(screen.getByText(/contato@aprovatico\.com\.br/)).toBeInTheDocument();
+  });
+});
+
+describe('imagem principal', () => {
+  it('no celular usa o recorte leve; a imagem tem prioridade alta', () => {
+    const { container } = renderAt('/', { status: 'signedOut' });
+    const source = container.querySelector('picture.lp-hero-picture source');
+    expect(source).toHaveAttribute('media', '(max-width: 640px)');
+    expect(source).toHaveAttribute('srcset', '/landing/hero-mobile.webp');
+    const img = container.querySelector('picture.lp-hero-picture img');
+    expect(img).toHaveAttribute('src', '/landing/hero.webp');
+    expect(img).toHaveAttribute('fetchpriority', 'high');
   });
 });
