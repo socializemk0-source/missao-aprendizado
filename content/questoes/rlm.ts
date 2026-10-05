@@ -107,7 +107,7 @@ export const RLM: Questao[] = [
     enunciado: '"Se estudo, então passo" é equivalente a:',
     alternativas: ['Se passo, então estudo.', 'Se não estudo, então não passo.', 'Se não passo, então não estudo.', 'Estudo e passo.'],
     correta: 2, dificuldade: 3,
-    explicacao: 'Contrapositiva: p → q ≡ ~q → ~p. Inverte-se a ordem e nega-se as duas partes.',
+    explicacao: 'Contrapositiva: p → q ≡ ~q → ~p. Inverte-se a ordem e negam-se as duas partes.',
     fonte: autoral,
   },
   {
