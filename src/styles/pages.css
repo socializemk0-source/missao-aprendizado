@@ -115,3 +115,9 @@
 .professor-explicacao p { margin: 0; line-height: 1.55; }
 .professor-acoes { display: flex; flex-wrap: wrap; gap: 10px; }
 .professor-nota .field { margin-bottom: 10px; }
+
+/* Botão com cara de link, dentro de um texto (ex.: privacidade) */
+.link-button {
+  padding: 0; border: 0; background: none; color: var(--primary); font: inherit; font-weight: 700;
+  text-decoration: underline; cursor: pointer;
+}
