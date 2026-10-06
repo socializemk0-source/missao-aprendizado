@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from 'react';
 import { Link } from 'react-router';
+import { track } from '../../lib/marketing';
 
 // Captura de contato. O cadastro continua sendo a ação principal da página;
 // isto é para quem ainda não quer criar conta.
@@ -27,6 +28,7 @@ export function LeadForm({ source = 'landing' }: { source?: 'landing' | 'landing
       });
       const payload = (await res.json().catch(() => ({}))) as { error?: string };
       if (!res.ok) throw new Error(payload.error ?? 'Não foi possível enviar agora.');
+      track('Lead', { content_name: source });
       setState('done');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Não foi possível enviar agora.');

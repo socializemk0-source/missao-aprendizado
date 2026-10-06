@@ -8,6 +8,7 @@ import { Tico } from '../components/Tico';
 import { useProgress } from '../game/ProgressProvider';
 import { LoadState, useLoad } from '../game/useLoad';
 import { formatDate } from '../lib/essay';
+import { track } from '../lib/marketing';
 import { brl, leave, payApi } from '../lib/payments';
 
 type Banner = { kind: 'ok' | 'wait' | 'error'; text: string };
@@ -29,6 +30,9 @@ export function Planos() {
   const returnStatus = params.get('status') ?? params.get('collection_status');
   // Voltar do checkout pelo botão "voltar" restaura a página da memória
   // do navegador: destrava os botões.
+  useEffect(() => {
+    track('ViewContent', { content_name: 'planos' });
+  }, []);
   useEffect(() => {
     const onShow = () => setGoing(null);
     window.addEventListener('pageshow', onShow);
@@ -84,6 +88,13 @@ export function Planos() {
   async function buy(cycle: 'monthly' | 'annual') {
     setGoing(cycle);
     setBanner(null);
+    const opcao = PRO_OPTIONS.find((o) => o.id === cycle);
+    track('InitiateCheckout', {
+      value: opcao ? parseFloat(opcao.price.replace('.', '').replace(',', '.')) : undefined,
+      currency: 'BRL',
+      content_name: cycle === 'annual' ? 'pro-1-ano' : 'pro-30-dias',
+      content_category: 'plano_pro',
+    });
     try {
       leave.to((await payApi.checkout(cycle)).url);
     } catch (err) {

@@ -5,6 +5,7 @@ import { BRAND, COMPANY, INSTAGRAM_URL } from '../app/nav';
 import { FREE_FEATURES, PRO_FEATURES, PRO_OPTIONS } from '../app/plans';
 import { Icon, type IconName } from '../components/Icon';
 import { Tico } from '../components/Tico';
+import { useAoAparecer } from '../lib/usar-visto';
 import { DemoQuestion } from './landing/DemoQuestion';
 import { LeadForm } from './landing/LeadForm';
 
@@ -47,6 +48,7 @@ export function Landing() {
   const signedIn = status === 'signedIn';
   const [cycle, setCycle] = useState<(typeof PRO_OPTIONS)[number]['id']>('monthly');
   const pro = PRO_OPTIONS.find((o) => o.id === cycle)!;
+  const planosVisto = useAoAparecer('at_plans_section_viewed');
   const primaryCta = signedIn
     ? <Link to="/jogar" className="btn btn-primary btn-lg">Continuar minha trilha</Link>
     : <Link to="/cadastro" className="btn btn-primary btn-lg">Começar grátis</Link>;
@@ -156,7 +158,7 @@ export function Landing() {
         </section>
 
         {/* 6. Planos */}
-        <section className="lp-section" id="planos" aria-labelledby="plans-title">
+        <section ref={planosVisto} className="lp-section" id="planos" aria-labelledby="plans-title">
           <h2 id="plans-title" className="lp-h2 center">Comece grátis. Vire PRO quando quiser.</h2>
           <div className="lp-plans">
             <article className="card lp-plan">

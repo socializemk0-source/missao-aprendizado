@@ -1,11 +1,13 @@
-import { useState, type FormEvent } from 'react';
+import { useRef, useState, type FormEvent } from 'react';
 import { Link, Navigate } from 'react-router';
 import { useAuth } from '../auth/AuthProvider';
 import { authErrorMessage, passwordProblem } from '../auth/messages';
 import { Loading } from '../auth/RequireAuth';
 import { useCaptcha } from '../components/Captcha';
 import { Icon } from '../components/Icon';
+import { track } from '../lib/marketing';
 import { getSupabase } from '../lib/supabase';
+import { useAoAparecer } from '../lib/usar-visto';
 import { AuthLayout } from './AuthLayout';
 
 export function Cadastro() {
@@ -18,6 +20,8 @@ export function Cadastro() {
   const [error, setError] = useState<string | null>(null);
   const [sentTo, setSentTo] = useState<string | null>(null);
   const captcha = useCaptcha();
+  const formVisto = useAoAparecer('at_signup_form_viewed');
+  const comecou = useRef(false);
 
   if (status === 'signedIn') return <Navigate to="/hoje" replace />;
   if (status === 'loading') return <Loading />;
@@ -29,6 +33,7 @@ export function Cadastro() {
       ? 'Digite seu nome.'
       : passwordProblem(password) ?? (password !== confirm ? 'As senhas não são iguais.' : null);
     if (problem) {
+      track('at_signup_form_error', { error_type: 'validacao', page: '/cadastro' }, { proprio: true });
       setError(problem);
       return;
     }
@@ -44,9 +49,11 @@ export function Cadastro() {
       // devolve um usuário sem identidades. Sem esta checagem, parecia que
       // o cadastro tinha dado certo.
       if (data.user && data.user.identities?.length === 0) throw new Error('User already registered');
+      track('CompleteRegistration', { status: 'email', content_name: 'cadastro' });
       if (!data.session) setSentTo(email.trim()); // precisa confirmar o e-mail
       // Com sessão, o AuthProvider percebe e esta tela redireciona.
     } catch (err) {
+      track('at_signup_form_error', { error_type: 'servico', page: '/cadastro' }, { proprio: true });
       setError(authErrorMessage(err));
     } finally {
       setBusy(false);
@@ -79,7 +86,11 @@ export function Cadastro() {
         <Icon name="google" size={20} /> Continuar com Google
       </button>
       <p className="divider">ou com e-mail</p>
-      <form onSubmit={onSubmit} noValidate>
+      <form ref={formVisto} onSubmit={onSubmit} noValidate onFocus={() => {
+        if (comecou.current) return;
+        comecou.current = true;
+        track('at_signup_form_started', { page: '/cadastro' }, { proprio: true });
+      }}>
         <div className="field">
           <label htmlFor="name">Nome</label>
           <input id="name" autoComplete="name" required maxLength={60} value={name} onChange={(e) => setName(e.target.value)} />

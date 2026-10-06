@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
+import { track } from '../../lib/marketing';
+import { useAoAparecer } from '../../lib/usar-visto';
 
 const OPTIONS = ['60%', '70%', '75%', '80%'];
 const CORRECT = 2;
@@ -10,9 +12,10 @@ export function DemoQuestion() {
   const [selected, setSelected] = useState<number | null>(null);
   const [checked, setChecked] = useState(false);
   const right = checked && selected === CORRECT;
+  const visto = useAoAparecer('at_demo_question_viewed');
 
   return (
-    <div className="demo-question card" aria-labelledby="demo-q-title">
+    <div ref={visto} className="demo-question card" aria-labelledby="demo-q-title">
       <p className="eyebrow">Experimente agora · Raciocínio lógico</p>
       <h3 id="demo-q-title">Em um simulado de 40 questões, você acertou 30. Qual foi o seu percentual de acertos?</h3>
       <div className="demo-options" role="radiogroup" aria-label="Alternativas">
@@ -29,7 +32,10 @@ export function DemoQuestion() {
         })}
       </div>
       {!checked ? (
-        <button type="button" className="btn btn-primary btn-block" disabled={selected === null} onClick={() => setChecked(true)}>
+        <button type="button" className="btn btn-primary btn-block" disabled={selected === null} onClick={() => {
+          track('DemoQuestionAnswered', { correct: selected === CORRECT }, { proprio: true });
+          setChecked(true);
+        }}>
           Conferir resposta
         </button>
       ) : (
