@@ -8,6 +8,7 @@ import { Tico } from '../components/Tico';
 import { useProgress } from '../game/ProgressProvider';
 import { LoadState, useLoad } from '../game/useLoad';
 import { formatDate } from '../lib/essay';
+import { registrar } from '../lib/medicao';
 import { brl, leave, payApi } from '../lib/payments';
 
 type Banner = { kind: 'ok' | 'wait' | 'error'; text: string };
@@ -23,6 +24,14 @@ export function Planos() {
   const [going, setGoing] = useState<string | null>(null);
   const [verifying, setVerifying] = useState(false);
   const confirmed = useRef(false);
+
+  // Medição: abriu a página de planos (uma vez por visita à tela).
+  const viu = useRef(false);
+  useEffect(() => {
+    if (viu.current) return;
+    viu.current = true;
+    registrar('ViewContent', { content_name: 'planos' });
+  }, []);
 
   // Volta do Mercado Pago: /planos?payment_id=...&status=...
   const paymentId = params.get('payment_id') ?? params.get('collection_id');
@@ -84,6 +93,7 @@ export function Planos() {
   async function buy(cycle: 'monthly' | 'annual') {
     setGoing(cycle);
     setBanner(null);
+    registrar('InitiateCheckout', { plano: cycle });
     try {
       leave.to((await payApi.checkout(cycle)).url);
     } catch (err) {

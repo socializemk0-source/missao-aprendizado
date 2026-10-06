@@ -2,6 +2,7 @@ import { useEffect, useState, type FormEvent } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { useAuth } from '../auth/AuthProvider';
 import { AppearanceSettings } from '../components/AppearanceSettings';
+import { CookiesSettings } from '../components/CookiesSettings';
 import { Icon } from '../components/Icon';
 import { InstallCard } from '../components/InstallCard';
 import { api } from '../lib/api';
@@ -110,6 +111,7 @@ export function Perfil() {
 
       <AppearanceSettings />
       <InstallCard />
+      <CookiesSettings />
 
       <button type="button" className="btn btn-danger signout-btn" onClick={() => void onSignOut()}>
         <Icon name="logout" size={20} /> Sair da conta

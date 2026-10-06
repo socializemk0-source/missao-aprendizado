@@ -83,6 +83,7 @@ export const LIMITES = {
   redacaoPorMinuto: 30, // /api/redacao por aluno (a correção em si tem limite próprio)
   professorPorMinuto: 60, // /api/professor por professor
   leadsPorMinuto: 5, // /api/leads por IP
+  eventosPorMinuto: 60, // /api/eventos por aluno (ou por IP, sem login)
 } as const;
 
 // Antes do login: por IP (cada token falso custaria uma consulta ao Supabase Auth).

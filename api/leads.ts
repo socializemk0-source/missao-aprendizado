@@ -6,11 +6,16 @@ import { jsonBody, methodNotAllowed, type ApiRequest, type ApiResponse } from '.
 import { postgresLeads, type LeadStore } from '../server/leads.js';
 import { errorText } from '../server/log.js';
 import { LIMITES, clientIp, limitar, postgresLimiter, type RateLimiter } from '../server/limite.js';
+import { limparEventId, limparOrigem, novoEventId, registrarSeguro, type MarketingStore } from '../server/marketing.js';
+import { postgresMarketing } from '../server/marketing-pg.js';
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const SOURCES = new Set(['landing', 'landing-final']);
 
-export function createLeadsHandler({ store, now = Date.now, limitPerMinute = LIMITES.leadsPorMinuto, limiter }: { store: LeadStore; now?: () => number; limitPerMinute?: number; limiter?: RateLimiter | null }) {
+// medicao: registra o evento Lead no registro próprio, com o mesmo event_id
+// do pixel (eventId), a origem e o aceite dos cookies de anúncio
+// (consentimentoCookies). Erro aqui não impede a inscrição.
+export function createLeadsHandler({ store, now = Date.now, limitPerMinute = LIMITES.leadsPorMinuto, limiter, medicao }: { store: LeadStore; now?: () => number; limitPerMinute?: number; limiter?: RateLimiter | null; medicao?: MarketingStore | null }) {
   // Limite em memória por instância: freio contra abuso, não cota exata.
   const hits = new Map<string, number[]>();
 
@@ -55,6 +60,13 @@ export function createLeadsHandler({ store, now = Date.now, limitPerMinute = LIM
 
     try {
       await store.save({ email, name: name || null, source });
+      if (medicao) {
+        const aceitou = body.consentimentoCookies === true;
+        await registrarSeguro(medicao, {
+          eventId: limparEventId(body.eventId) ?? novoEventId(), nome: 'Lead', userId: null, origem: limparOrigem(body.origem),
+          consentimento: aceitou, envio: { meta_pixel: aceitou ? 'navegador' : 'sem_consentimento' }, now: new Date(now()),
+        });
+      }
       res.status(201).json({ ok: true });
     } catch (err) {
       console.error('[leads] erro ao salvar:', errorText(err));
@@ -63,4 +75,4 @@ export function createLeadsHandler({ store, now = Date.now, limitPerMinute = LIM
   };
 }
 
-export default createLeadsHandler({ store: postgresLeads, limiter: postgresLimiter });
+export default createLeadsHandler({ store: postgresLeads, limiter: postgresLimiter, medicao: postgresMarketing });

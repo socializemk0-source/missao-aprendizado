@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from 'react';
 import { Link } from 'react-router';
+import { leadConfirmado, prepararLead } from '../../lib/medicao';
 
 // Captura de contato. O cadastro continua sendo a ação principal da página;
 // isto é para quem ainda não quer criar conta.
@@ -19,14 +20,16 @@ export function LeadForm({ source = 'landing' }: { source?: 'landing' | 'landing
       return;
     }
     setState('sending');
+    const lead = prepararLead(); // event_id, origem e aceite dos cookies, para a medição
     try {
       const res = await fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, name, consent, source, website }),
+        body: JSON.stringify({ email, name, consent, source, website, ...lead }),
       });
       const payload = (await res.json().catch(() => ({}))) as { error?: string };
       if (!res.ok) throw new Error(payload.error ?? 'Não foi possível enviar agora.');
+      leadConfirmado(lead.eventId);
       setState('done');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Não foi possível enviar agora.');

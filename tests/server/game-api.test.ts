@@ -3,6 +3,7 @@ import { createGameHandler } from '../../api/game.js';
 import { questao } from '../../content/trilha.js';
 import { memoryGameStore } from '../../server/game-memory.js';
 import { LIMITES, memoryLimiter } from '../../server/limite.js';
+import { memoryMarketing } from '../../server/marketing.js';
 import { fakeVerify, makeReq, makeRes } from './helpers.js';
 
 function setup() {
@@ -170,5 +171,50 @@ describe('/api/game — limite de chamadas', () => {
     }
     expect(statuses.slice(0, -1).every((s) => s === 401)).toBe(true);
     expect(statuses.at(-1)).toBe(429);
+  });
+});
+
+describe('/api/game — medição (registro próprio)', () => {
+  const perfil = { prova: 'INSS — Técnico', banca: 'Cebraspe', dataProva: null, minutosDia: 30, nivel: 'iniciante', disciplinas: ['portugues', 'rlm'] };
+
+  async function setupMedicao(medicao = memoryMarketing()) {
+    const store = memoryGameStore();
+    const handler = createGameHandler({ verifyToken: fakeVerify, store, medicao });
+    const call = async (action: string, body: unknown) => {
+      const res = makeRes();
+      await handler(makeReq({ method: 'POST', query: { action }, body, token: 'ok:u1' }), res);
+      return res;
+    };
+    return { medicao, call };
+  }
+
+  it('terminar o onboarding registra OnboardingCompleted uma vez só, com o consentimento do aluno', async () => {
+    const { medicao, call } = await setupMedicao();
+    await medicao.salvarConsentimento('u1', true, new Date());
+    await call('plano-salvar', perfil);
+    await call('plano-salvar', perfil); // ajustar o plano depois não conta de novo
+    const ev = medicao.eventos.filter((e) => e.nome === 'OnboardingCompleted');
+    expect(ev).toHaveLength(1);
+    expect(ev[0]).toMatchObject({ userId: 'u1', consentimento: true, envio: { meta_pixel: 'pendente' } });
+  });
+
+  it('concluir a 1ª fase registra FirstPhaseCompleted uma vez só', async () => {
+    const { medicao, call } = await setupMedicao();
+    const { fase } = await import('../../content/trilha.js');
+    for (const q of fase('fase-01-1')!.questoes) await call('responder', { questionId: q, choice: questao(q)!.correta, mode: 'trilha' });
+    for (const q of fase('fase-01-2')!.questoes) await call('responder', { questionId: q, choice: questao(q)!.correta, mode: 'trilha' });
+    const ev = medicao.eventos.filter((e) => e.nome === 'FirstPhaseCompleted');
+    expect(ev).toHaveLength(1);
+    expect(ev[0]).toMatchObject({ userId: 'u1', consentimento: false, envio: { meta_pixel: 'sem_consentimento' } });
+  });
+
+  it('se a medição falhar, o estudo segue igual', async () => {
+    const quebrada = memoryMarketing();
+    quebrada.registrar = async () => { throw new Error('banco fora'); };
+    quebrada.consentimento = async () => { throw new Error('banco fora'); };
+    const { call } = await setupMedicao(quebrada);
+    expect((await call('plano-salvar', perfil)).statusCode).toBe(200);
+    const q = 'pt-acent-1';
+    expect((await call('responder', { questionId: q, choice: questao(q)!.correta, mode: 'trilha' })).statusCode).toBe(200);
   });
 });

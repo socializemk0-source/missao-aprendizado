@@ -103,9 +103,21 @@ describe('captura de e-mail', () => {
 describe('/privacidade', () => {
   it('abre sem login e explica dados, uso, parceiros e direitos', () => {
     renderAt('/privacidade', { status: 'signedOut' });
-    for (const name of ['Política de privacidade', 'Quais dados guardamos', 'Para que usamos', 'Com quem compartilhamos', 'Seus direitos']) {
+    for (const name of ['Política de privacidade', 'Quais dados guardamos', 'Para que usamos', 'Com quem compartilhamos', 'Cookies e anúncios', 'Seus direitos']) {
       expect(screen.getByRole('heading', { name })).toBeInTheDocument();
     }
+  });
+
+  it('explica os cookies de anúncio (Meta, TikTok, Google) e deixa mudar a escolha', async () => {
+    const consent = await import('../../src/lib/consentimento');
+    consent.escolherCookies('recusado');
+    renderAt('/privacidade', { status: 'signedOut' });
+    const texto = document.body.textContent ?? '';
+    for (const t of ['Meta', 'TikTok', 'Google', 'Aceitar', 'nada disso é enviado à Meta']) expect(texto).toContain(t);
+    expect(consent.avisoCookiesAberto()).toBe(false);
+    await userEvent.click(screen.getByRole('button', { name: 'Mudar minha escolha de cookies' }));
+    expect(consent.avisoCookiesAberto()).toBe(true);
+    consent.limparCookiesParaTestes();
   });
 });
 
