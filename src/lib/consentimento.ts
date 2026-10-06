@@ -32,7 +32,13 @@ export function definirConsentimento(aceito: boolean): void {
 
 // Quando o navegador bloqueia o armazenamento, lembramos a escolha só na memória.
 let memoria: Consentimento | null = null;
+/** Chave temporária: só exige aceite quando VITE_EXIGIR_CONSENTIMENTO='true'. Sem ela, mede todo mundo. */
+export function exigeConsentimento(): boolean {
+  return import.meta.env.VITE_EXIGIR_CONSENTIMENTO === 'true';
+}
+
 export function consentimentoEfetivo(): Consentimento {
+  if (!exigeConsentimento()) return 'aceito';
   const salvo = consentimentoAtual();
   return salvo !== 'pendente' ? salvo : (memoria ?? 'pendente');
 }

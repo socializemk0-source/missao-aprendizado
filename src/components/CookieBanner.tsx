@@ -3,12 +3,12 @@
 
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
-import { aoMudarConsentimento, consentimentoEfetivo, definirConsentimento } from '../lib/consentimento';
+import { aoMudarConsentimento, consentimentoEfetivo, definirConsentimento, exigeConsentimento } from '../lib/consentimento';
 
 export function CookieBanner() {
   const [pendente, setPendente] = useState(() => consentimentoEfetivo() === 'pendente');
   useEffect(() => aoMudarConsentimento((c) => setPendente(c === 'pendente')), []);
-  if (!pendente) return null;
+  if (!exigeConsentimento() || !pendente) return null;
 
   return (
     <section className="cookie-banner" role="region" aria-label="Cookies e privacidade" data-no-track>
