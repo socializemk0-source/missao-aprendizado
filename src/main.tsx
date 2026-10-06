@@ -6,6 +6,7 @@ import { AuthProvider } from './auth/AuthProvider';
 import { PwaNotices } from './components/PwaNotices';
 import { ProgressProvider } from './game/ProgressProvider';
 import { mostrarTicoNoConsole } from './lib/easter-egg';
+import { iniciarMetaPixel, registrarVisita } from './lib/meta-pixel';
 import './lib/prefs'; // aplica tema, animações e modo foco no <html>
 import { initPwa, registerServiceWorker } from './lib/pwa';
 import './styles/global.css';
@@ -22,11 +23,18 @@ if (import.meta.env.PROD) window.addEventListener('load', () => void registerSer
 // Surpresa para quem abre o F12 / "Inspecionar".
 mostrarTicoNoConsole();
 
+// Pixel da Meta (anúncios): só no site publicado; cada troca de tela conta uma visita.
+const appRouter = router();
+if (import.meta.env.PROD) {
+  iniciarMetaPixel();
+  appRouter.subscribe((state) => registrarVisita(state.location.pathname));
+}
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <AuthProvider>
       <ProgressProvider>
-        <RouterProvider router={router()} />
+        <RouterProvider router={appRouter} />
         <PwaNotices />
       </ProgressProvider>
     </AuthProvider>

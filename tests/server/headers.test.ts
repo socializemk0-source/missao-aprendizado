@@ -34,11 +34,13 @@ describe('cabeçalhos de segurança', () => {
     }
   });
 
-  it('CSP: só o próprio site, o Supabase e o CAPTCHA; nada de eval, objeto ou moldura de outro site', () => {
+  it('CSP: só o próprio site, o Supabase, o CAPTCHA e o pixel da Meta; nada de eval, objeto ou moldura de outro site', () => {
     const csp = headersFor('/hoje')['Content-Security-Policy']!;
     expect(directive(csp, 'default-src')).toBe("default-src 'self'");
     expect(directive(csp, 'script-src')).not.toMatch(/unsafe-inline|unsafe-eval|\*/);
-    expect(directive(csp, 'connect-src')).toBe("connect-src 'self' https://*.supabase.co wss://*.supabase.co https://challenges.cloudflare.com");
+    expect(directive(csp, 'connect-src')).toBe("connect-src 'self' https://*.supabase.co wss://*.supabase.co https://challenges.cloudflare.com https://www.facebook.com");
+    expect(directive(csp, 'script-src')).toContain('https://connect.facebook.net');
+    expect(directive(csp, 'img-src')).toContain('https://www.facebook.com');
     expect(directive(csp, 'object-src')).toBe("object-src 'none'");
     expect(directive(csp, 'frame-ancestors')).toBe("frame-ancestors 'none'");
     expect(directive(csp, 'base-uri')).toBe("base-uri 'self'");
