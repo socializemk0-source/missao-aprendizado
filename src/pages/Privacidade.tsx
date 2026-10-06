@@ -28,6 +28,7 @@ export function Privacidade() {
         <li><strong>Mercado Pago:</strong> processa os pagamentos do plano PRO.</li>
         <li><strong>Cloudflare (Turnstile):</strong> confere, no login e no cadastro, que quem está entrando não é um robô.</li>
         <li><strong>GitHub:</strong> guarda as cópias de segurança do banco, criptografadas (só nós temos a senha).</li>
+        <li><strong>Meta (Facebook e Instagram):</strong> o pixel da Meta registra as páginas visitadas no site, para medir os nossos anúncios. Não enviamos seu nome, e-mail nem suas respostas.</li>
         <li><strong>Resend:</strong> envia os e-mails de confirmação de cadastro e de troca de senha.</li>
       </ul>
       <p>No ranking, os outros alunos veem só o seu primeiro nome e o seu XP.</p>

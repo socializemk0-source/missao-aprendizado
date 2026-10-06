@@ -3,7 +3,7 @@
 Leia este arquivo no começo de cada sessão, em vez de refazer o diagnóstico.
 Atualize a linha da funcionalidade em todo PR que mexer nela.
 
-Última atualização: 05/10/2026 (revisão das questões por professor em `/professor`, backup semanal criptografado, controlador na privacidade).
+Última atualização: 06/10/2026 (pixel da Meta; antes: revisão das questões por professor em `/professor`, backup semanal criptografado, controlador na privacidade).
 
 Legenda: **OK** = funcionando · **Parcial** = existe, mas falta parte · **Ausente** = não existe.
 Prioridade: P0 bloqueia o uso · P1 jornada principal · P2 medição e retenção · P3 operação.
@@ -35,7 +35,7 @@ Prioridade: P0 bloqueia o uso · P1 jornada principal · P2 medição e retenç�
 | Jogos | Desafio relâmpago + Radar do Tico (certo ou errado com explicação), Memória do Tico, Caça-palavras e Cruzadinha. Conteúdo autoral (`content/jogos.ts`: 83 termos e 80 afirmações). Servidor sorteia, guarda o gabarito e decide XP (só nas 3 primeiras rodadas completas de cada jogo por dia) e recorde; jogo não gasta vida e conta para a sequência de dias | OK | Conteúdo dos jogos ainda sem revisão de professor | P2 | Professor revisa glossário e afirmações; depois, ranking semanal dos jogos |
 | Tutor IA | — | Ausente | — | P2 | Marco 3 |
 | Notificações no app | — | Ausente | — | P2 | Marco 3 |
-| Analytics (`v2.events`) | — | Ausente | — | P2 | Marco 2 |
+| Analytics (`v2.events`) | Pixel da Meta (`src/lib/meta-pixel.ts`) no site publicado: visita a cada tela, para os anúncios; liberado na CSP e citado na Privacidade. `v2.events` ainda não existe | Parcial | Sem eventos de conversão (cadastro, compra) no pixel nem medição própria | P2 | Marco 2 |
 | Admin | `/professor`: revisão das questões por professor (aprovar, pedir correção, descartar), com histórico em `v2.question_reviews` (migração 0014) e acesso por `v2.revisores` | Parcial | Cadastro de professor e leitura dos pedidos de correção ainda pelo SQL Editor | P3 | Marco 4 |
 | App instalável (PWA) | Manifesto, ícones do Tico (inclusive o adaptável do Android e o do iPhone), service worker (`public/sw.js`), página "Sem conexão", aviso "Sem internet", aviso "Tem uma versão nova do app — Atualizar", botão "Instalar o app" no Perfil (passo a passo no iPhone) e aviso de instalar na Trilha. API, XP, PRO e pagamentos nunca passam pelo cache | OK | Login com Google e volta do Mercado Pago dentro do app instalado no iPhone ainda não foram testados num aparelho | P1 | Dono testa no Android e no iPhone (roteiro no PR). Depois: notificações (Marco 3) e estudar sem internet |
 | Termos, privacidade, SEO | `/termos` (empresa e CNPJ, PRO sem renovação, desistência em 7 dias, IA, conduta, exclusão da conta, lei aplicável), `/privacidade` (controlador com empresa e CNPJ, cópias de segurança por até 90 dias, plano de estudos, Turnstile, Resend, retenção, exclusão), aceite no cadastro, links no rodapé (Termos, Privacidade, Instagram), e-mail `contato@aprovatico.com.br`, prévia do link (Open Graph, `public/og.jpg`), `robots.txt` e `sitemap.xml` | Parcial | Textos sem revisão de advogado e sem endereço | P3 | Dono pede revisão a um advogado e envia o sitemap no Search Console |
