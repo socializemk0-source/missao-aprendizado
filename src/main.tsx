@@ -8,6 +8,7 @@ import { PwaNotices } from './components/PwaNotices';
 import { ProgressProvider } from './game/ProgressProvider';
 import { mostrarTicoNoConsole } from './lib/easter-egg';
 import { iniciarMedicao } from './lib/medicao';
+import { ligarPixel } from './lib/pixel';
 import './lib/prefs'; // aplica tema, animações e modo foco no <html>
 import { initPwa, registerServiceWorker } from './lib/pwa';
 import './styles/global.css';
@@ -26,6 +27,7 @@ mostrarTicoNoConsole();
 
 // Medição de marketing: origem da visita e páginas abertas (o pixel só com aceite).
 const appRouter = router();
+void ligarPixel();
 iniciarMedicao(appRouter);
 
 createRoot(document.getElementById('root')!).render(

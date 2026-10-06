@@ -1,10 +1,10 @@
 // Consentimento dos cookies de anúncio (LGPD). Sem "Aceitar", nada de pixel
 // e nada é enviado a plataformas de anúncio. A escolha fica no aparelho
 // (vale para o visitante sem conta) e, com login, também no servidor
-// (POST /api/eventos), para o servidor respeitar a mesma escolha.
+// (sincronizarConsentimento em medicao.ts), para o servidor respeitar a
+// mesma escolha.
 
 import { useSyncExternalStore } from 'react';
-import { api } from './api';
 
 export type Escolha = 'aceito' | 'recusado';
 
@@ -58,17 +58,6 @@ export function useCookies(): { escolha: Escolha | null; em: string | null; avis
   useSyncExternalStore(onCookies, () => version, () => version);
   const atual = escolhaCookies();
   return { escolha: atual?.escolha ?? null, em: atual?.em ?? null, aviso: avisoCookiesAberto() };
-}
-
-// Leva a escolha para o servidor (só com login). Erro aqui não atrapalha nada.
-export async function sincronizarConsentimento(): Promise<void> {
-  const atual = escolhaCookies();
-  if (!atual) return;
-  try {
-    await api('/api/eventos', { method: 'POST', body: JSON.stringify({ consentimento: atual.escolha === 'aceito' }) });
-  } catch {
-    // tenta de novo no próximo login ou na próxima mudança
-  }
 }
 
 // Só para os testes.

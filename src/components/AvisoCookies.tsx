@@ -3,7 +3,8 @@
 
 import { useEffect, useRef } from 'react';
 import { useAuth } from '../auth/AuthProvider';
-import { escolherCookies, sincronizarConsentimento, useCookies, type Escolha } from '../lib/consentimento';
+import { escolherCookies, useCookies, type Escolha } from '../lib/consentimento';
+import { sincronizarConsentimento } from '../lib/medicao';
 
 export function AvisoCookies() {
   const { status, session } = useAuth();

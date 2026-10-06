@@ -70,6 +70,12 @@ async function enviar(eventos: EventoParaPixel[]): Promise<void> {
   }
 }
 
+// Leva a escolha de cookies (e a origem) para o servidor, sem evento novo.
+// Com login, os pendentes do servidor que voltarem vão para o pixel.
+export function sincronizarConsentimento(): Promise<void> {
+  return enviar([]);
+}
+
 export function registrar(nome: EventoNavegador, dados: Record<string, string | number> = {}): void {
   if (!ligada) return;
   const evento = { nome, eventId: novoEventId(), dados };

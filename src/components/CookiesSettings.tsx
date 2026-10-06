@@ -1,7 +1,8 @@
 // Perfil → Cookies de anúncio: ver e mudar a escolha a qualquer momento.
 
 import { useAuth } from '../auth/AuthProvider';
-import { escolherCookies, sincronizarConsentimento, useCookies, type Escolha } from '../lib/consentimento';
+import { escolherCookies, useCookies, type Escolha } from '../lib/consentimento';
+import { sincronizarConsentimento } from '../lib/medicao';
 
 const dia = (iso: string) => new Date(iso).toLocaleDateString('pt-BR');
 
