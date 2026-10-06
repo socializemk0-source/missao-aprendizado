@@ -14,7 +14,7 @@ export interface ContaStore {
 // Tabelas com user_id que são apagadas por completo.
 const TABELAS = [
   'question_state', 'answers', 'phase_completions', 'mission_claims', 'user_stats',
-  'essays', 'simulados', 'game_rounds', 'study_plans', 'profiles',
+  'essays', 'simulados', 'game_rounds', 'study_plans', 'profiles', 'marketing_usuarios',
 ] as const;
 
 export const postgresConta: ContaStore = {

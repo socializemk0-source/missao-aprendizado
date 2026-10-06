@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { RouterProvider } from 'react-router';
 import { router } from './app/router';
 import { AuthProvider } from './auth/AuthProvider';
+import { AvisoCookies } from './components/AvisoCookies';
 import { PwaNotices } from './components/PwaNotices';
 import { ProgressProvider } from './game/ProgressProvider';
 import { mostrarTicoNoConsole } from './lib/easter-egg';
@@ -28,6 +29,7 @@ createRoot(document.getElementById('root')!).render(
       <ProgressProvider>
         <RouterProvider router={router()} />
         <PwaNotices />
+        <AvisoCookies />
       </ProgressProvider>
     </AuthProvider>
   </StrictMode>,
