@@ -2,7 +2,8 @@
 // aluno. Ficam só os registros de pagamento (v2.payments e as compras pagas
 // em v2.checkouts), que a lei manda guardar (obrigação fiscal e de defesa do
 // consumidor; LGPD, art. 16, I) — sem nome nem e-mail, só o id que deixa de
-// existir quando o login é removido.
+// existir quando o login é removido. Os eventos de marketing (v2.eventos_marketing)
+// ficam só como contagem, sem ligação com o aluno.
 
 import { sql } from 'drizzle-orm';
 import { db } from './db.js';
@@ -24,6 +25,8 @@ export const postgresConta: ContaStore = {
       await tx.execute(sql`delete from v2.checkouts where user_id = ${userId} and paid = false`);
       await tx.execute(sql`delete from v2.rate_limits where chave like ${`%:${userId}`}`);
       if (email) await tx.execute(sql`delete from v2.leads where email = ${email.trim().toLowerCase()}`);
+      // Eventos de marketing ficam só como contagem: sem o aluno e sem os códigos de clique.
+      await tx.execute(sql`update v2.eventos_marketing set user_id = null, origem = origem - 'fbclid' - 'gclid' - 'ttclid' where user_id = ${userId}`);
     });
   },
 };

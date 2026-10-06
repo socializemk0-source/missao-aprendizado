@@ -7,6 +7,7 @@ import { AvisoCookies } from './components/AvisoCookies';
 import { PwaNotices } from './components/PwaNotices';
 import { ProgressProvider } from './game/ProgressProvider';
 import { mostrarTicoNoConsole } from './lib/easter-egg';
+import { iniciarMedicao } from './lib/medicao';
 import './lib/prefs'; // aplica tema, animações e modo foco no <html>
 import { initPwa, registerServiceWorker } from './lib/pwa';
 import './styles/global.css';
@@ -23,11 +24,15 @@ if (import.meta.env.PROD) window.addEventListener('load', () => void registerSer
 // Surpresa para quem abre o F12 / "Inspecionar".
 mostrarTicoNoConsole();
 
+// Medição de marketing: origem da visita e páginas abertas (o pixel só com aceite).
+const appRouter = router();
+iniciarMedicao(appRouter);
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <AuthProvider>
       <ProgressProvider>
-        <RouterProvider router={router()} />
+        <RouterProvider router={appRouter} />
         <PwaNotices />
         <AvisoCookies />
       </ProgressProvider>

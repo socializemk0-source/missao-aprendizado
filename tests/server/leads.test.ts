@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { createLeadsHandler } from '../../api/leads.js';
 import type { LeadStore } from '../../server/leads.js';
+import { memoryMarketing } from '../../server/marketing.js';
 import { makeReq, makeRes } from './helpers.js';
 
 function setup() {
@@ -69,5 +70,35 @@ describe('POST /api/leads', () => {
     const res = makeRes();
     await createLeadsHandler({ store: { save: async () => {} } })(makeReq({ method: 'GET' }), res);
     expect(res.statusCode).toBe(405);
+  });
+});
+
+describe('POST /api/leads — medição', () => {
+  async function postCom(medicao: ReturnType<typeof memoryMarketing>, body: unknown) {
+    const store: LeadStore = { async save() {} };
+    const res = makeRes();
+    await createLeadsHandler({ store, medicao })(makeReq({ method: 'POST', body, headers: { 'x-forwarded-for': '2.2.2.2' } }), res);
+    return res;
+  }
+
+  it('registra o Lead com o mesmo event_id do pixel, a origem e o aceite dos cookies', async () => {
+    const medicao = memoryMarketing();
+    const res = await postCom(medicao, { ...valid, eventId: 'lead-evento-01', consentimentoCookies: true, origem: { utm_source: 'instagram', utm_medium: 'organico' } });
+    expect(res.statusCode).toBe(201);
+    expect(medicao.eventos).toHaveLength(1);
+    expect(medicao.eventos[0]).toMatchObject({ nome: 'Lead', eventId: 'lead-evento-01', userId: null, consentimento: true, envio: { meta_pixel: 'navegador' }, origem: { utm_source: 'instagram' } });
+  });
+
+  it('sem aceite fica marcado; e-mail nunca vai para o registro de eventos', async () => {
+    const medicao = memoryMarketing();
+    await postCom(medicao, valid);
+    expect(medicao.eventos[0]).toMatchObject({ nome: 'Lead', consentimento: false, envio: { meta_pixel: 'sem_consentimento' } });
+    expect(JSON.stringify(medicao.eventos)).not.toContain('maria');
+  });
+
+  it('erro na medição não impede a inscrição', async () => {
+    const medicao = memoryMarketing();
+    medicao.registrar = async () => { throw new Error('banco fora'); };
+    expect((await postCom(medicao, valid)).statusCode).toBe(201);
   });
 });

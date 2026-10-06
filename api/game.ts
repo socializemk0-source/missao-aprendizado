@@ -25,11 +25,15 @@ import { jsonBody, methodNotAllowed, type ApiRequest, type ApiResponse } from '.
 import { verifySupabaseToken } from '../server/supabase.js';
 import type { JogoTipo, Mode } from '../shared/game.js';
 import { errorText } from '../server/log.js';
+import { eventoDoAluno, type MarketingStore } from '../server/marketing.js';
+import { postgresMarketing } from '../server/marketing-pg.js';
 
 const MODES: Mode[] = ['trilha', 'revisar', 'pratica', 'desafio'];
 const one = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v) ?? '';
 
-export function createGameHandler(deps: { verifyToken: VerifyToken; store: GameStore; limiter?: RateLimiter | null }) {
+// medicao: registro próprio de eventos de marketing (onboarding e 1ª fase).
+// Sem ele (testes), nada é registrado; com erro, o estudo segue igual.
+export function createGameHandler(deps: { verifyToken: VerifyToken; store: GameStore; limiter?: RateLimiter | null; medicao?: MarketingStore | null }) {
   const { store } = deps;
   return async function gameHandler(req: ApiRequest, res: ApiResponse): Promise<void> {
     if (req.method !== 'GET' && req.method !== 'POST') return methodNotAllowed(res, ['GET', 'POST']);
@@ -66,7 +70,9 @@ export function createGameHandler(deps: { verifyToken: VerifyToken; store: GameS
           if (typeof body.questionId !== 'string' || typeof body.choice !== 'number' || !MODES.includes(mode)) {
             return res.status(400).json({ error: 'Envio inválido.', code: 'ACAO_INVALIDA' });
           }
-          return res.status(200).json(await answer(store, user.id, { questionId: body.questionId, choice: body.choice, mode }));
+          const resultado = await answer(store, user.id, { questionId: body.questionId, choice: body.choice, mode });
+          if (resultado.faseConcluida && deps.medicao) await eventoDoAluno(deps.medicao, user.id, 'FirstPhaseCompleted');
+          return res.status(200).json(resultado);
         }
         if (action === 'simulado-iniciar') {
           const input = parseSimuladoInput(body);
@@ -82,6 +88,7 @@ export function createGameHandler(deps: { verifyToken: VerifyToken; store: GameS
           const perfil = parsePerfilEstudo(body, studyDay(new Date()));
           if (typeof perfil === 'string') return res.status(400).json({ error: perfil, code: 'ACAO_INVALIDA' });
           await saveStudyProfile(store, user.id, perfil);
+          if (deps.medicao) await eventoDoAluno(deps.medicao, user.id, 'OnboardingCompleted');
           return res.status(200).json(await getPlano(store, user.id));
         }
         if (action === 'jogo-iniciar') {
@@ -108,4 +115,4 @@ export function createGameHandler(deps: { verifyToken: VerifyToken; store: GameS
   };
 }
 
-export default createGameHandler({ verifyToken: verifySupabaseToken, store: postgresGame, limiter: postgresLimiter });
+export default createGameHandler({ verifyToken: verifySupabaseToken, store: postgresGame, limiter: postgresLimiter, medicao: postgresMarketing });

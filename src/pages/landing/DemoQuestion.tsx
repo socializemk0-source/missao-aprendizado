@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
+import { registrar } from '../../lib/medicao';
 
 const OPTIONS = ['60%', '70%', '75%', '80%'];
 const CORRECT = 2;
@@ -29,7 +30,10 @@ export function DemoQuestion() {
         })}
       </div>
       {!checked ? (
-        <button type="button" className="btn btn-primary btn-block" disabled={selected === null} onClick={() => setChecked(true)}>
+        <button type="button" className="btn btn-primary btn-block" disabled={selected === null} onClick={() => {
+          setChecked(true);
+          registrar('DemoQuestionAnswered', { acertou: selected === CORRECT ? 'sim' : 'nao' });
+        }}>
           Conferir resposta
         </button>
       ) : (
