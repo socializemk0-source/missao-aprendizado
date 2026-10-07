@@ -6,14 +6,18 @@
 import { authenticate, type VerifyToken } from '../server/auth.js';
 import { jsonBody, methodNotAllowed, type ApiRequest, type ApiResponse } from '../server/http.js';
 import { postgresProfiles, type ProfileStore, type ProfileUpdate } from '../server/profiles.js';
+import { NOME_MAX, NOME_VALIDO } from '../shared/nome.js';
 import { verifySupabaseToken } from '../server/supabase.js';
 import { errorText } from '../server/log.js';
 import { LIMITES, limitarAluno, limitarIp, postgresLimiter, type RateLimiter } from '../server/limite.js';
 import { postgresConta, supabaseRemoverLogin, type ContaStore, type RemoverLogin } from '../server/conta.js';
 
 // Campo editável → tamanho máximo. Obrigatórios não aceitam vazio/null.
+// Sinais de HTML e caracteres de controle não entram em nenhum campo.
+const PROIBIDO = /[<>\p{Cc}]/u;
+
 const EDITABLE: Record<keyof ProfileUpdate, { max: number; required: boolean }> = {
-  displayName: { max: 60, required: true },
+  displayName: { max: NOME_MAX, required: true },
   targetExam: { max: 80, required: false },
   preferredBanca: { max: 40, required: false },
   city: { max: 80, required: false },
@@ -33,6 +37,8 @@ export function parseProfileUpdate(body: Record<string, unknown> | null): Profil
     const value = raw.trim();
     if (!value && rule.required) return `${key} não pode ficar vazio.`;
     if (value.length > rule.max) return `${key} passa de ${rule.max} caracteres.`;
+    if (key === 'displayName' && !NOME_VALIDO.test(value)) return "O nome só pode ter letras, números, espaços e . ' - _ ( ).";
+    if (PROIBIDO.test(value)) return `${key} não pode ter os sinais < ou >.`;
     update[key as keyof ProfileUpdate] = (value || null) as never;
   }
   if (Object.keys(update).length === 0) return 'Nada para atualizar.';

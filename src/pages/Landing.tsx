@@ -214,7 +214,7 @@ export function Landing() {
             <p>Crie sua conta grátis e responda a primeira questão em menos de um minuto.</p>
             <div className="landing-cta">{primaryCta}</div>
           </div>
-          <Tico pose="comemorando" />
+          <Tico pose="comemorando" loading="lazy" />
         </section>
       </main>
 

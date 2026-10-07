@@ -15,6 +15,7 @@ import {
 } from '../shared/game.js';
 import type { AgendaRevisao, PerfilEstudo } from '../shared/estudo.js';
 import { addDays, aposResposta } from './revisao.js';
+import { limparNome } from '../shared/nome.js';
 
 // ---------------------------------------------------------------- Store
 export interface Stats {
@@ -495,7 +496,8 @@ export async function getSubjects(store: GameStore, userId: string): Promise<Sub
 }
 
 // No ranking (que todo aluno vê) aparece só o primeiro nome.
-const primeiroNome = (nome: string) => nome.trim().split(/\s+/)[0] || 'Aluno';
+// limparNome: um nome antigo, gravado antes da regra do perfil, sai sem sinais de HTML.
+const primeiroNome = (nome: string) => limparNome(nome).split(' ')[0] || 'Aluno';
 
 export async function getRanking(store: GameStore, userId: string, limit = 20, now = new Date()): Promise<{ top: RankingEntry[]; voce: RankingEntry }> {
   const top = await store.topXp(limit);

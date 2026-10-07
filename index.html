@@ -32,6 +32,17 @@
         document.documentElement.dataset.theme = p.theme === 'dark'
           || (p.theme === 'auto' && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
       } catch (e) {}
+      // Página inicial no celular: pede já a imagem principal (o maior elemento
+      // da tela), sem esperar o JavaScript do app montar a página.
+      if (location.pathname === '/') {
+        var l = document.createElement('link');
+        l.rel = 'preload';
+        l.as = 'image';
+        l.href = '/landing/hero-mobile.webp';
+        l.media = '(max-width: 640px)';
+        l.setAttribute('fetchpriority', 'high');
+        document.head.appendChild(l);
+      }
     </script>
     <title>Aprova Tico — Estude para concursos em forma de aventura</title>
   </head>

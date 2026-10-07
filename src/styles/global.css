@@ -4,18 +4,18 @@
 :root {
   --bg: #f9fbfd;
   --fg: #263d52;
-  --muted-fg: #6e8296;
+  --muted-fg: #5b6f82;
   --muted: #e8eef4;
   --border: #e1e9ef;
   --surface: #fff;
   --surface-2: #f7fbff;
   --heading: #1d3348;
   --text-2: #4d6478;
-  --subtle: #91a2b2;
+  --subtle: #61758a;
   --link: #3a82c4;
   --topbar-bg: rgba(255, 255, 255, .85);
   --primary: #1688e8;
-  --primary-strong: #1581d6;
+  --primary-strong: #1271bf;
   --primary-soft: #edf7ff;
   --primary-soft-border: #c7e6ff;
   --primary-deep: #1e40af;
@@ -115,7 +115,7 @@ html[data-focus='on'][data-reading='sepia'] {
   --subtle: #8f7f69;
   --link: #3a82c4;
   --topbar-bg: rgba(255, 255, 255, .85);
-  --primary-strong: #1581d6;
+  --primary-strong: #1271bf;
   --primary-soft: #edf7ff;
   --primary-soft-border: #c7e6ff;
   --primary-deep: #1e40af;
@@ -147,17 +147,17 @@ html[data-focus='on'][data-reading='sepia'] {
 html[data-theme='dark'] .landing {
   --bg: #f9fbfd;
   --fg: #263d52;
-  --muted-fg: #6e8296;
+  --muted-fg: #5b6f82;
   --muted: #e8eef4;
   --border: #e1e9ef;
   --surface: #fff;
   --surface-2: #f7fbff;
   --heading: #1d3348;
   --text-2: #4d6478;
-  --subtle: #91a2b2;
+  --subtle: #61758a;
   --link: #3a82c4;
   --topbar-bg: rgba(255, 255, 255, .85);
-  --primary-strong: #1581d6;
+  --primary-strong: #1271bf;
   --primary-soft: #edf7ff;
   --primary-soft-border: #c7e6ff;
   --primary-deep: #1e40af;

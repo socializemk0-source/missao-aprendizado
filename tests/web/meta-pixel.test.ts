@@ -35,6 +35,19 @@ describe('Pixel da Meta (Facebook)', () => {
     expect((c[1]![3] as { eventID: string }).eventID).toMatch(/^[0-9a-f-]{8,}$/);
   });
 
+  it('com a página ainda carregando, o script da Meta só entra depois dela (não atrasa a primeira tela); os eventos esperam na fila', () => {
+    Object.defineProperty(document, 'readyState', { configurable: true, get: () => 'loading' });
+    try {
+      iniciarMetaPixel();
+      expect(document.querySelectorAll('script[src*="connect.facebook.net"]')).toHaveLength(0);
+      expect(chamadas()[0]).toEqual(['init', META_PIXEL_ID]);
+      window.dispatchEvent(new Event('load'));
+      expect(document.querySelectorAll('script[src*="connect.facebook.net"]')).toHaveLength(1);
+    } finally {
+      delete (document as { readyState?: unknown }).readyState; // volta ao valor do Document
+    }
+  });
+
   it('não carrega duas vezes', () => {
     iniciarMetaPixel();
     iniciarMetaPixel();

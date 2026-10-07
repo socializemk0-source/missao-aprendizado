@@ -5,6 +5,7 @@ import { eq, sql } from 'drizzle-orm';
 import type { Identity } from './auth.js';
 import { db } from './db.js';
 import { profiles, type ProfileRow } from './schema.js';
+import { limparNome } from '../shared/nome.js';
 
 export interface Profile {
   displayName: string;
@@ -22,7 +23,7 @@ export interface ProfileStore {
 }
 
 export function defaultDisplayName(identity: Identity): string {
-  return identity.name ?? identity.email?.split('@')[0] ?? 'Concurseiro(a)';
+  return limparNome(identity.name ?? '') || limparNome(identity.email?.split('@')[0] ?? '') || 'Concurseiro(a)';
 }
 
 function toProfile(row: ProfileRow): Profile {

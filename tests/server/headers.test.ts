@@ -44,6 +44,11 @@ describe('cabeçalhos de segurança', () => {
     expect(directive(csp, 'object-src')).toBe("object-src 'none'");
     expect(directive(csp, 'frame-ancestors')).toBe("frame-ancestors 'none'");
     expect(directive(csp, 'base-uri')).toBe("base-uri 'self'");
+    // Caminho alternativo do pixel (formulário numa moldura escondida): só o domínio da Meta.
+    expect(directive(csp, 'form-action')).toBe("form-action 'self' https://www.facebook.com");
+    expect(directive(csp, 'frame-src')).toBe('frame-src https://challenges.cloudflare.com https://www.facebook.com');
+    // Servidores de nuvem que o pixel tenta usar (…on.aws, …run.app) seguem bloqueados.
+    expect(csp).not.toMatch(/on\.aws|run\.app/);
   });
 
   it('o script embutido do index.html está liberado pelo hash certo', () => {
@@ -53,10 +58,32 @@ describe('cabeçalhos de segurança', () => {
     expect(directive(headersFor('/')['Content-Security-Policy']!, 'script-src')).toContain(hash);
   });
 
+  it('na página inicial, o script embutido antecipa a imagem principal do celular (LCP)', () => {
+    const script = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map((m) => m[1]!)[0]!;
+    expect(script).toContain('/landing/hero-mobile.webp');
+    expect(script).toContain("rel = 'preload'");
+    expect(script).toContain('(max-width: 640px)');
+  });
+
   it('a página "Sem conexão" (estática, com estilo e script embutidos) tem a regra própria', () => {
     const csp = headersFor('/offline.html')['Content-Security-Policy']!;
     expect(directive(csp, 'script-src')).toContain("'unsafe-inline'");
     expect(directive(csp, 'connect-src')).toBe("connect-src 'self'");
     expect(directive(csp, 'frame-ancestors')).toBe("frame-ancestors 'none'");
+  });
+
+  it('API não libera leitura por outro site: CORS só para o domínio do app (pentest VULN-001)', () => {
+    for (const path of ['/api/me', '/api/game', '/api/pagamentos/webhook']) {
+      const h = headersFor(path);
+      expect(h['Access-Control-Allow-Origin'], path).toBe('https://www.aprovatico.com.br');
+      expect(h['Access-Control-Allow-Credentials'], path).toBeUndefined();
+    }
+    for (const rule of vercel.headers) for (const h of rule.headers) expect(h.value, `${rule.source} ${h.key}`).not.toBe('*');
+  });
+
+  it('a página do app (index.html) é revalidada a cada acesso, para não servir versão velha', () => {
+    for (const path of ['/', '/hoje', '/index.html']) expect(headersFor(path)['Cache-Control'], path).toBe('public, max-age=0, must-revalidate');
+    expect(headersFor('/assets/index-abc.js')['Cache-Control']).toBeUndefined();
+    expect(headersFor('/api/me')['Cache-Control']).toBeUndefined();
   });
 });

@@ -290,6 +290,17 @@ describe('/api/pagamentos/webhook', () => {
     expect(store.pro.size).toBe(0);
   });
 
+  it('aviso no formato antigo fica registrado no log (para notar se o Mercado Pago só mandar nesse formato)', async () => {
+    const { call } = setup({ '111': payment() });
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    try {
+      await call({ id: '111', topic: 'payment' }, {});
+      expect(warn).toHaveBeenCalledWith(expect.stringContaining('formato antigo'), expect.objectContaining({ topic: 'payment' }));
+    } finally {
+      warn.mockRestore();
+    }
+  });
+
   it('sem segredo configurado → 503', async () => {
     const { call } = setup({}, '');
     expect((await call({ 'data.id': '1', type: 'payment' }, {})).statusCode).toBe(503);
