@@ -44,6 +44,11 @@ describe('cabeçalhos de segurança', () => {
     expect(directive(csp, 'object-src')).toBe("object-src 'none'");
     expect(directive(csp, 'frame-ancestors')).toBe("frame-ancestors 'none'");
     expect(directive(csp, 'base-uri')).toBe("base-uri 'self'");
+    // Caminho alternativo do pixel (formulário numa moldura escondida): só o domínio da Meta.
+    expect(directive(csp, 'form-action')).toBe("form-action 'self' https://www.facebook.com");
+    expect(directive(csp, 'frame-src')).toBe('frame-src https://challenges.cloudflare.com https://www.facebook.com');
+    // Servidores de nuvem que o pixel tenta usar (…on.aws, …run.app) seguem bloqueados.
+    expect(csp).not.toMatch(/on\.aws|run\.app/);
   });
 
   it('o script embutido do index.html está liberado pelo hash certo', () => {
