@@ -59,10 +59,16 @@ export function iniciarMetaPixel(): void {
       n.version = '2.0';
       w.fbq = n;
       if (!w._fbq) w._fbq = n;
-      const s = document.createElement('script');
-      s.async = true;
-      s.src = SCRIPT_URL;
-      document.head.appendChild(s);
+      // O script da Meta só entra depois que a página terminou de carregar:
+      // não disputa a rede com a primeira tela. As chamadas esperam na fila.
+      const carregar = () => {
+        const s = document.createElement('script');
+        s.async = true;
+        s.src = SCRIPT_URL;
+        document.head.appendChild(s);
+      };
+      if (document.readyState === 'complete') carregar();
+      else window.addEventListener('load', carregar, { once: true });
     }
     w.fbq!('init', META_PIXEL_ID);
     w.fbq!('track', 'PageView', {}, { eventID: novoEventId() });

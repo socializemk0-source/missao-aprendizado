@@ -58,6 +58,13 @@ describe('cabeçalhos de segurança', () => {
     expect(directive(headersFor('/')['Content-Security-Policy']!, 'script-src')).toContain(hash);
   });
 
+  it('na página inicial, o script embutido antecipa a imagem principal do celular (LCP)', () => {
+    const script = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map((m) => m[1]!)[0]!;
+    expect(script).toContain('/landing/hero-mobile.webp');
+    expect(script).toContain("rel = 'preload'");
+    expect(script).toContain('(max-width: 640px)');
+  });
+
   it('a página "Sem conexão" (estática, com estilo e script embutidos) tem a regra própria', () => {
     const csp = headersFor('/offline.html')['Content-Security-Policy']!;
     expect(directive(csp, 'script-src')).toContain("'unsafe-inline'");

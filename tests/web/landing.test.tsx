@@ -25,6 +25,12 @@ describe('página inicial', () => {
     expect(screen.queryByText(/Questões das provas de/)).toBeNull();
   });
 
+  it('a imagem principal carrega já; o Tico do fim da página só quando chegar perto da tela', () => {
+    const { container } = renderAt('/', { status: 'signedOut' });
+    expect(container.querySelector('img.lp-hero-img')).not.toHaveAttribute('loading');
+    expect(container.querySelector('.lp-final img[src="/tico/comemorando.webp"]')).toHaveAttribute('loading', 'lazy');
+  });
+
   it('logado: as chamadas levam para a trilha, sem redirecionar sozinho', () => {
     const { router } = renderAt('/', { status: 'signedIn', session, me });
     expect(router.state.location.pathname).toBe('/');
