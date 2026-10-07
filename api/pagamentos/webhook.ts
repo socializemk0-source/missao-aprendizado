@@ -19,8 +19,13 @@ export function createWebhookHandler(deps: { store: PaymentStore; client: MpClie
     }
     // Formato antigo (IPN/Feed: ?topic=...&id=...) não tem assinatura. O mesmo
     // pagamento chega também pelo aviso assinado, então este é só ignorado
-    // (200, para o Mercado Pago não insistir) e nada é consultado.
-    if (one(req.query.topic) && !one(req.query['data.id'])) return res.status(200).json({ ok: true, ignored: true });
+    // (200, para o Mercado Pago não insistir) e nada é consultado. Fica no
+    // log: se só este formato chegar, falta ligar o aviso assinado no painel.
+    const topic = one(req.query.topic);
+    if (topic && !one(req.query['data.id'])) {
+      console.warn('[webhook] aviso no formato antigo ignorado', { topic, id: one(req.query.id) });
+      return res.status(200).json({ ok: true, ignored: true });
+    }
 
     const body = jsonBody(req) ?? {};
     const data = (body.data && typeof body.data === 'object' ? body.data : {}) as { id?: unknown };

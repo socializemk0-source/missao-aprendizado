@@ -59,4 +59,19 @@ describe('cabeçalhos de segurança', () => {
     expect(directive(csp, 'connect-src')).toBe("connect-src 'self'");
     expect(directive(csp, 'frame-ancestors')).toBe("frame-ancestors 'none'");
   });
+
+  it('API não libera leitura por outro site: CORS só para o domínio do app (pentest VULN-001)', () => {
+    for (const path of ['/api/me', '/api/game', '/api/pagamentos/webhook']) {
+      const h = headersFor(path);
+      expect(h['Access-Control-Allow-Origin'], path).toBe('https://www.aprovatico.com.br');
+      expect(h['Access-Control-Allow-Credentials'], path).toBeUndefined();
+    }
+    for (const rule of vercel.headers) for (const h of rule.headers) expect(h.value, `${rule.source} ${h.key}`).not.toBe('*');
+  });
+
+  it('a página do app (index.html) é revalidada a cada acesso, para não servir versão velha', () => {
+    for (const path of ['/', '/hoje', '/index.html']) expect(headersFor(path)['Cache-Control'], path).toBe('public, max-age=0, must-revalidate');
+    expect(headersFor('/assets/index-abc.js')['Cache-Control']).toBeUndefined();
+    expect(headersFor('/api/me')['Cache-Control']).toBeUndefined();
+  });
 });

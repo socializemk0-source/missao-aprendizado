@@ -221,4 +221,13 @@ describe('praticar, desafio, disciplinas e ranking', () => {
     const { top } = await getRanking(store, 'u2', 20, T0);
     expect(top.map((t) => t.nome).sort()).toEqual(['Carla', 'Zé']);
   });
+
+  it('nome antigo com HTML aparece no ranking sem os sinais de marcação (pentest VULN-012/028)', async () => {
+    const store = memoryGameStore({ names: { u1: '<img src=x onerror=alert(1)>', u2: '<script>' } });
+    await answer(store, 'u1', { questionId: 'pt-acent-1', choice: right('pt-acent-1'), mode: 'trilha' }, T0);
+    await answer(store, 'u2', { questionId: 'pt-acent-1', choice: right('pt-acent-1'), mode: 'trilha' }, T0);
+    const { top } = await getRanking(store, 'u2', 20, T0);
+    for (const t of top) expect(t.nome).not.toMatch(/[<>="]/);
+    expect(top.map((t) => t.nome).sort()).toEqual(['img', 'script']);
+  });
 });

@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { createMeHandler } from '../../api/me.js';
+import { defaultDisplayName } from '../../server/profiles.js';
 import { fakeVerify, makeReq, makeRes, memoryProfiles } from './helpers.js';
 
 function setup() {
@@ -49,6 +50,15 @@ describe('GET /api/me', () => {
   });
 });
 
+describe('nome inicial do perfil', () => {
+  it('nome do cadastro (Google) com HTML vira só o texto; sem nada aproveitável, usa o e-mail', () => {
+    expect(defaultDisplayName({ id: 'x', email: 'ana@x.dev', name: '<img src=x onerror=alert(1)>' })).toBe('img srcx onerroralert(1)');
+    expect(defaultDisplayName({ id: 'x', email: 'ana.silva+t@x.dev', name: '<>' })).toBe('ana.silvat');
+    expect(defaultDisplayName({ id: 'x', email: null, name: '"<>"' })).toBe('Concurseiro(a)');
+    expect(defaultDisplayName({ id: 'x', email: 'a@x.dev', name: 'Maria ' + 'a'.repeat(80) })).toHaveLength(60);
+  });
+});
+
 describe('PATCH /api/me', () => {
   it('atualiza só os campos enviados e devolve o perfil novo', async () => {
     const { handler } = setup();
@@ -67,6 +77,40 @@ describe('PATCH /api/me', () => {
       expect(res.statusCode, JSON.stringify(body)).toBe(400);
     }
     expect(profiles.rows.get('u1')?.displayName).toBe('Aluno u1');
+  });
+
+  it('nome com HTML ou símbolos → 400 e nada muda (pentest VULN-028)', async () => {
+    const { handler, profiles } = setup();
+    await handler(makeReq({ token: 'ok:u1' }), makeRes());
+    for (const displayName of ['<img src=x onerror=alert(1)>', 'Ana<script>', 'Ana "x"', 'Ana\u0000', 'Ana & Bia', 'a{b}']) {
+      const res = makeRes();
+      await handler(makeReq({ method: 'PATCH', token: 'ok:u1', body: { displayName } }), res);
+      expect(res.statusCode, displayName).toBe(400);
+      expect(res.body.error).toMatch(/nome/i);
+    }
+    expect(profiles.rows.get('u1')?.displayName).toBe('Aluno u1');
+  });
+
+  it('nomes comuns em português são aceitos', async () => {
+    const { handler } = setup();
+    for (const displayName of ['José da Silva', "Joana D'Ávila", 'Ana-Maria', 'Dr. João', 'Ana Júlia 2', 'maria_souza', 'Concurseiro(a)']) {
+      const res = makeRes();
+      await handler(makeReq({ method: 'PATCH', token: 'ok:u1', body: { displayName } }), res);
+      expect(res.statusCode, displayName).toBe(200);
+      expect(res.body.profile.displayName).toBe(displayName);
+    }
+  });
+
+  it('cidade, concurso e banca não aceitam sinais de HTML', async () => {
+    const { handler } = setup();
+    for (const body of [{ city: '<b>Recife</b>' }, { targetExam: 'PF <script>' }, { preferredBanca: 'FGV>' }]) {
+      const res = makeRes();
+      await handler(makeReq({ method: 'PATCH', token: 'ok:u1', body }), res);
+      expect(res.statusCode, JSON.stringify(body)).toBe(400);
+    }
+    const res = makeRes();
+    await handler(makeReq({ method: 'PATCH', token: 'ok:u1', body: { targetExam: 'TRT 2ª Região – Técnico (área adm.)', city: 'São Paulo/SP' } }), res);
+    expect(res.statusCode).toBe(200);
   });
 
   it('valor null limpa um campo opcional', async () => {

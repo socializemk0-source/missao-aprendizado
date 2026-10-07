@@ -18,6 +18,8 @@ antes de lançar e antes de um teste de invasão (pentest).
 | Custo da IA | Correção de redação: grátis 1 a cada 7 dias; PRO até 20 a cada 24 horas e 5 por minuto |
 | CAPTCHA | Cloudflare Turnstile no login, cadastro e "esqueci a senha", ligado pela variável `TURNSTILE_SITE_KEY` (ver abaixo) |
 | Cabeçalhos | CSP restrita (só o próprio site, o Supabase e o CAPTCHA; sem `eval`; o script do tema entra por hash), HSTS, `X-Frame-Options: DENY` (o app não abre dentro de outro site), `nosniff`, Referrer-Policy, Permissions-Policy e COOP (`vercel.json`, conferido em `tests/server/headers.test.ts`) |
+| CORS | A API só libera leitura para `https://www.aprovatico.com.br` (`vercel.json`); o app chama a API do mesmo endereço, então prévias e o domínio sem `www` seguem funcionando. Sem `Access-Control-Allow-Credentials` |
+| Nome do aluno | Só letras, números, espaço e `. ' ’ - _ ( )` (`shared/nome.ts`, conferido no servidor). Cidade, concurso e banca não aceitam `<` e `>`. O nome vindo do Google e nomes antigos passam pelo mesmo filtro antes de aparecer no ranking |
 | Dados pessoais | O ranking mostra só o primeiro nome. Os logs de erro não levam nome, e-mail nem id (`server/log.ts`) |
 | Excluir a conta (LGPD) | Perfil → Excluir minha conta (confirmação escrita). Apaga perfil, progresso, respostas, plano, redações, simulados, jogos, compras não pagas, contadores de limite e o e-mail da lista; depois remove o login no Supabase. Ficam só os registros de pagamento, exigidos por lei, sem nome nem e-mail (`server/conta.ts`) |
 | Dependências | Dependabot abre PR quando sai correção; o CI roda `npm audit` e barra falha alta ou crítica nas dependências do app |
@@ -63,3 +65,31 @@ Se fizer o passo 3 antes do 2, ninguém consegue entrar até o passo 2 ser feito
 - Faça o teste numa **cópia**: prévia da Vercel apontando para um projeto Supabase separado, sem dados de alunos reais.
 - Dê ao testador autorização por escrito, com o escopo (domínio da prévia, `/api/*`), as datas e o que não pode (ataque de volume contra a Vercel ou o Supabase de produção).
 - Conte o que esperar: 429 nos limites acima, 401 sem login, 404 para dados de outro aluno, CSP e os cabeçalhos acima.
+
+## Pentest de 07/10/2026 (produção)
+
+Nenhum achado crítico ou alto. O que já estava contido foi provado ao vivo:
+missão resgatada duas vezes (1×200 e 4×409), XP repetido (0 na segunda vez),
+webhook sem assinatura (401), limite de chamadas (429), professor × aluno
+(403 nos dois sentidos) e campos extras no perfil (400).
+
+| Achado | O que foi feito |
+|---|---|
+| VULN-001 CORS `*` | Corrigido: a API responde `Access-Control-Allow-Origin` só com o domínio do app (teste em `tests/server/headers.test.ts`). O token vai no cabeçalho `Authorization`, nunca em cookie, então outro site já não tinha como usá-lo |
+| VULN-012/028 Nome com HTML no ranking | Corrigido: o servidor recusa `<`, `>`, aspas e símbolos no nome; o ranking limpa nomes antigos. O React já escapava o texto (não há `innerHTML`) e a CSP bloqueia script de fora, então o `alert` nunca rodou. O ranking já mostrava só o primeiro nome |
+| VULN-006 Cache do HTML | Corrigido: a página do app vai com `Cache-Control: public, max-age=0, must-revalidate`; a Vercel também troca o cache a cada deploy. Os arquivos de `/assets/` têm nome com hash e continuam em cache longo |
+| VULN-023 Webhook no formato antigo | Continua ignorado (o mesmo pagamento chega pelo aviso assinado), agora com aviso no log da Vercel: `[webhook] aviso no formato antigo ignorado`. Se só esse aparecer, o aviso assinado não está ligado no painel do Mercado Pago (`docs/mercado-pago.md`) |
+| VULN-014 `plan` vindo da tela | Sem mudança: o plano é sempre lido do banco (`proUntil`) a cada pedido; nenhum pedido aceita `plan` (PATCH com `plan` → 400, teste em `tests/server/me.test.ts`) |
+| VULN-003 Chave `anon` no site | Por design: é pública. A Data API está desligada (0 schemas expostos), então ela não lê nenhuma tabela |
+| VULN-009 `/auth/v1/settings` público | Por design do Supabase (diz só quais logins existem) |
+| VULN-005 `www` com dois IPs | Normal: são da Vercel |
+| VULN-011 Dados pessoais no token | O token é do Supabase (e-mail, nome e foto do Google). Ele só vai no cabeçalho para o nosso servidor e para o Supabase, e os logs não guardam cabeçalhos nem dados pessoais (`server/log.ts`). Tirar esses dados exigiria um *Custom Access Token Hook* no Supabase; fica como melhoria futura |
+| VULN-025 Professor no ranking | Por design: o professor também é aluno. Se incomodar, excluir os e-mails de `v2.revisores` do ranking |
+| VULN-026 Professor pelo e-mail | Por design: o e-mail vem do token conferido pelo Supabase, com confirmação de e-mail ligada. Quem tem o e-mail do professor é o professor |
+
+O que o dono confere nos painéis:
+
+1. **Google Cloud (VULN-008)**: *APIs e serviços → Credenciais → o ID do cliente OAuth → URIs de redirecionamento autorizados*. Com o login pelo Supabase, deve haver só `https://qxhjhkzpuysajuvmtwou.supabase.co/auth/v1/callback` (sem `*`, sem `http://`). Em *Origens JavaScript autorizadas*, só `https://www.aprovatico.com.br` e `https://aprovatico.com.br`.
+2. **Supabase → Authentication → URL Configuration**: Site URL `https://www.aprovatico.com.br`; Redirect URLs só com os domínios do app (e as prévias da Vercel do próprio projeto), sem `*` solto.
+3. **Supabase → Project Settings → JWT Keys (VULN-027)**: um token de outra sessão foi recusado com "assinatura inválida". Conferir se houve troca de chave: a chave em uso e a anterior devem aparecer em `https://qxhjhkzpuysajuvmtwou.supabase.co/auth/v1/.well-known/jwks.json` durante a troca. Se a chave foi trocada de propósito, é esperado que logins antigos precisem entrar de novo; se ninguém trocou, o token não era deste projeto.
+
