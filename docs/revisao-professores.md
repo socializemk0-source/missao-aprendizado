@@ -50,6 +50,22 @@ select * from (
 ) u where acao = 'corrigir' order by created_at;
 ```
 
+## Aprovação em lote (08/10/2026)
+
+A pedido do dono, o Claude revisou uma por uma as 423 questões (96 da trilha e
+327 do banco: gabarito, alternativas, explicação e base legal) e não achou
+erro. Para aprovar todas de uma vez, rode no SQL Editor, **depois da 0013 e da
+0014**, o arquivo `supabase/aprovacoes/2026-10-08_aprovacao_revisada.sql`.
+
+- Questão do banco: passa para `ativa` só se ainda estiver em `revisao` e com
+  o mesmo texto revisado. A consulta do fim lista as que ficaram de fora (deve
+  vir vazia).
+- Questão da trilha: grava a aprovação da versão atual.
+- Fica registrado em `v2.question_reviews` com `revisor_email = 'claude (a
+  pedido do dono)'`. Pode rodar de novo sem duplicar nada.
+
+Não é migração (não roda no CI): é uma decisão do dono sobre os dados.
+
 ## Aplicar uma correção
 
 Mande a lista de pedidos para o Claude (ou corrija você) nos arquivos
