@@ -185,3 +185,61 @@ webhook nunca libera CORS. Preflight: só os métodos e headers da rota,
 - Falha de import dinâmico (tela de um deploy anterior) → recarrega a página
   uma vez (trava por motivo no `sessionStorage`; sem ele, não recarrega).
   Versão diferente sem falha não recarrega.
+
+## Chaves do Supabase: onde ficam e como trocar
+
+| Chave | Onde fica | Quem usa | Pode ir ao navegador? |
+|---|---|---|---|
+| `SUPABASE_ANON_KEY` (pública; hoje a `anon` antiga, JWT com validade até 2037) | Vercel → *Settings → Environment Variables* (Production e Preview) | `/api/config/supabase` a entrega ao navegador; `server/supabase.ts` confere o token do aluno | Sim, é feita para isso. Não está no bundle: vem da API |
+| `SUPABASE_SERVICE_ROLE_KEY` (secreta; hoje a `service_role` antiga, JWT) | Vercel, mesma tela | Só Functions: `/api/auth` (cadastro e senha) e exclusão de conta (`server/conta.ts`) | **Nunca** |
+| Senha do banco (`SQL_PASSWORD`) e `SUPABASE_DB_URL` | Vercel / *GitHub → Settings → Secrets* (backup) | Servidor e backup | **Nunca** |
+| `TURNSTILE_SECRET_KEY`, `MERCADOPAGO_*`, `OPENAI_API_KEY` | Vercel | Servidor | **Nunca** |
+
+O CI confere a cada PR que nenhuma delas chega ao `dist/` (`npm run
+check:bundle`: build com valores "canário" nas variáveis secretas e busca
+por formatos de chave).
+
+**As chaves antigas (`anon` e `service_role`, JWT) não vencem antes de 2037
+nem trocam sozinhas, e não dá para trocar só uma** (o Supabase descontinuou
+a rotação delas). O caminho é migrar para as chaves novas, que se trocam uma a
+uma, sem derrubar ninguém:
+
+1. Supabase → *Project Settings → API Keys*: criar uma **publishable key**
+   (`sb_publishable_…`) e uma **secret key** (`sb_secret_…`). As antigas
+   continuam valendo até serem desligadas.
+2. Vercel, **só em Preview** primeiro: `SUPABASE_ANON_KEY` = publishable e
+   `SUPABASE_SERVICE_ROLE_KEY` = secret. Novo deploy de prévia.
+3. Na prévia, testar: entrar com senha e com Google, criar conta (`/api/auth`),
+   "esqueci a senha" e excluir uma conta de teste (Perfil). O servidor manda a
+   chave secreta nova só no header `apikey` (`cabecalhosAdmin` em
+   `server/conta.ts`): a chave nova não é JWT e o Supabase a recusa em
+   `Authorization`.
+4. Deu certo: as mesmas duas variáveis em Production e novo deploy.
+5. Supabase → *API Keys*: **desativar as chaves antigas** (dá para reativar
+   se algo quebrar). Conferir de novo o passo 3 em produção.
+6. Vazou uma chave nova? Criar outra secret key, trocar na Vercel, deploy, e
+   só então apagar a vazada (apagar não tem volta).
+
+## RLS e permissões do banco (auditoria de 08/10/2026)
+
+Em produção (consulta de permissões): `anon` e `authenticated` **sem
+nenhuma permissão no `v2`**; no `public` (V1), `anon` com todas as
+permissões nas 10 tabelas antigas (inclusive `TRUNCATE`, que a RLS não
+segura) e duas tabelas criadas só no dashboard (`practice_backups`,
+`user_settings`). A Data API está desligada, então nada disso é alcançável
+pela chave pública hoje — as migrações abaixo fecham também para o dia em que
+ela for ligada.
+
+- `v2` — migração `0017_v2_politicas_explicitas.sql`: em cada tabela, RLS
+  ligada e quatro políticas **restritivas** `false` (SELECT, INSERT, UPDATE,
+  DELETE) para `anon` e `authenticated`; apaga políticas criadas fora das
+  migrações. Só o servidor acessa o `v2`.
+- `public` (V1) — migração `20261008000000_public_somente_dono_leitura.sql`
+  no repositório `missao-aprovacao`: RLS em todas as tabelas (inclusive as do
+  dashboard), apaga todas as políticas antigas (como a leitura pública do
+  `leaderboard`), tira tudo de `anon`, deixa `authenticated` só lendo os
+  próprios dados (SELECT por dono) e nega INSERT/UPDATE/DELETE explicitamente;
+  tira o EXECUTE das funções do `public` de `anon`.
+
+Política nova se cria **só por migração** (nunca no dashboard): as duas
+migrações apagam qualquer política que não seja a delas ao rodar de novo.

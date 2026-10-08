@@ -1,7 +1,7 @@
 // O único uso da chave de administrador (service_role): remover o login do
 // próprio aluno. Ela ignora a RLS, então o dono tem de estar fixo no código.
 import { describe, expect, it } from 'vitest';
-import { supabaseRemoverLogin } from '../../server/conta.js';
+import { cabecalhosAdmin, supabaseRemoverLogin } from '../../server/conta.js';
 
 const env = { SUPABASE_URL: 'https://proj.supabase.co/', SUPABASE_SERVICE_ROLE_KEY: 'chave-admin' };
 
@@ -30,5 +30,11 @@ describe('supabaseRemoverLogin (service_role)', () => {
       await expect(remover(id)).rejects.toThrow('id de login inválido');
     }
     expect(chamou).toBe(false);
+  });
+
+  it('chave antiga (JWT service_role) vai em apikey e Authorization; a nova (sb_secret_…) só em apikey', () => {
+    const jwt = 'eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoic2VydmljZV9yb2xlIn0.assinatura';
+    expect(cabecalhosAdmin(jwt)).toEqual({ apikey: jwt, Authorization: `Bearer ${jwt}` });
+    expect(cabecalhosAdmin('sb_secret_abc123')).toEqual({ apikey: 'sb_secret_abc123' });
   });
 });

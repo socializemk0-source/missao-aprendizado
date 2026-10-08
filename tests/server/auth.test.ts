@@ -45,7 +45,8 @@ describe('POST /api/auth — cadastro', () => {
     expect(tokens).toEqual([['tok-bom', 'cadastro']]);
     expect(chamadas).toHaveLength(1);
     expect(chamadas[0]!.url).toBe(`https://proj.supabase.co/auth/v1/signup?redirect_to=${encodeURIComponent('https://www.aprovatico.com.br/entrar')}`);
-    expect(chamadas[0]!.init.headers).toMatchObject({ apikey: 'chave-admin-secreta', Authorization: 'Bearer chave-admin-secreta' });
+    // Chave nova (sb_secret_… ou outra que não é JWT): só no apikey.
+    expect(chamadas[0]!.init.headers).toEqual({ apikey: 'chave-admin-secreta', 'Content-Type': 'application/json' });
     expect(chamadas[0]!.corpo).toEqual({ email: 'maria@teste.dev', password: SENHA, data: { name: 'Maria Souza' } });
   });
 

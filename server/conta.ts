@@ -42,6 +42,14 @@ export const postgresConta: ContaStore = {
 // e a chave só sai para o próprio Supabase Auth.
 export type RemoverLogin = (userId: string) => Promise<void>;
 
+// Cabeçalhos da chave de administrador para o Supabase. A chave antiga
+// (service_role) é um JWT e vai também em Authorization; a nova (sb_secret_…)
+// NÃO é JWT: só no apikey (em Authorization o Supabase recusa com "Invalid JWT").
+// Assim a troca de chave (docs/seguranca.md) não quebra nada.
+export function cabecalhosAdmin(chave: string): Record<string, string> {
+  return chave.startsWith('eyJ') ? { apikey: chave, Authorization: `Bearer ${chave}` } : { apikey: chave };
+}
+
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 export function supabaseRemoverLogin(env: NodeJS.ProcessEnv = process.env, send: typeof fetch = fetch): RemoverLogin | null {
@@ -52,7 +60,7 @@ export function supabaseRemoverLogin(env: NodeJS.ProcessEnv = process.env, send:
     if (!UUID.test(userId)) throw new Error('id de login inválido');
     const res = await send(`${url}/auth/v1/admin/users/${encodeURIComponent(userId)}`, {
       method: 'DELETE',
-      headers: { apikey: key, Authorization: `Bearer ${key}` },
+      headers: cabecalhosAdmin(key),
       signal: AbortSignal.timeout(15_000),
     });
     // 404: o login já não existe (exclusão repetida) — tudo bem.

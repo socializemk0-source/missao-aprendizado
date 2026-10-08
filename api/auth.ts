@@ -13,6 +13,7 @@ import { createHash } from 'node:crypto';
 import { z } from 'zod';
 import { header, jsonBody, methodNotAllowed, type ApiRequest, type ApiResponse } from '../server/http.js';
 import { LIMITES, clientIp, limitar, postgresLimiter, type RateLimiter } from '../server/limite.js';
+import { cabecalhosAdmin } from '../server/conta.js';
 import { hostnamesPermitidos, responderCaptcha, verifyTurnstile, type VerifyTurnstile } from '../server/turnstile.js';
 import { authErrorMessage, passwordProblem } from '../shared/auth-erros.js';
 import { NOME_MAX, NOME_VALIDO } from '../shared/nome.js';
@@ -119,7 +120,7 @@ export function createAuthHandler(deps: {
     try {
       resposta = await send(`${url}/auth/v1/${acao}?redirect_to=${encodeURIComponent(redirect)}`, {
         method: 'POST',
-        headers: { apikey: chave, Authorization: `Bearer ${chave}`, 'Content-Type': 'application/json' },
+        headers: { ...cabecalhosAdmin(chave), 'Content-Type': 'application/json' },
         body: JSON.stringify(corpo),
         signal: AbortSignal.timeout(10_000),
       });

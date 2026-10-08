@@ -124,6 +124,8 @@ describe.runIf(local)('RLS pela Data API (PostgREST local, papéis do Supabase)'
       CREATE OR REPLACE FUNCTION auth.uid() RETURNS uuid LANGUAGE sql STABLE AS
         $f$ SELECT nullif(current_setting('request.jwt.claims', true)::jsonb ->> 'sub', '')::uuid $f$;
       GRANT USAGE ON SCHEMA auth TO anon, authenticated;`));
+    // Políticas explícitas (migração 0017): só agora existem os papéis do Supabase.
+    await db().execute(sql.raw(readFileSync('supabase/migrations/0017_v2_politicas_explicitas.sql', 'utf8')));
 
     // O aluno B estuda de verdade (pelas nossas rotas): perfil, respostas,
     // simulado, rodada de jogo, plano e chave de idempotência.
@@ -153,14 +155,31 @@ describe.runIf(local)('RLS pela Data API (PostgREST local, papéis do Supabase)'
     await db().execute(sql.raw(readFileSync('supabase/migrations/0016_v2_sem_acesso_publico.sql', 'utf8')));
   });
 
-  it('todas as tabelas do v2 têm RLS ligada, sem nenhuma política, e não há funções expostas', async () => {
+  it('todas as tabelas do v2 têm RLS ligada, políticas explícitas de negação nos 4 comandos e nenhuma função exposta', async () => {
     expect(tabelas.length).toBeGreaterThanOrEqual(tabelasDasMigracoes().length);
     const semRls = linhas<{ relname: string }>(await db().execute(sql`
       select c.relname from pg_class c join pg_namespace n on n.oid = c.relnamespace
       where n.nspname = 'v2' and c.relkind = 'r' and not c.relrowsecurity`));
     expect(semRls).toEqual([]);
-    expect(linhas(await db().execute(sql`select policyname from pg_policies where schemaname = 'v2'`))).toEqual([]);
+    type Pol = { tablename: string; cmd: string; permissive: string; roles: string; qual: string | null; with_check: string | null };
+    const pols = linhas<Pol>(await db().execute(sql`
+      select tablename, cmd, permissive, roles::text as roles, qual, with_check from pg_policies where schemaname = 'v2'`));
+    expect(pols.filter((p) => p.permissive !== 'RESTRICTIVE')).toEqual([]); // nada liberado
+    for (const p of pols) {
+      expect([p.tablename, p.cmd, p.roles]).toEqual([p.tablename, p.cmd, '{anon,authenticated}']);
+      for (const cond of [p.qual, p.with_check]) if (cond !== null) expect([p.tablename, p.cmd, cond]).toEqual([p.tablename, p.cmd, 'false']);
+    }
+    for (const { nome } of tabelas) {
+      const cmds = pols.filter((p) => p.tablename === nome).map((p) => p.cmd).sort();
+      expect([nome, cmds]).toEqual([nome, ['DELETE', 'INSERT', 'SELECT', 'UPDATE']]);
+    }
     expect(linhas(await db().execute(sql`select p.proname from pg_proc p join pg_namespace n on n.oid = p.pronamespace where n.nspname = 'v2'`))).toEqual([]);
+  });
+
+  it('política criada fora das migrações (dashboard) some ao rodar a 0017 de novo', async () => {
+    await db().execute(sql.raw(`CREATE POLICY "feita no dashboard" ON v2.user_stats FOR SELECT TO anon USING (true)`));
+    await db().execute(sql.raw(readFileSync('supabase/migrations/0017_v2_politicas_explicitas.sql', 'utf8')));
+    expect(linhas(await db().execute(sql`select policyname from pg_policies where schemaname = 'v2' and permissive = 'PERMISSIVE'`))).toEqual([]);
   });
 
   async function ataque(cenario: string) {

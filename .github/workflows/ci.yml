@@ -45,4 +45,25 @@ jobs:
       - run: npm test
       - name: Rotas da API carregam em ESM (como na Vercel)
         run: npm run check:api
-      - run: npm run build
+      - name: Build com valores "canário" nas variáveis secretas
+        run: npm run build
+        env:
+          SUPABASE_SERVICE_ROLE_KEY: canario-service-role-nao-pode-ir-ao-navegador
+          SUPABASE_ANON_KEY: canario-anon-key-vem-so-da-api
+          TURNSTILE_SECRET_KEY: canario-turnstile-secret
+          MERCADOPAGO_ACCESS_TOKEN: canario-mercadopago-token
+          MERCADOPAGO_WEBHOOK_SECRET: canario-mercadopago-webhook
+          OPENAI_API_KEY: canario-openai-key
+          SUPABASE_DB_URL: canario-db-url
+          BACKUP_PASSPHRASE: canario-backup
+      - name: Nenhum segredo no bundle do navegador
+        run: npm run check:bundle
+        env:
+          SUPABASE_SERVICE_ROLE_KEY: canario-service-role-nao-pode-ir-ao-navegador
+          SUPABASE_ANON_KEY: canario-anon-key-vem-so-da-api
+          TURNSTILE_SECRET_KEY: canario-turnstile-secret
+          MERCADOPAGO_ACCESS_TOKEN: canario-mercadopago-token
+          MERCADOPAGO_WEBHOOK_SECRET: canario-mercadopago-webhook
+          OPENAI_API_KEY: canario-openai-key
+          SUPABASE_DB_URL: canario-db-url
+          BACKUP_PASSPHRASE: canario-backup
