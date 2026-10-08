@@ -32,6 +32,11 @@ describe('backup automático', () => {
     expect(script).toContain('--passphrase-fd');
     expect(script).not.toMatch(/--passphrase[ =]"?\$/);
   });
+
+  it('a conferência lê a lista inteira (grep -q fecha o cano cedo e, com pipefail, acusava "falta v2.profiles" à toa)', () => {
+    expect(script).toContain('set -euo pipefail');
+    expect(script).not.toMatch(/\|\s*grep -q/);
+  });
 });
 
 const run = process.env.PG_TEST === '1';

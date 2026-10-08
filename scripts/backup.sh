@@ -21,9 +21,10 @@ trap 'rm -rf "$TMP"' EXIT
 "${BIN}pg_dump" "$BACKUP_DB_URL" --schema=v2 --no-owner --no-privileges -Fc -f "$TMP/v2.dump"
 "${BIN}pg_dump" "$BACKUP_DB_URL" --data-only --table=auth.users --table=auth.identities --no-owner --no-privileges -Fc -f "$TMP/auth.dump"
 
-# Confere que o arquivo abre e tem o principal antes de guardar.
-"${BIN}pg_restore" -l "$TMP/v2.dump" | grep -q "TABLE DATA v2 profiles " || { echo "Backup incompleto: falta v2.profiles" >&2; exit 1; }
-"${BIN}pg_restore" -l "$TMP/auth.dump" | grep -q "TABLE DATA auth users " || { echo "Backup incompleto: faltam os logins" >&2; exit 1; }
+# Confere que o arquivo abre e tem o principal antes de guardar. Sem "grep -q":
+# ele para na primeira linha, o pg_restore leva SIGPIPE e o pipefail dá erro.
+"${BIN}pg_restore" -l "$TMP/v2.dump" | grep "TABLE DATA v2 profiles " > /dev/null || { echo "Backup incompleto: falta v2.profiles" >&2; exit 1; }
+"${BIN}pg_restore" -l "$TMP/auth.dump" | grep "TABLE DATA auth users " > /dev/null || { echo "Backup incompleto: faltam os logins" >&2; exit 1; }
 
 mkdir -p "$OUT_DIR"
 OUT="$OUT_DIR/aprova-tico-$STAMP.tar.gz.gpg"
