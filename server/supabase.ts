@@ -1,6 +1,9 @@
 // Verificação real do token: pergunta ao servidor de Auth do Supabase
 // (confere assinatura, expiração e revogação). Import preguiçoso para que
 // os testes, que injetam um verificador falso, nunca carreguem o SDK.
+//
+// Chave pública (anon), não a service_role: serve só para auth.getUser(token),
+// que devolve o dono do próprio token. Nenhuma tabela é lida por este cliente.
 
 import type { Identity, VerifyToken } from './auth.js';
 

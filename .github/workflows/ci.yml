@@ -35,6 +35,12 @@ jobs:
         run: npm audit --omit=dev --audit-level=high
       - name: Migrações no Postgres de teste
         run: for f in supabase/migrations/*.sql; do PGPASSWORD=pg psql -h localhost -U postgres -v ON_ERROR_STOP=1 -f "$f"; done
+      - name: PostgREST (acesso direto pela Data API, como a chave pública faria)
+        run: |
+          curl -sSfL -o /tmp/postgrest.tar.xz https://github.com/PostgREST/postgrest/releases/download/v12.2.3/postgrest-v12.2.3-linux-static-x64.tar.xz
+          echo "9f71269e61ac3a940281e93ff415760f5957e430e475ba4c3889f3ede7d5527c  /tmp/postgrest.tar.xz" | sha256sum -c -
+          tar xJf /tmp/postgrest.tar.xz -C /tmp
+          echo "POSTGREST_BIN=/tmp/postgrest" >> "$GITHUB_ENV"
       - run: npm run typecheck
       - run: npm test
       - name: Rotas da API carregam em ESM (como na Vercel)

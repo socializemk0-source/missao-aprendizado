@@ -93,3 +93,46 @@ O que o dono confere nos painéis:
 2. **Supabase → Authentication → URL Configuration**: Site URL `https://www.aprovatico.com.br`; Redirect URLs só com os domínios do app (e as prévias da Vercel do próprio projeto), sem `*` solto.
 3. **Supabase → Project Settings → JWT Keys (VULN-027)**: um token de outra sessão foi recusado com "assinatura inválida". Conferir se houve troca de chave: a chave em uso e a anterior devem aparecer em `https://qxhjhkzpuysajuvmtwou.supabase.co/auth/v1/.well-known/jwks.json` durante a troca. Se a chave foi trocada de propósito, é esperado que logins antigos precisem entrar de novo; se ninguém trocou, o token não era deste projeto.
 
+
+## Dono de cada recurso (auditoria de 08/10/2026)
+
+As Functions falam com o Postgres pela conexão do dono das tabelas
+(`SQL_USER`, `server/db.ts`). Ela **não passa pela RLS** (como a service_role)
+e não carrega o JWT do aluno — `auth.uid()` não existe ali. Por isso o filtro
+de dono é **explícito no código**, sempre com o id do token.
+
+| Rota | Id que vem da tela | Onde o dono é conferido | De outra conta |
+|---|---|---|---|
+| `/api/me` GET/PATCH/DELETE | nenhum (`userId` no corpo → 400 "campo não editável"; na URL, ignorado) | `profiles.user_id = <token>`; exclusão: cada `DELETE ... where user_id = <token>` e e-mail do token (`server/conta.ts`) | — |
+| `/api/game` `simulado`, `simulado-entregar` | `id` (uuid) | `simulados.id = :id and user_id = <token>` (`server/game-pg.ts`) | 404 `SIMULADO_INEXISTENTE` |
+| `/api/game` `jogo-jogada`, `jogo-terminar` | `id` (uuid) | `game_rounds.id = :id and user_id = <token>` | 404 `JOGO_INEXISTENTE` |
+| `/api/game` `responder` | `questionId` | questão é pública (só `status = 'ativa'`); o que se grava (`question_state`, `answers`, `user_stats`) leva `user_id = <token>` | — |
+| `/api/game` `resgatar` | `missionId` (lista fixa) | `mission_claims.user_id = <token>` | — |
+| `/api/game` `fase`, `pratica` | id de fase/matéria (lista fixa do conteúdo) | progresso lido por `user_id = <token>` | — |
+| `/api/game` todo POST | `Idempotency-Key` | `idempotency_keys (user_id, key)` com `user_id = <token>` | a chave de outra conta não devolve a resposta dela |
+
+Não há `org_id`, `attempt_id` nem `essay_id` nessas duas rotas (a redação
+está em `/api/redacao`, que também filtra por `user_id`).
+
+**service_role**: um único uso, `supabaseRemoverLogin` (`server/conta.ts`),
+chamado só pelo `DELETE /api/me` com o id do token verificado, conferido como
+uuid antes de chamar `/auth/v1/admin/users/<id>`. **Chave anon** no servidor:
+só `auth.getUser(token)` (`server/supabase.ts`), que não lê tabela.
+
+**Acesso direto (PostgREST)**: RLS ligada em todas as tabelas `v2`, sem
+nenhuma política, e a migração 0016 tira de `anon` e `authenticated` qualquer
+permissão no schema. `tests/server/rls-postgrest.pg.test.ts` sobe um
+PostgREST de verdade no CI e tenta, com a chave pública e o JWT do aluno A,
+ler/criar/alterar/apagar o que é do aluno B em todas as tabelas — no pior caso
+(GRANT de tudo) e no padrão.
+
+Para conferir **em produção** (só leituras), com o JWT de um aluno de teste A
+e o id de um aluno de teste B:
+
+```bash
+RLS_REST_URL=https://qxhjhkzpuysajuvmtwou.supabase.co RLS_ANON_KEY=<chave anon> \
+RLS_JWT_A=<access_token do aluno A> RLS_USER_B=<id do aluno B> \
+npx vitest run tests/server/rls-postgrest.pg.test.ts
+```
+
+Com a Data API desligada, todas as respostas são recusa — o teste passa.

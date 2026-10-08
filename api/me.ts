@@ -79,6 +79,8 @@ export function createMeHandler(deps: {
         return;
       }
       try {
+        // SERVICE_ROLE (server/conta.ts): só remove o login de user.id, o id
+        // do token verificado acima. O corpo do pedido não escolhe a conta.
         await deps.removerLogin(user.id);
       } catch (err) {
         console.error('[me] dados apagados, mas o login não foi removido:', errorText(err));

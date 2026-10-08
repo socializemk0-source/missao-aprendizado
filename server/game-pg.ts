@@ -13,6 +13,11 @@ import { answers, gameRounds, missionClaims, phaseCompletions, profiles, questio
 
 type Tx = Parameters<Parameters<ReturnType<typeof db>['transaction']>[0]>[0];
 
+// Dono fixo: userId é SEMPRE o id do token (api/game.ts → authenticate). A
+// conexão é privilegiada e não passa pela RLS (server/db.ts), então cada
+// consulta abaixo filtra `user_id = userId` explicitamente; ids que vêm do
+// aluno (simulado, rodada) só valem junto com esse filtro — o de outra conta
+// dá "não encontrado" (404), sem confirmar que existe.
 function userTx(tx: Tx, userId: string): UserTx {
   return {
     async plan(): Promise<Plan> {

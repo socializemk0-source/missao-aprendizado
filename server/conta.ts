@@ -17,6 +17,8 @@ const TABELAS = [
   'essays', 'simulados', 'game_rounds', 'study_plans', 'idempotency_keys', 'profiles',
 ] as const;
 
+// Conexão privilegiada (server/db.ts): cada DELETE filtra pelo dono — userId
+// e e-mail vêm do token verificado, nunca do corpo do pedido.
 export const postgresConta: ContaStore = {
   async excluir(userId, email) {
     await db().transaction(async (tx) => {
@@ -31,13 +33,23 @@ export const postgresConta: ContaStore = {
 // Remove o login no Supabase Auth. Precisa da chave de administrador
 // (service_role), que fica SÓ no servidor (variável SUPABASE_SERVICE_ROLE_KEY
 // na Vercel) e nunca vai para o navegador.
+//
+// SERVICE_ROLE — por que é seguro: é o único uso da chave de administrador.
+// Ela ignora a RLS e pode apagar QUALQUER login, então o dono é fixado aqui:
+// a URL leva só o userId que /api/me tirou do token verificado (nunca um id
+// do corpo ou da URL do pedido), conferido como uuid antes da chamada. A
+// requisição vem de código nosso (Vercel Function, depois de authenticate())
+// e a chave só sai para o próprio Supabase Auth.
 export type RemoverLogin = (userId: string) => Promise<void>;
+
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 export function supabaseRemoverLogin(env: NodeJS.ProcessEnv = process.env, send: typeof fetch = fetch): RemoverLogin | null {
   const url = env.SUPABASE_URL?.replace(/\/$/, '');
   const key = env.SUPABASE_SERVICE_ROLE_KEY?.trim();
   if (!url || !key) return null;
   return async (userId) => {
+    if (!UUID.test(userId)) throw new Error('id de login inválido');
     const res = await send(`${url}/auth/v1/admin/users/${encodeURIComponent(userId)}`, {
       method: 'DELETE',
       headers: { apikey: key, Authorization: `Bearer ${key}` },
