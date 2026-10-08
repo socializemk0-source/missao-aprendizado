@@ -2,7 +2,7 @@ import { existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import react from '@vitejs/plugin-react';
 import { defineConfig, loadEnv, type Plugin } from 'vite';
-import { versaoDoBuild, versaoNoHtml } from './shared/versao';
+import { versaoDoBuild, versaoNoHtml } from './shared/versao.js';
 
 // Em desenvolvimento, /api/* executa os mesmos arquivos de api/ que a
 // Vercel executa em produção (api/me.ts → /api/me).
@@ -65,8 +65,8 @@ export default defineConfig(({ mode }) => {
           // navegador entre uma versão do app e outra.
           codeSplitting: {
             groups: [
-              { name: (id: string) => (/node_modules[\\/]@supabase/.test(id) ? 'supabase' : null) },
-              { name: (id: string) => (id.includes('node_modules') ? 'vendor' : null) },
+              { debugName: 'supabase', name: (id: string) => (/node_modules[\\/]@supabase/.test(id) ? 'supabase' : null) },
+              { debugName: 'vendor', name: (id: string) => (id.includes('node_modules') ? 'vendor' : null) },
             ],
           },
         },

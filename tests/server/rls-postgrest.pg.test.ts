@@ -63,6 +63,20 @@ describe.runIf(local)('RLS pela Data API (PostgREST local, papéis do Supabase)'
   const { postgresProfiles } = await import('../../server/profiles.js');
   const { postgresIdempotency } = await import('../../server/idempotencia.js');
   const linhas = <T,>(r: unknown) => (r as { rows: T[] }).rows;
+  // A migração trava todas as tabelas do v2; os outros testes, em paralelo, gravam
+  // nelas. Deadlock (40P01) aqui é do teste, não da migração: tenta de novo.
+  async function migrar(arquivo: string) {
+    for (let tentativa = 1; ; tentativa++) {
+      try {
+        await db().execute(sql.raw(readFileSync(`supabase/migrations/${arquivo}`, 'utf8')));
+        return;
+      } catch (err) {
+        const code = (err as { cause?: { code?: string } }).cause?.code ?? (err as { code?: string }).code;
+        if (code !== '40P01' || tentativa >= 5) throw err;
+        await new Promise((ok) => setTimeout(ok, 100 * tentativa));
+      }
+    }
+  }
 
   const A = crypto.randomUUID();
   const B = crypto.randomUUID();
@@ -125,7 +139,7 @@ describe.runIf(local)('RLS pela Data API (PostgREST local, papéis do Supabase)'
         $f$ SELECT nullif(current_setting('request.jwt.claims', true)::jsonb ->> 'sub', '')::uuid $f$;
       GRANT USAGE ON SCHEMA auth TO anon, authenticated;`));
     // Políticas explícitas (migração 0017): só agora existem os papéis do Supabase.
-    await db().execute(sql.raw(readFileSync('supabase/migrations/0017_v2_politicas_explicitas.sql', 'utf8')));
+    await migrar('0017_v2_politicas_explicitas.sql');
 
     // O aluno B estuda de verdade (pelas nossas rotas): perfil, respostas,
     // simulado, rodada de jogo, plano e chave de idempotência.
@@ -152,7 +166,7 @@ describe.runIf(local)('RLS pela Data API (PostgREST local, papéis do Supabase)'
   afterAll(async () => {
     await descer();
     // Volta ao padrão (0016) para não deixar GRANT no banco de teste.
-    await db().execute(sql.raw(readFileSync('supabase/migrations/0016_v2_sem_acesso_publico.sql', 'utf8')));
+    await migrar('0016_v2_sem_acesso_publico.sql');
   });
 
   it('todas as tabelas do v2 têm RLS ligada, políticas explícitas de negação nos 4 comandos e nenhuma função exposta', async () => {
@@ -178,7 +192,7 @@ describe.runIf(local)('RLS pela Data API (PostgREST local, papéis do Supabase)'
 
   it('política criada fora das migrações (dashboard) some ao rodar a 0017 de novo', async () => {
     await db().execute(sql.raw(`CREATE POLICY "feita no dashboard" ON v2.user_stats FOR SELECT TO anon USING (true)`));
-    await db().execute(sql.raw(readFileSync('supabase/migrations/0017_v2_politicas_explicitas.sql', 'utf8')));
+    await migrar('0017_v2_politicas_explicitas.sql');
     expect(linhas(await db().execute(sql`select policyname from pg_policies where schemaname = 'v2' and permissive = 'PERMISSIVE'`))).toEqual([]);
   });
 
@@ -225,7 +239,7 @@ describe.runIf(local)('RLS pela Data API (PostgREST local, papéis do Supabase)'
   }, 120_000);
 
   it('padrão (migração 0016): anon e authenticated nem enxergam o schema v2', async () => {
-    await db().execute(sql.raw(readFileSync('supabase/migrations/0016_v2_sem_acesso_publico.sql', 'utf8')));
+    await migrar('0016_v2_sem_acesso_publico.sql');
     await subir();
     try {
       const r = await rest(base, anonKey, jwtA, 'GET', `/user_stats?user_id=eq.${B}`);
