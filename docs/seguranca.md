@@ -147,3 +147,23 @@ controle ou de direção, nem começo de fórmula de planilha). Qualquer e-mail,
 painel ou exportação que montar HTML com esses dados passa cada valor por
 `escapeHtml` — nunca concatena texto cru. O e-mail só entra se tiver formato
 válido (zod), em minúsculas.
+
+## Cabeçalhos e CORS da API (`server/seguranca.ts`)
+
+Toda rota de `api/` exporta `comSeguranca(handler, { metodos, headers })`
+(um teste falha se alguma ficar de fora). A camada põe, em toda resposta —
+sucesso, 4xx, 5xx e erro não tratado — CSP (`default-src 'none'`), HSTS,
+`X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`,
+`Permissions-Policy`, COOP e `Cache-Control: no-store` (só
+`/api/config/supabase` troca para `public, max-age=300,
+stale-while-revalidate=60` quando dá certo). O `vercel.json` repete os mesmos
+cabeçalhos para `/api` (vale para erro da própria Vercel); um teste garante
+que são iguais.
+
+CORS: só `https://aprovatico.com.br`, `https://www.aprovatico.com.br` e, nas
+prévias, o endereço da própria prévia. A resposta devolve a origem do pedido
+(nunca `*`) e nunca `Access-Control-Allow-Credentials` (o login vai no header
+`Authorization`). Origem de fora → 403. A própria página (mesmo host) passa
+sem CORS. Sem `Origin` (servidor, como o webhook do Mercado Pago) segue; o
+webhook nunca libera CORS. Preflight: só os métodos e headers da rota,
+`Access-Control-Max-Age: 86400`.

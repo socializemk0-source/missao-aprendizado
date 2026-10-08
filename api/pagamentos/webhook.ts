@@ -7,6 +7,7 @@ import { header, jsonBody, methodNotAllowed, type ApiRequest, type ApiResponse }
 import { MercadoPagoError, applyPayment, mercadoPagoClient, verifyWebhookSignature, type MpClient, type PaymentStore } from '../../server/payments.js';
 import { postgresPayments } from '../../server/payments-pg.js';
 import { errorText } from '../../server/log.js';
+import { comSeguranca } from '../../server/seguranca.js';
 
 const one = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v);
 
@@ -63,8 +64,8 @@ export function createWebhookHandler(deps: { store: PaymentStore; client: MpClie
 
 const token = process.env.MERCADOPAGO_ACCESS_TOKEN?.trim();
 
-export default createWebhookHandler({
+export default comSeguranca(createWebhookHandler({
   store: postgresPayments,
   client: token ? mercadoPagoClient(token) : null,
   secret: process.env.MERCADOPAGO_WEBHOOK_SECRET?.trim(),
-});
+}), { metodos: ['POST'], headers: ['Content-Type'], cors: false }); // só o Mercado Pago chama (sem CORS)

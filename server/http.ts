@@ -12,6 +12,7 @@ export interface ApiResponse {
   status(code: number): ApiResponse;
   json(body: unknown): void;
   setHeader(name: string, value: string): void;
+  end?(): void; // resposta sem corpo (204 do preflight)
 }
 
 export function header(req: ApiRequest, name: string): string | undefined {

@@ -30,6 +30,7 @@ function apiRoutes(): Plugin {
           status(code: number) { res.statusCode = code; return apiRes; },
           json(payload: unknown) { res.setHeader('Content-Type', 'application/json'); res.end(JSON.stringify(payload)); },
           setHeader(name: string, value: string) { res.setHeader(name, value); },
+          end() { res.end(); },
         };
         try {
           const mod = await server.ssrLoadModule(file);

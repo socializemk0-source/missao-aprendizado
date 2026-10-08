@@ -18,6 +18,7 @@ import { LIMITES, clientIp, limitar, memoryLimiter, postgresLimiter, type RateLi
 import { textoLimpo } from '../server/sanitize.js';
 import { responderCaptcha, verifyTurnstile, type VerifyTurnstile } from '../server/turnstile.js';
 import { NOME_MAX } from '../shared/nome.js';
+import { comSeguranca } from '../server/seguranca.js';
 
 export const LEAD_CORPO_MAX = 10 * 1024;
 const TOO_MANY = 'too_many_leads';
@@ -109,4 +110,4 @@ export function createLeadsHandler({
   };
 }
 
-export default createLeadsHandler({ store: postgresLeads, limiter: postgresLimiter });
+export default comSeguranca(createLeadsHandler({ store: postgresLeads, limiter: postgresLimiter }), { metodos: ['POST'], headers: ['Content-Type'] });

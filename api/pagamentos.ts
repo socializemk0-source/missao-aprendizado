@@ -15,6 +15,7 @@ import { postgresPayments } from '../server/payments-pg.js';
 import { verifySupabaseToken } from '../server/supabase.js';
 import { errorText } from '../server/log.js';
 import { LIMITES, limitarAluno, limitarIp, postgresLimiter, type RateLimiter } from '../server/limite.js';
+import { comSeguranca } from '../server/seguranca.js';
 
 const DAY = 86_400_000;
 // Quantas compras recentes o "verificar" consulta (cada uma é uma busca no
@@ -128,9 +129,9 @@ export function createPagamentosHandler(deps: {
 
 const token = process.env.MERCADOPAGO_ACCESS_TOKEN?.trim();
 
-export default createPagamentosHandler({
+export default comSeguranca(createPagamentosHandler({
   verifyToken: verifySupabaseToken,
   store: postgresPayments,
   client: token ? mercadoPagoClient(token) : null,
   limiter: postgresLimiter,
-});
+}), { metodos: ['GET', 'POST'], headers: ['Authorization', 'Content-Type'] });

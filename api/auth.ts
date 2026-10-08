@@ -16,6 +16,7 @@ import { LIMITES, clientIp, limitar, postgresLimiter, type RateLimiter } from '.
 import { hostnamesPermitidos, responderCaptcha, verifyTurnstile, type VerifyTurnstile } from '../server/turnstile.js';
 import { authErrorMessage, passwordProblem } from '../shared/auth-erros.js';
 import { NOME_MAX, NOME_VALIDO } from '../shared/nome.js';
+import { comSeguranca } from '../server/seguranca.js';
 
 const CORPO_MAX = 10 * 1024;
 const email = z.string().trim().toLowerCase().max(254).pipe(z.email());
@@ -149,4 +150,4 @@ export function createAuthHandler(deps: {
   };
 }
 
-export default createAuthHandler({ limiter: postgresLimiter });
+export default comSeguranca(createAuthHandler({ limiter: postgresLimiter }), { metodos: ['POST'], headers: ['Content-Type'] });

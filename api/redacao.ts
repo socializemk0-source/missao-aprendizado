@@ -14,6 +14,7 @@ import type { EssayQuota } from '../shared/essay.js';
 import type { BancaRedacao, Tema } from '../content/redacao.js';
 import { errorText } from '../server/log.js';
 import { LIMITES, limitarAluno, limitarIp, postgresLimiter, type RateLimiter } from '../server/limite.js';
+import { comSeguranca } from '../server/seguranca.js';
 
 export const FREE_LIMIT = 1;
 export const WINDOW_MS = 7 * 24 * 60 * 60 * 1000;
@@ -135,9 +136,9 @@ export function createRedacaoHandler(deps: {
 
 const apiKey = process.env.OPENAI_API_KEY?.trim();
 
-export default createRedacaoHandler({
+export default comSeguranca(createRedacaoHandler({
   verifyToken: verifySupabaseToken,
   store: postgresEssays,
   grade: apiKey ? (input) => gradeEssay({ ...input, apiKey, model: process.env.OPENAI_MODEL }) : null,
   limiter: postgresLimiter,
-});
+}), { metodos: ['GET', 'POST'], headers: ['Authorization', 'Content-Type'] });

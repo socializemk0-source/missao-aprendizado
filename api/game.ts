@@ -35,6 +35,7 @@ import { getJogos, jogar, startJogo, terminarJogo } from '../server/minigames.js
 import { deliverSimulado, getSimulado, getSimuladoOptions, parseSimuladoInput, startSimulado } from '../server/simulado.js';
 import { verifySupabaseToken } from '../server/supabase.js';
 import { errorText } from '../server/log.js';
+import { comSeguranca } from '../server/seguranca.js';
 
 const one = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v) ?? '';
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -171,4 +172,7 @@ export function createGameHandler(deps: {
   };
 }
 
-export default createGameHandler({ verifyToken: verifySupabaseToken, store: postgresGame, limiter: postgresLimiter, idempotency: postgresIdempotency });
+export default comSeguranca(
+  createGameHandler({ verifyToken: verifySupabaseToken, store: postgresGame, limiter: postgresLimiter, idempotency: postgresIdempotency }),
+  { metodos: ['GET', 'POST'], headers: ['Authorization', 'Content-Type', 'Idempotency-Key', 'X-Turnstile-Token'] },
+);

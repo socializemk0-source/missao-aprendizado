@@ -11,6 +11,7 @@ import { verifySupabaseToken } from '../server/supabase.js';
 import { errorText } from '../server/log.js';
 import { LIMITES, limitarAluno, limitarIp, postgresLimiter, type RateLimiter } from '../server/limite.js';
 import { postgresConta, supabaseRemoverLogin, type ContaStore, type RemoverLogin } from '../server/conta.js';
+import { comSeguranca } from '../server/seguranca.js';
 
 // Campo editável → tamanho máximo. Obrigatórios não aceitam vazio/null.
 // Sinais de HTML e caracteres de controle não entram em nenhum campo.
@@ -110,7 +111,7 @@ export function createMeHandler(deps: {
   };
 }
 
-export default createMeHandler({
+export default comSeguranca(createMeHandler({
   verifyToken: verifySupabaseToken, profiles: postgresProfiles, limiter: postgresLimiter,
   conta: postgresConta, removerLogin: supabaseRemoverLogin(),
-});
+}), { metodos: ['GET', 'PATCH', 'DELETE'], headers: ['Authorization', 'Content-Type'] });

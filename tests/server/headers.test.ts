@@ -72,11 +72,12 @@ describe('cabeçalhos de segurança', () => {
     expect(directive(csp, 'frame-ancestors')).toBe("frame-ancestors 'none'");
   });
 
-  it('API não libera leitura por outro site: CORS só para o domínio do app (pentest VULN-001)', () => {
+  it('API: CORS não é fixo no vercel.json (a camada de server/seguranca.ts decide por origem); nunca "*"', () => {
     for (const path of ['/api/me', '/api/game', '/api/pagamentos/webhook']) {
       const h = headersFor(path);
-      expect(h['Access-Control-Allow-Origin'], path).toBe('https://www.aprovatico.com.br');
+      expect(h['Access-Control-Allow-Origin'], path).toBeUndefined();
       expect(h['Access-Control-Allow-Credentials'], path).toBeUndefined();
+      expect(h['Content-Security-Policy'], path).toBe("default-src 'none'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'");
     }
     for (const rule of vercel.headers) for (const h of rule.headers) expect(h.value, `${rule.source} ${h.key}`).not.toBe('*');
   });
