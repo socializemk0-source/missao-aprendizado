@@ -34,7 +34,7 @@ import { getDominio, getPlano, parsePerfilEstudo, saveStudyProfile } from '../se
 import { getJogos, jogar, startJogo, terminarJogo } from '../server/minigames.js';
 import { deliverSimulado, getSimulado, getSimuladoOptions, parseSimuladoInput, startSimulado } from '../server/simulado.js';
 import { verifySupabaseToken } from '../server/supabase.js';
-import { errorText } from '../server/log.js';
+import { errorText, log } from '../server/log.js';
 import { comSeguranca } from '../server/seguranca.js';
 
 const one = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v) ?? '';
@@ -96,7 +96,7 @@ async function rodar(store: GameStore, userId: string, p: ParsedAction, now: Dat
     return { status: 200, body: await executar(store, userId, p, now) };
   } catch (err) {
     if (err instanceof GameError) return { status: err.status, body: { error: err.message, code: err.code, ...err.extra } };
-    console.error('[game] erro:', errorText(err));
+    log.erro('[game] erro:', errorText(err));
     return { status: 500, body: { error: 'Algo deu errado. Tente de novo.' } };
   }
 }
@@ -166,7 +166,7 @@ export function createGameHandler(deps: {
       else await idempotency.concluir(user.id, key.toLowerCase(), r.status, r.body);
       return res.status(r.status).json(r.body);
     } catch (err) {
-      console.error('[game] erro:', errorText(err));
+      log.erro('[game] erro:', errorText(err));
       res.status(500).json({ error: 'Algo deu errado. Tente de novo.' });
     }
   };

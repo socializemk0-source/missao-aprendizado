@@ -6,6 +6,7 @@
 // parâmetros da volta do checkout nunca decidem nada sozinhos.
 
 import crypto from 'node:crypto';
+import { log } from './log.js';
 
 export type Cycle = 'monthly' | 'annual';
 
@@ -163,7 +164,7 @@ export async function applyPayment(store: PaymentStore, payment: MpPayment, now 
   if (payment.status === 'approved') {
     const amount = Number(payment.transaction_amount);
     if (payment.currency_id !== 'BRL' || !(amount >= plan.amount - 0.005)) {
-      console.warn('[pagamentos] valor/moeda inesperados; PRO não liberado', { paymentId, currency: payment.currency_id, amount });
+      log.aviso('[pagamentos] valor/moeda inesperados; PRO não liberado', { paymentId, currency: payment.currency_id, amount });
       return { status: 'ignored', userId: ref.userId };
     }
     const r = await store.grant({ paymentId, userId: ref.userId, cycle: ref.cycle, days: plan.days, amount, now });

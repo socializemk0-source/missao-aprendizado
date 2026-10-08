@@ -4,7 +4,8 @@
 //      roda com valores "canário" nelas: se algum aparecer no dist, vazou);
 //   2. formatos de chave: JWT (eyJ…), chave secreta nova do Supabase
 //      (sb_secret_…), o texto "service_role", chave da OpenAI (sk-…), token do
-//      Mercado Pago (APP_USR-…/TEST-…) e os nomes das variáveis secretas.
+//      Mercado Pago (APP_USR-…/TEST-…), Stripe, Resend, Turnstile, Google,
+//      URL de banco com senha e os nomes das variáveis secretas.
 // A chave pública (anon) não está no bundle: vem de /api/config/supabase.
 // Uso: npm run build && node scripts/check-bundle.mjs
 
@@ -22,6 +23,12 @@ const FORMATOS = [
   /sk-[A-Za-z0-9_-]{20,}/,
   /APP_USR-\d{6,}/,
   /TEST-\d{6,}-/,
+  /\b(sk|rk)_(live|test)_[A-Za-z0-9]{10,}/, // Stripe
+  /\bwhsec_[A-Za-z0-9]{10,}/, // segredo de webhook (Stripe)
+  /\bre_[A-Za-z0-9]{16,}_[A-Za-z0-9]{8,}/, // Resend
+  /\b0x4AAAAAAA[A-Za-z0-9_-]{10,}/, // Turnstile (a site key também começa assim; nenhuma vai no bundle)
+  /AIza[0-9A-Za-z_-]{35}/, // chave do Google/Firebase
+  /postgres(ql)?:\/\/[^:/\s]+:[^@/\s]+@/, // URL de banco com senha
   new RegExp(`\\b(${SECRETAS.join('|')})\\b`),
 ];
 

@@ -14,6 +14,7 @@
 // - Log: só { ok, hostname, action }. Nunca o token, o segredo ou o e-mail.
 
 import type { ApiResponse } from './http.js';
+import { log } from './log.js';
 
 const SITEVERIFY = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
 export const TURNSTILE_TIMEOUT_MS = 3_000;
@@ -68,8 +69,8 @@ export type VerifyTurnstile = (token: unknown, opts: VerifyOptions) => Promise<T
 
 function registrar(r: TurnstileResultado): TurnstileResultado {
   const linha = { ok: r.ok, hostname: r.hostname, action: r.action };
-  if (r.ok) console.info('[turnstile]', linha);
-  else console.warn('[turnstile]', linha);
+  if (r.ok) log.info('[turnstile]', linha);
+  else log.aviso('[turnstile]', linha);
   return r;
 }
 
@@ -77,7 +78,7 @@ export const verifyTurnstile: VerifyTurnstile = async (token, { uso, remoteip, e
   const secret = env.TURNSTILE_SECRET_KEY?.trim();
   if (!secret) {
     if (!turnstileObrigatorio(env)) return { ok: true, hostname: null, action: null, motivo: 'desligado' };
-    console.error('[turnstile] TURNSTILE_SECRET_KEY ausente em produção — recusando (falha fechada).');
+    log.erro('[turnstile] TURNSTILE_SECRET_KEY ausente em produção — recusando (falha fechada).');
     return registrar({ ok: false, hostname: null, action: null, motivo: 'sem-chave' });
   }
   if (typeof token !== 'string' || !token || token.length > 2048) return registrar({ ok: false, hostname: null, action: null, motivo: 'sem-token' });

@@ -6,6 +6,7 @@
 // que devolve o dono do próprio token. Nenhuma tabela é lida por este cliente.
 
 import type { Identity, VerifyToken } from './auth.js';
+import { log } from './log.js';
 
 type SupabaseClient = import('@supabase/supabase-js').SupabaseClient;
 let clientPromise: Promise<SupabaseClient> | null = null;
@@ -21,7 +22,7 @@ function client(): Promise<SupabaseClient> {
 
 export const verifySupabaseToken: VerifyToken = async (token) => {
   if (!process.env.SUPABASE_URL || !process.env.SUPABASE_ANON_KEY) {
-    console.error('[auth] SUPABASE_URL/SUPABASE_ANON_KEY ausentes — recusando (fail-closed).');
+    log.erro('[auth] SUPABASE_URL/SUPABASE_ANON_KEY ausentes — recusando (fail-closed).');
     return null;
   }
   const { data, error } = await (await client()).auth.getUser(token);

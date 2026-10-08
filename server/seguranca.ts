@@ -14,11 +14,17 @@
 //      Mercado Pago) → segue;
 //   4. responde o preflight (OPTIONS): só os métodos e headers da rota,
 //      cache de 1 dia;
-//   5. pega erro não tratado → 500 { error } com os mesmos cabeçalhos.
+//   5. dá um requestId a cada pedido (header X-Request-Id; vai na frente de
+//      cada linha de log do pedido — server/log.ts);
+//   6. padroniza todo erro 5xx: { error: mensagem amigável, code, requestId }.
+//      Nada de stack, SQL ou nome de tabela na resposta: mensagem que pareça
+//      detalhe técnico é trocada pela genérica. O detalhe fica só no log,
+//      com o mesmo requestId. Erro não tratado → 500 nesse formato.
 
 import type { ApiRequest, ApiResponse } from './http.js';
 import { header } from './http.js';
-import { errorText } from './log.js';
+import { randomUUID } from 'node:crypto';
+import { comRequestId, errorText, log } from './log.js';
 import { hostnamesPermitidos } from './turnstile.js';
 
 // Para respostas JSON da API: nada pode ser carregado nem emoldurado.
@@ -64,19 +70,44 @@ function mesmaOrigem(origin: string, req: ApiRequest, env: NodeJS.ProcessEnv): b
 
 type Handler = (req: ApiRequest, res: ApiResponse) => Promise<void> | void;
 
+export const ERRO_GENERICO = 'Algo deu errado do nosso lado. Tente de novo em instantes.';
+
+// Cara de detalhe técnico (stack, SQL, tabela, driver): não vai para a tela.
+const TECNICO = /\n\s*at |\bat .+:\d+:\d+|\b(select|insert|update|delete)\b[\s\S]*\b(from|into|set|where)\b|\b(v2|public|auth)\.[a-z_]+|relation "|column "|syntax error|violates|ECONN|ETIMEDOUT|postgres|drizzle|pg_|sqlstate|stack|TypeError|ReferenceError|undefined|null\b/i;
+
+export function corpoDeErro5xx(body: unknown, requestId: string): { error: string; code: string; requestId: string } {
+  const b = body && typeof body === 'object' ? body as Record<string, unknown> : {};
+  const error = typeof b.error === 'string' && b.error.length <= 300 && !TECNICO.test(b.error) ? b.error : ERRO_GENERICO;
+  const code = typeof b.code === 'string' && /^[A-Za-z][A-Za-z0-9_]{0,63}$/.test(b.code) ? b.code : 'erro_interno';
+  return { error, code, requestId };
+}
+
 export function comSeguranca(handler: Handler, opcoes: OpcoesRota, env: NodeJS.ProcessEnv = process.env): Handler {
   const cors = opcoes.cors !== false;
-  return async function rotaSegura(req, res) {
+  return function rotaSegura(req, res) {
+    const requestId = randomUUID();
+    return comRequestId(requestId, () => atender(req, res, requestId));
+  };
+
+  async function atender(req: ApiRequest, res: ApiResponse, requestId: string): Promise<void> {
     let respondeu = false;
+    let status = 200;
     const resposta: ApiResponse = {
-      status(code) { res.status(code); return resposta; },
-      json(body) { respondeu = true; res.json(body); },
+      status(code) { status = code; res.status(code); return resposta; },
+      json(body) {
+        respondeu = true;
+        if (status < 500) return res.json(body);
+        const corpo = corpoDeErro5xx(body, requestId);
+        log.erro('[api] resposta', status, { code: corpo.code, metodo: req.method, acao: req.query.action });
+        res.json(corpo);
+      },
       setHeader(name, value) { res.setHeader(name, value); },
       end() { respondeu = true; if (res.end) res.end(); else res.json(null); },
     };
 
     for (const [k, v] of Object.entries(CABECALHOS_API)) res.setHeader(k, v);
     res.setHeader('Cache-Control', 'no-store');
+    res.setHeader('X-Request-Id', requestId);
     res.setHeader('Vary', 'Origin');
 
     const origin = header(req, 'origin');
@@ -109,8 +140,11 @@ export function comSeguranca(handler: Handler, opcoes: OpcoesRota, env: NodeJS.P
     try {
       await handler(req, resposta);
     } catch (err) {
-      console.error('[api] erro não tratado:', errorText(err));
-      if (!respondeu) resposta.status(500).json({ error: 'Algo deu errado. Tente de novo.' });
+      // O detalhe (com stack) só no log; a tela recebe o corpo padrão.
+      // Do stack, só as linhas "at ..." (a primeira repete a mensagem, que no Drizzle traz os parâmetros).
+      const pilha = err instanceof Error ? (err.stack ?? '').split('\n').filter((l) => l.trim().startsWith('at ')).join('\n') : '';
+      log.erro('[api] erro não tratado:', errorText(err), pilha);
+      if (!respondeu) resposta.status(500).json({ code: 'erro_interno' });
     }
-  };
+  }
 }

@@ -13,7 +13,7 @@ import { createHash } from 'node:crypto';
 import { z } from 'zod';
 import { header, jsonBody, methodNotAllowed, type ApiRequest, type ApiResponse } from '../server/http.js';
 import { postgresLeads, type LeadStore } from '../server/leads.js';
-import { errorText } from '../server/log.js';
+import { errorText, log } from '../server/log.js';
 import { LIMITES, clientIp, limitar, memoryLimiter, postgresLimiter, type RateLimiter } from '../server/limite.js';
 import { textoLimpo } from '../server/sanitize.js';
 import { responderCaptcha, verifyTurnstile, type VerifyTurnstile } from '../server/turnstile.js';
@@ -51,7 +51,7 @@ export function createLeadsHandler({
       let banco = true;
       if (limiter) {
         try { banco = await limiter.hit(key, limit, windowSec, when); } catch (err) {
-          console.warn('[leads] contador indisponível, usando só a memória:', errorText(err));
+          log.aviso('[leads] contador indisponível, usando só a memória:', errorText(err));
         }
       }
       return local && banco;
@@ -104,7 +104,7 @@ export function createLeadsHandler({
       await store.save({ email: lead.email, name: lead.name ? textoLimpo(lead.name, NOME_MAX) || null : null, source: lead.source ?? 'landing' });
       res.status(200).json({ ok: true });
     } catch (err) {
-      console.error('[leads] erro ao salvar:', errorText(err));
+      log.erro('[leads] erro ao salvar:', errorText(err));
       res.status(500).json({ error: 'Não foi possível salvar agora. Tente de novo.' });
     }
   };

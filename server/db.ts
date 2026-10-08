@@ -14,6 +14,7 @@
 
 import { drizzle } from 'drizzle-orm/node-postgres';
 import pg from 'pg';
+import { log } from './log.js';
 
 let instance: ReturnType<typeof drizzle> | null = null;
 
@@ -29,7 +30,7 @@ export function db() {
       max: 3,
       connectionTimeoutMillis: 15_000,
     });
-    pool.on('error', (err) => console.error('[db] erro em conexão ociosa:', err.message));
+    pool.on('error', (err) => log.erro('[db] erro em conexão ociosa:', err.message));
     instance = drizzle(pool);
   }
   return instance;

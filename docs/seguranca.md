@@ -243,3 +243,36 @@ ela for ligada.
 
 Política nova se cria **só por migração** (nunca no dashboard): as duas
 migrações apagam qualquer política que não seja a delas ao rodar de novo.
+
+## Erros 5xx e requestId
+
+Toda resposta da API tem o header `X-Request-Id`. Erro 5xx sai sempre como
+`{ error: mensagem amigável, code: "codigo", requestId }` (`server/seguranca.ts`):
+mensagem com cara de detalhe técnico (stack, SQL, nome de tabela, driver) é
+trocada pela genérica. O detalhe vai só para o log da Vercel, com o mesmo id na
+frente da linha (`[req:<id>]`, `log` em `server/log.ts`); do stack, só as linhas
+`at …` (a primeira repete a mensagem, que no Drizzle traz os parâmetros).
+Para investigar: pegue o `requestId` que o aluno viu e procure no log.
+
+## Varredura de segredos no histórico (08/10/2026)
+
+gitleaks 8.21.2 e trufflehog 3.88.0 (os dois conferidos com uma chave
+plantada), mais busca direta por `service_role`, Stripe (`sk_live_`,
+`whsec_`…), OpenAI (`sk-…`), `sb_secret_`, Mercado Pago, Resend, Turnstile e
+URL de banco com senha, em **todos os commits de todas as branches** dos dois
+repositórios.
+
+- **`missao-aprendizado`**: nada real. Só os dois valores falsos dos testes
+  (liberados em `.gitleaks.toml`) e a palavra "service_role" em comentários e
+  documentação. O CI roda o gitleaks no histórico inteiro a cada PR.
+- **`missao-aprovacao`** (V1), commit `a624e50` de 17/09/2026 ("Add files via
+  upload"), já tirado do código em `023085a`/`4704f5e`, mas ainda no histórico:
+  - chave **`anon`** (pública, não `service_role`) de **outro** projeto
+    Supabase (`sqegkravlu3eplqaxupljd`, não o de produção), validade 2035;
+  - chave web do Firebase/Google (`AIza…`) do projeto
+    `watchful-mote-s3skh`.
+  Nenhuma `service_role`, chave de IA, Stripe ou senha de banco apareceu.
+  Ações recomendadas (dono): se o projeto Supabase `sqegkravlu3eplqaxupljd`
+  não é usado, apagá-lo; no Google Cloud do projeto `watchful-mote-s3skh`,
+  apagar a chave (ou o projeto, já que o Firebase saiu do app) ou, no mínimo,
+  restringi-la por site e por API.

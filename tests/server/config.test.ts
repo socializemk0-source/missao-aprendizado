@@ -1,5 +1,8 @@
 import { afterEach, describe, expect, it } from 'vitest';
-import handler from '../../api/config/supabase.js';
+import { createConfigHandler } from '../../api/config/supabase.js';
+import { memoryLimiter } from '../../server/limite.js';
+
+const handler = createConfigHandler({ limiter: null });
 import { versaoDoBuild } from '../../shared/versao.js';
 import { makeReq, makeRes } from './helpers.js';
 
@@ -48,5 +51,21 @@ describe('GET /api/config/supabase', async () => {
     await handler(makeReq(), res);
     expect(res.body.version).toBe('0123456789ab');
     expect(versaoDoBuild(process.env)).toBe(res.body.version);
+  });
+
+  it('limite por IP: passou de 60 por minuto → 429 rate_limited; outro IP segue', async () => {
+    process.env.SUPABASE_URL = 'https://x.supabase.co';
+    process.env.SUPABASE_ANON_KEY = 'anon';
+    const comLimite = createConfigHandler({ limiter: memoryLimiter(() => new Date('2026-10-08T12:00:00Z')) });
+    const pedir = async (ip: string) => {
+      const res = makeRes();
+      await comLimite(makeReq({ headers: { 'x-real-ip': ip } }), res);
+      return res;
+    };
+    for (let i = 0; i < 60; i++) expect((await pedir('7.7.7.7')).statusCode).toBe(200);
+    const bloqueado = await pedir('7.7.7.7');
+    expect([bloqueado.statusCode, bloqueado.body.code]).toEqual([429, 'rate_limited']);
+    expect(bloqueado.headers['Cache-Control']).toBeUndefined(); // o no-store vem da camada de segurança; o handler não põe cache público
+    expect((await pedir('8.8.8.8')).statusCode).toBe(200);
   });
 });

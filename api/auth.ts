@@ -18,6 +18,7 @@ import { hostnamesPermitidos, responderCaptcha, verifyTurnstile, type VerifyTurn
 import { authErrorMessage, passwordProblem } from '../shared/auth-erros.js';
 import { NOME_MAX, NOME_VALIDO } from '../shared/nome.js';
 import { comSeguranca } from '../server/seguranca.js';
+import { log } from '../server/log.js';
 
 const CORPO_MAX = 10 * 1024;
 const email = z.string().trim().toLowerCase().max(254).pipe(z.email());
@@ -95,7 +96,7 @@ export function createAuthHandler(deps: {
     const url = env.SUPABASE_URL?.replace(/\/$/, '');
     const chave = env.SUPABASE_SERVICE_ROLE_KEY?.trim();
     if (!url || !chave) {
-      console.error('[auth] SUPABASE_URL/SUPABASE_SERVICE_ROLE_KEY ausentes — cadastro e "esqueci a senha" recusados.');
+      log.erro('[auth] SUPABASE_URL/SUPABASE_SERVICE_ROLE_KEY ausentes — cadastro e "esqueci a senha" recusados.');
       return res.status(503).json({ error: 'Não foi possível concluir agora. Tente de novo mais tarde.', code: 'auth_indisponivel' });
     }
 
@@ -126,14 +127,14 @@ export function createAuthHandler(deps: {
       });
     } catch (err) {
       // Só o tipo do erro: a mensagem poderia trazer dados do pedido.
-      console.error(`[auth] ${acao}: Supabase Auth sem resposta:`, err instanceof Error ? err.name : 'erro');
+      log.erro(`[auth] ${acao}: Supabase Auth sem resposta:`, err instanceof Error ? err.name : 'erro');
       return res.status(502).json({ error: 'Não foi possível concluir agora. Tente de novo.', code: 'auth_indisponivel' });
     }
     const payload = (await resposta.json().catch(() => ({}))) as GoTrueErro & { user?: { identities?: unknown[] }; identities?: unknown[]; access_token?: unknown };
 
     if (!resposta.ok) {
       const codigo = typeof payload.error_code === 'string' ? payload.error_code : typeof payload.code === 'string' ? payload.code : null;
-      console.warn(`[auth] ${acao}: Supabase Auth recusou`, { status: resposta.status, code: codigo });
+      log.aviso(`[auth] ${acao}: Supabase Auth recusou`, { status: resposta.status, code: codigo });
       if (resposta.status === 429) return res.status(429).json({ error: authErrorMessage('rate limit'), code: 'rate_limited' });
       if (resposta.status >= 500) return res.status(502).json({ error: 'Não foi possível concluir agora. Tente de novo.', code: 'auth_indisponivel' });
       const texto = [payload.msg, payload.message, payload.error_description, codigo?.replace(/_/g, ' ')].find((t) => typeof t === 'string' && t) as string | undefined;

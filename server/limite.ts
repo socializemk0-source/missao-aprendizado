@@ -9,7 +9,7 @@
 import { sql } from 'drizzle-orm';
 import { db } from './db.js';
 import { header, type ApiRequest, type ApiResponse } from './http.js';
-import { errorText } from './log.js';
+import { errorText, log } from './log.js';
 
 export interface RateLimiter {
   // true = pode seguir; false = passou do limite nesta janela.
@@ -59,7 +59,7 @@ export async function limitar(
   try {
     ok = await limiter.hit(key, limit, windowSec, now);
   } catch (err) {
-    console.warn('[limite] contador indisponível, seguindo sem limite:', errorText(err));
+    log.aviso('[limite] contador indisponível, seguindo sem limite:', errorText(err));
     return true;
   }
   if (ok) return true;
@@ -89,6 +89,7 @@ export const LIMITES = {
   professorPorMinuto: 60, // /api/professor por professor
   leadsPorIpHora: 3, // /api/leads: envios por IP por hora
   leadsPorEmailDia: 3, // /api/leads: envios do mesmo e-mail por dia
+  configPorMinuto: 60, // /api/config/supabase por IP (o sucesso fica 5 min na CDN)
   authPorIpHora: 10, // /api/auth (cadastro + esqueci a senha) por IP por hora
   authPorEmailHora: 3, // /api/auth: pedidos para o mesmo e-mail por hora
 } as const;

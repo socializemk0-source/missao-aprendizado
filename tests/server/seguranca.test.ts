@@ -5,7 +5,7 @@
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { CABECALHOS_API, comSeguranca, origemPermitida, type OpcoesRota } from '../../server/seguranca.js';
+import { CABECALHOS_API, ERRO_GENERICO, comSeguranca, origemPermitida, type OpcoesRota } from '../../server/seguranca.js';
 import type { ApiRequest, ApiResponse } from '../../server/http.js';
 import { makeReq, makeRes } from './helpers.js';
 
@@ -43,7 +43,8 @@ describe('cabeçalhos de segurança em toda resposta', () => {
       expect(res.headers.Vary, nome).toBe('Origin');
     }
     const quebrou = await chamar(comSeguranca(handlers.throw, opcoes, PROD), { method: 'GET' });
-    expect([quebrou.statusCode, quebrou.body]).toEqual([500, { error: 'Algo deu errado. Tente de novo.' }]);
+    expect(quebrou.statusCode).toBe(500);
+    expect(quebrou.body).toEqual({ error: ERRO_GENERICO, code: 'erro_interno', requestId: quebrou.headers['X-Request-Id'] });
   });
 
   it('o vercel.json manda para /api exatamente os mesmos cabeçalhos (vale também para erro da própria Vercel)', () => {
