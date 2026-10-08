@@ -12,7 +12,7 @@ Prioridade: P0 bloqueia o uso · P1 jornada principal · P2 medição e retenç�
 
 | Funcionalidade | Estado | Situação | Problema | Prioridade | Próxima ação |
 |---|---|---|---|---|---|
-| Landing | Hero com a ilustração nova, questão de demonstração sem cadastro, planos, perguntas, captura de e-mail | OK | — | — | — |
+| Landing | Hero com a ilustração nova, questão de demonstração sem cadastro, planos, perguntas, captura de e-mail (`/api/leads`: zod com campo a mais recusado, até 10 KB, nome limpo antes de gravar, CAPTCHA conferido no servidor, 3 por hora por IP e 3 por dia por e-mail → 429 `too_many_leads`, campo-isca responde 200 calado) | OK | Precisa de `TURNSTILE_SECRET_KEY` na Vercel: sem ela, em produção, a lista recusa envios | P1 | Dono cria a variável (`docs/seguranca.md`, passo 4) |
 | Cadastro, login e senha | E-mail/senha e Google pelo Supabase; "Esqueci minha senha" e `/redefinir-senha` | OK | As URLs de retorno das prévias da Vercel precisam estar liberadas no Supabase | P1 | Conferir *Redirect URLs* no Supabase (pedido ao dono) |
 | Rotas e menu | 12 itens no menu, `/fase/:id`, `/praticar/:disciplina`, `/redacao/:id`, `/simulado/:id`, 404 em português | OK | Antes deste PR, uma tela quebrada mostrava a página de erro do React Router, em inglês | P0 | Corrigido: tela "Algo deu errado nesta tela" |
 | Onboarding | `/comecar`: 5 passos (concurso e banca, data da prova, tempo por dia, nível, matérias). O servidor confere e grava em `v2.study_plans` (migração 0011). "Ajustar plano" reabre preenchido | OK | — | — | — |

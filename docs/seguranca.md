@@ -16,7 +16,7 @@ antes de lançar e antes de um teste de invasão (pentest).
 | Pagamentos | Cartão e PIX ficam no Mercado Pago. Webhook com assinatura conferida em tempo constante; o pagamento é consultado na API do Mercado Pago (valor e moeda conferidos); aplicar duas vezes não soma duas vezes. O endereço de volta vem da configuração ou da Vercel, nunca do cabeçalho do pedido |
 | Abuso e robôs | Limite de chamadas contado no banco (`server/limite.ts`, migração 0012), válido entre todas as instâncias: 600 por minuto por IP antes do login, e por aluno: jogo 120, perfil 30, pagamentos 20, redação 30 por minuto. Formulário de contato: 5 por minuto por IP, com campo-isca para robô. Se o contador falhar, o app segue funcionando |
 | Custo da IA | Correção de redação: grátis 1 a cada 7 dias; PRO até 20 a cada 24 horas e 5 por minuto |
-| CAPTCHA | Cloudflare Turnstile no login, cadastro e "esqueci a senha", ligado pela variável `TURNSTILE_SITE_KEY` (ver abaixo) |
+| CAPTCHA | Cloudflare Turnstile no login, cadastro, "esqueci a senha" (conferido pelo Supabase) e na lista de contatos (`/api/leads`, conferido pelo servidor com `TURNSTILE_SECRET_KEY`: success, site e formulário `lead`), ligado pela variável `TURNSTILE_SITE_KEY` (ver abaixo) |
 | Cabeçalhos | CSP restrita (só o próprio site, o Supabase, o CAPTCHA e o pixel da Meta, que pode enviar formulário e abrir moldura só em `www.facebook.com`; os servidores de nuvem que o pixel tenta usar, `…on.aws` e `…run.app`, ficam bloqueados de propósito e aparecem como erro no console; sem `eval`; o script do tema entra por hash), HSTS, `X-Frame-Options: DENY` (o app não abre dentro de outro site), `nosniff`, Referrer-Policy, Permissions-Policy e COOP (`vercel.json`, conferido em `tests/server/headers.test.ts`) |
 | CORS | A API só libera leitura para `https://www.aprovatico.com.br` (`vercel.json`); o app chama a API do mesmo endereço, então prévias e o domínio sem `www` seguem funcionando. Sem `Access-Control-Allow-Credentials` |
 | Nome do aluno | Só letras, números, espaço e `. ' ’ - _ ( )` (`shared/nome.ts`, conferido no servidor). Cidade, concurso e banca não aceitam `<` e `>`. O nome vindo do Google e nomes antigos passam pelo mesmo filtro antes de aparecer no ranking |
@@ -30,6 +30,7 @@ antes de lançar e antes de um teste de invasão (pentest).
 1. Em dash.cloudflare.com → Turnstile → *Add widget*: domínio do app (e `missao-aprendizado.vercel.app`), modo *Managed*. Anote a **Site Key** (pública) e a **Secret Key** (secreta).
 2. Na Vercel, em *Settings → Environment Variables*, crie `TURNSTILE_SITE_KEY` com a Site Key e faça um novo deploy. A partir daí as telas mostram a verificação.
 3. Só depois, no Supabase, vá em *Authentication → Attack Protection → Enable CAPTCHA protection*, escolha *Turnstile* e cole a **Secret Key**.
+4. Na Vercel, crie também `TURNSTILE_SECRET_KEY` com a mesma **Secret Key** (só Production e Preview, nunca exposta ao navegador) e faça um novo deploy. **Sem ela, em produção, `/api/leads` recusa os envios** (fail-closed). Se o app ganhar outro domínio, liste-o em `TURNSTILE_HOSTNAMES`.
 
 Se fizer o passo 3 antes do 2, ninguém consegue entrar até o passo 2 ser feito.
 
@@ -136,3 +137,12 @@ npx vitest run tests/server/rls-postgrest.pg.test.ts
 ```
 
 Com a Data API desligada, todas as respostas são recusa — o teste passa.
+
+## Lista de contatos (`/api/leads`) e dados que vão para CRM/e-mail/painel
+
+Texto vindo de fora (hoje, o nome na lista de contatos) é limpo ao gravar
+(`textoLimpo` em `server/sanitize.ts`: sem sinais de HTML, caracteres de
+controle ou de direção, nem começo de fórmula de planilha). Qualquer e-mail,
+painel ou exportação que montar HTML com esses dados passa cada valor por
+`escapeHtml` — nunca concatena texto cru. O e-mail só entra se tiver formato
+válido (zod), em minúsculas.

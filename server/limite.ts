@@ -87,7 +87,8 @@ export const LIMITES = {
   pagamentosPorMinuto: 20, // /api/pagamentos por aluno (cada uma fala com o Mercado Pago)
   redacaoPorMinuto: 30, // /api/redacao por aluno (a correção em si tem limite próprio)
   professorPorMinuto: 60, // /api/professor por professor
-  leadsPorMinuto: 5, // /api/leads por IP
+  leadsPorIpHora: 3, // /api/leads: envios por IP por hora
+  leadsPorEmailDia: 3, // /api/leads: envios do mesmo e-mail por dia
 } as const;
 
 // Antes do login: por IP (cada token falso custaria uma consulta ao Supabase Auth).

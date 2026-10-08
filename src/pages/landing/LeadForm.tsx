@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from 'react';
 import { Link } from 'react-router';
+import { useCaptcha } from '../../components/Captcha';
 import { track } from '../../lib/marketing';
 
 // Captura de contato. O cadastro continua sendo a ação principal da página;
@@ -11,6 +12,9 @@ export function LeadForm({ source = 'landing' }: { source?: 'landing' | 'landing
   const [website, setWebsite] = useState(''); // campo-isca para robôs
   const [state, setState] = useState<'idle' | 'sending' | 'done'>('idle');
   const [error, setError] = useState<string | null>(null);
+  // O CAPTCHA só carrega quando a pessoa mexe no formulário (a página inicial fica leve).
+  const [mexeu, setMexeu] = useState(false);
+  const captcha = useCaptcha(null, { action: 'lead', ativo: mexeu });
 
   async function onSubmit(e: FormEvent) {
     e.preventDefault();
@@ -24,7 +28,7 @@ export function LeadForm({ source = 'landing' }: { source?: 'landing' | 'landing
       const res = await fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, name, consent, source, website }),
+        body: JSON.stringify({ email, name, consent, source, website, ...captcha.options }),
       });
       const payload = (await res.json().catch(() => ({}))) as { error?: string };
       if (!res.ok) throw new Error(payload.error ?? 'Não foi possível enviar agora.');
@@ -33,6 +37,7 @@ export function LeadForm({ source = 'landing' }: { source?: 'landing' | 'landing
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Não foi possível enviar agora.');
       setState('idle');
+      captcha.reset(); // o token do CAPTCHA vale uma vez
     }
   }
 
@@ -48,7 +53,7 @@ export function LeadForm({ source = 'landing' }: { source?: 'landing' | 'landing
 
   const id = (field: string) => `${source}-${field}`;
   return (
-    <form className="lead-form" onSubmit={onSubmit} noValidate>
+    <form className="lead-form" onSubmit={onSubmit} onFocus={() => setMexeu(true)} noValidate>
       {error && <p className="alert alert-error" role="alert">{error}</p>}
       <div className="lead-fields">
         <div className="field">
@@ -68,7 +73,8 @@ export function LeadForm({ source = 'landing' }: { source?: 'landing' | 'landing
         <input id={id('consent')} type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} />
         <span>Aceito receber e-mails do Aprova Tico e li a <Link to="/privacidade">política de privacidade</Link>. Posso sair da lista quando quiser.</span>
       </label>
-      <button className="btn btn-primary" disabled={state === 'sending' || !email.trim()}>{state === 'sending' ? 'Enviando…' : 'Quero receber'}</button>
+      {captcha.element}
+      <button className="btn btn-primary" disabled={state === 'sending' || !email.trim() || !captcha.ready}>{state === 'sending' ? 'Enviando…' : 'Quero receber'}</button>
     </form>
   );
 }

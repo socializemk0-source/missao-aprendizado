@@ -97,9 +97,17 @@ describe.runIf(local)('RLS pela Data API (PostgREST local, papéis do Supabase)'
     await new Promise<void>((r) => { p.once('exit', () => r()); p.kill('SIGTERM'); });
   }
 
-  async function contagens(): Promise<Record<string, number>> {
-    const out: Record<string, number> = {};
-    for (const t of tabelas) out[t.nome] = Number(linhas<{ n: number }>(await db().execute(sql.raw(`select count(*)::int as n from v2.${t.nome}`)))[0]!.n);
+  // Retrato das linhas do A e do B (os outros testes, em paralelo, mexem no
+  // resto do banco). Uma escrita indevida pela Data API também aparece como
+  // resposta 2xx com linhas, conferida em semDados.
+  async function contagens(): Promise<Record<string, string>> {
+    const out: Record<string, string> = {};
+    for (const t of tabelas.filter((x) => x.colunas.includes('user_id'))) {
+      const r = await db().execute(sql.raw(`select coalesce(md5(string_agg(x::text, '|' order by x::text)), '-') as h, count(*)::int as n
+        from v2.${t.nome} x where user_id in ('${A}', '${B}')`));
+      const { h, n } = linhas<{ h: string; n: number }>(r)[0]!;
+      out[t.nome] = `${n}:${h}`;
+    }
     return out;
   }
 

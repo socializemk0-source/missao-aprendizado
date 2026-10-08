@@ -41,7 +41,7 @@ export function Privacidade() {
         <li><strong>Vercel:</strong> hospedagem do site.</li>
         <li><strong>OpenAI:</strong> recebe só o texto da redação que você pede para corrigir.</li>
         <li><strong>Mercado Pago:</strong> processa os pagamentos do plano PRO.</li>
-        <li><strong>Cloudflare (Turnstile):</strong> confere, no login e no cadastro, que quem está entrando não é um robô.</li>
+        <li><strong>Cloudflare (Turnstile):</strong> confere, no login, no cadastro e na lista de contatos da página inicial, que quem está entrando não é um robô.</li>
         <li><strong>GitHub:</strong> guarda as cópias de segurança do banco, criptografadas (só nós temos a senha).</li>
         <li><strong>Meta (Facebook e Instagram):</strong> o pixel da Meta mede os nossos anúncios (páginas visitadas, cliques nos botões, até onde você rolou a página, cadastro e compra). Não enviamos seu nome, e-mail nem suas respostas.</li>
         <li><strong>Resend:</strong> envia os e-mails de confirmação de cadastro e de troca de senha.</li>
