@@ -25,6 +25,9 @@ export interface Stats {
   streak: number;
   bestStreak: number;
   lastStudyDay: string | null; // AAAA-MM-DD no fuso de Brasília
+  // Trava otimista: saveStats só grava se ninguém gravou depois da leitura
+  // (ausente = linha ainda não existe).
+  version?: number;
 }
 
 export interface QuestionState {
@@ -116,6 +119,9 @@ export interface SimuladoRow extends NewSimulado {
 }
 
 export interface GameStore {
+  // Hora oficial (now() do Postgres): XP do dia, sequência, vidas e prazos
+  // nunca usam o relógio do aparelho do aluno.
+  now(): Promise<Date>;
   // Tudo de um usuário acontece em série (transação + trava no Postgres):
   // dois cliques ao mesmo tempo nunca dão XP em dobro.
   withUser<T>(userId: string, fn: (tx: UserTx) => Promise<T>): Promise<T>;
@@ -130,6 +136,14 @@ export interface GameStore {
 
 // Percentil só com pelo menos 10 simulados de outros alunos no mesmo nível.
 export const PERCENTILE_MIN = 10;
+
+// saveStats encontrou uma versão diferente da que leu: outra escrita passou
+// na frente. A transação é desfeita; nada é creditado.
+export class StatsConflict extends Error {
+  constructor() {
+    super('user_stats mudou durante a operação');
+  }
+}
 
 export class GameError extends Error {
   constructor(readonly code: GameErrorCode, readonly status: number, message: string, readonly extra: Record<string, unknown> = {}) {
@@ -419,6 +433,8 @@ const MISSIONS = [
   { id: 'acertar-7', titulo: 'Acerte 7 questões', meta: 7, xp: 20, measure: (d: DayNumbers) => d.correct },
   { id: 'concluir-fase', titulo: 'Conclua 1 fase da trilha', meta: 1, xp: 25, measure: (d: DayNumbers) => d.phases },
 ] as const;
+
+export const MISSION_IDS = MISSIONS.map((m) => m.id);
 
 interface DayNumbers { total: number; correct: number; phases: number }
 

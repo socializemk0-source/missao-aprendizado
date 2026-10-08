@@ -19,14 +19,14 @@ import { embaralhar, gerarCaca, gerarCruzadinha, type Sorteio } from './grades.j
 
 // Menos que isso para achar 6 pares não é jogo, é atalho.
 export const MEMORIA_TEMPO_MIN_SEG = 5;
-const MEMORIA_JOGADAS_MAX = 500;
 const CACA_PALAVRAS = 7;
 const CRUZ_MAX = 11; // lado máximo da grade (cabe no celular)
 const CRUZ_ALVO = 7;
 
 type Estado =
   | { tipo: 'radar'; ids: string[]; acertos: (boolean | null)[] }
-  | { tipo: 'memoria' }
+  // pares: carta → par (só o servidor sabe); jogadas e achados contados aqui.
+  | { tipo: 'memoria'; pares?: Record<string, string>; achados?: string[]; jogadas?: number }
   | { tipo: 'caca'; palavras: string[]; encontradas: string[] }
   | { tipo: 'cruzadinha'; respostas: Record<string, string>; corretas: string[] };
 
@@ -84,13 +84,13 @@ function montar(tipo: JogoTipo, disciplina: DisciplinaId | null, random: Sorteio
   if (tipo === 'memoria') {
     // Até 10 letras: cabe numa carta no celular sem quebrar a palavra.
     const escolhidos = embaralhar(termos(disciplina, 10), random).slice(0, MEMORIA_PARES);
-    const cartas = escolhidos.flatMap((t, i) => [
+    const cartas = embaralhar(escolhidos.flatMap((t, i) => [
       { texto: t.termo, par: `p${i}`, lado: 'termo' as const },
       { texto: t.dica, par: `p${i}`, lado: 'dica' as const },
-    ]);
+    ]), random).map((c, i) => ({ ...c, id: `c${i}` }));
     return {
-      publico: { tipo, disciplina, cartas: embaralhar(cartas, random).map((c, i) => ({ id: `c${i}`, ...c })) },
-      estado: { tipo },
+      publico: { tipo, disciplina, cartas: cartas.map(({ id, texto, lado }) => ({ id, texto, lado })) },
+      estado: { tipo, pares: Object.fromEntries(cartas.map((c) => [c.id, c.par])), achados: [], jogadas: 0 },
     };
   }
   if (tipo === 'caca') {
@@ -165,12 +165,23 @@ export async function jogar(store: GameStore, userId: string, id: string, jogada
       await tx.saveRound(row.id, { estado });
       return { tipo: 'cruzadinha', corretas: estado.corretas, completa: estado.corretas.length === Object.keys(estado.respostas).length };
     }
-    throw invalida('Na Memória, é só terminar a rodada.');
+    // Memória: cada par de cartas viradas é uma jogada, contada aqui.
+    const { pares, achados = [], jogadas = 0 } = estado;
+    if (!pares) throw invalida('Esta rodada é de uma versão antiga do jogo. Comece outra.');
+    const cartas = jogada.cartas;
+    if (!Array.isArray(cartas) || cartas.length !== 2) throw invalida();
+    const [a, b] = cartas as unknown[];
+    if (typeof a !== 'string' || typeof b !== 'string' || a === b || !Object.hasOwn(pares, a) || !Object.hasOwn(pares, b)) throw invalida();
+    if (achados.includes(pares[a]!) || achados.includes(pares[b]!)) throw invalida('Este par já foi achado.');
+    const par = pares[a] === pares[b];
+    const novo = { tipo: 'memoria' as const, pares, achados: par ? [...achados, pares[a]!] : achados, jogadas: jogadas + 1 };
+    await tx.saveRound(row.id, { estado: novo });
+    return { tipo: 'memoria', cartas: [a, b], par, achados: novo.achados.length, total: MEMORIA_PARES, jogadas: novo.jogadas };
   });
 }
 
 // ---------------------------------------------------------------- Terminar
-export async function terminarJogo(store: GameStore, userId: string, id: string, extra: { jogadas?: unknown }, now = new Date()): Promise<JogoFim> {
+export async function terminarJogo(store: GameStore, userId: string, id: string, now = new Date()): Promise<JogoFim> {
   return store.withUser(userId, async (tx) => {
     const row = await rodadaAberta(tx, id);
     const estado = row.estado;
@@ -180,16 +191,10 @@ export async function terminarJogo(store: GameStore, userId: string, id: string,
       completo = estado.acertos.every((a) => a !== null);
       pontos = estado.acertos.filter(Boolean).length;
     } else if (estado.tipo === 'memoria') {
-      const jogadas = extra.jogadas;
-      if (jogadas === undefined || jogadas === null) {
-        completo = false; // saiu no meio
-        pontos = 0;
-      } else {
-        if (typeof jogadas !== 'number' || !Number.isInteger(jogadas) || jogadas < MEMORIA_PARES || jogadas > MEMORIA_JOGADAS_MAX) throw invalida();
-        if (segundos(row, now) < MEMORIA_TEMPO_MIN_SEG) throw new GameError('JOGO_RAPIDO', 409, 'Rodada rápida demais. Jogue de novo com calma.');
-        completo = true;
-        pontos = jogadas;
-      }
+      // Pontos = jogadas contadas pelo servidor; a tela não manda placar.
+      completo = (estado.achados?.length ?? 0) === MEMORIA_PARES;
+      pontos = estado.jogadas ?? 0;
+      if (completo && segundos(row, now) < MEMORIA_TEMPO_MIN_SEG) throw new GameError('JOGO_RAPIDO', 409, 'Rodada rápida demais. Jogue de novo com calma.');
     } else if (estado.tipo === 'caca') {
       completo = estado.encontradas.length === estado.palavras.length;
       pontos = segundos(row, now);

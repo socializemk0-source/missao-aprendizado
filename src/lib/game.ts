@@ -9,8 +9,20 @@ import { api } from './api';
 
 const get = <T,>(action: string, params: Record<string, string> = {}) =>
   api<T>(`/api/game?${new URLSearchParams({ action, ...params })}`);
+// Cada envio leva uma chave própria (Idempotency-Key): se o mesmo envio
+// chegar duas vezes, o servidor devolve a mesma resposta e não credita XP
+// de novo.
+export function novaChave(): string {
+  if (typeof crypto.randomUUID === 'function') return crypto.randomUUID();
+  const b = crypto.getRandomValues(new Uint8Array(16));
+  b[6] = (b[6]! & 0x0f) | 0x40;
+  b[8] = (b[8]! & 0x3f) | 0x80;
+  const h = [...b].map((x) => x.toString(16).padStart(2, '0')).join('');
+  return `${h.slice(0, 8)}-${h.slice(8, 12)}-${h.slice(12, 16)}-${h.slice(16, 20)}-${h.slice(20)}`;
+}
+
 const post = <T,>(action: string, body: unknown) =>
-  api<T>(`/api/game?action=${action}`, { method: 'POST', body: JSON.stringify(body) });
+  api<T>(`/api/game?action=${action}`, { method: 'POST', body: JSON.stringify(body), headers: { 'Idempotency-Key': novaChave() } });
 
 export const game = {
   progress: () => get<Progress>('progresso'),
@@ -36,7 +48,7 @@ export const game = {
   jogos: () => get<{ jogos: JogoResumo[] }>('jogos'),
   startJogo: (tipo: JogoTipo, disciplina: DisciplinaId | null) => post<JogoRodada>('jogo-iniciar', { tipo, disciplina }),
   jogada: (id: string, jogada: Record<string, unknown>) => post<JogadaResultado>('jogo-jogada', { ...jogada, id }),
-  endJogo: (id: string, jogadas?: number) => post<JogoFim>('jogo-terminar', { id, jogadas }),
+  endJogo: (id: string) => post<JogoFim>('jogo-terminar', { id }),
 };
 
 export function fonteLabel(fonte: Fonte): string {

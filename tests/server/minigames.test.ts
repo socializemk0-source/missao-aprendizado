@@ -27,7 +27,7 @@ async function radarCompleto(store: ReturnType<typeof memoryGameStore>, user: st
     const certo = gabaritoRadar(r.itens[i]!.texto);
     await jogar(store, user, r.id, { indice: i, resposta: i < acertar ? certo : !certo }, at(t + 1));
   }
-  return { r, fim: await terminarJogo(store, user, r.id, {}, at(t + 30)) };
+  return { r, fim: await terminarJogo(store, user, r.id, at(t + 30)) };
 }
 
 describe('Radar do Tico (certo ou errado)', () => {
@@ -60,10 +60,10 @@ describe('Radar do Tico (certo ou errado)', () => {
     const store = memoryGameStore();
     const r = await startJogo(store, 'u1', { tipo: 'radar', disciplina: null }, sementeAleatoria(2), T0) as Radar;
     await jogar(store, 'u1', r.id, { indice: 0, resposta: true }, T0);
-    const fim = await terminarJogo(store, 'u1', r.id, {}, at(10));
+    const fim = await terminarJogo(store, 'u1', r.id, at(10));
     expect(fim).toMatchObject({ completo: false, pontos: null, xpGanho: 0, recorde: false });
     await expect(jogar(store, 'u1', r.id, { indice: 1, resposta: true }, at(11))).rejects.toMatchObject({ code: 'JOGO_ENCERRADO', status: 409 });
-    await expect(terminarJogo(store, 'u1', r.id, {}, at(12))).rejects.toMatchObject({ code: 'JOGO_ENCERRADO' });
+    await expect(terminarJogo(store, 'u1', r.id, at(12))).rejects.toMatchObject({ code: 'JOGO_ENCERRADO' });
   });
 
   it('jogada inválida (índice fora, resposta que não é certo/errado) → 400', async () => {
@@ -87,36 +87,53 @@ describe('XP por dia', () => {
   });
 });
 
+// Pares da rodada, lidos do que só o servidor guarda.
+function paresDaRodada(store: ReturnType<typeof memoryGameStore>, user: string, id: string): [string, string][] {
+  const estado = store.users.get(user)!.rounds.find((r) => r.id === id)!.estado as { pares: Record<string, string> };
+  const por = new Map<string, string[]>();
+  for (const [carta, par] of Object.entries(estado.pares)) por.set(par, [...(por.get(par) ?? []), carta]);
+  return [...por.values()].map(([a, b]) => [a!, b!]);
+}
+
 describe('Memória do Tico', () => {
-  it('6 pares: cada par tem o termo e a sua dica do glossário', async () => {
+  it('6 pares: cada par tem o termo e a sua dica do glossário; a tela não recebe o par de cada carta', async () => {
     const store = memoryGameStore();
     const r = await startJogo(store, 'u1', { tipo: 'memoria', disciplina: 'rlm' }, sementeAleatoria(4), T0) as Memoria;
     expect(r.cartas).toHaveLength(12);
-    const pares = new Map<string, Memoria['cartas']>();
-    for (const c of r.cartas) pares.set(c.par, [...(pares.get(c.par) ?? []), c]);
-    expect(pares.size).toBe(6);
-    for (const [, [a, b]] of pares) {
-      const termo = [a!, b!].find((c) => c.lado === 'termo')!;
-      const dica = [a!, b!].find((c) => c.lado === 'dica')!;
+    for (const c of r.cartas) expect(Object.keys(c).sort()).toEqual(['id', 'lado', 'texto']);
+    const pares = paresDaRodada(store, 'u1', r.id);
+    expect(pares).toHaveLength(6);
+    for (const [a, b] of pares) {
+      const cartas = [a, b].map((id) => r.cartas.find((c) => c.id === id)!);
+      const termo = cartas.find((c) => c.lado === 'termo')!;
+      const dica = cartas.find((c) => c.lado === 'dica')!;
       expect(GLOSSARIO.find((t) => t.termo === termo.texto && t.disciplina === 'rlm')?.dica).toBe(dica.texto);
     }
   });
 
-  it('terminar: pontos = jogadas (menos é melhor), XP fixo; rápido demais ou jogadas impossíveis são recusados', async () => {
+  it('o servidor confere cada par e conta as jogadas; pontos = jogadas contadas por ele (menos é melhor)', async () => {
     const store = memoryGameStore();
-    const r = await startJogo(store, 'u1', { tipo: 'memoria', disciplina: null }, sementeAleatoria(5), T0);
-    await expect(terminarJogo(store, 'u1', r.id, { jogadas: 9 }, at(2))).rejects.toMatchObject({ code: 'JOGO_RAPIDO' });
-    await expect(terminarJogo(store, 'u1', r.id, { jogadas: 3 }, at(30))).rejects.toMatchObject({ code: 'ACAO_INVALIDA' });
-    const fim = await terminarJogo(store, 'u1', r.id, { jogadas: 9 }, at(30));
+    const r = await startJogo(store, 'u1', { tipo: 'memoria', disciplina: null }, sementeAleatoria(5), T0) as Memoria;
+    const pares = paresDaRodada(store, 'u1', r.id);
+    // 3 erros: primeira carta de um par com a primeira do par seguinte.
+    for (let i = 0; i < 3; i++) {
+      expect(await jogar(store, 'u1', r.id, { cartas: [pares[i]![0], pares[i + 1]![0]] }, at(1))).toMatchObject({ tipo: 'memoria', par: false, achados: 0 });
+    }
+    for (const [i, par] of pares.entries()) {
+      expect(await jogar(store, 'u1', r.id, { cartas: par }, at(2))).toMatchObject({ par: true, achados: i + 1, total: 6, jogadas: 4 + i });
+    }
+    await expect(jogar(store, 'u1', r.id, { cartas: pares[0]! }, at(3))).rejects.toMatchObject({ code: 'ACAO_INVALIDA' });
+    await expect(jogar(store, 'u1', r.id, { cartas: ['c0', 'c0'] }, at(3))).rejects.toMatchObject({ code: 'ACAO_INVALIDA' });
+    await expect(terminarJogo(store, 'u1', r.id, at(2))).rejects.toMatchObject({ code: 'JOGO_RAPIDO' });
+    const fim = await terminarJogo(store, 'u1', r.id, at(30));
     expect(fim).toMatchObject({ completo: true, pontos: 9, xpGanho: JOGO_XP.memoria, recorde: true });
-    const r2 = await startJogo(store, 'u1', { tipo: 'memoria', disciplina: null }, sementeAleatoria(6), at(60));
-    expect(await terminarJogo(store, 'u1', r2.id, { jogadas: 7 }, at(90))).toMatchObject({ pontos: 7, recorde: true });
   });
 
-  it('sair no meio (sem jogadas): rodada encerrada sem XP', async () => {
+  it('sair no meio: rodada encerrada sem XP, mesmo com pares achados', async () => {
     const store = memoryGameStore();
     const r = await startJogo(store, 'u1', { tipo: 'memoria', disciplina: null }, sementeAleatoria(12), T0);
-    expect(await terminarJogo(store, 'u1', r.id, {}, at(3))).toMatchObject({ completo: false, pontos: null, xpGanho: 0 });
+    await jogar(store, 'u1', r.id, { cartas: paresDaRodada(store, 'u1', r.id)[0]! }, at(1));
+    expect(await terminarJogo(store, 'u1', r.id, at(30))).toMatchObject({ completo: false, pontos: null, xpGanho: 0 });
   });
 });
 
@@ -132,7 +149,7 @@ describe('Caça-palavras', () => {
       const res = await jogar(store, 'u1', r.id, { palavra: p.palavra.toLowerCase() }, at(10 + i));
       expect(res).toMatchObject({ valida: true, encontradas: i + 1, total: r.palavras.length });
     }
-    const fim = await terminarJogo(store, 'u1', r.id, {}, at(95));
+    const fim = await terminarJogo(store, 'u1', r.id, at(95));
     expect(fim).toMatchObject({ completo: true, pontos: 95, xpGanho: JOGO_XP.caca, recorde: true });
   });
 
@@ -140,7 +157,7 @@ describe('Caça-palavras', () => {
     const store = memoryGameStore();
     const r = await startJogo(store, 'u1', { tipo: 'caca', disciplina: null }, sementeAleatoria(8), T0) as Caca;
     await jogar(store, 'u1', r.id, { palavra: r.palavras[0]!.palavra }, at(5));
-    expect(await terminarJogo(store, 'u1', r.id, {}, at(20))).toMatchObject({ completo: false, xpGanho: 0 });
+    expect(await terminarJogo(store, 'u1', r.id, at(20))).toMatchObject({ completo: false, xpGanho: 0 });
   });
 });
 
@@ -157,7 +174,7 @@ describe('Cruzadinha', () => {
     expect(parcial).toMatchObject({ tipo: 'cruzadinha', corretas: [chave(primeira!)], completa: false });
     const tudo = await jogar(store, 'u1', r.id, { respostas: certas }, at(60));
     expect(tudo).toMatchObject({ completa: true });
-    expect(await terminarJogo(store, 'u1', r.id, {}, at(61))).toMatchObject({ completo: true, pontos: 61, xpGanho: JOGO_XP.cruzadinha });
+    expect(await terminarJogo(store, 'u1', r.id, at(61))).toMatchObject({ completo: true, pontos: 61, xpGanho: JOGO_XP.cruzadinha });
   });
 });
 
@@ -166,7 +183,7 @@ describe('segurança e validação', () => {
     const store = memoryGameStore();
     const r = await startJogo(store, 'u1', { tipo: 'radar', disciplina: null }, sementeAleatoria(10), T0);
     await expect(jogar(store, 'u2', r.id, { indice: 0, resposta: true }, T0)).rejects.toMatchObject({ code: 'JOGO_INEXISTENTE', status: 404 });
-    await expect(terminarJogo(store, 'u2', r.id, {}, T0)).rejects.toMatchObject({ code: 'JOGO_INEXISTENTE' });
+    await expect(terminarJogo(store, 'u2', r.id, T0)).rejects.toMatchObject({ code: 'JOGO_INEXISTENTE' });
   });
 
   it('tipo ou matéria inválidos → 400', async () => {
@@ -179,7 +196,7 @@ describe('segurança e validação', () => {
     const store = memoryGameStore();
     const r = await startJogo(store, 'u1', { tipo: 'radar', disciplina: null }, sementeAleatoria(11), T0) as Radar;
     for (let i = 0; i < r.itens.length; i++) await jogar(store, 'u1', r.id, { indice: i, resposta: !gabaritoRadar(r.itens[i]!.texto) }, T0);
-    await terminarJogo(store, 'u1', r.id, {}, at(30));
+    await terminarJogo(store, 'u1', r.id, at(30));
     expect((await getProgress(store, 'u1', at(31))).hearts).toBe(5);
   });
 });

@@ -38,6 +38,7 @@ export const userStats = v2.table('user_stats', {
   bestStreak: integer('best_streak').notNull(),
   lastStudyDay: date('last_study_day', { mode: 'string' }),
   updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
+  version: integer('version').notNull().default(0), // migração 0015: trava otimista
 });
 
 export const questionState = v2.table('question_state', {
