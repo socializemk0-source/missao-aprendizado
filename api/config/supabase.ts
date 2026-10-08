@@ -5,6 +5,7 @@
 
 import { methodNotAllowed, type ApiRequest, type ApiResponse } from '../../server/http.js';
 import { comSeguranca } from '../../server/seguranca.js';
+import { versaoDoBuild } from '../../shared/versao.js';
 
 function handler(req: ApiRequest, res: ApiResponse): void {
   if (req.method !== 'GET') return methodNotAllowed(res, ['GET']);
@@ -17,7 +18,10 @@ function handler(req: ApiRequest, res: ApiResponse): void {
   }
   // Igual para todo mundo: pode ficar em cache (o erro acima não: no-store da camada de segurança).
   res.setHeader('Cache-Control', 'public, max-age=300, stale-while-revalidate=60');
-  res.status(200).json({ supabaseUrl, supabaseAnonKey, captchaSiteKey: process.env.TURNSTILE_SITE_KEY?.trim() || null });
+  res.status(200).json({
+    supabaseUrl, supabaseAnonKey, captchaSiteKey: process.env.TURNSTILE_SITE_KEY?.trim() || null,
+    version: versaoDoBuild(process.env), // o app compara com a dele (src/lib/versao.ts)
+  });
 }
 
 export default comSeguranca(handler, { metodos: ['GET'], headers: [] });

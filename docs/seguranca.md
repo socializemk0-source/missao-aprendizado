@@ -167,3 +167,21 @@ prévias, o endereço da própria prévia. A resposta devolve a origem do pedido
 sem CORS. Sem `Origin` (servidor, como o webhook do Mercado Pago) segue; o
 webhook nunca libera CORS. Preflight: só os métodos e headers da rota,
 `Access-Control-Max-Age: 86400`.
+
+## Cache e versão do app
+
+- Página (`/`, rotas do app, `/index.html`): `public, max-age=0,
+  must-revalidate`. O `Age` alto que aparece na resposta é da CDN da Vercel,
+  que guarda a cópia do deploy atual e a descarta a cada deploy novo; o
+  navegador revalida (ETag) a cada acesso. O `index.html` leva
+  `<meta name="app-version">` com o commit, então o HTML (e o ETag) mudam a
+  cada deploy de código novo.
+- `/assets/*` (nomes com hash do Vite): `public, max-age=31536000, immutable`.
+  Fora do rewrite do app: arquivo antigo dá 404, não a página.
+- Versão: `VERCEL_GIT_COMMIT_SHA` (12 caracteres) embutida no bundle e
+  devolvida em `/api/config/supabase` (`version`). Na Vercel, as variáveis de
+  sistema precisam estar expostas (*Settings → Environment Variables →
+  Automatically expose System Environment Variables*, ligado por padrão).
+- Falha de import dinâmico (tela de um deploy anterior) → recarrega a página
+  uma vez (trava por motivo no `sessionStorage`; sem ele, não recarrega).
+  Versão diferente sem falha não recarrega.

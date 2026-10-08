@@ -2,6 +2,7 @@ import { existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import react from '@vitejs/plugin-react';
 import { defineConfig, loadEnv, type Plugin } from 'vite';
+import { versaoDoBuild, versaoNoHtml } from './shared/versao';
 
 // Em desenvolvimento, /api/* executa os mesmos arquivos de api/ que a
 // Vercel executa em produção (api/me.ts → /api/me).
@@ -44,11 +45,19 @@ function apiRoutes(): Plugin {
   };
 }
 
+// Versão do build no index.html (ver shared/versao.ts).
+function versaoNaPagina(versao: string): Plugin {
+  return { name: 'app-version', transformIndexHtml: (html) => versaoNoHtml(html, versao) };
+}
+
 export default defineConfig(({ mode }) => {
   // As rotas de api/ leem process.env, como na Vercel.
   Object.assign(process.env, loadEnv(mode, process.cwd(), ''));
+  // O bundle sabe a própria versão (import.meta.env.VITE_APP_VERSION).
+  const versao = versaoDoBuild(process.env);
+  process.env.VITE_APP_VERSION = versao;
   return {
-    plugins: [react(), apiRoutes()],
+    plugins: [react(), apiRoutes(), versaoNaPagina(versao)],
     build: {
       rolldownOptions: {
         output: {

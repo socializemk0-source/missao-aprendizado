@@ -3,11 +3,12 @@
 // index.html (tema antes de desenhar) entra pelo hash — se alguém mudar o
 // script sem atualizar o hash, este teste avisa (senão o navegador o bloqueia).
 import { createHash } from 'node:crypto';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
+import { versaoNoHtml } from '../../shared/versao.js';
 import { describe, expect, it } from 'vitest';
 
 type Rule = { source: string; headers: { key: string; value: string }[] };
-const vercel = JSON.parse(readFileSync('vercel.json', 'utf8')) as { headers: Rule[] };
+const vercel = JSON.parse(readFileSync('vercel.json', 'utf8')) as { headers: Rule[]; rewrites: { source: string; destination: string }[] };
 const html = readFileSync('index.html', 'utf8');
 
 // Cabeçalhos que valem para um caminho (a regra mais abaixo vence, como na Vercel).
@@ -84,7 +85,33 @@ describe('cabeçalhos de segurança', () => {
 
   it('a página do app (index.html) é revalidada a cada acesso, para não servir versão velha', () => {
     for (const path of ['/', '/hoje', '/index.html']) expect(headersFor(path)['Cache-Control'], path).toBe('public, max-age=0, must-revalidate');
-    expect(headersFor('/assets/index-abc.js')['Cache-Control']).toBeUndefined();
+    for (const path of ['/', '/hoje', '/index.html']) {
+      // Nada de cache longo para a página: nem max-age, nem s-maxage, nem immutable.
+      expect(headersFor(path)['Cache-Control'], path).not.toMatch(/s-maxage|immutable|max-age=[1-9]/);
+    }
     expect(headersFor('/api/me')['Cache-Control']).toBeUndefined();
+  });
+
+  it('arquivos do build (/assets/<nome>-<hash>): cache de 1 ano, imutável', () => {
+    for (const path of ['/assets/index-D4rJrvOD.js', '/assets/index-Df-K7v7i.css', '/assets/Hoje-1mltXUjv.js']) {
+      expect(headersFor(path)['Cache-Control'], path).toBe('public, max-age=31536000, immutable');
+    }
+    // Só o build escreve em /assets (com hash): nada de public/assets sem hash.
+    expect(existsSync('public/assets')).toBe(false);
+  });
+
+  it('arquivo de /assets que não existe mais dá 404 (não a página do app, que quebraria o import)', () => {
+    const vaiParaApp = (path: string) => vercel.rewrites.some((r) => new RegExp(`^${r.source}$`).test(path));
+    expect(vaiParaApp('/hoje')).toBe(true);
+    expect(vaiParaApp('/assets/Hoje-velho.js')).toBe(false);
+    expect(vaiParaApp('/api/me')).toBe(false);
+  });
+
+  it('o index.html leva a versão do build (o HTML e o ETag mudam a cada deploy)', () => {
+    const comVersao = versaoNoHtml(html, 'abc123def456');
+    expect(comVersao).toContain('<meta name="app-version" content="abc123def456" />');
+    expect(versaoNoHtml(comVersao, 'outra')).toContain('content="outra"');
+    expect(versaoNoHtml(comVersao, 'outra').match(/app-version/g)).toHaveLength(1);
+    expect(versaoNoHtml(html, '"><script>')).toContain('content="script"');
   });
 });
