@@ -61,6 +61,17 @@ describe('index.html', () => {
   });
 });
 
+describe('favicon', () => {
+  it('é o Tico (não mais a letra "m") e tem versão .ico para navegadores antigos', () => {
+    const svg = read('public/favicon.svg');
+    expect(svg).not.toContain('<text');
+    expect(svg).toContain('<image');
+    expect(read('index.html')).toContain('<link rel="icon" href="/favicon.svg" type="image/svg+xml" />');
+    expect(read('index.html')).toContain('<link rel="icon" href="/favicon.ico" sizes="48x48" />');
+    expect(readFileSync('public/favicon.ico').readUInt16LE(2)).toBe(1); // cabeçalho ICO
+  });
+});
+
 describe('página sem conexão', () => {
   const html = read('public/offline.html');
   it('existe, é em português e não depende de nada de fora', () => {

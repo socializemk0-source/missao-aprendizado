@@ -15,7 +15,7 @@
 // Mudou este arquivo? Troque VERSION: o app mostra "Atualizar" para quem já
 // tem a versão anterior instalada.
 
-const VERSION = 'v1';
+const VERSION = 'v2';
 const PREFIX = 'aprova-tico-';
 const SHELL = `${PREFIX}shell-${VERSION}`;
 const STATIC = `${PREFIX}static-${VERSION}`;
@@ -56,7 +56,7 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(page(event));
   } else if (url.pathname.startsWith('/assets/')) {
     event.respondWith(cacheFirst(request));
-  } else if (/^\/(tico|landing|icons)\//.test(url.pathname) || url.pathname === '/favicon.svg') {
+  } else if (/^\/(tico|landing|icons)\//.test(url.pathname) || url.pathname === '/favicon.svg' || url.pathname === '/favicon.ico') {
     event.respondWith(staleWhileRevalidate(event));
   }
 });
