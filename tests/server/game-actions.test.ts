@@ -339,3 +339,92 @@ describe('limite por aluno, por tipo de ação', () => {
     expect((await call('POST', 'responder', { body: { questionId: Q, choice: right(Q), mode: 'trilha' }, token: 'ok:u2' })).statusCode).toBe(200);
   });
 });
+
+describe('CAPTCHA em toda ação de escrita', () => {
+  function comCaptcha(resposta: 'ok' | 'indisponivel' = 'ok') {
+    const store = memoryGameStore();
+    const vistos: unknown[] = [];
+    const handler = createGameHandler({
+      verifyToken: fakeVerify, store, limiter: null, idempotency: memoryIdempotency(),
+      turnstile: async (token, o) => {
+        vistos.push([token, o.uso]);
+        if (resposta === 'indisponivel') return { ok: false, hostname: null, action: null, motivo: 'indisponivel' };
+        // Cada token vale uma vez (como a siteverify).
+        const usado = vistos.filter((v) => (v as unknown[])[0] === token).length > 1;
+        return typeof token === 'string' && token.startsWith('tok-') && !usado
+          ? { ok: true, hostname: 'www.aprovatico.com.br', action: 'game' }
+          : { ok: false, hostname: null, action: null, motivo: 'recusado' };
+      },
+    });
+    const call = async (method: string, action: string, body?: unknown, extra: { key?: string; token?: string } = {}) => {
+      const res = makeRes();
+      const headers: Record<string, string> = {};
+      if (method === 'POST') headers['idempotency-key'] = extra.key ?? crypto.randomUUID();
+      if (extra.token) headers['x-turnstile-token'] = extra.token;
+      await handler(makeReq({ method, query: { action }, body, token: 'ok:u1', headers }), res);
+      return res;
+    };
+    return { call, vistos, store };
+  }
+  const body = { questionId: Q, choice: right(Q), mode: 'trilha' };
+
+  it('toda ação POST da lista exige o token; leituras não pedem', async () => {
+    const { call, vistos, store } = comCaptcha();
+    const id = crypto.randomUUID();
+    const validos: Record<string, unknown> = {
+      responder: body,
+      resgatar: { missionId: 'responder-10' },
+      'simulado-iniciar': { nivel: 'misto', disciplinas: ['rlm'], quantidade: 5 },
+      'simulado-entregar': { id, respostas: {} },
+      'jogo-iniciar': { tipo: 'radar' },
+      'jogo-jogada': { id, indice: 0, resposta: true },
+      'jogo-terminar': { id },
+      'plano-salvar': { prova: 'INSS', minutosDia: 30, nivel: 'iniciante', disciplinas: ['rlm'] },
+    };
+    const escritas = Object.entries(ACTIONS).filter(([, spec]) => spec.method === 'POST').map(([nome]) => nome);
+    expect(Object.keys(validos).sort()).toEqual(escritas.sort());
+    for (const [nome, corpo] of Object.entries(validos)) {
+      const res = await call('POST', nome, corpo);
+      expect([nome, res.statusCode, res.body.code]).toEqual([nome, 400, 'captcha_invalido']);
+    }
+    expect(vistos).toHaveLength(escritas.length);
+    expect(vistos.every((v) => (v as unknown[])[1] === 'jogo')).toBe(true);
+    expect(store.users.get('u1')?.simulados ?? []).toHaveLength(0);
+    for (const action of ['trilha', 'progresso', 'missoes', 'jogos']) expect((await call('GET', action)).statusCode).toBe(200);
+    expect(vistos).toHaveLength(escritas.length); // leituras não chamaram a verificação
+  });
+
+  it('com token: passa; o mesmo token de novo (outra tentativa) é recusado e nada é creditado', async () => {
+    const { call, store } = comCaptcha();
+    expect((await call('POST', 'responder', body, { token: 'tok-1' })).statusCode).toBe(200);
+    const reuso = await call('POST', 'responder', { ...body, mode: 'revisar' }, { token: 'tok-1' });
+    expect([reuso.statusCode, reuso.body.code]).toEqual([400, 'captcha_invalido']);
+    expect(store.users.get('u1')!.answers).toHaveLength(1);
+  });
+
+  it('replay da mesma Idempotency-Key devolve a resposta guardada sem gastar token', async () => {
+    const { call, vistos } = comCaptcha();
+    const key = crypto.randomUUID();
+    const a = await call('POST', 'responder', body, { key, token: 'tok-a' });
+    const b = await call('POST', 'responder', body, { key });
+    expect(b.body).toEqual(a.body);
+    expect(b.headers['Idempotent-Replayed']).toBe('true');
+    expect(vistos).toHaveLength(1);
+  });
+
+  it('CAPTCHA recusado libera a chave: a tela tenta de novo com um token NOVO e passa', async () => {
+    const { call } = comCaptcha();
+    const key = crypto.randomUUID();
+    expect((await call('POST', 'responder', body, { key, token: 'ruim' })).body.code).toBe('captcha_invalido');
+    const de_novo = await call('POST', 'responder', body, { key, token: 'tok-novo' });
+    expect([de_novo.statusCode, de_novo.body.xpGanho]).toEqual([200, XP_FIRST_CORRECT]);
+  });
+
+  it('Cloudflare fora do ar: escrita bloqueada (503), leitura segue', async () => {
+    const { call, store } = comCaptcha('indisponivel');
+    const res = await call('POST', 'responder', body, { token: 'tok-1' });
+    expect([res.statusCode, res.body.code]).toEqual([503, 'captcha_indisponivel']);
+    expect(store.users.get('u1')?.answers ?? []).toHaveLength(0);
+    expect((await call('GET', 'progresso')).statusCode).toBe(200);
+  });
+});

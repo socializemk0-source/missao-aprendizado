@@ -13,7 +13,7 @@ import { track } from '../../src/lib/marketing';
 import { setSupabaseForTests } from '../../src/lib/supabase';
 import { LeadForm } from '../../src/pages/landing/LeadForm';
 import { fakeVerify } from '../server/helpers';
-import { bridgeApi } from './api-bridge';
+import { authApi, bridgeApi } from './api-bridge';
 import { fakeSupabase, me, renderAt, session } from './render';
 
 vi.mock('../../src/lib/marketing', () => ({ track: vi.fn(() => 'evt-1') }));
@@ -98,6 +98,7 @@ describe('cadastro', () => {
 
   it('conta criada: manda CompleteRegistration sem dados pessoais', async () => {
     fakeSupabase();
+    await authApi();
     renderAt('/cadastro', { status: 'signedOut' });
     await preencher();
     await userEvent.click(screen.getByRole('button', { name: 'Criar conta' }));
@@ -107,7 +108,8 @@ describe('cadastro', () => {
   });
 
   it('cadastro recusado pelo serviço: manda at_signup_form_error e nenhum CompleteRegistration', async () => {
-    fakeSupabase({ signUp: async () => ({ data: {}, error: new Error('rate limit') }) });
+    fakeSupabase();
+    await authApi(() => ({ status: 429, body: { error_code: 'over_request_rate_limit', msg: 'rate limit' } }));
     renderAt('/cadastro', { status: 'signedOut' });
     await preencher();
     await userEvent.click(screen.getByRole('button', { name: 'Criar conta' }));

@@ -5,6 +5,8 @@ import { authErrorMessage } from '../auth/messages';
 import { Loading, safeNext } from '../auth/RequireAuth';
 import { useCaptcha } from '../components/Captcha';
 import { Icon } from '../components/Icon';
+import { ApiError } from '../lib/api';
+import { pedirAuth } from '../lib/auth-api';
 import { getSupabase } from '../lib/supabase';
 import { AuthLayout } from './AuthLayout';
 
@@ -20,7 +22,8 @@ export function Entrar() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
-  const captcha = useCaptcha(mode);
+  // No "esqueci a senha" o token é do formulário "recover" (conferido em /api/auth).
+  const captcha = useCaptcha(mode, { action: mode === 'reset' ? 'recover' : undefined });
 
   // Já logado (inclusive voltando do Google): direto para o app.
   if (status === 'signedIn') return <Navigate to={next} replace />;
@@ -33,7 +36,7 @@ export function Entrar() {
     try {
       await action();
     } catch (err) {
-      setError(authErrorMessage(err));
+      setError(err instanceof ApiError ? err.message : authErrorMessage(err));
     } finally {
       setBusy(false);
     }
@@ -62,10 +65,7 @@ export function Entrar() {
   function onReset(e: FormEvent) {
     e.preventDefault();
     void run(() => comCaptcha(async () => {
-      const { error: err } = await (await getSupabase()).auth.resetPasswordForEmail(email.trim(), {
-        redirectTo: `${window.location.origin}/redefinir-senha`, ...captcha.options,
-      });
-      if (err) throw err;
+      await pedirAuth('recover', { email: email.trim(), redirectTo: `${window.location.origin}/redefinir-senha`, ...captcha.options });
       // Mesma mensagem exista ou não a conta (não revela quem é cadastrado).
       setNotice(`Se houver uma conta com ${email.trim()}, você vai receber um link para criar uma nova senha.`);
     }));

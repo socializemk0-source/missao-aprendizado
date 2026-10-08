@@ -6,6 +6,7 @@ import type { DisciplinaId } from '../../content/types';
 import type { DominioAssunto, PerfilEstudo, Plano, PlanoResposta } from '../../shared/estudo';
 import type { Fonte } from '../../content/types';
 import { api } from './api';
+import { tokenDoJogo } from './turnstile';
 
 const get = <T,>(action: string, params: Record<string, string> = {}) =>
   api<T>(`/api/game?${new URLSearchParams({ action, ...params })}`);
@@ -21,8 +22,14 @@ export function novaChave(): string {
   return `${h.slice(0, 8)}-${h.slice(8, 12)}-${h.slice(12, 16)}-${h.slice(16, 20)}-${h.slice(20)}`;
 }
 
-const post = <T,>(action: string, body: unknown) =>
-  api<T>(`/api/game?action=${action}`, { method: 'POST', body: JSON.stringify(body), headers: { 'Idempotency-Key': novaChave() } });
+// Toda escrita leva também um CAPTCHA novo (um por tentativa; nunca reaproveitado).
+const post = async <T,>(action: string, body: unknown) => {
+  const captcha = await tokenDoJogo();
+  return api<T>(`/api/game?action=${action}`, {
+    method: 'POST', body: JSON.stringify(body),
+    headers: { 'Idempotency-Key': novaChave(), ...(captcha ? { 'X-Turnstile-Token': captcha } : {}) },
+  });
+};
 
 export const game = {
   progress: () => get<Progress>('progresso'),

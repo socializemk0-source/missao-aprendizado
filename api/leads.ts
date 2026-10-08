@@ -16,7 +16,7 @@ import { postgresLeads, type LeadStore } from '../server/leads.js';
 import { errorText } from '../server/log.js';
 import { LIMITES, clientIp, limitar, memoryLimiter, postgresLimiter, type RateLimiter } from '../server/limite.js';
 import { textoLimpo } from '../server/sanitize.js';
-import { HOSTNAMES_PADRAO, verifyTurnstile } from '../server/turnstile.js';
+import { responderCaptcha, verifyTurnstile, type VerifyTurnstile } from '../server/turnstile.js';
 import { NOME_MAX } from '../shared/nome.js';
 
 export const LEAD_CORPO_MAX = 10 * 1024;
@@ -37,22 +37,10 @@ const MENSAGEM: Record<string, string> = {
   consent: 'Marque a autorização para receber nossos e-mails.',
 };
 
-export interface CaptchaConfig {
-  secret: string | null;
-  obrigatorio: boolean; // em produção: sem a chave secreta, recusa (não deixa passar sem CAPTCHA)
-  hostnames?: string[];
-}
-
-export function captchaDoAmbiente(env: NodeJS.ProcessEnv = process.env): CaptchaConfig {
-  const secret = env.TURNSTILE_SECRET_KEY?.trim() || null;
-  const hostnames = env.TURNSTILE_HOSTNAMES?.split(',').map((h) => h.trim()).filter(Boolean);
-  return { secret, obrigatorio: Boolean(secret) || env.VERCEL_ENV === 'production', hostnames: hostnames?.length ? hostnames : HOSTNAMES_PADRAO };
-}
-
 export function createLeadsHandler({
-  store, now = Date.now, limiter, captcha = { secret: null, obrigatorio: false }, verify = verifyTurnstile,
+  store, now = Date.now, limiter, turnstile = verifyTurnstile,
 }: {
-  store: LeadStore; now?: () => number; limiter?: RateLimiter | null; captcha?: CaptchaConfig; verify?: typeof verifyTurnstile;
+  store: LeadStore; now?: () => number; limiter?: RateLimiter | null; turnstile?: VerifyTurnstile;
 }) {
   // Conta no banco (vale entre instâncias) e também em memória (se o banco falhar).
   const memoria = memoryLimiter(() => new Date(now()));
@@ -104,22 +92,8 @@ export function createLeadsHandler({
     }
     const lead = parsed.data;
 
-    if (captcha.obrigatorio) {
-      if (!captcha.secret) {
-        console.error('[leads] TURNSTILE_SECRET_KEY não configurada em produção — recusando (fail-closed).');
-        res.status(503).json({ error: 'O cadastro na lista está indisponível agora. Tente mais tarde.', code: 'captcha_indisponivel' });
-        return;
-      }
-      const r = await verify(lead.captchaToken, captcha.secret, { remoteip: ip, hostnames: captcha.hostnames, action: 'lead' });
-      if (!r.ok) {
-        console.warn('[leads] CAPTCHA recusado', { motivo: r.motivo }); // sem token, e-mail nem IP no log
-        res.status(r.motivo === 'indisponivel' ? 503 : 400).json({
-          error: r.motivo === 'indisponivel' ? 'Não deu para confirmar que você não é um robô. Tente de novo.' : 'Confirme que você não é um robô e tente de novo.',
-          code: r.motivo === 'indisponivel' ? 'captcha_indisponivel' : 'captcha_invalido',
-        });
-        return;
-      }
-    }
+    // CAPTCHA (server/turnstile.ts): sem resposta da Cloudflare, bloqueia.
+    if (responderCaptcha(res, await turnstile(lead.captchaToken, { uso: 'lead', remoteip: ip }))) return;
 
     // O e-mail entra na chave só como hash (a tabela de limites não guarda e-mail).
     const emailHash = createHash('sha256').update(lead.email).digest('hex').slice(0, 32);
@@ -135,4 +109,4 @@ export function createLeadsHandler({
   };
 }
 
-export default createLeadsHandler({ store: postgresLeads, limiter: postgresLimiter, captcha: captchaDoAmbiente() });
+export default createLeadsHandler({ store: postgresLeads, limiter: postgresLimiter });

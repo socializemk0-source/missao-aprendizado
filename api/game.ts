@@ -14,6 +14,10 @@
 // em server/actions.ts. Todo POST exige o header Idempotency-Key (uuid):
 // repetir a chave devolve a mesma resposta, sem creditar XP de novo.
 // A hora de tudo é a do Postgres (store.now()), nunca a do aparelho.
+// Toda escrita também exige um CAPTCHA novo no header X-Turnstile-Token
+// (server/turnstile.ts, formulário "game"): um token por tentativa; repetir
+// a mesma Idempotency-Key devolve a resposta guardada sem gastar token, e uma
+// tentativa nova pede token novo à tela.
 
 import { authenticate, type VerifyToken } from '../server/auth.js';
 import { actionSpec, BUCKETS, isAction, parseParams, type ParsedAction } from '../server/actions.js';
@@ -25,6 +29,7 @@ import { postgresGame } from '../server/game-pg.js';
 import { header, jsonBody, methodNotAllowed, type ApiRequest, type ApiResponse } from '../server/http.js';
 import { hashPedido, memoryIdempotency, postgresIdempotency, type IdempotencyStore } from '../server/idempotencia.js';
 import { clientIp, limitar, limitarIp, postgresLimiter, type RateLimiter } from '../server/limite.js';
+import { responderCaptcha, verifyTurnstile, type VerifyTurnstile } from '../server/turnstile.js';
 import { getDominio, getPlano, parsePerfilEstudo, saveStudyProfile } from '../server/estudo.js';
 import { getJogos, jogar, startJogo, terminarJogo } from '../server/minigames.js';
 import { deliverSimulado, getSimulado, getSimuladoOptions, parseSimuladoInput, startSimulado } from '../server/simulado.js';
@@ -96,9 +101,9 @@ async function rodar(store: GameStore, userId: string, p: ParsedAction, now: Dat
 }
 
 export function createGameHandler(deps: {
-  verifyToken: VerifyToken; store: GameStore; limiter?: RateLimiter | null; idempotency?: IdempotencyStore;
+  verifyToken: VerifyToken; store: GameStore; limiter?: RateLimiter | null; idempotency?: IdempotencyStore; turnstile?: VerifyTurnstile;
 }) {
-  const { store } = deps;
+  const { store, turnstile = verifyTurnstile } = deps;
   const idempotency = deps.idempotency ?? memoryIdempotency();
   return async function gameHandler(req: ApiRequest, res: ApiResponse): Promise<void> {
     if (req.method !== 'GET' && req.method !== 'POST') return methodNotAllowed(res, ['GET', 'POST']);
@@ -142,6 +147,15 @@ export function createGameHandler(deps: {
       }
       if (reserva.estado === 'conflito') {
         return res.status(422).json({ error: 'Este envio já foi usado para outro pedido.', code: 'idempotency_conflict' });
+      }
+
+      // CAPTCHA da tentativa (escrita do jogo: sem resposta da Cloudflare, bloqueia).
+      // Recusado: a chave é liberada para a tela tentar de novo com um token novo.
+      const captcha = await turnstile(header(req, 'x-turnstile-token'), { uso: 'jogo', remoteip: clientIp(req) });
+      if (!captcha.ok) {
+        await idempotency.liberar(user.id, key.toLowerCase());
+        responderCaptcha(res, captcha);
+        return;
       }
 
       const r = await rodar(store, user.id, parsed.parsed, now);

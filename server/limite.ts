@@ -89,6 +89,8 @@ export const LIMITES = {
   professorPorMinuto: 60, // /api/professor por professor
   leadsPorIpHora: 3, // /api/leads: envios por IP por hora
   leadsPorEmailDia: 3, // /api/leads: envios do mesmo e-mail por dia
+  authPorIpHora: 10, // /api/auth (cadastro + esqueci a senha) por IP por hora
+  authPorEmailHora: 3, // /api/auth: pedidos para o mesmo e-mail por hora
 } as const;
 
 // Antes do login: por IP (cada token falso custaria uma consulta ao Supabase Auth).

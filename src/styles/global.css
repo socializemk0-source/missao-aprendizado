@@ -254,3 +254,7 @@ img { max-width: 100%; height: auto; }
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .spinner { animation-duration: 2s; } }
+
+/* CAPTCHA das ações do jogo (src/lib/turnstile.ts): vazio (modo
+   interaction-only); só aparece, embaixo, quando a Cloudflare pede um clique. */
+.captcha-jogo { position: fixed; z-index: 1000; left: 50%; bottom: 16px; transform: translateX(-50%); }

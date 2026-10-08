@@ -1,41 +1,15 @@
 // CAPTCHA (Cloudflare Turnstile) nas telas de login, cadastro e "esqueci a
 // senha", e na lista de contatos da página inicial. Só aparece quando o
 // servidor informa uma chave (TURNSTILE_SITE_KEY); sem ela, nada muda. O token
-// vai junto do pedido: no login, o Supabase confere; na lista de contatos,
-// /api/leads confere (server/turnstile.ts). Cada token vale uma vez: depois de
+// vai junto do pedido: no login, o Supabase confere; no cadastro e no
+// "esqueci a senha" (/api/auth) e na lista de contatos (/api/leads), o nosso
+// servidor confere (server/turnstile.ts). As ações do jogo usam um token
+// invisível (src/lib/turnstile.ts). Cada token vale uma vez: depois de
 // cada tentativa a verificação recomeça.
 
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 import { getCaptchaSiteKey } from '../lib/supabase';
-
-interface Turnstile {
-  render(el: HTMLElement, options: Record<string, unknown>): string;
-  reset(id?: string): void;
-  remove(id: string): void;
-}
-
-declare global {
-  interface Window { turnstile?: Turnstile }
-}
-
-const SCRIPT = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
-let carregando: Promise<void> | null = null;
-
-function carregarTurnstile(): Promise<void> {
-  if (window.turnstile) return Promise.resolve();
-  carregando ??= new Promise<void>((resolve, reject) => {
-    const s = document.createElement('script');
-    s.src = SCRIPT;
-    s.async = true;
-    s.onload = () => resolve();
-    s.onerror = () => {
-      carregando = null;
-      reject(new Error('captcha indisponível'));
-    };
-    document.head.appendChild(s);
-  });
-  return carregando;
-}
+import { carregarTurnstile } from '../lib/turnstile';
 
 // resetKey: quando muda (ex.: login ↔ "esqueci a senha"), o widget é recriado.
 // action: nome do formulário, conferido pelo servidor. ativo: false adia

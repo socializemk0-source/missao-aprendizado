@@ -2,15 +2,16 @@
 // gravar, CAPTCHA conferido no servidor, limite por IP (3/hora) e por e-mail
 // (3/dia), campo-isca calado, corpo grande, SQL/XSS e e-mail repetido.
 import { describe, expect, it } from 'vitest';
-import { LEAD_CORPO_MAX, captchaDoAmbiente, createLeadsHandler, type CaptchaConfig } from '../../api/leads.js';
+import { LEAD_CORPO_MAX, createLeadsHandler } from '../../api/leads.js';
 import type { LeadStore } from '../../server/leads.js';
 import { LIMITES } from '../../server/limite.js';
-import type { verifyTurnstile } from '../../server/turnstile.js';
+import { verifyTurnstile, type VerifyTurnstile } from '../../server/turnstile.js';
 import { makeReq, makeRes } from './helpers.js';
 
 type Lead = { email: string; name: string | null; source: string };
 
-function setup(opts: { captcha?: CaptchaConfig; verify?: typeof verifyTurnstile; falhar?: boolean } = {}) {
+// captcha: CAPTCHA ligado (token "tok-bom" passa); verify: resposta fixa.
+function setup(opts: { captcha?: boolean; verify?: VerifyTurnstile; falhar?: boolean } = {}) {
   const saved: Lead[] = [];
   const tentativas: Lead[] = [];
   const store: LeadStore = {
@@ -22,11 +23,12 @@ function setup(opts: { captcha?: CaptchaConfig; verify?: typeof verifyTurnstile;
   };
   let now = Date.parse('2026-10-08T12:00:00Z');
   const tokens: unknown[] = [];
-  const verify: typeof verifyTurnstile = opts.verify ?? (async (token) => {
-    tokens.push(token);
-    return token === 'tok-bom' ? { ok: true } : { ok: false, motivo: 'recusado' };
+  const verify: VerifyTurnstile = opts.verify ?? (async (token, o) => {
+    tokens.push([token, o.uso]);
+    if (!opts.captcha) return { ok: true, hostname: null, action: null, motivo: 'desligado' };
+    return token === 'tok-bom' ? { ok: true, hostname: 'www.aprovatico.com.br', action: 'lead' } : { ok: false, hostname: null, action: null, motivo: 'recusado' };
   });
-  const handler = createLeadsHandler({ store, now: () => now, captcha: opts.captcha, verify });
+  const handler = createLeadsHandler({ store, now: () => now, turnstile: verify });
   const post = async (body: unknown, ip = '1.1.1.1', headers: Record<string, string> = {}) => {
     const res = makeRes();
     await handler(makeReq({ method: 'POST', body, headers: { 'x-forwarded-for': ip, ...headers } }), res);
@@ -140,7 +142,7 @@ describe('POST /api/leads — e-mail repetido e campo-isca', () => {
   });
 
   it('robô que preenche o campo escondido recebe 200 "ok" (igual ao sucesso), nada é gravado e o CAPTCHA nem é chamado', async () => {
-    const { saved, tokens, post } = setup({ captcha: { secret: 's', obrigatorio: true } });
+    const { saved, tokens, post } = setup({ captcha: true });
     for (const website of ['http://spam', '  x  ', 123, { a: 1 }, ['x']]) {
       const res = await post({ ...valid, website, campoQueNaoExiste: 'x' }, novoIp());
       expect([JSON.stringify(website), res.statusCode, res.body]).toEqual([JSON.stringify(website), 200, { ok: true }]);
@@ -189,7 +191,7 @@ describe('POST /api/leads — limite', () => {
 });
 
 describe('POST /api/leads — CAPTCHA (Turnstile)', () => {
-  const captcha = { secret: 'segredo', obrigatorio: true };
+  const captcha = true;
 
   it('sem token ou token recusado → 400 captcha_invalido; nada gravado', async () => {
     const { saved, post, tokens } = setup({ captcha });
@@ -197,7 +199,7 @@ describe('POST /api/leads — CAPTCHA (Turnstile)', () => {
       const res = await post({ ...valid, ...extra }, novoIp());
       expect([res.statusCode, res.body.code]).toEqual([400, 'captcha_invalido']);
     }
-    expect(tokens).toEqual([undefined, 'tok-ruim']);
+    expect(tokens).toEqual([[undefined, 'lead'], ['tok-ruim', 'lead']]);
     expect(saved).toEqual([]);
   });
 
@@ -208,20 +210,26 @@ describe('POST /api/leads — CAPTCHA (Turnstile)', () => {
   });
 
   it('Cloudflare fora do ar → 503 captcha_indisponivel (não deixa passar)', async () => {
-    const { saved, post } = setup({ captcha, verify: async () => ({ ok: false, motivo: 'indisponivel' }) });
+    const { saved, post } = setup({ captcha, verify: async () => ({ ok: false, hostname: null, action: null, motivo: 'indisponivel' }) });
     const res = await post({ ...valid, captchaToken: 'tok' }, novoIp());
     expect([res.statusCode, res.body.code]).toEqual([503, 'captcha_indisponivel']);
     expect(saved).toEqual([]);
   });
 
-  it('produção sem a chave secreta → 503 (fail-closed)', async () => {
-    const cfg = captchaDoAmbiente({ VERCEL_ENV: 'production' });
-    expect(cfg).toMatchObject({ secret: null, obrigatorio: true });
-    const { saved, post } = setup({ captcha: cfg });
-    expect((await post({ ...valid, captchaToken: 'tok-bom' }, novoIp())).statusCode).toBe(503);
-    expect(saved).toEqual([]);
-    expect(captchaDoAmbiente({})).toMatchObject({ obrigatorio: false });
-    expect(captchaDoAmbiente({ TURNSTILE_SECRET_KEY: 'x', TURNSTILE_HOSTNAMES: 'a.com, b.com' })).toEqual({ secret: 'x', obrigatorio: true, hostnames: ['a.com', 'b.com'] });
+  it('produção sem a chave secreta → 503 (falha fechada), com o verificador de verdade', async () => {
+    const vercel = process.env.VERCEL_ENV;
+    const secreta = process.env.TURNSTILE_SECRET_KEY;
+    process.env.VERCEL_ENV = 'production';
+    delete process.env.TURNSTILE_SECRET_KEY;
+    try {
+      const { saved, post } = setup({ verify: verifyTurnstile });
+      const res = await post({ ...valid, captchaToken: 'tok-bom' }, novoIp());
+      expect([res.statusCode, res.body.code]).toEqual([503, 'captcha_indisponivel']);
+      expect(saved).toEqual([]);
+    } finally {
+      if (vercel === undefined) delete process.env.VERCEL_ENV; else process.env.VERCEL_ENV = vercel;
+      if (secreta !== undefined) process.env.TURNSTILE_SECRET_KEY = secreta;
+    }
   });
 });
 

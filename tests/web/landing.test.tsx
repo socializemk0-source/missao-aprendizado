@@ -107,7 +107,7 @@ describe('captura de e-mail', () => {
     let opcoes: Record<string, unknown> = {};
     window.turnstile = {
       render: (_el: HTMLElement, o: Record<string, unknown>) => { render++; opcoes = o; return `w${render}`; },
-      reset: () => {}, remove: () => {},
+      reset: () => {}, remove: () => {}, execute: () => {},
     };
     const fetchMock = vi.fn(async () => new Response(JSON.stringify({ ok: true }), { status: 200 }));
     vi.stubGlobal('fetch', fetchMock);
