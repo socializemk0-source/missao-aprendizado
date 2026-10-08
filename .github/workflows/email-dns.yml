@@ -1,0 +1,22 @@
+name: E-mail — DNS (DMARC, SPF, DKIM)
+
+# Toda segunda (9h de Brasília) confere o DNS de e-mail do aprovatico.com.br
+# (scripts/email-dns.mjs). Falhou: o GitHub avisa por e-mail. O que cada
+# registro deve ter e o cronograma do DMARC estão em docs/email.md.
+on:
+  schedule:
+    - cron: '0 12 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  conferir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/email-dns.mjs
