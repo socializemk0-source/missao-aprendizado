@@ -6,7 +6,7 @@ Saída: saida/trilha.wav, já normalizada para -14 LUFS (padrão de Reels/Storie
 
     python3 marketing/video-anuncio/musica.py          -> anuncio.html (saida/trilha.wav)
     python3 marketing/video-anuncio/musica.py onibus   -> onibus.html (saida/trilha-onibus.wav)
-    (também: caverna, desafio)
+    (também: caverna, desafio, edital)
 """
 import os
 import subprocess
@@ -17,7 +17,7 @@ import numpy as np
 
 PAGE = sys.argv[1] if len(sys.argv) > 1 else 'anuncio'
 SR = 44100
-DUR = {'caverna': 26.0, 'desafio': 16.0}.get(PAGE, 24.0)
+DUR = {'caverna': 26.0, 'desafio': 16.0, 'edital': 16.0}.get(PAGE, 24.0)
 BEAT = 0.5
 N = int(SR * DUR)
 rng = np.random.default_rng(7)
@@ -304,6 +304,38 @@ def efeitos_desafio():
     add(pop(500, 1200, 0.12), 13.6, 0.3)
 
 
+def papel():
+    t = t_axis(0.18)
+    n = rng.standard_normal(len(t))
+    n = n - lowpass(n, 0.3)
+    return n * env(t, 0.004, 0.05) * 0.6
+
+
+def efeitos_edital():
+    add(pop(500, 1100), 0.15, 0.3)                            # "Abriu o edital..."
+    add(whoosh(0.5), 1.0, 0.35)                               # a folha sai
+    k = 0
+    at = 1.4
+    while at < 5.8:                                           # papel desenrolando, cada vez mais rápido
+        add(papel(), at, 0.5, pan=(-0.3 if k % 2 else 0.3))
+        at += max(0.07, 0.3 - k * 0.012)
+        k += 1
+    for i in range(26):                                       # folhas caindo na pilha
+        add(papel(), 2.2 + i * 0.13 + 0.5, 0.35, pan=(rng.random() - 0.5))
+    add(pop(500, 1100), 2.4, 0.3)
+    add(whoosh(0.4, up=True), 5.6, 0.35)
+    add(boing(0.5), 5.95, 0.4)                                # salta da pilha
+    add(whoosh(0.7), 6.0, 0.45)                               # folhas voam
+    for i in range(5):                                        # fases aparecem
+        add(ding((84 + 2 * i, 91 + 2 * i), 0.5), 6.8 + i * 0.3, 0.25)
+    for i in range(11):                                       # passinhos na trilha
+        add(tom(300 if i % 2 else 260) * 0.5, 7.25 + i * 0.25, 0.2)
+    add(ding((84, 88, 91), 1.0), 10.1, 0.4)                   # "Hoje: Português"
+    add(whoosh(0.6), 11.7, 0.45)
+    add(ding((84, 88, 91, 96), 1.4), 12.1, 0.4)
+    add(pop(500, 1200, 0.12), 13.6, 0.3)
+
+
 def efeitos_onibus():
     r = rumble(18.2)
     k = np.ones(len(r))
@@ -335,7 +367,7 @@ def efeitos_onibus():
     add(pop(500, 1200, 0.12), 21.4, 0.3)                      # botão do site
 
 
-{'anuncio': efeitos_anuncio, 'onibus': efeitos_onibus, 'caverna': efeitos_caverna, 'desafio': efeitos_desafio}[PAGE]()
+{'anuncio': efeitos_anuncio, 'onibus': efeitos_onibus, 'caverna': efeitos_caverna, 'desafio': efeitos_desafio, 'edital': efeitos_edital}[PAGE]()
 
 # ---------- saída ----------
 fade = np.minimum(1, (DUR - np.arange(N) / SR) / 0.5)

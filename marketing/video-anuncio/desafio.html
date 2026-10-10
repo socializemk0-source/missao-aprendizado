@@ -62,48 +62,10 @@
   <div id="core2" class="core"></div>
 </div>
 <script src="tico-rig.js"></script>
+<script src="questoes-desafio.js"></script>
 <script>
 (() => {
-  // ---------- questões da série (texto igual ao de content/questoes/*.ts) ----------
-  const syl = (parts, tonica) => `<span class="syl">${parts.map((p, i) => `<span class="${i === tonica ? 't' : ''}">${p}</span>`).join('')}</span>`;
-  const QUESTOES = {
-    'pt-acent-4': {
-      materia: 'PORTUGUÊS · ACENTUAÇÃO',
-      enunciado: 'Qual das palavras abaixo é proparoxítona?',
-      alternativas: ['ínterim', 'rubrica', 'recorde', 'gratuito'], correta: 0,
-      resposta: 'ínterim',
-      passos: [
-        `${syl(['ÍN', 'te', 'rim'], 0)} <span class="tag">proparoxítona: tem acento</span>`,
-        `${syl(['ru', 'BRI', 'ca'], 1)} <span class="tag no">não é "rúbrica"</span>`,
-        `${syl(['re', 'COR', 'de'], 1)} <span class="tag no">não é "récorde"</span>`,
-        `${syl(['gra', 'TUI', 'to'], 1)} <span class="tag no">não é "gratúito"</span>`,
-      ],
-    },
-    'rlm-porc-2': {
-      materia: 'RACIOCÍNIO LÓGICO · PORCENTAGEM',
-      enunciado: 'Um salário de R$ 2.000,00 teve um aumento de 10% e, depois, outro aumento de 10%. O salário final é:',
-      alternativas: ['R$ 2.400,00', 'R$ 2.420,00', 'R$ 2.200,00', 'R$ 2.410,00'], correta: 1,
-      resposta: 'R$ 2.420,00',
-      passos: [
-        '<span class="big">2.000 × 1,10 = <span class="hl">2.200</span></span>',
-        '<span class="big">2.200 × 1,10 = <span class="hl">2.420</span></span>',
-        '<span class="tag">aumentos sucessivos se multiplicam</span>',
-        '<span class="tag no">não é 20% de uma vez</span>',
-      ],
-    },
-    'adm-ato-3': {
-      materia: 'DIREITO ADMINISTRATIVO · ATOS',
-      enunciado: 'A retirada de um ato válido que deixou de ser conveniente e oportuno chama-se:',
-      alternativas: ['anulação', 'revogação', 'cassação', 'caducidade'], correta: 1,
-      resposta: 'revogação',
-      passos: [
-        '<span>Ato <b class="hl">válido</b>, retirado por conveniência e oportunidade</span>',
-        '<span class="tag">= revogação (só pela própria Administração)</span>',
-        '<span>Ato <b style="color:#b91c1c">ilegal</b></span>',
-        '<span class="tag no">= anulação</span>',
-      ],
-    },
-  };
+  const QUESTOES = window.QUESTOES_DESAFIO;
 
   const qs = new URLSearchParams(location.search);
   const Q = QUESTOES[qs.get('q')] || QUESTOES['pt-acent-4'];

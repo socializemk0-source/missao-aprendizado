@@ -75,13 +75,41 @@ igual ao de `content/questoes/*.ts`.
 | `--q` | Questão | Pegadinha |
 |---|---|---|
 | `pt-acent-4` | Qual palavra é proparoxítona? | "rúbrica" e "récorde" |
+| `rlm-eq-1` | "Se estudo, então passo" equivale a... | contrapositiva |
+| `pt-crase-1` | Onde a crase está certa? | "Fui à Brasília" |
+| `rlm-porc-3` | +20% e depois −20% volta ao preço? (C/E) | fica 4% menor |
+| `inf-plan-1` | =SOMA(A1:A10) ou =SOMA(A1;A10)? | dois-pontos × ponto e vírgula |
+| `const-rem-1` | Remédio do direito de ir e vir | habeas corpus |
 | `rlm-porc-2` | Dois aumentos de 10% em R$ 2.000 | não é R$ 2.400 |
 | `adm-ato-3` | Retirar ato válido por conveniência | revogação × anulação |
 
-Para uma questão nova, acrescente-a em `QUESTOES` no `desafio.html` (copiando
+Para uma questão nova, acrescente-a em `questoes-desafio.js` (copiando
 enunciado, alternativas e gabarito do arquivo da trilha) e grave com `--q`.
 Só questões autorais ou de provas oficiais conferidas, e nada de números
 inventados ("87% erram").
+
+## Vídeo cômico "o edital gigante" (`edital.html`)
+
+16 s: o Tico abre o edital, ele desenrola sem fim ("pág. 134 de 134") e o
+soterra; ele salta com os óculos, as folhas viram a trilha e ele anda até a
+fase de hoje. "A trilha mostra o próximo passo." · "Uma fase de cada vez."
+O edital é genérico (nenhum órgão real).
+
+## Posts, Stories e a pasta do calendário
+
+- `calendario.json`: as 52 peças das 4 semanas (12/out a 8/nov), as mesmas do
+  calendário publicado em https://claude.ai/artifact/EArNMoTDAhYfFuaS9fw7Xu
+- `pecas.html`: carrosséis e estáticos (1080×1350) e Stories (1080×1920).
+  Telas do app são ilustrações do Tico, não prints; números de exemplo vêm
+  marcados como exemplo.
+- `questoes-desafio.js`: as questões da série (vídeo, Stories e carrosséis).
+- `montar-pasta.mjs`: grava as imagens, copia os vídeos de `saida/` e monta
+  `saida/Criativos Aprova Tico/` (uma pasta por semana, um .txt por peça com
+  legenda, links com UTM e o texto das figurinhas) e o .zip.
+
+```bash
+node marketing/video-anuncio/montar-pasta.mjs
+```
 
 ## Formatos
 
@@ -106,6 +134,9 @@ node marketing/video-anuncio/render.mjs --page caverna
 
 python3 marketing/video-anuncio/musica.py desafio         # série Desafio do Tico
 node marketing/video-anuncio/render.mjs --page desafio --q pt-acent-4
+
+python3 marketing/video-anuncio/musica.py edital          # o edital gigante
+node marketing/video-anuncio/render.mjs --page edital --formats 9x16
 ```
 
 Precisa de `playwright` com Chromium (com WebGL; o render.mjs passa `--allow-file-access-from-files`) e `ffmpeg`. Se o playwright estiver

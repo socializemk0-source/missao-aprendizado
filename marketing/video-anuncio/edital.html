@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Aprova Tico — o edital gigante</title>
+<!--
+  Reels cômico (16 s): o Tico abre o edital, ele desenrola sem fim e soterra o
+  Tico; ele salta com os óculos, as folhas viram a trilha do app com a fase de
+  hoje. Texto da landing: "a trilha mostra o próximo passo", "uma fase de cada
+  vez". O edital é genérico (nenhum órgão real). Formato: ?w=1080&h=1920.
+-->
+<style>
+  @font-face { font-family: 'Baloo'; font-weight: 800; src: url(fonts/baloo-2-latin-800-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Nunito'; font-weight: 700; src: url(fonts/nunito-latin-700-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Nunito'; font-weight: 800; src: url(fonts/nunito-latin-800-normal.woff2) format('woff2'); }
+  :root { --heading: #1d3348; --text-2: #4d6478; --primary: #1688e8; --primary-strong: #1271bf; --green: #72c93d; --green-strong: #58a92a; --orange: #f7931e; --gold: #f5b700; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #0b1a2a; overflow: hidden; }
+  #stage { position: relative; overflow: hidden; background: #eef4f8; }
+  .layer { position: absolute; inset: 0; }
+  .core { position: absolute; left: 0; top: 0; width: 1080px; height: 1500px; transform-origin: 0 0; }
+  .abs { position: absolute; will-change: transform, opacity; }
+  svg { overflow: visible; display: block; }
+  .word { font-family: 'Baloo'; font-weight: 800; line-height: 1; white-space: nowrap; letter-spacing: -1px; text-align: center; left: 0; width: 1080px; }
+  .plate { left: 50%; display: flex; flex-direction: column; align-items: center; gap: 4px; background: #fff; border-radius: 40px; padding: 24px 44px 18px;
+           box-shadow: 0 16px 0 rgba(29,51,72,.10), 0 24px 60px rgba(29,51,72,.18); font-family: 'Baloo'; font-weight: 800; line-height: 1; white-space: nowrap; color: var(--heading); }
+  .page { width: 620px; background: #fffdf7; border: 3px solid #e4dccb; border-radius: 10px; padding: 34px 40px; box-shadow: 0 10px 30px rgba(29,51,72,.15);
+          font-family: 'Nunito'; font-weight: 700; color: #3b4a59; }
+  .page h4 { font-family: 'Nunito'; font-weight: 800; font-size: 26px; color: #1d3348; letter-spacing: 1px; }
+  .page p { font-size: 21px; line-height: 1.5; margin-top: 8px; }
+  .page .ln { height: 12px; border-radius: 6px; background: #e8e1d2; margin-top: 14px; }
+  .counter { font-family: 'Nunito'; font-weight: 800; font-size: 40px; color: #fff; background: #ef4444; border-radius: 999px; padding: 10px 28px; white-space: nowrap; }
+  .node { width: 120px; height: 120px; border-radius: 50%; display: grid; place-items: center; border: 8px solid #fff; box-shadow: 0 10px 24px rgba(29,51,72,.25); }
+  .nlabel { font-family: 'Baloo'; font-weight: 800; font-size: 40px; color: var(--heading); white-space: nowrap; }
+  .today { background: #fff; border-radius: 30px; padding: 22px 30px; box-shadow: 0 16px 40px rgba(29,51,72,.2); border: 5px solid var(--orange); font-family: 'Nunito'; font-weight: 800; white-space: nowrap; }
+  .today b { display: block; font-family: 'Baloo'; font-size: 52px; color: var(--heading); line-height: 1; }
+  .today span { font-size: 30px; color: #b45309; }
+  .pill { display: flex; align-items: center; gap: 18px; background: #fff; color: var(--primary-strong); border-radius: 999px; padding: 22px 52px;
+          font-family: 'Baloo'; font-weight: 800; font-size: 60px; white-space: nowrap; box-shadow: 0 20px 44px rgba(10,30,90,.35); }
+  .logo { display: flex; align-items: center; gap: 18px; font-family: 'Baloo'; font-weight: 800; font-size: 76px; color: #fff; white-space: nowrap; }
+  .logo .mark { width: 92px; height: 92px; border-radius: 26px; background: #fff; display: grid; place-items: center; }
+  .logo .dot { color: var(--gold); }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="bg" class="layer"></div>
+  <div id="core" class="core"></div>
+  <div id="cta" class="layer"></div>
+  <div id="core2" class="core"></div>
+</div>
+<script src="tico-rig.js"></script>
+<script>
+(() => {
+  const qs = new URLSearchParams(location.search);
+  const W = Number(qs.get('w')) || 1080, H = Number(qs.get('h')) || 1920, DUR = 16;
+  const stage = document.getElementById('stage');
+  stage.style.width = W + 'px'; stage.style.height = H + 'px';
+  const coreScale = Math.min(W / 1080, (H - (H > 1600 ? 420 : 60)) / 1500);
+  const coreT = `translate(${(W - 1080 * coreScale) / 2}px, ${(H - 1500 * coreScale) / 2}px) scale(${coreScale})`;
+  const core = document.getElementById('core'), core2 = document.getElementById('core2');
+  core.style.transform = coreT; core2.style.transform = coreT;
+
+  const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+  const lerp = (a, b, k) => a + (b - a) * k;
+  const prog = (t, a, b) => clamp((t - a) / (b - a));
+  const eo = (x) => 1 - Math.pow(1 - x, 3);
+  const eio = (x) => (x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+  const ei = (x) => x * x * x;
+  const spring = (dt, w = 16, z = 0.55) => {
+    if (dt <= 0) return 0;
+    const wd = w * Math.sqrt(1 - z * z);
+    return 1 - Math.exp(-z * w * dt) * (Math.cos(wd * dt) + (z * w / wd) * Math.sin(wd * dt));
+  };
+  const wob = (t, at, f = 14, d = 5) => (t > at ? Math.exp(-(t - at) * d) * Math.sin((t - at) * f) : 0);
+  const rnd = (i) => { const x = Math.sin(i * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); };
+  const beatPulse = (t, from) => (t < from ? 0 : Math.exp(-((t - from) % 0.5) * 9));
+  const el = (tag, cls, parent, html) => { const e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; (parent || core).appendChild(e); return e; };
+  const set = (e, { x = 0, y = 0, s = 1, sx, sy, r = 0, o = 1, blur = 0 }) => {
+    e.style.transform = `translate(${x}px, ${y}px) rotate(${r}deg) scale(${sx ?? s}, ${sy ?? s})`;
+    e.style.opacity = o; e.style.filter = blur > 0.05 ? `blur(${blur}px)` : 'none'; e.style.visibility = o <= 0.001 ? 'hidden' : 'visible';
+  };
+  const icon = (d, c, size, sw = 3) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+
+  // fundo: escritório cinza que vira céu da trilha
+  const bg = document.getElementById('bg');
+
+  // ---------- edital ----------
+  const TOPICOS = ['1. Compreensão e interpretação de textos.', '2. Ortografia oficial.', '3. Acentuação gráfica.', '4. Emprego do sinal indicativo de crase.',
+    '5. Concordância verbal e nominal.', '6. Regência verbal e nominal.', '7. Pontuação.', '8. Proposições e conectivos.', '9. Equivalências lógicas.',
+    '10. Porcentagem.', '11. Princípios da Administração Pública.', '12. Atos administrativos.', '13. Direitos e garantias fundamentais.', '14. Remédios constitucionais.',
+    '15. Planilhas eletrônicas.', '16. Noções de segurança da informação.'];
+  const pageHtml = (i) => `<h4>${i === 0 ? 'EDITAL DE ABERTURA · CONTEÚDO PROGRAMÁTICO' : 'CONTEÚDO PROGRAMÁTICO (continuação)'}</h4>
+    ${[0, 1, 2, 3].map((k) => `<p>${TOPICOS[(i * 4 + k) % TOPICOS.length]}</p>`).join('')}<div class="ln"></div><div class="ln" style="width:80%"></div><div class="ln" style="width:90%"></div>`;
+  const ticoBox = el('div', 'abs', core); Object.assign(ticoBox.style, { left: '280px', top: '800px', width: '520px', height: '520px', transformOrigin: '260px 490px' });
+  let tico;
+  // a folha que sai das patas e desenrola
+  const scroll = el('div', 'abs', core); Object.assign(scroll.style, { left: '230px', top: '1000px', width: '620px', height: '0px', overflow: 'hidden', transformOrigin: '310px 0' });
+  const scrollInner = el('div', '', scroll); scrollInner.innerHTML = [...Array(12)].map((_, i) => `<div class="page" style="border-radius:0;border-top:${i ? '0' : '3px solid #e4dccb'};box-shadow:none">${pageHtml(i)}</div>`).join('');
+  // folhas que caem e empilham sobre o Tico
+  const sheets = [...Array(26)].map((_, i) => { const p = el('div', 'abs page', core, pageHtml(i + 3)); p.style.transformOrigin = '310px 200px'; p.style.left = '230px'; p.style.top = '0px'; return p; });
+  const counter = el('div', 'abs counter', core, 'pág. 1 de 134'); Object.assign(counter.style, { left: '50%', top: '330px' });
+  const p1 = el('div', 'abs plate', core, '<span style="font-size:110px">Abriu o edital...</span>'); p1.style.top = '20px';
+  const p2 = el('div', 'abs plate', core, '<span style="font-size:96px">...e ele não</span><span style="font-size:96px;color:#ef4444">acaba nunca?</span>'); p2.style.top = '20px';
+
+  // ---------- trilha ----------
+  const trilha = el('div', 'abs', core); Object.assign(trilha.style, { left: '0', top: '0', width: '1080px', height: '1500px' });
+  const PATH = 'M180 1360 C 180 1180, 860 1220, 860 1040 S 220 880, 220 700 S 860 560, 860 380';
+  trilha.innerHTML = `<svg width="1080" height="1500" viewBox="0 0 1080 1500">
+      <path d="${PATH}" fill="none" stroke="#c7e6ff" stroke-width="64" stroke-linecap="round"/>
+      <path class="draw" d="${PATH}" fill="none" stroke="#72c93d" stroke-width="64" stroke-linecap="round"/>
+      <path d="${PATH}" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-dasharray="2 34" opacity=".9"/></svg>`;
+  const draw = trilha.querySelector('.draw');
+  const pathEl = trilha.querySelector('path');
+  const LEN = pathEl.getTotalLength();
+  draw.setAttribute('stroke-dasharray', `${LEN} ${LEN}`);
+  const NODES = [[0.0, 'Fase 1', 'feita'], [0.27, 'Fase 2', 'feita'], [0.52, 'Fase 3', 'hoje'], [0.77, 'Fase 4', 'bloq'], [1.0, 'Fase 5', 'bloq']];
+  const nodes = NODES.map(([f, nome, st], i) => {
+    const pt = pathEl.getPointAtLength(LEN * f);
+    const cor = st === 'feita' ? '#58a92a' : st === 'hoje' ? '#f7931e' : '#cbd5e1';
+    const ic = st === 'feita' ? icon('<path d="M5 12l5 5L20 7"/>', '#fff', 60, 3.4) : st === 'hoje' ? icon('<path d="m12 2.5 2.9 6 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.2 1.3-6.6-4.9-4.6 6.6-.8z"/>', '#fff', 60, 2.4) : icon('<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>', '#fff', 52, 2.6);
+    const n = el('div', 'abs node', trilha, ic); n.style.background = cor; n.style.left = pt.x - 60 + 'px'; n.style.top = pt.y - 60 + 'px';
+    const lb = el('div', 'abs nlabel', trilha, nome); lb.style.left = (pt.x < 540 ? pt.x + 80 : pt.x - 80 - 180) + 'px'; lb.style.top = pt.y - 22 + 'px';
+    if (pt.x >= 540) { lb.style.width = '180px'; lb.style.textAlign = 'right'; }
+    return { n, lb, f, st, pt };
+  });
+  const today = el('div', 'abs today', trilha, '<b>Hoje: Português</b><span>Fase 3 · Crase</span>');
+  const p3 = el('div', 'abs plate', core, '<span style="font-size:84px">A trilha mostra</span><span style="font-size:84px;color:#1688e8">o próximo passo.</span>'); p3.style.top = '20px';
+
+  // ---------- chamada ----------
+  const F = document.getElementById('cta');
+  const fBg = el('div', 'layer', F); fBg.style.background = 'radial-gradient(circle at 50% 42%, #2ea0ff 0%, #1688e8 38%, #1e40af 100%)';
+  const frays = el('div', 'abs', F);
+  Object.assign(frays.style, { left: '50%', top: '45%', width: '3000px', height: '3000px', marginLeft: '-1500px', marginTop: '-1500px',
+    background: 'repeating-conic-gradient(rgba(255,255,255,.09) 0deg 9deg, rgba(255,255,255,0) 9deg 22.5deg)', borderRadius: '50%' });
+  const Fc = el('div', 'layer', core2);
+  const f1 = el('div', 'abs word', Fc, 'Uma fase'); Object.assign(f1.style, { fontSize: '130px', color: '#fff', top: '0px' });
+  const f2 = el('div', 'abs word', Fc, 'de cada vez.'); Object.assign(f2.style, { fontSize: '130px', color: 'var(--gold)', top: '125px' });
+  const ticoFBox = el('div', 'abs', Fc); Object.assign(ticoFBox.style, { left: '270px', top: '300px', width: '540px', height: '540px', transformOrigin: '270px 500px' });
+  let ticoF;
+  const logo = el('div', 'abs logo', Fc, `<span class="mark">${icon('<circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/>', '#1688e8', 62, 2.6)}</span><span>Aprova Tico<span class="dot">.</span></span>`);
+  Object.assign(logo.style, { left: '50%', top: '860px' });
+  const fsub = el('div', 'abs word', Fc, 'Comece grátis · sem cartão de crédito'); Object.assign(fsub.style, { fontSize: '46px', color: '#dbeafe', top: '985px', fontFamily: 'Baloo' });
+  const fpill = el('div', 'abs pill', Fc, `aprovatico.com.br ${icon('<path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>', '#1271bf', 56, 3)}`); Object.assign(fpill.style, { left: '50%', top: '1075px' });
+
+  let t = 0;
+  const showPlate = (e, a, b, tilt = -1.5) => {
+    const k = spring(t - a, 15, 0.5); const out = eio(prog(t, b - 0.25, b));
+    e.style.transform = `translateX(-50%) translateY(${50 * (1 - k) - 30 * out}px) scale(${lerp(0.5, 1, k) * (1 - 0.2 * out)}) rotate(${tilt * (1 - out)}deg)`;
+    e.style.opacity = t < a || t > b ? 0 : clamp(k * 3) * (1 - out);
+  };
+
+  function seek(tt) {
+    t = tt;
+    const toTrail = eio(prog(t, 6.0, 6.8));
+    bg.style.background = `linear-gradient(180deg, ${toTrail > 0.5 ? '#e5f6ff' : '#eef1f4'} 0%, ${toTrail > 0.5 ? '#ecfae5' : '#dfe5ea'} 100%)`;
+
+    // ===== edital desenrolando =====
+    const unroll = ei(prog(t, 1.4, 5.6));
+    const h = lerp(0, 1700, unroll);
+    scroll.style.height = h + 'px';
+    scrollInner.style.transform = `translateY(${-Math.max(0, unroll * 2600 - 600)}px)`;
+    set(scroll, { o: t < 1.3 ? 0 : 1 - prog(t, 6.0, 6.3), y: -180 * eo(prog(t, 1.0, 1.4)), r: Math.sin(t * 3) * 1.2 });
+    const pg = Math.min(134, Math.floor(1 + 133 * ei(prog(t, 1.6, 5.8))));
+    counter.textContent = `pág. ${pg} de 134`;
+    const kc = spring(t - 2.4, 16, 0.45);
+    counter.style.transform = `translateX(-50%) scale(${kc * (1 + 0.06 * beatPulse(t, 2.5))}) rotate(${-3 + wob(t, 2.4, 20, 4) * 4}deg)`;
+    counter.style.opacity = t > 2.4 && t < 6.0 ? 1 : 0;
+    sheets.forEach((s, i) => {
+      const at = 2.2 + i * 0.13; const p = prog(t, at, at + 0.55);
+      const tx = (rnd(i) - 0.5) * 560, ty = 780 + Math.floor(i / 4) * -42 + rnd(i + 3) * 40, rr = (rnd(i + 7) - 0.5) * 50;
+      const fly = eio(prog(t, 6.0 + rnd(i) * 0.25, 6.7 + rnd(i) * 0.25));
+      // na virada, as folhas voam para cima e somem
+      set(s, { x: tx * eo(p) + (rnd(i + 9) - 0.5) * 900 * fly, y: lerp(-1300, ty, ei(p)) - 1800 * fly, r: lerp(rr * 3, rr, p) + 300 * fly, s: 0.62, o: p > 0 && fly < 1 ? 1 : 0 });
+    });
+    showPlate(p1, 0.15, 2.3);
+    showPlate(p2, 2.4, 5.95, 2);
+
+    // ===== Tico =====
+    {
+      let pose = 'neutro', head = Math.sin(t * 2.2) * 3, nod = 0, arm = 0, blink = TicoRig.blinkAt(t, 5), visor = 0, x = 0, y = 0, sx = 1, sy = 1, r = 0;
+      const kin = spring(t - 0.1, 13, 0.55); y = 500 * (1 - kin);
+      if (t > 2.5 && t < 6.0) { head = Math.sin(t * 8) * 6; blink = TicoRig.blinkAt(t * 2, 3); x = Math.sin(t * 30) * 3; }
+      // soterrado: afunda na pilha
+      const buried = eo(prog(t, 3.2, 5.6)) * (1 - eo(prog(t, 5.9, 6.2)));
+      y += 260 * buried;
+      // salta da pilha com os óculos
+      if (t >= 5.9) {
+        pose = 'apontando'; visor = clamp((t - 6.0) * 4); arm = Math.sin(t * 6) * 6;
+        const jump = t < 6.6 ? Math.sin(((t - 5.9) / 0.7) * Math.PI) : 0;
+        y -= 300 * jump; sy = 1 + 0.12 * jump; sx = 1 - 0.08 * jump;
+        const land = wob(t, 6.6, 18, 7); sx += 0.1 * land; sy -= 0.1 * land;
+      }
+      // anda pela trilha até a fase de hoje
+      if (t >= 7.2) {
+        pose = t < 10.2 ? 'neutro' : 'joinha';
+        const walk = eio(prog(t, 7.2, 10.0));
+        const start = nodes[0].pt, end = nodes[2].pt;
+        const pt = pathEl.getPointAtLength(LEN * lerp(0, nodes[2].f, walk));
+        x = (pt.x - 540) * 0.9; y = (pt.y - 1360) * 0.9 + 60 - Math.abs(Math.sin(t * 9)) * 30 * (walk < 1 ? 1 : 0);
+        sx = 0.62; sy = 0.62; r = Math.sin(t * 9) * 4 * (walk < 1 ? 1 : 0);
+        head = Math.sin(t * 3) * 4; arm = pose === 'joinha' ? Math.sin(t * 5) * 6 : 0; blink = pose === 'neutro' ? TicoRig.blinkAt(t, 2) : 0; visor = 1;
+        void start; void end;
+      }
+      const sw = [5.9, 7.2, 10.2].reduce((m, s2) => Math.max(m, t >= s2 && t < s2 + 0.25 ? Math.exp(-(t - s2) * 14) : 0), 0);
+      const breath = Math.sin(t * 2.6) * 0.012;
+      ticoBox.style.transform = `translate(${x}px, ${y}px) rotate(${r}deg) scale(${sx * (1 + 0.08 * sw) * (1 - breath)}, ${sy * (1 - 0.08 * sw) * (1 + breath)})`;
+      ticoBox.style.opacity = 1 - prog(t, 11.8, 12.0);
+      ticoBox.style.zIndex = t >= 6.8 ? '5' : '';
+      if (tico) tico.draw({ pose, head, nod, arm, blink, visor, time: t });
+    }
+
+    // ===== trilha =====
+    {
+      const kin = prog(t, 6.6, 7.0);
+      trilha.style.opacity = kin; trilha.style.zIndex = 2;
+      const dr = eio(prog(t, 6.7, 8.2));
+      draw.setAttribute('stroke-dashoffset', String(LEN * (1 - dr * nodes[2].f)));
+      nodes.forEach(({ n, lb, f, st }, i) => {
+        const at = 6.8 + i * 0.3; const k = spring(t - at, 16, 0.45);
+        n.style.transform = `scale(${k * (st === 'hoje' ? 1 + 0.08 * beatPulse(t, 8.5) : 1)})`; n.style.opacity = t > at ? 1 : 0;
+        lb.style.opacity = clamp((t - at - 0.1) * 4);
+      });
+      const kt = spring(t - 10.1, 15, 0.5);
+      const pt = nodes[2].pt;
+      Object.assign(today.style, { left: pt.x + 90 + 'px', top: pt.y - 150 + 'px' });
+      today.style.transform = `scale(${kt}) rotate(-3deg)`; today.style.transformOrigin = '0 100%'; today.style.opacity = t > 10.1 ? 1 : 0;
+      showPlate(p3, 7.4, 11.9, -1);
+      p3.style.zIndex = 6;
+    }
+
+    // ===== chamada =====
+    {
+      const open = eio(prog(t, 11.8, 12.3));
+      F.style.clipPath = open >= 1 ? 'none' : `circle(${open * Math.hypot(W, H) * 0.6}px at 50% 50%)`;
+      F.style.visibility = t < 11.8 ? 'hidden' : 'visible';
+      frays.style.transform = `rotate(${t * 8}deg)`;
+      Fc.style.opacity = t < 11.85 ? 0 : 1;
+      const k1 = spring(t - 12.1, 16, 0.5), k2 = spring(t - 12.4, 16, 0.45);
+      set(f1, { y: 50 * (1 - k1), o: clamp(k1 * 3) });
+      set(f2, { y: 50 * (1 - k2), s: lerp(0.6, 1, k2), o: clamp(k2 * 3), r: -2 });
+      const kt = spring(t - 12.2, 11, 0.5);
+      const hop = t > 12.9 ? Math.abs(Math.sin((t - 12.9) * Math.PI * 2)) : 0;
+      ticoFBox.style.transform = `translateY(${600 * (1 - kt) - hop * 26}px) scale(${lerp(0.6, 1, kt)})`;
+      if (ticoF) ticoF.draw({ pose: 'comemorando', head: Math.sin(t * Math.PI * 2) * 5, arm: Math.sin(t * Math.PI * 4) * 12, visor: 1, time: t });
+      const kl = spring(t - 12.9, 15, 0.5);
+      logo.style.transform = `translateX(-50%) scale(${kl})`; logo.style.opacity = clamp(kl * 3);
+      const ks = spring(t - 13.3, 14, 0.6);
+      set(fsub, { y: 30 * (1 - ks), o: clamp(ks * 3) });
+      const kp = spring(t - 13.6, 16, 0.45);
+      fpill.style.transform = `translateX(-50%) scale(${kp * (1 + 0.05 * beatPulse(t, 14.0))})`;
+      fpill.style.opacity = clamp(kp * 3);
+    }
+  }
+
+  window.DURATION = DUR;
+  window.seek = seek;
+  window.ready = (async () => {
+    await document.fonts.ready;
+    await TicoRig.load('../../public/tico/');
+    tico = TicoRig.create(ticoBox, 520);
+    ticoF = TicoRig.create(ticoFBox, 540);
+    seek(0);
+    return true;
+  })();
+  if (!navigator.webdriver) {
+    const t0 = performance.now();
+    const loop = () => { seek(((performance.now() - t0) / 1000) % DUR); requestAnimationFrame(loop); };
+    window.ready.then(loop);
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Aprova Tico — posts e Stories</title>
+<!--
+  Carrosséis (1080 x 1350), estáticos e Stories (1080 x 1920) do calendário.
+  pecas.html?k=<peça>&n=<tela> mostra uma tela; gerar-pecas.mjs grava todas.
+  Conteúdo: questões autorais da trilha (questoes-desafio.js) e o que a landing
+  já promete. Nada de print falso: as telas do app são ilustrações do Tico.
+  Nos Stories, a área do meio fica livre para a figurinha (quiz, enquete,
+  caixinha); o texto de cada figurinha está no .txt ao lado da imagem.
+-->
+<style>
+  @font-face { font-family: 'Baloo'; font-weight: 800; src: url(fonts/baloo-2-latin-800-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Nunito'; font-weight: 700; src: url(fonts/nunito-latin-700-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Nunito'; font-weight: 800; src: url(fonts/nunito-latin-800-normal.woff2) format('woff2'); }
+  :root { --heading: #1d3348; --text: #34495e; --muted: #5b6f82; --primary: #1688e8; --primary-strong: #1271bf; --sky: #e5f6ff;
+          --green: #72c93d; --green-strong: #58a92a; --green-soft: #ecfae5; --orange: #f7931e; --orange-soft: #fff1dc; --gold: #f5b700;
+          --red: #dc2626; --red-soft: #fef2f2; --line: #e1e9ef; --muted-bg: #e8eef4; --violet: #7c3aed; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #fff; }
+  #s { position: relative; overflow: hidden; font-family: 'Nunito'; font-weight: 700; color: var(--text); }
+  .bg-sky { background: radial-gradient(circle at 50% 18%, #ffffff 0%, #e5f6ff 45%, #c7e6ff 100%); }
+  .bg-blue { background: radial-gradient(circle at 50% 35%, #2ea0ff 0%, #1688e8 40%, #1e40af 100%); color: #fff; }
+  .bg-cream { background: linear-gradient(180deg, #fffdf7 0%, #fff4e0 100%); }
+  .rays::before { content: ''; position: absolute; left: 50%; top: 30%; width: 3200px; height: 3200px; margin: -1600px 0 0 -1600px; border-radius: 50%;
+                  background: repeating-conic-gradient(rgba(22,136,232,.06) 0deg 8deg, rgba(22,136,232,0) 8deg 20deg); }
+  .bg-blue.rays::before { background: repeating-conic-gradient(rgba(255,255,255,.08) 0deg 8deg, rgba(255,255,255,0) 8deg 20deg); }
+  .in { position: absolute; inset: 0; padding: 90px 84px; display: flex; flex-direction: column; gap: 34px; }
+  .brand { display: flex; align-items: center; gap: 14px; font-family: 'Baloo'; font-weight: 800; font-size: 40px; color: var(--heading); }
+  .brand .m { width: 58px; height: 58px; border-radius: 16px; background: var(--primary); display: grid; place-items: center; }
+  .brand .d { color: var(--green); }
+  .bg-blue .brand { color: #fff; } .bg-blue .brand .m { background: #fff; } .bg-blue .brand .d { color: var(--gold); }
+  .foot { margin-top: auto; display: flex; justify-content: space-between; align-items: center; }
+  .count { font-family: 'Baloo'; font-size: 34px; color: var(--muted); }
+  .swipe { display: flex; align-items: center; gap: 10px; background: var(--heading); color: #fff; border-radius: 999px; padding: 12px 26px; font-weight: 800; font-size: 32px; }
+  .eyebrow { align-self: flex-start; background: var(--heading); color: #fff; border-radius: 999px; padding: 10px 24px; font-weight: 800; font-size: 28px; letter-spacing: 2px; }
+  h1 { font-family: 'Baloo'; font-weight: 800; font-size: 120px; line-height: .95; color: var(--heading); letter-spacing: -2px; }
+  h1 em { font-style: normal; color: var(--orange); }
+  h2 { font-family: 'Baloo'; font-weight: 800; font-size: 84px; line-height: 1; color: var(--heading); letter-spacing: -1px; }
+  h2 em { font-style: normal; color: var(--primary); }
+  .bg-blue h1, .bg-blue h2 { color: #fff; } .bg-blue h1 em, .bg-blue h2 em { color: var(--gold); }
+  .lead { font-size: 46px; line-height: 1.3; color: var(--text); }
+  .bg-blue .lead { color: #dbeafe; }
+  .card { background: #fff; border-radius: 40px; padding: 40px 44px; box-shadow: 0 16px 0 rgba(29,51,72,.08), 0 24px 60px rgba(29,51,72,.14); display: grid; gap: 22px; }
+  .row { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  .syl { display: inline-flex; gap: 8px; }
+  .syl span { padding: 6px 18px; border-radius: 16px; background: var(--muted-bg); color: var(--muted); font-family: 'Baloo'; font-size: 64px; line-height: 1.1; }
+  .syl span.t { background: var(--orange); color: #fff; }
+  .tag { display: inline-block; font-weight: 800; font-size: 34px; padding: 8px 22px; border-radius: 999px; background: var(--green-soft); color: var(--green-strong); }
+  .tag.no { background: var(--red-soft); color: var(--red); }
+  .tag.blue { background: var(--sky); color: var(--primary-strong); }
+  .big { font-family: 'Baloo'; font-weight: 800; font-size: 64px; color: var(--heading); line-height: 1.05; }
+  .hl { color: var(--primary); } .ok { color: var(--green-strong); } .bad { color: var(--red); }
+  .tico { position: absolute; }
+  .def { display: grid; gap: 14px; font-size: 40px; line-height: 1.3; }
+  .def b { color: var(--heading); }
+  .sheet { border-collapse: separate; border-spacing: 0; font-family: 'Nunito'; font-weight: 800; font-size: 34px; }
+  .sheet td, .sheet th { border: 2px solid #cfd8e3; padding: 8px 6px; min-width: 70px; text-align: center; background: #fff; font-size: 28px; }
+  .sheet th { background: #eef3f8; color: var(--muted); }
+  .sheet td.on { background: #dff2ff; color: var(--primary-strong); }
+  .formula { font-family: 'Nunito'; font-weight: 800; font-size: 56px; background: #1d3348; color: #fff; border-radius: 22px; padding: 18px 30px; align-self: flex-start; }
+  .formula b { color: #7dd3fc; }
+  table.cmp { border-collapse: separate; border-spacing: 0 14px; font-size: 34px; width: 100%; }
+  table.cmp th { text-align: left; color: var(--muted); font-size: 28px; letter-spacing: 1px; padding: 0 16px; }
+  table.cmp td { background: #fff; padding: 18px 16px; line-height: 1.2; }
+  table.cmp td:first-child { border-radius: 20px 0 0 20px; font-family: 'Baloo'; font-size: 40px; color: var(--heading); }
+  table.cmp td:last-child { border-radius: 0 20px 20px 0; }
+  .phone { width: 520px; border-radius: 64px; background: #1d3348; padding: 16px; box-shadow: 0 30px 70px rgba(29,51,72,.3); }
+  .scr { border-radius: 50px; background: #f9fbfd; padding: 50px 30px 34px; display: grid; gap: 16px; min-height: 600px; align-content: start; }
+  .opt { border: 4px solid var(--line); border-radius: 20px; padding: 14px 18px; font-size: 30px; font-weight: 800; color: var(--heading); background: #fff; display: flex; gap: 14px; align-items: center; }
+  .opt i { font-style: normal; width: 44px; height: 44px; border-radius: 12px; background: var(--muted-bg); color: var(--muted); display: grid; place-items: center; font-size: 24px; }
+  .opt.ok { border-color: var(--green); background: var(--green-soft); } .opt.ok i { background: var(--green); color: #fff; }
+  .chip { display: inline-flex; align-items: center; gap: 12px; padding: 14px 26px; border-radius: 999px; background: #fff; box-shadow: 0 8px 24px rgba(29,51,72,.12); font-weight: 800; font-size: 34px; color: var(--heading); }
+  .steps { display: grid; gap: 22px; }
+  .step { display: flex; gap: 22px; align-items: center; font-size: 40px; line-height: 1.25; color: var(--heading); font-weight: 800; }
+  .step .n { flex: none; width: 76px; height: 76px; border-radius: 50%; background: var(--primary); color: #fff; display: grid; place-items: center; font-family: 'Baloo'; font-size: 44px; }
+  .tl { display: flex; align-items: center; gap: 0; }
+  .tl .dot { width: 150px; height: 150px; border-radius: 50%; display: grid; place-items: center; text-align: center; font-family: 'Baloo'; font-size: 34px; line-height: 1; color: #fff; flex: none; }
+  .tl .bar { flex: 1; height: 14px; background: #cfe6fb; }
+  .mastery { display: grid; gap: 18px; }
+  .mastery .m { display: grid; grid-template-columns: 300px 1fr; align-items: center; gap: 20px; font-size: 34px; font-weight: 800; color: var(--heading); }
+  .mastery .b { height: 34px; border-radius: 99px; background: var(--muted-bg); overflow: hidden; }
+  .mastery .b i { display: block; height: 100%; border-radius: 99px; }
+  .pill { display: inline-flex; align-items: center; gap: 16px; background: #fff; color: var(--primary-strong); border-radius: 999px; padding: 22px 48px; font-family: 'Baloo'; font-weight: 800; font-size: 60px; box-shadow: 0 20px 44px rgba(10,30,90,.35); align-self: center; }
+  /* Stories */
+  .st .in { padding: 230px 80px 300px; }
+  .slot { flex: 1; border-radius: 40px; }
+  .sticker-note { align-self: center; font-size: 30px; color: var(--muted); }
+  .frame { position: absolute; left: 0; right: 0; background: #fff; display: flex; align-items: center; gap: 18px; padding: 0 60px; }
+</style>
+</head>
+<body>
+<div id="s"></div>
+<script src="questoes-desafio.js"></script>
+<script>
+(() => {
+  const Q = window.QUESTOES_DESAFIO;
+  const T = (pose) => `../../public/tico/${pose}.webp`;
+  const icon = (d, c, size, sw = 3) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+  const COMPASS = '<circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/>';
+  const brand = (blue) => `<div class="brand"><span class="m">${icon(COMPASS, blue ? '#1688e8' : '#fff', 40, 2.6)}</span><span>Aprova Tico<span class="d">.</span></span></div>`;
+  const syl = (parts, t) => `<span class="syl">${parts.map((p, i) => `<span class="${i === t ? 't' : ''}">${p}</span>`).join('')}</span>`;
+  const tico = (pose, x, y, w, flip) => `<img class="tico" src="${T(pose)}" style="left:${x}px;top:${y}px;width:${w}px;${flip ? 'transform:scaleX(-1)' : ''}">`;
+  const swipe = `<span class="swipe">Arrasta ${icon('<path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>', '#fff', 34, 3)}</span>`;
+  const foot = (n, total, last) => `<div class="foot">${brand(last)}<span class="count" style="${last ? 'color:#dbeafe' : ''}">${n}/${total}</span></div>`;
+
+  // ---------- carrosséis ----------
+  const cover = (eyebrow, h1, lead, pose) => ({ bg: 'bg-sky rays', html: (n, tot) => `<div class="in"><span class="eyebrow">${eyebrow}</span><h1>${h1}</h1><p class="lead" style="max-width:640px">${lead}</p>
+      <div class="foot">${brand()}${swipe}</div></div>${tico(pose, 640, 640, 420)}` });
+  const content = (inner, pose) => ({ bg: 'bg-sky', html: (n, tot) => `<div class="in">${inner}${foot(n, tot)}</div>${pose ? tico(pose, 770, 930, 260) : ''}` });
+  const cta = (h, lead) => ({ bg: 'bg-blue rays', html: (n, tot) => `<div class="in"><h2>${h}</h2><p class="lead">${lead}</p>
+      <span class="pill">aprovatico.com.br ${icon('<path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>', '#1271bf', 52, 3)}</span>${foot(n, tot, true)}</div>${tico('comemorando', 300, 610, 480)}` });
+  const ctaSalve = cta('Salve para revisar <em>antes da prova.</em>', 'No Aprova Tico, toda questão vem com a explicação logo depois de responder. Comece grátis, sem cartão de crédito.');
+  const ctaApp = cta('Comece <em>grátis.</em>', 'Sem cartão de crédito. No celular ou no computador.');
+
+  const PECAS = {
+    // Semana 1 · terça · Explica
+    'explica-pt-acent-4': { w: 1080, h: 1350, slides: [
+      cover('PORTUGUÊS · ACENTUAÇÃO', 'Rúbrica ou <em>rubrica</em>?', 'A regra das proparoxítonas e as palavras que mais enganam.', 'apontando'),
+      content(`<h2>O que é <em>proparoxítona</em>?</h2><p class="lead">A palavra em que a sílaba mais forte é a <b>antepenúltima</b>.</p>
+        <div class="card"><div class="row">${syl(['ÍN', 'te', 'rim'], 0)}</div><div class="row">${syl(['LÓ', 'gi', 'ca'], 0)}</div><div class="row">${syl(['PRÁ', 'ti', 'ca'], 0)}</div></div>`, 'neutro'),
+      content(`<h2>A regra é uma só:</h2><div class="card"><p class="big">Toda proparoxítona <span class="hl">tem acento.</span></p><p class="lead">Se a forte é a antepenúltima, leva acento gráfico. Sem exceção.</p></div>`, 'joinha'),
+      content(`<h2>As que <em>enganam</em></h2><div class="card">
+        <div class="row">${syl(['ru', 'BRI', 'ca'], 1)} <span class="tag no">não é "rúbrica"</span></div>
+        <div class="row">${syl(['re', 'COR', 'de'], 1)} <span class="tag no">não é "récorde"</span></div>
+        <div class="row">${syl(['gra', 'TUI', 'to'], 1)} <span class="tag no">não é "gratúito"</span></div>
+        <div class="row">${syl(['ÍN', 'te', 'rim'], 0)} <span class="tag">essa é proparoxítona</span></div></div>`),
+      ctaSalve] },
+    // Semana 2 · terça
+    'explica-adm-ato-3': { w: 1080, h: 1350, slides: [
+      cover('DIREITO ADMINISTRATIVO', 'Revogar, anular ou <em>cassar</em>?', 'Três jeitos de um ato administrativo deixar de existir.', 'apontando'),
+      content(`<span class="eyebrow" style="background:var(--green-strong)">REVOGAÇÃO</span><div class="card def">
+        <div><b>O ato é válido</b>, mas deixou de ser conveniente e oportuno.</div><div>Quem faz: <b>só a própria Administração</b>.</div><div>Efeitos: <b>daqui para frente</b> (ex nunc).</div></div>`, 'neutro'),
+      content(`<span class="eyebrow" style="background:var(--red)">ANULAÇÃO</span><div class="card def">
+        <div><b>O ato é ilegal.</b></div><div>Quem faz: <b>a Administração</b> (autotutela) ou <b>o Judiciário</b>.</div><div>Efeitos: <b>retroativos</b> (ex tunc).</div></div>`, 'neutro'),
+      content(`<span class="eyebrow" style="background:var(--violet)">CASSAÇÃO</span><div class="card def">
+        <div>O ato era válido, mas <b>o beneficiário descumpriu as condições</b> para mantê-lo.</div><div>Exemplo: a licença é cassada porque o dono deixou de cumprir o que ela exigia.</div></div>
+        <table class="cmp"><tr><th></th><th>O ATO</th><th>MOTIVO</th></tr>
+        <tr><td>Revogação</td><td>válido</td><td>conveniência</td></tr><tr><td>Anulação</td><td>ilegal</td><td>ilegalidade</td></tr><tr><td>Cassação</td><td>válido</td><td>descumprimento</td></tr></table>`),
+      ctaSalve] },
+    // Semana 3 · terça
+    'explica-pt-crase-1': { w: 1080, h: 1350, slides: [
+      cover('PORTUGUÊS · CRASE', 'Fui <em>à</em> Brasília?', '4 casos para não errar mais a crase.', 'apontando'),
+      content(`<h2>Crase = <em>a + a</em></h2><p class="lead">É a preposição <b>a</b> juntando com o artigo <b>a</b>.</p>
+        <div class="card"><p class="big">Refiro-me <span class="hl">a</span> + <span class="hl">a</span> diretora</p><p class="big">= Refiro-me <span class="ok">à</span> diretora</p></div>`, 'neutro'),
+      content(`<h2>Não tem crase:</h2><div class="card def">
+        <div><span class="tag no">antes de verbo</span><br>Começou <b>a</b> chover.</div>
+        <div><span class="tag no">antes de pronome pessoal</span><br>Entreguei o documento <b>a</b> ela.</div>
+        <div><span class="tag no">cidade sem artigo</span><br>Fui <b>a</b> Brasília (volto <b>de</b> Brasília).</div></div>`),
+      content(`<h2>Dois testes <em>rápidos</em></h2><div class="card def">
+        <div><b>Troque por masculino:</b> refiro-me <b>ao</b> diretor → refiro-me <span class="ok"><b>à</b></span> diretora.</div>
+        <div><b>Volto da, vou à:</b> volto <b>da</b> Bahia → vou <span class="ok"><b>à</b></span> Bahia. Volto <b>de</b> Brasília → vou <b>a</b> Brasília.</div></div>`, 'joinha'),
+      ctaSalve] },
+    // Semana 4 · terça
+    'explica-inf-plan-1': { w: 1080, h: 1350, slides: [
+      cover('INFORMÁTICA · EXCEL', '<em>:</em> ou <em>;</em> ?', '=SOMA(A1:A10) e =SOMA(A1;A10) dão resultados diferentes.', 'apontando'),
+      content(`<h2>Dois-pontos = <em>intervalo</em></h2><span class="formula">=SOMA(A1<b>:</b>A10)</span>
+        <p class="lead">Soma <b>de A1 até A10</b>. Com os números de 1 a 10 nas células, o resultado é <b class="hl">55</b>.</p>
+        <table class="sheet"><tr><th></th>${[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => `<th>A${i}</th>`).join('')}</tr><tr><th>valor</th>${[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => `<td class="on">${i}</td>`).join('')}</tr></table>`),
+      content(`<h2>Ponto e vírgula = <em>células separadas</em></h2><span class="formula">=SOMA(A1<b>;</b>A10)</span>
+        <p class="lead">Soma <b>só A1 e A10</b>: 1 + 10 = <b class="hl">11</b>.</p>
+        <table class="sheet"><tr><th></th>${[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => `<th>A${i}</th>`).join('')}</tr><tr><th>valor</th>${[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => `<td class="${i === 1 || i === 10 ? 'on' : ''}">${i}</td>`).join('')}</tr></table>`),
+      content(`<h2>E dá para <em>misturar</em></h2><span class="formula">=SOMA(A1<b>:</b>A3<b>;</b>A10)</span>
+        <p class="lead">A1, A2, A3 e A10: 1 + 2 + 3 + 10 = <b class="hl">16</b>.</p><div class="card"><p class="big">Dois-pontos: <span class="hl">até</span>.<br>Ponto e vírgula: <span class="hl">e</span>.</p></div>`, 'joinha'),
+      ctaSalve] },
+
+    // Produto (quintas)
+    'produto-trilha': { w: 1080, h: 1350, slides: [
+      cover('COMO FUNCIONA', 'Não sabe por onde <em>começar?</em>', 'O Aprova Tico mostra o próximo passo. Você abre o app e já sabe o que estudar hoje.', 'acenando'),
+      content(`<h2>Trilha <em>guiada</em></h2><p class="lead">Capítulos e fases em ordem, do básico ao nível de prova.</p>
+        <div class="card def"><div class="row"><span class="tag">✓ Fase 1</span><span class="tag">✓ Fase 2</span><span class="tag blue">★ Fase 3 · hoje</span><span class="tag" style="background:var(--muted-bg);color:var(--muted)">Fase 4</span></div>
+        <div>Português, Raciocínio Lógico, Informática, Direito Constitucional e Direito Administrativo.</div></div>`, 'apontando'),
+      content(`<h2>Responda, <em>confira, entenda</em></h2><p class="lead">Cada fase tem poucas questões, com a explicação logo depois de responder.</p>
+        <div class="phone" style="align-self:center"><div class="scr"><div style="font-weight:800;color:var(--primary);letter-spacing:2px;font-size:20px">RACIOCÍNIO LÓGICO · FASE 3</div>
+        <div style="font-size:30px;font-weight:800;color:var(--heading);line-height:1.25">Em um simulado de 40 questões, você acertou 30. Qual foi o seu percentual de acertos?</div>
+        <div class="opt"><i>A</i>60%</div><div class="opt"><i>B</i>70%</div><div class="opt ok"><i>C</i>75%</div>
+        <div style="background:var(--green-soft);border-radius:20px;padding:14px 18px;font-size:26px;color:var(--heading)"><b style="color:var(--green-strong);font-family:Baloo;font-size:36px">Acertou! +10 XP</b><br>30 ÷ 40 = 0,75. Vezes 100: 75%.</div></div></div>`),
+      content(`<h2>Estudar vira <em>jogo</em></h2><div class="row" style="gap:16px">
+        <span class="chip">❤ Vidas</span><span class="chip">★ XP por fase</span><span class="chip">🎯 Missões diárias</span><span class="chip">🔥 Sequência de dias</span><span class="chip">🏆 Ranking e conquistas</span></div>
+        <p class="lead">Metas pequenas todo dia para não perder o ritmo.</p>`, 'comemorando'),
+      ctaApp] },
+    'produto-revisao': { w: 1080, h: 1350, slides: [
+      cover('REVISÃO DOS ERROS', 'Estuda, estuda... e <em>esquece?</em>', 'No Aprova Tico, o que você erra volta para revisão até virar acerto.', 'neutro'),
+      content(`<h2>Errou? <em>Volta hoje.</em></h2><p class="lead">A questão errada entra na sua revisão do dia, em /revisar.</p>
+        <div class="card"><div class="opt" style="border-color:var(--red)"><i style="background:var(--red);color:#fff">B</i>Errou esta questão</div><span class="tag blue">→ volta para revisão hoje</span></div>`, 'apontando'),
+      content(`<h2>Acertou na revisão? <em>Ela volta depois.</em></h2><p class="lead">Revisão espaçada: amanhã, em 7 dias e em 30 dias.</p>
+        <div class="tl"><span class="dot" style="background:var(--red)">hoje</span><span class="bar"></span><span class="dot" style="background:var(--orange)">amanhã</span><span class="bar"></span><span class="dot" style="background:var(--primary)">7 dias</span><span class="bar"></span><span class="dot" style="background:var(--green-strong)">30 dias</span></div>
+        <p class="lead">Errou de novo? Volta para hoje.</p>`),
+      content(`<h2>Veja onde você <em>erra</em></h2><p class="lead">Nota de domínio de 0 a 100 em cada assunto.</p><div class="mastery">
+        <div class="m">Crase<span class="b"><i style="width:88%;background:var(--green-strong)"></i></span></div>
+        <div class="m">Porcentagem<span class="b"><i style="width:58%;background:var(--primary)"></i></span></div>
+        <div class="m">Atos adm.<span class="b"><i style="width:28%;background:var(--orange)"></i></span></div>
+        <div class="m">Remédios<span class="b"><i style="width:4%;background:#cbd5e1"></i></span></div></div>
+        <div class="row"><span class="tag">dominado</span><span class="tag blue">em progresso</span><span class="tag" style="background:var(--orange-soft);color:#b45309">fraco</span><span class="tag" style="background:var(--muted-bg);color:var(--muted)">não visto</span></div>
+        <p class="count" style="font-size:24px">Ilustração. Os números são de exemplo.</p>`, 'joinha'),
+      ctaApp] },
+    'produto-redacao': { w: 1080, h: 1350, slides: [
+      { bg: 'bg-sky rays', html: () => `<div class="in"><span class="eyebrow">REDAÇÃO COM IA</span><h1>Escreveu? <em>Já tem nota.</em></h1>
+        <p class="lead" style="max-width:700px">Nota por critério no padrão da sua banca e os trechos para melhorar.</p>
+        <div class="card def" style="max-width:640px"><div><b>Grátis:</b> 1 correção a cada 7 dias.</div><div><b>PRO:</b> correções ilimitadas.</div>
+        <div style="font-size:28px;color:var(--muted)">Nota estimada para treino. Não substitui a correção de um professor.</div></div>
+        <div class="foot">${brand()}<span class="swipe">aprovatico.com.br</span></div></div>${tico('estrela', 640, 560, 420)}` }] },
+    'produto-plano': { w: 1080, h: 1350, slides: [
+      cover('PLANO DE ESTUDOS', 'Seu plano em <em>5 perguntas</em>', 'Você responde, o Aprova Tico monta a meta do dia e a semana de estudos.', 'acenando'),
+      content(`<div class="steps"><div class="step"><span class="n">1</span>Qual concurso e qual banca?</div><div class="step"><span class="n">2</span>Quando é a prova?</div>
+        <div class="step"><span class="n">3</span>Quanto tempo por dia você tem?</div></div>`, 'apontando'),
+      content(`<div class="steps"><div class="step"><span class="n">4</span>Qual é o seu nível?</div><div class="step"><span class="n">5</span>Quais matérias você vai estudar?</div></div>
+        <p class="lead">Leva menos de um minuto. Dá para ajustar depois.</p>`, 'joinha'),
+      content(`<h2>Pronto: <em>o que estudar hoje</em></h2><div class="card def">
+        <div>🎯 Meta de questões do dia</div><div>📚 Tarefas: revisar, avançar fase, praticar</div><div>📈 Como estou: sequência, acertos da semana</div><div>⏳ Quanto falta até a prova</div></div>`, 'comemorando'),
+      ctaApp] },
+  };
+
+  // ---------- Stories ----------
+  const SAFE = (inner, pose, bg = 'bg-sky rays') => ({ bg: bg + ' st', html: () => `<div class="in">${inner}</div>${pose ? tico(pose, 700, 1170, 330) : ''}` });
+  const quiz = (qid, quando) => SAFE(`<span class="eyebrow">${Q[qid].materia}</span><h1>Você acerta <em>essa?</em></h1><p class="lead">Responde no quiz aqui embaixo 👇</p>
+      <div class="slot"></div><div class="foot">${brand()}<span class="count">${quando}</span></div>`, 'apontando');
+  const resposta = (qid) => {
+    const q = Q[qid];
+    return SAFE(`<span class="eyebrow">RESPOSTA DO QUIZ</span><h2>${q.enunciado.length > 70 ? q.enunciado.slice(0, 68).replace(/\s\S*$/, '') + '…' : q.enunciado}</h2>
+      <div class="card"><p class="big"><span class="ok">${'ABCD'[q.correta]}) ${q.resposta}</span></p><div style="display:grid;gap:14px;font-size:36px">${q.passos.map((p) => `<div>${p.replace(/class="syl"/g, 'class="syl" style="transform:scale(.8);transform-origin:left"')}</div>`).join('')}</div></div>
+      <div class="slot"></div><div class="foot">${brand()}<span class="swipe">Mais no app</span></div>`);
+  };
+  const enquete = (perg) => SAFE(`<span class="eyebrow">ENQUETE DO TICO</span><h2>${perg}</h2><div class="slot"></div><div class="foot">${brand()}<span class="count">vote aqui 👆</span></div>`, 'neutro');
+  const caixinha = (perg) => SAFE(`<span class="eyebrow">CAIXINHA DO TICO</span><h2>${perg}</h2><p class="lead">Manda aqui que eu respondo no domingo.</p><div class="slot"></div><div class="foot">${brand()}</div>`, 'acenando');
+  const respostas = SAFE(`<span class="eyebrow">RESPOSTAS DA CAIXINHA</span><h2>Você perguntou, <em>o Tico responde</em></h2>
+      <div class="card" style="flex:1"><p class="lead" style="color:var(--muted)">Escreva aqui a pergunta e a resposta.</p></div><div class="foot">${brand()}</div>`);
+  // moldura para foto dos bastidores: fundo transparente, só faixa de cima e de baixo
+  const bastidores = { bg: 'st', transparent: true, html: () => `<div class="frame" style="top:0;height:200px;padding-top:40px"><span class="m" style="width:70px;height:70px;border-radius:20px;background:#1688e8;display:grid;place-items:center">${icon(COMPASS, '#fff', 48, 2.6)}</span>
+      <span style="font-family:Baloo;font-weight:800;font-size:54px;color:#1d3348">Bastidores do Aprova Tico</span></div>
+      <div class="frame" style="bottom:0;height:150px;justify-content:center;font-family:Baloo;font-weight:800;font-size:44px;color:#1271bf">aprovatico.com.br</div>` };
+
+  const SEMANAS = [
+    { seg: 'pt-acent-4', sex: 'rlm-porc-2', enq: 'Você estuda mais pelo celular ou pelo papel?', cx: 'Qual sua maior dificuldade para estudar?' },
+    { seg: 'adm-ato-3', sex: 'rlm-eq-1', enq: 'Qual matéria mais te derruba?', cx: 'Qual concurso você vai prestar?' },
+    { seg: 'pt-crase-1', sex: 'rlm-porc-3', enq: 'Você revisa o que errou?', cx: 'Manda uma dúvida de Português que o Tico responde' },
+    { seg: 'inf-plan-1', sex: 'const-rem-1', enq: 'Quanto tempo por dia você consegue estudar?', cx: 'O que te faria estudar todo dia?' },
+  ];
+  SEMANAS.forEach((s, i) => {
+    const n = i + 1;
+    PECAS[`st${n}-seg-quiz`] = { w: 1080, h: 1920, slides: [quiz(s.seg, 'resposta amanhã')] };
+    PECAS[`st${n}-ter-resposta`] = { w: 1080, h: 1920, slides: [resposta(s.seg)] };
+    PECAS[`st${n}-qua-enquete`] = { w: 1080, h: 1920, slides: [enquete(s.enq)] };
+    PECAS[`st${n}-qui-caixinha`] = { w: 1080, h: 1920, slides: [caixinha(s.cx)] };
+    PECAS[`st${n}-sex-quiz`] = { w: 1080, h: 1920, slides: [quiz(s.sex, 'resposta na segunda')] };
+    PECAS[`st${n}-sab-bastidores`] = { w: 1080, h: 1920, slides: [bastidores] };
+    PECAS[`st${n}-dom-respostas`] = { w: 1080, h: 1920, slides: [respostas] };
+  });
+
+  window.PECAS = PECAS;
+  window.show = async (k, n) => {
+    const p = PECAS[k]; const sl = p.slides[n];
+    const s = document.getElementById('s');
+    s.style.width = p.w + 'px'; s.style.height = p.h + 'px';
+    s.className = sl.bg;
+    document.body.style.background = sl.transparent ? 'transparent' : '#fff';
+    s.style.background = sl.transparent ? 'transparent' : '';
+    s.innerHTML = sl.html(n + 1, p.slides.length);
+    await document.fonts.ready;
+    await Promise.all([...s.querySelectorAll('img')].map((i) => i.decode().catch(() => {})));
+    return { w: p.w, h: p.h, transparent: !!sl.transparent };
+  };
+  const qs = new URLSearchParams(location.search);
+  if (qs.get('k')) window.show(qs.get('k'), Number(qs.get('n') || 0));
+})();
+</script>
+</body>
+</html>
