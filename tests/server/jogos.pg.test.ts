@@ -24,13 +24,13 @@ describe.runIf(run)('jogos no Postgres', async () => {
         const certo = AFIRMACOES.find((a) => a.texto === r.itens[i]!.texto)!.certo;
         await jogar(postgresGame, u, r.id, { indice: i, resposta: certo }, at(k * 60 + 1));
       }
-      xps.push((await terminarJogo(postgresGame, u, r.id, {}, at(k * 60 + 30))).xpGanho);
+      xps.push((await terminarJogo(postgresGame, u, r.id, at(k * 60 + 30))).xpGanho);
       ultima = r.id;
     }
     expect(xps).toEqual([...Array(JOGO_RODADAS_COM_XP).fill(RADAR_TAMANHO), 0]);
     const hub = await getJogos(postgresGame, u, at(600));
     expect(hub.jogos.find((j) => j.tipo === 'radar')).toMatchObject({ recorde: RADAR_TAMANHO, rodadasHoje: JOGO_RODADAS_COM_XP + 1 });
-    await expect(terminarJogo(postgresGame, id('b'), ultima, {}, at(700))).rejects.toMatchObject({ code: 'JOGO_INEXISTENTE' });
+    await expect(terminarJogo(postgresGame, id('b'), ultima, at(700))).rejects.toMatchObject({ code: 'JOGO_INEXISTENTE' });
     await expect(jogar(postgresGame, u, 'nao-e-uuid', { indice: 0, resposta: true })).rejects.toMatchObject({ code: 'JOGO_INEXISTENTE' });
   });
 
@@ -38,7 +38,7 @@ describe.runIf(run)('jogos no Postgres', async () => {
     const u = id('c');
     const r = await startJogo(postgresGame, u, { tipo: 'caca', disciplina: 'rlm' }, sementeAleatoria(9), T0) as Extract<JogoRodada, { tipo: 'caca' }>;
     for (const p of r.palavras) await jogar(postgresGame, u, r.id, { palavra: p.palavra }, at(5));
-    const fim = await terminarJogo(postgresGame, u, r.id, {}, at(80));
+    const fim = await terminarJogo(postgresGame, u, r.id, at(80));
     expect(fim).toMatchObject({ completo: true, pontos: 80, recorde: true });
   });
 });

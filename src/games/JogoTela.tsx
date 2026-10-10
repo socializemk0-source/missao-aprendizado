@@ -51,12 +51,12 @@ function JogoFluxo({ tipo }: { tipo: JogoTipo }) {
     }
   }
 
-  async function terminar(jogadas?: number) {
+  async function terminar() {
     if (!rodada || busy) return;
     setBusy(true);
     setError(null);
     try {
-      const f = await game.endJogo(rodada.id, jogadas);
+      const f = await game.endJogo(rodada.id);
       setFim(f);
       setProgress(f.progress);
       if (f.completo) play(f.recorde ? 'fase' : 'fim');
@@ -85,7 +85,7 @@ function JogoFluxo({ tipo }: { tipo: JogoTipo }) {
         </header>
         {error && <p className="alert alert-error" role="alert">{error}</p>}
         {rodada.tipo === 'radar' && <Radar key={rodada.id} rodada={rodada} onFim={() => void terminar()} />}
-        {rodada.tipo === 'memoria' && <Memoria key={rodada.id} rodada={rodada} onFim={(j) => void terminar(j)} />}
+        {rodada.tipo === 'memoria' && <Memoria key={rodada.id} rodada={rodada} onFim={() => void terminar()} />}
         {rodada.tipo === 'caca' && <CacaPalavras key={rodada.id} rodada={rodada} onFim={() => void terminar()} />}
         {rodada.tipo === 'cruzadinha' && <Cruzadinha key={rodada.id} rodada={rodada} onFim={() => void terminar()} />}
       </>

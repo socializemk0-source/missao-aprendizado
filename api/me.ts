@@ -8,9 +8,10 @@ import { jsonBody, methodNotAllowed, type ApiRequest, type ApiResponse } from '.
 import { postgresProfiles, type ProfileStore, type ProfileUpdate } from '../server/profiles.js';
 import { NOME_MAX, NOME_VALIDO } from '../shared/nome.js';
 import { verifySupabaseToken } from '../server/supabase.js';
-import { errorText } from '../server/log.js';
+import { errorText, log } from '../server/log.js';
 import { LIMITES, limitarAluno, limitarIp, postgresLimiter, type RateLimiter } from '../server/limite.js';
 import { postgresConta, supabaseRemoverLogin, type ContaStore, type RemoverLogin } from '../server/conta.js';
+import { comSeguranca } from '../server/seguranca.js';
 
 // Campo editável → tamanho máximo. Obrigatórios não aceitam vazio/null.
 // Sinais de HTML e caracteres de controle não entram em nenhum campo.
@@ -67,21 +68,23 @@ export function createMeHandler(deps: {
         return;
       }
       if (!deps.conta || !deps.removerLogin) {
-        console.error('[me] exclusão de conta sem SUPABASE_SERVICE_ROLE_KEY configurada');
+        log.erro('[me] exclusão de conta sem SUPABASE_SERVICE_ROLE_KEY configurada');
         res.status(503).json({ error: 'A exclusão automática não está disponível agora. Escreva para o contato da Política de Privacidade e nós excluímos para você.', code: 'EXCLUSAO_INDISPONIVEL' });
         return;
       }
       try {
         await deps.conta.excluir(user.id, user.email);
       } catch (err) {
-        console.error('[me] erro ao apagar os dados da conta:', errorText(err));
+        log.erro('[me] erro ao apagar os dados da conta:', errorText(err));
         res.status(500).json({ error: 'Não foi possível excluir a conta agora. Nada foi perdido; tente de novo.' });
         return;
       }
       try {
+        // SERVICE_ROLE (server/conta.ts): só remove o login de user.id, o id
+        // do token verificado acima. O corpo do pedido não escolhe a conta.
         await deps.removerLogin(user.id);
       } catch (err) {
-        console.error('[me] dados apagados, mas o login não foi removido:', errorText(err));
+        log.erro('[me] dados apagados, mas o login não foi removido:', errorText(err));
         res.status(502).json({ error: 'Seus dados foram apagados, mas não conseguimos remover o login. Tente de novo em instantes.', code: 'LOGIN_NAO_REMOVIDO' });
         return;
       }
@@ -102,13 +105,13 @@ export function createMeHandler(deps: {
       res.setHeader('Cache-Control', 'no-store');
       res.status(200).json({ user: { id: user.id, email: user.email }, profile });
     } catch (err) {
-      console.error('[me] erro:', errorText(err));
+      log.erro('[me] erro:', errorText(err));
       res.status(500).json({ error: 'Não foi possível carregar seu perfil agora.' });
     }
   };
 }
 
-export default createMeHandler({
+export default comSeguranca(createMeHandler({
   verifyToken: verifySupabaseToken, profiles: postgresProfiles, limiter: postgresLimiter,
   conta: postgresConta, removerLogin: supabaseRemoverLogin(),
-});
+}), { metodos: ['GET', 'PATCH', 'DELETE'], headers: ['Authorization', 'Content-Type'] });

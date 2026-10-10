@@ -13,8 +13,9 @@ import { header, jsonBody, methodNotAllowed, type ApiRequest, type ApiResponse }
 import { MercadoPagoError, PLANS, applyPayment, isCycle, makeReference, mercadoPagoClient, parseReference, type MpClient, type PaymentStore } from '../server/payments.js';
 import { postgresPayments } from '../server/payments-pg.js';
 import { verifySupabaseToken } from '../server/supabase.js';
-import { errorText } from '../server/log.js';
+import { errorText, log } from '../server/log.js';
 import { LIMITES, limitarAluno, limitarIp, postgresLimiter, type RateLimiter } from '../server/limite.js';
+import { comSeguranca } from '../server/seguranca.js';
 
 const DAY = 86_400_000;
 // Quantas compras recentes o "verificar" consulta (cada uma é uma busca no
@@ -117,7 +118,7 @@ export function createPagamentosHandler(deps: {
 
       res.status(400).json({ error: 'Ação inválida.', code: 'ACAO_INVALIDA' });
     } catch (err) {
-      console.error('[pagamentos] erro:', errorText(err));
+      log.erro('[pagamentos] erro:', errorText(err));
       if (err instanceof MercadoPagoError) {
         return res.status(502).json({ error: 'Não foi possível falar com o Mercado Pago agora. Tente de novo em instantes.', code: 'MERCADO_PAGO_INDISPONIVEL' });
       }
@@ -128,9 +129,9 @@ export function createPagamentosHandler(deps: {
 
 const token = process.env.MERCADOPAGO_ACCESS_TOKEN?.trim();
 
-export default createPagamentosHandler({
+export default comSeguranca(createPagamentosHandler({
   verifyToken: verifySupabaseToken,
   store: postgresPayments,
   client: token ? mercadoPagoClient(token) : null,
   limiter: postgresLimiter,
-});
+}), { metodos: ['GET', 'POST'], headers: ['Authorization', 'Content-Type'] });

@@ -14,9 +14,11 @@ export interface ContaStore {
 // Tabelas com user_id que são apagadas por completo.
 const TABELAS = [
   'question_state', 'answers', 'phase_completions', 'mission_claims', 'user_stats',
-  'essays', 'simulados', 'game_rounds', 'study_plans', 'profiles',
+  'essays', 'simulados', 'game_rounds', 'study_plans', 'idempotency_keys', 'profiles',
 ] as const;
 
+// Conexão privilegiada (server/db.ts): cada DELETE filtra pelo dono — userId
+// e e-mail vêm do token verificado, nunca do corpo do pedido.
 export const postgresConta: ContaStore = {
   async excluir(userId, email) {
     await db().transaction(async (tx) => {
@@ -31,16 +33,34 @@ export const postgresConta: ContaStore = {
 // Remove o login no Supabase Auth. Precisa da chave de administrador
 // (service_role), que fica SÓ no servidor (variável SUPABASE_SERVICE_ROLE_KEY
 // na Vercel) e nunca vai para o navegador.
+//
+// SERVICE_ROLE — por que é seguro: é o único uso da chave de administrador.
+// Ela ignora a RLS e pode apagar QUALQUER login, então o dono é fixado aqui:
+// a URL leva só o userId que /api/me tirou do token verificado (nunca um id
+// do corpo ou da URL do pedido), conferido como uuid antes da chamada. A
+// requisição vem de código nosso (Vercel Function, depois de authenticate())
+// e a chave só sai para o próprio Supabase Auth.
 export type RemoverLogin = (userId: string) => Promise<void>;
+
+// Cabeçalhos da chave de administrador para o Supabase. A chave antiga
+// (service_role) é um JWT e vai também em Authorization; a nova (sb_secret_…)
+// NÃO é JWT: só no apikey (em Authorization o Supabase recusa com "Invalid JWT").
+// Assim a troca de chave (docs/seguranca.md) não quebra nada.
+export function cabecalhosAdmin(chave: string): Record<string, string> {
+  return chave.startsWith('eyJ') ? { apikey: chave, Authorization: `Bearer ${chave}` } : { apikey: chave };
+}
+
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 export function supabaseRemoverLogin(env: NodeJS.ProcessEnv = process.env, send: typeof fetch = fetch): RemoverLogin | null {
   const url = env.SUPABASE_URL?.replace(/\/$/, '');
   const key = env.SUPABASE_SERVICE_ROLE_KEY?.trim();
   if (!url || !key) return null;
   return async (userId) => {
+    if (!UUID.test(userId)) throw new Error('id de login inválido');
     const res = await send(`${url}/auth/v1/admin/users/${encodeURIComponent(userId)}`, {
       method: 'DELETE',
-      headers: { apikey: key, Authorization: `Bearer ${key}` },
+      headers: cabecalhosAdmin(key),
       signal: AbortSignal.timeout(15_000),
     });
     // 404: o login já não existe (exclusão repetida) — tudo bem.

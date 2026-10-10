@@ -12,8 +12,9 @@ import { jsonBody, methodNotAllowed, type ApiRequest, type ApiResponse } from '.
 import { verifySupabaseToken } from '../server/supabase.js';
 import type { EssayQuota } from '../shared/essay.js';
 import type { BancaRedacao, Tema } from '../content/redacao.js';
-import { errorText } from '../server/log.js';
+import { errorText, log } from '../server/log.js';
 import { LIMITES, limitarAluno, limitarIp, postgresLimiter, type RateLimiter } from '../server/limite.js';
+import { comSeguranca } from '../server/seguranca.js';
 
 export const FREE_LIMIT = 1;
 export const WINDOW_MS = 7 * 24 * 60 * 60 * 1000;
@@ -121,13 +122,13 @@ export function createRedacaoHandler(deps: {
         // aluno recebe a correção mesmo assim (só não vai para o histórico).
         delivered = true;
         await deps.store.complete(id, result.report, score)
-          .catch((err: unknown) => console.error('[redacao] falha ao gravar a correção:', errorText(err)));
+          .catch((err: unknown) => log.erro('[redacao] falha ao gravar a correção:', errorText(err)));
         return res.status(200).json({ id, score, report: result.report, cota: await quota(user.id) });
       } finally {
-        if (!delivered) await deps.store.release(id).catch((err: unknown) => console.error('[redacao] falha ao devolver a vaga:', errorText(err)));
+        if (!delivered) await deps.store.release(id).catch((err: unknown) => log.erro('[redacao] falha ao devolver a vaga:', errorText(err)));
       }
     } catch (err) {
-      console.error('[redacao] erro:', errorText(err));
+      log.erro('[redacao] erro:', errorText(err));
       res.status(500).json({ error: 'Algo deu errado. Seu texto continua salvo; tente de novo.' });
     }
   };
@@ -135,9 +136,9 @@ export function createRedacaoHandler(deps: {
 
 const apiKey = process.env.OPENAI_API_KEY?.trim();
 
-export default createRedacaoHandler({
+export default comSeguranca(createRedacaoHandler({
   verifyToken: verifySupabaseToken,
   store: postgresEssays,
   grade: apiKey ? (input) => gradeEssay({ ...input, apiKey, model: process.env.OPENAI_MODEL }) : null,
   limiter: postgresLimiter,
-});
+}), { metodos: ['GET', 'POST'], headers: ['Authorization', 'Content-Type'] });

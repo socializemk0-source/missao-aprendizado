@@ -1,0 +1,11 @@
+# Varredura de segredos no histórico (CI: gitleaks git). Usa as regras padrão
+# do gitleaks; só libera os valores FALSOS usados nos testes.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "valores falsos dos testes (não são chaves)"
+regexes = [
+  '''eyJhbGciOiJIUzI1NiJ9\.eyJyb2xlIjoic2VydmljZV9yb2xlIn0\.assinatura''',
+  '''tok-0123456789-secreto''',
+]

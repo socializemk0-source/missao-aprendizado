@@ -2,6 +2,7 @@
 // (/api/config/supabase) e o cliente é criado uma única vez.
 
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
+import { registrarVersaoDoServidor } from './versao';
 
 let clientPromise: Promise<SupabaseClient> | null = null;
 let captchaSiteKey: string | null = null;
@@ -11,9 +12,10 @@ export class LoginUnavailableError extends Error {}
 async function createFromServerConfig(): Promise<SupabaseClient> {
   const res = await fetch('/api/config/supabase');
   if (!res.ok) throw new LoginUnavailableError('Login indisponível no momento.');
-  const config = (await res.json()) as { supabaseUrl: string; supabaseAnonKey: string; captchaSiteKey?: string | null };
+  const config = (await res.json()) as { supabaseUrl: string; supabaseAnonKey: string; captchaSiteKey?: string | null; version?: string };
   const { supabaseUrl, supabaseAnonKey } = config;
   captchaSiteKey = config.captchaSiteKey ?? null;
+  registrarVersaoDoServidor(config.version); // app aberto é de um deploy anterior? (src/lib/versao.ts)
   return createClient(supabaseUrl, supabaseAnonKey, {
     auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true },
   });

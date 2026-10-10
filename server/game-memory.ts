@@ -3,7 +3,7 @@
 
 import type { PerfilEstudo } from '../shared/estudo.js';
 import type { Mode, Plan } from '../shared/game.js';
-import { PERCENTILE_MIN, type GameStore, type QuestionState, type RoundRow, type SimuladoRow, type Stats, type UserTx } from './game.js';
+import { PERCENTILE_MIN, StatsConflict, type GameStore, type QuestionState, type RoundRow, type SimuladoRow, type Stats, type UserTx } from './game.js';
 import { contentSource, type QuestionSource, type QuestionStats } from './questions.js';
 
 interface UserData {
@@ -17,10 +17,9 @@ interface UserData {
   rounds: RoundRow[];
 }
 
-export function memoryGameStore(options: { plan?: (userId: string) => Plan; names?: Record<string, string>; questions?: QuestionSource } = {}) {
+export function memoryGameStore(options: { plan?: (userId: string) => Plan; names?: Record<string, string>; questions?: QuestionSource; clock?: () => Date } = {}) {
   const users = new Map<string, UserData>();
   const qstats = new Map<string, QuestionStats>();
-  let seq = 0;
   const locks = new Map<string, Promise<unknown>>();
   const data = (id: string): UserData => {
     if (!users.has(id)) users.set(id, { stats: null, states: new Map(), answers: [], phases: new Map(), claims: new Set(), simulados: [], rounds: [], perfil: null });
@@ -31,12 +30,16 @@ export function memoryGameStore(options: { plan?: (userId: string) => Plan; name
     users,
     qstats,
     questions: options.questions ?? contentSource(),
+    now: async () => options.clock?.() ?? new Date(),
     async withUser(userId, fn) {
       const d = data(userId);
       const tx: UserTx = {
         plan: async () => options.plan?.(userId) ?? 'free',
         stats: async () => (d.stats ? { ...d.stats } : null),
-        saveStats: async (s) => { d.stats = { ...s }; },
+        saveStats: async (s) => {
+          if ((d.stats?.version) !== s.version) throw new StatsConflict();
+          d.stats = { ...s, version: (s.version ?? 0) + 1 };
+        },
         questionStates: async () => new Map([...d.states].map(([k, v]) => [k, { ...v }])),
         saveQuestionState: async (s) => { d.states.set(s.questionId, { ...s }); },
         addAnswer: async (a) => { d.answers.push({ questionId: a.questionId, correct: a.correct, mode: a.mode, day: a.day }); },
@@ -59,7 +62,7 @@ export function memoryGameStore(options: { plan?: (userId: string) => Plan; name
         simulado: async (id) => { const r = d.simulados.find((x) => x.id === id); return r ? { ...r } : null; },
         simuladosOnDay: async (day) => d.simulados.filter((r) => r.day === day).length,
         createSimulado: async (row) => {
-          const id = `sim-${++seq}`;
+          const id = crypto.randomUUID();
           d.simulados.push({ ...row, id, finishedAt: null, acertos: null, pct: null, result: null });
           return id;
         },
@@ -68,7 +71,7 @@ export function memoryGameStore(options: { plan?: (userId: string) => Plan; name
           if (r) Object.assign(r, done);
         },
         createRound: async (row) => {
-          const id = `jogo-${++seq}`;
+          const id = crypto.randomUUID();
           d.rounds.push({ ...row, estado: structuredClone(row.estado), id, finishedAt: null, pontos: null, xp: 0 });
           return id;
         },

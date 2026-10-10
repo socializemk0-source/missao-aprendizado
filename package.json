@@ -14,7 +14,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "check:api": "rm -rf .api-check && tsc -p tsconfig.api.json && node scripts/check-api.mjs",
-    "ci": "npm run typecheck && npm test && npm run check:api && npm run build"
+    "check:bundle": "node scripts/check-bundle.mjs",
+    "ci": "npm run typecheck && npm test && npm run check:api && npm run build && npm run check:bundle"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.117.2",
@@ -22,7 +23,8 @@
     "pg": "^8.23.0",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
-    "react-router": "^8.4.0"
+    "react-router": "^8.4.0",
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^7.0.1",

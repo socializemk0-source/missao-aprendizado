@@ -7,12 +7,17 @@ import type { DisciplinaId } from '../content/types.js';
 import type { PerfilEstudo } from '../shared/estudo.js';
 import type { JogoTipo, Mode, Nivel, Plan } from '../shared/game.js';
 import { db } from './db.js';
-import { PERCENTILE_MIN, type GameStore, type RoundRow, type SimuladoRow, type SimuladoStored, type UserTx } from './game.js';
+import { PERCENTILE_MIN, StatsConflict, type GameStore, type RoundRow, type SimuladoRow, type SimuladoStored, type UserTx } from './game.js';
 import { postgresQuestions } from './questions-pg.js';
 import { answers, gameRounds, missionClaims, phaseCompletions, profiles, questionState, questionStats, simulados, studyPlans, userStats } from './schema.js';
 
 type Tx = Parameters<Parameters<ReturnType<typeof db>['transaction']>[0]>[0];
 
+// Dono fixo: userId é SEMPRE o id do token (api/game.ts → authenticate). A
+// conexão é privilegiada e não passa pela RLS (server/db.ts), então cada
+// consulta abaixo filtra `user_id = userId` explicitamente; ids que vêm do
+// aluno (simulado, rodada) só valem junto com esse filtro — o de outra conta
+// dá "não encontrado" (404), sem confirmar que existe.
 function userTx(tx: Tx, userId: string): UserTx {
   return {
     async plan(): Promise<Plan> {
@@ -21,11 +26,20 @@ function userTx(tx: Tx, userId: string): UserTx {
     },
     async stats() {
       const [row] = await tx.select().from(userStats).where(eq(userStats.userId, userId)).limit(1);
-      return row ? { xp: row.xp, hearts: row.hearts, heartsUpdatedAt: row.heartsUpdatedAt, streak: row.streak, bestStreak: row.bestStreak, lastStudyDay: row.lastStudyDay } : null;
+      return row ? {
+        xp: row.xp, hearts: row.hearts, heartsUpdatedAt: row.heartsUpdatedAt, streak: row.streak, bestStreak: row.bestStreak,
+        lastStudyDay: row.lastStudyDay, version: row.version,
+      } : null;
     },
+    // Grava só se a versão ainda é a que foi lida (trava otimista, além da
+    // trava por aluno de withUser): uma escrita fora de ordem é desfeita.
     async saveStats(s) {
-      const values = { xp: s.xp, hearts: s.hearts, heartsUpdatedAt: s.heartsUpdatedAt, streak: s.streak, bestStreak: s.bestStreak, lastStudyDay: s.lastStudyDay, updatedAt: new Date() };
-      await tx.insert(userStats).values({ userId, ...values }).onConflictDoUpdate({ target: userStats.userId, set: values });
+      const values = { xp: s.xp, hearts: s.hearts, heartsUpdatedAt: s.heartsUpdatedAt, streak: s.streak, bestStreak: s.bestStreak, lastStudyDay: s.lastStudyDay, updatedAt: sql`now()` };
+      const rows = s.version === undefined
+        ? await tx.insert(userStats).values({ userId, ...values, version: 1 }).onConflictDoNothing().returning({ version: userStats.version })
+        : await tx.update(userStats).set({ ...values, version: s.version + 1 })
+          .where(and(eq(userStats.userId, userId), eq(userStats.version, s.version))).returning({ version: userStats.version });
+      if (rows.length !== 1) throw new StatsConflict();
     },
     async questionStates() {
       const rows = await tx.select().from(questionState).where(eq(questionState.userId, userId));
@@ -166,6 +180,10 @@ function toRow(r: typeof simulados.$inferSelect): SimuladoRow {
 }
 
 export const postgresGame: GameStore = {
+  async now() {
+    const result = await db().execute(sql`select now() as agora`);
+    return new Date((result as unknown as { rows: { agora: Date | string }[] }).rows[0]!.agora);
+  },
   withUser(userId, fn) {
     return db().transaction(async (tx) => {
       await tx.execute(sql`select pg_advisory_xact_lock(hashtext(${`v2:user:${userId}`}))`);

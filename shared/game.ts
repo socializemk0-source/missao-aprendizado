@@ -198,12 +198,14 @@ export interface CruzPista {
 
 export type JogoRodada =
   | { id: string; tipo: 'radar'; disciplina: DisciplinaId | null; itens: { texto: string; disciplina: DisciplinaId }[] }
-  | { id: string; tipo: 'memoria'; disciplina: DisciplinaId | null; cartas: { id: string; texto: string; par: string; lado: 'termo' | 'dica' }[] }
+  // Sem o par de cada carta: quem confere se duas cartas formam par é o servidor.
+  | { id: string; tipo: 'memoria'; disciplina: DisciplinaId | null; cartas: { id: string; texto: string; lado: 'termo' | 'dica' }[] }
   | { id: string; tipo: 'caca'; disciplina: DisciplinaId | null; grade: string[]; palavras: { palavra: string; dica: string }[] }
   | { id: string; tipo: 'cruzadinha'; disciplina: DisciplinaId | null; largura: number; altura: number; pistas: CruzPista[] };
 
 export type JogadaResultado =
   | { tipo: 'radar'; indice: number; acertou: boolean; certo: boolean; explicacao: string }
+  | { tipo: 'memoria'; cartas: [string, string]; par: boolean; achados: number; total: number; jogadas: number }
   | { tipo: 'caca'; palavra: string; valida: boolean; encontradas: number; total: number }
   | { tipo: 'cruzadinha'; corretas: string[]; completa: boolean }; // "1H", "2V"...
 

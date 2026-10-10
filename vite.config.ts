@@ -2,6 +2,7 @@ import { existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import react from '@vitejs/plugin-react';
 import { defineConfig, loadEnv, type Plugin } from 'vite';
+import { versaoDoBuild, versaoNoHtml } from './shared/versao.js';
 
 // Em desenvolvimento, /api/* executa os mesmos arquivos de api/ que a
 // Vercel executa em produção (api/me.ts → /api/me).
@@ -30,6 +31,7 @@ function apiRoutes(): Plugin {
           status(code: number) { res.statusCode = code; return apiRes; },
           json(payload: unknown) { res.setHeader('Content-Type', 'application/json'); res.end(JSON.stringify(payload)); },
           setHeader(name: string, value: string) { res.setHeader(name, value); },
+          end() { res.end(); },
         };
         try {
           const mod = await server.ssrLoadModule(file);
@@ -43,11 +45,19 @@ function apiRoutes(): Plugin {
   };
 }
 
+// Versão do build no index.html (ver shared/versao.ts).
+function versaoNaPagina(versao: string): Plugin {
+  return { name: 'app-version', transformIndexHtml: (html) => versaoNoHtml(html, versao) };
+}
+
 export default defineConfig(({ mode }) => {
   // As rotas de api/ leem process.env, como na Vercel.
   Object.assign(process.env, loadEnv(mode, process.cwd(), ''));
+  // O bundle sabe a própria versão (import.meta.env.VITE_APP_VERSION).
+  const versao = versaoDoBuild(process.env);
+  process.env.VITE_APP_VERSION = versao;
   return {
-    plugins: [react(), apiRoutes()],
+    plugins: [react(), apiRoutes(), versaoNaPagina(versao)],
     build: {
       rolldownOptions: {
         output: {
@@ -55,8 +65,8 @@ export default defineConfig(({ mode }) => {
           // navegador entre uma versão do app e outra.
           codeSplitting: {
             groups: [
-              { name: (id: string) => (/node_modules[\\/]@supabase/.test(id) ? 'supabase' : null) },
-              { name: (id: string) => (id.includes('node_modules') ? 'vendor' : null) },
+              { debugName: 'supabase', name: (id: string) => (/node_modules[\\/]@supabase/.test(id) ? 'supabase' : null) },
+              { debugName: 'vendor', name: (id: string) => (id.includes('node_modules') ? 'vendor' : null) },
             ],
           },
         },

@@ -26,6 +26,14 @@ jobs:
       SQL_SSL: 'false'
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # histórico inteiro, para a varredura de segredos
+      - name: Nenhum segredo no histórico do repositório (gitleaks)
+        run: |
+          curl -sSfL -o /tmp/gitleaks.tgz https://github.com/gitleaks/gitleaks/releases/download/v8.21.2/gitleaks_8.21.2_linux_x64.tar.gz
+          echo "5bc41815076e6ed6ef8fbecc9d9b75bcae31f39029ceb55da08086315316e3ba  /tmp/gitleaks.tgz" | sha256sum -c -
+          tar xzf /tmp/gitleaks.tgz -C /tmp gitleaks
+          /tmp/gitleaks git . --no-banner --redact --config .gitleaks.toml
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -35,8 +43,35 @@ jobs:
         run: npm audit --omit=dev --audit-level=high
       - name: Migrações no Postgres de teste
         run: for f in supabase/migrations/*.sql; do PGPASSWORD=pg psql -h localhost -U postgres -v ON_ERROR_STOP=1 -f "$f"; done
+      - name: PostgREST (acesso direto pela Data API, como a chave pública faria)
+        run: |
+          curl -sSfL -o /tmp/postgrest.tar.xz https://github.com/PostgREST/postgrest/releases/download/v12.2.3/postgrest-v12.2.3-linux-static-x64.tar.xz
+          echo "9f71269e61ac3a940281e93ff415760f5957e430e475ba4c3889f3ede7d5527c  /tmp/postgrest.tar.xz" | sha256sum -c -
+          tar xJf /tmp/postgrest.tar.xz -C /tmp
+          echo "POSTGREST_BIN=/tmp/postgrest" >> "$GITHUB_ENV"
       - run: npm run typecheck
       - run: npm test
       - name: Rotas da API carregam em ESM (como na Vercel)
         run: npm run check:api
-      - run: npm run build
+      - name: Build com valores "canário" nas variáveis secretas
+        run: npm run build
+        env:
+          SUPABASE_SERVICE_ROLE_KEY: canario-service-role-nao-pode-ir-ao-navegador
+          SUPABASE_ANON_KEY: canario-anon-key-vem-so-da-api
+          TURNSTILE_SECRET_KEY: canario-turnstile-secret
+          MERCADOPAGO_ACCESS_TOKEN: canario-mercadopago-token
+          MERCADOPAGO_WEBHOOK_SECRET: canario-mercadopago-webhook
+          OPENAI_API_KEY: canario-openai-key
+          SUPABASE_DB_URL: canario-db-url
+          BACKUP_PASSPHRASE: canario-backup
+      - name: Nenhum segredo no bundle do navegador
+        run: npm run check:bundle
+        env:
+          SUPABASE_SERVICE_ROLE_KEY: canario-service-role-nao-pode-ir-ao-navegador
+          SUPABASE_ANON_KEY: canario-anon-key-vem-so-da-api
+          TURNSTILE_SECRET_KEY: canario-turnstile-secret
+          MERCADOPAGO_ACCESS_TOKEN: canario-mercadopago-token
+          MERCADOPAGO_WEBHOOK_SECRET: canario-mercadopago-webhook
+          OPENAI_API_KEY: canario-openai-key
+          SUPABASE_DB_URL: canario-db-url
+          BACKUP_PASSPHRASE: canario-backup

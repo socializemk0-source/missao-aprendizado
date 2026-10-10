@@ -12,6 +12,7 @@ import { iniciarMarketing } from './lib/marketing';
 import { registrarVisita } from './lib/meta-pixel';
 import './lib/prefs'; // aplica tema, animações e modo foco no <html>
 import { initPwa, registerServiceWorker } from './lib/pwa';
+import { iniciarVersao } from './lib/versao';
 import './styles/global.css';
 import './styles/layout.css';
 import './styles/pages.css';
@@ -21,6 +22,8 @@ import './styles/game.css';
 // App instalável: avisos do navegador desde o início; o service worker só no
 // site publicado (em desenvolvimento ele guardaria arquivos que mudam a toda hora).
 initPwa();
+// Arquivo de uma versão anterior que sumiu: recarrega uma vez (src/lib/versao.ts).
+iniciarVersao();
 if (import.meta.env.PROD) window.addEventListener('load', () => void registerServiceWorker());
 
 // Surpresa para quem abre o F12 / "Inspecionar".

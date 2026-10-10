@@ -4,26 +4,30 @@
 // espera a verificação e manda o token para o Supabase conferir.
 import { cleanup, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { afterEach, describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { SupabaseClient } from '@supabase/supabase-js';
 import { authErrorMessage } from '../../src/auth/messages';
 import { setSupabaseForTests } from '../../src/lib/supabase';
+import { authApi } from './api-bridge';
 import { fakeSupabase, renderAt } from './render';
 
 type Opts = { callback: (t: string) => void };
 let respondeu: ((t: string) => void) | null = null;
 const resets: string[] = [];
+const acoes: unknown[] = []; // action pedida em cada widget
 
 function comCaptcha(auto: boolean) {
   const auth = fakeSupabase();
   setSupabaseForTests({ auth } as unknown as SupabaseClient, 'chave-teste');
   window.turnstile = {
     render: (_el: HTMLElement, opts: Record<string, unknown>) => {
+      acoes.push(opts.action);
       respondeu = (opts as unknown as Opts).callback;
       if (auto) respondeu('tok-1');
       return 'w1';
     },
     reset: (id?: string) => { resets.push(id ?? ''); },
+    execute: () => {},
     remove: () => {},
   };
   return auth;
@@ -34,6 +38,8 @@ afterEach(() => {
   delete window.turnstile;
   respondeu = null;
   resets.length = 0;
+  acoes.length = 0;
+  vi.unstubAllGlobals();
 });
 
 describe('CAPTCHA', () => {
@@ -65,8 +71,9 @@ describe('CAPTCHA', () => {
     await waitFor(() => expect(resets).toEqual(['w1'])); // token só vale uma vez
   });
 
-  it('cadastro e "esqueci a senha" também mandam o token', async () => {
-    const auth = comCaptcha(true);
+  it('cadastro e "esqueci a senha" mandam o token do formulário certo para /api/auth, que confere', async () => {
+    comCaptcha(true);
+    const { tokens } = await authApi();
     const user = userEvent.setup();
     renderAt('/cadastro', { status: 'signedOut' });
     await user.type(screen.getByLabelText('Nome'), 'Maria');
@@ -75,7 +82,8 @@ describe('CAPTCHA', () => {
     await user.type(screen.getByLabelText('Confirme a senha'), 'senha123');
     await waitFor(() => expect(screen.getByRole('button', { name: 'Criar conta' })).toBeEnabled());
     await user.click(screen.getByRole('button', { name: 'Criar conta' }));
-    expect(auth.signUp).toHaveBeenCalledWith(expect.objectContaining({ options: expect.objectContaining({ captchaToken: 'tok-1' }) }));
+    await screen.findByRole('heading', { name: 'Confirme seu e-mail' });
+    expect(acoes).toContain('signup');
     cleanup();
 
     renderAt('/entrar', { status: 'signedOut' });
@@ -83,7 +91,9 @@ describe('CAPTCHA', () => {
     await user.type(screen.getByLabelText('E-mail'), 'm@b.com');
     await waitFor(() => expect(screen.getByRole('button', { name: 'Enviar link' })).toBeEnabled());
     await user.click(screen.getByRole('button', { name: 'Enviar link' }));
-    expect(auth.resetPasswordForEmail).toHaveBeenCalledWith('m@b.com', { redirectTo: `${window.location.origin}/redefinir-senha`, captchaToken: 'tok-1' });
+    await screen.findByText(/Se houver uma conta com m@b.com/);
+    expect(acoes).toContain('recover');
+    expect(tokens).toEqual([['tok-1', 'cadastro'], ['tok-1', 'recuperar']]);
   });
 
   it('erro de CAPTCHA do Supabase vira mensagem em português', () => {

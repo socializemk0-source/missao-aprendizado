@@ -6,9 +6,10 @@
 import { authenticate, type VerifyToken } from '../server/auth.js';
 import { jsonBody, methodNotAllowed, type ApiRequest, type ApiResponse } from '../server/http.js';
 import { LIMITES, limitarAluno, limitarIp, postgresLimiter, type RateLimiter } from '../server/limite.js';
-import { errorText } from '../server/log.js';
+import { errorText, log } from '../server/log.js';
 import { RevisaoError, decidir, filaDoRevisor, parseDecisao, postgresProfessor, type ProfessorStore } from '../server/professor.js';
 import { verifySupabaseToken } from '../server/supabase.js';
+import { comSeguranca } from '../server/seguranca.js';
 
 export function createProfessorHandler(deps: { verifyToken: VerifyToken; store: ProfessorStore; limiter?: RateLimiter | null }) {
   const { store } = deps;
@@ -42,10 +43,13 @@ export function createProfessorHandler(deps: { verifyToken: VerifyToken; store: 
         res.status(err.status).json({ error: err.message, code: err.code });
         return;
       }
-      console.error('[professor] erro:', errorText(err));
+      log.erro('[professor] erro:', errorText(err));
       res.status(500).json({ error: 'Não foi possível concluir agora. Tente de novo.' });
     }
   };
 }
 
-export default createProfessorHandler({ verifyToken: verifySupabaseToken, store: postgresProfessor, limiter: postgresLimiter });
+export default comSeguranca(
+  createProfessorHandler({ verifyToken: verifySupabaseToken, store: postgresProfessor, limiter: postgresLimiter }),
+  { metodos: ['GET', 'POST'], headers: ['Authorization', 'Content-Type'] },
+);

@@ -1,10 +1,12 @@
 import { useRef, useState, type FormEvent } from 'react';
-import { Link, Navigate } from 'react-router';
+import { Link, Navigate, useNavigate } from 'react-router';
 import { useAuth } from '../auth/AuthProvider';
 import { authErrorMessage, passwordProblem } from '../auth/messages';
 import { Loading } from '../auth/RequireAuth';
 import { useCaptcha } from '../components/Captcha';
 import { Icon } from '../components/Icon';
+import { ApiError } from '../lib/api';
+import { pedirAuth } from '../lib/auth-api';
 import { track } from '../lib/marketing';
 import { getSupabase } from '../lib/supabase';
 import { useAoAparecer } from '../lib/usar-visto';
@@ -19,7 +21,8 @@ export function Cadastro() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [sentTo, setSentTo] = useState<string | null>(null);
-  const captcha = useCaptcha();
+  const captcha = useCaptcha(null, { action: 'signup' }); // conferido em /api/auth
+  const navigate = useNavigate();
   const formVisto = useAoAparecer('at_signup_form_viewed');
   const comecou = useRef(false);
 
@@ -39,22 +42,16 @@ export function Cadastro() {
     }
     setBusy(true);
     try {
-      const { data, error: err } = await (await getSupabase()).auth.signUp({
-        email: email.trim(),
-        password,
-        options: { data: { name: name.trim() }, emailRedirectTo: `${window.location.origin}/entrar`, ...captcha.options },
+      // E-mail já cadastrado volta como erro (409) do /api/auth.
+      const r = await pedirAuth('signup', {
+        name: name.trim(), email: email.trim(), password, redirectTo: `${window.location.origin}/entrar`, ...captcha.options,
       });
-      if (err) throw err;
-      // O Supabase não dá erro para e-mail já cadastrado (anti-enumeração):
-      // devolve um usuário sem identidades. Sem esta checagem, parecia que
-      // o cadastro tinha dado certo.
-      if (data.user && data.user.identities?.length === 0) throw new Error('User already registered');
       track('CompleteRegistration', { status: 'email', content_name: 'cadastro' });
-      if (!data.session) setSentTo(email.trim()); // precisa confirmar o e-mail
-      // Com sessão, o AuthProvider percebe e esta tela redireciona.
+      if (r.confirmar === false) navigate('/entrar', { replace: true }); // conta já confirmada: é só entrar
+      else setSentTo(email.trim()); // precisa confirmar o e-mail
     } catch (err) {
       track('at_signup_form_error', { error_type: 'servico', page: '/cadastro' }, { proprio: true });
-      setError(authErrorMessage(err));
+      setError(err instanceof ApiError ? err.message : authErrorMessage(err));
     } finally {
       setBusy(false);
       captcha.reset(); // o token do CAPTCHA vale uma vez

@@ -1,14 +1,16 @@
 // @vitest-environment jsdom
 import { cleanup, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { afterEach, describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { authErrorMessage, passwordProblem } from '../../src/auth/messages';
 import { setSupabaseForTests } from '../../src/lib/supabase';
+import { authApi } from './api-bridge';
 import { fakeSupabase, me, renderAt, session } from './render';
 
 afterEach(() => {
   cleanup();
   setSupabaseForTests(null);
+  vi.unstubAllGlobals();
 });
 
 describe('/entrar', () => {
@@ -41,14 +43,15 @@ describe('/entrar', () => {
     });
   });
 
-  it('esqueci a senha: mesma mensagem exista ou não a conta', async () => {
-    const auth = fakeSupabase();
+  it('esqueci a senha (por /api/auth): mesma mensagem exista ou não a conta', async () => {
+    fakeSupabase();
+    const { pedidos } = await authApi(() => ({ body: {} }));
     renderAt('/entrar', { status: 'signedOut' });
     await userEvent.click(screen.getByRole('button', { name: 'Esqueci minha senha' }));
     await userEvent.type(screen.getByLabelText('E-mail'), 'a@b.com');
     await userEvent.click(screen.getByRole('button', { name: 'Enviar link' }));
     expect(await screen.findByRole('status')).toHaveTextContent('Se houver uma conta com a@b.com');
-    expect(auth.resetPasswordForEmail).toHaveBeenCalledWith('a@b.com', { redirectTo: `${window.location.origin}/redefinir-senha` });
+    expect(pedidos).toEqual([{ acao: 'recover', corpo: { email: 'a@b.com' } }]);
   });
 });
 
@@ -62,18 +65,20 @@ describe('/cadastro', () => {
   }
 
   it('e-mail que já tem conta NÃO parece sucesso (Supabase devolve usuário sem identidades)', async () => {
-    fakeSupabase({ signUp: async () => ({ data: { user: { identities: [] }, session: null }, error: null }) });
+    fakeSupabase();
+    await authApi(() => ({ body: { id: 'x', identities: [] } }));
     renderAt('/cadastro', { status: 'signedOut' });
     await fill();
     expect(await screen.findByRole('alert')).toHaveTextContent('Este e-mail já tem conta');
   });
 
-  it('cadastro que exige confirmação mostra a tela de "confirme seu e-mail"', async () => {
-    const auth = fakeSupabase();
+  it('cadastro (por /api/auth) que exige confirmação mostra a tela de "confirme seu e-mail"', async () => {
+    fakeSupabase();
+    const { pedidos } = await authApi();
     renderAt('/cadastro', { status: 'signedOut' });
     await fill();
     expect(await screen.findByRole('heading', { name: 'Confirme seu e-mail' })).toBeInTheDocument();
-    expect(auth.signUp).toHaveBeenCalledWith(expect.objectContaining({ options: expect.objectContaining({ data: { name: 'Maria' } }) }));
+    expect(pedidos).toEqual([{ acao: 'signup', corpo: { email: 'maria@teste.dev', password: 'senha1234', data: { name: 'Maria' } } }]);
   });
 
   it('senha fraca ou diferente da confirmação é barrada antes de chamar o servidor', async () => {
@@ -87,7 +92,7 @@ describe('/cadastro', () => {
     await userEvent.type(screen.getByLabelText('Confirme a senha'), 'senha9999');
     await userEvent.click(screen.getByRole('button', { name: 'Criar conta' }));
     expect(screen.getByRole('alert')).toHaveTextContent('não são iguais');
-    expect(auth.signUp).not.toHaveBeenCalled();
+    expect(auth.signUp).not.toHaveBeenCalled(); // o cadastro nem chegou a ser pedido
   });
 });
 

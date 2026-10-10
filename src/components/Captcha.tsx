@@ -1,43 +1,20 @@
 // CAPTCHA (Cloudflare Turnstile) nas telas de login, cadastro e "esqueci a
-// senha". Só aparece quando o servidor informa uma chave (TURNSTILE_SITE_KEY);
-// sem ela, nada muda. O token vai junto do pedido ao Supabase, que confere
-// com a chave secreta (configurada no painel do Supabase). Cada token vale
-// uma vez: depois de cada tentativa a verificação recomeça.
+// senha", e na lista de contatos da página inicial. Só aparece quando o
+// servidor informa uma chave (TURNSTILE_SITE_KEY); sem ela, nada muda. O token
+// vai junto do pedido: no login, o Supabase confere; no cadastro e no
+// "esqueci a senha" (/api/auth) e na lista de contatos (/api/leads), o nosso
+// servidor confere (server/turnstile.ts). As ações do jogo usam um token
+// invisível (src/lib/turnstile.ts). Cada token vale uma vez: depois de
+// cada tentativa a verificação recomeça.
 
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 import { getCaptchaSiteKey } from '../lib/supabase';
-
-interface Turnstile {
-  render(el: HTMLElement, options: Record<string, unknown>): string;
-  reset(id?: string): void;
-  remove(id: string): void;
-}
-
-declare global {
-  interface Window { turnstile?: Turnstile }
-}
-
-const SCRIPT = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
-let carregando: Promise<void> | null = null;
-
-function carregarTurnstile(): Promise<void> {
-  if (window.turnstile) return Promise.resolve();
-  carregando ??= new Promise<void>((resolve, reject) => {
-    const s = document.createElement('script');
-    s.src = SCRIPT;
-    s.async = true;
-    s.onload = () => resolve();
-    s.onerror = () => {
-      carregando = null;
-      reject(new Error('captcha indisponível'));
-    };
-    document.head.appendChild(s);
-  });
-  return carregando;
-}
+import { carregarTurnstile } from '../lib/turnstile';
 
 // resetKey: quando muda (ex.: login ↔ "esqueci a senha"), o widget é recriado.
-export function useCaptcha(resetKey: unknown = null): {
+// action: nome do formulário, conferido pelo servidor. ativo: false adia
+// tudo (nem a chave nem o script da Cloudflare são baixados).
+export function useCaptcha(resetKey: unknown = null, { action, ativo = true }: { action?: string; ativo?: boolean } = {}): {
   element: ReactNode;
   ready: boolean;
   options: { captchaToken?: string };
@@ -50,31 +27,33 @@ export function useCaptcha(resetKey: unknown = null): {
   const widget = useRef<string | null>(null);
 
   useEffect(() => {
-    let ativo = true;
-    getCaptchaSiteKey().then((k) => ativo && setSiteKey(k)).catch(() => {});
-    return () => { ativo = false; };
-  }, []);
+    if (!ativo) return;
+    let vivo = true;
+    getCaptchaSiteKey().then((k) => vivo && setSiteKey(k)).catch(() => {});
+    return () => { vivo = false; };
+  }, [ativo]);
 
   useEffect(() => {
     if (!siteKey) return;
-    let ativo = true;
+    let vivo = true;
     setToken(null);
     carregarTurnstile().then(() => {
-      if (!ativo || !box.current || !window.turnstile) return;
+      if (!vivo || !box.current || !window.turnstile) return;
       widget.current = window.turnstile.render(box.current, {
         sitekey: siteKey,
         language: 'pt-br',
-        callback: (t: string) => ativo && setToken(t),
-        'expired-callback': () => ativo && setToken(null),
-        'error-callback': () => ativo && setToken(null),
+        ...(action ? { action } : {}),
+        callback: (t: string) => vivo && setToken(t),
+        'expired-callback': () => vivo && setToken(null),
+        'error-callback': () => vivo && setToken(null),
       });
-    }).catch(() => ativo && setFalhou(true));
+    }).catch(() => vivo && setFalhou(true));
     return () => {
-      ativo = false;
+      vivo = false;
       if (widget.current && window.turnstile) window.turnstile.remove(widget.current);
       widget.current = null;
     };
-  }, [siteKey, resetKey]);
+  }, [siteKey, resetKey, action]);
 
   const reset = useCallback(() => {
     if (widget.current && window.turnstile) window.turnstile.reset(widget.current);

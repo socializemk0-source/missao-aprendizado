@@ -33,3 +33,27 @@ export function bridgeApi(routes: Record<string, Handler>) {
   vi.stubGlobal('fetch', fetchMock);
   return { fetchMock, calls };
 }
+
+// /api/auth de verdade (cadastro e "esqueci a senha"), com o Supabase Auth
+// e a Cloudflare simulados. goTrue: o que o Supabase responde.
+export async function authApi(goTrue: (acao: string, corpo: Record<string, unknown>) => { status?: number; body: unknown } = () => ({ body: { id: 'u1', identities: [{}] } })) {
+  const { createAuthHandler } = await import('../../api/auth.js');
+  const pedidos: { acao: string; corpo: Record<string, unknown> }[] = [];
+  const tokens: unknown[] = [];
+  const handler = createAuthHandler({
+    env: { SUPABASE_URL: 'https://proj.supabase.co', SUPABASE_SERVICE_ROLE_KEY: 'chave-admin' },
+    send: (async (url: string, init: RequestInit) => {
+      const acao = new URL(url).pathname.split('/').pop()!;
+      const corpo = JSON.parse(String(init.body)) as Record<string, unknown>;
+      pedidos.push({ acao, corpo });
+      const r = goTrue(acao, corpo);
+      return new Response(JSON.stringify(r.body), { status: r.status ?? 200 });
+    }) as unknown as typeof fetch,
+    turnstile: async (token, o) => {
+      tokens.push([token, o.uso]);
+      return { ok: true, hostname: null, action: null, motivo: 'desligado' };
+    },
+  });
+  const bridge = bridgeApi({ '/api/auth': handler });
+  return { ...bridge, pedidos, tokens };
+}

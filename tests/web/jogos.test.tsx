@@ -89,14 +89,22 @@ describe('Radar do Tico', () => {
 
 describe('Memória do Tico', () => {
   it('virar duas cartas do mesmo par deixa as duas abertas; achar os 6 pares termina a rodada', async () => {
-    setup();
+    const { store } = setup();
     vi.useFakeTimers({ toFake: ['Date'] }); // o servidor recusa rodada de menos de 5 s
     const user = userEvent.setup();
     await comecar(user, '/jogos/memoria', 'informatica');
     const cartas = await screen.findAllByRole('button', { name: /^Carta \d+, virada para baixo$/ });
     expect(cartas).toHaveLength(12);
+    // A tela não sabe os pares; o teste lê o gabarito que só o servidor guarda
+    // (a carta "cN" é o N-ésimo botão).
+    const estado = store.users.get('u1')!.rounds[0]!.estado as { pares: Record<string, string> };
     const pares = new Map<string, HTMLElement[]>();
-    for (const c of cartas) pares.set(c.dataset.par!, [...(pares.get(c.dataset.par!) ?? []), c]);
+    for (const [id, par] of Object.entries(estado.pares)) pares.set(par, [...(pares.get(par) ?? []), cartas[Number(id.slice(1))]!]);
+    // Um erro primeiro: duas cartas de pares diferentes voltam a ficar viradas.
+    const [x, y] = [...pares.values()].map((cs) => cs[0]!);
+    await user.click(x!);
+    await user.click(y!);
+    await waitFor(() => expect(x).toHaveAccessibleName(/virada para baixo/), { timeout: 2000 });
     let n = 0;
     for (const [, [a, b]] of pares) {
       if (++n === 6) vi.setSystemTime(new Date(Date.now() + 30_000));
@@ -107,7 +115,7 @@ describe('Memória do Tico', () => {
       expect(textos).toContain(termo.dica);
     }
     const fim = await screen.findByRole('region', { name: 'Resultado' });
-    expect(fim).toHaveTextContent('Você achou os 6 pares em 6 jogadas');
+    expect(fim).toHaveTextContent('Você achou os 6 pares em 7 jogadas');
     expect(fim).toHaveTextContent(`+${JOGO_XP.memoria} XP`);
   });
 });

@@ -9,7 +9,7 @@
 import { sql } from 'drizzle-orm';
 import { db } from './db.js';
 import { header, type ApiRequest, type ApiResponse } from './http.js';
-import { errorText } from './log.js';
+import { errorText, log } from './log.js';
 
 export interface RateLimiter {
   // true = pode seguir; false = passou do limite nesta janela.
@@ -49,21 +49,23 @@ export const postgresLimiter: RateLimiter = {
 };
 
 // Conta a chamada e, se passou do limite, responde 429. Devolve se pode seguir.
+// code: o código do erro (o /api/game usa "rate_limited").
 export async function limitar(
   limiter: RateLimiter | null | undefined, res: ApiResponse, key: string, limit: number, windowSec: number, now = new Date(),
+  code = 'MUITAS_TENTATIVAS',
 ): Promise<boolean> {
   if (!limiter) return true;
   let ok = true;
   try {
     ok = await limiter.hit(key, limit, windowSec, now);
   } catch (err) {
-    console.warn('[limite] contador indisponível, seguindo sem limite:', errorText(err));
+    log.aviso('[limite] contador indisponível, seguindo sem limite:', errorText(err));
     return true;
   }
   if (ok) return true;
   const espera = Math.max(1, Math.ceil((janelaDe(now, windowSec) + windowSec * 1000 - now.getTime()) / 1000));
   res.setHeader('Retry-After', String(espera));
-  res.status(429).json({ error: 'Muitas ações seguidas. Espere um pouco e tente de novo.', code: 'MUITAS_TENTATIVAS' });
+  res.status(429).json({ error: 'Muitas ações seguidas. Espere um pouco e tente de novo.', code });
   return false;
 }
 
@@ -77,18 +79,25 @@ export function clientIp(req: ApiRequest): string {
 export const LIMITES = {
   ipPorMinuto: 600, // qualquer rota da API, antes do login (protege o Supabase Auth). Alto porque
   // escolas e operadoras de celular põem muita gente atrás do mesmo IP.
-  jogoPorMinuto: 120, // /api/game por aluno
+  // /api/game por aluno, por tipo de ação (server/actions.ts)
+  jogoLeituraPorMinuto: 120, // trilha, fase, revisão, ranking...
+  jogoRespostaPorMinuto: 60, // responder, missão, entregar simulado, jogadas
+  jogoEscritaPorMinuto: 30, // começar simulado ou jogo, salvar o plano
   perfilPorMinuto: 30, // /api/me por aluno
   pagamentosPorMinuto: 20, // /api/pagamentos por aluno (cada uma fala com o Mercado Pago)
   redacaoPorMinuto: 30, // /api/redacao por aluno (a correção em si tem limite próprio)
   professorPorMinuto: 60, // /api/professor por professor
-  leadsPorMinuto: 5, // /api/leads por IP
+  leadsPorIpHora: 3, // /api/leads: envios por IP por hora
+  leadsPorEmailDia: 3, // /api/leads: envios do mesmo e-mail por dia
+  configPorMinuto: 60, // /api/config/supabase por IP (o sucesso fica 5 min na CDN)
+  authPorIpHora: 10, // /api/auth (cadastro + esqueci a senha) por IP por hora
+  authPorEmailHora: 3, // /api/auth: pedidos para o mesmo e-mail por hora
 } as const;
 
 // Antes do login: por IP (cada token falso custaria uma consulta ao Supabase Auth).
-export const limitarIp = (limiter: RateLimiter | null | undefined, req: ApiRequest, res: ApiResponse, now?: Date) =>
-  limitar(limiter, res, `ip:${clientIp(req)}`, LIMITES.ipPorMinuto, 60, now);
+export const limitarIp = (limiter: RateLimiter | null | undefined, req: ApiRequest, res: ApiResponse, now?: Date, code?: string) =>
+  limitar(limiter, res, `ip:${clientIp(req)}`, LIMITES.ipPorMinuto, 60, now, code);
 
 // Depois do login: por aluno, em cada rota.
-export const limitarAluno = (limiter: RateLimiter | null | undefined, res: ApiResponse, rota: string, userId: string, porMinuto: number, now?: Date) =>
-  limitar(limiter, res, `${rota}:${userId}`, porMinuto, 60, now);
+export const limitarAluno = (limiter: RateLimiter | null | undefined, res: ApiResponse, rota: string, userId: string, porMinuto: number, now?: Date, code?: string) =>
+  limitar(limiter, res, `${rota}:${userId}`, porMinuto, 60, now, code);

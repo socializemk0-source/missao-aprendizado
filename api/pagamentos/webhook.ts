@@ -6,7 +6,8 @@
 import { header, jsonBody, methodNotAllowed, type ApiRequest, type ApiResponse } from '../../server/http.js';
 import { MercadoPagoError, applyPayment, mercadoPagoClient, verifyWebhookSignature, type MpClient, type PaymentStore } from '../../server/payments.js';
 import { postgresPayments } from '../../server/payments-pg.js';
-import { errorText } from '../../server/log.js';
+import { errorText, log } from '../../server/log.js';
+import { comSeguranca } from '../../server/seguranca.js';
 
 const one = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v);
 
@@ -14,7 +15,7 @@ export function createWebhookHandler(deps: { store: PaymentStore; client: MpClie
   return async function webhookHandler(req: ApiRequest, res: ApiResponse): Promise<void> {
     if (req.method !== 'POST') return methodNotAllowed(res, ['POST']);
     if (!deps.client || !deps.secret) {
-      console.error('[webhook] MERCADOPAGO_ACCESS_TOKEN ou MERCADOPAGO_WEBHOOK_SECRET não configurados');
+      log.erro('[webhook] MERCADOPAGO_ACCESS_TOKEN ou MERCADOPAGO_WEBHOOK_SECRET não configurados');
       return res.status(503).json({ error: 'Não configurado.' });
     }
     // Formato antigo (IPN/Feed: ?topic=...&id=...) não tem assinatura. O mesmo
@@ -23,7 +24,7 @@ export function createWebhookHandler(deps: { store: PaymentStore; client: MpClie
     // log: se só este formato chegar, falta ligar o aviso assinado no painel.
     const topic = one(req.query.topic);
     if (topic && !one(req.query['data.id'])) {
-      console.warn('[webhook] aviso no formato antigo ignorado', { topic, id: one(req.query.id) });
+      log.aviso('[webhook] aviso no formato antigo ignorado', { topic, id: one(req.query.id) });
       return res.status(200).json({ ok: true, ignored: true });
     }
 
@@ -33,7 +34,7 @@ export function createWebhookHandler(deps: { store: PaymentStore; client: MpClie
     const type = one(req.query.type) ?? (typeof body.type === 'string' ? body.type : undefined);
 
     if (!verifyWebhookSignature({ xSignature: header(req, 'x-signature'), xRequestId: header(req, 'x-request-id'), dataId, secret: deps.secret })) {
-      console.warn('[webhook] assinatura inválida', { type, dataId });
+      log.aviso('[webhook] assinatura inválida', { type, dataId });
       return res.status(401).json({ error: 'Assinatura inválida.' });
     }
     if (type !== 'payment' || !dataId || !/^\d{1,30}$/.test(dataId)) return res.status(200).json({ ok: true, ignored: true });
@@ -46,16 +47,16 @@ export function createWebhookHandler(deps: { store: PaymentStore; client: MpClie
         // Pagamento que não existe (ex.: "Simular notificação" do painel):
         // não adianta o Mercado Pago tentar de novo.
         if (err instanceof MercadoPagoError && err.status === 404) {
-          console.warn('[webhook] pagamento não encontrado', { dataId });
+          log.aviso('[webhook] pagamento não encontrado', { dataId });
           return res.status(200).json({ ok: true, ignored: true });
         }
         throw err;
       }
       const result = await applyPayment(deps.store, payment);
-      console.info('[webhook] pagamento', { dataId, status: result.status });
+      log.info('[webhook] pagamento', { dataId, status: result.status });
       res.status(200).json({ ok: true, resultado: result.status });
     } catch (err) {
-      console.error('[webhook] erro:', errorText(err));
+      log.erro('[webhook] erro:', errorText(err));
       res.status(500).json({ error: 'Falha ao processar; tente de novo.' });
     }
   };
@@ -63,8 +64,8 @@ export function createWebhookHandler(deps: { store: PaymentStore; client: MpClie
 
 const token = process.env.MERCADOPAGO_ACCESS_TOKEN?.trim();
 
-export default createWebhookHandler({
+export default comSeguranca(createWebhookHandler({
   store: postgresPayments,
   client: token ? mercadoPagoClient(token) : null,
   secret: process.env.MERCADOPAGO_WEBHOOK_SECRET?.trim(),
-});
+}), { metodos: ['POST'], headers: ['Content-Type'], cors: false }); // só o Mercado Pago chama (sem CORS)

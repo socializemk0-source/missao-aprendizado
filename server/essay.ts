@@ -8,6 +8,7 @@
 
 import { CRITERIOS, GUIAS_BANCA, type BancaRedacao, type Tema } from '../content/redacao.js';
 import type { EssayReport } from '../shared/essay.js';
+import { log } from './log.js';
 
 export const MIN_WORDS = 80;
 export const MAX_CHARS = 10_000;
@@ -80,7 +81,7 @@ export function repairReport(value: unknown, text: string): unknown {
       return exact && exact.length <= 1800 ? [{ ...(a as Loose), quote: exact }] : [];
     }).slice(0, 8);
     const dropped = before - (r.annotations as unknown[]).length;
-    if (dropped > 0) console.warn('[redacao] trechos descartados', { dropped });
+    if (dropped > 0) log.aviso('[redacao] trechos descartados', { dropped });
   }
   if (Array.isArray(r.criteria)) {
     r.criteria = r.criteria.map((c: unknown) => {
@@ -171,7 +172,7 @@ const SCHEMA = object({
 export type GradeResult = { ok: true; report: EssayReport } | { ok: false; code: string; message: string };
 
 const fail = (code: string, message: string): GradeResult => {
-  console.warn('[redacao] correção falhou', { code });
+  log.aviso('[redacao] correção falhou', { code });
   return { ok: false, code, message };
 };
 
@@ -186,7 +187,7 @@ async function logOpenAIError(res: Response) {
       detail = raw.slice(0, 300);
     }
   } catch { /* corpo ilegível */ }
-  console.warn('[redacao] erro da OpenAI', { status: res.status, detail });
+  log.aviso('[redacao] erro da OpenAI', { status: res.status, detail });
 }
 
 interface OpenAIResponse {

@@ -10,7 +10,9 @@ function setup() {
   const handler = createGameHandler({ verifyToken: fakeVerify, store });
   const call = async (method: string, action: string, extra: { query?: Record<string, string>; body?: unknown; token?: string } = {}) => {
     const res = makeRes();
-    await handler(makeReq({ method, query: { action, ...(extra.query ?? {}) }, body: extra.body, token: extra.token ?? 'ok:u1' }), res);
+    // Todo POST leva uma Idempotency-Key nova, como o app faz.
+    const headers = method === 'POST' ? { 'idempotency-key': crypto.randomUUID() } : undefined;
+    await handler(makeReq({ method, query: { action, ...(extra.query ?? {}) }, body: extra.body, token: extra.token ?? 'ok:u1', headers }), res);
     return res;
   };
   return { store, call };
@@ -58,7 +60,8 @@ describe('/api/game', () => {
 
   it('ação desconhecida → 400; outros métodos → 405', async () => {
     const { call } = setup();
-    expect((await call('GET', 'hackear')).statusCode).toBe(400);
+    const unknown = await call('GET', 'hackear');
+    expect([unknown.statusCode, unknown.body.code]).toEqual([400, 'unknown_action']);
     expect((await call('DELETE', 'trilha')).statusCode).toBe(405);
   });
 });
@@ -92,7 +95,7 @@ describe('/api/game — jogos', () => {
     const hub = await call('GET', 'jogos');
     expect(hub.statusCode).toBe(200);
     expect(hub.body.jogos.map((j: { tipo: string }) => j.tipo)).toEqual(['radar', 'memoria', 'caca', 'cruzadinha']);
-    expect((await call('POST', 'jogo-iniciar', { body: { tipo: 'xadrez' } })).body.code).toBe('ACAO_INVALIDA');
+    expect((await call('POST', 'jogo-iniciar', { body: { tipo: 'xadrez' } })).body.code).toBe('invalid_params');
     const start = await call('POST', 'jogo-iniciar', { body: { tipo: 'radar', disciplina: 'rlm' } });
     expect(start.statusCode).toBe(200);
     expect(start.body.itens[0]).not.toHaveProperty('certo');
@@ -118,7 +121,7 @@ describe('/api/game — plano de estudos', () => {
     expect((await call('GET', 'plano')).body).toEqual({ configurado: false });
 
     const bad = await call('POST', 'plano-salvar', { body: { ...perfil, minutosDia: 7 } });
-    expect([bad.statusCode, bad.body.code]).toEqual([400, 'ACAO_INVALIDA']);
+    expect([bad.statusCode, bad.body.code]).toEqual([400, 'invalid_params']);
     expect(bad.body.error).toMatch(/tempo/);
     expect((await call('GET', 'plano')).body).toEqual({ configurado: false });
 
@@ -154,9 +157,10 @@ describe('/api/game — limite de chamadas', () => {
       await handler(makeReq({ method: 'GET', query: { action: 'progresso' }, token, headers: { 'x-real-ip': ip } }), res);
       return res;
     };
-    for (let i = 0; i < LIMITES.jogoPorMinuto; i++) expect((await call('ok:u1')).statusCode).toBe(200);
+    for (let i = 0; i < LIMITES.jogoLeituraPorMinuto; i++) expect((await call('ok:u1')).statusCode).toBe(200);
     const blocked = await call('ok:u1');
-    expect([blocked.statusCode, blocked.body.code]).toEqual([429, 'MUITAS_TENTATIVAS']);
+    expect([blocked.statusCode, blocked.body.code]).toEqual([429, 'rate_limited']);
+    expect(Number(blocked.headers['Retry-After'])).toBeGreaterThan(0);
     expect((await call('ok:u2', '2.2.2.2')).statusCode).toBe(200);
   });
 

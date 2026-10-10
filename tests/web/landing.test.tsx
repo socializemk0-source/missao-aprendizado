@@ -1,8 +1,10 @@
 // @vitest-environment jsdom
-import { cleanup, screen, within } from '@testing-library/react';
+import { cleanup, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { afterEach, describe, expect, it, vi } from 'vitest';
-import { me, renderAt, session } from './render';
+import type { SupabaseClient } from '@supabase/supabase-js';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { setSupabaseForTests } from '../../src/lib/supabase';
+import { fakeSupabase, me, renderAt, session } from './render';
 
 afterEach(() => {
   cleanup();
@@ -67,6 +69,10 @@ describe('página inicial', () => {
 });
 
 describe('captura de e-mail', () => {
+  // Sem chave de CAPTCHA configurada (o caso com chave está mais abaixo).
+  beforeEach(() => setSupabaseForTests({ auth: fakeSupabase() } as unknown as SupabaseClient, null));
+  afterEach(() => { delete window.turnstile; });
+
   async function fill() {
     await userEvent.type(screen.getByLabelText('Seu nome'), 'Maria');
     await userEvent.type(screen.getByLabelText('Seu melhor e-mail'), 'maria@teste.dev');
@@ -93,6 +99,31 @@ describe('captura de e-mail', () => {
     const [url, init] = fetchMock.mock.calls[0] as unknown as [string, RequestInit];
     expect(url).toBe('/api/leads');
     expect(JSON.parse(String(init.body))).toMatchObject({ email: 'maria@teste.dev', name: 'Maria', consent: true, website: '' });
+  });
+
+  it('com CAPTCHA ligado: só carrega quando mexe no formulário, espera a verificação e manda o token do formulário "lead"', async () => {
+    setSupabaseForTests({ auth: fakeSupabase() } as unknown as SupabaseClient, 'chave-teste');
+    let render = 0;
+    let opcoes: Record<string, unknown> = {};
+    window.turnstile = {
+      render: (_el: HTMLElement, o: Record<string, unknown>) => { render++; opcoes = o; return `w${render}`; },
+      reset: () => {}, remove: () => {}, execute: () => {},
+    };
+    const fetchMock = vi.fn(async () => new Response(JSON.stringify({ ok: true }), { status: 200 }));
+    vi.stubGlobal('fetch', fetchMock);
+    renderAt('/', { status: 'signedOut' });
+    expect(render).toBe(0); // a página inicial não carrega o CAPTCHA à toa
+    await fill();
+    await userEvent.click(screen.getByLabelText(/Aceito receber e-mails/));
+    await waitFor(() => expect(render).toBe(1));
+    expect(opcoes).toMatchObject({ sitekey: 'chave-teste', action: 'lead' });
+    expect(screen.getByRole('button', { name: 'Quero receber' })).toBeDisabled();
+    (opcoes.callback as (t: string) => void)('tok-lead');
+    await waitFor(() => expect(screen.getByRole('button', { name: 'Quero receber' })).toBeEnabled());
+    await userEvent.click(screen.getByRole('button', { name: 'Quero receber' }));
+    expect(await screen.findByText('Pronto! Você está na lista.')).toBeInTheDocument();
+    const [, init] = fetchMock.mock.calls[0] as unknown as [string, RequestInit];
+    expect(JSON.parse(String(init.body))).toMatchObject({ email: 'maria@teste.dev', captchaToken: 'tok-lead' });
   });
 
   it('erro do servidor aparece e o formulário continua preenchido', async () => {
