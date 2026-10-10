@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Aprova Tico — anúncio</title>
+<!--
+  Vídeo de anúncio do Aprova Tico (Reels, Stories, feed do Facebook e Instagram).
+  Tudo é calculado a partir do tempo em seek(t): sem animação CSS, sem timers,
+  nada guardado entre quadros. Assim cada quadro sai igual em qualquer gravação.
+  Formato pela URL: anuncio.html?w=1080&h=1920 (9:16), h=1350 (4:5), h=1080 (1:1).
+  Abrir no navegador sem parâmetros toca o vídeo em loop para conferir.
+  Gravar: node marketing/video-anuncio/render.mjs (ver README.md).
+-->
+<style>
+  @font-face { font-family: 'Baloo'; font-weight: 700; src: url(fonts/baloo-2-latin-700-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Baloo'; font-weight: 800; src: url(fonts/baloo-2-latin-800-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Nunito'; font-weight: 600; src: url(fonts/nunito-latin-600-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Nunito'; font-weight: 700; src: url(fonts/nunito-latin-700-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Nunito'; font-weight: 800; src: url(fonts/nunito-latin-800-normal.woff2) format('woff2'); }
+  :root {
+    --heading: #1d3348; --text-2: #4d6478; --primary: #1688e8; --primary-strong: #1271bf;
+    --primary-soft: #edf7ff; --primary-deep: #1e40af; --green: #72c93d; --green-strong: #58a92a;
+    --green-soft: #ecfae5; --orange: #f7931e; --gold: #f5b700; --border: #e1e9ef; --muted: #e8eef4;
+    --violet: #7c3aed;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #0b1a2a; overflow: hidden; }
+  #stage { position: relative; overflow: hidden; background: #eaf6ff; }
+  .layer { position: absolute; inset: 0; }
+  #core { position: absolute; left: 0; top: 0; width: 1080px; height: 1500px; transform-origin: 0 0; }
+  .abs { position: absolute; will-change: transform, opacity; }
+  .word { font-family: 'Baloo'; font-weight: 800; line-height: 1; white-space: nowrap; text-align: center;
+          left: 0; width: 1080px; letter-spacing: -1px; }
+  .sub { font-family: 'Nunito'; font-weight: 800; }
+  .chaos { font-family: 'Nunito'; font-weight: 800; font-size: 34px; color: var(--heading); background: #fff;
+           border-radius: 22px; padding: 22px 30px 22px 40px; box-shadow: 0 18px 40px rgba(29,51,72,.16);
+           white-space: nowrap; border-left: 14px solid var(--orange); }
+  .cloud { position: absolute; background: #fff; border-radius: 999px; opacity: .9; filter: blur(2px); }
+  .logo { display: flex; align-items: center; gap: 18px; font-family: 'Baloo'; font-weight: 800; font-size: 64px;
+          color: var(--heading); white-space: nowrap; }
+  .logo .mark { width: 78px; height: 78px; border-radius: 22px; background: var(--primary); display: grid; place-items: center; }
+  .logo .dot { color: var(--green); }
+  .card-hero { width: 820px; height: 820px; border-radius: 56px; overflow: hidden; box-shadow: 0 40px 80px rgba(18,113,191,.28);
+               border: 10px solid #fff; background: #fff; }
+  .card-hero img { width: 100%; height: 100%; object-fit: cover; display: block; transform-origin: 60% 45%; }
+  /* Celular */
+  .phone { width: 620px; height: 1090px; border-radius: 76px; background: #1d3348; padding: 18px;
+           box-shadow: 0 50px 90px rgba(29,51,72,.35); }
+  .screen { position: relative; width: 100%; height: 100%; border-radius: 60px; background: #f9fbfd; overflow: hidden; }
+  .notch { position: absolute; left: 50%; top: 18px; width: 150px; height: 34px; margin-left: -75px; border-radius: 20px; background: #1d3348; }
+  .topbar { position: absolute; left: 34px; right: 34px; top: 74px; display: flex; justify-content: space-between; align-items: center; }
+  .hearts { display: flex; gap: 6px; }
+  .xp { display: flex; align-items: center; gap: 8px; background: #fef3c7; border: 3px solid #fde68a; color: #b45309;
+        font-family: 'Nunito'; font-weight: 800; font-size: 28px; padding: 6px 16px 6px 10px; border-radius: 999px; }
+  .bar { position: absolute; left: 34px; right: 34px; top: 140px; height: 18px; border-radius: 999px; background: var(--muted); overflow: hidden; }
+  .bar i { display: block; height: 100%; border-radius: 999px; background: var(--green); }
+  .eyebrow { position: absolute; left: 34px; top: 190px; font-family: 'Nunito'; font-weight: 800; font-size: 22px;
+             letter-spacing: 1.5px; color: var(--primary); }
+  .question { position: absolute; left: 34px; right: 34px; top: 232px; font-family: 'Nunito'; font-weight: 800;
+              font-size: 33px; line-height: 1.28; color: var(--heading); }
+  .opt { position: absolute; left: 34px; right: 34px; height: 82px; border-radius: 20px; border: 4px solid var(--border);
+         background: #fff; display: flex; align-items: center; gap: 22px; padding-left: 16px;
+         font-family: 'Nunito'; font-weight: 800; font-size: 34px; color: var(--heading); }
+  .opt .letter { width: 50px; height: 50px; border-radius: 14px; background: var(--muted); display: grid; place-items: center;
+                 font-size: 26px; color: var(--text-2); }
+  .btn { position: absolute; left: 34px; right: 34px; top: 818px; height: 92px; border-radius: 24px; display: grid; place-items: center;
+         font-family: 'Nunito'; font-weight: 800; font-size: 34px; color: #fff; background: var(--primary); }
+  .feedback { position: absolute; left: 0; right: 0; bottom: 0; height: 252px; background: var(--green-soft);
+              border-top: 5px solid var(--green); padding: 28px 34px 0; }
+  .feedback h4 { font-family: 'Baloo'; font-weight: 800; font-size: 50px; color: var(--green-strong); line-height: 1; }
+  .feedback p { font-family: 'Nunito'; font-weight: 700; font-size: 29px; color: var(--heading); margin-top: 12px; line-height: 1.3; }
+  .feedback b { color: var(--green-strong); }
+  .touch { width: 92px; height: 92px; border-radius: 50%; background: rgba(255,255,255,.55); border: 6px solid rgba(29,51,72,.75);
+           box-shadow: 0 10px 24px rgba(0,0,0,.2); }
+  .ripple { width: 92px; height: 92px; border-radius: 50%; border: 6px solid var(--primary); }
+  .flyxp { font-family: 'Baloo'; font-weight: 800; font-size: 52px; color: #fff; background: var(--gold); border-radius: 999px;
+           padding: 4px 26px; box-shadow: 0 12px 26px rgba(217,154,0,.4); white-space: nowrap; }
+  /* Recursos */
+  .feat { left: 90px; width: 900px; height: 190px; border-radius: 36px; background: #fff; box-shadow: 0 22px 50px rgba(29,51,72,.12);
+          display: flex; align-items: center; gap: 34px; padding: 0 40px; }
+  .feat .ic { flex: none; width: 118px; height: 118px; border-radius: 32px; display: grid; place-items: center; }
+  .feat h3 { font-family: 'Baloo'; font-weight: 800; font-size: 54px; color: var(--heading); line-height: 1; }
+  .feat p { font-family: 'Nunito'; font-weight: 700; font-size: 31px; color: var(--text-2); margin-top: 8px; }
+  .streak { display: flex; align-items: center; gap: 12px; background: #fff; border: 5px solid var(--gold); border-radius: 999px;
+            padding: 10px 30px 10px 16px; font-family: 'Baloo'; font-weight: 800; font-size: 46px; color: #b45309;
+            box-shadow: 0 16px 34px rgba(217,154,0,.3); white-space: nowrap; }
+  /* Final */
+  .pill { display: flex; align-items: center; gap: 18px; background: #fff; color: var(--primary-strong); border-radius: 999px;
+          padding: 22px 52px; font-family: 'Baloo'; font-weight: 800; font-size: 60px; white-space: nowrap;
+          box-shadow: 0 20px 44px rgba(10,30,90,.35); }
+  .confetti { width: 22px; height: 34px; border-radius: 5px; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="bg" class="layer"></div>
+  <div id="clouds" class="layer"></div>
+  <div id="sceneF" class="layer"></div>
+  <div id="core"></div>
+</div>
+<script>
+(() => {
+  // ---------- Formato ----------
+  const qs = new URLSearchParams(location.search);
+  const W = Number(qs.get('w')) || 1080;
+  const H = Number(qs.get('h')) || 1920;
+  const DUR = 24;
+  const stage = document.getElementById('stage');
+  stage.style.width = W + 'px'; stage.style.height = H + 'px';
+  // O conteúdo é desenhado numa área de 1080 x 1500 que é escalada e centralizada.
+  // No 9:16 ela fica entre y=210 e y=1710, longe do topo e da legenda do Reels.
+  const coreScale = Math.min(W / 1080, (H - (H > 1600 ? 420 : 60)) / 1500);
+  const core = document.getElementById('core');
+  core.style.transform = `translate(${(W - 1080 * coreScale) / 2}px, ${(H - 1500 * coreScale) / 2}px) scale(${coreScale})`;
+
+  // ---------- Matemática do movimento ----------
+  const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+  const lerp = (a, b, k) => a + (b - a) * k;
+  const prog = (t, a, b) => clamp((t - a) / (b - a));
+  const eo = (x) => 1 - Math.pow(1 - x, 3);           // easeOutCubic
+  const eio = (x) => (x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+  const ei = (x) => x * x * x;
+  // Mola fechada: chega em 1 com pouco passar do ponto.
+  const spring = (dt, w = 16, z = 0.55) => {
+    if (dt <= 0) return 0;
+    const wd = w * Math.sqrt(1 - z * z);
+    return 1 - Math.exp(-z * w * dt) * (Math.cos(wd * dt) + (z * w / wd) * Math.sin(wd * dt));
+  };
+  const soft = (dt) => spring(dt, 12, 0.75);
+  // Pseudoaleatório fixo (o mesmo em todo quadro).
+  const rnd = (i) => { const x = Math.sin(i * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); };
+  const BEAT = 0.5;                                    // 120 BPM
+  const beatPulse = (t, from) => (t < from ? 0 : Math.exp(-((t - from) % BEAT) * 9));
+
+  // ---------- Montagem ----------
+  const el = (tag, cls, parent, html) => {
+    const e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (html != null) e.innerHTML = html;
+    (parent || core).appendChild(e);
+    return e;
+  };
+  const set = (e, { x = 0, y = 0, s = 1, sx, sy, r = 0, o = 1, blur = 0, ox, oy }) => {
+    e.style.transform = `translate(${x}px, ${y}px) rotate(${r}deg) scale(${sx ?? s}, ${sy ?? s})`;
+    e.style.opacity = o;
+    e.style.filter = blur > 0.05 ? `blur(${blur}px)` : 'none';
+    e.style.visibility = o <= 0.001 ? 'hidden' : 'visible';
+    if (ox != null) e.style.transformOrigin = `${ox} ${oy}`;
+  };
+  const img = (src, cls, parent) => { const i = el('img', cls, parent); i.src = src; i.decoding = 'sync'; return i; };
+  const TICO = (pose) => `../../public/tico/${pose}.webp`;
+
+  // Ícones (mesmo traço do app).
+  const svg = (d, c = '#fff', size = 64, sw = 3) =>
+    `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+  const ICON = {
+    compass: '<circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/>',
+    rotate: '<path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/>',
+    target: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/>',
+    pen: '<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m13.5 6.5 4 4"/>',
+    arrow: '<path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>',
+  };
+  const heart = `<svg width="38" height="38" viewBox="0 0 24 24"><path fill="#ef4444" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.7 4.5c2.1 0 3.6 1.1 5.3 3 1.7-1.9 3.2-3 5.3-3 3.7 0 5.8 3.9 4.3 7.3C19.5 16.4 12 21 12 21z"/></svg>`;
+  const star = (s = 34) => `<svg width="${s}" height="${s}" viewBox="0 0 24 24"><path fill="#f5b700" stroke="#d99a00" stroke-width="1.2" d="m12 2.5 2.9 6 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.2 1.3-6.6-4.9-4.6 6.6-.8z"/></svg>`;
+  const flame = `<svg width="56" height="56" viewBox="0 0 24 24"><path fill="#f7931e" d="M12 2c1 4 5 5.5 5 10.5A5 5 0 0 1 7 12.5c0-2 1-3.5 2-4.5 0 2 1 3 2 3 0-3-1-5.5 1-9z"/><path fill="#f5b700" d="M12 12c.6 1.8 2.5 2.4 2.5 4.6a2.5 2.5 0 0 1-5 0c0-1.3.7-2 1.3-2.6 0 .9.4 1.4 1 1.4 0-1.4-.6-2.3.2-3.4z"/></svg>`;
+
+  // ---------- Fundo ----------
+  const bg = document.getElementById('bg');
+  const cloudsLayer = document.getElementById('clouds');
+  const clouds = [0, 1, 2, 3, 4].map((i) => {
+    const c = el('div', 'cloud', cloudsLayer);
+    c.style.width = 260 + rnd(i) * 220 + 'px'; c.style.height = 90 + rnd(i + 9) * 50 + 'px';
+    return c;
+  });
+
+  // ---------- Cena A: o gancho ----------
+  const A = el('div', 'layer');
+  const aw = [
+    ['Estuda,', 250, 120, 'var(--heading)', 0.20],
+    ['estuda,', 380, 120, 'var(--heading)', 0.70],
+    ['estuda...', 510, 120, 'var(--heading)', 1.20],
+  ].map(([txt, y, size, color, at]) => { const e = el('div', 'abs word', A, txt); Object.assign(e.style, { top: y + 'px', fontSize: size + 'px', color }); return { e, y, at }; });
+  const ab = [
+    ['e na hora da prova', 250, 80, 'var(--text-2)', 2.00],
+    ['esquece', 350, 170, 'var(--orange)', 2.45],
+    ['tudo?', 510, 170, 'var(--orange)', 2.85],
+  ].map(([txt, y, size, color, at]) => { const e = el('div', 'abs word', A, txt); Object.assign(e.style, { top: y + 'px', fontSize: size + 'px', color }); return { e, y, at }; });
+  const ticoA = img(TICO('neutro'), 'abs', A); Object.assign(ticoA.style, { width: '600px', left: '240px', top: '760px' });
+  const qmarks = [[300, 820, -14], [760, 760, 12], [820, 980, 18]].map(([x, y, r], i) => {
+    const e = el('div', 'abs word', A, '?'); Object.assign(e.style, { width: 'auto', left: x + 'px', top: y + 'px', fontSize: '120px', color: 'var(--primary)' });
+    return { e, r, at: 2.9 + i * 0.25 };
+  });
+
+  // ---------- Cena B: não sabe por onde começar ----------
+  const B = el('div', 'layer');
+  const bt1 = el('div', 'abs word', B, 'Não sabe por onde'); Object.assign(bt1.style, { top: '210px', fontSize: '100px', color: 'var(--heading)' });
+  const bt2 = el('div', 'abs word', B, 'começar?'); Object.assign(bt2.style, { top: '320px', fontSize: '130px', color: 'var(--primary)' });
+  const chaosData = [
+    ['PDF de 800 páginas', 90, 560, -8, '#ef4444'], ['Edital gigante', 600, 610, 7, '#f7931e'],
+    ['Videoaula de 3 horas', 140, 760, 5, '#7c3aed'], ['Resumo do resumo', 560, 830, -6, '#1688e8'],
+    ['Lei seca', 120, 1180, 9, '#58a92a'], ['30 abas abertas', 600, 1060, -9, '#ef4444'],
+    ['Apostila', 650, 1260, 6, '#1688e8'], ['Cronograma???', 80, 1000, -4, '#f7931e'],
+  ];
+  const ticoB = img(TICO('neutro'), 'abs', B); Object.assign(ticoB.style, { width: '360px', left: '360px', top: '820px' });
+  const chaos = chaosData.map(([txt, x, y, r, c], i) => {
+    const e = el('div', 'abs chaos', B, txt); e.style.left = x + 'px'; e.style.top = y + 'px'; e.style.borderLeftColor = c;
+    return { e, x, y, r, at: 4.15 + i * 0.12, i };
+  });
+
+  // ---------- Cena C: conheça o Aprova Tico ----------
+  const C = el('div', 'layer');
+  const logoC = el('div', 'abs logo', C, `<span class="mark">${svg(ICON.compass, '#fff', 52, 2.6)}</span><span>Aprova Tico<span class="dot">.</span></span>`);
+  Object.assign(logoC.style, { left: '0', width: '1080px', justifyContent: 'center', top: '40px' });
+  const ct1 = el('div', 'abs word', C, 'Sua aprovação,'); Object.assign(ct1.style, { top: '170px', fontSize: '104px', color: 'var(--heading)' });
+  const ct2 = el('div', 'abs word', C, 'uma fase de cada vez.'); Object.assign(ct2.style, { top: '282px', fontSize: '96px', color: 'var(--primary)' });
+  const hero = el('div', 'abs card-hero', C); Object.assign(hero.style, { left: '130px', top: '440px' });
+  const heroImg = img('../../public/landing/hero-mobile.webp', '', hero);
+  const chipC = el('div', 'abs', C, `<div class="streak" style="border-color:var(--primary);color:var(--primary-strong);font-size:40px">${svg(ICON.compass, '#1688e8', 46, 2.6)} Concursos em forma de aventura</div>`);
+  Object.assign(chipC.style, { left: '0', width: '1080px', display: 'flex', justifyContent: 'center', top: '1300px' });
+
+  // ---------- Cena D: a questão no celular ----------
+  const D = el('div', 'layer');
+  const dt1 = el('div', 'abs word', D, 'Responda, confira,'); Object.assign(dt1.style, { top: '10px', fontSize: '92px', color: 'var(--heading)' });
+  const dt2 = el('div', 'abs word', D, 'entenda.'); Object.assign(dt2.style, { top: '110px', fontSize: '110px', color: 'var(--green-strong)' });
+  const phone = el('div', 'abs phone', D); Object.assign(phone.style, { left: '230px', top: '260px' });
+  const scr = el('div', 'screen', phone);
+  el('div', 'notch', scr);
+  const top = el('div', 'topbar', scr);
+  el('div', 'hearts', top, heart.repeat(5));
+  const xpPill = el('div', 'xp', top, `${star()}<span id="xpn">120 XP</span>`);
+  const xpn = xpPill.querySelector('#xpn');
+  const barFill = el('i', '', el('div', 'bar', scr));
+  el('div', 'eyebrow', scr, 'RACIOCÍNIO LÓGICO · FASE 3');
+  el('div', 'question', scr, 'Em um simulado de 40 questões, você acertou 30. Qual foi o seu percentual de acertos?');
+  const opts = ['60%', '70%', '75%', '80%'].map((v, i) => {
+    const o = el('div', 'opt', scr, `<span class="letter">${'ABCD'[i]}</span>${v}`);
+    o.style.top = 400 + i * 96 + 'px';
+    return o;
+  });
+  const btn = el('div', 'btn', scr, 'Conferir resposta');
+  const feedback = el('div', 'feedback', scr, '<h4>Acertou! +10 XP</h4><p>30 ÷ 40 = 0,75. Vezes 100: <b>75%</b>.<br>Toda questão vem com a explicação.</p>');
+  const touch = el('div', 'abs touch', D); const ripple = el('div', 'abs ripple', D);
+  const flyxp = el('div', 'abs flyxp', D, '+10 XP');
+  const ticoD = img(TICO('joinha'), 'abs', D); Object.assign(ticoD.style, { width: '360px', left: '760px', top: '1080px' });
+  const sparks = [...Array(14)].map((_, i) => { const s = el('div', 'abs', D, star(30 + rnd(i) * 26)); return s; });
+
+  // ---------- Cena E: recursos ----------
+  const E = el('div', 'layer');
+  const et1 = el('div', 'abs word', E, 'Estudar vira'); Object.assign(et1.style, { top: '10px', fontSize: '110px', color: 'var(--heading)' });
+  const et2 = el('div', 'abs word', E, 'aventura'); Object.assign(et2.style, { top: '125px', fontSize: '140px', color: 'var(--green-strong)' });
+  const feats = [
+    ['compass', '#1688e8', 'Trilha guiada', 'O próximo passo sempre na tela'],
+    ['rotate', '#f7931e', 'Revisão dos erros', 'O que você erra volta até virar acerto'],
+    ['target', '#58a92a', 'Missões diárias', 'Sequência de dias e ranking'],
+    ['pen', '#7c3aed', 'Redação com IA', 'Nota por critério da sua banca'],
+  ].map(([ic, c, h, p], i) => {
+    const f = el('div', 'abs feat', E, `<span class="ic" style="background:${c}">${svg(ICON[ic], '#fff', 70, 2.6)}</span><div><h3>${h}</h3><p>${p}</p></div>`);
+    f.style.top = 330 + i * 214 + 'px';
+    return { f, ic: f.querySelector('.ic'), at: 16.5 + i * 0.75 };
+  });
+  const streak = el('div', 'abs streak', E, `${flame} 7 dias seguidos!`); Object.assign(streak.style, { left: '400px', top: '1210px' });
+  const ticoE = img(TICO('apontando'), 'abs', E); Object.assign(ticoE.style, { width: '330px', left: '60px', top: '1150px' });
+
+  // ---------- Cena F: chamada final ----------
+  const F = document.getElementById('sceneF');
+  const fBg = el('div', 'layer', F);
+  fBg.style.background = 'radial-gradient(circle at 50% 42%, #2ea0ff 0%, #1688e8 38%, #1e40af 100%)';
+  const rays = el('div', 'abs', F);
+  Object.assign(rays.style, { left: '50%', top: '45%', width: '3000px', height: '3000px', marginLeft: '-1500px', marginTop: '-1500px',
+    background: 'repeating-conic-gradient(rgba(255,255,255,.09) 0deg 9deg, rgba(255,255,255,0) 9deg 22.5deg)', borderRadius: '50%' });
+  const Fc = el('div', 'layer'); // conteúdo da chamada fica no core (escala certa)
+  const confs = [...Array(70)].map((_, i) => {
+    const c = el('div', 'abs confetti', F);
+    c.style.background = ['#f5b700', '#72c93d', '#ffffff', '#f7931e', '#ff6b9a', '#7dd3fc'][i % 6];
+    return c;
+  });
+  const ft1 = el('div', 'abs word', Fc, 'Comece'); Object.assign(ft1.style, { top: '-10px', fontSize: '140px', color: '#fff' });
+  const ft2 = el('div', 'abs word', Fc, 'grátis'); Object.assign(ft2.style, { top: '120px', fontSize: '190px', color: 'var(--gold)', textShadow: '0 10px 0 rgba(0,0,0,.12)' });
+  const ticoF = img(TICO('comemorando'), 'abs', Fc); Object.assign(ticoF.style, { width: '600px', left: '240px', top: '370px' });
+  const fsub = el('div', 'abs word sub', Fc, 'Sem cartão de crédito · no celular ou no computador'); Object.assign(fsub.style, { top: '995px', fontSize: '38px', color: '#dbeafe' });
+  const fpill = el('div', 'abs pill', Fc, `aprovatico.com.br ${svg(ICON.arrow, '#1271bf', 56, 3)}`);
+  const fpillWrap = fpill; Object.assign(fpill.style, { left: '50%', top: '1090px' });
+
+  // ---------- Quadro ----------
+  function seek(t) {
+    // Fundo: começa num azul acinzentado (o problema) e clareia na virada.
+    const bright = eio(prog(t, 5.7, 6.6));
+    const top = `hsl(205, ${lerp(30, 85, bright)}%, ${lerp(88, 90, bright)}%)`;
+    const bot = `hsl(${lerp(210, 120, bright * .3)}, ${lerp(25, 70, bright)}%, ${lerp(96, 95, bright)}%)`;
+    bg.style.background = `linear-gradient(180deg, ${top} 0%, ${bot} 100%)`;
+    clouds.forEach((c, i) => {
+      const y = H * (0.06 + 0.17 * i) + Math.sin(t * .5 + i) * 10;
+      const x = ((rnd(i + 3) * (W + 600) + t * (18 + 8 * i)) % (W + 600)) - 450;
+      set(c, { x, y, o: 0.35 + 0.3 * bright });
+    });
+
+    // A
+    {
+      const out = eo(prog(t, 3.85, 4.15));
+      set(A, { o: 1 - out, s: 1 - 0.06 * out, blur: 14 * out, ox: '50%', oy: '50%' });
+      aw.forEach(({ e, at }) => {
+        const k = spring(t - at); const gone = eo(prog(t, 1.85, 2.15));
+        set(e, { y: 40 * (1 - k) - 160 * gone, s: lerp(0.5, 1, k), o: clamp(k * 3) * (1 - gone), blur: 10 * gone });
+      });
+      ab.forEach(({ e, at }, i) => {
+        const k = spring(t - at, i ? 18 : 16, i ? 0.42 : 0.6);
+        const shake = i ? Math.sin((t - 2.85) * 55) * 4 * Math.exp(-(t - 2.85) * 5) * (t > 2.85 ? 1 : 0) : 0;
+        set(e, { y: 30 * (1 - k), s: lerp(i ? 1.6 : 0.6, 1, k), o: clamp(k * 4), r: shake });
+      });
+      const k = soft(t - 0.05);
+      const sigh = t > 2.85 ? -14 * eo(prog(t, 2.85, 3.2)) : 0;
+      set(ticoA, { y: 500 * (1 - k) + Math.sin(t * 3.1) * 6 - sigh, r: Math.sin(t * 2) * 1.5 + (t > 2.85 ? -3 * eo(prog(t, 2.85, 3.1)) : 0) });
+      qmarks.forEach(({ e, r, at }, i) => {
+        const q = spring(t - at, 18, 0.45);
+        set(e, { y: Math.sin(t * 4 + i) * 10, r: r + Math.sin(t * 3 + i) * 6, s: q, o: clamp(q * 3) });
+      });
+    }
+
+    // B
+    {
+      const inn = eo(prog(t, 3.9, 4.2)); const out = eio(prog(t, 5.65, 6.05));
+      set(B, { o: inn * (1 - out), s: lerp(1.05, 1, inn) * (1 - 0.15 * out), blur: 12 * (1 - inn), ox: '50%', oy: '55%' });
+      set(bt1, { y: 50 * (1 - spring(t - 4.0)), o: clamp(spring(t - 4.0) * 3) });
+      set(bt2, { y: 50 * (1 - spring(t - 4.25)), s: lerp(0.7, 1, spring(t - 4.25, 18, 0.45)), o: clamp(spring(t - 4.25) * 3) });
+      set(ticoB, { y: Math.sin(t * 9) * 5, r: Math.sin(t * 7) * 3, s: 1 - 0.35 * out });
+      chaos.forEach(({ e, x, y, r, at, i }) => {
+        const k = spring(t - at, 14, 0.5);
+        const fromX = (x < 400 ? -700 : 900); const fromY = (rnd(i) - 0.5) * 300;
+        const jx = Math.sin(t * (2 + rnd(i) * 2) + i) * 14; const jy = Math.cos(t * (1.7 + rnd(i + 2)) + i) * 12;
+        // Na saída, tudo é sugado para o centro (onde o círculo abre).
+        const cx = 540 - (x + 180), cy = 1000 - (y + 40);
+        set(e, { x: lerp(fromX, 0, k) + jx + cx * out, y: lerp(fromY, 0, k) + jy + cy * out,
+                 r: r + Math.sin(t * 2 + i) * 4 + 200 * out, s: (1 - out), o: clamp(k * 3) });
+      });
+    }
+
+    // C (abre num círculo)
+    {
+      const iris = eio(prog(t, 5.85, 6.45)); const out = eio(prog(t, 9.75, 10.15));
+      const rad = iris * 1300;
+      C.style.clipPath = iris >= 1 ? 'none' : `circle(${rad}px at 540px 850px)`;
+      set(C, { o: t < 5.85 ? 0 : 1 - prog(t, 9.95, 10.15), x: -1150 * out, blur: 10 * Math.sin(Math.PI * out) });
+      const kl = spring(t - 6.25, 16, 0.5);
+      set(logoC, { y: -30 * (1 - kl), s: lerp(0.6, 1, kl), o: clamp(kl * 3) });
+      [[ct1, 6.75], [ct2, 7.1]].forEach(([e, at]) => {
+        const k = spring(t - at, 15, 0.6);
+        set(e, { y: 60 * (1 - k), o: clamp(k * 3), blur: 8 * (1 - clamp(k * 1.4)) });
+      });
+      const kh = spring(t - 6.35, 11, 0.6);
+      set(hero, { y: 500 * (1 - kh) + Math.sin(t * 2) * 6, s: lerp(0.8, 1, kh), r: lerp(-6, 0, kh) });
+      set(heroImg, { s: 1 + 0.1 * prog(t, 6.3, 10.2) });
+      const kc = spring(t - 8.0, 15, 0.5);
+      set(chipC, { y: 40 * (1 - kc), s: lerp(0.6, 1, kc), o: clamp(kc * 3) });
+    }
+
+    // D
+    {
+      const inn = eio(prog(t, 9.8, 10.25)); const out = eio(prog(t, 15.75, 16.1));
+      set(D, { x: 1150 * (1 - inn), o: t < 9.8 ? 0 : prog(t, 9.8, 9.95) * (1 - out), s: 1 - 0.12 * out, blur: 10 * Math.sin(Math.PI * inn) + 12 * out, ox: '50%', oy: '50%' });
+      set(dt1, { y: 50 * (1 - spring(t - 10.15)), o: clamp(spring(t - 10.15) * 3) });
+      set(dt2, { y: 50 * (1 - spring(t - 10.45)), s: lerp(0.7, 1, spring(t - 10.45, 18, 0.45)), o: clamp(spring(t - 10.45) * 3) });
+      set(phone, { y: Math.sin(t * 1.6) * 5, r: Math.sin(t * 1.2) * 0.6 });
+
+      // Dedo: entra, toca o C (12,0 s), toca Conferir (12,75 s).
+      const optC = { x: 230 + 18 + 34 + 400, y: 260 + 18 + 400 + 2 * 96 + 41 };
+      const btnP = { x: 230 + 18 + 290, y: 260 + 18 + 818 + 46 };
+      const m1 = eio(prog(t, 11.2, 11.85)); const m2 = eio(prog(t, 12.2, 12.65));
+      let px = lerp(1150, optC.x, m1), py = lerp(1500, optC.y, m1);
+      px = lerp(px, btnP.x, m2); py = lerp(py, btnP.y, m2);
+      const leave = eio(prog(t, 12.95, 13.35));
+      px = lerp(px, 1150, leave); py = lerp(py, 1600, leave);
+      const press = Math.max(Math.exp(-Math.abs(t - 11.95) * 14), Math.exp(-Math.abs(t - 12.75) * 14));
+      set(touch, { x: px - 46, y: py - 46, s: 1 - 0.18 * press, o: t > 11.1 && t < 13.4 ? 1 : 0 });
+      const rip = (at) => prog(t, at, at + 0.4);
+      const r1 = rip(11.95), r2 = rip(12.75); const rr = r2 > 0 ? r2 : r1; const rp = r2 > 0 ? btnP : optC;
+      set(ripple, { x: rp.x - 46, y: rp.y - 46, s: 1 + 1.6 * eo(rr), o: rr > 0 && rr < 1 ? 1 - rr : 0 });
+
+      const picked = t >= 11.98; const checked = t >= 13.0;
+      opts.forEach((o, i) => {
+        const isC = i === 2;
+        const tap = isC ? Math.exp(-Math.max(0, t - 11.98) * 10) * (picked ? 1 : 0) : 0;
+        o.style.transform = `scale(${1 - 0.04 * tap + (isC && checked ? 0.05 * Math.exp(-(t - 13) * 6) * Math.sin((t - 13) * 30) : 0)})`;
+        const L = o.firstChild;
+        if (isC && checked) { o.style.borderColor = '#72c93d'; o.style.background = '#ecfae5'; L.style.background = '#72c93d'; L.style.color = '#fff'; }
+        else if (isC && picked) { o.style.borderColor = '#1688e8'; o.style.background = '#edf7ff'; L.style.background = '#1688e8'; L.style.color = '#fff'; }
+        else { o.style.borderColor = '#e1e9ef'; o.style.background = '#fff'; L.style.background = '#e8eef4'; L.style.color = '#4d6478'; }
+      });
+      btn.style.background = picked ? '#1688e8' : '#cbd5e1';
+      btn.style.transform = `scale(${1 - 0.06 * Math.exp(-Math.abs(t - 12.75) * 14)})`;
+      const fb = spring(t - 13.0, 14, 0.7);
+      feedback.style.transform = `translateY(${270 * (1 - fb)}px)`;
+      barFill.style.width = lerp(40, 60, eo(prog(t, 13.1, 13.6))) + '%';
+
+      // +10 XP voa até o contador e o número sobe.
+      const fx = prog(t, 13.45, 14.05); const fxe = eio(fx);
+      const from = { x: 300, y: 1090 }, to = { x: 680, y: 370 };
+      set(flyxp, { x: lerp(from.x, to.x, fxe), y: lerp(from.y, to.y, fxe) - Math.sin(Math.PI * fx) * 160,
+                   s: lerp(1.2, 0.6, fxe), o: fx > 0 && fx < 1 ? 1 : 0 });
+      xpn.textContent = (t >= 14.05 ? 130 : 120) + ' XP';
+      xpPill.style.transform = `scale(${1 + 0.25 * Math.exp(-Math.max(0, t - 14.05) * 7) * (t >= 14.05 ? 1 : 0)})`;
+      sparks.forEach((s, i) => {
+        const p = prog(t, 13.0, 13.9); const a = (i / sparks.length) * Math.PI * 2 + rnd(i);
+        const d = eo(p) * (180 + rnd(i + 5) * 160);
+        set(s, { x: 510 + Math.cos(a) * d, y: optC.y - 20 + Math.sin(a) * d + 120 * p * p, r: 200 * p, s: 1 - p * .5, o: p > 0 && p < 1 ? 1 - ei(p) : 0 });
+      });
+      const kt = spring(t - 13.25, 14, 0.5);
+      set(ticoD, { y: 420 * (1 - kt) + Math.sin(t * 3) * 6, r: lerp(20, -4, kt) + Math.sin(t * 2.4) * 2, o: t > 13.25 ? 1 : 0 });
+    }
+
+    // E
+    {
+      const inn = eo(prog(t, 15.9, 16.3)); const out = eio(prog(t, 19.8, 20.1));
+      set(E, { o: inn * (1 - out), y: 120 * (1 - inn), blur: 10 * (1 - inn) + 10 * out, s: 1 - 0.08 * out, ox: '50%', oy: '50%' });
+      set(et1, { y: 50 * (1 - spring(t - 16.0)), o: clamp(spring(t - 16.0) * 3) });
+      set(et2, { y: 40 * (1 - spring(t - 16.25)), s: lerp(0.6, 1, spring(t - 16.25, 18, 0.42)), o: clamp(spring(t - 16.25) * 3), r: -2 });
+      feats.forEach(({ f, ic, at }) => {
+        const k = spring(t - at, 14, 0.58);
+        set(f, { x: 1100 * (1 - k), o: clamp(k * 2.5), r: 3 * (1 - k) });
+        const ki = spring(t - at - 0.15, 20, 0.35);
+        ic.style.transform = `scale(${ki}) rotate(${(1 - ki) * -40}deg)`;
+      });
+      const ks = spring(t - 19.15, 18, 0.4);
+      set(streak, { s: ks, o: clamp(ks * 3), r: -4 + Math.sin(t * 5) * 2 });
+      const kt = spring(t - 16.6, 12, 0.55);
+      set(ticoE, { y: 400 * (1 - kt) + Math.sin(t * 3.3) * 6, r: Math.sin(t * 2) * 2, o: t > 16.6 ? 1 : 0 });
+    }
+
+    // F
+    {
+      const open = eio(prog(t, 19.9, 20.4));
+      F.style.clipPath = open >= 1 ? 'none' : `circle(${open * Math.hypot(W, H) * 0.6}px at 50% 50%)`;
+      F.style.visibility = t < 19.9 ? 'hidden' : 'visible';
+      rays.style.transform = `rotate(${t * 8}deg) scale(${0.8 + 0.2 * open})`;
+      set(Fc, { o: t < 19.95 ? 0 : 1 });
+      const k1 = spring(t - 20.25, 16, 0.5), k2 = spring(t - 20.55, 18, 0.38);
+      set(ft1, { y: 60 * (1 - k1), o: clamp(k1 * 3) });
+      set(ft2, { s: lerp(0.3, 1, k2) * (1 + 0.04 * beatPulse(t, 21.0)), o: clamp(k2 * 3), r: -3 });
+      const kt = spring(t - 20.15, 11, 0.5);
+      const hop = t > 20.8 ? Math.abs(Math.sin((t - 20.8) * Math.PI * 2)) * 30 : 0; // pula no ritmo
+      set(ticoF, { y: 700 * (1 - kt) - hop, s: lerp(0.6, 1, kt), r: Math.sin(t * Math.PI * 2) * 3 });
+      const ks = spring(t - 21.1, 14, 0.6);
+      set(fsub, { y: 30 * (1 - ks), o: clamp(ks * 3) });
+      const kp = spring(t - 21.4, 16, 0.45);
+      fpillWrap.style.transform = `translateX(-50%) scale(${kp * (1 + 0.05 * beatPulse(t, 22.0))})`;
+      fpillWrap.style.opacity = clamp(kp * 3);
+      confs.forEach((c, i) => {
+        const at = 20.35 + rnd(i) * 0.5; const p = Math.max(0, t - at);
+        const x0 = W * (0.5 + (rnd(i + 1) - 0.5) * 0.3), vx = (rnd(i + 2) - 0.5) * W * 1.4, vy = -H * (0.45 + rnd(i + 3) * 0.55);
+        const x = x0 + vx * p * Math.exp(-p * 0.6); const y = H * 0.48 + vy * p + 0.5 * H * 1.15 * p * p;
+        set(c, { x, y, r: p * (300 + rnd(i + 4) * 500), sx: Math.cos(p * (6 + rnd(i) * 6)), sy: 1, o: t > at && y < H + 60 ? 1 : 0 });
+      });
+    }
+  }
+
+  // ---------- Prontidão ----------
+  window.DURATION = DUR;
+  window.seek = seek;
+  window.ready = (async () => {
+    await document.fonts.ready;
+    await Promise.all([...document.images].map((i) => i.decode().catch(() => {})));
+    seek(0);
+    return true;
+  })();
+  if (!navigator.webdriver) {
+    // Visualização no navegador: toca em loop.
+    const t0 = performance.now();
+    const loop = () => { seek(((performance.now() - t0) / 1000) % DUR); requestAnimationFrame(loop); };
+    window.ready.then(loop);
+  }
+})();
+</script>
+</body>
+</html>
