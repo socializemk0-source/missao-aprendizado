@@ -3,7 +3,8 @@
 //   node marketing/video-anuncio/render.mjs                 -> 9x16, 4x5 e 1x1
 //   node marketing/video-anuncio/render.mjs --formats 9x16  -> só um formato
 //   node marketing/video-anuncio/render.mjs --sheet         -> só a folha de conferência (PNG)
-//   node marketing/video-anuncio/render.mjs --page onibus   -> outro anúncio: onibus, caverna (padrão: anuncio)
+//   node marketing/video-anuncio/render.mjs --page onibus   -> outro anúncio: onibus, caverna, desafio (padrão: anuncio)
+//   node marketing/video-anuncio/render.mjs --page desafio --q rlm-porc-2   -> uma questão da série
 //
 // Precisa de: playwright (com Chromium), ffmpeg e a trilha gerada por musica.py
 // (python3 marketing/video-anuncio/musica.py). Saída em marketing/video-anuncio/saida/.
@@ -26,7 +27,9 @@ const FPS = Number(opt('--fps', 30));
 const SHEET = args.includes('--sheet');
 const PAGE = opt('--page', 'anuncio');
 const AUDIO = join(DIR, 'saida', PAGE === 'anuncio' ? 'trilha.wav' : `trilha-${PAGE}.wav`);
-const NOME = PAGE === 'anuncio' ? 'aprova-tico-anuncio' : `aprova-tico-${PAGE}`;
+// --q escolhe a questão da série "Desafio do Tico" (desafio.html?q=...)
+const Q = opt('--q', '');
+const NOME = (PAGE === 'anuncio' ? 'aprova-tico-anuncio' : `aprova-tico-${PAGE}`) + (Q ? `-${Q}` : '');
 
 const run = (cmd, argv, input) => new Promise((resolve, reject) => {
   const p = spawn(cmd, argv, { stdio: [input ? 'pipe' : 'ignore', 'inherit', 'inherit'] });
@@ -43,7 +46,7 @@ const browser = await chromium.launch({
 
 async function abrir(w, h) {
   const page = await browser.newPage({ viewport: { width: w, height: h } });
-  await page.goto(`${pathToFileURL(join(DIR, `${PAGE}.html`))}?w=${w}&h=${h}`);
+  await page.goto(`${pathToFileURL(join(DIR, `${PAGE}.html`))}?w=${w}&h=${h}${Q ? `&q=${Q}` : ''}`);
   await page.evaluate(() => window.ready);
   return page;
 }
@@ -60,7 +63,7 @@ for (const f of formatos) {
   if (SHEET) {
     // Um quadro por marca de tempo, lado a lado, para conferir antes de gravar tudo.
     const tempos = (opt('--times', '1.6,3.4,5.2,7.6,9.5,11.9,13.2,14.5,18,19.6,20.6,23.5')).split(',').map(Number);
-    const dir = join(OUT, `sheet-${PAGE}-${f}`);
+    const dir = join(OUT, `sheet-${PAGE}${Q ? `-${Q}` : ''}-${f}`);
     mkdirSync(dir, { recursive: true });
     for (const [i, t] of tempos.entries()) {
       const buf = await quadro(page, t, 'png');
@@ -68,8 +71,8 @@ for (const f of formatos) {
     }
     const cols = 6, sw = 360, sh = Math.round((h / w) * sw);
     await run('ffmpeg', ['-y', '-loglevel', 'error', '-framerate', '1', '-i', join(dir, '%02d.png'),
-      '-vf', `scale=${sw}:${sh},tile=${cols}x${Math.ceil(tempos.length / cols)}:padding=8:color=white`, '-frames:v', '1', join(OUT, `sheet-${PAGE}-${f}.png`)]);
-    console.log(`folha: saida/sheet-${PAGE}-${f}.png`);
+      '-vf', `scale=${sw}:${sh},tile=${cols}x${Math.ceil(tempos.length / cols)}:padding=8:color=white`, '-frames:v', '1', join(OUT, `sheet-${PAGE}${Q ? `-${Q}` : ''}-${f}.png`)]);
+    console.log(`folha: saida/sheet-${PAGE}${Q ? `-${Q}` : ''}-${f}.png`);
     await page.close();
     continue;
   }

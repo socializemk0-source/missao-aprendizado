@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Aprova Tico — Desafio do Tico</title>
+<!--
+  Série "Desafio do Tico" (16 s): "Você acerta essa?", uma questão autoral da
+  trilha, contagem de 3 segundos ("comenta sua resposta"), resposta, explicação
+  visual e chamada. Cada vídeo da série é uma questão: ?q=pt-acent-4 (padrão),
+  ?q=rlm-porc-2, ?q=adm-ato-3. Os textos vêm de content/questoes/*.ts.
+  Mesmas regras: tudo calculado em seek(t). Formato: ?w=1080&h=1920.
+-->
+<style>
+  @font-face { font-family: 'Baloo'; font-weight: 800; src: url(fonts/baloo-2-latin-800-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Nunito'; font-weight: 700; src: url(fonts/nunito-latin-700-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Nunito'; font-weight: 800; src: url(fonts/nunito-latin-800-normal.woff2) format('woff2'); }
+  :root { --heading: #1d3348; --text-2: #4d6478; --primary: #1688e8; --primary-strong: #1271bf; --green: #72c93d; --green-strong: #58a92a;
+          --orange: #f7931e; --gold: #f5b700; --border: #e1e9ef; --muted: #e8eef4; --red: #ef4444; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #0b1a2a; overflow: hidden; }
+  #stage { position: relative; overflow: hidden; background: #dff1ff; }
+  .layer { position: absolute; inset: 0; }
+  .core { position: absolute; left: 0; top: 0; width: 1080px; height: 1500px; transform-origin: 0 0; }
+  .abs { position: absolute; will-change: transform, opacity; }
+  svg { overflow: visible; display: block; }
+  .word { font-family: 'Baloo'; font-weight: 800; line-height: 1; white-space: nowrap; letter-spacing: -1px; }
+  .chip { display: flex; align-items: center; gap: 12px; padding: 12px 28px; border-radius: 999px; background: var(--heading); color: #fff;
+          font-family: 'Nunito'; font-weight: 800; font-size: 32px; letter-spacing: 2px; white-space: nowrap; }
+  .card { width: 960px; background: #fff; border-radius: 48px; padding: 44px 46px 40px; box-shadow: 0 22px 0 rgba(29,51,72,.10), 0 30px 70px rgba(29,51,72,.18); }
+  .card .q { font-family: 'Nunito'; font-weight: 800; font-size: 50px; line-height: 1.22; color: var(--heading); }
+  .opts { display: grid; gap: 18px; margin-top: 34px; }
+  .opt { position: relative; height: 104px; border-radius: 28px; border: 5px solid var(--border); background: #fff; display: flex; align-items: center; gap: 24px;
+         padding-left: 20px; font-family: 'Nunito'; font-weight: 800; font-size: 48px; color: var(--heading); white-space: nowrap; overflow: hidden; }
+  .opt .l { flex: none; width: 66px; height: 66px; border-radius: 18px; background: var(--muted); color: var(--text-2); display: grid; place-items: center; font-size: 34px; }
+  .opt .strike { position: absolute; left: 110px; height: 6px; top: 50%; margin-top: -3px; background: var(--red); border-radius: 3px; transform-origin: 0 50%; }
+  .opt .ok { position: absolute; right: 24px; top: 50%; margin-top: -32px; }
+  .ring { width: 250px; height: 250px; }
+  .why { width: 960px; background: #fff; border-radius: 48px; padding: 40px 46px; box-shadow: 0 22px 0 rgba(29,51,72,.10), 0 30px 70px rgba(29,51,72,.18); }
+  .why h3 { font-family: 'Baloo'; font-weight: 800; font-size: 64px; color: var(--green-strong); line-height: 1; }
+  .why .ans { font-family: 'Baloo'; font-weight: 800; font-size: 92px; color: var(--heading); line-height: 1; margin-top: 10px; }
+  .steps { display: grid; gap: 18px; margin-top: 26px; }
+  .step { font-family: 'Nunito'; font-weight: 800; font-size: 44px; color: var(--heading); display: flex; align-items: center; gap: 16px; flex-wrap: wrap; line-height: 1.15; }
+  .syl { display: inline-flex; gap: 6px; }
+  .syl span { padding: 4px 14px; border-radius: 14px; background: var(--muted); color: var(--text-2); font-family: 'Baloo'; font-size: 48px; }
+  .syl span.t { background: var(--orange); color: #fff; }
+  .tag { font-size: 38px; padding: 6px 20px; border-radius: 999px; background: #ecfae5; color: var(--green-strong); }
+  .tag.no { background: #fef2f2; color: #b91c1c; }
+  .big { font-family: 'Baloo'; font-size: 54px; }
+  .hl { color: var(--primary); }
+  .pill { display: flex; align-items: center; gap: 18px; background: #fff; color: var(--primary-strong); border-radius: 999px; padding: 22px 52px;
+          font-family: 'Baloo'; font-weight: 800; font-size: 60px; white-space: nowrap; box-shadow: 0 20px 44px rgba(10,30,90,.35); }
+  .logo { display: flex; align-items: center; gap: 18px; font-family: 'Baloo'; font-weight: 800; font-size: 76px; color: #fff; white-space: nowrap; }
+  .logo .mark { width: 92px; height: 92px; border-radius: 26px; background: #fff; display: grid; place-items: center; }
+  .logo .dot { color: var(--gold); }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="bg" class="layer"></div>
+  <div id="core" class="core"></div>
+  <div id="cta" class="layer"></div>
+  <div id="core2" class="core"></div>
+</div>
+<script src="tico-rig.js"></script>
+<script>
+(() => {
+  // ---------- questões da série (texto igual ao de content/questoes/*.ts) ----------
+  const syl = (parts, tonica) => `<span class="syl">${parts.map((p, i) => `<span class="${i === tonica ? 't' : ''}">${p}</span>`).join('')}</span>`;
+  const QUESTOES = {
+    'pt-acent-4': {
+      materia: 'PORTUGUÊS · ACENTUAÇÃO',
+      enunciado: 'Qual das palavras abaixo é proparoxítona?',
+      alternativas: ['ínterim', 'rubrica', 'recorde', 'gratuito'], correta: 0,
+      resposta: 'ínterim',
+      passos: [
+        `${syl(['ÍN', 'te', 'rim'], 0)} <span class="tag">proparoxítona: tem acento</span>`,
+        `${syl(['ru', 'BRI', 'ca'], 1)} <span class="tag no">não é "rúbrica"</span>`,
+        `${syl(['re', 'COR', 'de'], 1)} <span class="tag no">não é "récorde"</span>`,
+        `${syl(['gra', 'TUI', 'to'], 1)} <span class="tag no">não é "gratúito"</span>`,
+      ],
+    },
+    'rlm-porc-2': {
+      materia: 'RACIOCÍNIO LÓGICO · PORCENTAGEM',
+      enunciado: 'Um salário de R$ 2.000,00 teve um aumento de 10% e, depois, outro aumento de 10%. O salário final é:',
+      alternativas: ['R$ 2.400,00', 'R$ 2.420,00', 'R$ 2.200,00', 'R$ 2.410,00'], correta: 1,
+      resposta: 'R$ 2.420,00',
+      passos: [
+        '<span class="big">2.000 × 1,10 = <span class="hl">2.200</span></span>',
+        '<span class="big">2.200 × 1,10 = <span class="hl">2.420</span></span>',
+        '<span class="tag">aumentos sucessivos se multiplicam</span>',
+        '<span class="tag no">não é 20% de uma vez</span>',
+      ],
+    },
+    'adm-ato-3': {
+      materia: 'DIREITO ADMINISTRATIVO · ATOS',
+      enunciado: 'A retirada de um ato válido que deixou de ser conveniente e oportuno chama-se:',
+      alternativas: ['anulação', 'revogação', 'cassação', 'caducidade'], correta: 1,
+      resposta: 'revogação',
+      passos: [
+        '<span>Ato <b class="hl">válido</b>, retirado por conveniência e oportunidade</span>',
+        '<span class="tag">= revogação (só pela própria Administração)</span>',
+        '<span>Ato <b style="color:#b91c1c">ilegal</b></span>',
+        '<span class="tag no">= anulação</span>',
+      ],
+    },
+  };
+
+  const qs = new URLSearchParams(location.search);
+  const Q = QUESTOES[qs.get('q')] || QUESTOES['pt-acent-4'];
+  const W = Number(qs.get('w')) || 1080;
+  const H = Number(qs.get('h')) || 1920;
+  const DUR = 16;
+  const stage = document.getElementById('stage');
+  stage.style.width = W + 'px'; stage.style.height = H + 'px';
+  const coreScale = Math.min(W / 1080, (H - (H > 1600 ? 420 : 60)) / 1500);
+  const coreT = `translate(${(W - 1080 * coreScale) / 2}px, ${(H - 1500 * coreScale) / 2}px) scale(${coreScale})`;
+  const core = document.getElementById('core'), core2 = document.getElementById('core2');
+  core.style.transform = coreT; core2.style.transform = coreT;
+
+  // ---------- movimento ----------
+  const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+  const lerp = (a, b, k) => a + (b - a) * k;
+  const prog = (t, a, b) => clamp((t - a) / (b - a));
+  const eo = (x) => 1 - Math.pow(1 - x, 3);
+  const eio = (x) => (x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+  const spring = (dt, w = 16, z = 0.55) => {
+    if (dt <= 0) return 0;
+    const wd = w * Math.sqrt(1 - z * z);
+    return 1 - Math.exp(-z * w * dt) * (Math.cos(wd * dt) + (z * w / wd) * Math.sin(wd * dt));
+  };
+  const wob = (t, at, f = 14, d = 5) => (t > at ? Math.exp(-(t - at) * d) * Math.sin((t - at) * f) : 0);
+  const rnd = (i) => { const x = Math.sin(i * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); };
+  const BEAT = 0.5;
+  const beatPulse = (t, from) => (t < from ? 0 : Math.exp(-((t - from) % BEAT) * 9));
+
+  const el = (tag, cls, parent, html) => {
+    const e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (html != null) e.innerHTML = html;
+    (parent || core).appendChild(e);
+    return e;
+  };
+  const set = (e, { x = 0, y = 0, s = 1, sx, sy, r = 0, o = 1, blur = 0 }) => {
+    e.style.transform = `translate(${x}px, ${y}px) rotate(${r}deg) scale(${sx ?? s}, ${sy ?? s})`;
+    e.style.opacity = o;
+    e.style.filter = blur > 0.05 ? `blur(${blur}px)` : 'none';
+    e.style.visibility = o <= 0.001 ? 'hidden' : 'visible';
+  };
+  const icon = (d, c, size, sw = 3) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+
+  // ---------- fundo ----------
+  const bg = document.getElementById('bg');
+  bg.style.background = 'radial-gradient(circle at 50% 30%, #ffffff 0%, #e5f6ff 45%, #c7e6ff 100%)';
+  const rays = el('div', 'abs', bg);
+  Object.assign(rays.style, { left: '50%', top: '22%', width: '3200px', height: '3200px', marginLeft: '-1600px', marginTop: '-1600px',
+    background: 'repeating-conic-gradient(rgba(22,136,232,.06) 0deg 8deg, rgba(22,136,232,0) 8deg 20deg)', borderRadius: '50%' });
+  const dots = [...Array(18)].map((_, i) => { const d = el('div', 'abs', bg); const r = 8 + rnd(i) * 16;
+    Object.assign(d.style, { width: r * 2 + 'px', height: r * 2 + 'px', borderRadius: '50%', background: ['#f5b700', '#72c93d', '#1688e8', '#f7931e'][i % 4], opacity: .35 }); return d; });
+
+  // ---------- gancho ----------
+  const h1 = ['Você', 'acerta', 'essa?'].map((w, i) => {
+    const e = el('div', 'abs word', core, w);
+    Object.assign(e.style, { fontSize: i === 2 ? '190px' : '120px', color: i === 2 ? 'var(--orange)' : 'var(--heading)', top: i === 2 ? '96px' : '0px', transformOrigin: '50% 80%' });
+    if (i === 2) e.style.textShadow = '0 8px 0 rgba(29,51,72,.12)';
+    return e;
+  });
+  // "Você acerta" numa linha, "essa?" grande ao lado; ajustado pela largura real
+  const chip = el('div', 'abs chip', core, `${icon('<path d="M4 19.5V5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M8 7h6"/>', '#f5b700', 36, 2.6)} ${Q.materia}`);
+  Object.assign(chip.style, { left: '50%', top: '300px' });
+
+  // ---------- cartão da questão ----------
+  const card = el('div', 'abs card', core, `<div class="q">${Q.enunciado}</div><div class="opts">${Q.alternativas.map((a, i) =>
+    `<div class="opt"><span class="l">${'ABCD'[i]}</span>${a}<i class="strike"></i>${i === Q.correta ? `<span class="ok">${icon('<path d="M5 12l5 5L20 7"/>', '#fff', 64, 3.4)}</span>` : ''}</div>`).join('')}</div>`);
+  Object.assign(card.style, { left: '60px', top: '375px', transformOrigin: '540px 300px' });
+  const opts = [...card.querySelectorAll('.opt')];
+
+  // ---------- contagem ----------
+  const ring = el('div', 'abs', core, `<svg class="ring" viewBox="-125 -125 250 250"><circle r="110" fill="#fff" stroke="#e1e9ef" stroke-width="18"/>
+    <circle class="arc" r="110" fill="none" stroke="#f7931e" stroke-width="18" stroke-linecap="round" transform="rotate(-90)" stroke-dasharray="691" stroke-dashoffset="0"/>
+    <text class="num" y="34" text-anchor="middle" font-family="Baloo" font-weight="800" font-size="120" fill="#1d3348">3</text></svg>`);
+  const arc = ring.querySelector('.arc'), num = ring.querySelector('.num');
+  const comenta = el('div', 'abs chip', core, `${icon('<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/>', '#fff', 46, 2.6)} Comenta sua resposta!`);
+  const tempo = el('div', 'abs word', core, 'TEMPO!'); Object.assign(tempo.style, { fontSize: '150px', color: 'var(--orange)', left: '20px', width: '620px', textAlign: 'center' });
+
+  // ---------- explicação ----------
+  const why = el('div', 'abs why', core, `<h3>Resposta certa:</h3><div class="ans">${'ABCD'[Q.correta]}) ${Q.resposta}</div><div class="steps">${Q.passos.map((p) => `<div class="step">${p}</div>`).join('')}</div>`);
+  Object.assign(why.style, { left: '60px', top: '375px', transformOrigin: '540px 0' });
+  const steps = [...why.querySelectorAll('.step')];
+  const stars = [...Array(16)].map((_, i) => el('div', 'abs', core, `<svg width="44" height="44" viewBox="0 0 24 24"><path fill="${['#f5b700', '#72c93d', '#1688e8', '#f7931e'][i % 4]}" d="m12 2.5 2.9 6 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.2 1.3-6.6-4.9-4.6 6.6-.8z"/></svg>`));
+
+  // ---------- Tico (marionete) ----------
+  const ticoBox = el('div', 'abs', core); Object.assign(ticoBox.style, { left: '600px', top: '1000px', width: '480px', height: '480px', transformOrigin: '240px 450px' });
+  const sweat = el('div', 'abs', ticoBox, `<svg width="60" height="80" viewBox="0 0 60 80"><path d="M30 4 C46 30 56 44 56 56 A26 26 0 0 1 4 56 C4 44 14 30 30 4z" fill="#7dd3fc" stroke="#1688e8" stroke-width="4"/><ellipse cx="22" cy="54" rx="6" ry="10" fill="#fff" opacity=".7"/></svg>`);
+  Object.assign(sweat.style, { left: '80px', top: '40px' });
+  let tico;
+
+  // ---------- chamada ----------
+  const F = document.getElementById('cta');
+  const fBg = el('div', 'layer', F); fBg.style.background = 'radial-gradient(circle at 50% 42%, #2ea0ff 0%, #1688e8 38%, #1e40af 100%)';
+  const frays = el('div', 'abs', F);
+  Object.assign(frays.style, { left: '50%', top: '45%', width: '3000px', height: '3000px', marginLeft: '-1500px', marginTop: '-1500px',
+    background: 'repeating-conic-gradient(rgba(255,255,255,.09) 0deg 9deg, rgba(255,255,255,0) 9deg 22.5deg)', borderRadius: '50%' });
+  const Fc = el('div', 'layer', document.getElementById('core2'));
+  const f1 = el('div', 'abs word', Fc, 'Toda questão vem'); Object.assign(f1.style, { fontSize: '104px', color: '#fff', top: '10px', left: '0', width: '1080px', textAlign: 'center' });
+  const f2 = el('div', 'abs word', Fc, 'com explicação assim.'); Object.assign(f2.style, { fontSize: '96px', color: 'var(--gold)', top: '125px', left: '0', width: '1080px', textAlign: 'center' });
+  const ticoFBox = el('div', 'abs', Fc); Object.assign(ticoFBox.style, { left: '270px', top: '280px', width: '540px', height: '540px', transformOrigin: '270px 500px' });
+  let ticoF;
+  const logo = el('div', 'abs logo', Fc, `<span class="mark">${icon('<circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/>', '#1688e8', 62, 2.6)}</span><span>Aprova Tico<span class="dot">.</span></span>`);
+  Object.assign(logo.style, { left: '50%', top: '850px' });
+  const fsub = el('div', 'abs word', Fc, 'Comece grátis · sem cartão de crédito'); Object.assign(fsub.style, { fontSize: '46px', color: '#dbeafe', top: '980px', left: '0', width: '1080px', textAlign: 'center' });
+  const fpill = el('div', 'abs pill', Fc, `aprovatico.com.br ${icon('<path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>', '#1271bf', 56, 3)}`); Object.assign(fpill.style, { left: '50%', top: '1070px' });
+
+  let t = 0, laidOut = false;
+  function layout() {
+    // centraliza "Você acerta essa?" pela largura real das palavras
+    // linha 1: "Você acerta"; linha 2: "essa?" grande
+    const ws = h1.map((e) => e.offsetWidth);
+    const gap = 30;
+    let x = (1080 - (ws[0] + ws[1] + gap)) / 2;
+    h1[0].style.left = x + 'px'; h1[1].style.left = x + ws[0] + gap + 'px';
+    h1[2].style.left = (1080 - ws[2]) / 2 + 'px';
+    // contagem logo abaixo do cartão (enunciados longos deixam o cartão mais alto)
+    const bottom = card.offsetTop + card.offsetHeight;
+    comenta.style.top = bottom + 26 + 'px';
+    ring.style.top = Math.min(bottom + 110, 1240) + 'px';
+    tempo.style.top = Math.min(bottom + 150, 1280) + 'px';
+    laidOut = true;
+  }
+
+  function seek(tt) {
+    t = tt;
+    if (!laidOut) layout();
+    rays.style.transform = `rotate(${t * 6}deg)`;
+    dots.forEach((d, i) => set(d, { x: rnd(i + 1) * W, y: ((rnd(i + 2) * H - t * (30 + 40 * rnd(i))) % H + H) % H, o: 0.35 }));
+
+    // ===== gancho =====
+    const outQ = eio(prog(t, 11.85, 12.1));
+    void 0;
+    h1.forEach((e, i) => {
+      const at = 0.05 + i * 0.25; const k = spring(t - at, i === 2 ? 18 : 16, i === 2 ? 0.4 : 0.55);
+      const shake = i === 2 ? wob(t, 0.75, 30, 6) * 4 : 0;
+      set(e, { y: 60 * (1 - k), s: lerp(i === 2 ? 2.2 : 0.4, 1, k) * (1 + (i === 2 ? 0.05 * beatPulse(t, 1.0) * (t < 4 ? 1 : 0) : 0)), o: clamp(k * 3) * (1 - outQ), r: shake + (i === 2 ? -4 : 0) });
+    });
+    const kc = spring(t - 0.9, 15, 0.5);
+    chip.style.transform = `translateX(-50%) scale(${kc})`; chip.style.opacity = clamp(kc * 3) * (1 - outQ);
+
+    // ===== cartão =====
+    const kcard = spring(t - 1.2, 12, 0.62);
+    const toWhy = eio(prog(t, 7.75, 8.15));
+    set(card, { y: 900 * (1 - kcard) - 80 * toWhy, s: 1 - 0.1 * toWhy, o: (t < 1.2 ? 0 : 1) * (1 - toWhy), blur: 8 * toWhy });
+    const revealed = t >= 7.0;
+    opts.forEach((o, i) => {
+      const at = 2.0 + i * 0.5; const k = spring(t - at, 18, 0.5);
+      const ok = i === Q.correta;
+      o.style.transform = `translateX(${120 * (1 - k)}px) scale(${revealed && ok ? 1 + 0.06 * Math.exp(-(t - 7) * 5) : 1})`;
+      o.style.opacity = t < at ? 0 : clamp(k * 3) * (revealed && !ok ? 0.45 : 1);
+      o.style.borderColor = revealed && ok ? '#72c93d' : '#e1e9ef';
+      o.style.background = revealed && ok ? '#ecfae5' : '#fff';
+      const L = o.querySelector('.l'); L.style.background = revealed && ok ? '#72c93d' : '#e8eef4'; L.style.color = revealed && ok ? '#fff' : '#4d6478';
+      const st = o.querySelector('.strike'); st.style.width = '520px'; st.style.transform = `scaleX(${revealed && !ok ? eo(prog(t, 7.1 + i * 0.06, 7.35 + i * 0.06)) : 0})`;
+      const ck = o.querySelector('.ok'); if (ck) { ck.style.transform = `scale(${spring(t - 7.05, 18, 0.4)})`; ck.style.background = '#72c93d'; ck.style.borderRadius = '50%'; ck.style.padding = '0'; }
+      if (revealed && !ok) o.style.transform += ` translateX(${wob(t, 7.05, 40, 8) * 10}px)`;
+    });
+
+    // ===== contagem 3-2-1 =====
+    const cin = spring(t - 3.9, 16, 0.5), cout = eio(prog(t, 6.95, 7.2));
+    ring.style.left = '80px';
+    set(ring, { s: cin * (1 - cout) * (1 + 0.06 * beatPulse(t, 4.0)), o: t > 3.9 && t < 7.2 ? 1 : 0, r: wob(t, Math.floor(t) + 0.0, 20, 8) * 4 });
+    const secLeft = 3 - Math.floor(clamp(t - 4.0, 0, 2.999));
+    num.textContent = String(secLeft);
+    arc.setAttribute('stroke-dashoffset', String(691 * clamp((t - 4.0) / 3)));
+    arc.setAttribute('stroke', t > 6 ? '#ef4444' : '#f7931e');
+    const kco = spring(t - 4.2, 15, 0.5);
+    Object.assign(comenta.style, { left: '50%', marginLeft: '-350px', fontSize: '42px', zIndex: 5, background: '#58a92a' });
+    set(comenta, { x: 60 * (1 - kco), s: kco * (1 - cout), o: t > 4.2 && t < 7.2 ? 1 : 0 });
+    const kt = spring(t - 7.0, 18, 0.4);
+    set(tempo, { s: lerp(2, 1, kt), o: t >= 7.0 && t < 7.75 ? clamp(kt * 3) * (1 - prog(t, 7.55, 7.75)) : 0, r: -4 });
+
+    // ===== explicação =====
+    const kw = spring(t - 7.9, 12, 0.62);
+    set(why, { y: 700 * (1 - kw) - 60 * outQ, o: t < 7.9 ? 0 : clamp(kw * 3) * (1 - outQ), s: 1 - 0.1 * outQ });
+    steps.forEach((s, i) => {
+      const at = 8.5 + i * 0.75; const k = spring(t - at, 16, 0.55);
+      s.style.transform = `translateX(${80 * (1 - k)}px)`; s.style.opacity = t < at ? 0 : clamp(k * 3);
+    });
+    stars.forEach((s, i) => {
+      const p = prog(t, 7.0, 7.9); const a = (i / stars.length) * Math.PI * 2 + rnd(i);
+      const cx = 540, cy = card.offsetTop + card.querySelector('.opts').offsetTop + Q.correta * 122 + 52;
+      const d = eo(p) * (260 + rnd(i + 5) * 260);
+      set(s, { x: cx - 22 + Math.cos(a) * d, y: cy - 22 + Math.sin(a) * d + 200 * p * p, r: 300 * p, s: 1 - 0.4 * p, o: p > 0 && p < 1 ? 1 - p * p : 0 });
+    });
+
+    // ===== Tico =====
+    {
+      let pose = 'apontando', head = Math.sin(t * 2.2) * 3, nod = 0, arm = Math.sin(t * 5) * 6, blink = TicoRig.blinkAt(t, 4), lookX = 0;
+      let x = 0, y = 0, sx = 1, sy = 1, r = 0;
+      const kin = spring(t - 0.25, 13, 0.5);
+      y = 520 * (1 - kin);
+      if (t >= 1.2 && t < 3.9) { pose = 'apontando'; arm = -6 + Math.sin(t * 6) * 8; head = -5 + Math.sin(t * 2) * 2; }
+      if (t >= 3.9 && t < 7.0) {
+        // nervoso: treme, olha de um lado para o outro, pisca rápido
+        pose = 'neutro'; head = Math.sin(t * 9) * 4; nod = Math.sin(t * 14) * 2; blink = TicoRig.blinkAt(t * 2.2, 9); x = Math.sin(t * 40) * 3; r = Math.sin(t * 7) * 2;
+      }
+      if (t >= 7.0) {
+        pose = t < 9.5 ? 'comemorando' : 'joinha';
+        const hop = t < 8.5 ? Math.abs(Math.sin((t - 7.0) * Math.PI * 2)) : 0;
+        y = -60 * hop; head = Math.sin(t * 6) * 5; arm = Math.sin(t * 12) * 12;
+        const land = t < 8.5 ? Math.pow(1 - hop, 8) : 0; sx = 1 + 0.08 * land; sy = 1 - 0.08 * land;
+        if (pose === 'joinha') { arm = Math.sin(t * 5) * 6; head = 4 + Math.sin(t * 2.5) * 3; blink = 0; }
+      }
+      const sw = [1.2, 3.9, 7.0, 9.5].reduce((m, s2) => Math.max(m, t >= s2 && t < s2 + 0.25 ? Math.exp(-(t - s2) * 14) : 0), 0);
+      const breath = Math.sin(t * 2.6) * 0.012;
+      ticoBox.style.transform = `translate(${x}px, ${y}px) rotate(${r}deg) scale(${sx * (1 + 0.08 * sw) * (1 - breath)}, ${sy * (1 - 0.08 * sw) * (1 + breath)})`;
+      ticoBox.style.opacity = 1 - outQ;
+      if (tico) tico.draw({ pose, head, nod, arm, blink, lookX, time: t });
+      set(sweat, { y: 20 * ((t * 1.3) % 1), o: t > 4.4 && t < 7.0 ? 1 - ((t * 1.3) % 1) * 0.6 : 0 });
+    }
+
+    // ===== chamada =====
+    {
+      const open = eio(prog(t, 11.8, 12.3));
+      F.style.clipPath = open >= 1 ? 'none' : `circle(${open * Math.hypot(W, H) * 0.6}px at 50% 50%)`;
+      F.style.visibility = t < 11.8 ? 'hidden' : 'visible';
+      frays.style.transform = `rotate(${t * 8}deg)`;
+      Fc.style.opacity = t < 11.85 ? 0 : 1;
+      const k1 = spring(t - 12.1, 16, 0.5), k2 = spring(t - 12.4, 16, 0.5);
+      set(f1, { y: 50 * (1 - k1), o: clamp(k1 * 3) });
+      set(f2, { y: 50 * (1 - k2), o: clamp(k2 * 3), r: -2 });
+      const kt = spring(t - 12.2, 11, 0.5);
+      const hop = t > 12.9 ? Math.abs(Math.sin((t - 12.9) * Math.PI * 2)) : 0;
+      ticoFBox.style.transform = `translateY(${600 * (1 - kt) - hop * 26}px) scale(${lerp(0.6, 1, kt)})`;
+      if (ticoF) ticoF.draw({ pose: 'acenando', head: Math.sin(t * 2.4) * 4, arm: Math.sin(t * 11) * 14, blink: TicoRig.blinkAt(t, 6), time: t });
+      const kl = spring(t - 12.9, 15, 0.5);
+      logo.style.transform = `translateX(-50%) scale(${kl})`; logo.style.opacity = clamp(kl * 3);
+      const ks = spring(t - 13.3, 14, 0.6);
+      set(fsub, { y: 30 * (1 - ks), o: clamp(ks * 3) });
+      const kp = spring(t - 13.6, 16, 0.45);
+      fpill.style.transform = `translateX(-50%) scale(${kp * (1 + 0.05 * beatPulse(t, 14.0))})`;
+      fpill.style.opacity = clamp(kp * 3);
+    }
+  }
+
+  window.DURATION = DUR;
+  window.seek = seek;
+  window.ready = (async () => {
+    await document.fonts.ready;
+    await TicoRig.load('../../public/tico/');
+    tico = TicoRig.create(ticoBox, 480);
+    ticoBox.appendChild(sweat);
+    ticoF = TicoRig.create(ticoFBox, 540);
+    seek(0);
+    return true;
+  })();
+  if (!navigator.webdriver) {
+    const t0 = performance.now();
+    const loop = () => { seek(((performance.now() - t0) / 1000) % DUR); requestAnimationFrame(loop); };
+    window.ready.then(loop);
+  }
+})();
+</script>
+</body>
+</html>

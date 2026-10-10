@@ -6,6 +6,7 @@ Saída: saida/trilha.wav, já normalizada para -14 LUFS (padrão de Reels/Storie
 
     python3 marketing/video-anuncio/musica.py          -> anuncio.html (saida/trilha.wav)
     python3 marketing/video-anuncio/musica.py onibus   -> onibus.html (saida/trilha-onibus.wav)
+    (também: caverna, desafio)
 """
 import os
 import subprocess
@@ -16,7 +17,7 @@ import numpy as np
 
 PAGE = sys.argv[1] if len(sys.argv) > 1 else 'anuncio'
 SR = 44100
-DUR = 26.0 if PAGE == 'caverna' else 24.0
+DUR = {'caverna': 26.0, 'desafio': 16.0}.get(PAGE, 24.0)
 BEAT = 0.5
 N = int(SR * DUR)
 rng = np.random.default_rng(7)
@@ -139,7 +140,7 @@ def tom(f0):
 # ---------- música ----------
 # Acordes por compasso (2 s): gancho em lá menor, virada para dó maior quando o app entra
 # (anuncio: no círculo, 6 s; onibus: dentro do ônibus, 4 s).
-GROOVE = 3 if PAGE == 'anuncio' else 2
+GROOVE = {'anuncio': 3, 'desafio': 0}.get(PAGE, 2)
 TENSO = [(57, [57, 60, 64]), (53, [53, 57, 60])]                 # Am, F
 FELIZ = [(48, [60, 64, 67]), (55, [59, 62, 67]), (57, [57, 60, 64]), (53, [57, 60, 65])]  # C G Am F
 
@@ -277,6 +278,32 @@ def efeitos_caverna():
     add(pop(500, 1200, 0.12), 21.4, 0.3)
 
 
+def efeitos_desafio():
+    for i, at in enumerate((0.05, 0.3, 0.55)):                 # "Você acerta essa?"
+        add(pop(500 + 120 * i, 1100 + 160 * i), at, 0.35)
+    add(pop(700, 1500, 0.15), 0.9, 0.25)
+    add(whoosh(0.5), 1.1, 0.35)                                # cartão sobe
+    for i in range(4):                                         # alternativas
+        add(pop(600 + 90 * i, 1200 + 90 * i, 0.08), 2.0 + i * 0.5, 0.25)
+    # contagem: a música abaixa e entra o relógio
+    a, b = int(3.9 * SR), int(7.0 * SR)
+    k = np.full(b - a, 0.3)
+    k[: int(0.1 * SR)] = np.linspace(1, 0.3, int(0.1 * SR))
+    mix_l[a:b] *= k
+    mix_r[a:b] *= k
+    for i in range(6):
+        add(click() * 1.0, 4.0 + i * 0.5, 0.9 if i % 2 == 0 else 0.6, pan=0.3 if i % 2 else -0.3)
+        add(tom(220 if i % 2 == 0 else 180) * 0.6, 4.0 + i * 0.5, 0.25)
+    add(whoosh(0.5, up=True), 6.5, 0.35)
+    add(ding((84, 88, 91, 96), 1.4), 7.0, 0.55)                # resposta
+    add(pop(900, 300, 0.25), 7.1, 0.2)
+    for i in range(4):                                         # passos da explicação
+        add(pop(700 + 80 * i, 1300 + 80 * i, 0.08), 8.5 + i * 0.75, 0.25)
+    add(whoosh(0.6), 11.7, 0.45)                               # chamada
+    add(ding((84, 88, 91), 1.2), 12.1, 0.35)
+    add(pop(500, 1200, 0.12), 13.6, 0.3)
+
+
 def efeitos_onibus():
     r = rumble(18.2)
     k = np.ones(len(r))
@@ -308,7 +335,7 @@ def efeitos_onibus():
     add(pop(500, 1200, 0.12), 21.4, 0.3)                      # botão do site
 
 
-{'anuncio': efeitos_anuncio, 'onibus': efeitos_onibus, 'caverna': efeitos_caverna}[PAGE]()
+{'anuncio': efeitos_anuncio, 'onibus': efeitos_onibus, 'caverna': efeitos_caverna, 'desafio': efeitos_desafio}[PAGE]()
 
 # ---------- saída ----------
 fade = np.minimum(1, (DUR - np.arange(N) / SR) / 0.5)

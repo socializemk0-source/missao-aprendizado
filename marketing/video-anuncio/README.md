@@ -58,13 +58,38 @@ pessoas são desenho próprio, articulado (cabeça, braços, peruca, barba e
 fantasia separadas). A trilha tem tambores, martelo na pedra, "bonk" na
 clava, portal, arranhão de disco e fumaça.
 
+## Série "Desafio do Tico" (`desafio.html`)
+
+16 s, feito para gerar comentários: quem estuda para concurso para para
+responder. Cada vídeo é uma questão autoral da trilha (`?q=`), com o texto
+igual ao de `content/questoes/*.ts`.
+
+| Tempo | Cena |
+|---|---|
+| 0–1,5 s | "Você acerta essa?" e a matéria; o Tico aponta |
+| 1,5–4 s | A questão e as alternativas, uma por batida |
+| 4–7 s | Contagem 3-2-1 com relógio, "Comenta sua resposta!", o Tico nervoso |
+| 7–12 s | "TEMPO!", a certa fica verde, as erradas são riscadas; explicação visual passo a passo |
+| 12–16 s | "Toda questão vem com explicação assim." · Aprova Tico · Comece grátis · aprovatico.com.br |
+
+| `--q` | Questão | Pegadinha |
+|---|---|---|
+| `pt-acent-4` | Qual palavra é proparoxítona? | "rúbrica" e "récorde" |
+| `rlm-porc-2` | Dois aumentos de 10% em R$ 2.000 | não é R$ 2.400 |
+| `adm-ato-3` | Retirar ato válido por conveniência | revogação × anulação |
+
+Para uma questão nova, acrescente-a em `QUESTOES` no `desafio.html` (copiando
+enunciado, alternativas e gabarito do arquivo da trilha) e grave com `--q`.
+Só questões autorais ou de provas oficiais conferidas, e nada de números
+inventados ("87% erram").
+
 ## Formatos
 
 | Arquivo | Uso |
 |---|---|
-| `aprova-tico-{anuncio,onibus,caverna}-9x16.mp4` (1080×1920) | Reels, Stories, TikTok. O conteúdo fica entre y=210 e y=1710, longe da legenda e dos botões do Reels |
-| `aprova-tico-{anuncio,onibus,caverna}-4x5.mp4` (1080×1350) | Feed do Instagram e do Facebook |
-| `aprova-tico-{anuncio,onibus,caverna}-1x1.mp4` (1080×1080) | Feed, carrossel, coluna da direita |
+| `aprova-tico-{anuncio,onibus,caverna,desafio-<questão>}-9x16.mp4` (1080×1920) | Reels, Stories, TikTok. O conteúdo fica entre y=210 e y=1710, longe da legenda e dos botões do Reels |
+| `aprova-tico-{...}-4x5.mp4` (1080×1350) | Feed do Instagram e do Facebook |
+| `aprova-tico-{...}-1x1.mp4` (1080×1080) | Feed, carrossel, coluna da direita |
 
 ## Gerar de novo
 
@@ -78,6 +103,9 @@ node marketing/video-anuncio/render.mjs --page onibus
 
 python3 marketing/video-anuncio/musica.py caverna         # vídeo da caverna
 node marketing/video-anuncio/render.mjs --page caverna
+
+python3 marketing/video-anuncio/musica.py desafio         # série Desafio do Tico
+node marketing/video-anuncio/render.mjs --page desafio --q pt-acent-4
 ```
 
 Precisa de `playwright` com Chromium (com WebGL; o render.mjs passa `--allow-file-access-from-files`) e `ffmpeg`. Se o playwright estiver
