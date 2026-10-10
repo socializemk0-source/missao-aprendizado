@@ -4,14 +4,17 @@
 cada efeito (toque, acerto, XP, confete) cai no instante do quadro.
 Saída: saida/trilha.wav, já normalizada para -14 LUFS (padrão de Reels/Stories).
 
-    python3 marketing/video-anuncio/musica.py
+    python3 marketing/video-anuncio/musica.py          -> anuncio.html (saida/trilha.wav)
+    python3 marketing/video-anuncio/musica.py onibus   -> onibus.html (saida/trilha-onibus.wav)
 """
 import os
 import subprocess
+import sys
 import wave
 
 import numpy as np
 
+PAGE = sys.argv[1] if len(sys.argv) > 1 else 'anuncio'
 SR = 44100
 DUR = 24.0
 BEAT = 0.5
@@ -128,17 +131,19 @@ def click():
 
 
 # ---------- música ----------
-# Acordes por compasso (2 s): gancho em lá menor, virada para dó maior no "Aprova Tico".
+# Acordes por compasso (2 s): gancho em lá menor, virada para dó maior quando o app entra
+# (anuncio: no círculo, 6 s; onibus: dentro do ônibus, 4 s).
+GROOVE = 3 if PAGE == 'anuncio' else 2
 TENSO = [(57, [57, 60, 64]), (53, [53, 57, 60])]                 # Am, F
 FELIZ = [(48, [60, 64, 67]), (55, [59, 62, 67]), (57, [57, 60, 64]), (53, [57, 60, 65])]  # C G Am F
 
 for bar in range(12):
     at = bar * 2.0
-    if bar < 3:
+    if bar < GROOVE:
         root, chord = TENSO[bar % 2]
     else:
-        root, chord = FELIZ[(bar - 3) % 4]
-    full = 3 <= bar           # groove completo depois do círculo (6 s)
+        root, chord = FELIZ[(bar - GROOVE) % 4]
+    full = GROOVE <= bar      # groove completo depois da virada
     big = bar >= 10           # chamada final
     add(pad(chord + [chord[0] + 12], 2.0), at, 0.10 if not full else 0.07)
     # arpejo em colcheias
@@ -166,26 +171,76 @@ for bar in range(12):
 add(pad([60, 64, 67, 72, 76], 1.2), 22.8, 0.12)
 
 # ---------- efeitos no tempo do vídeo ----------
-for at, f0 in ((0.2, 500), (0.7, 560), (1.2, 620), (2.0, 520), (2.45, 700)):
-    add(pop(f0, f0 * 2), at, 0.35)
-add(pop(900, 260, 0.35), 2.85, 0.4)                 # "tudo?" desce
-for i in range(8):                                   # cartões do caos
-    add(pop(400 + 60 * i, 700 + 60 * i, 0.08), 4.15 + i * 0.12, 0.18, pan=(-0.5 if i % 2 else 0.5))
-add(whoosh(0.4), 3.75, 0.35)
-add(whoosh(1.0, up=True), 4.9, 0.25)                 # sobe até a virada
-add(ding((72, 76, 79, 84), 1.4), 5.95, 0.35)         # círculo abre
-add(whoosh(0.45, up=False), 9.75, 0.4)
-add(click(), 11.95, 0.6)
-add(click(), 12.75, 0.6)
-add(ding(), 13.0, 0.55)                              # acertou
-add(ding((96, 100), 0.5), 14.05, 0.35)               # XP entra
-add(whoosh(0.4), 15.75, 0.35)
-for i in range(4):
-    add(whoosh(0.3, up=False), 16.45 + i * 0.75, 0.22, pan=0.4)
-add(pop(700, 1500, 0.15), 19.15, 0.35)               # sequência de dias
-add(whoosh(0.6), 19.7, 0.45)
-add(ding((84, 88, 91, 96), 1.6), 20.3, 0.4)          # confete
-add(pop(500, 1200, 0.12), 21.4, 0.3)                 # botão do site
+def efeitos_anuncio():
+    for at, f0 in ((0.2, 500), (0.7, 560), (1.2, 620), (2.0, 520), (2.45, 700)):
+        add(pop(f0, f0 * 2), at, 0.35)
+    add(pop(900, 260, 0.35), 2.85, 0.4)                 # "tudo?" desce
+    for i in range(8):                                   # cartões do caos
+        add(pop(400 + 60 * i, 700 + 60 * i, 0.08), 4.15 + i * 0.12, 0.18, pan=(-0.5 if i % 2 else 0.5))
+    add(whoosh(0.4), 3.75, 0.35)
+    add(whoosh(1.0, up=True), 4.9, 0.25)                 # sobe até a virada
+    add(ding((72, 76, 79, 84), 1.4), 5.95, 0.35)         # círculo abre
+    add(whoosh(0.45, up=False), 9.75, 0.4)
+    add(click(), 11.95, 0.6)
+    add(click(), 12.75, 0.6)
+    add(ding(), 13.0, 0.55)                              # acertou
+    add(ding((96, 100), 0.5), 14.05, 0.35)               # XP entra
+    add(whoosh(0.4), 15.75, 0.35)
+    for i in range(4):
+        add(whoosh(0.3, up=False), 16.45 + i * 0.75, 0.22, pan=0.4)
+    add(pop(700, 1500, 0.15), 19.15, 0.35)               # sequência de dias
+    add(whoosh(0.6), 19.7, 0.45)
+    add(ding((84, 88, 91, 96), 1.6), 20.3, 0.4)          # confete
+    add(pop(500, 1200, 0.12), 21.4, 0.3)                 # botão do site
+
+
+def rumble(dur):
+    """Motor do ônibus: ruído grave com um vaivém lento."""
+    t = t_axis(dur)
+    n = lowpass(lowpass(rng.standard_normal(len(t)), 0.02), 0.05) * 8
+    motor = 0.5 * np.sin(2 * np.pi * 42 * t + 2 * np.sin(2 * np.pi * 0.7 * t))
+    return (n + motor) * (0.8 + 0.2 * np.sin(2 * np.pi * 0.4 * t))
+
+
+def thud():
+    t = t_axis(0.4)
+    f = 70 + 60 * np.exp(-t * 25)
+    rattle = rng.standard_normal(len(t)) * np.exp(-t * 18) * 0.25
+    return (np.sin(2 * np.pi * np.cumsum(f) / SR) + rattle) * env(t, 0.003, 0.12)
+
+
+def efeitos_onibus():
+    r = rumble(18.2)
+    k = np.ones(len(r))
+    tt = np.arange(len(r)) / SR
+    k *= np.where((tt > 8) & (tt < 14.3), 0.45, 1.0)          # mais baixo com o celular na tela
+    k *= np.minimum(1, (18.2 - tt) / 0.4)
+    add(r * k, 0, 0.35)
+    for b in (4.5, 6.0, 7.5, 12.25, 15.0, 16.5):              # buracos (mesmos de onibus.html)
+        add(thud(), b, 0.7)
+    for at, f0 in ((0.25, 520), (0.55, 600), (1.5, 700)):
+        add(pop(f0, f0 * 2), at, 0.3)
+    add(whoosh(1.0, up=True), 2.9, 0.35)                      # mergulho na janela
+    add(pop(560, 1100), 4.1, 0.3)
+    add(whoosh(0.7, up=True), 7.3, 0.35)                      # mergulho no celular
+    add(click(), 9.95, 0.6)
+    add(click(), 10.75, 0.6)
+    add(ding(), 11.0, 0.55)                                   # acertou
+    add(ding((96, 100), 0.5), 11.3, 0.3)                      # XP
+    add(ding((79, 84, 88, 91), 1.4), 12.6, 0.45)              # fase concluída
+    add(whoosh(0.5, up=False), 14.25, 0.35)
+    add(pop(500, 1300, 0.18), 14.6, 0.35)                     # Tico comemora
+    add(pop(700, 1500, 0.15), 15.4, 0.3)                      # sequência de dias
+    add(ding((88, 84), 1.2), 16.45, 0.5)                      # campainha de parada
+    add(whoosh(0.4), 17.75, 0.35)
+    for i in range(3):
+        add(pop(500 + 120 * i, 1000 + 120 * i, 0.1), 18.25 + i * 0.5, 0.3)
+    add(whoosh(0.6), 19.7, 0.45)
+    add(ding((84, 88, 91, 96), 1.6), 20.3, 0.4)               # confete
+    add(pop(500, 1200, 0.12), 21.4, 0.3)                      # botão do site
+
+
+(efeitos_anuncio if PAGE == 'anuncio' else efeitos_onibus)()
 
 # ---------- saída ----------
 fade = np.minimum(1, (DUR - np.arange(N) / SR) / 0.5)
@@ -193,6 +248,7 @@ stereo = np.stack([mix_l * fade, mix_r * fade], axis=1)
 stereo /= max(1e-9, np.abs(stereo).max()) / 0.9
 pcm = (stereo * 32767).astype(np.int16)
 
+NOME = 'trilha.wav' if PAGE == 'anuncio' else f'trilha-{PAGE}.wav'
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'saida')
 os.makedirs(out, exist_ok=True)
 crua = os.path.join(out, 'trilha-crua.wav')
@@ -202,6 +258,6 @@ with wave.open(crua, 'wb') as w:
     w.setframerate(SR)
     w.writeframes(pcm.tobytes())
 subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', crua, '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11',
-                '-ar', str(SR), os.path.join(out, 'trilha.wav')], check=True)
+                '-ar', str(SR), os.path.join(out, NOME)], check=True)
 os.remove(crua)
-print('trilha: saida/trilha.wav')
+print(f'trilha: saida/{NOME}')
