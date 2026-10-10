@@ -25,7 +25,7 @@ jobs:
       SQL_DB_NAME: postgres
       SQL_SSL: 'false'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0 # histórico inteiro, para a varredura de segredos
       - name: Nenhum segredo no histórico do repositório (gitleaks)
