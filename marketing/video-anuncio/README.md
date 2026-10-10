@@ -37,13 +37,34 @@ celular no caminho. Passageiros desenhados em formas simples (ninguém real).
 
 A trilha tem motor do ônibus, tranco nos buracos e campainha de parada.
 
+## Terceiro vídeo: homens das cavernas (`caverna.html`)
+
+Cartoon cômico, 26 s. Dois "homens das cavernas" estudam do jeito antigo; o
+Tico chega por um portal com óculos de realidade aumentada e o app; na
+revelação, eram só pessoas comuns que não conheciam o Aprova Tico.
+
+| Tempo | Cena | Texto na tela |
+|---|---|---|
+| 0–6 s | Um talha "CRAZI" na pedra (e a pedra racha); o outro é soterrado pelas "apostilas de pedra"; clava na cabeça para decorar | "Estudando do jeito antigo?" · "Horas na pedra e nada fica." |
+| 6–9 s | Portal neon, o Tico chega de skate voador e pousa na mesa; os dois pulam de susto | "UGA?!" · "Ou do jeito Aprova Tico." |
+| 9–15 s | Holograma com a questão da landing; o braço estica e toca 75%; "Acertou! +10 XP"; trilha guiada, explicação na hora, revisão dos erros | "UGA!!" |
+| 15–20 s | A música para; peruca e barba voam, a fumaça baixa, o cenário da caverna sai e aparece uma sala de estudo | "Peraí..." · "Não eram das cavernas. Só não conheciam o Aprova Tico." |
+| 20–26 s | Chamada | "Saia da idade da pedra" · "Comece grátis · sem cartão de crédito" · aprovatico.com.br |
+
+O Tico se mexe pela marionete `tico-rig.js`: a arte oficial é deformada numa
+malha no WebGL (cabeça vira e acena com o pescoço acompanhando, braço balança,
+piscada, óculos de realidade aumentada), sem redesenhar o personagem. As
+pessoas são desenho próprio, articulado (cabeça, braços, peruca, barba e
+fantasia separadas). A trilha tem tambores, martelo na pedra, "bonk" na
+clava, portal, arranhão de disco e fumaça.
+
 ## Formatos
 
 | Arquivo | Uso |
 |---|---|
-| `aprova-tico-anuncio-9x16.mp4` e `aprova-tico-onibus-9x16.mp4` (1080×1920) | Reels, Stories, TikTok. O conteúdo fica entre y=210 e y=1710, longe da legenda e dos botões do Reels |
-| `aprova-tico-anuncio-4x5.mp4` e `aprova-tico-onibus-4x5.mp4` (1080×1350) | Feed do Instagram e do Facebook |
-| `aprova-tico-anuncio-1x1.mp4` e `aprova-tico-onibus-1x1.mp4` (1080×1080) | Feed, carrossel, coluna da direita |
+| `aprova-tico-{anuncio,onibus,caverna}-9x16.mp4` (1080×1920) | Reels, Stories, TikTok. O conteúdo fica entre y=210 e y=1710, longe da legenda e dos botões do Reels |
+| `aprova-tico-{anuncio,onibus,caverna}-4x5.mp4` (1080×1350) | Feed do Instagram e do Facebook |
+| `aprova-tico-{anuncio,onibus,caverna}-1x1.mp4` (1080×1080) | Feed, carrossel, coluna da direita |
 
 ## Gerar de novo
 
@@ -54,9 +75,12 @@ node marketing/video-anuncio/render.mjs --sheet           # folhas de conferênc
 
 python3 marketing/video-anuncio/musica.py onibus          # vídeo do ônibus
 node marketing/video-anuncio/render.mjs --page onibus
+
+python3 marketing/video-anuncio/musica.py caverna         # vídeo da caverna
+node marketing/video-anuncio/render.mjs --page caverna
 ```
 
-Precisa de `playwright` com Chromium e `ffmpeg`. Se o playwright estiver
+Precisa de `playwright` com Chromium (com WebGL; o render.mjs passa `--allow-file-access-from-files`) e `ffmpeg`. Se o playwright estiver
 instalado globalmente: `PLAYWRIGHT_PATH=$(npm root -g)/playwright/index.mjs`.
 Os vídeos saem em `saida/` (fora do git: só o código-fonte fica no repositório).
 

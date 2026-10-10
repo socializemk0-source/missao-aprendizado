@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Aprova Tico — anúncio da caverna</title>
+<!--
+  Terceiro anúncio, cartoon cômico: dois "homens das cavernas" estudam do jeito
+  antigo (talhando pedra, soterrados por apostilas de pedra), o Tico chega por um
+  portal com óculos de realidade aumentada e o app, eles acertam a questão e,
+  na revelação, eram só pessoas comuns que não conheciam o Aprova Tico.
+  O Tico se mexe pela marionete de tico-rig.js (cabeça, braço, piscada, óculos).
+  Mesmas regras: tudo calculado em seek(t). Formato pela URL (?w=1080&h=1920).
+-->
+<style>
+  @font-face { font-family: 'Baloo'; font-weight: 800; src: url(fonts/baloo-2-latin-800-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Nunito'; font-weight: 700; src: url(fonts/nunito-latin-700-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Nunito'; font-weight: 800; src: url(fonts/nunito-latin-800-normal.woff2) format('woff2'); }
+  :root { --heading: #1d3348; --primary: #1688e8; --primary-strong: #1271bf; --green: #72c93d; --green-strong: #58a92a; --orange: #f7931e; --gold: #f5b700; --cyan: #22d3ee; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #0b1a2a; overflow: hidden; }
+  #stage { position: relative; overflow: hidden; background: #2a1a12; }
+  .layer { position: absolute; inset: 0; }
+  .core { position: absolute; left: 0; top: 0; width: 1080px; height: 1500px; transform-origin: 0 0; }
+  .abs { position: absolute; will-change: transform, opacity; }
+  svg { overflow: visible; display: block; }
+  .word { font-family: 'Baloo'; font-weight: 800; line-height: 1; white-space: nowrap; text-align: center; left: 0; width: 1080px; letter-spacing: -1px; }
+  .plate { left: 50%; display: flex; flex-direction: column; align-items: center; gap: 6px; border-radius: 40px; padding: 26px 46px 20px;
+           font-family: 'Baloo'; font-weight: 800; line-height: 1; white-space: nowrap; text-align: center; }
+  .plate span { display: block; }
+  .stone { background: #9b8f80; color: #fbf3e2; border: 8px solid #6f6457; border-radius: 46px 30px 52px 26px;
+           box-shadow: inset 0 -10px 0 rgba(0,0,0,.15), 0 22px 40px rgba(0,0,0,.45); text-shadow: 0 4px 0 rgba(0,0,0,.25); }
+  .tech { background: rgba(10,25,45,.88); color: #fff; border: 4px solid var(--cyan); box-shadow: 0 0 40px rgba(34,211,238,.55), 0 22px 40px rgba(0,0,0,.4); }
+  .tech b { color: var(--cyan); }
+  .white { background: #fff; color: var(--heading); box-shadow: 0 18px 0 rgba(29,51,72,.12), 0 24px 60px rgba(29,51,72,.25); }
+  .bubble { background: #fff; color: var(--heading); border: 6px solid var(--heading); border-radius: 50px; padding: 14px 34px 8px;
+            font-family: 'Baloo'; font-weight: 800; font-size: 74px; white-space: nowrap; }
+  .holo { width: 700px; border-radius: 34px; padding: 30px 34px; background: linear-gradient(180deg, rgba(8,40,70,.92), rgba(10,50,90,.92));
+          border: 4px solid rgba(125,233,255,.95); box-shadow: 0 0 60px rgba(34,211,238,.6), inset 0 0 40px rgba(34,211,238,.25);
+          color: #fff; font-family: 'Nunito'; font-weight: 800; }
+  .holo .eb { font-size: 22px; letter-spacing: 2px; color: #a5f3fc; }
+  .holo .q { font-size: 38px; line-height: 1.2; margin-top: 10px; }
+  .holo .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 22px; }
+  .holo .o { height: 84px; border-radius: 20px; border: 3px solid rgba(165,243,252,.8); background: rgba(255,255,255,.08);
+             display: flex; align-items: center; gap: 16px; padding-left: 16px; font-size: 38px; }
+  .holo .o i { font-style: normal; width: 50px; height: 50px; border-radius: 14px; background: rgba(165,243,252,.25); display: grid; place-items: center; font-size: 26px; }
+  .holo .fb { margin-top: 18px; height: 0; overflow: hidden; font-size: 30px; color: #bbf7d0; }
+  .holo .fb b { font-family: 'Baloo'; font-size: 48px; color: #86efac; display: block; line-height: 1; }
+  .chip { display: flex; align-items: center; gap: 14px; padding: 16px 30px; border-radius: 999px; background: rgba(10,25,45,.9); border: 4px solid var(--cyan);
+          color: #fff; font-family: 'Baloo'; font-weight: 800; font-size: 46px; white-space: nowrap; box-shadow: 0 0 30px rgba(34,211,238,.5); }
+  .pill { display: flex; align-items: center; gap: 18px; background: #fff; color: var(--primary-strong); border-radius: 999px; padding: 22px 52px;
+          font-family: 'Baloo'; font-weight: 800; font-size: 60px; white-space: nowrap; box-shadow: 0 20px 44px rgba(10,30,90,.35); }
+  .confetti { width: 22px; height: 34px; border-radius: 5px; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="room" class="layer"></div>
+  <div id="cave" class="layer"></div>
+  <div id="core" class="core"></div>
+  <div id="cta" class="layer"></div>
+  <div id="core2" class="core"></div>
+</div>
+<script src="tico-rig.js"></script>
+<script>
+(() => {
+  const qs = new URLSearchParams(location.search);
+  const W = Number(qs.get('w')) || 1080;
+  const H = Number(qs.get('h')) || 1920;
+  const DUR = 26;
+  const stage = document.getElementById('stage');
+  stage.style.width = W + 'px'; stage.style.height = H + 'px';
+  const coreScale = Math.min(W / 1080, (H - (H > 1600 ? 420 : 60)) / 1500);
+  const coreT = `translate(${(W - 1080 * coreScale) / 2}px, ${(H - 1500 * coreScale) / 2}px) scale(${coreScale})`;
+  const core = document.getElementById('core'), core2 = document.getElementById('core2');
+  core.style.transform = coreT; core2.style.transform = coreT;
+  // camadas de fundo também usam as coordenadas do core (desenhadas maiores que a tela)
+  const room = document.getElementById('room'), cave = document.getElementById('cave');
+  const roomC = document.createElement('div'); roomC.className = 'core'; roomC.style.transform = coreT; room.appendChild(roomC);
+  const caveC = document.createElement('div'); caveC.className = 'core'; caveC.style.transform = coreT; cave.appendChild(caveC);
+
+  // ---------- movimento ----------
+  const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+  const lerp = (a, b, k) => a + (b - a) * k;
+  const prog = (t, a, b) => clamp((t - a) / (b - a));
+  const eo = (x) => 1 - Math.pow(1 - x, 3);
+  const eio = (x) => (x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+  const ei = (x) => x * x * x;
+  const back = (x) => 1 + 2.7 * Math.pow(x - 1, 3) + 1.7 * Math.pow(x - 1, 2); // easeOutBack
+  const spring = (dt, w = 16, z = 0.55) => {
+    if (dt <= 0) return 0;
+    const wd = w * Math.sqrt(1 - z * z);
+    return 1 - Math.exp(-z * w * dt) * (Math.cos(wd * dt) + (z * w / wd) * Math.sin(wd * dt));
+  };
+  // vibração amortecida que começa em `at` (tranco, susto, pouso)
+  const wob = (t, at, f = 14, d = 5) => (t > at ? Math.exp(-(t - at) * d) * Math.sin((t - at) * f) : 0);
+  const rnd = (i) => { const x = Math.sin(i * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); };
+  const BEAT = 0.5;
+  const beatPulse = (t, from) => (t < from ? 0 : Math.exp(-((t - from) % BEAT) * 9));
+  // chave de quadros: [[t, valor], ...] com suavização entre eles
+  const keys = (t, ks, ease = eio) => {
+    if (t <= ks[0][0]) return ks[0][1];
+    for (let i = 1; i < ks.length; i++) if (t <= ks[i][0]) return lerp(ks[i - 1][1], ks[i][1], ease(prog(t, ks[i - 1][0], ks[i][0])));
+    return ks[ks.length - 1][1];
+  };
+
+  const el = (tag, cls, parent, html) => {
+    const e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (html != null) e.innerHTML = html;
+    (parent || core).appendChild(e);
+    return e;
+  };
+  const set = (e, { x = 0, y = 0, s = 1, sx, sy, r = 0, o = 1, blur = 0 }) => {
+    e.style.transform = `translate(${x}px, ${y}px) rotate(${r}deg) scale(${sx ?? s}, ${sy ?? s})`;
+    e.style.opacity = o;
+    e.style.filter = blur > 0.05 ? `blur(${blur}px)` : 'none';
+    e.style.visibility = o <= 0.001 ? 'hidden' : 'visible';
+  };
+  const NS = 'http://www.w3.org/2000/svg';
+  const g = (parent, html, attrs = {}) => {
+    const e = document.createElementNS(NS, 'g');
+    if (html) e.innerHTML = html;
+    for (const k in attrs) e.setAttribute(k, attrs[k]);
+    parent.appendChild(e);
+    return e;
+  };
+  const rot = (e, a, cx, cy, extra = '') => e.setAttribute('transform', `${extra} rotate(${a} ${cx} ${cy})`);
+  const svgIcon = (d, c, size, sw = 3) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+
+  // =========================================================
+  // Sala moderna (aparece na revelação, atrás do cenário da caverna)
+  // =========================================================
+  roomC.innerHTML = `<svg width="2400" height="2800" viewBox="-660 -650 2400 2800" style="position:absolute;left:-660px;top:-650px">
+    <rect x="-660" y="-650" width="2400" height="2800" fill="#eef5fb"/>
+    <rect x="-660" y="1180" width="2400" height="1000" fill="#d9b88f"/>
+    ${[...Array(14)].map((_, i) => `<rect x="${-660 + i * 170}" y="1180" width="6" height="1000" fill="#c9a77d"/>`).join('')}
+    <rect x="230" y="200" width="620" height="560" rx="26" fill="#1d3348"/>
+    <rect x="250" y="220" width="580" height="520" rx="16" fill="#9fd8ff"/>
+    <circle cx="720" cy="330" r="60" fill="#ffe58a"/>
+    ${[[260, 470, 110, 270], [380, 420, 90, 320], [480, 520, 120, 220], [610, 450, 100, 290], [720, 500, 110, 240]].map(([x, y, w, h], i) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${['#7fb3e0', '#5f9bd1', '#8cc2ea', '#6aa6d8', '#7fb3e0'][i]}"/>`).join('')}
+    <rect x="530" y="220" width="20" height="520" fill="#1d3348"/><rect x="250" y="470" width="580" height="18" fill="#1d3348"/>
+    <rect x="-300" y="300" width="380" height="24" rx="6" fill="#a8693f"/><rect x="-300" y="520" width="380" height="24" rx="6" fill="#a8693f"/>
+    ${[...Array(9)].map((_, i) => `<rect x="${-290 + i * 40}" y="${200 + (i % 3) * 8}" width="32" height="${100 - (i % 3) * 8}" rx="4" fill="${['#ef4444', '#1688e8', '#f5b700', '#58a92a', '#7c3aed'][i % 5]}"/><rect x="${-285 + i * 38}" y="${420 + (i % 2) * 10}" width="30" height="${100 - (i % 2) * 10}" rx="4" fill="${['#f7931e', '#1271bf', '#72c93d', '#ef4444'][i % 4]}"/>`).join('')}
+    <rect x="1010" y="900" width="120" height="160" rx="20" fill="#e2e8f0"/><circle cx="1070" cy="830" r="90" fill="#58a92a"/><circle cx="1010" cy="880" r="60" fill="#72c93d"/><circle cx="1130" cy="870" r="60" fill="#72c93d"/>
+  </svg>`;
+
+  // =========================================================
+  // Caverna (cenário que desliza na revelação)
+  // =========================================================
+  const caveBack = el('div', 'abs', caveC, `<svg width="2400" height="2800" viewBox="-660 -650 2400 2800" style="position:absolute;left:-660px;top:-650px">
+    <defs><radialGradient id="cg" cx="50%" cy="58%" r="60%"><stop offset="0" stop-color="#8a5a3a"/><stop offset=".55" stop-color="#5a3a26"/><stop offset="1" stop-color="#2a1a12"/></radialGradient></defs>
+    <rect x="-660" y="-650" width="2400" height="2800" fill="url(#cg)"/>
+    ${[...Array(26)].map((_, i) => `<ellipse cx="${-500 + rnd(i) * 2100}" cy="${-300 + rnd(i + 40) * 1500}" rx="${60 + rnd(i + 3) * 120}" ry="${30 + rnd(i + 7) * 60}" fill="#000" opacity=".09"/>`).join('')}
+    <rect x="-660" y="1180" width="2400" height="1000" fill="#4a3022"/>
+    <g stroke="#f3d9b1" stroke-width="9" fill="none" stroke-linecap="round" opacity=".85">
+      <circle cx="160" cy="430" r="44"/><path d="M160 474v80M160 500l-40 40M160 500l40 40M160 554l-34 60M160 554l34 60"/>
+      <path d="M760 520c30-70 160-70 190 0v80M780 600v-40M930 600v-40M760 540c-30 0-40 30-30 60" />
+      <path d="M90 700v60M110 700v60M130 700v60M150 700v60M70 740l100-30M210 700v60M230 700v60"/>
+    </g>
+    <text x="330" y="330" font-family="Baloo" font-weight="800" font-size="64" fill="#f3d9b1" opacity=".85" transform="rotate(-4 330 330)">PROVA</text><path d="M560 290v60M580 290v60M600 290v60M620 290v60M545 330l90-26" stroke="#f3d9b1" stroke-width="9" opacity=".85" stroke-linecap="round"/>
+    <circle cx="520" cy="940" r="120" fill="#ff9a3c" opacity=".18"/>
+  </svg>`);
+  const caveL = el('div', 'abs', caveC, `<svg width="700" height="2600" viewBox="0 0 700 2600" style="position:absolute;left:-660px;top:-650px"><path d="M0 0H560Q470 600 520 1000T430 1800Q480 2200 560 2600H0z" fill="#3a2418"/><path d="M500 900q60 120 0 260" stroke="#2a1a12" stroke-width="14" fill="none"/></svg>`);
+  const caveR = el('div', 'abs', caveC, `<svg width="700" height="2600" viewBox="0 0 700 2600" style="position:absolute;left:1040px;top:-650px"><path d="M700 0H140Q230 600 180 1000T270 1800Q220 2200 140 2600H700z" fill="#3a2418"/></svg>`);
+  const caveTop = el('div', 'abs', caveC, `<svg width="2400" height="900" viewBox="0 0 2400 900" style="position:absolute;left:-660px;top:-650px"><path d="M0 0H2400V620${[...Array(14)].map((_, i) => `L${2400 - i * 170 - 40} ${700 + rnd(i) * 160}L${2400 - i * 170 - 85} 620`).join('')}L0 620z" fill="#3a2418"/></svg>`);
+  // fogueira
+  const fire = el('div', 'abs', caveC); Object.assign(fire.style, { left: '440px', top: '860px', width: '200px', height: '200px' });
+  fire.innerHTML = `<svg width="200" height="200" viewBox="0 0 200 200"><g id="flames"></g><rect x="30" y="170" width="140" height="22" rx="10" fill="#5a3a26" transform="rotate(8 100 180)"/><rect x="30" y="170" width="140" height="22" rx="10" fill="#6b4630" transform="rotate(-8 100 180)"/></svg>`;
+  const flames = fire.querySelector('#flames');
+  const glowCave = el('div', 'abs', caveC); Object.assign(glowCave.style, { left: '-400px', top: '200px', width: '1900px', height: '1600px', background: 'radial-gradient(closest-side, rgba(255,150,60,.35), rgba(255,150,60,0))' });
+
+  // =========================================================
+  // Personagens (desenho próprio, articulados)
+  // =========================================================
+  function pessoa(parent, o) {
+    const wrap = el('div', 'abs', parent);
+    Object.assign(wrap.style, { left: o.x + 'px', top: o.y + 'px', width: '420px', height: '1000px', transformOrigin: '210px 900px' });
+    const S = 0.82; // escala do desenho
+    const s = document.createElementNS(NS, 'svg');
+    s.setAttribute('width', 420); s.setAttribute('height', 1000); s.setAttribute('viewBox', '0 0 420 1000');
+    wrap.appendChild(s);
+    const P = { wrap, o };
+    const arm = (side) => {
+      const x = side < 0 ? 95 : 325;
+      const a = g(s, `
+        <rect x="${x - 36}" y="380" width="72" height="300" rx="36" fill="${o.roupa}" stroke="#2a1a12" stroke-width="7"/>
+        <rect class="pele" x="${x - 36}" y="380" width="72" height="300" rx="36" fill="${o.pele}" stroke="#2a1a12" stroke-width="7"/>
+        <circle cx="${x}" cy="690" r="44" fill="${o.pele}" stroke="#2a1a12" stroke-width="7"/><circle cx="${x - 30}" cy="668" r="16" fill="${o.pele}" stroke="#2a1a12" stroke-width="7"/>`);
+      a.querySelector('.pele').style.transition = 'none';
+      return { g: a, x, y: 400, pele: a.querySelector('.pele') };
+    };
+    P.armBack = arm(o.flip ? 1 : -1);
+    // tronco: roupa moderna + fantasia de pele por cima
+    P.torso = g(s, `<rect x="70" y="355" width="280" height="660" rx="115" fill="${o.roupa}" stroke="#2a1a12" stroke-width="7"/>${o.roupaDetalhe || ''}`);
+    P.tunic = g(s, `<path d="M66 420 Q70 370 120 360 L300 360 Q352 372 354 430 L354 1015 L66 1015 Z" fill="#d9a066" stroke="#2a1a12" stroke-width="7"/>
+      <path d="M66 470 L100 440 L130 480 L165 440 L200 482 L235 440 L270 482 L305 440 L354 480" fill="none" stroke="#8a5a2b" stroke-width="10" stroke-linejoin="round"/>
+      ${[[120, 560], [250, 520], [180, 680], [300, 700], [110, 800], [240, 860]].map(([x, y]) => `<ellipse cx="${x}" cy="${y}" rx="26" ry="18" fill="#7a4a24" opacity=".75"/>`).join('')}
+      <path d="M300 360 L150 560" stroke="#8a5a2b" stroke-width="22" stroke-linecap="round"/>`);
+    P.neck = g(s, `<rect x="178" y="300" width="64" height="80" fill="${o.pele}" stroke="#2a1a12" stroke-width="7"/>`);
+    P.head = g(s);
+    P.hairBack = g(P.head, o.cabeloAtras || '');
+    g(P.head, `<circle cx="102" cy="238" r="28" fill="${o.pele}" stroke="#2a1a12" stroke-width="7"/><circle cx="318" cy="238" r="28" fill="${o.pele}" stroke="#2a1a12" stroke-width="7"/>
+      <ellipse cx="210" cy="228" rx="112" ry="120" fill="${o.pele}" stroke="#2a1a12" stroke-width="7"/>
+      <ellipse cx="150" cy="282" rx="18" ry="11" fill="#ff8f8f" opacity=".35"/><ellipse cx="270" cy="282" rx="18" ry="11" fill="#ff8f8f" opacity=".35"/>`);
+    P.hair = g(P.head, o.cabelo);
+    P.eyes = g(P.head, `<ellipse cx="165" cy="232" rx="23" ry="27" fill="#fff"/><ellipse cx="255" cy="232" rx="23" ry="27" fill="#fff"/>`);
+    P.pupils = g(P.eyes, `<circle cx="168" cy="236" r="12" fill="#1d3348"/><circle cx="258" cy="236" r="12" fill="#1d3348"/><circle cx="172" cy="231" r="4" fill="#fff"/><circle cx="262" cy="231" r="4" fill="#fff"/>`);
+    P.brows = g(P.head, `<path d="M140 190 q25 -12 50 0 M230 190 q25 -12 50 0" stroke="#3a2a20" stroke-width="8" fill="none" stroke-linecap="round"/>`);
+    g(P.head, `<ellipse cx="210" cy="268" rx="15" ry="11" fill="#000" opacity=".12"/>`);
+    P.glasses = g(P.head, o.oculos ? `<circle cx="165" cy="232" r="38" fill="none" stroke="#1d3348" stroke-width="8"/><circle cx="255" cy="232" r="38" fill="none" stroke="#1d3348" stroke-width="8"/><path d="M203 230 h14" stroke="#1d3348" stroke-width="8"/>` : '');
+    // fantasia da cabeça: peruca, sobrancelha única e barba postiça
+    P.beard = g(P.head, `<path d="M98 250 Q96 400 210 430 Q324 400 322 250 Q300 300 270 300 Q240 330 210 316 Q180 330 150 300 Q120 300 98 250z" fill="#5b3a22"/>
+      <path d="M120 330 l-10 30 M160 360 l-6 32 M210 372 v34 M260 360 l6 32 M300 330 l10 30" stroke="#3f2716" stroke-width="7" stroke-linecap="round"/>`);
+    P.mouthSmile = g(P.head, `<path d="M180 300 q30 22 60 0" stroke="#7a3b2e" stroke-width="9" fill="none" stroke-linecap="round"/>`);
+    P.mouthOpen = g(P.head, `<ellipse cx="210" cy="310" rx="34" ry="30" fill="#5c1f1a"/><ellipse cx="210" cy="324" rx="20" ry="12" fill="#ff7a7a"/>`);
+    P.mouthFlat = g(P.head, `<path d="M184 306 h52" stroke="#7a3b2e" stroke-width="9" stroke-linecap="round"/>`);
+    P.unibrow = g(P.head, `<path d="M128 196 Q170 168 210 188 Q250 168 292 196 L292 208 Q250 186 210 204 Q170 186 128 208z" fill="#2b1a10"/>`);
+    P.wig = g(P.head, `<path d="M84 230 L70 150 L110 160 L100 90 L150 120 L160 50 L200 100 L230 40 L250 100 L300 60 L300 120 L350 110 L330 170 L360 200 L330 236 Q330 120 210 112 Q92 120 84 230z" fill="#4a2c18"/>
+      <path d="M140 140 l20 -30 M250 130 l20 -36 M300 160 l26 -10" stroke="#2b1a10" stroke-width="7" stroke-linecap="round"/>`);
+    P.armFront = arm(o.flip ? -1 : 1);
+    P.prop = g(P.armFront.g, o.prop || '');
+    P.phone = g(P.armFront.g, `<rect x="${P.armFront.x - 34}" y="650" width="68" height="110" rx="14" fill="#1d3348" transform="rotate(-10 ${P.armFront.x} 700)"/><circle cx="${P.armFront.x}" cy="712" r="42" fill="${o.pele}"/>`);
+    P.dizzy = g(s, [0, 1, 2].map((i) => `<path d="M0 -26 l7 18 l19 1 l-15 12 l5 19 l-16 -11 l-16 11 l5 -19 l-15 -12 l19 -1z" fill="#f5b700" data-i="${i}"/>`).join(''));
+    return P;
+  }
+  const A = pessoa(core, {
+    x: 10, y: 300, pele: '#c58b62', roupa: '#7c3aed',
+    roupaDetalhe: '<path d="M150 360 q60 70 120 0" fill="none" stroke="#5b21b6" stroke-width="14"/><rect x="150" y="620" width="120" height="70" rx="20" fill="#6d28d9"/>',
+    cabelo: '<path d="M96 220 Q90 104 210 100 Q330 104 324 220 Q300 150 210 148 Q120 150 96 220z" fill="#1d1410"/>',
+    cabeloAtras: '<ellipse cx="330" cy="200" rx="40" ry="90" fill="#1d1410" transform="rotate(-20 330 200)"/>', oculos: true,
+    prop: '<ellipse cx="325" cy="745" rx="50" ry="38" fill="#8f8a84"/><ellipse cx="312" cy="735" rx="18" ry="10" fill="#b5b0aa"/>',
+  });
+  const B = pessoa(core, {
+    x: 680, y: 310, pele: '#f2c9a0', roupa: '#1688e8', flip: true,
+    roupaDetalhe: '<rect x="190" y="360" width="40" height="660" fill="#e8eef4"/><circle cx="210" cy="460" r="8" fill="#1d3348"/><circle cx="210" cy="560" r="8" fill="#1d3348"/>',
+    cabelo: '<path d="M98 210 Q96 108 210 104 Q326 108 322 210 Q312 160 280 150 Q250 172 210 150 Q170 172 140 150 Q108 160 98 210z" fill="#7a4a26"/>',
+  });
+  // a clava do A fica na mão de trás
+  const club = g(A.armBack.g, `<path d="M95 700 L95 930" stroke="#7a4a24" stroke-width="26" stroke-linecap="round"/><ellipse cx="95" cy="950" rx="48" ry="70" fill="#8a5a2b"/><circle cx="80" cy="930" r="9" fill="#5a3a20"/>`);
+  // a pilha de "apostilas de pedra" do B
+  const slabs = [...Array(6)].map((_, i) => {
+    const s = el('div', 'abs', core, `<svg width="300" height="96" viewBox="0 0 300 96"><rect x="4" y="4" width="292" height="88" rx="20" fill="${i % 2 ? '#9b8f80' : '#8a7f72'}" stroke="#6f6457" stroke-width="7"/>
+      <text x="150" y="62" text-anchor="middle" font-family="Baloo" font-weight="800" font-size="36" fill="#f3ead8">APOSTILA ${['I', 'II', 'III', 'IV', 'V', 'VI'][i]}</text></svg>`);
+    Object.assign(s.style, { left: '520px', top: 1020 - i * 92 + 'px', transformOrigin: '150px 48px' });
+    return s;
+  });
+  // mesa de pedra (vira mesa de madeira na revelação) e a tábua do A
+  const table = el('div', 'abs', core, `<svg width="1880" height="700" viewBox="0 0 1880 700">
+      <g class="pedra"><path d="M0 60 Q30 0 120 10 L1760 0 Q1870 10 1880 70 L1880 700 L0 700z" fill="#8a7f72" stroke="#5f554a" stroke-width="12"/>
+        <path d="M200 120 q90 26 200 0 M760 180 q110 30 240 -6 M1300 110 q80 20 160 0" stroke="#6f6457" stroke-width="9" fill="none"/>
+        <path d="M0 60 Q30 0 120 10 L1760 0 Q1870 10 1880 70" stroke="#b3a796" stroke-width="10" fill="none"/></g>
+      <g class="madeira" opacity="0"><rect x="0" y="10" width="1880" height="60" rx="14" fill="#a8693f"/><rect x="0" y="70" width="1880" height="630" fill="#8a5530"/>
+        ${[...Array(10)].map((_, i) => `<rect x="${60 + i * 190}" y="90" width="150" height="120" rx="12" fill="#7a4a28"/><circle cx="${135 + i * 190}" cy="150" r="8" fill="#d9b88f"/>`).join('')}
+        <rect x="520" y="-120" width="210" height="130" rx="12" fill="#1d3348"/><rect x="532" y="-108" width="186" height="106" rx="6" fill="#7dd3fc"/><rect x="500" y="4" width="250" height="12" rx="6" fill="#94a3b8"/>
+        <rect x="1380" y="-70" width="76" height="80" rx="14" fill="#f7931e"/><path d="M1456 -48 q32 0 32 22 t-32 22" stroke="#f7931e" stroke-width="10" fill="none"/>
+        <rect x="1520" y="-40" width="150" height="50" rx="6" fill="#1688e8"/><rect x="1530" y="-80" width="140" height="44" rx="6" fill="#72c93d"/></g></svg>`);
+  Object.assign(table.style, { left: '-400px', top: '1110px' });
+  const tablePedra = table.querySelector('.pedra'), tableMadeira = table.querySelector('.madeira');
+  const tablet = el('div', 'abs', core); Object.assign(tablet.style, { left: '170px', top: '925px', width: '300px', height: '200px', transformOrigin: '150px 200px' });
+  const tabHalf = (clip) => el('div', 'abs', tablet, `<svg width="300" height="200" viewBox="0 0 300 200" style="clip-path:${clip}"><rect x="6" y="6" width="288" height="188" rx="28" fill="#a89c8c" stroke="#6f6457" stroke-width="9"/>
+      <text class="txt" x="150" y="128" text-anchor="middle" font-family="Baloo" font-weight="800" font-size="78" fill="#4a3f35" letter-spacing="4"></text></svg>`);
+  const tabL = tabHalf('polygon(0 0, 52% 0, 44% 40%, 56% 62%, 47% 100%, 0 100%)');
+  const tabR = tabHalf('polygon(52% 0, 100% 0, 100% 100%, 47% 100%, 56% 62%, 44% 40%)');
+  const tabTxt = [tabL, tabR].map((h) => h.querySelector('.txt'));
+
+  // =========================================================
+  // Tico (marionete) + portal + skate voador + holograma
+  // =========================================================
+  const portal = el('div', 'abs', core, `<svg width="560" height="560" viewBox="-280 -280 560 560">
+      <circle r="250" fill="none" stroke="#22d3ee" stroke-width="18"/><circle r="230" fill="rgba(34,211,238,.18)"/>
+      <circle r="205" fill="none" stroke="#a5f3fc" stroke-width="6" stroke-dasharray="30 22" class="spin"/>
+      <circle r="170" fill="rgba(14,30,60,.85)"/><circle r="170" fill="none" stroke="#1688e8" stroke-width="10" stroke-dasharray="8 16" class="spin2"/></svg>`);
+  Object.assign(portal.style, { left: '260px', top: '360px', filter: 'drop-shadow(0 0 40px #22d3ee)' });
+  const spin = portal.querySelector('.spin'), spin2 = portal.querySelector('.spin2');
+  const beam = el('div', 'abs', core); Object.assign(beam.style, { left: '360px', top: '470px', width: '480px', height: '330px',
+    background: 'linear-gradient(0deg, rgba(34,211,238,.55), rgba(34,211,238,0))', clipPath: 'polygon(46% 100%, 54% 100%, 100% 0, 0 0)', transformOrigin: '240px 330px' });
+  const ticoBox = el('div', 'abs', core); Object.assign(ticoBox.style, { left: '230px', top: '540px', width: '620px', height: '620px', transformOrigin: '310px 590px' });
+  const board = el('div', 'abs', ticoBox, `<svg width="460" height="90" viewBox="0 0 460 90"><ellipse cx="230" cy="70" rx="200" ry="16" fill="#22d3ee" opacity=".45"/><rect x="20" y="20" width="420" height="40" rx="20" fill="#1d3348"/><rect x="40" y="28" width="380" height="10" rx="5" fill="#22d3ee"/></svg>`);
+  Object.assign(board.style, { left: '80px', top: '570px' });
+  const trail = el('div', 'abs', ticoBox); Object.assign(trail.style, { left: '440px', top: '585px', width: '520px', height: '34px', borderRadius: '20px', background: 'linear-gradient(90deg, rgba(34,211,238,.9), rgba(34,211,238,0))', transformOrigin: '0 50%' });
+  let tico; // criado depois que a marionete carrega
+  const ticoPhone = el('div', 'abs', ticoBox, `<svg width="130" height="200" viewBox="0 0 130 200"><rect x="10" y="10" width="110" height="180" rx="22" fill="#1688e8" stroke="#1d3348" stroke-width="8"/><circle cx="40" cy="40" r="11" fill="#1d3348"/>
+      <ellipse cx="14" cy="120" rx="22" ry="30" fill="#7a4a2a"/><ellipse cx="116" cy="120" rx="22" ry="30" fill="#7a4a2a"/></svg>`);
+  Object.assign(ticoPhone.style, { left: '305px', top: '250px', transformOrigin: '65px 100px' });
+
+  const holo = el('div', 'abs holo', core, `<div class="eb">RACIOCÍNIO LÓGICO · FASE 3</div>
+    <div class="q">40 questões, 30 acertos.<br>Qual o percentual de acertos?</div>
+    <div class="grid">${['60%', '70%', '75%', '80%'].map((v, i) => `<div class="o"><i>${'ABCD'[i]}</i>${v}</div>`).join('')}</div>
+    <div class="fb"><b>Acertou! +10 XP</b>30 ÷ 40 = 0,75, ou seja, 75%.</div>`);
+  Object.assign(holo.style, { left: '190px', top: '60px', transformOrigin: '350px 430px' });
+  const holoOpts = [...holo.querySelectorAll('.o')], holoFb = holo.querySelector('.fb');
+  const chips = [['Trilha guiada', 'M12 3 4 7v6c0 4.4 3.4 7.8 8 8 4.6-.2 8-3.6 8-8V7z'], ['Explicação na hora', 'M5 12l5 5L20 7'], ['Revisão dos erros', 'M3 12a9 9 0 1 0 3-6.7M3 4v5h5']].map(([txt, d], i) => {
+    const c = el('div', 'abs chip', core, `${svgIcon(`<path d="${d}"/>`, '#22d3ee', 48, 2.6)} ${txt}`);
+    Object.assign(c.style, { left: '50%', top: 230 + i * 120 + 'px' });
+    return c;
+  });
+
+  // falas e fumaça
+  const bubA = el('div', 'abs bubble', core, 'UGA?!'); Object.assign(bubA.style, { left: '20px', top: '260px' });
+  const bubB = el('div', 'abs bubble', core, 'UGA!!'); Object.assign(bubB.style, { left: '790px', top: '700px' });
+  const smoke = [...Array(22)].map((_, i) => {
+    const s = el('div', 'abs', core); const r = 70 + rnd(i) * 80;
+    Object.assign(s.style, { width: r * 2 + 'px', height: r * 2 + 'px', borderRadius: '50%', background: '#fff', border: '6px solid #cbd5e1', left: (i < 11 ? 230 : 890) + (rnd(i + 3) - 0.5) * 300 - r + 'px', top: 560 + rnd(i + 5) * 520 - r + 'px' });
+    return s;
+  });
+  const flyWigA = el('div', 'abs', core), flyWigB = el('div', 'abs', core); // a peruca e a barba voando
+  // textos
+  const plate = (cls, html, top) => { const p = el('div', 'abs plate ' + cls, core, html); p.style.top = top + 'px'; return p; };
+  const p1 = plate('stone', '<span style="font-size:100px">Estudando do</span><span style="font-size:100px">jeito antigo?</span>', 10);
+  const p2 = plate('stone', '<span style="font-size:92px">Horas na pedra</span><span style="font-size:92px">e nada fica.</span>', 10);
+  const p3 = plate('tech', '<span style="font-size:94px">Ou do jeito</span><span style="font-size:94px"><b>Aprova Tico.</b></span>', 10);
+  const p4 = plate('white', '<span style="font-size:110px">Peraí...</span>', 30);
+  const p5 = plate('white', '<span style="font-size:88px">Não eram das cavernas.</span><span class="l2" style="font-size:72px;color:#1688e8">Só não conheciam o Aprova Tico.</span>', 10);
+  const p5l2 = p5.querySelector('.l2');
+
+  // =========================================================
+  // Chamada final
+  // =========================================================
+  const F = document.getElementById('cta');
+  const fBg = el('div', 'layer', F); fBg.style.background = 'radial-gradient(circle at 50% 42%, #2ea0ff 0%, #1688e8 38%, #1e40af 100%)';
+  const rays = el('div', 'abs', F);
+  Object.assign(rays.style, { left: '50%', top: '45%', width: '3000px', height: '3000px', marginLeft: '-1500px', marginTop: '-1500px',
+    background: 'repeating-conic-gradient(rgba(255,255,255,.09) 0deg 9deg, rgba(255,255,255,0) 9deg 22.5deg)', borderRadius: '50%' });
+  const confs = [...Array(70)].map((_, i) => { const c = el('div', 'abs confetti', F); c.style.background = ['#f5b700', '#72c93d', '#ffffff', '#f7931e', '#ff6b9a', '#7dd3fc'][i % 6]; return c; });
+  const Fc = el('div', 'layer', core2);
+  const ft1 = el('div', 'abs word', Fc, 'Saia da'); Object.assign(ft1.style, { top: '-10px', fontSize: '130px', color: '#fff' });
+  const ft2 = el('div', 'abs word', Fc, 'idade da pedra'); Object.assign(ft2.style, { top: '115px', fontSize: '140px', color: 'var(--gold)', textShadow: '0 10px 0 rgba(0,0,0,.12)' });
+  const ticoFBox = el('div', 'abs', Fc); Object.assign(ticoFBox.style, { left: '250px', top: '330px', width: '580px', height: '580px', transformOrigin: '290px 540px' });
+  let ticoF;
+  const fsub = el('div', 'abs word', Fc, 'Comece grátis · sem cartão de crédito'); Object.assign(fsub.style, { top: '960px', fontSize: '48px', color: '#fff', fontFamily: 'Baloo' });
+  const fpill = el('div', 'abs pill', Fc, `aprovatico.com.br ${svgIcon('<path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>', '#1271bf', 56, 3)}`); Object.assign(fpill.style, { left: '50%', top: '1060px' });
+
+  // profundidade: holograma atrás das pessoas (a mão toca a alternativa), mesa na frente delas, Tico na frente de tudo
+  const Z = [[portal, 2], [beam, 3], [holo, 4], [A.wrap, 5], [B.wrap, 5], [table, 6], [tablet, 7], ...slabs.map((s2) => [s2, 7]), [ticoBox, 8],
+    ...smoke.map((s2) => [s2, 9]), [flyWigA, 10], [flyWigB, 10], [bubA, 11], [bubB, 11], ...chips.map((c) => [c, 12]), [p1, 13], [p2, 13], [p3, 13], [p4, 13], [p5, 13]];
+  Z.forEach(([e, z]) => { e.style.zIndex = z; });
+
+  // ---------- auxiliares de quadro ----------
+  let t = 0;
+  const showPlate = (e, a, b, tilt = -1.5) => {
+    const k = spring(t - a, 15, 0.5); const out = eio(prog(t, b - 0.25, b));
+    e.style.transform = `translateX(-50%) translateY(${50 * (1 - k) - 30 * out}px) scale(${lerp(0.5, 1, k) * (1 - 0.2 * out)}) rotate(${tilt * (1 - out)}deg)`;
+    e.style.opacity = t < a || t > b ? 0 : clamp(k * 3) * (1 - out);
+  };
+  const blinkH = (P, seed) => {
+    const b = TicoRig.blinkAt(t, seed);
+    P.eyes.setAttribute('transform', `translate(0 ${232 * b}) scale(1 ${1 - b})`);
+  };
+  // pose da pessoa: tudo em graus/px, com respiração e balanço sempre presentes
+  const pose = (P, s) => {
+    const breath = Math.sin(t * 2.4 + P.o.x) * 0.012;
+    P.wrap.style.transform = `translate(${s.x || 0}px, ${s.y || 0}px) rotate(${s.lean || 0}deg) scale(${0.82 * (s.sx ?? 1) * (1 - breath)}, ${0.82 * (s.sy ?? 1) * (1 + breath)})`;
+    P.wrap.style.opacity = s.o ?? 1;
+    rot(P.head, s.head || 0, 210, 330, `translate(0 ${s.headY || 0})`);
+    const fl = P.o.flip ? -1 : 1;
+    rot(P.armFront.g, (s.armF || 0) * fl, P.armFront.x, 400, s.armFS ? `translate(${P.armFront.x} 400) scale(1 ${s.armFS}) translate(${-P.armFront.x} -400)` : '');
+    rot(P.armBack.g, (s.armB || 0) * fl, P.armBack.x, 400);
+    P.pupils.setAttribute('transform', `translate(${s.lookX || 0} ${s.lookY || 0})`);
+    P.mouthOpen.style.display = s.mouth === 'open' ? '' : 'none';
+    P.mouthFlat.style.display = s.mouth === 'flat' ? '' : 'none';
+    P.mouthSmile.style.display = !s.mouth || s.mouth === 'smile' ? '' : 'none';
+    const c = s.costume ?? 1; // 1 = homem das cavernas, 0 = roupa normal
+    P.tunic.style.opacity = c; P.armFront.pele.style.opacity = c; P.armBack.pele.style.opacity = c;
+    P.unibrow.style.opacity = c; P.brows.style.opacity = 1 - c;
+    P.glasses.style.opacity = 1 - c;
+    P.wig.style.display = s.wigOn === false ? 'none' : ''; P.beard.style.display = s.beardOn === false ? 'none' : '';
+    P.prop.style.opacity = c; P.phone.style.opacity = s.phone ? 1 : 0;
+    const dz = s.dizzy || 0;
+    [...P.dizzy.children].forEach((d, i) => {
+      const a = t * 5 + (i * Math.PI * 2) / 3;
+      d.setAttribute('transform', `translate(${210 + Math.cos(a) * 110} ${90 + Math.sin(a) * 26 + (s.headY || 0)}) scale(${dz})`);
+    });
+  };
+
+  // ---------- quadro ----------
+  function seek(tt) {
+    t = tt;
+    // ===== cenário =====
+    const reveal = eio(prog(t, 16.0, 16.9));
+    caveBack.style.transform = `translateY(${-3000 * reveal}px)`;
+    caveL.style.transform = `translateX(${-900 * reveal}px)`;
+    caveR.style.transform = `translateX(${900 * reveal}px)`;
+    caveTop.style.transform = `translateY(${-1600 * reveal}px)`;
+    fire.style.opacity = 1 - prog(t, 15.7, 16.1);
+    glowCave.style.opacity = (0.8 + 0.2 * Math.sin(t * 13) * Math.sin(t * 7)) * (1 - prog(t, 15.7, 16.4));
+    flames.innerHTML = [0, 1, 2].map((i) => {
+      const h = 120 + Math.sin(t * (9 + i * 2) + i) * 18 + Math.sin(t * 23 + i * 3) * 8, w = 46 - i * 8;
+      const x = 100 + (i - 1) * 34 + Math.sin(t * 6 + i) * 5;
+      return `<path d="M${x - w} 180 Q${x - w} ${180 - h * 0.6} ${x + Math.sin(t * 8 + i) * 12} ${180 - h} Q${x + w} ${180 - h * 0.6} ${x + w} 180z" fill="${['#f7931e', '#f5b700', '#ffe58a'][i]}"/>`;
+    }).join('');
+    tablePedra.style.opacity = 1 - prog(t, 15.9, 16.3); tableMadeira.style.opacity = prog(t, 15.9, 16.3);
+
+    // ===== tábua do A: letras a cada martelada, racha em 3,05 s =====
+    const hits = [0.5, 1.0, 1.5, 2.0, 2.5];
+    const nLetters = hits.filter((h) => t >= h + 0.08).length;
+    tabTxt[0].textContent = tabTxt[1].textContent = 'CRAZI'.slice(0, nLetters);
+    const crack = prog(t, 3.05, 3.9);
+    set(tabL, { x: -60 * eo(crack), y: 160 * ei(crack), r: -25 * eo(crack) });
+    set(tabR, { x: 60 * eo(crack), y: 160 * ei(crack), r: 25 * eo(crack) });
+    set(tablet, { o: 1 - prog(t, 3.8, 4.0), r: wob(t, 3.05, 30, 8) * 3 });
+
+    // ===== A =====
+    {
+      // martelo: sobe na contra-batida e desce na batida
+      const hamPhase = (t % 0.5) / 0.5;
+      let armF = t < 2.9 ? -18 + 34 * Math.pow(Math.sin(Math.PI * hamPhase), 2) - 16 : -10;
+      let armB = 6 + Math.sin(t * 2) * 2;
+      let head = Math.sin(t * 2.2) * 2, headY = 0, sx = 1, sy = 1, x = 0, y = 0, lean = 0, mouth = 'flat', lookX = 4, lookY = 6, dizzy = 0;
+      if (t < 2.9) { head += -wob(t, Math.floor(t * 2) / 2, 30, 10) * 2; lookY = 10; }
+      // 3,05: a tábua racha. Ele olha, desolado.
+      if (t > 3.05 && t < 4.2) { mouth = 'open'; head = -6; }
+      // 4,4–5,6: bate a clava na própria cabeça para "decorar"
+      const bonk = keys(t, [[4.2, 0], [4.55, -150], [4.75, -196], [4.85, -186], [5.3, -160], [5.8, 0]]);
+      armB += bonk;
+      if (t > 4.75 && t < 6.0) { sy = 1 - 0.12 * Math.max(0, wob(t, 4.75, 20, 6)); headY = 18 * Math.exp(-(t - 4.75) * 3); dizzy = clamp((t - 4.75) * 4) * (1 - prog(t, 5.6, 6.0)); mouth = 'open'; lookX = Math.sin(t * 12) * 6; }
+      // 6,0–7,3: susto com o portal
+      const fright = spring(t - 6.15, 18, 0.35);
+      if (t > 6.1 && t < 9.0) { x = -60 * fright; lean = -8 * fright; mouth = 'open'; lookX = 12; lookY = -4; head = -8 * fright; y = -50 * Math.max(0, Math.sin(Math.min(Math.PI, (t - 6.15) * 6))); armF = lerp(-10, -150, fright); armB = lerp(armB, -40, fright); }
+      // 9–11,8: chega perto do holograma e cutuca a alternativa C com o braço esticado
+      if (t >= 9.0 && t < 15.0) {
+        const come = eio(prog(t, 9.0, 9.8));
+        x = lerp(-60, 40, come); lean = lerp(-8, 6, come); mouth = 'flat'; lookX = 14; lookY = -14; head = 6;
+        const reach = eio(prog(t, 10.2, 10.9)) * (1 - eio(prog(t, 11.6, 12.1)));
+        const shX = 10 + 210 + (325 - 210) * 0.82 + x, shY = 300 + 900 - 500 * 0.82;
+        const aim = Math.atan2(-(370 - shX), 380 - shY) * 180 / Math.PI;
+        armF = lerp(-10, aim, reach); armB = 8;
+        A.reach = reach;
+        if (t > 11.5) { mouth = 'open'; }
+        // comemora: pula duas vezes
+        const jump = t > 12.0 && t < 13.0 ? Math.abs(Math.sin((t - 12.0) * Math.PI * 2)) : 0;
+        y = -50 * jump; if (t > 12.0 && t < 13.0) { armB = -150 + Math.sin(t * 14) * 10; }
+      }
+      // 15–20: revelação
+      let costume = 1, wigOn = true, beardOn = true, phone = false;
+      if (t >= 15.0) {
+        x = 40; lean = 0; mouth = 'flat'; lookX = 0; lookY = 0; head = 0; armF = -10; armB = 6;
+        if (t > 15.45) { armF = keys(t, [[15.45, -10], [15.65, -175], [15.85, -175], [16.1, -10]]); }
+        if (t > 15.75) wigOn = beardOn = false;
+        costume = 1 - prog(t, 15.8, 16.2);
+        if (t > 16.4) { mouth = 'smile'; phone = true; armF = -40 + Math.sin(t * 3) * 4; head = 4 + Math.sin(t * 2) * 2; lookX = 6; }
+        if (t > 17.4) { armB = -150 + Math.sin(t * 9) * 14; }
+      }
+      pose(A, { x, y, lean, sx, sy, head, headY, armF, armB, armFS: 1 + 0.68 * (A.reach || 0) * (t > 9 && t < 12.2 ? 1 : 0), mouth, lookX, lookY, dizzy, costume, wigOn, beardOn, phone });
+      blinkH(A, 3);
+      club.style.opacity = t < 15.8 ? 1 : 1 - prog(t, 15.8, 16.0);
+    }
+
+    // ===== B e a pilha de pedras =====
+    {
+      let x = 0, y = 0, lean = 0, sx = 1, sy = 1, head = Math.sin(t * 1.9) * 2, headY = 0, mouth = 'flat', lookX = -10, lookY = 4, armF = 30, armB = 20, dizzy = 0;
+      // a pilha balança e desaba em 2,3 s em cima dele
+      slabs.forEach((s, i) => {
+        const fall = prog(t, 2.3 + i * 0.06, 2.75 + i * 0.06);
+        const sway = Math.sin(t * 3 + i * 0.4) * (1 + i) * 0.6 * (1 - fall);
+        const tx = lerp(0, 220 + (i % 2 ? 30 : -30), ei(fall)), ty = lerp(0, -470 + i * 40, ei(fall));
+        set(s, { x: tx, y: ty + (t > 2.75 + i * 0.06 ? wob(t, 2.75 + i * 0.06, 25, 9) * 10 : 0), r: sway + lerp(0, (i % 2 ? 14 : -10), fall), o: 1 - prog(t, 5.6, 5.9) });
+      });
+      if (t > 2.6 && t < 6) {
+        const hit = wob(t, 2.6, 18, 4);
+        sy = 1 - 0.2 * clamp((t - 2.6) * 6) * (1 - prog(t, 4.6, 5.0)) + 0.06 * hit; sx = 1 + 0.12 * clamp((t - 2.6) * 6) * (1 - prog(t, 4.6, 5.0));
+        mouth = 'open'; dizzy = clamp((t - 2.8) * 4) * (1 - prog(t, 5.4, 5.8)); lookX = Math.sin(t * 10) * 7; head = Math.sin(t * 6) * 6;
+      }
+      const fright = spring(t - 6.2, 18, 0.35);
+      if (t > 6.15 && t < 9.0) { x = 60 * fright; lean = 8 * fright; mouth = 'open'; lookX = -12; lookY = -4; head = 8 * fright; y = -60 * Math.max(0, Math.sin(Math.min(Math.PI, (t - 6.2) * 6))); armF = lerp(30, -140, fright); armB = lerp(20, -150, fright); }
+      if (t >= 9.0 && t < 15.0) {
+        const come = eio(prog(t, 9.0, 9.8));
+        x = lerp(60, -20, come); lean = lerp(8, -4, come); mouth = t > 11.5 ? 'open' : 'flat'; lookX = -14; lookY = -14; head = -6; armF = 20; armB = 10;
+        const jump = t > 12.0 && t < 13.0 ? Math.abs(Math.sin((t - 12.0) * Math.PI * 2 + 0.6)) : 0;
+        y = -50 * jump; if (t > 12.0 && t < 13.0) { armF = -150 + Math.sin(t * 13) * 10; armB = -150 + Math.cos(t * 13) * 10; }
+      }
+      let costume = 1, wigOn = true, beardOn = true, phone = false;
+      if (t >= 15.0) {
+        x = -20; lean = 0; mouth = 'flat'; lookX = 0; lookY = 0; head = 0; armF = 20; armB = 10;
+        if (t > 15.6) { armB = keys(t, [[15.6, 10], [15.8, -175], [16.0, -175], [16.25, 10]]); }
+        if (t > 15.9) wigOn = beardOn = false;
+        costume = 1 - prog(t, 15.95, 16.35);
+        if (t > 16.4) { mouth = 'smile'; phone = true; armF = -40 + Math.sin(t * 3 + 1) * 4; head = -4 + Math.sin(t * 2 + 1) * 2; lookX = -6; }
+        if (t > 17.6) { armB = -150 + Math.sin(t * 9 + 1) * 14; }
+      }
+      pose(B, { x, y, lean, sx, sy, head, headY, armF, armB, mouth, lookX, lookY, dizzy, costume, wigOn, beardOn, phone });
+      blinkH(B, 7);
+    }
+    // perucas e barbas voando
+    [[flyWigA, 15.75, 50, 380, -1], [flyWigB, 15.9, 720, 390, 1]].forEach(([e, at, x0, y0, dir]) => {
+      const p = Math.max(0, t - at);
+      if (!e.innerHTML) e.innerHTML = `<svg width="420" height="460" viewBox="0 0 420 460">${A.wig.innerHTML}${A.beard.innerHTML}</svg>`;
+      Object.assign(e.style, { left: x0 + 'px', top: y0 + 'px', transformOrigin: '210px 230px', width: '420px', height: '460px' });
+      set(e, { x: dir * 500 * p, y: -900 * p + 1400 * p * p, r: dir * 400 * p, s: 0.82, o: t > at && t < at + 1.2 ? 1 : 0 });
+    });
+    smoke.forEach((s, i) => {
+      const at = (i < 11 ? 15.75 : 15.9) + rnd(i) * 0.15; const p = prog(t, at, at + 0.9);
+      set(s, { s: p > 0 ? 0.3 + 0.9 * eo(p) : 0, o: p > 0 && p < 1 ? (p < 0.6 ? 1 : 1 - (p - 0.6) / 0.4) : 0, y: -60 * p });
+    });
+
+    // ===== portal, Tico, holograma =====
+    {
+      const open = eo(prog(t, 6.0, 6.5)) * (1 - eio(prog(t, 7.6, 8.1)));
+      set(portal, { s: open * (1 + 0.03 * Math.sin(t * 20)), o: open > 0.01 ? 1 : 0 });
+      spin.setAttribute('transform', `rotate(${t * 140})`); spin2.setAttribute('transform', `rotate(${-t * 90})`);
+      // voo: sai do portal (centro 540,640), faz um arco e pousa em 7,2 s
+      const fly = prog(t, 6.35, 7.2);
+      const fe = eio(fly);
+      const ox = lerp(0, 0, fe) + Math.sin(fly * Math.PI) * 220, oy = lerp(-300, 0, fe) - Math.sin(fly * Math.PI) * 120;
+      const sc = lerp(0.25, 1, eo(fly));
+      const land = wob(t, 7.2, 16, 6);
+      const onBoard = t < 7.55;
+      // quando desce do skate: pequeno pulo para o chão
+      const hop = t >= 7.55 && t < 8.0 ? Math.sin(((t - 7.55) / 0.45) * Math.PI) * 70 : 0;
+      const floorDrop = t >= 7.55 ? 40 * eio(prog(t, 7.55, 8.0)) : 0;
+      let sx = 1 - 0.14 * land, sy = 1 + 0.14 * land;
+      if (t > 7.95 && t < 8.4) { const l2 = wob(t, 7.98, 18, 7); sx = 1 + 0.1 * l2; sy = 1 - 0.1 * l2; }
+      const breath = Math.sin(t * 2.6) * 0.012;
+      // fim: Tico vai para a direita na revelação para dar lugar às pessoas
+      const slide = eio(prog(t, 16.3, 16.9));
+      ticoBox.style.transform = `translate(${ox + 0 * slide}px, ${oy - hop + floorDrop}px) scale(${sc * sx * (1 - breath) * lerp(1, 0.82, slide)}, ${sc * sy * (1 + breath) * lerp(1, 0.82, slide)}) rotate(${(1 - fe) * -18 + Math.sin(t * 3) * (onBoard ? 2 : 0.6)}deg)`;
+      ticoBox.style.opacity = t < 6.35 ? 0 : 1 - prog(t, 19.7, 19.9);
+      board.style.opacity = onBoard ? 1 : 1 - prog(t, 7.55, 7.75);
+      board.style.transform = t >= 7.55 ? `translate(${400 * ei(prog(t, 7.55, 8.1))}px, ${-60 * ei(prog(t, 7.55, 8.1))}px) rotate(${-20 * prog(t, 7.55, 8.1)}deg)` : `translateY(${Math.sin(t * 8) * 4}px)`;
+      trail.style.opacity = fly > 0 && fly < 1 ? 1 - fly * 0.6 : 0;
+      trail.style.transform = `scaleX(${1 - fly}) rotate(${-10}deg)`;
+      // pose do Tico ao longo do vídeo
+      let tp = 'acenando', head = Math.sin(t * 2.1) * 3, nod = 0, arm = 0, visor = 1, lookX = 0;
+      if (t < 8.4) { tp = 'acenando'; arm = Math.sin(t * 11) * 14; head += 4; }
+      else if (t < 13.0) { tp = 'neutro'; head = Math.sin(t * 1.7) * 2.5 - 3; nod = Math.max(0, Math.sin((t - 8.4) * Math.PI * 2)) * 4; }
+      else if (t < 15.0) { tp = 'joinha'; arm = Math.sin(t * 7) * 6; head = 5 + Math.sin(t * 3) * 3; }
+      else if (t < 15.9) { tp = 'apontando'; head = -6 + Math.sin(t * 2) * 2; arm = Math.sin(t * 4) * 4; }
+      else { tp = 'estrela'; arm = Math.sin(t * 6) * 10; head = Math.sin(t * 2.4) * 4; }
+      // troca de pose com "estica e amassa" curto para esconder o corte
+      const switches = [8.4, 13.0, 15.0, 15.9];
+      const sw = switches.reduce((m, s2) => Math.max(m, t >= s2 && t < s2 + 0.25 ? Math.exp(-(t - s2) * 14) : 0), 0);
+      if (sw > 0) ticoBox.style.transform += ` scale(${1 + 0.08 * sw}, ${1 - 0.08 * sw})`;
+      const blink = tp === 'neutro' || tp === 'acenando' || tp === 'apontando' ? TicoRig.blinkAt(t, 2) : 0;
+      if (tico) tico.draw({ pose: tp, head, nod, arm, blink, visor, lookX, time: t });
+      ticoPhone.style.opacity = tp === 'neutro' ? 1 : 0;
+      ticoPhone.style.transform = `rotate(${-8 + Math.sin(t * 2.3) * 2}deg)`;
+      // holograma
+      const ho = spring(t - 8.6, 12, 0.6) * (1 - eio(prog(t, 12.9, 13.3)));
+      set(beam, { sy: ho, o: clamp(ho) * (0.7 + 0.3 * Math.sin(t * 17)) });
+      set(holo, { s: lerp(0.2, 1, ho), o: clamp(ho * 2), y: Math.sin(t * 2) * 6 });
+      holo.style.filter = `drop-shadow(0 0 ${20 + 10 * Math.sin(t * 6)}px rgba(34,211,238,.6))`;
+      const picked = t >= 10.9, ok = t >= 11.25;
+      holoOpts.forEach((o, i) => {
+        const isC = i === 2;
+        o.style.background = isC && ok ? 'rgba(114,201,61,.55)' : isC && picked ? 'rgba(34,211,238,.45)' : 'rgba(255,255,255,.08)';
+        o.style.borderColor = isC && ok ? '#86efac' : 'rgba(165,243,252,.8)';
+        o.style.transform = isC ? `scale(${1 + 0.08 * (t > 10.9 ? Math.exp(-(t - 10.9) * 8) : 0)})` : '';
+      });
+      holoFb.style.height = 110 * eo(prog(t, 11.25, 11.6)) + 'px';
+      holo.style.zIndex = t > 11.2 ? 9 : 4;
+      chips.forEach((c, i) => {
+        const k = spring(t - (13.1 + i * 0.35), 16, 0.5);
+        c.style.transform = `translateX(-50%) translateY(${60 * (1 - k)}px) scale(${lerp(0.4, 1, k)})`;
+        c.style.opacity = t < 13.1 + i * 0.35 || t > 14.95 ? 0 : clamp(k * 3);
+      });
+    }
+
+    // falas
+    const kA = spring(t - 6.2, 18, 0.4), kB = spring(t - 11.7, 18, 0.4);
+    set(bubA, { s: kA * (1 - prog(t, 8.2, 8.4)), o: t > 6.2 && t < 8.4 ? 1 : 0, r: -6 + wob(t, 6.2, 20, 4) * 6 });
+    set(bubB, { s: kB * (1 - prog(t, 13.0, 13.2)), o: t > 11.7 && t < 13.2 ? 1 : 0, r: 5 + wob(t, 11.7, 20, 4) * 6 });
+
+    showPlate(p1, 0.15, 2.95);
+    showPlate(p2, 3.05, 5.95, 1.5);
+    showPlate(p3, 7.35, 8.65, -1);
+    showPlate(p4, 15.0, 15.85);
+    showPlate(p5, 16.9, 19.75, 0);
+    p5l2.style.opacity = clamp((t - 17.7) * 4);
+    p5l2.style.transform = `translateY(${20 * (1 - eo(prog(t, 17.7, 18.0)))}px)`;
+
+    // ===== chamada final =====
+    {
+      const open = eio(prog(t, 19.85, 20.35));
+      const F = document.getElementById('cta');
+      F.style.clipPath = open >= 1 ? 'none' : `circle(${open * Math.hypot(W, H) * 0.6}px at 50% 50%)`;
+      F.style.visibility = t < 19.85 ? 'hidden' : 'visible';
+      rays.style.transform = `rotate(${t * 8}deg) scale(${0.8 + 0.2 * open})`;
+      set(Fc, { o: t < 19.9 ? 0 : 1 });
+      const k1 = spring(t - 20.2, 16, 0.5), k2 = spring(t - 20.5, 18, 0.38);
+      set(ft1, { y: 60 * (1 - k1), o: clamp(k1 * 3) });
+      set(ft2, { s: lerp(0.3, 1, k2) * (1 + 0.04 * beatPulse(t, 21.0)), o: clamp(k2 * 3), r: -3 });
+      const kt = spring(t - 20.15, 11, 0.5);
+      const hop = t > 20.8 ? Math.abs(Math.sin((t - 20.8) * Math.PI * 2)) : 0;
+      const land = t > 20.8 ? Math.pow(1 - hop, 6) : 0;
+      ticoFBox.style.transform = `translateY(${700 * (1 - kt) - hop * 40}px) scale(${lerp(0.6, 1, kt) * (1 + 0.07 * land)}, ${lerp(0.6, 1, kt) * (1 - 0.07 * land)})`;
+      if (ticoF) ticoF.draw({ pose: 'comemorando', head: Math.sin(t * Math.PI * 2) * 5, arm: Math.sin(t * Math.PI * 4) * 12, visor: 1, time: t });
+      const ks = spring(t - 21.1, 14, 0.6);
+      set(fsub, { y: 30 * (1 - ks), o: clamp(ks * 3) });
+      const kp = spring(t - 21.4, 16, 0.45);
+      fpill.style.transform = `translateX(-50%) scale(${kp * (1 + 0.05 * beatPulse(t, 22.0))})`;
+      fpill.style.opacity = clamp(kp * 3);
+      confs.forEach((c, i) => {
+        const at = 20.35 + rnd(i) * 0.5; const p = Math.max(0, t - at);
+        const x0 = W * (0.5 + (rnd(i + 1) - 0.5) * 0.3), vx = (rnd(i + 2) - 0.5) * W * 1.4, vy = -H * (0.45 + rnd(i + 3) * 0.55);
+        const x = x0 + vx * p * Math.exp(-p * 0.6); const y = H * 0.48 + vy * p + 0.5 * H * 1.15 * p * p;
+        set(c, { x, y, r: p * (300 + rnd(i + 4) * 500), sx: Math.cos(p * (6 + rnd(i) * 6)), sy: 1, o: t > at && y < H + 60 ? 1 : 0 });
+      });
+    }
+  }
+
+  window.DURATION = DUR;
+  window.seek = seek;
+  window.ready = (async () => {
+    await document.fonts.ready;
+    await TicoRig.load('../../public/tico/');
+    tico = TicoRig.create(ticoBox, 620);
+    ticoBox.insertBefore(tico.el, ticoPhone);
+    ticoF = TicoRig.create(ticoFBox, 580);
+    await Promise.all([...document.images].map((i) => i.decode().catch(() => {})));
+    seek(0);
+    return true;
+  })();
+  if (!navigator.webdriver) {
+    const t0 = performance.now();
+    const loop = () => { seek(((performance.now() - t0) / 1000) % DUR); requestAnimationFrame(loop); };
+    window.ready.then(loop);
+  }
+})();
+</script>
+</body>
+</html>

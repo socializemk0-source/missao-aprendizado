@@ -16,7 +16,7 @@ import numpy as np
 
 PAGE = sys.argv[1] if len(sys.argv) > 1 else 'anuncio'
 SR = 44100
-DUR = 24.0
+DUR = 26.0 if PAGE == 'caverna' else 24.0
 BEAT = 0.5
 N = int(SR * DUR)
 rng = np.random.default_rng(7)
@@ -130,6 +130,12 @@ def click():
     return np.sin(2 * np.pi * 2200 * t) * env(t, 0.0005, 0.006)
 
 
+def tom(f0):
+    t = t_axis(0.5)
+    f = f0 * (1 + 0.6 * np.exp(-t * 30))
+    return np.sin(2 * np.pi * np.cumsum(f) / SR) * env(t, 0.003, 0.18)
+
+
 # ---------- música ----------
 # Acordes por compasso (2 s): gancho em lá menor, virada para dó maior quando o app entra
 # (anuncio: no círculo, 6 s; onibus: dentro do ônibus, 4 s).
@@ -137,7 +143,7 @@ GROOVE = 3 if PAGE == 'anuncio' else 2
 TENSO = [(57, [57, 60, 64]), (53, [53, 57, 60])]                 # Am, F
 FELIZ = [(48, [60, 64, 67]), (55, [59, 62, 67]), (57, [57, 60, 64]), (53, [57, 60, 65])]  # C G Am F
 
-for bar in range(12):
+for bar in range(int(DUR // 2)):
     at = bar * 2.0
     if bar < GROOVE:
         root, chord = TENSO[bar % 2]
@@ -166,6 +172,10 @@ for bar in range(12):
                 add(pluck(chord[2] + 24, 0.3), at + b * BEAT + 0.25, 0.08)
     else:
         add(kick(), at, 0.35)  # pulso leve no gancho
+        if PAGE == 'caverna':   # tambores da caverna no gancho
+            for b in range(4):
+                add(tom(110 if b % 2 == 0 else 82), at + b * BEAT, 0.55)
+                add(tom(140), at + b * BEAT + 0.375, 0.22)
 
 # Final: acorde aberto que soa até o fim.
 add(pad([60, 64, 67, 72, 76], 1.2), 22.8, 0.12)
@@ -209,6 +219,64 @@ def thud():
     return (np.sin(2 * np.pi * np.cumsum(f) / SR) + rattle) * env(t, 0.003, 0.12)
 
 
+def tink():
+    t = t_axis(0.3)
+    s = sum(np.sin(2 * np.pi * f * t) * np.exp(-t * d) for f, d in ((2350, 18), (3720, 26), (5100, 40)))
+    return s * env(t, 0.0008, 0.3) * 0.5 + rng.standard_normal(len(t)) * np.exp(-t * 120) * 0.3
+
+
+def boing(dur=0.6):
+    t = t_axis(dur)
+    f = 220 + 160 * np.exp(-t * 4) * np.sin(2 * np.pi * 9 * t)
+    return np.sin(2 * np.pi * np.cumsum(f) / SR) * env(t, 0.005, 0.25)
+
+
+def scratch(dur=0.45):
+    t = t_axis(dur)
+    n = rng.standard_normal(len(t))
+    wob_ = np.abs(np.sin(2 * np.pi * 7 * t))
+    y = n - lowpass(n, 0.2)
+    return lowpass(y, 0.35) * wob_ * env(t, 0.005, 0.2) * 3
+
+
+def efeitos_caverna():
+    for h in (0.5, 1.0, 1.5, 2.0, 2.5):                       # martelo na pedra
+        add(tink(), h, 0.45, pan=-0.4)
+    for i in range(6):                                        # apostilas de pedra desabando
+        add(thud(), 2.55 + i * 0.06, 0.55, pan=0.4)
+    add(thud(), 3.05, 0.6); add(tink(), 3.05, 0.25)            # a tábua racha
+    add(thud(), 4.75, 0.7); add(boing(), 4.78, 0.45)           # clava na cabeça
+    add(whoosh(0.9, up=True), 5.4, 0.3)
+    add(ding((84, 91, 96), 1.2), 6.0, 0.35)                   # portal abre
+    add(whoosh(0.8), 6.35, 0.4)                                # voo do skate
+    add(pop(500, 1100), 6.2, 0.3)                              # "UGA?!"
+    add(thud(), 7.2, 0.45)                                     # pouso
+    add(whoosh(0.5, up=False), 7.55, 0.3)                      # o skate vai embora
+    add(ding((96, 100, 103), 0.6), 8.6, 0.25)                  # holograma liga
+    add(click(), 10.9, 0.6)
+    add(ding(), 11.25, 0.55)                                   # acertou
+    add(pop(520, 1250), 11.7, 0.35)                            # "UGA!!"
+    for i in range(3):
+        add(pop(600 + 100 * i, 1300 + 100 * i, 0.1), 13.1 + i * 0.35, 0.3)
+    # "Peraí...": a música para com um arranhão de disco e volta na revelação
+    a, b = int(15.0 * SR), int(16.0 * SR)
+    k = np.ones(b - a)
+    k[: int(0.08 * SR)] = np.linspace(1, 0, int(0.08 * SR))
+    k[int(0.08 * SR):] = 0
+    k[-int(0.15 * SR):] = np.linspace(0, 1, int(0.15 * SR))
+    mix_l[a:b] *= k
+    mix_r[a:b] *= k
+    add(scratch(), 14.95, 0.5)
+    for at in (15.75, 15.9):                                  # puf de fumaça
+        n = rng.standard_normal(int(0.5 * SR))
+        add(lowpass(n, 0.08) * env(t_axis(0.5), 0.01, 0.15) * 4, at, 0.5)
+    add(whoosh(0.7), 16.0, 0.45)                              # o cenário sai
+    add(ding((84, 88, 91), 1.0), 16.6, 0.35)
+    add(whoosh(0.6), 19.7, 0.45)
+    add(ding((84, 88, 91, 96), 1.6), 20.3, 0.4)               # confete
+    add(pop(500, 1200, 0.12), 21.4, 0.3)
+
+
 def efeitos_onibus():
     r = rumble(18.2)
     k = np.ones(len(r))
@@ -240,7 +308,7 @@ def efeitos_onibus():
     add(pop(500, 1200, 0.12), 21.4, 0.3)                      # botão do site
 
 
-(efeitos_anuncio if PAGE == 'anuncio' else efeitos_onibus)()
+{'anuncio': efeitos_anuncio, 'onibus': efeitos_onibus, 'caverna': efeitos_caverna}[PAGE]()
 
 # ---------- saída ----------
 fade = np.minimum(1, (DUR - np.arange(N) / SR) / 0.5)

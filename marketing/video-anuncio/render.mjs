@@ -3,7 +3,7 @@
 //   node marketing/video-anuncio/render.mjs                 -> 9x16, 4x5 e 1x1
 //   node marketing/video-anuncio/render.mjs --formats 9x16  -> só um formato
 //   node marketing/video-anuncio/render.mjs --sheet         -> só a folha de conferência (PNG)
-//   node marketing/video-anuncio/render.mjs --page onibus   -> o anúncio do ônibus (padrão: anuncio)
+//   node marketing/video-anuncio/render.mjs --page onibus   -> outro anúncio: onibus, caverna (padrão: anuncio)
 //
 // Precisa de: playwright (com Chromium), ffmpeg e a trilha gerada por musica.py
 // (python3 marketing/video-anuncio/musica.py). Saída em marketing/video-anuncio/saida/.
@@ -35,7 +35,11 @@ const run = (cmd, argv, input) => new Promise((resolve, reject) => {
   if (input) input(p.stdin);
 });
 
-const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined });
+// --allow-file-access-from-files: a marionete do Tico (tico-rig.js) lê as imagens no WebGL.
+const browser = await chromium.launch({
+  executablePath: process.env.CHROMIUM_PATH || undefined,
+  args: ['--allow-file-access-from-files', '--enable-unsafe-swiftshader'],
+});
 
 async function abrir(w, h) {
   const page = await browser.newPage({ viewport: { width: w, height: h } });
