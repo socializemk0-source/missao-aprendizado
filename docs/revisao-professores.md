@@ -22,12 +22,18 @@ volta sozinha para a fila dele, mostrando o pedido anterior.
    Editor do Supabase (uma vez só).
 2. O professor cria uma conta normal no app, com o e-mail dele, e confirma o
    e-mail.
-3. No SQL Editor:
+3. No SQL Editor, cadastre pegando o e-mail **do próprio login** (assim não
+   entra espaço nem caractere invisível de um e-mail copiado e colado):
 
 ```sql
 insert into v2.revisores (email, nome, disciplinas)
-values ('professora@exemplo.com', 'Profa. Maria', '{portugues}');
+select email, 'Profa. Maria', '{portugues}'
+from auth.users
+where email = 'professora@exemplo.com';
 ```
+
+   Tem que aparecer `INSERT 0 1`. Se aparecer `INSERT 0 0`, o professor
+   ainda não criou a conta ou o e-mail está diferente do login.
 
 Matérias: `portugues`, `rlm`, `informatica`, `constitucional`,
 `administrativo` (várias: `'{constitucional,administrativo}'`). Para todas
@@ -36,6 +42,18 @@ as matérias, use `null`.
 4. Mande o link `www.aprovatico.com.br/professor` para o professor.
 
 Para tirar o acesso: `delete from v2.revisores where email = 'professora@exemplo.com';`
+
+Se o professor abrir `/professor` e vir "Esta área é só para os professores",
+confira se o e-mail cadastrado é igual ao do login:
+
+```sql
+select u.email as email_do_login, r.email as email_na_tabela
+from auth.users u left join v2.revisores r on lower(r.email) = lower(u.email)
+where u.email = 'professora@exemplo.com';
+```
+
+Se `email_na_tabela` vier vazio, apague a linha errada em `v2.revisores` e
+cadastre de novo pelo modelo acima.
 
 ## Acompanhar
 
