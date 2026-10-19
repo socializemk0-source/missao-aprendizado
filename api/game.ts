@@ -2,13 +2,14 @@
 // Vercel permite poucas funções por projeto).
 //   GET  progresso | trilha | fase&id= | revisar | pratica&disciplina= | desafio
 //        missoes | conquistas | disciplinas | ranking
-//        simulados | simulado&id= | jogos | plano
+//        simulados | simulado&id= | jogos | plano | casa
 //   POST responder { questionId, choice, mode } | resgatar { missionId }
 //        simulado-iniciar { nivel, disciplinas, banca, quantidade, cronometro }
 //        simulado-entregar { id, respostas: { [questionId]: alternativa } }
 //        jogo-iniciar { tipo, disciplina? } | jogo-jogada { id, ...jogada }
 //        jogo-terminar { id }
 //        plano-salvar { prova, banca, dataProva, minutosDia, nivel, disciplinas }
+//        casa-colocar { item, lugar | null }
 //
 // As ações, os parâmetros (zod), o limite e quem exige Idempotency-Key estão
 // em server/actions.ts. Todo POST exige o header Idempotency-Key (uuid):
@@ -30,6 +31,7 @@ import { header, jsonBody, methodNotAllowed, type ApiRequest, type ApiResponse }
 import { hashPedido, memoryIdempotency, postgresIdempotency, type IdempotencyStore } from '../server/idempotencia.js';
 import { clientIp, limitar, limitarIp, postgresLimiter, type RateLimiter } from '../server/limite.js';
 import { responderCaptcha, verifyTurnstile, type VerifyTurnstile } from '../server/turnstile.js';
+import { colocarNaCasa, getCasa } from '../server/casa.js';
 import { getDominio, getPlano, parsePerfilEstudo, saveStudyProfile } from '../server/estudo.js';
 import { getJogos, jogar, startJogo, terminarJogo } from '../server/minigames.js';
 import { deliverSimulado, getSimulado, getSimuladoOptions, parseSimuladoInput, startSimulado } from '../server/simulado.js';
@@ -66,6 +68,8 @@ async function executar(store: GameStore, userId: string, p: ParsedAction, now: 
     case 'simulado': return getSimulado(store, userId, p.params.id, now);
     case 'jogos': return getJogos(store, userId, now);
     case 'plano': return getPlano(store, userId, now);
+    case 'casa': return getCasa(store, userId, now);
+    case 'casa-colocar': return colocarNaCasa(store, userId, p.params.item, p.params.lugar, now);
     case 'responder': return answer(store, userId, p.params, now);
     case 'resgatar': return claimMission(store, userId, p.params.missionId, now);
     case 'simulado-iniciar': {

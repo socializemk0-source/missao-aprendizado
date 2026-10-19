@@ -380,6 +380,7 @@ describe('CAPTCHA em toda ação de escrita', () => {
       'jogo-jogada': { id, indice: 0, resposta: true },
       'jogo-terminar': { id },
       'plano-salvar': { prova: 'INSS', minutosDia: 30, nivel: 'iniciante', disciplinas: ['rlm'] },
+      'casa-colocar': { item: 'cama', lugar: 'chao-2' },
     };
     const escritas = Object.entries(ACTIONS).filter(([, spec]) => spec.method === 'POST').map(([nome]) => nome);
     expect(Object.keys(validos).sort()).toEqual(escritas.sort());

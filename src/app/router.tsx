@@ -30,6 +30,7 @@ const Professor = lazyPage(() => import('../pages/Professor').then((m) => m.Prof
 const Comecar = lazyPage(() => import('../pages/Comecar').then((m) => m.Comecar));
 const Aventura = lazyPage(() => import('../pages/Painel').then((m) => m.Aventura));
 const Conquistas = lazyPage(() => import('../pages/Painel').then((m) => m.Conquistas));
+const Casa = lazyPage(() => import('../pages/Casa').then((m) => m.Casa));
 const Disciplinas = lazyPage(() => import('../pages/Painel').then((m) => m.Disciplinas));
 const Missoes = lazyPage(() => import('../pages/Painel').then((m) => m.Missoes));
 const Ranking = lazyPage(() => import('../pages/Painel').then((m) => m.Ranking));
@@ -48,6 +49,7 @@ const READY: Record<string, ReactElement> = {
   '/jogos': <JogosHub />,
   '/revisar': <Revisar />,
   '/conquistas': <Conquistas />,
+  '/casa': <Casa />,
 };
 
 function NotFound() {

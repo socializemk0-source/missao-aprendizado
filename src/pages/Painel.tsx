@@ -87,6 +87,7 @@ export function Conquistas() {
   return (
     <>
       <PageHead eyebrow="Conquistas" title={`${done} de ${loaded.data?.conquistas.length ?? '…'} conquistadas`} />
+      <p className="muted">Cada conquista libera um item para a <Link to="/casa">Casa do Tico</Link>.</p>
       <LoadState loaded={loaded}>
         <ul className="badge-grid">
           {loaded.data?.conquistas.map((c) => (

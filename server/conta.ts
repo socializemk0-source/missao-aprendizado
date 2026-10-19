@@ -14,7 +14,7 @@ export interface ContaStore {
 // Tabelas com user_id que são apagadas por completo.
 const TABELAS = [
   'question_state', 'answers', 'phase_completions', 'mission_claims', 'user_stats',
-  'essays', 'simulados', 'game_rounds', 'study_plans', 'idempotency_keys', 'profiles',
+  'essays', 'simulados', 'game_rounds', 'study_plans', 'casa_tico', 'idempotency_keys', 'profiles',
 ] as const;
 
 // Conexão privilegiada (server/db.ts): cada DELETE filtra pelo dono — userId

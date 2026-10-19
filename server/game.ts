@@ -56,6 +56,9 @@ export interface UserTx {
   // Plano de estudos (onboarding). null = ainda não respondeu.
   studyProfile(): Promise<PerfilEstudo | null>;
   saveStudyProfile(perfil: PerfilEstudo): Promise<void>;
+  // Casa do Tico: itemId → lugar. null = nunca arrumou (vale a arrumação inicial).
+  casa(): Promise<Record<string, string> | null>;
+  saveCasa(itens: Record<string, string>): Promise<void>;
   completedPhases(): Promise<Map<string, string>>; // faseId → dia em que concluiu
   completePhase(phaseId: string, day: string): Promise<void>;
   claimedMissions(day: string): Promise<Set<string>>;

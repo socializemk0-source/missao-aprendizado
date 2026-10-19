@@ -37,7 +37,7 @@ describe.runIf(run)('excluir conta no Postgres', async () => {
 
     await postgresConta.excluir(u, email);
 
-    for (const t of ['profiles', 'user_stats', 'question_state', 'answers', 'phase_completions', 'study_plans']) {
+    for (const t of ['profiles', 'user_stats', 'question_state', 'answers', 'phase_completions', 'study_plans', 'casa_tico']) {
       expect(await contar(t, u), t).toBe(0);
       expect(await contar(t, outro), `${t} (outro aluno)`).toBeGreaterThan(0);
     }

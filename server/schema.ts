@@ -170,6 +170,13 @@ export const gameRounds = v2.table('game_rounds', {
   xp: integer('xp').notNull().default(0),
 });
 
+// ---- Casa do Tico (migração 0021): onde cada item está (itemId → lugar) ----
+export const casaTico = v2.table('casa_tico', {
+  userId: text('user_id').primaryKey(),
+  itens: jsonb('itens').notNull(),
+  updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
+});
+
 // ---- Plano de estudos (migração 0011) ----
 export const studyPlans = v2.table('study_plans', {
   userId: text('user_id').primaryKey(),

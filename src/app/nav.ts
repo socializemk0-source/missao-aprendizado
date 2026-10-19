@@ -19,6 +19,7 @@ export const NAV: NavEntry[] = [
   { path: '/jogos', label: 'Jogos', icon: 'gamepad' },
   { path: '/revisar', label: 'Revisar', icon: 'rotate' },
   { path: '/conquistas', label: 'Conquistas', icon: 'medal' },
+  { path: '/casa', label: 'Casa do Tico', icon: 'home' },
   { path: '/planos', label: 'Planos', icon: 'crown' },
   { path: '/perfil', label: 'Meu Perfil', icon: 'user' },
 ];

@@ -10,6 +10,7 @@ import { z } from 'zod';
 import { DISCIPLINAS, FASES } from '../content/trilha.js';
 import type { DisciplinaId } from '../content/types.js';
 import { BANCAS_ALVO, MINUTOS_DIA, NIVEIS_ALUNO, type NivelAluno } from '../shared/estudo.js';
+import { ITEM_IDS, LUGAR_IDS } from '../shared/casa.js';
 import { JOGOS, NIVEIS, RADAR_TAMANHO, SIMULADO_TAMANHOS } from '../shared/game.js';
 import { MISSION_IDS } from './game.js';
 import { LIMITES } from './limite.js';
@@ -78,6 +79,7 @@ export const ACTIONS = {
   simulado: leitura(z.object({ id: z.uuid() })),
   jogos: leitura(vazio),
   plano: leitura(vazio),
+  casa: leitura(vazio),
 
   // POST
   responder: escrita(z.object({
@@ -113,6 +115,8 @@ export const ACTIONS = {
   }), 'resposta'),
   'jogo-terminar': escrita(z.object({ id: z.uuid() }), 'resposta'),
   'plano-salvar': { ...escrita(planoSchema, 'escrita'), mensagemDoCampo: true },
+  // Casa do Tico: põe um item num lugar (null = guarda na caixa).
+  'casa-colocar': escrita(z.object({ item: z.enum(tupla(ITEM_IDS)), lugar: z.enum(tupla(LUGAR_IDS)).nullable() }), 'escrita'),
 } as const satisfies Record<string, ActionSpec>;
 
 export type ActionName = keyof typeof ACTIONS;
