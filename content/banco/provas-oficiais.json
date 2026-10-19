@@ -98,7 +98,7 @@
   "pcdf-2024-cb": {
     "banca": "Cebraspe",
     "orgao": "Polícia Civil do DF",
-    "cargo": "Cargos administrativos e técnicos",
+    "cargo": "Gestor de Apoio às Atividades Policiais Civis",
     "ano": 2024,
     "aplicacao": "2024",
     "caderno": "Conhecimentos básicos para todos os cargos, exceto 1, 2, 3, 7 e 17 (021_PCDF_CB1_01)",
@@ -106,5 +106,29 @@
     "provaUrl": "https://cdn.cebraspe.org.br/concursos/pc_df_24_adm/arquivos/021_PCDF_CB1_01.PDF",
     "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/pc_df_24_adm/arquivos/GAB_DEFINITIVO_021_PCDF_CB1_01.PDF",
     "gabaritoDefinitivo": "EECCEEECECEECCECECCCECCECECCCCXECCECEECECCECEEEEEC"
+  },
+  "tjce-2023-cg": {
+    "banca": "Cebraspe",
+    "orgao": "TJ-CE",
+    "cargo": "Técnico e Analista Judiciário",
+    "ano": 2023,
+    "aplicacao": "2023",
+    "caderno": "Conhecimentos gerais, cargos 1 e 2 (820_TJCE_SERVIDOR_CG1_01)",
+    "formato": "multipla-escolha",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/tj_ce_23_servidor/arquivos/820_TJCE_SERVIDOR_CG1_01.PDF",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/tj_ce_23_servidor/arquivos/GAB_DEFINITIVO_820_TJCE_SERVIDOR_CG1_01.PDF",
+    "gabaritoDefinitivo": "BAECCBDACDDBACBAEABC"
+  },
+  "mps-2024-cg": {
+    "banca": "Cebraspe",
+    "orgao": "Ministério da Previdência Social",
+    "cargo": "Perito Médico Federal",
+    "ano": 2024,
+    "aplicacao": "2024",
+    "caderno": "Conhecimentos gerais (049_MPS_CG1_01)",
+    "formato": "certo-errado",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/mps_24/arquivos/049_MPS_CG1_01.PDF",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/mps_24/arquivos/Gab_Definitivo_049_MPS_CG1_01.PDF",
+    "gabaritoDefinitivo": "CECCEEECECECEECCCCEECECEEEECEECECCCEECECECEXCEXEEC"
   }
 }

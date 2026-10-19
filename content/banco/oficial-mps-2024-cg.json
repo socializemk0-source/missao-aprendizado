@@ -1,0 +1,1060 @@
+[
+  {
+    "id": "mps24-cg-001",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CG1A1\n\nEm Tratado de medicina legal, Agostinho José de Souza Lima define a perícia médica como toda sindicância promovida por autoridade policial ou judiciária acompanhada de exame e cujos peritos, dada a natureza do exame, são ou devem ser médicos. Disso decorre que o perito médico é a pessoa entendida e experimentada em temas de medicina que, designada pela autoridade competente, deverá esclarecer um fato de natureza médica mais ou menos duradouro.\n\nA perícia médico-legal surgiu da necessidade de solução para casos concretos. A princípio, havia apenas alguns vestígios de perícia médica nas legislações primitivas; depois, os indícios da prática ficaram mais evidentes, principalmente na Idade Média, até a atividade definir-se e concretizar-se na Renascença, com a sua instituição oficial no Código Carolino, em 1532.\n\nA perícia médico-legal já era tarefa do Estado desde o tempo dos egípcios, conforme consta dos papiros da época. Embora a medicina egípcia estivesse impregnada de magia e divindade, e empregasse, na cura das doenças, os encantamentos, os amuletos e o exorcismo, alguns historiadores veem indícios de perícia no Antigo Egito. Os sacerdotes médicos verificavam, por exemplo, se a morte fora violenta ou natural; a prática do embalsamento exigia a mesma verificação. As leis de Menés, o mais antigo faraó da história, mandavam adiar o castigo das mulheres grávidas, excluindo-as das penas aflitivas, o que implicava a intervenção do perito para o diagnóstico da gravidez. O Código de Hamurabi, uma compilação de leis sumerianas, previa penas severas para os casos de erro médico, o que subtendia a prova do erro.\n\nA legislação hebraica, superior às precedentes — porque exigia duas testemunhas para a condenação do suspeito, a responsabilidade das testemunhas e do juiz, a garantia dos tribunais, a publicidade dos debates, a igualdade perante a lei e a ausência de meios de tortura —, mostrava o sentimento de justiça unido à rigidez do dogma religioso. Segundo essa legislação, os conhecimentos médicos deveriam ser aplicados pelo sacerdote, que também exercia a função de médico.\n\nJoão Baptista de Oliveira e Costa Júnior. Os primórdios da perícia médica. Internet: <www.revistas.usp.br> (com adaptações).\n\nJulgue o item que se segue, com base nas ideias veiculadas no texto CG1A1.\n\nA necessidade de solução para casos concretos originou a prática da perícia médico-legal.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. O segundo parágrafo começa dizendo que \"a perícia médico-legal surgiu da necessidade de solução para casos concretos\".",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 1
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-002",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CG1A1\n\nEm Tratado de medicina legal, Agostinho José de Souza Lima define a perícia médica como toda sindicância promovida por autoridade policial ou judiciária acompanhada de exame e cujos peritos, dada a natureza do exame, são ou devem ser médicos. Disso decorre que o perito médico é a pessoa entendida e experimentada em temas de medicina que, designada pela autoridade competente, deverá esclarecer um fato de natureza médica mais ou menos duradouro.\n\nA perícia médico-legal surgiu da necessidade de solução para casos concretos. A princípio, havia apenas alguns vestígios de perícia médica nas legislações primitivas; depois, os indícios da prática ficaram mais evidentes, principalmente na Idade Média, até a atividade definir-se e concretizar-se na Renascença, com a sua instituição oficial no Código Carolino, em 1532.\n\nA perícia médico-legal já era tarefa do Estado desde o tempo dos egípcios, conforme consta dos papiros da época. Embora a medicina egípcia estivesse impregnada de magia e divindade, e empregasse, na cura das doenças, os encantamentos, os amuletos e o exorcismo, alguns historiadores veem indícios de perícia no Antigo Egito. Os sacerdotes médicos verificavam, por exemplo, se a morte fora violenta ou natural; a prática do embalsamento exigia a mesma verificação. As leis de Menés, o mais antigo faraó da história, mandavam adiar o castigo das mulheres grávidas, excluindo-as das penas aflitivas, o que implicava a intervenção do perito para o diagnóstico da gravidez. O Código de Hamurabi, uma compilação de leis sumerianas, previa penas severas para os casos de erro médico, o que subtendia a prova do erro.\n\nA legislação hebraica, superior às precedentes — porque exigia duas testemunhas para a condenação do suspeito, a responsabilidade das testemunhas e do juiz, a garantia dos tribunais, a publicidade dos debates, a igualdade perante a lei e a ausência de meios de tortura —, mostrava o sentimento de justiça unido à rigidez do dogma religioso. Segundo essa legislação, os conhecimentos médicos deveriam ser aplicados pelo sacerdote, que também exercia a função de médico.\n\nJoão Baptista de Oliveira e Costa Júnior. Os primórdios da perícia médica. Internet: <www.revistas.usp.br> (com adaptações).\n\nJulgue o item que se segue, com base nas ideias veiculadas no texto CG1A1.\n\nEstá implícita no texto a ideia de que todos os médicos são aptos ao exercício da perícia médico-legal.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. O texto diz que o perito médico é a pessoa \"entendida e experimentada em temas de medicina\" e designada pela autoridade. Não diz nem sugere que todo médico esteja apto à perícia.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 2
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-003",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CG1A1\n\nEm Tratado de medicina legal, Agostinho José de Souza Lima define a perícia médica como toda sindicância promovida por autoridade policial ou judiciária acompanhada de exame e cujos peritos, dada a natureza do exame, são ou devem ser médicos. Disso decorre que o perito médico é a pessoa entendida e experimentada em temas de medicina que, designada pela autoridade competente, deverá esclarecer um fato de natureza médica mais ou menos duradouro.\n\nA perícia médico-legal surgiu da necessidade de solução para casos concretos. A princípio, havia apenas alguns vestígios de perícia médica nas legislações primitivas; depois, os indícios da prática ficaram mais evidentes, principalmente na Idade Média, até a atividade definir-se e concretizar-se na Renascença, com a sua instituição oficial no Código Carolino, em 1532.\n\nA perícia médico-legal já era tarefa do Estado desde o tempo dos egípcios, conforme consta dos papiros da época. Embora a medicina egípcia estivesse impregnada de magia e divindade, e empregasse, na cura das doenças, os encantamentos, os amuletos e o exorcismo, alguns historiadores veem indícios de perícia no Antigo Egito. Os sacerdotes médicos verificavam, por exemplo, se a morte fora violenta ou natural; a prática do embalsamento exigia a mesma verificação. As leis de Menés, o mais antigo faraó da história, mandavam adiar o castigo das mulheres grávidas, excluindo-as das penas aflitivas, o que implicava a intervenção do perito para o diagnóstico da gravidez. O Código de Hamurabi, uma compilação de leis sumerianas, previa penas severas para os casos de erro médico, o que subtendia a prova do erro.\n\nA legislação hebraica, superior às precedentes — porque exigia duas testemunhas para a condenação do suspeito, a responsabilidade das testemunhas e do juiz, a garantia dos tribunais, a publicidade dos debates, a igualdade perante a lei e a ausência de meios de tortura —, mostrava o sentimento de justiça unido à rigidez do dogma religioso. Segundo essa legislação, os conhecimentos médicos deveriam ser aplicados pelo sacerdote, que também exercia a função de médico.\n\nJoão Baptista de Oliveira e Costa Júnior. Os primórdios da perícia médica. Internet: <www.revistas.usp.br> (com adaptações).\n\nJulgue o item que se segue, com base nas ideias veiculadas no texto CG1A1.\n\nInfere-se do terceiro parágrafo do texto que, nos dias atuais, a atividade de perícia médico-legal é responsabilidade do Estado.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. O terceiro parágrafo diz que a perícia \"já era tarefa do Estado desde o tempo dos egípcios\"; o \"já era\" indica que continua sendo, até hoje.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 3
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-004",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CG1A1\n\nEm Tratado de medicina legal, Agostinho José de Souza Lima define a perícia médica como toda sindicância promovida por autoridade policial ou judiciária acompanhada de exame e cujos peritos, dada a natureza do exame, são ou devem ser médicos. Disso decorre que o perito médico é a pessoa entendida e experimentada em temas de medicina que, designada pela autoridade competente, deverá esclarecer um fato de natureza médica mais ou menos duradouro.\n\nA perícia médico-legal surgiu da necessidade de solução para casos concretos. A princípio, havia apenas alguns vestígios de perícia médica nas legislações primitivas; depois, os indícios da prática ficaram mais evidentes, principalmente na Idade Média, até a atividade definir-se e concretizar-se na Renascença, com a sua instituição oficial no Código Carolino, em 1532.\n\nA perícia médico-legal já era tarefa do Estado desde o tempo dos egípcios, conforme consta dos papiros da época. Embora a medicina egípcia estivesse impregnada de magia e divindade, e empregasse, na cura das doenças, os encantamentos, os amuletos e o exorcismo, alguns historiadores veem indícios de perícia no Antigo Egito. Os sacerdotes médicos verificavam, por exemplo, se a morte fora violenta ou natural; a prática do embalsamento exigia a mesma verificação. As leis de Menés, o mais antigo faraó da história, mandavam adiar o castigo das mulheres grávidas, excluindo-as das penas aflitivas, o que implicava a intervenção do perito para o diagnóstico da gravidez. O Código de Hamurabi, uma compilação de leis sumerianas, previa penas severas para os casos de erro médico, o que subtendia a prova do erro.\n\nA legislação hebraica, superior às precedentes — porque exigia duas testemunhas para a condenação do suspeito, a responsabilidade das testemunhas e do juiz, a garantia dos tribunais, a publicidade dos debates, a igualdade perante a lei e a ausência de meios de tortura —, mostrava o sentimento de justiça unido à rigidez do dogma religioso. Segundo essa legislação, os conhecimentos médicos deveriam ser aplicados pelo sacerdote, que também exercia a função de médico.\n\nJoão Baptista de Oliveira e Costa Júnior. Os primórdios da perícia médica. Internet: <www.revistas.usp.br> (com adaptações).\n\nJulgue o item que se segue, com base nas ideias veiculadas no texto CG1A1.\n\nA oficialização, em 1532, da perícia médico-legal no Código Carolino é uma evidência de que essa atividade já era realizada na época da Renascença.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. O texto diz que a atividade se definiu e se concretizou na Renascença, com a instituição oficial no Código Carolino, em 1532: a oficialização mostra que a prática existia naquela época.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 4
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-005",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CG1A1\n\nEm Tratado de medicina legal, Agostinho José de Souza Lima define a perícia médica como toda sindicância promovida por autoridade policial ou judiciária acompanhada de exame e cujos peritos, dada a natureza do exame, são ou devem ser médicos. Disso decorre que o perito médico é a pessoa entendida e experimentada em temas de medicina que, designada pela autoridade competente, deverá esclarecer um fato de natureza médica mais ou menos duradouro.\n\nA perícia médico-legal surgiu da necessidade de solução para casos concretos. A princípio, havia apenas alguns vestígios de perícia médica nas legislações primitivas; depois, os indícios da prática ficaram mais evidentes, principalmente na Idade Média, até a atividade definir-se e concretizar-se na Renascença, com a sua instituição oficial no Código Carolino, em 1532.\n\nA perícia médico-legal já era tarefa do Estado desde o tempo dos egípcios, conforme consta dos papiros da época. Embora a medicina egípcia estivesse impregnada de magia e divindade, e empregasse, na cura das doenças, os encantamentos, os amuletos e o exorcismo, alguns historiadores veem indícios de perícia no Antigo Egito. Os sacerdotes médicos verificavam, por exemplo, se a morte fora violenta ou natural; a prática do embalsamento exigia a mesma verificação. As leis de Menés, o mais antigo faraó da história, mandavam adiar o castigo das mulheres grávidas, excluindo-as das penas aflitivas, o que implicava a intervenção do perito para o diagnóstico da gravidez. O Código de Hamurabi, uma compilação de leis sumerianas, previa penas severas para os casos de erro médico, o que subtendia a prova do erro.\n\nA legislação hebraica, superior às precedentes — porque exigia duas testemunhas para a condenação do suspeito, a responsabilidade das testemunhas e do juiz, a garantia dos tribunais, a publicidade dos debates, a igualdade perante a lei e a ausência de meios de tortura —, mostrava o sentimento de justiça unido à rigidez do dogma religioso. Segundo essa legislação, os conhecimentos médicos deveriam ser aplicados pelo sacerdote, que também exercia a função de médico.\n\nJoão Baptista de Oliveira e Costa Júnior. Os primórdios da perícia médica. Internet: <www.revistas.usp.br> (com adaptações).\n\nJulgue o item que se segue, com base nas ideias veiculadas no texto CG1A1.\n\nSegundo as ideias do texto, a superioridade da legislação hebraica em relação às legislações precedentes no que diz respeito à perícia médica fica evidenciada pelo aspecto religioso inerente ao exercício da perícia nos primórdios dessa prática.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. A superioridade da legislação hebraica vem das garantias de justiça listadas (duas testemunhas, publicidade dos debates, igualdade perante a lei, ausência de tortura etc.), e não do aspecto religioso.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 5
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-006",
+    "disciplina": "portugues",
+    "assunto": "Coesão textual",
+    "enunciado": "Texto CG1A1\n\nEm Tratado de medicina legal, Agostinho José de Souza Lima define a perícia médica como toda sindicância promovida por autoridade policial ou judiciária acompanhada de exame e cujos peritos, dada a natureza do exame, são ou devem ser médicos. Disso decorre que o perito médico é a pessoa entendida e experimentada em temas de medicina que, designada pela autoridade competente, deverá esclarecer um fato de natureza médica mais ou menos duradouro.\n\nA perícia médico-legal surgiu da necessidade de solução para casos concretos. A princípio, havia apenas alguns vestígios de perícia médica nas legislações primitivas; depois, os indícios da prática ficaram mais evidentes, principalmente na Idade Média, até a atividade definir-se e concretizar-se na Renascença, com a sua instituição oficial no Código Carolino, em 1532.\n\nA perícia médico-legal já era tarefa do Estado desde o tempo dos egípcios, conforme consta dos papiros da época. Embora a medicina egípcia estivesse impregnada de magia e divindade, e empregasse, na cura das doenças, os encantamentos, os amuletos e o exorcismo, alguns historiadores veem indícios de perícia no Antigo Egito. Os sacerdotes médicos verificavam, por exemplo, se a morte fora violenta ou natural; a prática do embalsamento exigia a mesma verificação. As leis de Menés, o mais antigo faraó da história, mandavam adiar o castigo das mulheres grávidas, excluindo-as das penas aflitivas, o que implicava a intervenção do perito para o diagnóstico da gravidez. O Código de Hamurabi, uma compilação de leis sumerianas, previa penas severas para os casos de erro médico, o que subtendia a prova do erro.\n\nA legislação hebraica, superior às precedentes — porque exigia duas testemunhas para a condenação do suspeito, a responsabilidade das testemunhas e do juiz, a garantia dos tribunais, a publicidade dos debates, a igualdade perante a lei e a ausência de meios de tortura —, mostrava o sentimento de justiça unido à rigidez do dogma religioso. Segundo essa legislação, os conhecimentos médicos deveriam ser aplicados pelo sacerdote, que também exercia a função de médico.\n\nJoão Baptista de Oliveira e Costa Júnior. Os primórdios da perícia médica. Internet: <www.revistas.usp.br> (com adaptações).\n\nA respeito da estrutura linguística e do vocabulário empregados no texto CG1A1, julgue o próximo item.\n\nSeriam mantidos os sentidos e as relações coesivas entre os períodos do último parágrafo caso se substituísse a expressão “essa legislação” (último período do texto) pelo segmento o referido compêndio.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. \"Essa legislação\" retoma \"a legislação hebraica\". \"O referido compêndio\" lembraria o Código de Hamurabi, que é uma compilação citada antes; a referência ficaria trocada ou ambígua.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 6
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-007",
+    "disciplina": "portugues",
+    "assunto": "Reescrita de frases",
+    "enunciado": "Texto CG1A1\n\nEm Tratado de medicina legal, Agostinho José de Souza Lima define a perícia médica como toda sindicância promovida por autoridade policial ou judiciária acompanhada de exame e cujos peritos, dada a natureza do exame, são ou devem ser médicos. Disso decorre que o perito médico é a pessoa entendida e experimentada em temas de medicina que, designada pela autoridade competente, deverá esclarecer um fato de natureza médica mais ou menos duradouro.\n\nA perícia médico-legal surgiu da necessidade de solução para casos concretos. A princípio, havia apenas alguns vestígios de perícia médica nas legislações primitivas; depois, os indícios da prática ficaram mais evidentes, principalmente na Idade Média, até a atividade definir-se e concretizar-se na Renascença, com a sua instituição oficial no Código Carolino, em 1532.\n\nA perícia médico-legal já era tarefa do Estado desde o tempo dos egípcios, conforme consta dos papiros da época. Embora a medicina egípcia estivesse impregnada de magia e divindade, e empregasse, na cura das doenças, os encantamentos, os amuletos e o exorcismo, alguns historiadores veem indícios de perícia no Antigo Egito. Os sacerdotes médicos verificavam, por exemplo, se a morte fora violenta ou natural; a prática do embalsamento exigia a mesma verificação. As leis de Menés, o mais antigo faraó da história, mandavam adiar o castigo das mulheres grávidas, excluindo-as das penas aflitivas, o que implicava a intervenção do perito para o diagnóstico da gravidez. O Código de Hamurabi, uma compilação de leis sumerianas, previa penas severas para os casos de erro médico, o que subtendia a prova do erro.\n\nA legislação hebraica, superior às precedentes — porque exigia duas testemunhas para a condenação do suspeito, a responsabilidade das testemunhas e do juiz, a garantia dos tribunais, a publicidade dos debates, a igualdade perante a lei e a ausência de meios de tortura —, mostrava o sentimento de justiça unido à rigidez do dogma religioso. Segundo essa legislação, os conhecimentos médicos deveriam ser aplicados pelo sacerdote, que também exercia a função de médico.\n\nJoão Baptista de Oliveira e Costa Júnior. Os primórdios da perícia médica. Internet: <www.revistas.usp.br> (com adaptações).\n\nA respeito da estrutura linguística e do vocabulário empregados no texto CG1A1, julgue o próximo item.\n\nO trecho “define a perícia médica como toda sindicância promovida por autoridade policial ou judiciária acompanhada de exame e cujos peritos, dada a natureza do exame, são ou devem ser médicos” (primeiro período do primeiro parágrafo) poderia ser reescrito, mantendo-se a correção gramatical e o seu sentido original, da seguinte forma: define a perícia médica como qualquer sindicância promovida por autoridade policial ou judiciária acompanhada de exame e que os peritos são ou devem ser médicos, devido a natureza do exame.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. \"E que os peritos são ou devem ser médicos\" não equivale a \"cujos peritos\": muda a estrutura e o sentido. E \"devido a natureza\" precisaria de crase (\"devido à natureza\").",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 7
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-008",
+    "disciplina": "portugues",
+    "assunto": "Pontuação",
+    "enunciado": "Texto CG1A1\n\nEm Tratado de medicina legal, Agostinho José de Souza Lima define a perícia médica como toda sindicância promovida por autoridade policial ou judiciária acompanhada de exame e cujos peritos, dada a natureza do exame, são ou devem ser médicos. Disso decorre que o perito médico é a pessoa entendida e experimentada em temas de medicina que, designada pela autoridade competente, deverá esclarecer um fato de natureza médica mais ou menos duradouro.\n\nA perícia médico-legal surgiu da necessidade de solução para casos concretos. A princípio, havia apenas alguns vestígios de perícia médica nas legislações primitivas; depois, os indícios da prática ficaram mais evidentes, principalmente na Idade Média, até a atividade definir-se e concretizar-se na Renascença, com a sua instituição oficial no Código Carolino, em 1532.\n\nA perícia médico-legal já era tarefa do Estado desde o tempo dos egípcios, conforme consta dos papiros da época. Embora a medicina egípcia estivesse impregnada de magia e divindade, e empregasse, na cura das doenças, os encantamentos, os amuletos e o exorcismo, alguns historiadores veem indícios de perícia no Antigo Egito. Os sacerdotes médicos verificavam, por exemplo, se a morte fora violenta ou natural; a prática do embalsamento exigia a mesma verificação. As leis de Menés, o mais antigo faraó da história, mandavam adiar o castigo das mulheres grávidas, excluindo-as das penas aflitivas, o que implicava a intervenção do perito para o diagnóstico da gravidez. O Código de Hamurabi, uma compilação de leis sumerianas, previa penas severas para os casos de erro médico, o que subtendia a prova do erro.\n\nA legislação hebraica, superior às precedentes — porque exigia duas testemunhas para a condenação do suspeito, a responsabilidade das testemunhas e do juiz, a garantia dos tribunais, a publicidade dos debates, a igualdade perante a lei e a ausência de meios de tortura —, mostrava o sentimento de justiça unido à rigidez do dogma religioso. Segundo essa legislação, os conhecimentos médicos deveriam ser aplicados pelo sacerdote, que também exercia a função de médico.\n\nJoão Baptista de Oliveira e Costa Júnior. Os primórdios da perícia médica. Internet: <www.revistas.usp.br> (com adaptações).\n\nA respeito da estrutura linguística e do vocabulário empregados no texto CG1A1, julgue o próximo item.\n\nA correção gramatical do texto seria prejudicada caso se empregasse vírgula após a forma verbal “decorre” (segundo período do primeiro parágrafo).",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. Em \"Disso decorre que o perito médico é...\", a oração \"que o perito médico é...\" é o sujeito de \"decorre\". Vírgula entre o verbo e o seu sujeito é erro.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 8
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-009",
+    "disciplina": "portugues",
+    "assunto": "Sentido das palavras",
+    "enunciado": "Texto CG1A1\n\nEm Tratado de medicina legal, Agostinho José de Souza Lima define a perícia médica como toda sindicância promovida por autoridade policial ou judiciária acompanhada de exame e cujos peritos, dada a natureza do exame, são ou devem ser médicos. Disso decorre que o perito médico é a pessoa entendida e experimentada em temas de medicina que, designada pela autoridade competente, deverá esclarecer um fato de natureza médica mais ou menos duradouro.\n\nA perícia médico-legal surgiu da necessidade de solução para casos concretos. A princípio, havia apenas alguns vestígios de perícia médica nas legislações primitivas; depois, os indícios da prática ficaram mais evidentes, principalmente na Idade Média, até a atividade definir-se e concretizar-se na Renascença, com a sua instituição oficial no Código Carolino, em 1532.\n\nA perícia médico-legal já era tarefa do Estado desde o tempo dos egípcios, conforme consta dos papiros da época. Embora a medicina egípcia estivesse impregnada de magia e divindade, e empregasse, na cura das doenças, os encantamentos, os amuletos e o exorcismo, alguns historiadores veem indícios de perícia no Antigo Egito. Os sacerdotes médicos verificavam, por exemplo, se a morte fora violenta ou natural; a prática do embalsamento exigia a mesma verificação. As leis de Menés, o mais antigo faraó da história, mandavam adiar o castigo das mulheres grávidas, excluindo-as das penas aflitivas, o que implicava a intervenção do perito para o diagnóstico da gravidez. O Código de Hamurabi, uma compilação de leis sumerianas, previa penas severas para os casos de erro médico, o que subtendia a prova do erro.\n\nA legislação hebraica, superior às precedentes — porque exigia duas testemunhas para a condenação do suspeito, a responsabilidade das testemunhas e do juiz, a garantia dos tribunais, a publicidade dos debates, a igualdade perante a lei e a ausência de meios de tortura —, mostrava o sentimento de justiça unido à rigidez do dogma religioso. Segundo essa legislação, os conhecimentos médicos deveriam ser aplicados pelo sacerdote, que também exercia a função de médico.\n\nJoão Baptista de Oliveira e Costa Júnior. Os primórdios da perícia médica. Internet: <www.revistas.usp.br> (com adaptações).\n\nA respeito da estrutura linguística e do vocabulário empregados no texto CG1A1, julgue o próximo item.\n\nA correção e o sentido do texto seriam mantidos caso a expressão “mais ou menos” (segundo período do primeiro parágrafo) fosse substituída por comedidamente.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. \"Mais ou menos duradouro\" quer dizer de duração variável (mais longa ou mais curta). \"Comedidamente\" significa com moderação: o sentido muda.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 9
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-010",
+    "disciplina": "portugues",
+    "assunto": "Reescrita de frases",
+    "enunciado": "Texto CG1A1\n\nEm Tratado de medicina legal, Agostinho José de Souza Lima define a perícia médica como toda sindicância promovida por autoridade policial ou judiciária acompanhada de exame e cujos peritos, dada a natureza do exame, são ou devem ser médicos. Disso decorre que o perito médico é a pessoa entendida e experimentada em temas de medicina que, designada pela autoridade competente, deverá esclarecer um fato de natureza médica mais ou menos duradouro.\n\nA perícia médico-legal surgiu da necessidade de solução para casos concretos. A princípio, havia apenas alguns vestígios de perícia médica nas legislações primitivas; depois, os indícios da prática ficaram mais evidentes, principalmente na Idade Média, até a atividade definir-se e concretizar-se na Renascença, com a sua instituição oficial no Código Carolino, em 1532.\n\nA perícia médico-legal já era tarefa do Estado desde o tempo dos egípcios, conforme consta dos papiros da época. Embora a medicina egípcia estivesse impregnada de magia e divindade, e empregasse, na cura das doenças, os encantamentos, os amuletos e o exorcismo, alguns historiadores veem indícios de perícia no Antigo Egito. Os sacerdotes médicos verificavam, por exemplo, se a morte fora violenta ou natural; a prática do embalsamento exigia a mesma verificação. As leis de Menés, o mais antigo faraó da história, mandavam adiar o castigo das mulheres grávidas, excluindo-as das penas aflitivas, o que implicava a intervenção do perito para o diagnóstico da gravidez. O Código de Hamurabi, uma compilação de leis sumerianas, previa penas severas para os casos de erro médico, o que subtendia a prova do erro.\n\nA legislação hebraica, superior às precedentes — porque exigia duas testemunhas para a condenação do suspeito, a responsabilidade das testemunhas e do juiz, a garantia dos tribunais, a publicidade dos debates, a igualdade perante a lei e a ausência de meios de tortura —, mostrava o sentimento de justiça unido à rigidez do dogma religioso. Segundo essa legislação, os conhecimentos médicos deveriam ser aplicados pelo sacerdote, que também exercia a função de médico.\n\nJoão Baptista de Oliveira e Costa Júnior. Os primórdios da perícia médica. Internet: <www.revistas.usp.br> (com adaptações).\n\nA respeito da estrutura linguística e do vocabulário empregados no texto CG1A1, julgue o próximo item.\n\nO trecho “havia apenas alguns vestígios de perícia médica nas legislações primitivas” (segundo período do segundo parágrafo) poderia ser reescrito, com manutenção da correção gramatical e da coerência de suas ideias, da seguinte forma: encontraram-se, nas legislações primitivas, apenas alguns vestígios de perícia médica.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. \"Encontraram-se, nas legislações primitivas, apenas alguns vestígios de perícia médica\" mantém a ideia de existência e a correção (voz passiva sintética concordando com \"vestígios\").",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 10
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-011",
+    "disciplina": "portugues",
+    "assunto": "Coesão textual",
+    "enunciado": "Texto CG1A1\n\nEm Tratado de medicina legal, Agostinho José de Souza Lima define a perícia médica como toda sindicância promovida por autoridade policial ou judiciária acompanhada de exame e cujos peritos, dada a natureza do exame, são ou devem ser médicos. Disso decorre que o perito médico é a pessoa entendida e experimentada em temas de medicina que, designada pela autoridade competente, deverá esclarecer um fato de natureza médica mais ou menos duradouro.\n\nA perícia médico-legal surgiu da necessidade de solução para casos concretos. A princípio, havia apenas alguns vestígios de perícia médica nas legislações primitivas; depois, os indícios da prática ficaram mais evidentes, principalmente na Idade Média, até a atividade definir-se e concretizar-se na Renascença, com a sua instituição oficial no Código Carolino, em 1532.\n\nA perícia médico-legal já era tarefa do Estado desde o tempo dos egípcios, conforme consta dos papiros da época. Embora a medicina egípcia estivesse impregnada de magia e divindade, e empregasse, na cura das doenças, os encantamentos, os amuletos e o exorcismo, alguns historiadores veem indícios de perícia no Antigo Egito. Os sacerdotes médicos verificavam, por exemplo, se a morte fora violenta ou natural; a prática do embalsamento exigia a mesma verificação. As leis de Menés, o mais antigo faraó da história, mandavam adiar o castigo das mulheres grávidas, excluindo-as das penas aflitivas, o que implicava a intervenção do perito para o diagnóstico da gravidez. O Código de Hamurabi, uma compilação de leis sumerianas, previa penas severas para os casos de erro médico, o que subtendia a prova do erro.\n\nA legislação hebraica, superior às precedentes — porque exigia duas testemunhas para a condenação do suspeito, a responsabilidade das testemunhas e do juiz, a garantia dos tribunais, a publicidade dos debates, a igualdade perante a lei e a ausência de meios de tortura —, mostrava o sentimento de justiça unido à rigidez do dogma religioso. Segundo essa legislação, os conhecimentos médicos deveriam ser aplicados pelo sacerdote, que também exercia a função de médico.\n\nJoão Baptista de Oliveira e Costa Júnior. Os primórdios da perícia médica. Internet: <www.revistas.usp.br> (com adaptações).\n\nA respeito da estrutura linguística e do vocabulário empregados no texto CG1A1, julgue o próximo item.\n\nNo segundo parágrafo, as palavras “prática”, “atividade” e “instituição” integram uma cadeia coesiva, substituindo o emprego da expressão “perícia médico-legal”.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. \"Prática\" e \"atividade\" retomam a perícia médico-legal, mas \"instituição\", em \"a sua instituição oficial\", é o ato de instituir a perícia, e não um sinônimo dela.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 11
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-012",
+    "disciplina": "portugues",
+    "assunto": "Regência verbal",
+    "enunciado": "Texto CG1A1\n\nEm Tratado de medicina legal, Agostinho José de Souza Lima define a perícia médica como toda sindicância promovida por autoridade policial ou judiciária acompanhada de exame e cujos peritos, dada a natureza do exame, são ou devem ser médicos. Disso decorre que o perito médico é a pessoa entendida e experimentada em temas de medicina que, designada pela autoridade competente, deverá esclarecer um fato de natureza médica mais ou menos duradouro.\n\nA perícia médico-legal surgiu da necessidade de solução para casos concretos. A princípio, havia apenas alguns vestígios de perícia médica nas legislações primitivas; depois, os indícios da prática ficaram mais evidentes, principalmente na Idade Média, até a atividade definir-se e concretizar-se na Renascença, com a sua instituição oficial no Código Carolino, em 1532.\n\nA perícia médico-legal já era tarefa do Estado desde o tempo dos egípcios, conforme consta dos papiros da época. Embora a medicina egípcia estivesse impregnada de magia e divindade, e empregasse, na cura das doenças, os encantamentos, os amuletos e o exorcismo, alguns historiadores veem indícios de perícia no Antigo Egito. Os sacerdotes médicos verificavam, por exemplo, se a morte fora violenta ou natural; a prática do embalsamento exigia a mesma verificação. As leis de Menés, o mais antigo faraó da história, mandavam adiar o castigo das mulheres grávidas, excluindo-as das penas aflitivas, o que implicava a intervenção do perito para o diagnóstico da gravidez. O Código de Hamurabi, uma compilação de leis sumerianas, previa penas severas para os casos de erro médico, o que subtendia a prova do erro.\n\nA legislação hebraica, superior às precedentes — porque exigia duas testemunhas para a condenação do suspeito, a responsabilidade das testemunhas e do juiz, a garantia dos tribunais, a publicidade dos debates, a igualdade perante a lei e a ausência de meios de tortura —, mostrava o sentimento de justiça unido à rigidez do dogma religioso. Segundo essa legislação, os conhecimentos médicos deveriam ser aplicados pelo sacerdote, que também exercia a função de médico.\n\nJoão Baptista de Oliveira e Costa Júnior. Os primórdios da perícia médica. Internet: <www.revistas.usp.br> (com adaptações).\n\nA respeito da estrutura linguística e do vocabulário empregados no texto CG1A1, julgue o próximo item.\n\nNo trecho “conforme consta dos papiros da época” (primeiro período do terceiro parágrafo), a substituição de “dos” por nos manteria a correção gramatical do texto.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. O verbo \"constar\" aceita as duas regências nesse sentido: \"consta dos papiros\" e \"consta nos papiros\" estão corretos.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 12
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-013",
+    "disciplina": "portugues",
+    "assunto": "Sentido dos verbos",
+    "enunciado": "Texto CG1A1\n\nEm Tratado de medicina legal, Agostinho José de Souza Lima define a perícia médica como toda sindicância promovida por autoridade policial ou judiciária acompanhada de exame e cujos peritos, dada a natureza do exame, são ou devem ser médicos. Disso decorre que o perito médico é a pessoa entendida e experimentada em temas de medicina que, designada pela autoridade competente, deverá esclarecer um fato de natureza médica mais ou menos duradouro.\n\nA perícia médico-legal surgiu da necessidade de solução para casos concretos. A princípio, havia apenas alguns vestígios de perícia médica nas legislações primitivas; depois, os indícios da prática ficaram mais evidentes, principalmente na Idade Média, até a atividade definir-se e concretizar-se na Renascença, com a sua instituição oficial no Código Carolino, em 1532.\n\nA perícia médico-legal já era tarefa do Estado desde o tempo dos egípcios, conforme consta dos papiros da época. Embora a medicina egípcia estivesse impregnada de magia e divindade, e empregasse, na cura das doenças, os encantamentos, os amuletos e o exorcismo, alguns historiadores veem indícios de perícia no Antigo Egito. Os sacerdotes médicos verificavam, por exemplo, se a morte fora violenta ou natural; a prática do embalsamento exigia a mesma verificação. As leis de Menés, o mais antigo faraó da história, mandavam adiar o castigo das mulheres grávidas, excluindo-as das penas aflitivas, o que implicava a intervenção do perito para o diagnóstico da gravidez. O Código de Hamurabi, uma compilação de leis sumerianas, previa penas severas para os casos de erro médico, o que subtendia a prova do erro.\n\nA legislação hebraica, superior às precedentes — porque exigia duas testemunhas para a condenação do suspeito, a responsabilidade das testemunhas e do juiz, a garantia dos tribunais, a publicidade dos debates, a igualdade perante a lei e a ausência de meios de tortura —, mostrava o sentimento de justiça unido à rigidez do dogma religioso. Segundo essa legislação, os conhecimentos médicos deveriam ser aplicados pelo sacerdote, que também exercia a função de médico.\n\nJoão Baptista de Oliveira e Costa Júnior. Os primórdios da perícia médica. Internet: <www.revistas.usp.br> (com adaptações).\n\nA respeito da estrutura linguística e do vocabulário empregados no texto CG1A1, julgue o próximo item.\n\nA coerência e a correção do texto seriam mantidas caso a forma verbal “estivesse” (segundo período do terceiro parágrafo) fosse substituída por tivesse.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. \"Estivesse impregnada de magia\" quer dizer que a medicina era cheia de magia. \"Tivesse impregnada\" não faz sentido nem tem construção correta ali.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 13
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-014",
+    "disciplina": "portugues",
+    "assunto": "Pontuação",
+    "enunciado": "Texto CG1A1\n\nEm Tratado de medicina legal, Agostinho José de Souza Lima define a perícia médica como toda sindicância promovida por autoridade policial ou judiciária acompanhada de exame e cujos peritos, dada a natureza do exame, são ou devem ser médicos. Disso decorre que o perito médico é a pessoa entendida e experimentada em temas de medicina que, designada pela autoridade competente, deverá esclarecer um fato de natureza médica mais ou menos duradouro.\n\nA perícia médico-legal surgiu da necessidade de solução para casos concretos. A princípio, havia apenas alguns vestígios de perícia médica nas legislações primitivas; depois, os indícios da prática ficaram mais evidentes, principalmente na Idade Média, até a atividade definir-se e concretizar-se na Renascença, com a sua instituição oficial no Código Carolino, em 1532.\n\nA perícia médico-legal já era tarefa do Estado desde o tempo dos egípcios, conforme consta dos papiros da época. Embora a medicina egípcia estivesse impregnada de magia e divindade, e empregasse, na cura das doenças, os encantamentos, os amuletos e o exorcismo, alguns historiadores veem indícios de perícia no Antigo Egito. Os sacerdotes médicos verificavam, por exemplo, se a morte fora violenta ou natural; a prática do embalsamento exigia a mesma verificação. As leis de Menés, o mais antigo faraó da história, mandavam adiar o castigo das mulheres grávidas, excluindo-as das penas aflitivas, o que implicava a intervenção do perito para o diagnóstico da gravidez. O Código de Hamurabi, uma compilação de leis sumerianas, previa penas severas para os casos de erro médico, o que subtendia a prova do erro.\n\nA legislação hebraica, superior às precedentes — porque exigia duas testemunhas para a condenação do suspeito, a responsabilidade das testemunhas e do juiz, a garantia dos tribunais, a publicidade dos debates, a igualdade perante a lei e a ausência de meios de tortura —, mostrava o sentimento de justiça unido à rigidez do dogma religioso. Segundo essa legislação, os conhecimentos médicos deveriam ser aplicados pelo sacerdote, que também exercia a função de médico.\n\nJoão Baptista de Oliveira e Costa Júnior. Os primórdios da perícia médica. Internet: <www.revistas.usp.br> (com adaptações).\n\nA respeito da estrutura linguística e do vocabulário empregados no texto CG1A1, julgue o próximo item.\n\nA correção gramatical do primeiro período do quarto parágrafo seria mantida caso se suprimisse a vírgula empregada logo após o travessão em “e ausência de meios de tortura —,”.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 3,
+    "explicacao": "Errado. A vírgula depois do travessão fecha o termo \"superior às precedentes\", aberto com a vírgula depois de \"hebraica\". Sem ela, o sujeito (\"A legislação hebraica\") ficaria separado do verbo \"mostrava\" de forma incorreta.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 14
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-015",
+    "disciplina": "portugues",
+    "assunto": "Tempos verbais",
+    "enunciado": "Texto CG1A1\n\nEm Tratado de medicina legal, Agostinho José de Souza Lima define a perícia médica como toda sindicância promovida por autoridade policial ou judiciária acompanhada de exame e cujos peritos, dada a natureza do exame, são ou devem ser médicos. Disso decorre que o perito médico é a pessoa entendida e experimentada em temas de medicina que, designada pela autoridade competente, deverá esclarecer um fato de natureza médica mais ou menos duradouro.\n\nA perícia médico-legal surgiu da necessidade de solução para casos concretos. A princípio, havia apenas alguns vestígios de perícia médica nas legislações primitivas; depois, os indícios da prática ficaram mais evidentes, principalmente na Idade Média, até a atividade definir-se e concretizar-se na Renascença, com a sua instituição oficial no Código Carolino, em 1532.\n\nA perícia médico-legal já era tarefa do Estado desde o tempo dos egípcios, conforme consta dos papiros da época. Embora a medicina egípcia estivesse impregnada de magia e divindade, e empregasse, na cura das doenças, os encantamentos, os amuletos e o exorcismo, alguns historiadores veem indícios de perícia no Antigo Egito. Os sacerdotes médicos verificavam, por exemplo, se a morte fora violenta ou natural; a prática do embalsamento exigia a mesma verificação. As leis de Menés, o mais antigo faraó da história, mandavam adiar o castigo das mulheres grávidas, excluindo-as das penas aflitivas, o que implicava a intervenção do perito para o diagnóstico da gravidez. O Código de Hamurabi, uma compilação de leis sumerianas, previa penas severas para os casos de erro médico, o que subtendia a prova do erro.\n\nA legislação hebraica, superior às precedentes — porque exigia duas testemunhas para a condenação do suspeito, a responsabilidade das testemunhas e do juiz, a garantia dos tribunais, a publicidade dos debates, a igualdade perante a lei e a ausência de meios de tortura —, mostrava o sentimento de justiça unido à rigidez do dogma religioso. Segundo essa legislação, os conhecimentos médicos deveriam ser aplicados pelo sacerdote, que também exercia a função de médico.\n\nJoão Baptista de Oliveira e Costa Júnior. Os primórdios da perícia médica. Internet: <www.revistas.usp.br> (com adaptações).\n\nA respeito da estrutura linguística e do vocabulário empregados no texto CG1A1, julgue o próximo item.\n\nEstariam mantidos a correção gramatical e o sentido textual caso a forma verbal “fora” (terceiro período do terceiro parágrafo) fosse substituída por havia sido.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. \"Fora\" é pretérito mais-que-perfeito simples; \"havia sido\" é a forma composta do mesmo tempo. \"Se a morte havia sido violenta ou natural\" mantém sentido e correção.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 15
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-016",
+    "disciplina": "portugues",
+    "assunto": "Sintaxe: aposto",
+    "enunciado": "Texto CG1A1\n\nEm Tratado de medicina legal, Agostinho José de Souza Lima define a perícia médica como toda sindicância promovida por autoridade policial ou judiciária acompanhada de exame e cujos peritos, dada a natureza do exame, são ou devem ser médicos. Disso decorre que o perito médico é a pessoa entendida e experimentada em temas de medicina que, designada pela autoridade competente, deverá esclarecer um fato de natureza médica mais ou menos duradouro.\n\nA perícia médico-legal surgiu da necessidade de solução para casos concretos. A princípio, havia apenas alguns vestígios de perícia médica nas legislações primitivas; depois, os indícios da prática ficaram mais evidentes, principalmente na Idade Média, até a atividade definir-se e concretizar-se na Renascença, com a sua instituição oficial no Código Carolino, em 1532.\n\nA perícia médico-legal já era tarefa do Estado desde o tempo dos egípcios, conforme consta dos papiros da época. Embora a medicina egípcia estivesse impregnada de magia e divindade, e empregasse, na cura das doenças, os encantamentos, os amuletos e o exorcismo, alguns historiadores veem indícios de perícia no Antigo Egito. Os sacerdotes médicos verificavam, por exemplo, se a morte fora violenta ou natural; a prática do embalsamento exigia a mesma verificação. As leis de Menés, o mais antigo faraó da história, mandavam adiar o castigo das mulheres grávidas, excluindo-as das penas aflitivas, o que implicava a intervenção do perito para o diagnóstico da gravidez. O Código de Hamurabi, uma compilação de leis sumerianas, previa penas severas para os casos de erro médico, o que subtendia a prova do erro.\n\nA legislação hebraica, superior às precedentes — porque exigia duas testemunhas para a condenação do suspeito, a responsabilidade das testemunhas e do juiz, a garantia dos tribunais, a publicidade dos debates, a igualdade perante a lei e a ausência de meios de tortura —, mostrava o sentimento de justiça unido à rigidez do dogma religioso. Segundo essa legislação, os conhecimentos médicos deveriam ser aplicados pelo sacerdote, que também exercia a função de médico.\n\nJoão Baptista de Oliveira e Costa Júnior. Os primórdios da perícia médica. Internet: <www.revistas.usp.br> (com adaptações).\n\nA respeito da estrutura linguística e do vocabulário empregados no texto CG1A1, julgue o próximo item.\n\nOs segmentos “o mais antigo faraó da história” (quarto período do terceiro parágrafo) e “uma compilação de leis sumerianas” (último período do terceiro parágrafo) exercem função explicativa em relação aos termos que os antecedem, respectivamente, “Menés” e “O Código de Hamurabi”.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. \"O mais antigo faraó da história\" explica quem é Menés, e \"uma compilação de leis sumerianas\" explica o que é o Código de Hamurabi. Os dois são apostos explicativos.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 16
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-017",
+    "disciplina": "portugues",
+    "assunto": "Colocação das palavras",
+    "enunciado": "Texto CG1A1\n\nEm Tratado de medicina legal, Agostinho José de Souza Lima define a perícia médica como toda sindicância promovida por autoridade policial ou judiciária acompanhada de exame e cujos peritos, dada a natureza do exame, são ou devem ser médicos. Disso decorre que o perito médico é a pessoa entendida e experimentada em temas de medicina que, designada pela autoridade competente, deverá esclarecer um fato de natureza médica mais ou menos duradouro.\n\nA perícia médico-legal surgiu da necessidade de solução para casos concretos. A princípio, havia apenas alguns vestígios de perícia médica nas legislações primitivas; depois, os indícios da prática ficaram mais evidentes, principalmente na Idade Média, até a atividade definir-se e concretizar-se na Renascença, com a sua instituição oficial no Código Carolino, em 1532.\n\nA perícia médico-legal já era tarefa do Estado desde o tempo dos egípcios, conforme consta dos papiros da época. Embora a medicina egípcia estivesse impregnada de magia e divindade, e empregasse, na cura das doenças, os encantamentos, os amuletos e o exorcismo, alguns historiadores veem indícios de perícia no Antigo Egito. Os sacerdotes médicos verificavam, por exemplo, se a morte fora violenta ou natural; a prática do embalsamento exigia a mesma verificação. As leis de Menés, o mais antigo faraó da história, mandavam adiar o castigo das mulheres grávidas, excluindo-as das penas aflitivas, o que implicava a intervenção do perito para o diagnóstico da gravidez. O Código de Hamurabi, uma compilação de leis sumerianas, previa penas severas para os casos de erro médico, o que subtendia a prova do erro.\n\nA legislação hebraica, superior às precedentes — porque exigia duas testemunhas para a condenação do suspeito, a responsabilidade das testemunhas e do juiz, a garantia dos tribunais, a publicidade dos debates, a igualdade perante a lei e a ausência de meios de tortura —, mostrava o sentimento de justiça unido à rigidez do dogma religioso. Segundo essa legislação, os conhecimentos médicos deveriam ser aplicados pelo sacerdote, que também exercia a função de médico.\n\nJoão Baptista de Oliveira e Costa Júnior. Os primórdios da perícia médica. Internet: <www.revistas.usp.br> (com adaptações).\n\nA respeito da estrutura linguística e do vocabulário empregados no texto CG1A1, julgue o próximo item.\n\nEstariam mantidos os sentidos do último período do terceiro parágrafo caso se deslocasse o termo “severas” para antes do substantivo “penas”.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. \"Previa severas penas\" ou \"previa penas severas\": com \"severas\", a posição do adjetivo não muda o sentido da frase.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 17
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-018",
+    "disciplina": "portugues",
+    "assunto": "Redação oficial",
+    "enunciado": "De acordo com o Manual de Redação da Presidência da República (MRPR), julgue o item a seguir.\n\nA referência, a substituição, a elipse e o uso de conjunção são recursos que podem favorecer a coesão e a coerência de um texto oficial.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. O Manual de Redação cita a referência (retomar um termo), a substituição (trocar por sinônimo), a elipse (omitir o que se subentende) e o uso de conjunções como mecanismos de coesão.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 18
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-019",
+    "disciplina": "portugues",
+    "assunto": "Redação oficial",
+    "enunciado": "De acordo com o Manual de Redação da Presidência da República (MRPR), julgue o item a seguir.\n\nA redação oficial, segundo o MRPR, é o modo como o poder público padroniza as comunicações oficiais e as partes básicas das leis.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. Para o Manual, redação oficial é a maneira pela qual o poder público redige comunicações oficiais e atos normativos. Não se resume a padronizar comunicações e \"as partes básicas das leis\".",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 19
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-020",
+    "disciplina": "portugues",
+    "assunto": "Redação oficial",
+    "enunciado": "De acordo com o Manual de Redação da Presidência da República (MRPR), julgue o item a seguir.\n\nEntre as características esperadas de um texto oficial estão a clareza, a impessoalidade e a informalidade.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. Clareza e impessoalidade estão certas, mas o texto oficial deve ser formal. Informalidade não é característica da redação oficial.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 20
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-021",
+    "disciplina": "administrativo",
+    "assunto": "Ética no serviço público",
+    "enunciado": "Considerando o disposto nos Decretos n.º 1.171/1994 e n.º 6.029/2007, julgue o item a seguir.\n\nNos trabalhos das comissões de ética, deve-se observar, sem prejuízo da celeridade, a proteção à honra e à imagem da pessoa investigada.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. O Decreto n.º 6.029/2007 manda que os trabalhos das comissões de ética protejam a honra e a imagem da pessoa investigada, sem prejuízo da celeridade.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 21
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-022",
+    "disciplina": "administrativo",
+    "assunto": "Ética no serviço público",
+    "enunciado": "Considerando o disposto nos Decretos n.º 1.171/1994 e n.º 6.029/2007, julgue o item a seguir.\n\nA sujeição ao Código de Ética do Servidor Público Federal alcança a prestação de serviços permanentes, temporários ou excepcionais, desde que haja retribuição financeira e ligação, direta ou indireta, a qualquer órgão do poder estatal federal, incluídas as autarquias, as fundações públicas, as entidades paraestatais, as empresas públicas e as sociedades de economia mista.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. O Código de Ética alcança quem presta serviço permanente, temporário ou excepcional ao Estado, AINDA QUE SEM retribuição financeira. Não depende de pagamento.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 22
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-023",
+    "disciplina": "administrativo",
+    "assunto": "Ética no serviço público",
+    "enunciado": "Considerando o disposto nos Decretos n.º 1.171/1994 e n.º 6.029/2007, julgue o item a seguir.\n\nOs procedimentos instaurados para a apuração de prática em desrespeito às normas éticas devem tramitar de forma reservada até a conclusão da investigação e a deliberação da comissão de ética.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. Pelo Decreto n.º 6.029/2007, os procedimentos de apuração de desvio ético tramitam sob reserva até a conclusão, para proteger o investigado.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 23
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-024",
+    "disciplina": "administrativo",
+    "assunto": "Lei de Acesso à Informação",
+    "enunciado": "Com base nas Leis n.º 12.527/2011 e n.º 12.813/2013, que dispõem, respectivamente, sobre o acesso à informação e o conflito de interesses, julgue o próximo item.\n\nOs pedidos de acesso à informação protocolados perante os órgãos públicos devem ser motivados, assim como as recusas que venham a ser formalizadas em face desses pedidos.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. Quem pede informação de interesse público não precisa dizer por que quer (a lei proíbe exigir os motivos). Já a recusa do órgão, sim, deve ser fundamentada.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 24
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-025",
+    "disciplina": "administrativo",
+    "assunto": "Conflito de interesses",
+    "enunciado": "Com base nas Leis n.º 12.527/2011 e n.º 12.813/2013, que dispõem, respectivamente, sobre o acesso à informação e o conflito de interesses, julgue o próximo item.\n\nA ocorrência de conflito de interesses pressupõe a existência de lesão ao patrimônio público, assim como de recebimento de qualquer vantagem ou ganho pelo agente público ou por terceiro.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. A Lei n.º 12.813/2013 diz que o conflito de interesses se configura independentemente de lesão ao patrimônio público e de o agente ou terceiro receber vantagem.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 25
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-026",
+    "disciplina": "constitucional",
+    "assunto": "Direitos sociais",
+    "enunciado": "No que se refere aos direitos e garantias fundamentais, julgue o item a seguir, com base no disposto na Constituição Federal de 1988 (CF) e no entendimento do Supremo Tribunal Federal (STF).\n\nAos trabalhadores urbanos e rurais é garantido o direito ao aviso prévio de, no máximo, 30 dias, independentemente do tempo de serviço.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. O aviso prévio é proporcional ao tempo de serviço, sendo de no mínimo 30 dias (art. 7.º, XXI, da Constituição). Não é de \"no máximo\" 30 dias.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 26
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-027",
+    "disciplina": "constitucional",
+    "assunto": "Direitos e garantias fundamentais",
+    "enunciado": "No que se refere aos direitos e garantias fundamentais, julgue o item a seguir, com base no disposto na Constituição Federal de 1988 (CF) e no entendimento do Supremo Tribunal Federal (STF).\n\nHavendo colisão entre direitos fundamentais individuais e direitos fundamentais coletivos, prevalecem os primeiros, dado o caráter absoluto dos direitos e garantias individuais.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. Nenhum direito fundamental é absoluto. Em caso de colisão, faz-se a ponderação no caso concreto; não há prevalência automática dos direitos individuais.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 27
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-028",
+    "disciplina": "constitucional",
+    "assunto": "Direitos sociais",
+    "enunciado": "No que se refere aos direitos e garantias fundamentais, julgue o item a seguir, com base no disposto na Constituição Federal de 1988 (CF) e no entendimento do Supremo Tribunal Federal (STF).\n\nTodo brasileiro em situação de vulnerabilidade social tem direito a renda básica familiar garantida pelo poder público em programa permanente de transferência de renda.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. Desde a Emenda Constitucional n.º 114/2021, o art. 6.º prevê que todo brasileiro em situação de vulnerabilidade social tem direito a uma renda básica familiar, garantida em programa permanente de transferência de renda.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 28
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-029",
+    "disciplina": "constitucional",
+    "assunto": "Direitos sociais",
+    "enunciado": "No que se refere aos direitos e garantias fundamentais, julgue o item a seguir, com base no disposto na Constituição Federal de 1988 (CF) e no entendimento do Supremo Tribunal Federal (STF).\n\nÉ direito dos trabalhadores urbanos e rurais a assistência gratuita a seus filhos e dependentes, desde o nascimento até os 6 anos de idade, em creches e pré-escolas.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. O art. 7.º, XXV, garante assistência gratuita aos filhos e dependentes em creches e pré-escolas até os 5 anos de idade, e não até os 6.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 29
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-030",
+    "disciplina": "constitucional",
+    "assunto": "Direitos sociais",
+    "enunciado": "No que se refere aos direitos e garantias fundamentais, julgue o item a seguir, com base no disposto na Constituição Federal de 1988 (CF) e no entendimento do Supremo Tribunal Federal (STF).\n\nDecorre da garantia do salário mínimo nacional o direito à revisão de benefício previdenciário pelo valor nominal do salário mínimo.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 3,
+    "explicacao": "Errado. A Constituição proíbe usar o salário mínimo como indexador para qualquer fim (art. 7.º, IV), e o STF não reconhece direito de reajustar benefícios previdenciários pela variação nominal do salário mínimo.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 30
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-031",
+    "disciplina": "constitucional",
+    "assunto": "Administração pública",
+    "enunciado": "À luz do disposto na CF e do entendimento do STF, julgue o próximo item, relacionado aos princípios da administração pública.\n\nÓrgãos e entidades da administração pública devem realizar avaliação das políticas públicas, o que pode ser considerado expressão do princípio da eficiência.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. A Constituição passou a exigir que órgãos e entidades avaliem as políticas públicas (art. 37, § 16, incluído pela EC n.º 109/2021), o que se liga ao princípio da eficiência.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 31
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-032",
+    "disciplina": "constitucional",
+    "assunto": "Administração pública",
+    "enunciado": "À luz do disposto na CF e do entendimento do STF, julgue o próximo item, relacionado aos princípios da administração pública.\n\nA publicidade dos atos, programas, obras, serviços e campanhas dos órgãos públicos deverá ter caráter educativo, informativo ou de orientação social, admitida a veiculação de nomes, símbolos ou imagens dos agentes políticos responsáveis por sua implementação.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. A publicidade oficial deve ter caráter educativo, informativo ou de orientação social, mas NÃO pode ter nomes, símbolos ou imagens que caracterizem promoção pessoal de autoridades (art. 37, § 1.º).",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 32
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-033",
+    "disciplina": "constitucional",
+    "assunto": "Administração pública",
+    "enunciado": "À luz do disposto na CF e do entendimento do STF, julgue o próximo item, relacionado aos princípios da administração pública.\n\nEm atenção ao princípio da publicidade, é legítima a publicação, inclusive em sítio eletrônico mantido pela administração pública, dos nomes dos seus servidores e do valor dos correspondentes vencimentos e vantagens pecuniárias.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. O STF decidiu que é legítimo publicar, inclusive na internet, os nomes dos servidores e o valor de seus vencimentos e vantagens: é expressão do princípio da publicidade.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 33
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-034",
+    "disciplina": "constitucional",
+    "assunto": "Administração pública",
+    "enunciado": "À luz do disposto na CF e do entendimento do STF, julgue o próximo item, relacionado aos princípios da administração pública.\n\nConstitui violação à CF a nomeação de cônjuge, companheiro ou parente em linha reta, colateral ou por afinidade, até o terceiro grau, inclusive da autoridade nomeante ou de servidor da mesma pessoa jurídica investido em cargo de direção, chefia ou assessoramento, para o exercício de cargo em comissão ou de confiança ou, ainda, de função gratificada na administração pública direta e indireta em qualquer dos poderes da União, dos estados, do Distrito Federal e dos municípios, compreendido o ajuste mediante designações recíprocas.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. É o texto da Súmula Vinculante 13 do STF, que proíbe o nepotismo, inclusive o cruzado (designações recíprocas), em todos os Poderes e esferas.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 34
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-035",
+    "disciplina": "constitucional",
+    "assunto": "Administração pública",
+    "enunciado": "À luz do disposto na CF e do entendimento do STF, julgue o próximo item, relacionado aos princípios da administração pública.\n\nO ato de qualquer dos poderes públicos restritivo de publicidade deve ser motivado de forma objetiva, específica e formal, sendo nulos os atos públicos que imponham, genericamente e sem fundamentação válida e específica, impedimento ao direito fundamental à informação.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. Para o STF, a regra é a publicidade; o sigilo é exceção e precisa de motivação objetiva, específica e formal. Restrição genérica e sem fundamentação ao direito à informação é nula.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 35
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-036",
+    "disciplina": "administrativo",
+    "assunto": "Lei n.º 8.112/1990",
+    "enunciado": "Julgue o item a seguir, com base na Lei n.º 8.112/1990, que dispõe sobre o regime jurídico dos servidores públicos federais.\n\nO servidor que acumular licitamente dois cargos efetivos e vier a ser investido em cargo de provimento em comissão poderá continuar a exercer ambos os cargos efetivos caso haja compatibilidade de horário e local.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. Pelo art. 120 da Lei n.º 8.112/1990, o servidor que acumula licitamente dois cargos efetivos fica afastado de AMBOS ao ser investido em cargo em comissão, salvo se houver compatibilidade de horário e local com um deles, caso em que continua só nesse.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 36
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-037",
+    "disciplina": "administrativo",
+    "assunto": "Lei n.º 8.112/1990",
+    "enunciado": "Julgue o item a seguir, com base na Lei n.º 8.112/1990, que dispõe sobre o regime jurídico dos servidores públicos federais.\n\nA irredutibilidade do vencimento do cargo efetivo não se estende às vantagens pecuniárias, sejam elas de caráter permanente ou temporário.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. O vencimento do cargo efetivo, somado às vantagens de caráter PERMANENTE, é irredutível. Só as vantagens temporárias ficam de fora.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 37
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-038",
+    "disciplina": "administrativo",
+    "assunto": "Lei n.º 8.112/1990",
+    "enunciado": "Julgue o item a seguir, com base na Lei n.º 8.112/1990, que dispõe sobre o regime jurídico dos servidores públicos federais.\n\nPor terem natureza indenizatória, a ajuda de custo, as diárias, o transporte e o auxílio-moradia não se incorporam ao vencimento do servidor público.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. Ajuda de custo, diárias, transporte e auxílio-moradia são indenizações e, por isso, não se incorporam ao vencimento ou provento para nenhum efeito.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 38
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-039",
+    "disciplina": "administrativo",
+    "assunto": "Responsabilidades do servidor",
+    "enunciado": "Julgue o item a seguir, com base na Lei n.º 8.112/1990, que dispõe sobre o regime jurídico dos servidores públicos federais.\n\nCaso o servidor público seja absolvido na esfera criminal, sua responsabilidade administrativa pelo mesmo fato será afastada, independentemente do fundamento que ensejou a absolvição penal.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. A absolvição criminal só afasta a responsabilidade administrativa quando nega a existência do fato ou a autoria. Absolvição por falta de provas, por exemplo, não afasta.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 39
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-040",
+    "disciplina": "administrativo",
+    "assunto": "Deveres do servidor",
+    "enunciado": "Julgue o item a seguir, com base na Lei n.º 8.112/1990, que dispõe sobre o regime jurídico dos servidores públicos federais.\n\nÉ obrigação do servidor público deixar de cumprir ordens manifestamente ilegais, ainda que emanadas de superior hierárquico, devendo o referido servidor representar contra esses atos ilícitos.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. É dever do servidor cumprir as ordens superiores, exceto as manifestamente ilegais, e representar contra ilegalidade, omissão ou abuso de poder (art. 116 da Lei n.º 8.112/1990).",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 40
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-041",
+    "disciplina": "administrativo",
+    "assunto": "Responsabilidade civil do Estado",
+    "enunciado": "No tocante à responsabilidade civil do Estado, julgue o item subsequente.\n\nO ato ilícito culposo causador de dano praticado por perito médico federal no desempenho de seu ofício privado em consultório médico particular atrai a responsabilidade civil do Estado, em virtude da qualidade de agente público do perito.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. O Estado responde pelos danos que seus agentes causam NESSA QUALIDADE. No consultório particular, o médico age como profissional privado, e o Estado não responde.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 41
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-042",
+    "disciplina": "administrativo",
+    "assunto": "Responsabilidade civil do Estado",
+    "enunciado": "No tocante à responsabilidade civil do Estado, julgue o item subsequente.\n\nNo direito brasileiro, a responsabilidade civil do Estado prescinde da existência de dolo ou culpa, ao passo que a configuração da responsabilidade do agente público requer a presença desses elementos subjetivos.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. A responsabilidade do Estado é objetiva: não depende de dolo ou culpa. Já o agente só responde (em ação de regresso) se agiu com dolo ou culpa.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 42
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-043",
+    "disciplina": "administrativo",
+    "assunto": "Improbidade administrativa",
+    "enunciado": "Julgue o item seguinte, com base no disposto na Lei n.º 8.429/1992, que trata de improbidade administrativa.\n\nPermitir ou facilitar a aquisição de bem ou serviço por preço superior ao de mercado constitui ato de improbidade administrativa que atenta contra os princípios da administração pública.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. Permitir ou facilitar compra por preço acima do de mercado é ato de improbidade que causa PREJUÍZO AO ERÁRIO (art. 10), e não ato que atenta contra os princípios.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 43
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-045",
+    "disciplina": "administrativo",
+    "assunto": "Improbidade administrativa",
+    "enunciado": "Julgue o item seguinte, com base no disposto na Lei n.º 8.429/1992, que trata de improbidade administrativa.\n\nO servidor público somente poderá tomar posse em cargo efetivo se apresentar a declaração de imposto de renda e proventos de qualquer natureza enviada à Secretaria Especial da Receita Federal do Brasil, devendo atualizar essa declaração de bens anualmente e na data em que vir a deixar o exercício do cargo público.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. Pela Lei n.º 8.429/1992 (art. 13), a posse e o exercício dependem da apresentação da declaração de imposto de renda enviada à Receita Federal, que deve ser atualizada todo ano e quando o agente deixa o cargo.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 45
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-046",
+    "disciplina": "administrativo",
+    "assunto": "Lei de Acesso à Informação",
+    "enunciado": "Com base no disposto na Lei de Acesso à Informação, julgue o item a seguir.\n\nA aplicação da sanção de inidoneidade é de competência exclusiva da autoridade máxima do órgão público, sendo garantido ao interessado o direito de defesa em até 15 dias após a abertura de vista ao processo.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. A declaração de inidoneidade é mesmo de competência exclusiva da autoridade máxima do órgão, mas o prazo de defesa é de 10 dias da abertura de vista, e não de 15.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 46
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mps24-cg-048",
+    "disciplina": "administrativo",
+    "assunto": "Lei de Acesso à Informação",
+    "enunciado": "Com base no disposto na Lei de Acesso à Informação, julgue o item a seguir.\n\nDefine-se integridade como a garantia de que a informação foi produzida, expedida, recebida ou modificada por uma fonte legítima e identificável.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. O item define AUTENTICIDADE (informação produzida, expedida, recebida ou modificada por fonte identificada). Integridade é a informação não modificada, inclusive quanto à origem, ao trânsito e ao destino.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério da Previdência Social",
+      "cargo": "Perito Médico Federal",
+      "ano": 2024,
+      "prova": "mps-2024-cg",
+      "item": 48
+    },
+    "status": "ativa"
+  }
+]
