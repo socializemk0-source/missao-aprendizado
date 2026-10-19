@@ -166,5 +166,17 @@
     "provaUrl": "https://cdn.cebraspe.org.br/concursos/ibama_25/arquivos/057_IBAMA_CB2_01.pdf",
     "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/ibama_25/arquivos/Gab_Definitivo_057_IBAMA_CB2_01.PDF",
     "gabaritoDefinitivo": "ECEEECCEECCCCCEEEEEXECEECCCEECCCECECECCEECCEECECEC"
+  },
+  "trf6-2024-cg": {
+    "banca": "Cebraspe",
+    "orgao": "TRF 6.ª Região",
+    "cargo": "Analista Judiciário",
+    "ano": 2024,
+    "aplicacao": "2024",
+    "caderno": "Conhecimentos gerais para os cargos 1, 4, 5, 6, 7, 12, 19, 20 e outros (034_TRF6_CG1_01)",
+    "formato": "certo-errado",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/trf6_24/arquivos/034_TRF6_CG1_01.PDF",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/trf6_24/arquivos/GAB_DEFINITIVO_034_TRF6_CG1_01.PDF",
+    "gabaritoDefinitivo": "CEEEEECCECCECECEECCECCCECECECCEECCXCEECXEECECCCCEE"
   }
 }
