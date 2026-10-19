@@ -29,14 +29,18 @@ gabarito de sites de questões (QConcursos, TecConcursos etc.).
    lendo o PDF por programa (`pdftotext -layout`), não à mão.
 3. Transcrever os itens **sem mudar uma palavra**. Conferir por programa que o
    texto de cada item aparece igual no texto extraído da prova.
-4. O contexto do item (comando da banca, situação hipotética, proposição) vai
-   antes do item, separado por uma linha em branco. A tela mostra o contexto em
-   texto corrido e o item em destaque (`src/game/Enunciado.tsx`).
+4. O contexto vai antes do item, em blocos separados por uma linha em branco:
+   - o texto de apoio (título como "Texto CB1A1", um bloco por parágrafo e a
+     referência no fim);
+   - a situação hipotética ou a proposição;
+   - o comando da banca, no singular ("julgue o item a seguir").
+
+   A tela mostra o contexto em texto corrido e o item em destaque
+   (`src/game/Enunciado.tsx`). Texto de apoio longo fica numa caixa que dá para
+   recolher.
 5. Ficam de fora:
    - itens anulados (`X`);
-   - itens que dependem de figura, tabela ou planilha que não dá para reproduzir;
-   - por enquanto, itens que dependem de um texto longo (Português). Falta a
-     tela mostrar um texto de apoio.
+   - itens que dependem de figura, tabela ou planilha que não dá para reproduzir.
 6. Escrever uma explicação nossa para cada item. Nos itens de Certo/Errado, ela
    começa com "Certo." ou "Errado.".
 7. Adicionar o arquivo a um lote em `content/banco/lotes.json`, rodar
@@ -48,4 +52,4 @@ gabarito de sites de questões (QConcursos, TecConcursos etc.).
 
 | Prova | Itens usados | Fora |
 |---|---|---|
-| Cebraspe · INSS 2022 · Técnico do Seguro Social · Conhecimentos Básicos | 32 (Ética, Constitucional, Administrativo, Informática, RLM) | 1–14 (texto de Português), 41–43 (figura), 49 (anulado) |
+| Cebraspe · INSS 2022 · Técnico do Seguro Social · Conhecimentos Básicos | 46 (Português, Ética, Constitucional, Administrativo, Informática, RLM) | 41–43 (figura), 49 (anulado) |

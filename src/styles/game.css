@@ -52,6 +52,11 @@ a.phase-node:hover { border-color: var(--primary-soft-border); background: var(-
 .quiz-question { font-size: 21px; line-height: 1.35; margin: 4px 0 18px; color: var(--heading); }
 .quiz-contexto { margin: 4px 0 10px; font-size: 16px; line-height: 1.6; color: var(--fg); }
 .quiz-contexto p { margin: 0 0 10px; }
+.quiz-texto { border: 2px solid var(--border); border-radius: 14px; padding: 12px 16px; background: var(--surface-2); max-height: 50vh; overflow: auto; }
+.quiz-texto summary { cursor: pointer; font-weight: 800; color: var(--heading); margin-bottom: 8px; }
+.quiz-texto p { text-indent: 1.5em; }
+.quiz-texto p:last-child { text-indent: 0; font-size: 13px; color: var(--muted-fg); }
+.quiz-comando { margin: 0 0 6px; font-size: 15px; color: var(--muted-fg); }
 .sim-review-q { white-space: pre-line; }
 .quiz-footer {
   display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;

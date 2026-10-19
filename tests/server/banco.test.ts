@@ -89,7 +89,9 @@ describe('banco de questões autorais', () => {
   it('nenhuma questão é quase igual a outra (banco e trilha)', () => {
     // Item oficial pode lembrar uma autoral que ensina a mesma regra (ex.: a
     // Súmula 473): esse par é permitido. Autoral × autoral e oficial × oficial, não.
-    const todas = [...QUESTOES, ...itens].map((q) => ({ id: q.id, oficial: q.fonte.tipo === 'oficial', t: trincas([q.enunciado, ...q.alternativas].join(' ')) }));
+    // Na oficial, compara só o item (o último bloco): vários itens dividem o mesmo texto de apoio.
+    const item = (q: Questao) => (q.fonte.tipo === 'oficial' ? q.enunciado.split(/\n\s*\n/).pop()! : q.enunciado);
+    const todas = [...QUESTOES, ...itens].map((q) => ({ id: q.id, oficial: q.fonte.tipo === 'oficial', t: trincas([item(q), ...q.alternativas].join(' ')) }));
     const repetidas: string[] = [];
     for (let i = 0; i < todas.length; i++) {
       for (let j = i + 1; j < todas.length; j++) {

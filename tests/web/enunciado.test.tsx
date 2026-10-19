@@ -21,4 +21,13 @@ describe('Enunciado', () => {
     expect(ctx.querySelectorAll('p')).toHaveLength(2);
     expect(ctx).toHaveTextContent('P: se chover, não saio.');
   });
+
+  it('texto de apoio longo: fica numa caixa que dá para recolher, aberta no começo', () => {
+    const texto = 'Texto CB1A1\n\n' + 'Um parágrafo bem comprido. '.repeat(40) + '\n\nJulgue o item.\n\nO texto é dissertativo.';
+    render(<Enunciado id="q" texto={texto} />);
+    const caixa = document.querySelector('details.quiz-contexto')!;
+    expect(caixa).toHaveAttribute('open');
+    expect(caixa.querySelector('summary')).toHaveTextContent('Texto CB1A1');
+    expect(screen.getByRole('heading', { name: 'O texto é dissertativo.' })).toBeInTheDocument();
+  });
 });
