@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import { useAuth } from '../../auth/AuthProvider';
 import { Confetti } from '../../components/Confetti';
 import { Icon } from '../../components/Icon';
-import { Tico } from '../../components/Tico';
+import { Tico, type TicoPose } from '../../components/Tico';
 import { ApiError } from '../../lib/api';
 import {
   buscarDesafio, concluirDia, conferirResposta, lerProgresso, salvarProgresso,
@@ -15,6 +15,14 @@ import { useAoAparecer } from '../../lib/usar-visto';
 import { DemoQuestion } from './DemoQuestion';
 
 const letra = (i: number) => String.fromCharCode(65 + i);
+
+// O que o Tico diz em cada momento do desafio (e a pose que acompanha).
+function falaDoTico(atual: number, total: number, acertou: boolean | undefined): { texto: string; pose: TicoPose } {
+  if (acertou === true) return { texto: 'Mandou bem! Uma a menos.', pose: 'joinha' };
+  if (acertou === false) return { texto: 'Errar aqui é treino. Leia a explicação: é assim que fixa.', pose: 'apontando' };
+  if (atual === 0) return { texto: 'Bora pro desafio? São 4 questões, uma de cada matéria.', pose: 'acenando' };
+  return { texto: `Questão ${atual + 1} de ${total}. ${atual + 1 === total ? 'Última, capricha!' : 'Vamos lá!'}`, pose: 'acenando' };
+}
 
 // Desafio do Tico: as 4 questões do dia, sem cadastro. Responde, confere com o
 // servidor, lê a explicação e passa para a próxima. No fim, placar, sequência de
@@ -131,7 +139,8 @@ export function DesafioDoDia() {
       </div>
 
       {questao ? (
-        <>
+        <div key={questao.id} className="desafio-pergunta">
+          <Fala {...falaDoTico(atual, total, resposta?.acertou)} />
           <p className="desafio-materia">{questao.disciplinaNome} · {questao.assunto}</p>
           <h3>{questao.enunciado}</h3>
           <div className="demo-options" role="radiogroup" aria-label="Alternativas">
@@ -164,14 +173,14 @@ export function DesafioDoDia() {
               </button>
             </div>
           )}
-        </>
+        </div>
       ) : (
         <div className="desafio-fim">
           {acertos >= 3 && <Confetti />}
           <Tico pose={acertos >= 3 ? 'comemorando' : 'joinha'} className="desafio-tico" alt="" />
           <h3>Você acertou {acertos} de {total}</h3>
           <p className="desafio-sequencia">
-            <span aria-hidden="true">🔥 </span>{progresso.sequencia === 1 ? '1 dia seguido' : `${progresso.sequencia} dias seguidos`}
+            <span className="desafio-chama" aria-hidden="true">🔥 </span>{progresso.sequencia === 1 ? '1 dia seguido' : `${progresso.sequencia} dias seguidos`}
           </p>
           <p className="muted">Amanhã tem desafio novo. Volte para não perder a sequência.</p>
           <div className="desafio-compartilhar">
@@ -196,6 +205,16 @@ export function DesafioDoDia() {
           )}
         </div>
       )}
+    </div>
+  );
+}
+
+// Balão de fala do Tico. Muda a cada momento do desafio (o key refaz a animação).
+function Fala({ texto, pose }: { texto: string; pose: TicoPose }) {
+  return (
+    <div className="desafio-fala" role="note" aria-label="Tico">
+      <Tico pose={pose} className="desafio-fala-tico" alt="" loading="lazy" />
+      <p key={texto} className="desafio-balao">{texto}</p>
     </div>
   );
 }

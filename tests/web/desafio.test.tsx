@@ -171,4 +171,19 @@ describe('Desafio do Tico na página inicial', () => {
     expect(zap).toHaveAttribute('target', '_blank');
     expect(zap).toHaveAttribute('rel', 'noopener noreferrer');
   });
+
+  it('o Tico fala com o aluno: chama para o desafio e reage ao acerto e ao erro', async () => {
+    ligar();
+    renderAt('/', { status: 'signedOut' });
+    const fala = await screen.findByRole('note', { name: 'Tico' });
+    expect(fala).toHaveTextContent('Bora pro desafio?');
+    await userEvent.click(screen.getAllByRole('radio')[certa(0)]!);
+    await userEvent.click(screen.getByRole('button', { name: 'Conferir resposta' }));
+    await waitFor(() => expect(screen.getByRole('note', { name: 'Tico' })).toHaveTextContent('Mandou bem!'));
+    await userEvent.click(screen.getByRole('button', { name: 'Próxima questão' }));
+    expect(screen.getByRole('note', { name: 'Tico' })).toHaveTextContent('Questão 2 de 4');
+    await userEvent.click(screen.getAllByRole('radio')[errada(1)]!);
+    await userEvent.click(screen.getByRole('button', { name: 'Conferir resposta' }));
+    await waitFor(() => expect(screen.getByRole('note', { name: 'Tico' })).toHaveTextContent('Errar aqui é treino'));
+  });
 });

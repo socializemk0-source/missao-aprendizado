@@ -98,11 +98,22 @@ html { scroll-behavior: smooth; }
 .desafio-sequencia { font-size: 18px; font-weight: 800; color: var(--heading); }
 .desafio-fim .btn { margin-top: 8px; }
 .desafio-nota { font-size: 13px; }
+.desafio-pergunta { animation: slide-up .3s ease-out; }
+.desafio-fala { display: flex; align-items: flex-end; gap: 8px; margin-bottom: 10px; }
+.desafio-fala-tico { width: 52px; height: 52px; flex: none; }
+.desafio-balao {
+  position: relative; margin: 0 0 14px; padding: 8px 12px; border-radius: 14px; border-bottom-left-radius: 4px;
+  background: var(--primary-soft); color: var(--heading); font-size: 14px; font-weight: 700; line-height: 1.35;
+  animation: balao .3s ease-out; transform-origin: bottom left;
+}
+.desafio-fim .desafio-tico { animation: bump .5s ease-out; }
+.desafio-chama { display: inline-block; animation: flicker 1.2s ease-in-out infinite; }
+@keyframes balao { from { opacity: 0; transform: scale(.85) translateY(4px); } to { opacity: 1; transform: none; } }
 .desafio-compartilhar { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; width: 100%; }
 .desafio-compartilhar .btn { flex: 1 1 180px; display: inline-flex; align-items: center; justify-content: center; gap: 6px; margin-top: 4px; }
 .desafio-aviso { font-size: 14px; font-weight: 700; color: var(--ok-fg); }
-html[data-motion='off'] :is(.desafio-placar li, .desafio-fim) { animation: none; }
-@media (prefers-reduced-motion: reduce) { :is(.desafio-placar li, .desafio-fim) { animation: none; } }
+html[data-motion='off'] :is(.desafio-placar li, .desafio-fim, .desafio-pergunta, .desafio-balao, .desafio-fim .desafio-tico, .desafio-chama) { animation: none; }
+@media (prefers-reduced-motion: reduce) { :is(.desafio-placar li, .desafio-fim, .desafio-pergunta, .desafio-balao, .desafio-fim .desafio-tico, .desafio-chama) { animation: none; } }
 
 /* ---------- Dores → solução ---------- */
 .lp-pains { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
