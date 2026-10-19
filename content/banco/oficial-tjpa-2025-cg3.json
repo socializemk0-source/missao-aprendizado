@@ -1,0 +1,117 @@
+[
+  {
+    "id": "tjpa25b-046",
+    "disciplina": "rlm",
+    "assunto": "Funções",
+    "enunciado": "O número de processos baixados no TJPA durante as primeiras 40 semanas de determinado ano pode ser descrito pela função N(x) = 18(460 + 36x − x²), em que x varia no intervalo [1, 40] e N(x) é igual ao número de processos baixados na semana de número x.\n\nCom base nessas informações, julgue o item seguinte.\n\nO número de processos baixados na 15.ª semana foi superior a 13 mil.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. N(15) = 18 × (460 + 540 − 225) = 18 × 775 = 13.950, mais de 13 mil.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "TJ-PA",
+      "cargo": "Analista Judiciário (Arquitetura, Ciências Contábeis, Economia, Engenharias, Estatística e Fiscal de Arrecadação)",
+      "ano": 2025,
+      "prova": "tjpa-2025-cg3",
+      "item": 46
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "tjpa25b-047",
+    "disciplina": "rlm",
+    "assunto": "Funções",
+    "enunciado": "O número de processos baixados no TJPA durante as primeiras 40 semanas de determinado ano pode ser descrito pela função N(x) = 18(460 + 36x − x²), em que x varia no intervalo [1, 40] e N(x) é igual ao número de processos baixados na semana de número x.\n\nCom base nessas informações, julgue o item seguinte.\n\nO número máximo de processos baixados em qualquer uma dessas semanas foi inferior a 15 mil.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. A parábola 460 + 36x − x² tem o máximo no vértice, x = 36 ÷ 2 = 18: 460 + 648 − 324 = 784. Então o máximo é 18 × 784 = 14.112, menos de 15 mil.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "TJ-PA",
+      "cargo": "Analista Judiciário (Arquitetura, Ciências Contábeis, Economia, Engenharias, Estatística e Fiscal de Arrecadação)",
+      "ano": 2025,
+      "prova": "tjpa-2025-cg3",
+      "item": 47
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "tjpa25b-048",
+    "disciplina": "rlm",
+    "assunto": "Funções",
+    "enunciado": "O número de processos baixados no TJPA durante as primeiras 40 semanas de determinado ano pode ser descrito pela função N(x) = 18(460 + 36x − x²), em que x varia no intervalo [1, 40] e N(x) é igual ao número de processos baixados na semana de número x.\n\nCom base nessas informações, julgue o item seguinte.\n\nEntre as 40 semanas consideradas, existem pelo menos três em que o número de processos baixados foi o mesmo.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. A parábola é simétrica em torno de x = 18: cada valor aparece em no máximo duas semanas (como x = 17 e x = 19). Nunca em três.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "TJ-PA",
+      "cargo": "Analista Judiciário (Arquitetura, Ciências Contábeis, Economia, Engenharias, Estatística e Fiscal de Arrecadação)",
+      "ano": 2025,
+      "prova": "tjpa-2025-cg3",
+      "item": 48
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "tjpa25b-049",
+    "disciplina": "rlm",
+    "assunto": "Probabilidade",
+    "enunciado": "Durante determinada Semana Estadual de Conciliação, iniciativa promovida pelo TJPA, foram realizados 320 casamentos, distribuídos em quatro localidades, conforme tabela a seguir. Uma cópia de cada uma das 320 certidões de casamento foi armazenada em um arquivo, inicialmente vazio.\n\nLocalidade – número de casamentos\nParauapebas – 82\nAnanindeua – 34\nRedenção – 110\nBelém – 94\n\nCom base nessas informações, julgue o item a seguir.\n\nAs chances de se tirar do referido arquivo, de maneira aleatória, uma cópia de uma certidão de um casamento que não aconteceu em Redenção é inferior a 70%.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. Fora de Redenção foram 320 − 110 = 210 casamentos. 210 ÷ 320 ≈ 65,6%, menos de 70%.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "TJ-PA",
+      "cargo": "Analista Judiciário (Arquitetura, Ciências Contábeis, Economia, Engenharias, Estatística e Fiscal de Arrecadação)",
+      "ano": 2025,
+      "prova": "tjpa-2025-cg3",
+      "item": 49
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "tjpa25b-050",
+    "disciplina": "rlm",
+    "assunto": "Probabilidade",
+    "enunciado": "Durante determinada Semana Estadual de Conciliação, iniciativa promovida pelo TJPA, foram realizados 320 casamentos, distribuídos em quatro localidades, conforme tabela a seguir. Uma cópia de cada uma das 320 certidões de casamento foi armazenada em um arquivo, inicialmente vazio.\n\nLocalidade – número de casamentos\nParauapebas – 82\nAnanindeua – 34\nRedenção – 110\nBelém – 94\n\nCom base nessas informações, julgue o item a seguir.\n\nA probabilidade de se tirar do arquivo em questão, de maneira aleatória, uma cópia de uma certidão de um casamento que aconteceu em Parauapebas corresponde a mais de 83% da probabilidade de se tirar uma cópia de uma certidão de casamento que aconteceu em Belém.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. As probabilidades são 82/320 (Parauapebas) e 94/320 (Belém). A razão entre elas é 82 ÷ 94 ≈ 0,872, ou seja, cerca de 87%, mais de 83%.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "TJ-PA",
+      "cargo": "Analista Judiciário (Arquitetura, Ciências Contábeis, Economia, Engenharias, Estatística e Fiscal de Arrecadação)",
+      "ano": 2025,
+      "prova": "tjpa-2025-cg3",
+      "item": 50
+    },
+    "status": "ativa"
+  }
+]

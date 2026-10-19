@@ -191,5 +191,31 @@
     "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/cd_25_ns/arquivos/BE7F1F9B1F3F90750D44E63070FDE8505D71F1BADD7F9A2096BB953B32081694.pdf",
     "gabaritoDescricao": "GABARITO DEFINITIVO – CONHECIMENTOS GERAIS PARA OS CARGOS 1 E 2 (página do concurso no Cebraspe)",
     "gabaritoDefinitivo": "ECECEEECEEEECECEECCCCCEEXEECCXECCCEEECECCCECECCCECECCEEEEEECCECCEECCCCEECCECCECEEECCCCECEC"
+  },
+  "tjpa-2025-cg1": {
+    "banca": "Cebraspe",
+    "orgao": "TJ-PA",
+    "cargo": "Analista Judiciário e Oficial de Justiça Avaliador",
+    "ano": 2025,
+    "aplicacao": "2025",
+    "caderno": "Conhecimentos gerais para os cargos 1, 2, 6, 8, 9, 18 e 22",
+    "formato": "certo-errado",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/tj_pa_25_servidor/arquivos/C9F8D295B931672227C93D2C75D28DC412FC4048D1F1B99E3DC9F0F51D58ACB0.pdf",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/tj_pa_25_servidor/arquivos/A19ACA7DA2B5CB5A9EDDDC4A8963EC7018C10A7A27BB5B47F0F4824B1F502F6E.pdf",
+    "gabaritoDescricao": "GABARITO DEFINITIVO – CONHECIMENTOS GERAIS PARA OS CARGOS 1, 2, 6, 8, 9, 18 E 22 (página do concurso no Cebraspe)",
+    "gabaritoDefinitivo": "CEEEEECECECCECECEEECCECCCCECEECECECCEECEECECCCEECE"
+  },
+  "tjpa-2025-cg3": {
+    "banca": "Cebraspe",
+    "orgao": "TJ-PA",
+    "cargo": "Analista Judiciário (Arquitetura, Ciências Contábeis, Economia, Engenharias, Estatística e Fiscal de Arrecadação)",
+    "ano": 2025,
+    "aplicacao": "2025",
+    "caderno": "Conhecimentos gerais para os cargos 5, 7, 10, 12, 13, 14, 15 e 16",
+    "formato": "certo-errado",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/tj_pa_25_servidor/arquivos/7B302B06480147D547365E7799BDF697AD40B8B8882C85753D805FAFC4E6640D.pdf",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/tj_pa_25_servidor/arquivos/873AE3ACF6AABCBAB3E5B75B08B43AB1B3B3E683DD1A28706C6EC83D72B2230A.pdf",
+    "gabaritoDescricao": "GABARITO DEFINITIVO – CONHECIMENTOS GERAIS PARA OS CARGOS 5, 7, 10, 12, 13, 14, 15 E 16 (página do concurso no Cebraspe)",
+    "gabaritoDefinitivo": "CEEEEECECECCECECEEECCCCCECEECECCEECEECECCCEEECCECC"
   }
 }
