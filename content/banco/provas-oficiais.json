@@ -387,5 +387,42 @@
     "provaUrl": "https://cdn.cebraspe.org.br/concursos/SEPLAG_CE_24/arquivos/982_SEPLAG_CE_CB1_01.PDF",
     "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/SEPLAG_CE_24/arquivos/GAB_DEFINITIVO_982_SEPLAG_CE_CB1_01.PDF",
     "gabaritoDefinitivo": "CECCECEECCEECEEXEECCEEEECCCEECCEECCCECCE"
+  },
+  "tcers-2025-cg": {
+    "banca": "Cebraspe",
+    "orgao": "Tribunal de Contas do Estado do Rio Grande do Sul",
+    "cargo": "Auditor de Controle Externo",
+    "ano": 2025,
+    "aplicacao": "2025-10-19",
+    "caderno": "Conhecimentos Gerais para os cargos 1 a 4 (prova objetiva P1, modelo)",
+    "formato": "certo-errado",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/TCE_RS_25/arquivos/A07A9AB36794D46172971974AB0E10DD59F725E5E98C1B038920626F1434115E.pdf",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/TCE_RS_25/arquivos/ED939BAF5B74F70525E21D4DA001CD500810EF5A5D2FC68B75B1935797F5D7D7.pdf",
+    "gabaritoDescricao": "GABARITO DEFINITIVO (MODELO) – CONHECIMENTOS GERAIS PARA OS CARGOS 1 A 4",
+    "gabaritoDefinitivo": "CEEECECCECCEECCECCEECECEECXXCCECECECEECEECCXECEECECCCEEECECCEECECCECCEECECECECCC"
+  },
+  "mpgo-2024-cg1": {
+    "banca": "Cebraspe",
+    "orgao": "Ministério Público do Estado de Goiás",
+    "cargo": "Analista Ambiental e Analista em Edificações",
+    "ano": 2024,
+    "aplicacao": "2024-04-21",
+    "caderno": "Conhecimentos Gerais para os cargos 1, 2, 3 e 4 (964_MPGO_CG1_01)",
+    "formato": "certo-errado",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/MP_GO_24_SERVIDOR/arquivos/964_MPGO_CG1_01.PDF",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/MP_GO_24_SERVIDOR/arquivos/GAB_DEFINITIVO_964_MPGO_CG1_01.PDF",
+    "gabaritoDefinitivo": "EECCECECCECECCEECCECEEXCECCEXECCCECECCECECECCEECEE"
+  },
+  "seplagce-2024-cg": {
+    "banca": "Cebraspe",
+    "orgao": "Secretaria do Planejamento e Gestão do Estado do Ceará",
+    "cargo": "Analista de Gestão Pública e Analista de Planejamento e Orçamento",
+    "ano": 2024,
+    "aplicacao": "2024-07-21",
+    "caderno": "Conhecimentos Gerais para todos os cargos (982_SEPLAG_CE_CG1_01)",
+    "formato": "certo-errado",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/SEPLAG_CE_24/arquivos/982_SEPLAG_CE_CG1_01.PDF",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/SEPLAG_CE_24/arquivos/GAB_DEFINITIVO_982_SEPLAG_CE_CG1_01.PDF",
+    "gabaritoDefinitivo": "----------------------------------------CECCECCEXEECCEECCEECCECCCCEECECEECXEECCCCEXEEEECCE"
   }
 }

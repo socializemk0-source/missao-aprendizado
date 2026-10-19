@@ -1,0 +1,462 @@
+[
+  {
+    "id": "seplagce24cg-043",
+    "disciplina": "administrativo",
+    "assunto": "Princípios da administração pública",
+    "enunciado": "Julgue o item a seguir, acerca da evolução da administração pública e dos modelos de gestão pública.\n\nNo âmbito da denominada Reforma do Aparelho do Estado, o princípio da eficiência foi incluído expressamente no texto constitucional, a fim de implementar uma administração pública gerencial em substituição à concepção de uma administração pública burocrática.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. A Emenda Constitucional n.º 19/1998, parte da Reforma do Aparelho do Estado, incluiu a eficiência entre os princípios do art. 37 da Constituição, com a ideia de passar da administração burocrática para a gerencial.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Secretaria do Planejamento e Gestão do Estado do Ceará",
+      "cargo": "Analista de Gestão Pública e Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "seplagce-2024-cg",
+      "item": 43
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "seplagce24cg-061",
+    "disciplina": "constitucional",
+    "assunto": "Aplicabilidade das normas constitucionais",
+    "enunciado": "Acerca das normas constitucionais programáticas, dos servidores públicos e do processo legislativo, julgue o item que se segue.\n\nNormas constitucionais programáticas são, em geral, aquelas em que a Constituição se limita a traçar princípios ou direcionamentos para ação estatal futura.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. Normas programáticas traçam programas, princípios e metas para a ação futura do Estado, sem regular de forma direta e imediata os interesses envolvidos. Exemplo: o dever de promover a cultura e o desporto.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Secretaria do Planejamento e Gestão do Estado do Ceará",
+      "cargo": "Analista de Gestão Pública e Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "seplagce-2024-cg",
+      "item": 61
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "seplagce24cg-062",
+    "disciplina": "constitucional",
+    "assunto": "Processo legislativo",
+    "enunciado": "Acerca das normas constitucionais programáticas, dos servidores públicos e do processo legislativo, julgue o item que se segue.\n\nAo exercer o direito de veto, o chefe do Poder Executivo pode vetar apenas determinadas palavras de um projeto de lei, a fim de adequá-lo à Constituição.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. O veto parcial deve abranger o texto inteiro de artigo, parágrafo, inciso ou alínea (art. 66, § 2.º, da CF). Não se pode vetar só algumas palavras, porque isso poderia mudar o sentido da lei.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Secretaria do Planejamento e Gestão do Estado do Ceará",
+      "cargo": "Analista de Gestão Pública e Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "seplagce-2024-cg",
+      "item": 62
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "seplagce24cg-063",
+    "disciplina": "constitucional",
+    "assunto": "Servidores públicos",
+    "enunciado": "Acerca das normas constitucionais programáticas, dos servidores públicos e do processo legislativo, julgue o item que se segue.\n\nEm regra, o servidor público concursado, mesmo quando chegar ao nível máximo de sua carreira, não poderá ser transposto para outra carreira mediante procedimento interno.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. É inconstitucional investir o servidor, sem concurso, em cargo que não integra a carreira em que ingressou (Súmula Vinculante 43). Chegar ao topo da carreira não autoriza a transposição para outra.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Secretaria do Planejamento e Gestão do Estado do Ceará",
+      "cargo": "Analista de Gestão Pública e Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "seplagce-2024-cg",
+      "item": 63
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "seplagce24cg-064",
+    "disciplina": "constitucional",
+    "assunto": "Funções essenciais à justiça",
+    "enunciado": "A respeito do Poder Judiciário e do Ministério Público, julgue o item seguinte.\n\nUma das principais funções do Ministério Público consiste em promover ações judiciais para defesa de interesses sociais e individuais indisponíveis, uma vez que o Poder Judiciário, em regra, não age de ofício, isto é, por iniciativa própria.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. O Judiciário, em regra, só age quando provocado (princípio da inércia). Por isso, cabe ao Ministério Público defender em juízo os interesses sociais e individuais indisponíveis (art. 127 da CF), por exemplo com ação civil pública.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Secretaria do Planejamento e Gestão do Estado do Ceará",
+      "cargo": "Analista de Gestão Pública e Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "seplagce-2024-cg",
+      "item": 64
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "seplagce24cg-065",
+    "disciplina": "constitucional",
+    "assunto": "Poder Judiciário",
+    "enunciado": "A respeito do Poder Judiciário e do Ministério Público, julgue o item seguinte.\n\nA competência da justiça estadual é subsidiária ou residual, no sentido de que, em linhas gerais, lhe compete julgar as causas que não caibam aos demais ramos do Poder Judiciário.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. A CF lista as competências das justiças especializadas (do Trabalho, Eleitoral e Militar) e da Justiça Federal. O que não cabe a nenhuma delas fica com a justiça estadual: por isso se diz que sua competência é residual.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Secretaria do Planejamento e Gestão do Estado do Ceará",
+      "cargo": "Analista de Gestão Pública e Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "seplagce-2024-cg",
+      "item": 65
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "seplagce24cg-066",
+    "disciplina": "constitucional",
+    "assunto": "Controle de constitucionalidade",
+    "enunciado": "Em relação ao controle de constitucionalidade, julgue o item a seguir.\n\nNão há prazo para o ajuizamento de ação direta de inconstitucionalidade.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. A ação direta de inconstitucionalidade não tem prazo: a lei inconstitucional não se torna válida com o passar do tempo, e a ação pode ser proposta a qualquer momento.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Secretaria do Planejamento e Gestão do Estado do Ceará",
+      "cargo": "Analista de Gestão Pública e Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "seplagce-2024-cg",
+      "item": 66
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "seplagce24cg-067",
+    "disciplina": "constitucional",
+    "assunto": "Controle de constitucionalidade",
+    "enunciado": "Em relação ao controle de constitucionalidade, julgue o item a seguir.\n\nO controle formal de constitucionalidade das normas visa verificar a compatibilidade do conteúdo delas com as disposições da Constituição em vigor.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. O controle formal verifica se a norma seguiu o procedimento e a competência previstos na CF (quem pode propor, quórum, rito). Comparar o conteúdo da norma com a CF é controle material.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Secretaria do Planejamento e Gestão do Estado do Ceará",
+      "cargo": "Analista de Gestão Pública e Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "seplagce-2024-cg",
+      "item": 67
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "seplagce24cg-071",
+    "disciplina": "administrativo",
+    "assunto": "Princípios da administração pública",
+    "enunciado": "Com relação aos sistemas administrativos e aos princípios da administração pública, julgue o item que se segue.\n\nViola o princípio da publicidade norma que considere sigilosa a movimentação de créditos públicos destinados à realização de despesas reservadas ou confidenciais.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. O STF (ADPF 129) decidiu que a regra que tornava sigilosa a movimentação de créditos para despesas reservadas ou confidenciais não foi recebida pela CF de 1988, por ofender a publicidade e a transparência dos gastos públicos.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Secretaria do Planejamento e Gestão do Estado do Ceará",
+      "cargo": "Analista de Gestão Pública e Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "seplagce-2024-cg",
+      "item": 71
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "seplagce24cg-072",
+    "disciplina": "administrativo",
+    "assunto": "Sistemas administrativos",
+    "enunciado": "Com relação aos sistemas administrativos e aos princípios da administração pública, julgue o item que se segue.\n\nNo Brasil, vigora o sistema administrativo misto, fazendo-se presentes tanto o sistema francês do contencioso administrativo, em que o controle é realizado pela própria administração, como o sistema inglês da unidade de jurisdição, em que o controle da administração pública é exercido pelo Poder Judiciário.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. O Brasil adota o sistema inglês, da jurisdição única: qualquer lesão ou ameaça a direito pode ser levada ao Judiciário (art. 5.º, XXXV, da CF). Não há contencioso administrativo com decisão definitiva, como no sistema francês.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Secretaria do Planejamento e Gestão do Estado do Ceará",
+      "cargo": "Analista de Gestão Pública e Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "seplagce-2024-cg",
+      "item": 72
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "seplagce24cg-073",
+    "disciplina": "administrativo",
+    "assunto": "Princípios da administração pública",
+    "enunciado": "Com relação aos sistemas administrativos e aos princípios da administração pública, julgue o item que se segue.\n\nPor força dos princípios da segurança jurídica e da confiança legítima, o ocupante de cargo comissionado que tenha sido nomeado antes da edição de norma que veda o nepotismo não pode ser alcançado pelos efeitos da referida norma.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. A proibição do nepotismo vem diretamente dos princípios da moralidade e da impessoalidade (Súmula Vinculante 13). Quem foi nomeado antes da norma não tem direito adquirido de permanecer no cargo em comissão.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Secretaria do Planejamento e Gestão do Estado do Ceará",
+      "cargo": "Analista de Gestão Pública e Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "seplagce-2024-cg",
+      "item": 73
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "seplagce24cg-074",
+    "disciplina": "administrativo",
+    "assunto": "Organização administrativa",
+    "enunciado": "No que diz respeito à organização administrativa, julgue o próximo item.\n\nO poder público pode celebrar contrato de gestão com órgãos e entidades da própria administração — que terão a sua autonomia ampliada — e com as organizações sociais — cuja autonomia será restringida, pois passarão a se sujeitar aos princípios da administração pública.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 3,
+    "explicacao": "Certo. Com órgãos e entidades da própria administração, o contrato de gestão amplia a autonomia em troca de metas (art. 37, § 8.º, da CF). Com as organizações sociais, que são entidades privadas, ele impõe metas, controle e a observância de princípios da administração, restringindo a sua liberdade.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Secretaria do Planejamento e Gestão do Estado do Ceará",
+      "cargo": "Analista de Gestão Pública e Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "seplagce-2024-cg",
+      "item": 74
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "seplagce24cg-076",
+    "disciplina": "administrativo",
+    "assunto": "Serviços públicos",
+    "enunciado": "Julgue o item a seguir, relativo a licitações, contratos administrativos e serviços públicos.\n\nO conselho de usuários dos serviços públicos tem função consultiva, propositiva e deliberativa, devendo sua decisão ser comunicada aos interessados, que dela poderão recorrer.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. Pela Lei n.º 13.460/2017 (art. 18, parágrafo único), os conselhos de usuários são órgãos consultivos: acompanham a prestação dos serviços e propõem melhorias. Eles não deliberam nem tomam decisões das quais caiba recurso.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Secretaria do Planejamento e Gestão do Estado do Ceará",
+      "cargo": "Analista de Gestão Pública e Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "seplagce-2024-cg",
+      "item": 76
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "seplagce24cg-077",
+    "disciplina": "administrativo",
+    "assunto": "Contratos administrativos",
+    "enunciado": "Julgue o item a seguir, relativo a licitações, contratos administrativos e serviços públicos.\n\nA administração pode alterar unilateralmente o contrato de compras para aumentar ou reduzir o preço dos bens em até 25%.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. A alteração unilateral de até 25% se refere a acréscimos ou supressões no objeto do contrato, calculados sobre o valor inicial atualizado (art. 125 da Lei n.º 14.133/2021). A administração não pode mudar sozinha o preço dos bens.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Secretaria do Planejamento e Gestão do Estado do Ceará",
+      "cargo": "Analista de Gestão Pública e Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "seplagce-2024-cg",
+      "item": 77
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "seplagce24cg-078",
+    "disciplina": "administrativo",
+    "assunto": "Licitações (Lei n.º 14.133/2021)",
+    "enunciado": "Julgue o item a seguir, relativo a licitações, contratos administrativos e serviços públicos.\n\nPara a concretização do planejamento, que é um dos princípios a serem observados no âmbito das licitações, são utilizados diversos instrumentos, tais como o plano de contratações anual e o estudo técnico preliminar, sendo este um documento constitutivo da primeira etapa do planejamento.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. O planejamento é princípio da Lei n.º 14.133/2021 (art. 5.º). O plano de contratações anual e o estudo técnico preliminar são instrumentos dele, e a lei define o estudo técnico preliminar como o documento da primeira etapa do planejamento de uma contratação (art. 6.º, XX).",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Secretaria do Planejamento e Gestão do Estado do Ceará",
+      "cargo": "Analista de Gestão Pública e Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "seplagce-2024-cg",
+      "item": 78
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "seplagce24cg-080",
+    "disciplina": "constitucional",
+    "assunto": "Servidores públicos",
+    "enunciado": "No que diz respeito aos agentes públicos, julgue o item seguinte.\n\nO regime geral de previdência social é aplicado ao empregado público, ao servidor ocupante, exclusivamente, de cargo comissionado, ao contratado temporariamente, ao detentor de mandato eletivo e ao servidor estabilizado.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 3,
+    "explicacao": "Certo. O regime próprio é só para quem ocupa cargo efetivo (art. 40 da CF). Comissionados, temporários, empregados públicos e detentores de mandato eletivo seguem o regime geral (art. 40, § 13). O STF decidiu que o servidor estabilizado sem concurso (art. 19 do ADCT) não ocupa cargo efetivo e também fica no regime geral.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Secretaria do Planejamento e Gestão do Estado do Ceará",
+      "cargo": "Analista de Gestão Pública e Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "seplagce-2024-cg",
+      "item": 80
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "seplagce24cg-081",
+    "disciplina": "informatica",
+    "assunto": "Proteção de dados (LGPD)",
+    "enunciado": "Com base na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD) e no entendimento jurisprudencial do Supremo Tribunal Federal (STF), julgue o item a seguir.\n\nSegundo a jurisprudência do STF, o compartilhamento de dados pessoais entre órgãos e entidades da administração pública deve se limitar ao mínimo necessário para o atendimento da finalidade informada.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. Ao julgar o compartilhamento de dados entre órgãos públicos (ADI 6.649 e ADPF 695), o STF exigiu finalidade legítima e específica e que se compartilhe só o mínimo necessário para atendê-la.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Secretaria do Planejamento e Gestão do Estado do Ceará",
+      "cargo": "Analista de Gestão Pública e Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "seplagce-2024-cg",
+      "item": 81
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "seplagce24cg-082",
+    "disciplina": "informatica",
+    "assunto": "Proteção de dados (LGPD)",
+    "enunciado": "Com base na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD) e no entendimento jurisprudencial do Supremo Tribunal Federal (STF), julgue o item a seguir.\n\nA LGPD aplica-se a qualquer operação de tratamento de dados pessoais realizada no território nacional, independentemente do país onde aqueles dados estejam localizados, contemplando, inclusive, as situações de uso para fins exclusivos de segurança pública, segurança do Estado e defesa nacional.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. A LGPD não se aplica ao tratamento feito exclusivamente para segurança pública, defesa nacional, segurança do Estado ou investigação de infrações penais (art. 4.º, III). Esses casos devem ser regidos por lei específica.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Secretaria do Planejamento e Gestão do Estado do Ceará",
+      "cargo": "Analista de Gestão Pública e Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "seplagce-2024-cg",
+      "item": 82
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "seplagce24cg-088",
+    "disciplina": "administrativo",
+    "assunto": "Improbidade administrativa",
+    "enunciado": "À luz da Lei de Improbidade Administrativa (Lei n.º 8.429/1992), julgue o item subsequente.\n\nSegundo a jurisprudência do Supremo Tribunal Federal (STF), é válida a utilização de acordo de colaboração premiada no âmbito de ação civil pública por ato de improbidade administrativa movida pelo Ministério Público, sendo imprescindível, para tanto, a interveniência da pessoa jurídica interessada e a homologação do acordo pela autoridade judicial.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 3,
+    "explicacao": "Certo. O STF (Tema 1.043) admitiu a colaboração premiada em ação de improbidade proposta pelo Ministério Público, desde que a pessoa jurídica interessada participe do acordo e ele seja homologado pelo juiz, sem impedir o ressarcimento integral do dano.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Secretaria do Planejamento e Gestão do Estado do Ceará",
+      "cargo": "Analista de Gestão Pública e Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "seplagce-2024-cg",
+      "item": 88
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "seplagce24cg-090",
+    "disciplina": "administrativo",
+    "assunto": "Improbidade administrativa",
+    "enunciado": "À luz da Lei de Improbidade Administrativa (Lei n.º 8.429/1992), julgue o item subsequente.\n\nConstitui ato de improbidade administrativa que importa enriquecimento ilícito facilitar a aquisição, permuta ou locação de bem ou serviço por preço superior ao de mercado.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. Facilitar a compra, permuta ou locação por preço acima do mercado é ato que causa prejuízo ao erário (art. 10, V, da Lei n.º 8.429/1992). Só seria enriquecimento ilícito se o agente recebesse vantagem para isso (art. 9.º, II).",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Secretaria do Planejamento e Gestão do Estado do Ceará",
+      "cargo": "Analista de Gestão Pública e Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "seplagce-2024-cg",
+      "item": 90
+    },
+    "status": "ativa"
+  }
+]
