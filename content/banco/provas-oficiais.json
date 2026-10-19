@@ -424,5 +424,17 @@
     "provaUrl": "https://cdn.cebraspe.org.br/concursos/SEPLAG_CE_24/arquivos/982_SEPLAG_CE_CG1_01.PDF",
     "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/SEPLAG_CE_24/arquivos/GAB_DEFINITIVO_982_SEPLAG_CE_CG1_01.PDF",
     "gabaritoDefinitivo": "----------------------------------------CECCECCEXEECCEECCEECCECCCCEECECEECXEECCCCEXEEEECCE"
+  },
+  "fub-2025-cb1": {
+    "banca": "Cebraspe",
+    "orgao": "Fundação Universidade de Brasília (FUB)",
+    "cargo": "Cargos 1 a 14 (nível superior)",
+    "ano": 2025,
+    "aplicacao": "2025",
+    "caderno": "Conhecimentos Básicos para os cargos de 1 a 14 (prova objetiva, tipo 01)",
+    "formato": "certo-errado",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/FUB_25/arquivos/088_FUB_CB1_01.pdf",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/FUB_25/arquivos/Gab_Definitivo_088_FUB_CB1_01.pdf",
+    "gabaritoDefinitivo": "EECCEEECECECCCECECCEEECCCEECECEECCEECCCCCEECXCECCC"
   }
 }

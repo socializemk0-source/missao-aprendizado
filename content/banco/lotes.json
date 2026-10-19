@@ -34,5 +34,6 @@
   {"migracao": "0050_v2_oficiais_seplagce_2024.sql", "arquivos": ["oficial-seplagce-2024-cb.json"]},
   {"migracao": "0051_v2_oficiais_tcers_2025.sql", "arquivos": ["oficial-tcers-2025-cg.json"]},
   {"migracao": "0052_v2_oficiais_mpgo_2024.sql", "arquivos": ["oficial-mpgo-2024-cg1.json"]},
-  {"migracao": "0053_v2_oficiais_seplagce_2024_cg.sql", "arquivos": ["oficial-seplagce-2024-cg.json"]}
+  {"migracao": "0053_v2_oficiais_seplagce_2024_cg.sql", "arquivos": ["oficial-seplagce-2024-cg.json"]},
+  {"migracao": "0054_v2_oficiais_fub_2025.sql", "arquivos": ["oficial-fub-2025-cb1.json"]}
 ]
