@@ -1,0 +1,784 @@
+[
+  {
+    "id": "bcb24-001",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CB1A1-I\n\nA emergência de uma grande variedade de plataformas digitais, desde o final da década de 1990, provocou uma mudança econômica radical e uma reorganização de mercados e arranjos de trabalho. A economia de plataforma não está apenas mudando a forma como o trabalho é realizado e remunerado. Os mercados de trabalho também estão se transformando drasticamente, levando a uma situação em que o “emprego padrão” é cada vez mais suplementado ou substituído por trabalho temporário “fora do padrão”, mediado por plataformas. Em um contexto de crescente instabilidade macroeconômica, de desregulamentação das relações de trabalho — em função do impacto disruptivo de tecnologias digitais na intermediação dessas relações —, verifica-se a emergência de novas formas de emprego “fora do padrão”, que reforçam diversos tipos de “flexibilidade” — temporal, espacial, gerencial e funcional, entre outras. Grande parte dessas novas formas de emprego está vinculada à mediação de plataformas digitais, que conectam ofertantes e demandantes de trabalho.\n\nAs plataformas digitais facilitam a articulação entre ofertantes e demandantes de trabalho que, de outra forma, poderiam ter dificuldades para interagir entre si, tornando a realização de transações mais eficiente do que seria possível em relacionamentos bilaterais entre as partes, fornecendo infraestrutura e regras para sua realização. No âmbito dessas plataformas, a correspondência (matching) entre ofertantes e demandantes de trabalho pode ser feita de forma eficaz, por exemplo, por meio de algoritmos que diminuem a quantidade de tempo utilizado para encontrar trabalhadores adequados para tarefas específicas, além de oferecer a base para o controle e gerenciamento dessas tarefas.\n\nNo entanto, a força de trabalho torna-se mais vulnerável, pois as leis trabalhistas ainda se baseiam em um antigo sistema “binário”, segundo o qual quem é empregado recebe direitos — por exemplo, aviso de demissão ou férias pagas —, mas para quem é contratado o acesso a esses direitos tende a ser restringido. Assim, se o modelo de plataformas de trabalho com a interveniência de uma gestão algorítmica oferece vantagens no que se refere à flexibilidade sobre formas convencionais de organização e gestão do trabalho, esse mesmo modelo suscita questões relevantes como a distribuição desigual de oportunidades, benefícios e riscos entre os agentes envolvidos, bem como os possíveis custos sociais advindos de uma eventual precarização das relações de trabalho.\n\nHerbert P. S. de Oliveira e Jorge N. de P. Britto. Gerenciamento e disciplina algorítmica: uma análise focalizada em plataformas de emprego de elevada qualificação. Economia e Sociedade, Campinas, v. 32, n.º 3 (79), 2023 (com adaptações).\n\nAcerca dos sentidos veiculados no texto CB1A1-I, julgue o item a seguir.\n\nConclui-se da leitura do último parágrafo que, segundo as leis trabalhistas, empregado e contratado são categorias distintas de trabalhadores.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. O texto diz que as leis trabalhistas seguem um sistema \"binário\": quem é empregado recebe direitos, e quem é contratado tem acesso restrito a eles. São, portanto, duas categorias diferentes.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 1
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-002",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CB1A1-I\n\nA emergência de uma grande variedade de plataformas digitais, desde o final da década de 1990, provocou uma mudança econômica radical e uma reorganização de mercados e arranjos de trabalho. A economia de plataforma não está apenas mudando a forma como o trabalho é realizado e remunerado. Os mercados de trabalho também estão se transformando drasticamente, levando a uma situação em que o “emprego padrão” é cada vez mais suplementado ou substituído por trabalho temporário “fora do padrão”, mediado por plataformas. Em um contexto de crescente instabilidade macroeconômica, de desregulamentação das relações de trabalho — em função do impacto disruptivo de tecnologias digitais na intermediação dessas relações —, verifica-se a emergência de novas formas de emprego “fora do padrão”, que reforçam diversos tipos de “flexibilidade” — temporal, espacial, gerencial e funcional, entre outras. Grande parte dessas novas formas de emprego está vinculada à mediação de plataformas digitais, que conectam ofertantes e demandantes de trabalho.\n\nAs plataformas digitais facilitam a articulação entre ofertantes e demandantes de trabalho que, de outra forma, poderiam ter dificuldades para interagir entre si, tornando a realização de transações mais eficiente do que seria possível em relacionamentos bilaterais entre as partes, fornecendo infraestrutura e regras para sua realização. No âmbito dessas plataformas, a correspondência (matching) entre ofertantes e demandantes de trabalho pode ser feita de forma eficaz, por exemplo, por meio de algoritmos que diminuem a quantidade de tempo utilizado para encontrar trabalhadores adequados para tarefas específicas, além de oferecer a base para o controle e gerenciamento dessas tarefas.\n\nNo entanto, a força de trabalho torna-se mais vulnerável, pois as leis trabalhistas ainda se baseiam em um antigo sistema “binário”, segundo o qual quem é empregado recebe direitos — por exemplo, aviso de demissão ou férias pagas —, mas para quem é contratado o acesso a esses direitos tende a ser restringido. Assim, se o modelo de plataformas de trabalho com a interveniência de uma gestão algorítmica oferece vantagens no que se refere à flexibilidade sobre formas convencionais de organização e gestão do trabalho, esse mesmo modelo suscita questões relevantes como a distribuição desigual de oportunidades, benefícios e riscos entre os agentes envolvidos, bem como os possíveis custos sociais advindos de uma eventual precarização das relações de trabalho.\n\nHerbert P. S. de Oliveira e Jorge N. de P. Britto. Gerenciamento e disciplina algorítmica: uma análise focalizada em plataformas de emprego de elevada qualificação. Economia e Sociedade, Campinas, v. 32, n.º 3 (79), 2023 (com adaptações).\n\nAcerca dos sentidos veiculados no texto CB1A1-I, julgue o item a seguir.\n\nConclui-se da leitura do texto que o modelo de plataformas digitais de trabalho, por sua variada flexibilidade, oferece aos trabalhadores mais vantagens que desvantagens.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. O texto aponta a vantagem da flexibilidade, mas também a vulnerabilidade, a distribuição desigual de riscos e a possível precarização. Não conclui que as vantagens superam as desvantagens.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 2
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-003",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CB1A1-I\n\nA emergência de uma grande variedade de plataformas digitais, desde o final da década de 1990, provocou uma mudança econômica radical e uma reorganização de mercados e arranjos de trabalho. A economia de plataforma não está apenas mudando a forma como o trabalho é realizado e remunerado. Os mercados de trabalho também estão se transformando drasticamente, levando a uma situação em que o “emprego padrão” é cada vez mais suplementado ou substituído por trabalho temporário “fora do padrão”, mediado por plataformas. Em um contexto de crescente instabilidade macroeconômica, de desregulamentação das relações de trabalho — em função do impacto disruptivo de tecnologias digitais na intermediação dessas relações —, verifica-se a emergência de novas formas de emprego “fora do padrão”, que reforçam diversos tipos de “flexibilidade” — temporal, espacial, gerencial e funcional, entre outras. Grande parte dessas novas formas de emprego está vinculada à mediação de plataformas digitais, que conectam ofertantes e demandantes de trabalho.\n\nAs plataformas digitais facilitam a articulação entre ofertantes e demandantes de trabalho que, de outra forma, poderiam ter dificuldades para interagir entre si, tornando a realização de transações mais eficiente do que seria possível em relacionamentos bilaterais entre as partes, fornecendo infraestrutura e regras para sua realização. No âmbito dessas plataformas, a correspondência (matching) entre ofertantes e demandantes de trabalho pode ser feita de forma eficaz, por exemplo, por meio de algoritmos que diminuem a quantidade de tempo utilizado para encontrar trabalhadores adequados para tarefas específicas, além de oferecer a base para o controle e gerenciamento dessas tarefas.\n\nNo entanto, a força de trabalho torna-se mais vulnerável, pois as leis trabalhistas ainda se baseiam em um antigo sistema “binário”, segundo o qual quem é empregado recebe direitos — por exemplo, aviso de demissão ou férias pagas —, mas para quem é contratado o acesso a esses direitos tende a ser restringido. Assim, se o modelo de plataformas de trabalho com a interveniência de uma gestão algorítmica oferece vantagens no que se refere à flexibilidade sobre formas convencionais de organização e gestão do trabalho, esse mesmo modelo suscita questões relevantes como a distribuição desigual de oportunidades, benefícios e riscos entre os agentes envolvidos, bem como os possíveis custos sociais advindos de uma eventual precarização das relações de trabalho.\n\nHerbert P. S. de Oliveira e Jorge N. de P. Britto. Gerenciamento e disciplina algorítmica: uma análise focalizada em plataformas de emprego de elevada qualificação. Economia e Sociedade, Campinas, v. 32, n.º 3 (79), 2023 (com adaptações).\n\nAcerca dos sentidos veiculados no texto CB1A1-I, julgue o item a seguir.\n\nNo quarto período do primeiro parágrafo, o trecho isolado entre travessões expressa a causa da desregulamentação das relações de trabalho.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. O trecho entre travessões (\"em função do impacto disruptivo de tecnologias digitais na intermediação dessas relações\") diz por que as relações de trabalho foram desregulamentadas: expressa a causa.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 3
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-004",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CB1A1-I\n\nA emergência de uma grande variedade de plataformas digitais, desde o final da década de 1990, provocou uma mudança econômica radical e uma reorganização de mercados e arranjos de trabalho. A economia de plataforma não está apenas mudando a forma como o trabalho é realizado e remunerado. Os mercados de trabalho também estão se transformando drasticamente, levando a uma situação em que o “emprego padrão” é cada vez mais suplementado ou substituído por trabalho temporário “fora do padrão”, mediado por plataformas. Em um contexto de crescente instabilidade macroeconômica, de desregulamentação das relações de trabalho — em função do impacto disruptivo de tecnologias digitais na intermediação dessas relações —, verifica-se a emergência de novas formas de emprego “fora do padrão”, que reforçam diversos tipos de “flexibilidade” — temporal, espacial, gerencial e funcional, entre outras. Grande parte dessas novas formas de emprego está vinculada à mediação de plataformas digitais, que conectam ofertantes e demandantes de trabalho.\n\nAs plataformas digitais facilitam a articulação entre ofertantes e demandantes de trabalho que, de outra forma, poderiam ter dificuldades para interagir entre si, tornando a realização de transações mais eficiente do que seria possível em relacionamentos bilaterais entre as partes, fornecendo infraestrutura e regras para sua realização. No âmbito dessas plataformas, a correspondência (matching) entre ofertantes e demandantes de trabalho pode ser feita de forma eficaz, por exemplo, por meio de algoritmos que diminuem a quantidade de tempo utilizado para encontrar trabalhadores adequados para tarefas específicas, além de oferecer a base para o controle e gerenciamento dessas tarefas.\n\nNo entanto, a força de trabalho torna-se mais vulnerável, pois as leis trabalhistas ainda se baseiam em um antigo sistema “binário”, segundo o qual quem é empregado recebe direitos — por exemplo, aviso de demissão ou férias pagas —, mas para quem é contratado o acesso a esses direitos tende a ser restringido. Assim, se o modelo de plataformas de trabalho com a interveniência de uma gestão algorítmica oferece vantagens no que se refere à flexibilidade sobre formas convencionais de organização e gestão do trabalho, esse mesmo modelo suscita questões relevantes como a distribuição desigual de oportunidades, benefícios e riscos entre os agentes envolvidos, bem como os possíveis custos sociais advindos de uma eventual precarização das relações de trabalho.\n\nHerbert P. S. de Oliveira e Jorge N. de P. Britto. Gerenciamento e disciplina algorítmica: uma análise focalizada em plataformas de emprego de elevada qualificação. Economia e Sociedade, Campinas, v. 32, n.º 3 (79), 2023 (com adaptações).\n\nAcerca dos sentidos veiculados no texto CB1A1-I, julgue o item a seguir.\n\nNo segundo parágrafo, incentiva-se o uso das plataformas digitais na articulação entre ofertantes e demandantes de trabalho, a partir da valorização de sua eficácia e das facilidades dele decorrentes.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. O parágrafo apenas descreve como as plataformas facilitam a ligação entre quem oferece e quem procura trabalho. Não há incentivo ao uso delas; o tom é expositivo.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 4
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-005",
+    "disciplina": "portugues",
+    "assunto": "Sentido das palavras",
+    "enunciado": "Texto CB1A1-I\n\nA emergência de uma grande variedade de plataformas digitais, desde o final da década de 1990, provocou uma mudança econômica radical e uma reorganização de mercados e arranjos de trabalho. A economia de plataforma não está apenas mudando a forma como o trabalho é realizado e remunerado. Os mercados de trabalho também estão se transformando drasticamente, levando a uma situação em que o “emprego padrão” é cada vez mais suplementado ou substituído por trabalho temporário “fora do padrão”, mediado por plataformas. Em um contexto de crescente instabilidade macroeconômica, de desregulamentação das relações de trabalho — em função do impacto disruptivo de tecnologias digitais na intermediação dessas relações —, verifica-se a emergência de novas formas de emprego “fora do padrão”, que reforçam diversos tipos de “flexibilidade” — temporal, espacial, gerencial e funcional, entre outras. Grande parte dessas novas formas de emprego está vinculada à mediação de plataformas digitais, que conectam ofertantes e demandantes de trabalho.\n\nAs plataformas digitais facilitam a articulação entre ofertantes e demandantes de trabalho que, de outra forma, poderiam ter dificuldades para interagir entre si, tornando a realização de transações mais eficiente do que seria possível em relacionamentos bilaterais entre as partes, fornecendo infraestrutura e regras para sua realização. No âmbito dessas plataformas, a correspondência (matching) entre ofertantes e demandantes de trabalho pode ser feita de forma eficaz, por exemplo, por meio de algoritmos que diminuem a quantidade de tempo utilizado para encontrar trabalhadores adequados para tarefas específicas, além de oferecer a base para o controle e gerenciamento dessas tarefas.\n\nNo entanto, a força de trabalho torna-se mais vulnerável, pois as leis trabalhistas ainda se baseiam em um antigo sistema “binário”, segundo o qual quem é empregado recebe direitos — por exemplo, aviso de demissão ou férias pagas —, mas para quem é contratado o acesso a esses direitos tende a ser restringido. Assim, se o modelo de plataformas de trabalho com a interveniência de uma gestão algorítmica oferece vantagens no que se refere à flexibilidade sobre formas convencionais de organização e gestão do trabalho, esse mesmo modelo suscita questões relevantes como a distribuição desigual de oportunidades, benefícios e riscos entre os agentes envolvidos, bem como os possíveis custos sociais advindos de uma eventual precarização das relações de trabalho.\n\nHerbert P. S. de Oliveira e Jorge N. de P. Britto. Gerenciamento e disciplina algorítmica: uma análise focalizada em plataformas de emprego de elevada qualificação. Economia e Sociedade, Campinas, v. 32, n.º 3 (79), 2023 (com adaptações).\n\nAcerca dos sentidos veiculados no texto CB1A1-I, julgue o item a seguir.\n\nNo terceiro período do primeiro parágrafo, o emprego do vocábulo “ou” entre os vocábulos “suplementado” e “substituído” indica que são sinônimos no texto.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. \"Ou\" indica alternativa entre duas situações diferentes: o emprego padrão é complementado (suplementado) ou trocado (substituído) pelo trabalho temporário. As palavras não têm o mesmo sentido.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 5
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-006",
+    "disciplina": "portugues",
+    "assunto": "Coesão textual",
+    "enunciado": "Texto CB1A1-I\n\nA emergência de uma grande variedade de plataformas digitais, desde o final da década de 1990, provocou uma mudança econômica radical e uma reorganização de mercados e arranjos de trabalho. A economia de plataforma não está apenas mudando a forma como o trabalho é realizado e remunerado. Os mercados de trabalho também estão se transformando drasticamente, levando a uma situação em que o “emprego padrão” é cada vez mais suplementado ou substituído por trabalho temporário “fora do padrão”, mediado por plataformas. Em um contexto de crescente instabilidade macroeconômica, de desregulamentação das relações de trabalho — em função do impacto disruptivo de tecnologias digitais na intermediação dessas relações —, verifica-se a emergência de novas formas de emprego “fora do padrão”, que reforçam diversos tipos de “flexibilidade” — temporal, espacial, gerencial e funcional, entre outras. Grande parte dessas novas formas de emprego está vinculada à mediação de plataformas digitais, que conectam ofertantes e demandantes de trabalho.\n\nAs plataformas digitais facilitam a articulação entre ofertantes e demandantes de trabalho que, de outra forma, poderiam ter dificuldades para interagir entre si, tornando a realização de transações mais eficiente do que seria possível em relacionamentos bilaterais entre as partes, fornecendo infraestrutura e regras para sua realização. No âmbito dessas plataformas, a correspondência (matching) entre ofertantes e demandantes de trabalho pode ser feita de forma eficaz, por exemplo, por meio de algoritmos que diminuem a quantidade de tempo utilizado para encontrar trabalhadores adequados para tarefas específicas, além de oferecer a base para o controle e gerenciamento dessas tarefas.\n\nNo entanto, a força de trabalho torna-se mais vulnerável, pois as leis trabalhistas ainda se baseiam em um antigo sistema “binário”, segundo o qual quem é empregado recebe direitos — por exemplo, aviso de demissão ou férias pagas —, mas para quem é contratado o acesso a esses direitos tende a ser restringido. Assim, se o modelo de plataformas de trabalho com a interveniência de uma gestão algorítmica oferece vantagens no que se refere à flexibilidade sobre formas convencionais de organização e gestão do trabalho, esse mesmo modelo suscita questões relevantes como a distribuição desigual de oportunidades, benefícios e riscos entre os agentes envolvidos, bem como os possíveis custos sociais advindos de uma eventual precarização das relações de trabalho.\n\nHerbert P. S. de Oliveira e Jorge N. de P. Britto. Gerenciamento e disciplina algorítmica: uma análise focalizada em plataformas de emprego de elevada qualificação. Economia e Sociedade, Campinas, v. 32, n.º 3 (79), 2023 (com adaptações).\n\nAcerca dos sentidos veiculados no texto CB1A1-I, julgue o item a seguir.\n\nNo primeiro período do terceiro parágrafo, a oração introduzida pelo vocábulo “pois” consiste em uma explicação para o que se afirma na oração imediatamente antecedente.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. A oração com \"pois\" explica por que a força de trabalho fica mais vulnerável: as leis trabalhistas ainda seguem o antigo sistema \"binário\".",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 6
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-007",
+    "disciplina": "portugues",
+    "assunto": "Pontuação",
+    "enunciado": "Texto CB1A1-I\n\nA emergência de uma grande variedade de plataformas digitais, desde o final da década de 1990, provocou uma mudança econômica radical e uma reorganização de mercados e arranjos de trabalho. A economia de plataforma não está apenas mudando a forma como o trabalho é realizado e remunerado. Os mercados de trabalho também estão se transformando drasticamente, levando a uma situação em que o “emprego padrão” é cada vez mais suplementado ou substituído por trabalho temporário “fora do padrão”, mediado por plataformas. Em um contexto de crescente instabilidade macroeconômica, de desregulamentação das relações de trabalho — em função do impacto disruptivo de tecnologias digitais na intermediação dessas relações —, verifica-se a emergência de novas formas de emprego “fora do padrão”, que reforçam diversos tipos de “flexibilidade” — temporal, espacial, gerencial e funcional, entre outras. Grande parte dessas novas formas de emprego está vinculada à mediação de plataformas digitais, que conectam ofertantes e demandantes de trabalho.\n\nAs plataformas digitais facilitam a articulação entre ofertantes e demandantes de trabalho que, de outra forma, poderiam ter dificuldades para interagir entre si, tornando a realização de transações mais eficiente do que seria possível em relacionamentos bilaterais entre as partes, fornecendo infraestrutura e regras para sua realização. No âmbito dessas plataformas, a correspondência (matching) entre ofertantes e demandantes de trabalho pode ser feita de forma eficaz, por exemplo, por meio de algoritmos que diminuem a quantidade de tempo utilizado para encontrar trabalhadores adequados para tarefas específicas, além de oferecer a base para o controle e gerenciamento dessas tarefas.\n\nNo entanto, a força de trabalho torna-se mais vulnerável, pois as leis trabalhistas ainda se baseiam em um antigo sistema “binário”, segundo o qual quem é empregado recebe direitos — por exemplo, aviso de demissão ou férias pagas —, mas para quem é contratado o acesso a esses direitos tende a ser restringido. Assim, se o modelo de plataformas de trabalho com a interveniência de uma gestão algorítmica oferece vantagens no que se refere à flexibilidade sobre formas convencionais de organização e gestão do trabalho, esse mesmo modelo suscita questões relevantes como a distribuição desigual de oportunidades, benefícios e riscos entre os agentes envolvidos, bem como os possíveis custos sociais advindos de uma eventual precarização das relações de trabalho.\n\nHerbert P. S. de Oliveira e Jorge N. de P. Britto. Gerenciamento e disciplina algorítmica: uma análise focalizada em plataformas de emprego de elevada qualificação. Economia e Sociedade, Campinas, v. 32, n.º 3 (79), 2023 (com adaptações).\n\nAcerca dos sentidos veiculados no texto CB1A1-I, julgue o item a seguir.\n\nA correção gramatical do quarto período do primeiro parágrafo seria preservada caso se suprimisse a vírgula empregada logo após o travessão que segue o vocábulo “relações”, pois o emprego dos travessões no período dispensa a necessidade da vírgula.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 3,
+    "explicacao": "Errado. Os travessões isolam só a explicação intercalada. A vírgula depois do segundo travessão fecha a longa expressão de circunstância que abre o período (\"Em um contexto de ... relações de trabalho\") e a separa de \"verifica-se\". Ela é necessária mesmo com os travessões.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 7
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-008",
+    "disciplina": "portugues",
+    "assunto": "Sintaxe: funções",
+    "enunciado": "Texto CB1A1-I\n\nA emergência de uma grande variedade de plataformas digitais, desde o final da década de 1990, provocou uma mudança econômica radical e uma reorganização de mercados e arranjos de trabalho. A economia de plataforma não está apenas mudando a forma como o trabalho é realizado e remunerado. Os mercados de trabalho também estão se transformando drasticamente, levando a uma situação em que o “emprego padrão” é cada vez mais suplementado ou substituído por trabalho temporário “fora do padrão”, mediado por plataformas. Em um contexto de crescente instabilidade macroeconômica, de desregulamentação das relações de trabalho — em função do impacto disruptivo de tecnologias digitais na intermediação dessas relações —, verifica-se a emergência de novas formas de emprego “fora do padrão”, que reforçam diversos tipos de “flexibilidade” — temporal, espacial, gerencial e funcional, entre outras. Grande parte dessas novas formas de emprego está vinculada à mediação de plataformas digitais, que conectam ofertantes e demandantes de trabalho.\n\nAs plataformas digitais facilitam a articulação entre ofertantes e demandantes de trabalho que, de outra forma, poderiam ter dificuldades para interagir entre si, tornando a realização de transações mais eficiente do que seria possível em relacionamentos bilaterais entre as partes, fornecendo infraestrutura e regras para sua realização. No âmbito dessas plataformas, a correspondência (matching) entre ofertantes e demandantes de trabalho pode ser feita de forma eficaz, por exemplo, por meio de algoritmos que diminuem a quantidade de tempo utilizado para encontrar trabalhadores adequados para tarefas específicas, além de oferecer a base para o controle e gerenciamento dessas tarefas.\n\nNo entanto, a força de trabalho torna-se mais vulnerável, pois as leis trabalhistas ainda se baseiam em um antigo sistema “binário”, segundo o qual quem é empregado recebe direitos — por exemplo, aviso de demissão ou férias pagas —, mas para quem é contratado o acesso a esses direitos tende a ser restringido. Assim, se o modelo de plataformas de trabalho com a interveniência de uma gestão algorítmica oferece vantagens no que se refere à flexibilidade sobre formas convencionais de organização e gestão do trabalho, esse mesmo modelo suscita questões relevantes como a distribuição desigual de oportunidades, benefícios e riscos entre os agentes envolvidos, bem como os possíveis custos sociais advindos de uma eventual precarização das relações de trabalho.\n\nHerbert P. S. de Oliveira e Jorge N. de P. Britto. Gerenciamento e disciplina algorítmica: uma análise focalizada em plataformas de emprego de elevada qualificação. Economia e Sociedade, Campinas, v. 32, n.º 3 (79), 2023 (com adaptações).\n\nAcerca dos sentidos veiculados no texto CB1A1-I, julgue o item a seguir.\n\nO termo “drasticamente” (terceiro período do primeiro parágrafo) exerce, na oração em que se insere, a mesma função sintática que o termo “mais” (primeiro período do segundo parágrafo).",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. \"Drasticamente\" modifica o verbo \"transformando\" e \"mais\" intensifica o adjetivo \"eficiente\". Os dois são advérbios na função de adjunto adverbial (de modo e de intensidade).",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 8
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-009",
+    "disciplina": "portugues",
+    "assunto": "Sintaxe: orações",
+    "enunciado": "Texto CB1A1-I\n\nA emergência de uma grande variedade de plataformas digitais, desde o final da década de 1990, provocou uma mudança econômica radical e uma reorganização de mercados e arranjos de trabalho. A economia de plataforma não está apenas mudando a forma como o trabalho é realizado e remunerado. Os mercados de trabalho também estão se transformando drasticamente, levando a uma situação em que o “emprego padrão” é cada vez mais suplementado ou substituído por trabalho temporário “fora do padrão”, mediado por plataformas. Em um contexto de crescente instabilidade macroeconômica, de desregulamentação das relações de trabalho — em função do impacto disruptivo de tecnologias digitais na intermediação dessas relações —, verifica-se a emergência de novas formas de emprego “fora do padrão”, que reforçam diversos tipos de “flexibilidade” — temporal, espacial, gerencial e funcional, entre outras. Grande parte dessas novas formas de emprego está vinculada à mediação de plataformas digitais, que conectam ofertantes e demandantes de trabalho.\n\nAs plataformas digitais facilitam a articulação entre ofertantes e demandantes de trabalho que, de outra forma, poderiam ter dificuldades para interagir entre si, tornando a realização de transações mais eficiente do que seria possível em relacionamentos bilaterais entre as partes, fornecendo infraestrutura e regras para sua realização. No âmbito dessas plataformas, a correspondência (matching) entre ofertantes e demandantes de trabalho pode ser feita de forma eficaz, por exemplo, por meio de algoritmos que diminuem a quantidade de tempo utilizado para encontrar trabalhadores adequados para tarefas específicas, além de oferecer a base para o controle e gerenciamento dessas tarefas.\n\nNo entanto, a força de trabalho torna-se mais vulnerável, pois as leis trabalhistas ainda se baseiam em um antigo sistema “binário”, segundo o qual quem é empregado recebe direitos — por exemplo, aviso de demissão ou férias pagas —, mas para quem é contratado o acesso a esses direitos tende a ser restringido. Assim, se o modelo de plataformas de trabalho com a interveniência de uma gestão algorítmica oferece vantagens no que se refere à flexibilidade sobre formas convencionais de organização e gestão do trabalho, esse mesmo modelo suscita questões relevantes como a distribuição desigual de oportunidades, benefícios e riscos entre os agentes envolvidos, bem como os possíveis custos sociais advindos de uma eventual precarização das relações de trabalho.\n\nHerbert P. S. de Oliveira e Jorge N. de P. Britto. Gerenciamento e disciplina algorítmica: uma análise focalizada em plataformas de emprego de elevada qualificação. Economia e Sociedade, Campinas, v. 32, n.º 3 (79), 2023 (com adaptações).\n\nAcerca dos sentidos veiculados no texto CB1A1-I, julgue o item a seguir.\n\nNo último período do primeiro parágrafo, a oração “que conectam ofertantes e demandantes de trabalho” restringe o sentido do segmento “plataformas digitais”.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. A oração \"que conectam ofertantes e demandantes de trabalho\" vem depois de vírgula: é adjetiva explicativa. Ela acrescenta uma característica a todas as plataformas digitais, sem restringir o sentido.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 9
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-010",
+    "disciplina": "portugues",
+    "assunto": "Crase",
+    "enunciado": "Texto CB1A1-I\n\nA emergência de uma grande variedade de plataformas digitais, desde o final da década de 1990, provocou uma mudança econômica radical e uma reorganização de mercados e arranjos de trabalho. A economia de plataforma não está apenas mudando a forma como o trabalho é realizado e remunerado. Os mercados de trabalho também estão se transformando drasticamente, levando a uma situação em que o “emprego padrão” é cada vez mais suplementado ou substituído por trabalho temporário “fora do padrão”, mediado por plataformas. Em um contexto de crescente instabilidade macroeconômica, de desregulamentação das relações de trabalho — em função do impacto disruptivo de tecnologias digitais na intermediação dessas relações —, verifica-se a emergência de novas formas de emprego “fora do padrão”, que reforçam diversos tipos de “flexibilidade” — temporal, espacial, gerencial e funcional, entre outras. Grande parte dessas novas formas de emprego está vinculada à mediação de plataformas digitais, que conectam ofertantes e demandantes de trabalho.\n\nAs plataformas digitais facilitam a articulação entre ofertantes e demandantes de trabalho que, de outra forma, poderiam ter dificuldades para interagir entre si, tornando a realização de transações mais eficiente do que seria possível em relacionamentos bilaterais entre as partes, fornecendo infraestrutura e regras para sua realização. No âmbito dessas plataformas, a correspondência (matching) entre ofertantes e demandantes de trabalho pode ser feita de forma eficaz, por exemplo, por meio de algoritmos que diminuem a quantidade de tempo utilizado para encontrar trabalhadores adequados para tarefas específicas, além de oferecer a base para o controle e gerenciamento dessas tarefas.\n\nNo entanto, a força de trabalho torna-se mais vulnerável, pois as leis trabalhistas ainda se baseiam em um antigo sistema “binário”, segundo o qual quem é empregado recebe direitos — por exemplo, aviso de demissão ou férias pagas —, mas para quem é contratado o acesso a esses direitos tende a ser restringido. Assim, se o modelo de plataformas de trabalho com a interveniência de uma gestão algorítmica oferece vantagens no que se refere à flexibilidade sobre formas convencionais de organização e gestão do trabalho, esse mesmo modelo suscita questões relevantes como a distribuição desigual de oportunidades, benefícios e riscos entre os agentes envolvidos, bem como os possíveis custos sociais advindos de uma eventual precarização das relações de trabalho.\n\nHerbert P. S. de Oliveira e Jorge N. de P. Britto. Gerenciamento e disciplina algorítmica: uma análise focalizada em plataformas de emprego de elevada qualificação. Economia e Sociedade, Campinas, v. 32, n.º 3 (79), 2023 (com adaptações).\n\nAcerca dos sentidos veiculados no texto CB1A1-I, julgue o item a seguir.\n\nEstaria mantida a correção gramatical do texto caso fosse empregado o acento indicativo de crase no vocábulo “a” em “a distribuição desigual de oportunidades” (último período do texto), visto que seu emprego é facultativo nesse caso.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. Em \"questões relevantes como a distribuição desigual\", nenhuma palavra exige a preposição \"a\": há só o artigo. Sem preposição não há crase, e o acento seria erro, não opção.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 10
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-011",
+    "disciplina": "portugues",
+    "assunto": "Concordância",
+    "enunciado": "Texto CB1A1-I\n\nA emergência de uma grande variedade de plataformas digitais, desde o final da década de 1990, provocou uma mudança econômica radical e uma reorganização de mercados e arranjos de trabalho. A economia de plataforma não está apenas mudando a forma como o trabalho é realizado e remunerado. Os mercados de trabalho também estão se transformando drasticamente, levando a uma situação em que o “emprego padrão” é cada vez mais suplementado ou substituído por trabalho temporário “fora do padrão”, mediado por plataformas. Em um contexto de crescente instabilidade macroeconômica, de desregulamentação das relações de trabalho — em função do impacto disruptivo de tecnologias digitais na intermediação dessas relações —, verifica-se a emergência de novas formas de emprego “fora do padrão”, que reforçam diversos tipos de “flexibilidade” — temporal, espacial, gerencial e funcional, entre outras. Grande parte dessas novas formas de emprego está vinculada à mediação de plataformas digitais, que conectam ofertantes e demandantes de trabalho.\n\nAs plataformas digitais facilitam a articulação entre ofertantes e demandantes de trabalho que, de outra forma, poderiam ter dificuldades para interagir entre si, tornando a realização de transações mais eficiente do que seria possível em relacionamentos bilaterais entre as partes, fornecendo infraestrutura e regras para sua realização. No âmbito dessas plataformas, a correspondência (matching) entre ofertantes e demandantes de trabalho pode ser feita de forma eficaz, por exemplo, por meio de algoritmos que diminuem a quantidade de tempo utilizado para encontrar trabalhadores adequados para tarefas específicas, além de oferecer a base para o controle e gerenciamento dessas tarefas.\n\nNo entanto, a força de trabalho torna-se mais vulnerável, pois as leis trabalhistas ainda se baseiam em um antigo sistema “binário”, segundo o qual quem é empregado recebe direitos — por exemplo, aviso de demissão ou férias pagas —, mas para quem é contratado o acesso a esses direitos tende a ser restringido. Assim, se o modelo de plataformas de trabalho com a interveniência de uma gestão algorítmica oferece vantagens no que se refere à flexibilidade sobre formas convencionais de organização e gestão do trabalho, esse mesmo modelo suscita questões relevantes como a distribuição desigual de oportunidades, benefícios e riscos entre os agentes envolvidos, bem como os possíveis custos sociais advindos de uma eventual precarização das relações de trabalho.\n\nHerbert P. S. de Oliveira e Jorge N. de P. Britto. Gerenciamento e disciplina algorítmica: uma análise focalizada em plataformas de emprego de elevada qualificação. Economia e Sociedade, Campinas, v. 32, n.º 3 (79), 2023 (com adaptações).\n\nAcerca dos sentidos veiculados no texto CB1A1-I, julgue o item a seguir.\n\nNo primeiro período do segundo parágrafo, a forma verbal “poderiam” está flexionada na terceira pessoa do plural porque concorda com os termos “ofertantes” e “demandantes”.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. O sujeito de \"poderiam\" é o pronome relativo \"que\", que retoma \"ofertantes e demandantes de trabalho\". O verbo concorda com esses termos e por isso fica na terceira pessoa do plural.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 11
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-013",
+    "disciplina": "portugues",
+    "assunto": "Colocação pronominal",
+    "enunciado": "Texto CB1A1-I\n\nA emergência de uma grande variedade de plataformas digitais, desde o final da década de 1990, provocou uma mudança econômica radical e uma reorganização de mercados e arranjos de trabalho. A economia de plataforma não está apenas mudando a forma como o trabalho é realizado e remunerado. Os mercados de trabalho também estão se transformando drasticamente, levando a uma situação em que o “emprego padrão” é cada vez mais suplementado ou substituído por trabalho temporário “fora do padrão”, mediado por plataformas. Em um contexto de crescente instabilidade macroeconômica, de desregulamentação das relações de trabalho — em função do impacto disruptivo de tecnologias digitais na intermediação dessas relações —, verifica-se a emergência de novas formas de emprego “fora do padrão”, que reforçam diversos tipos de “flexibilidade” — temporal, espacial, gerencial e funcional, entre outras. Grande parte dessas novas formas de emprego está vinculada à mediação de plataformas digitais, que conectam ofertantes e demandantes de trabalho.\n\nAs plataformas digitais facilitam a articulação entre ofertantes e demandantes de trabalho que, de outra forma, poderiam ter dificuldades para interagir entre si, tornando a realização de transações mais eficiente do que seria possível em relacionamentos bilaterais entre as partes, fornecendo infraestrutura e regras para sua realização. No âmbito dessas plataformas, a correspondência (matching) entre ofertantes e demandantes de trabalho pode ser feita de forma eficaz, por exemplo, por meio de algoritmos que diminuem a quantidade de tempo utilizado para encontrar trabalhadores adequados para tarefas específicas, além de oferecer a base para o controle e gerenciamento dessas tarefas.\n\nNo entanto, a força de trabalho torna-se mais vulnerável, pois as leis trabalhistas ainda se baseiam em um antigo sistema “binário”, segundo o qual quem é empregado recebe direitos — por exemplo, aviso de demissão ou férias pagas —, mas para quem é contratado o acesso a esses direitos tende a ser restringido. Assim, se o modelo de plataformas de trabalho com a interveniência de uma gestão algorítmica oferece vantagens no que se refere à flexibilidade sobre formas convencionais de organização e gestão do trabalho, esse mesmo modelo suscita questões relevantes como a distribuição desigual de oportunidades, benefícios e riscos entre os agentes envolvidos, bem como os possíveis custos sociais advindos de uma eventual precarização das relações de trabalho.\n\nHerbert P. S. de Oliveira e Jorge N. de P. Britto. Gerenciamento e disciplina algorítmica: uma análise focalizada em plataformas de emprego de elevada qualificação. Economia e Sociedade, Campinas, v. 32, n.º 3 (79), 2023 (com adaptações).\n\nAcerca dos sentidos veiculados no texto CB1A1-I, julgue o item a seguir.\n\nEstaria mantida a correção gramatical do quarto período do primeiro parágrafo caso a partícula “se”, em “verifica-se”, fosse deslocada para a posição proclítica — se verifica.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. \"Verifica-se\" começa a oração principal, logo depois da vírgula que fecha a expressão inicial. Sem palavra que atraia o pronome, e depois de pausa, a norma-padrão pede ênclise; a próclise (\"se verifica\") ficaria incorreta.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 13
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-014",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CB1A2-I\n\nA Conferência Geral da Organização das Nações Unidas para a Educação, a Ciência e a Cultura (UNESCO), em sua 41.ª sessão, reconhece os impactos profundos e dinâmicos, positivos e negativos da inteligência artificial (IA) nas sociedades, no meio ambiente, nos ecossistemas e nas vidas humanas, inclusive na mente humana, em parte devido às novas formas como seu uso influencia o pensamento, a interação e a tomada de decisões e afeta a educação, as ciências humanas, sociais e naturais, a cultura, a comunicação e a informação.\n\nA Conferência considera que as tecnologias de IA podem ser de grande utilidade para a humanidade e podem beneficiar todos os países, mas também suscitam questões éticas fundamentais, por exemplo, em relação às distorções que podem incorporar e exacerbar, o que resultaria potencialmente em discriminação, desigualdade, exclusão digital, exclusão em geral e ameaça à diversidade cultural, social e biológica, além de divisões sociais ou econômicas. Suscitam, ainda, questões relativas à necessidade de transparência e compreensibilidade do funcionamento dos algoritmos e dos dados com que eles foram alimentados, além de seu potencial impacto sobre, entre outros aspectos, a dignidade humana; os direitos humanos e as liberdades fundamentais; a igualdade de gênero; a democracia; os processos sociais, econômicos, políticos e culturais; as práticas científicas e de engenharia; o bem-estar dos animais; o meio ambiente e os ecossistemas.\n\nA Conferência reconhece, ainda, que as tecnologias de IA podem aprofundar as divisões e as desigualdades existentes no mundo, dentro dos países e entre eles, e que a justiça, a confiança e a equidade devem ser defendidas para que nenhum país e nenhum indivíduo sejam deixados para trás, seja em razão do acesso justo às tecnologias de IA e de seus benefícios, seja em razão de medidas de proteção contra suas implicações negativas. Reconhecem-se as diferentes circunstâncias de diferentes países e respeita-se o desejo de algumas pessoas de não participar de todos os desenvolvimentos tecnológicos.\n\nCom base nas considerações acima, entre outras, a UNESCO aprova a presente Recomendação sobre a Ética da Inteligência Artificial.\n\nUNESCO. Recomendação sobre a Ética da Inteligência Artificial (com adaptações).\n\nA respeito das ideias veiculadas no texto CB1A2-I, julgue o item que se segue.\n\nConclui-se da leitura do texto que a Conferência Geral da UNESCO mostra-se favorável à defesa da justiça, da confiança e da equidade como forma de evitar o aprofundamento das divisões e das desigualdades existentes no mundo.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. O texto diz que a Conferência reconhece que a IA pode aprofundar divisões e desigualdades e que a justiça, a confiança e a equidade devem ser defendidas para que nenhum país ou indivíduo fique para trás.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 14
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-015",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CB1A2-I\n\nA Conferência Geral da Organização das Nações Unidas para a Educação, a Ciência e a Cultura (UNESCO), em sua 41.ª sessão, reconhece os impactos profundos e dinâmicos, positivos e negativos da inteligência artificial (IA) nas sociedades, no meio ambiente, nos ecossistemas e nas vidas humanas, inclusive na mente humana, em parte devido às novas formas como seu uso influencia o pensamento, a interação e a tomada de decisões e afeta a educação, as ciências humanas, sociais e naturais, a cultura, a comunicação e a informação.\n\nA Conferência considera que as tecnologias de IA podem ser de grande utilidade para a humanidade e podem beneficiar todos os países, mas também suscitam questões éticas fundamentais, por exemplo, em relação às distorções que podem incorporar e exacerbar, o que resultaria potencialmente em discriminação, desigualdade, exclusão digital, exclusão em geral e ameaça à diversidade cultural, social e biológica, além de divisões sociais ou econômicas. Suscitam, ainda, questões relativas à necessidade de transparência e compreensibilidade do funcionamento dos algoritmos e dos dados com que eles foram alimentados, além de seu potencial impacto sobre, entre outros aspectos, a dignidade humana; os direitos humanos e as liberdades fundamentais; a igualdade de gênero; a democracia; os processos sociais, econômicos, políticos e culturais; as práticas científicas e de engenharia; o bem-estar dos animais; o meio ambiente e os ecossistemas.\n\nA Conferência reconhece, ainda, que as tecnologias de IA podem aprofundar as divisões e as desigualdades existentes no mundo, dentro dos países e entre eles, e que a justiça, a confiança e a equidade devem ser defendidas para que nenhum país e nenhum indivíduo sejam deixados para trás, seja em razão do acesso justo às tecnologias de IA e de seus benefícios, seja em razão de medidas de proteção contra suas implicações negativas. Reconhecem-se as diferentes circunstâncias de diferentes países e respeita-se o desejo de algumas pessoas de não participar de todos os desenvolvimentos tecnológicos.\n\nCom base nas considerações acima, entre outras, a UNESCO aprova a presente Recomendação sobre a Ética da Inteligência Artificial.\n\nUNESCO. Recomendação sobre a Ética da Inteligência Artificial (com adaptações).\n\nA respeito das ideias veiculadas no texto CB1A2-I, julgue o item que se segue.\n\nInfere-se do texto que a Conferência Geral da UNESCO considera inevitáveis os impactos profundos, dinâmicos, positivos e negativos das tecnologias de IA.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. A Conferência reconhece os impactos da IA e suas causas, mas o texto não diz que eles são inevitáveis. Ao contrário, fala em medidas de proteção contra as implicações negativas.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 15
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-016",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CB1A2-I\n\nA Conferência Geral da Organização das Nações Unidas para a Educação, a Ciência e a Cultura (UNESCO), em sua 41.ª sessão, reconhece os impactos profundos e dinâmicos, positivos e negativos da inteligência artificial (IA) nas sociedades, no meio ambiente, nos ecossistemas e nas vidas humanas, inclusive na mente humana, em parte devido às novas formas como seu uso influencia o pensamento, a interação e a tomada de decisões e afeta a educação, as ciências humanas, sociais e naturais, a cultura, a comunicação e a informação.\n\nA Conferência considera que as tecnologias de IA podem ser de grande utilidade para a humanidade e podem beneficiar todos os países, mas também suscitam questões éticas fundamentais, por exemplo, em relação às distorções que podem incorporar e exacerbar, o que resultaria potencialmente em discriminação, desigualdade, exclusão digital, exclusão em geral e ameaça à diversidade cultural, social e biológica, além de divisões sociais ou econômicas. Suscitam, ainda, questões relativas à necessidade de transparência e compreensibilidade do funcionamento dos algoritmos e dos dados com que eles foram alimentados, além de seu potencial impacto sobre, entre outros aspectos, a dignidade humana; os direitos humanos e as liberdades fundamentais; a igualdade de gênero; a democracia; os processos sociais, econômicos, políticos e culturais; as práticas científicas e de engenharia; o bem-estar dos animais; o meio ambiente e os ecossistemas.\n\nA Conferência reconhece, ainda, que as tecnologias de IA podem aprofundar as divisões e as desigualdades existentes no mundo, dentro dos países e entre eles, e que a justiça, a confiança e a equidade devem ser defendidas para que nenhum país e nenhum indivíduo sejam deixados para trás, seja em razão do acesso justo às tecnologias de IA e de seus benefícios, seja em razão de medidas de proteção contra suas implicações negativas. Reconhecem-se as diferentes circunstâncias de diferentes países e respeita-se o desejo de algumas pessoas de não participar de todos os desenvolvimentos tecnológicos.\n\nCom base nas considerações acima, entre outras, a UNESCO aprova a presente Recomendação sobre a Ética da Inteligência Artificial.\n\nUNESCO. Recomendação sobre a Ética da Inteligência Artificial (com adaptações).\n\nA respeito das ideias veiculadas no texto CB1A2-I, julgue o item que se segue.\n\nDepreende-se da leitura do segundo período do segundo parágrafo que, entre os aspectos impactados pelas tecnologias de IA, destacam-se como principais “a dignidade humana; os direitos humanos e as liberdades fundamentais (...) e os ecossistemas”.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. Os aspectos são listados \"entre outros\", sem ordem de importância. O texto não diz que esses são os principais.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 16
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-017",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CB1A2-I\n\nA Conferência Geral da Organização das Nações Unidas para a Educação, a Ciência e a Cultura (UNESCO), em sua 41.ª sessão, reconhece os impactos profundos e dinâmicos, positivos e negativos da inteligência artificial (IA) nas sociedades, no meio ambiente, nos ecossistemas e nas vidas humanas, inclusive na mente humana, em parte devido às novas formas como seu uso influencia o pensamento, a interação e a tomada de decisões e afeta a educação, as ciências humanas, sociais e naturais, a cultura, a comunicação e a informação.\n\nA Conferência considera que as tecnologias de IA podem ser de grande utilidade para a humanidade e podem beneficiar todos os países, mas também suscitam questões éticas fundamentais, por exemplo, em relação às distorções que podem incorporar e exacerbar, o que resultaria potencialmente em discriminação, desigualdade, exclusão digital, exclusão em geral e ameaça à diversidade cultural, social e biológica, além de divisões sociais ou econômicas. Suscitam, ainda, questões relativas à necessidade de transparência e compreensibilidade do funcionamento dos algoritmos e dos dados com que eles foram alimentados, além de seu potencial impacto sobre, entre outros aspectos, a dignidade humana; os direitos humanos e as liberdades fundamentais; a igualdade de gênero; a democracia; os processos sociais, econômicos, políticos e culturais; as práticas científicas e de engenharia; o bem-estar dos animais; o meio ambiente e os ecossistemas.\n\nA Conferência reconhece, ainda, que as tecnologias de IA podem aprofundar as divisões e as desigualdades existentes no mundo, dentro dos países e entre eles, e que a justiça, a confiança e a equidade devem ser defendidas para que nenhum país e nenhum indivíduo sejam deixados para trás, seja em razão do acesso justo às tecnologias de IA e de seus benefícios, seja em razão de medidas de proteção contra suas implicações negativas. Reconhecem-se as diferentes circunstâncias de diferentes países e respeita-se o desejo de algumas pessoas de não participar de todos os desenvolvimentos tecnológicos.\n\nCom base nas considerações acima, entre outras, a UNESCO aprova a presente Recomendação sobre a Ética da Inteligência Artificial.\n\nUNESCO. Recomendação sobre a Ética da Inteligência Artificial (com adaptações).\n\nA respeito das ideias veiculadas no texto CB1A2-I, julgue o item que se segue.\n\nCada parágrafo do texto é estruturado com base na ideia de que o uso das tecnologias de IA tem consequências contraditórias.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. Só parte do texto trata de efeitos bons e ruins da IA. O último parágrafo, por exemplo, apenas informa a aprovação da Recomendação; não é verdade que cada parágrafo se organize em torno de consequências contraditórias.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 17
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-018",
+    "disciplina": "portugues",
+    "assunto": "Reescrita de frases",
+    "enunciado": "Texto CB1A2-I\n\nA Conferência Geral da Organização das Nações Unidas para a Educação, a Ciência e a Cultura (UNESCO), em sua 41.ª sessão, reconhece os impactos profundos e dinâmicos, positivos e negativos da inteligência artificial (IA) nas sociedades, no meio ambiente, nos ecossistemas e nas vidas humanas, inclusive na mente humana, em parte devido às novas formas como seu uso influencia o pensamento, a interação e a tomada de decisões e afeta a educação, as ciências humanas, sociais e naturais, a cultura, a comunicação e a informação.\n\nA Conferência considera que as tecnologias de IA podem ser de grande utilidade para a humanidade e podem beneficiar todos os países, mas também suscitam questões éticas fundamentais, por exemplo, em relação às distorções que podem incorporar e exacerbar, o que resultaria potencialmente em discriminação, desigualdade, exclusão digital, exclusão em geral e ameaça à diversidade cultural, social e biológica, além de divisões sociais ou econômicas. Suscitam, ainda, questões relativas à necessidade de transparência e compreensibilidade do funcionamento dos algoritmos e dos dados com que eles foram alimentados, além de seu potencial impacto sobre, entre outros aspectos, a dignidade humana; os direitos humanos e as liberdades fundamentais; a igualdade de gênero; a democracia; os processos sociais, econômicos, políticos e culturais; as práticas científicas e de engenharia; o bem-estar dos animais; o meio ambiente e os ecossistemas.\n\nA Conferência reconhece, ainda, que as tecnologias de IA podem aprofundar as divisões e as desigualdades existentes no mundo, dentro dos países e entre eles, e que a justiça, a confiança e a equidade devem ser defendidas para que nenhum país e nenhum indivíduo sejam deixados para trás, seja em razão do acesso justo às tecnologias de IA e de seus benefícios, seja em razão de medidas de proteção contra suas implicações negativas. Reconhecem-se as diferentes circunstâncias de diferentes países e respeita-se o desejo de algumas pessoas de não participar de todos os desenvolvimentos tecnológicos.\n\nCom base nas considerações acima, entre outras, a UNESCO aprova a presente Recomendação sobre a Ética da Inteligência Artificial.\n\nUNESCO. Recomendação sobre a Ética da Inteligência Artificial (com adaptações).\n\nA respeito das ideias veiculadas no texto CB1A2-I, julgue o item que se segue.\n\nA correção gramatical do texto e a coerência de suas ideias seriam mantidas caso o segundo período do terceiro parágrafo fosse reescrito da seguinte forma: A Conferência reconhece as variadas circunstâncias de diferentes países; ademais, respeita o desejo que algumas pessoas têm de não participar de todos os desenvolvimentos tecnológicos.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. A reescrita deixa explícito o sujeito (\"A Conferência\"), usa \"ademais\" para somar a segunda ideia e mantém o sentido original. O ponto e vírgula antes de \"ademais\" está correto.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 18
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-019",
+    "disciplina": "portugues",
+    "assunto": "Sentido das palavras",
+    "enunciado": "Texto CB1A2-I\n\nA Conferência Geral da Organização das Nações Unidas para a Educação, a Ciência e a Cultura (UNESCO), em sua 41.ª sessão, reconhece os impactos profundos e dinâmicos, positivos e negativos da inteligência artificial (IA) nas sociedades, no meio ambiente, nos ecossistemas e nas vidas humanas, inclusive na mente humana, em parte devido às novas formas como seu uso influencia o pensamento, a interação e a tomada de decisões e afeta a educação, as ciências humanas, sociais e naturais, a cultura, a comunicação e a informação.\n\nA Conferência considera que as tecnologias de IA podem ser de grande utilidade para a humanidade e podem beneficiar todos os países, mas também suscitam questões éticas fundamentais, por exemplo, em relação às distorções que podem incorporar e exacerbar, o que resultaria potencialmente em discriminação, desigualdade, exclusão digital, exclusão em geral e ameaça à diversidade cultural, social e biológica, além de divisões sociais ou econômicas. Suscitam, ainda, questões relativas à necessidade de transparência e compreensibilidade do funcionamento dos algoritmos e dos dados com que eles foram alimentados, além de seu potencial impacto sobre, entre outros aspectos, a dignidade humana; os direitos humanos e as liberdades fundamentais; a igualdade de gênero; a democracia; os processos sociais, econômicos, políticos e culturais; as práticas científicas e de engenharia; o bem-estar dos animais; o meio ambiente e os ecossistemas.\n\nA Conferência reconhece, ainda, que as tecnologias de IA podem aprofundar as divisões e as desigualdades existentes no mundo, dentro dos países e entre eles, e que a justiça, a confiança e a equidade devem ser defendidas para que nenhum país e nenhum indivíduo sejam deixados para trás, seja em razão do acesso justo às tecnologias de IA e de seus benefícios, seja em razão de medidas de proteção contra suas implicações negativas. Reconhecem-se as diferentes circunstâncias de diferentes países e respeita-se o desejo de algumas pessoas de não participar de todos os desenvolvimentos tecnológicos.\n\nCom base nas considerações acima, entre outras, a UNESCO aprova a presente Recomendação sobre a Ética da Inteligência Artificial.\n\nUNESCO. Recomendação sobre a Ética da Inteligência Artificial (com adaptações).\n\nA respeito das ideias veiculadas no texto CB1A2-I, julgue o item que se segue.\n\nA substituição da expressão “deixados para trás” (primeiro período do terceiro parágrafo) pelo vocábulo negligenciados não prejudicaria a correção gramatical nem a coerência das ideias do texto.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. \"Para que nenhum país e nenhum indivíduo sejam negligenciados\" é correto e mantém a ideia de não abandonar ninguém, que é o sentido de \"deixados para trás\" no texto.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 19
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-020",
+    "disciplina": "portugues",
+    "assunto": "Pontuação",
+    "enunciado": "Texto CB1A2-I\n\nA Conferência Geral da Organização das Nações Unidas para a Educação, a Ciência e a Cultura (UNESCO), em sua 41.ª sessão, reconhece os impactos profundos e dinâmicos, positivos e negativos da inteligência artificial (IA) nas sociedades, no meio ambiente, nos ecossistemas e nas vidas humanas, inclusive na mente humana, em parte devido às novas formas como seu uso influencia o pensamento, a interação e a tomada de decisões e afeta a educação, as ciências humanas, sociais e naturais, a cultura, a comunicação e a informação.\n\nA Conferência considera que as tecnologias de IA podem ser de grande utilidade para a humanidade e podem beneficiar todos os países, mas também suscitam questões éticas fundamentais, por exemplo, em relação às distorções que podem incorporar e exacerbar, o que resultaria potencialmente em discriminação, desigualdade, exclusão digital, exclusão em geral e ameaça à diversidade cultural, social e biológica, além de divisões sociais ou econômicas. Suscitam, ainda, questões relativas à necessidade de transparência e compreensibilidade do funcionamento dos algoritmos e dos dados com que eles foram alimentados, além de seu potencial impacto sobre, entre outros aspectos, a dignidade humana; os direitos humanos e as liberdades fundamentais; a igualdade de gênero; a democracia; os processos sociais, econômicos, políticos e culturais; as práticas científicas e de engenharia; o bem-estar dos animais; o meio ambiente e os ecossistemas.\n\nA Conferência reconhece, ainda, que as tecnologias de IA podem aprofundar as divisões e as desigualdades existentes no mundo, dentro dos países e entre eles, e que a justiça, a confiança e a equidade devem ser defendidas para que nenhum país e nenhum indivíduo sejam deixados para trás, seja em razão do acesso justo às tecnologias de IA e de seus benefícios, seja em razão de medidas de proteção contra suas implicações negativas. Reconhecem-se as diferentes circunstâncias de diferentes países e respeita-se o desejo de algumas pessoas de não participar de todos os desenvolvimentos tecnológicos.\n\nCom base nas considerações acima, entre outras, a UNESCO aprova a presente Recomendação sobre a Ética da Inteligência Artificial.\n\nUNESCO. Recomendação sobre a Ética da Inteligência Artificial (com adaptações).\n\nA respeito das ideias veiculadas no texto CB1A2-I, julgue o item que se segue.\n\nA correção do texto seria mantida caso, no segundo período do segundo parágrafo, o sinal de ponto e vírgula, em todas as suas ocorrências, fosse substituído por vírgula.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 3,
+    "explicacao": "Certo. Os pontos e vírgulas separam os itens de uma enumeração. Trocar todos por vírgulas deixa a lista menos nítida, porque alguns itens já têm vírgulas internas, mas não torna o período incorreto.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 20
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-021",
+    "disciplina": "portugues",
+    "assunto": "Coesão textual",
+    "enunciado": "Texto CB1A2-I\n\nA Conferência Geral da Organização das Nações Unidas para a Educação, a Ciência e a Cultura (UNESCO), em sua 41.ª sessão, reconhece os impactos profundos e dinâmicos, positivos e negativos da inteligência artificial (IA) nas sociedades, no meio ambiente, nos ecossistemas e nas vidas humanas, inclusive na mente humana, em parte devido às novas formas como seu uso influencia o pensamento, a interação e a tomada de decisões e afeta a educação, as ciências humanas, sociais e naturais, a cultura, a comunicação e a informação.\n\nA Conferência considera que as tecnologias de IA podem ser de grande utilidade para a humanidade e podem beneficiar todos os países, mas também suscitam questões éticas fundamentais, por exemplo, em relação às distorções que podem incorporar e exacerbar, o que resultaria potencialmente em discriminação, desigualdade, exclusão digital, exclusão em geral e ameaça à diversidade cultural, social e biológica, além de divisões sociais ou econômicas. Suscitam, ainda, questões relativas à necessidade de transparência e compreensibilidade do funcionamento dos algoritmos e dos dados com que eles foram alimentados, além de seu potencial impacto sobre, entre outros aspectos, a dignidade humana; os direitos humanos e as liberdades fundamentais; a igualdade de gênero; a democracia; os processos sociais, econômicos, políticos e culturais; as práticas científicas e de engenharia; o bem-estar dos animais; o meio ambiente e os ecossistemas.\n\nA Conferência reconhece, ainda, que as tecnologias de IA podem aprofundar as divisões e as desigualdades existentes no mundo, dentro dos países e entre eles, e que a justiça, a confiança e a equidade devem ser defendidas para que nenhum país e nenhum indivíduo sejam deixados para trás, seja em razão do acesso justo às tecnologias de IA e de seus benefícios, seja em razão de medidas de proteção contra suas implicações negativas. Reconhecem-se as diferentes circunstâncias de diferentes países e respeita-se o desejo de algumas pessoas de não participar de todos os desenvolvimentos tecnológicos.\n\nCom base nas considerações acima, entre outras, a UNESCO aprova a presente Recomendação sobre a Ética da Inteligência Artificial.\n\nUNESCO. Recomendação sobre a Ética da Inteligência Artificial (com adaptações).\n\nA respeito das ideias veiculadas no texto CB1A2-I, julgue o item que se segue.\n\nNo primeiro período do segundo parágrafo, a expressão “mas também” caracteriza-se como elemento de conexão entre orações no qual a conjunção “mas” expressa sentido aditivo.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. O trecho contrapõe os benefícios da IA (utilidade para a humanidade) às questões éticas que ela levanta. A conjunção \"mas\" expressa oposição (sentido adversativo), não adição.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 21
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-022",
+    "disciplina": "portugues",
+    "assunto": "Concordância",
+    "enunciado": "Texto CB1A2-I\n\nA Conferência Geral da Organização das Nações Unidas para a Educação, a Ciência e a Cultura (UNESCO), em sua 41.ª sessão, reconhece os impactos profundos e dinâmicos, positivos e negativos da inteligência artificial (IA) nas sociedades, no meio ambiente, nos ecossistemas e nas vidas humanas, inclusive na mente humana, em parte devido às novas formas como seu uso influencia o pensamento, a interação e a tomada de decisões e afeta a educação, as ciências humanas, sociais e naturais, a cultura, a comunicação e a informação.\n\nA Conferência considera que as tecnologias de IA podem ser de grande utilidade para a humanidade e podem beneficiar todos os países, mas também suscitam questões éticas fundamentais, por exemplo, em relação às distorções que podem incorporar e exacerbar, o que resultaria potencialmente em discriminação, desigualdade, exclusão digital, exclusão em geral e ameaça à diversidade cultural, social e biológica, além de divisões sociais ou econômicas. Suscitam, ainda, questões relativas à necessidade de transparência e compreensibilidade do funcionamento dos algoritmos e dos dados com que eles foram alimentados, além de seu potencial impacto sobre, entre outros aspectos, a dignidade humana; os direitos humanos e as liberdades fundamentais; a igualdade de gênero; a democracia; os processos sociais, econômicos, políticos e culturais; as práticas científicas e de engenharia; o bem-estar dos animais; o meio ambiente e os ecossistemas.\n\nA Conferência reconhece, ainda, que as tecnologias de IA podem aprofundar as divisões e as desigualdades existentes no mundo, dentro dos países e entre eles, e que a justiça, a confiança e a equidade devem ser defendidas para que nenhum país e nenhum indivíduo sejam deixados para trás, seja em razão do acesso justo às tecnologias de IA e de seus benefícios, seja em razão de medidas de proteção contra suas implicações negativas. Reconhecem-se as diferentes circunstâncias de diferentes países e respeita-se o desejo de algumas pessoas de não participar de todos os desenvolvimentos tecnológicos.\n\nCom base nas considerações acima, entre outras, a UNESCO aprova a presente Recomendação sobre a Ética da Inteligência Artificial.\n\nUNESCO. Recomendação sobre a Ética da Inteligência Artificial (com adaptações).\n\nA respeito das ideias veiculadas no texto CB1A2-I, julgue o item que se segue.\n\nNo trecho “em relação às distorções que podem incorporar e exacerbar” (primeiro período do segundo parágrafo), a forma verbal “podem” está flexionada na terceira pessoa do plural porque concorda com o termo “distorções”, que é o referente do sujeito das orações presentes no segmento “que podem incorporar e exacerbar”.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 3,
+    "explicacao": "Errado. O sujeito de \"podem incorporar e exacerbar\" é \"as tecnologias de IA\", que fica subentendido: são as tecnologias que incorporam as distorções. O pronome \"que\", referente a \"distorções\", é o objeto desses verbos.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 22
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-023",
+    "disciplina": "portugues",
+    "assunto": "Regência",
+    "enunciado": "Texto CB1A2-I\n\nA Conferência Geral da Organização das Nações Unidas para a Educação, a Ciência e a Cultura (UNESCO), em sua 41.ª sessão, reconhece os impactos profundos e dinâmicos, positivos e negativos da inteligência artificial (IA) nas sociedades, no meio ambiente, nos ecossistemas e nas vidas humanas, inclusive na mente humana, em parte devido às novas formas como seu uso influencia o pensamento, a interação e a tomada de decisões e afeta a educação, as ciências humanas, sociais e naturais, a cultura, a comunicação e a informação.\n\nA Conferência considera que as tecnologias de IA podem ser de grande utilidade para a humanidade e podem beneficiar todos os países, mas também suscitam questões éticas fundamentais, por exemplo, em relação às distorções que podem incorporar e exacerbar, o que resultaria potencialmente em discriminação, desigualdade, exclusão digital, exclusão em geral e ameaça à diversidade cultural, social e biológica, além de divisões sociais ou econômicas. Suscitam, ainda, questões relativas à necessidade de transparência e compreensibilidade do funcionamento dos algoritmos e dos dados com que eles foram alimentados, além de seu potencial impacto sobre, entre outros aspectos, a dignidade humana; os direitos humanos e as liberdades fundamentais; a igualdade de gênero; a democracia; os processos sociais, econômicos, políticos e culturais; as práticas científicas e de engenharia; o bem-estar dos animais; o meio ambiente e os ecossistemas.\n\nA Conferência reconhece, ainda, que as tecnologias de IA podem aprofundar as divisões e as desigualdades existentes no mundo, dentro dos países e entre eles, e que a justiça, a confiança e a equidade devem ser defendidas para que nenhum país e nenhum indivíduo sejam deixados para trás, seja em razão do acesso justo às tecnologias de IA e de seus benefícios, seja em razão de medidas de proteção contra suas implicações negativas. Reconhecem-se as diferentes circunstâncias de diferentes países e respeita-se o desejo de algumas pessoas de não participar de todos os desenvolvimentos tecnológicos.\n\nCom base nas considerações acima, entre outras, a UNESCO aprova a presente Recomendação sobre a Ética da Inteligência Artificial.\n\nUNESCO. Recomendação sobre a Ética da Inteligência Artificial (com adaptações).\n\nA respeito das ideias veiculadas no texto CB1A2-I, julgue o item que se segue.\n\nA correção gramatical e o sentido do texto seriam mantidos caso a forma verbal “resultaria”, no trecho “o que resultaria potencialmente em discriminação” (primeiro período do segundo parágrafo), fosse substituída por acarretaria.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. \"Resultar\" pede a preposição \"em\"; \"acarretar\" não pede preposição (acarreta-se algo). Manter \"em\" depois de \"acarretaria\" seria erro de regência.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 23
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-024",
+    "disciplina": "portugues",
+    "assunto": "Reescrita de frases",
+    "enunciado": "Texto CB1A2-I\n\nA Conferência Geral da Organização das Nações Unidas para a Educação, a Ciência e a Cultura (UNESCO), em sua 41.ª sessão, reconhece os impactos profundos e dinâmicos, positivos e negativos da inteligência artificial (IA) nas sociedades, no meio ambiente, nos ecossistemas e nas vidas humanas, inclusive na mente humana, em parte devido às novas formas como seu uso influencia o pensamento, a interação e a tomada de decisões e afeta a educação, as ciências humanas, sociais e naturais, a cultura, a comunicação e a informação.\n\nA Conferência considera que as tecnologias de IA podem ser de grande utilidade para a humanidade e podem beneficiar todos os países, mas também suscitam questões éticas fundamentais, por exemplo, em relação às distorções que podem incorporar e exacerbar, o que resultaria potencialmente em discriminação, desigualdade, exclusão digital, exclusão em geral e ameaça à diversidade cultural, social e biológica, além de divisões sociais ou econômicas. Suscitam, ainda, questões relativas à necessidade de transparência e compreensibilidade do funcionamento dos algoritmos e dos dados com que eles foram alimentados, além de seu potencial impacto sobre, entre outros aspectos, a dignidade humana; os direitos humanos e as liberdades fundamentais; a igualdade de gênero; a democracia; os processos sociais, econômicos, políticos e culturais; as práticas científicas e de engenharia; o bem-estar dos animais; o meio ambiente e os ecossistemas.\n\nA Conferência reconhece, ainda, que as tecnologias de IA podem aprofundar as divisões e as desigualdades existentes no mundo, dentro dos países e entre eles, e que a justiça, a confiança e a equidade devem ser defendidas para que nenhum país e nenhum indivíduo sejam deixados para trás, seja em razão do acesso justo às tecnologias de IA e de seus benefícios, seja em razão de medidas de proteção contra suas implicações negativas. Reconhecem-se as diferentes circunstâncias de diferentes países e respeita-se o desejo de algumas pessoas de não participar de todos os desenvolvimentos tecnológicos.\n\nCom base nas considerações acima, entre outras, a UNESCO aprova a presente Recomendação sobre a Ética da Inteligência Artificial.\n\nUNESCO. Recomendação sobre a Ética da Inteligência Artificial (com adaptações).\n\nA respeito das ideias veiculadas no texto CB1A2-I, julgue o item que se segue.\n\nEstariam preservados o sentido original e a correção gramatical do primeiro período do terceiro parágrafo caso se deslocasse o termo “ainda”, com as vírgulas que o isolam, para imediatamente depois da forma verbal “podem”.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. No texto, \"ainda\" indica que a Conferência reconhece mais um ponto. Depois de \"podem\", passaria a indicar que as tecnologias podem, além de outras coisas, aprofundar as divisões. O sentido muda.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 24
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-025",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CB1A2-I\n\nA Conferência Geral da Organização das Nações Unidas para a Educação, a Ciência e a Cultura (UNESCO), em sua 41.ª sessão, reconhece os impactos profundos e dinâmicos, positivos e negativos da inteligência artificial (IA) nas sociedades, no meio ambiente, nos ecossistemas e nas vidas humanas, inclusive na mente humana, em parte devido às novas formas como seu uso influencia o pensamento, a interação e a tomada de decisões e afeta a educação, as ciências humanas, sociais e naturais, a cultura, a comunicação e a informação.\n\nA Conferência considera que as tecnologias de IA podem ser de grande utilidade para a humanidade e podem beneficiar todos os países, mas também suscitam questões éticas fundamentais, por exemplo, em relação às distorções que podem incorporar e exacerbar, o que resultaria potencialmente em discriminação, desigualdade, exclusão digital, exclusão em geral e ameaça à diversidade cultural, social e biológica, além de divisões sociais ou econômicas. Suscitam, ainda, questões relativas à necessidade de transparência e compreensibilidade do funcionamento dos algoritmos e dos dados com que eles foram alimentados, além de seu potencial impacto sobre, entre outros aspectos, a dignidade humana; os direitos humanos e as liberdades fundamentais; a igualdade de gênero; a democracia; os processos sociais, econômicos, políticos e culturais; as práticas científicas e de engenharia; o bem-estar dos animais; o meio ambiente e os ecossistemas.\n\nA Conferência reconhece, ainda, que as tecnologias de IA podem aprofundar as divisões e as desigualdades existentes no mundo, dentro dos países e entre eles, e que a justiça, a confiança e a equidade devem ser defendidas para que nenhum país e nenhum indivíduo sejam deixados para trás, seja em razão do acesso justo às tecnologias de IA e de seus benefícios, seja em razão de medidas de proteção contra suas implicações negativas. Reconhecem-se as diferentes circunstâncias de diferentes países e respeita-se o desejo de algumas pessoas de não participar de todos os desenvolvimentos tecnológicos.\n\nCom base nas considerações acima, entre outras, a UNESCO aprova a presente Recomendação sobre a Ética da Inteligência Artificial.\n\nUNESCO. Recomendação sobre a Ética da Inteligência Artificial (com adaptações).\n\nA respeito das ideias veiculadas no texto CB1A2-I, julgue o item que se segue.\n\nNo texto, são apresentados argumentos que justificam a aprovação da Recomendação sobre a Ética da Inteligência Artificial na 41.ª sessão da Conferência Geral da UNESCO.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. O texto apresenta os impactos e os riscos da IA e conclui: \"Com base nas considerações acima (...), a UNESCO aprova a presente Recomendação\". As considerações são os argumentos que justificam a aprovação.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 25
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-026",
+    "disciplina": "rlm",
+    "assunto": "Estatística",
+    "enunciado": "x – P(X = x)\n−2 – 5c\n−1 – c\n0 – 2c\n+1 – 3c\n+2 – 4c\n\nConsiderando que X representa uma variável aleatória com suporte x ∈ {−2, −1, 0, +1, +2}, cuja função de distribuição de probabilidade é dada no quadro acima, na qual c é uma constante real positiva, julgue o próximo item.\n\nA moda de X é igual a zero.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. A moda é o valor mais provável. A maior probabilidade é 5c, do valor −2; a moda de X é −2, e não zero.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 26
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-027",
+    "disciplina": "rlm",
+    "assunto": "Probabilidade",
+    "enunciado": "x – P(X = x)\n−2 – 5c\n−1 – c\n0 – 2c\n+1 – 3c\n+2 – 4c\n\nConsiderando que X representa uma variável aleatória com suporte x ∈ {−2, −1, 0, +1, +2}, cuja função de distribuição de probabilidade é dada no quadro acima, na qual c é uma constante real positiva, julgue o próximo item.\n\nP(X = 1) = 0,2.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. As probabilidades somam 1: 5c + c + 2c + 3c + 4c = 15c = 1, logo c = 1/15. Então P(X = 1) = 3c = 3/15 = 0,2.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 27
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-028",
+    "disciplina": "rlm",
+    "assunto": "Probabilidade",
+    "enunciado": "x – P(X = x)\n−2 – 5c\n−1 – c\n0 – 2c\n+1 – 3c\n+2 – 4c\n\nConsiderando que X representa uma variável aleatória com suporte x ∈ {−2, −1, 0, +1, +2}, cuja função de distribuição de probabilidade é dada no quadro acima, na qual c é uma constante real positiva, julgue o próximo item.\n\nX segue uma distribuição contínua, pois c é uma constante real positiva.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. X só assume cinco valores isolados (−2, −1, 0, 1 e 2): é uma variável discreta. Ser c uma constante real não muda isso.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 28
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-029",
+    "disciplina": "rlm",
+    "assunto": "Estatística",
+    "enunciado": "x – P(X = x)\n−2 – 5c\n−1 – c\n0 – 2c\n+1 – 3c\n+2 – 4c\n\nConsiderando que X representa uma variável aleatória com suporte x ∈ {−2, −1, 0, +1, +2}, cuja função de distribuição de probabilidade é dada no quadro acima, na qual c é uma constante real positiva, julgue o próximo item.\n\nA média de X é igual a zero.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. Com c = 1/15, a média é (−2 × 5 − 1 × 1 + 0 × 2 + 1 × 3 + 2 × 4) ÷ 15 = (−10 − 1 + 0 + 3 + 8) ÷ 15 = 0.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 29
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-030",
+    "disciplina": "rlm",
+    "assunto": "Estatística",
+    "enunciado": "x – P(X = x)\n−2 – 5c\n−1 – c\n0 – 2c\n+1 – 3c\n+2 – 4c\n\nConsiderando que X representa uma variável aleatória com suporte x ∈ {−2, −1, 0, +1, +2}, cuja função de distribuição de probabilidade é dada no quadro acima, na qual c é uma constante real positiva, julgue o próximo item.\n\nA mediana de X é igual ou superior a 1.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. Somando as probabilidades a partir do menor valor: até −1 dá 6/15 (menos da metade) e até 0 dá 8/15 (mais da metade). A mediana é 0, menor que 1.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 30
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-036",
+    "disciplina": "administrativo",
+    "assunto": "Administração indireta",
+    "enunciado": "Considerando os princípios básicos da administração pública, das autarquias e do regime disciplinar aplicável aos servidores públicos civis federais (Lei n.º 8.112/1990), julgue o item que se segue.\n\nOs bens das autarquias são, invariavelmente, de natureza pública, bem como impenhoráveis e inalienáveis.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. Os bens das autarquias são públicos e impenhoráveis, mas não são sempre inalienáveis: os bens que não estão afetados a uma finalidade pública (dominicais) podem ser vendidos, respeitadas as exigências da lei.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 36
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-037",
+    "disciplina": "administrativo",
+    "assunto": "Lei n.º 8.112/1990",
+    "enunciado": "Considerando os princípios básicos da administração pública, das autarquias e do regime disciplinar aplicável aos servidores públicos civis federais (Lei n.º 8.112/1990), julgue o item que se segue.\n\nA fim de evitar que servidor público submetido a processo administrativo disciplinar (PAD) interfira no curso do referido processo, a lei autoriza o seu afastamento do exercício do cargo até a conclusão do PAD.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. O afastamento preventivo existe, mas tem prazo: até 60 dias, prorrogáveis por igual período, sem prejuízo da remuneração (art. 147 da Lei n.º 8.112/1990). Não vai até o fim do PAD.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 37
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-038",
+    "disciplina": "administrativo",
+    "assunto": "Princípios da Administração Pública",
+    "enunciado": "Considerando os princípios básicos da administração pública, das autarquias e do regime disciplinar aplicável aos servidores públicos civis federais (Lei n.º 8.112/1990), julgue o item que se segue.\n\nEm razão do princípio da indisponibilidade do interesse público, os direitos geridos por administradores públicos são, em regra, inalienáveis e indisponíveis.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. O administrador cuida de interesses que pertencem à coletividade, e não a ele. Por isso não pode, em regra, abrir mão desses direitos nem dispor deles livremente.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 38
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-039",
+    "disciplina": "informatica",
+    "assunto": "Proteção de dados (LGPD)",
+    "enunciado": "Com base no disposto no Código de Ética Profissional do servidor público civil do Poder Executivo federal e na Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o item a seguir.\n\nNos termos da LGPD, dados pessoais sensíveis, como os relativos à saúde e à vida sexual do titular, podem ser tratados para fins sanitários.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. A LGPD permite tratar dados sensíveis sem consentimento para a tutela da saúde, em procedimento feito por profissionais de saúde, serviços de saúde ou autoridade sanitária (art. 11, II, \"f\").",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 39
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "bcb24-040",
+    "disciplina": "administrativo",
+    "assunto": "Ética no serviço público",
+    "enunciado": "Com base no disposto no Código de Ética Profissional do servidor público civil do Poder Executivo federal e na Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o item a seguir.\n\nO ato de servidor público federal permitir que usuários aguardem atendimento por tempo excessivo é caracterizado pelo referido código de ética não só como infração ética, mas também como ação causadora de dano moral.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. O Código de Ética (Decreto n.º 1.171/1994) diz que deixar as pessoas à espera, formando longas filas ou atrasando o serviço, não é só atitude contra a ética, mas principalmente grave dano moral aos usuários.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Banco Central do Brasil",
+      "cargo": "Analista",
+      "ano": 2024,
+      "prova": "bcb-2024-cb",
+      "item": 40
+    },
+    "status": "ativa"
+  }
+]

@@ -230,5 +230,41 @@
     "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/TCU_25_TEFC/arquivos/03531F6DDD1179877F8BB0D4D4BCA28516CFFFFBC414219B25C23B6CB12E2102.pdf",
     "gabaritoDescricao": "GABARITO DEFINITIVO – CONHECIMENTOS BÁSICOS",
     "gabaritoDefinitivo": "EEECCCXECEECCCEECEXEECECCEECCEEEEXECCEEXECEEECCCCE"
+  },
+  "bcb-2024-cb": {
+    "banca": "Cebraspe",
+    "orgao": "Banco Central do Brasil",
+    "cargo": "Analista",
+    "ano": 2024,
+    "aplicacao": "2024-08-04",
+    "caderno": "Conhecimentos Básicos para todos os cargos (959_BCB_CB1_01)",
+    "formato": "certo-errado",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/BCB_24/arquivos/959_BCB_CB1_01.PDF",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/BCB_24/arquivos/GAB_DEFINITIVO_959_BCB_CB1_01.PDF",
+    "gabaritoDefinitivo": "CECEECECEECCECEEECCCEEEECECECEECCECEECCCCEEXECECCE"
+  },
+  "cnmp-2023-cb1": {
+    "banca": "Cebraspe",
+    "orgao": "CNMP",
+    "cargo": "Analista do CNMP",
+    "ano": 2023,
+    "aplicacao": "2023",
+    "caderno": "Prova objetiva - Conhecimentos básicos para os cargos 1, 2, 4, 5, 6 e 7 (Analista do CNMP)",
+    "formato": "certo-errado",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/cnmp_23/arquivos/814_CNMP_CB1_01.PDF",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/cnmp_23/arquivos/GAB_DEFINITIVO_814_CNMP_CB1_01.PDF",
+    "gabaritoDefinitivo": "ECCECCEEECCCECEECECECCCXCEECCECECEECECCCEECECCEEXE"
+  },
+  "pf-2025-adm": {
+    "banca": "Cebraspe",
+    "orgao": "Polícia Federal",
+    "cargo": "Cargos de nível superior (cargos 1 a 14)",
+    "ano": 2025,
+    "aplicacao": "2025",
+    "caderno": "Prova objetiva – Conhecimentos Básicos para os cargos de 1 a 14 (094_PF_CB1_01)",
+    "formato": "certo-errado",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/pf_25_adm/arquivos/094_PF_CB1_01.pdf",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/pf_25_adm/arquivos/Gab_Definitivo_094_PF_CB1_01.pdf",
+    "gabaritoDefinitivo": "CEEECECECCCCCEECCEEECCCCEEECEEECECEEXECECCCECCEEEC"
   }
 }
