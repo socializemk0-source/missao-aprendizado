@@ -1,0 +1,738 @@
+[
+  {
+    "id": "inss22-cb-15",
+    "disciplina": "administrativo",
+    "assunto": "Ética no serviço público",
+    "enunciado": "Com base no Código de Ética Profissional do Servidor Público Civil do Poder Executivo Federal (CEPSPC), julgue o item a seguir.\n\nSituação hipotética: Carlos, servidor público federal, com o objetivo de realizar uma doação a uma instituição de caridade que se encontrava em péssima situação financeira, pleiteou auxílio financeiro do representante de uma empresa multinacional como condição para cumprir sua missão. Ao ser atendido em seu pleito pela empresa, Carlos prontamente concretizou a doação no valor integral que havia recebido. Assertiva: Nessa situação, tendo em vista que Carlos não reteve para si qualquer quantia da doação recebida, sua atitude encontra respaldo no CEPSPC.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. O Código de Ética proíbe o servidor de pedir ou aceitar ajuda financeira, presente ou vantagem de qualquer tipo para cumprir sua missão, para si ou para outra pessoa. A boa intenção (doar tudo à caridade) não muda isso: o problema é pedir dinheiro a uma empresa em razão do cargo.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 15
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "inss22-cb-16",
+    "disciplina": "administrativo",
+    "assunto": "Ética no serviço público",
+    "enunciado": "Com base no Código de Ética Profissional do Servidor Público Civil do Poder Executivo Federal (CEPSPC), julgue o item a seguir.\n\nO servidor público não poderá, em hipótese alguma, desprezar o elemento ético da sua conduta. Assim, ele não terá apenas que decidir entre o legal e o ilegal, o conveniente e o inconveniente, mas principalmente entre o honesto e o desonesto, à luz das regras constitucionais.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. É praticamente a regra deontológica do Código (Decreto n.º 1.171/1994): não basta a conduta ser legal ou conveniente; o servidor deve escolher, acima de tudo, entre o honesto e o desonesto.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 16
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "inss22-cb-17",
+    "disciplina": "administrativo",
+    "assunto": "Ética no serviço público",
+    "enunciado": "Com base no Código de Ética Profissional do Servidor Público Civil do Poder Executivo Federal (CEPSPC), julgue o item a seguir.\n\nSituação hipotética: Bruno, servidor público federal, todos os dias, após o término do seu expediente, dirige-se a um bar muito frequentado da cidade em que reside para ingerir bebida alcóolica. Nessas ocasiões, habitualmente, Bruno é visto embriagado pelos demais frequentadores do bar. Por volta das 22 h, ele costuma ir para sua casa, de forma que esse comportamento não afeta o seu desempenho profissional. Assertiva: Nessa situação, a embriaguez habitual de Bruno fora do ambiente de trabalho não fere o CEPSPC, uma vez que se trata de conduta do dia a dia de sua vida privada, que não pode afetar o seu bom conceito na vida profissional.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. Para o Código de Ética, a vida privada do servidor também conta: os fatos do dia a dia podem melhorar ou piorar o seu bom conceito na vida funcional. Além disso, o Código veda expressamente ao servidor apresentar-se embriagado com habitualidade, mesmo fora do serviço.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 17
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "inss22-cb-18",
+    "disciplina": "administrativo",
+    "assunto": "Ética no serviço público",
+    "enunciado": "Julgue o item a seguir, a respeito do Sistema de Gestão da Ética do Poder Executivo Federal.\n\nA Comissão de Ética Pública é integrada por brasileiros que preencham os requisitos de idoneidade moral, reputação ilibada e notória experiência em administração pública, designados para mandatos de dois anos, sendo vedada a recondução.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. Os requisitos estão certos, mas o mandato dos membros da Comissão de Ética Pública é de três anos, e é permitida uma recondução (Decreto n.º 6.029/2007).",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 18
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "inss22-cb-19",
+    "disciplina": "administrativo",
+    "assunto": "Ética no serviço público",
+    "enunciado": "Julgue o item a seguir, a respeito do Sistema de Gestão da Ética do Poder Executivo Federal.\n\nNo âmbito das comissões de ética, caso se conclua pela existência de falta ética após a instrução processual, poderá ser adotada, entre outras, a providência de recomendação de abertura de procedimento administrativo, se a gravidade da conduta assim o exigir.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. Concluída a apuração e constatada a falta ética, a comissão pode, entre outras providências, recomendar a abertura de procedimento administrativo quando a conduta for grave o bastante para isso (Decreto n.º 6.029/2007).",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 19
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "inss22-cb-20",
+    "disciplina": "administrativo",
+    "assunto": "Ética no serviço público",
+    "enunciado": "Julgue o item a seguir, a respeito do Sistema de Gestão da Ética do Poder Executivo Federal.\n\nA atuação da Comissão de Ética Pública poderá ser provocada por qualquer cidadão, agente público, pessoa jurídica de direito privado, associação ou entidade de classe, visando a apuração de infração ética imputada a agente público, órgão ou setor específico de ente estatal.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. O Decreto n.º 6.029/2007 permite que qualquer cidadão, agente público, empresa, associação ou entidade de classe provoque a comissão para apurar infração ética de agente público, órgão ou setor de ente estatal.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 20
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "inss22-cb-21",
+    "disciplina": "constitucional",
+    "assunto": "Direitos e garantias fundamentais",
+    "enunciado": "No que diz respeito a direitos e garantias fundamentais, julgue o item a seguir.\n\nA casa é asilo inviolável do indivíduo e nela ninguém poderá ingressar sem o consentimento do morador, salvo se houver determinação judicial para o ingresso.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. A Constituição (art. 5.º, XI) traz mais exceções: sem consentimento, é possível entrar em caso de flagrante delito, desastre ou para prestar socorro, a qualquer hora; por determinação judicial, só durante o dia. O item reduz tudo à ordem judicial.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 21
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "inss22-cb-22",
+    "disciplina": "constitucional",
+    "assunto": "Direitos e garantias fundamentais",
+    "enunciado": "No que diz respeito a direitos e garantias fundamentais, julgue o item a seguir.\n\nO direito de reunião está assegurado a todos, desde que observados os seguintes requisitos constitucionais: caráter pacífico; localização aberta ao público; prévia autorização da autoridade competente; e não frustação de outra reunião anteriormente convocada para o mesmo local.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. A reunião pacífica, sem armas, em local aberto ao público independe de autorização. A Constituição exige só o prévio aviso à autoridade competente, além de não frustrar outra reunião já convocada para o mesmo local (art. 5.º, XVI).",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 22
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "inss22-cb-23",
+    "disciplina": "constitucional",
+    "assunto": "Direitos e garantias fundamentais",
+    "enunciado": "No que diz respeito a direitos e garantias fundamentais, julgue o item a seguir.\n\nSão equivalentes às emendas constitucionais os tratados internacionais sobre direitos humanos aprovados na Câmara dos Deputados e no Senado Federal, em dois turnos, por três quintos dos votos dos membros de cada uma dessas casas.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. É o rito do art. 5.º, § 3.º, da Constituição: tratados de direitos humanos aprovados em cada Casa do Congresso, em dois turnos, por três quintos dos votos dos membros, equivalem às emendas constitucionais.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 23
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "inss22-cb-24",
+    "disciplina": "constitucional",
+    "assunto": "Direitos e garantias fundamentais",
+    "enunciado": "No que diz respeito a direitos e garantias fundamentais, julgue o item a seguir.\n\nO indivíduo que tomar posse em determinado cargo efetivo de uma autarquia federal será obrigado a filiar-se ao sindicato de sua categoria profissional, pois a esse sindicato cabe a defesa dos direitos e interesses coletivos ou individuais da categoria, inclusive em questões judiciais ou administrativas.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. Ninguém é obrigado a se filiar ou a se manter filiado a sindicato (art. 8.º, V, da Constituição). É verdade que o sindicato defende os interesses da categoria, mas isso não torna a filiação obrigatória.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 24
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "inss22-cb-25",
+    "disciplina": "constitucional",
+    "assunto": "Direitos políticos",
+    "enunciado": "No que diz respeito a direitos e garantias fundamentais, julgue o item a seguir.\n\nA cassação dos direitos políticos é possível nos casos de cancelamento da naturalização por sentença transitada em julgado; incapacidade civil absoluta; condenação criminal transitada em julgado, enquanto durarem seus efeitos; recusa de cumprir obrigação a todos imposta ou prestação alternativa; e improbidade administrativa.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. A Constituição proíbe a cassação de direitos políticos (art. 15). As hipóteses listadas são de perda ou suspensão desses direitos, não de cassação.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 25
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "inss22-cb-26",
+    "disciplina": "constitucional",
+    "assunto": "Nacionalidade",
+    "enunciado": "No que diz respeito a direitos e garantias fundamentais, julgue o item a seguir.\n\nBrasileiros naturalizados podem ser eleitos membros da Câmara dos Deputados e do Senado Federal, caso cumpram as demais condições de elegibilidade, porque tais cargos não são privativos de brasileiros natos.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. Ser deputado ou senador não é privativo de brasileiro nato. Privativos são, entre outros, os cargos de Presidente da Câmara e Presidente do Senado (art. 12, § 3.º), não o de simples membro dessas Casas.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 26
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "inss22-cb-27",
+    "disciplina": "constitucional",
+    "assunto": "Administração pública",
+    "enunciado": "Julgue o item seguinte, relativo à administração pública.\n\nEm regra, é vedada a acumulação remunerada de cargos públicos. Essa vedação estende-se a empregos e funções e abrange autarquias, fundações, empresas públicas, sociedades de economia mista, suas subsidiárias, e sociedades controladas, direta ou indiretamente, pelo poder público.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. É o que dizem os incisos XVI e XVII do art. 37 da Constituição: a regra é não acumular, salvo as exceções previstas, e a proibição alcança empregos e funções em toda a administração direta e indireta, inclusive subsidiárias e sociedades controladas pelo poder público.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 27
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "inss22-cb-28",
+    "disciplina": "constitucional",
+    "assunto": "Administração pública",
+    "enunciado": "Julgue o item seguinte, relativo à administração pública.\n\nSomente por lei específica poderá ser criada autarquia e autorizada a instituição de empresa pública, sociedade de economia mista e fundação pública, cabendo, em todos os casos, lei complementar para definir as áreas de atuação dessas entidades.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. A primeira parte está certa (art. 37, XIX), mas a lei complementar para definir áreas de atuação vale só para as fundações, não para todas essas entidades.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 28
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "inss22-cb-29",
+    "disciplina": "constitucional",
+    "assunto": "Administração pública",
+    "enunciado": "Julgue o item seguinte, relativo à administração pública.\n\nO servidor público estável perderá o seu cargo de provimento efetivo em virtude de: sentença judicial transitada em julgado, processo administrativo em que lhe seja assegurada ampla defesa ou procedimento de avaliação periódica de desempenho, na forma de lei complementar, assegurada ampla defesa.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. São exatamente as três hipóteses do art. 41, § 1.º, da Constituição para a perda do cargo pelo servidor estável.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 29
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "inss22-cb-30",
+    "disciplina": "constitucional",
+    "assunto": "Administração pública",
+    "enunciado": "Julgue o item seguinte, relativo à administração pública.\n\nSituação hipotética: Uma servidora pública do INSS, ocupante de cargo efetivo de técnico do seguro social, foi eleita deputada federal nas eleições de 2022. Assertiva: Nessa situação, a servidora ficará afastada de seu cargo efetivo no INSS para o exercício de mandato eletivo na Câmara dos Deputados, sendo esse tempo de serviço contado para todos os efeitos legais, exceto para promoção por merecimento.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. No mandato federal, o servidor fica afastado do cargo (art. 38, I), e o tempo de afastamento conta para todos os efeitos legais, menos para promoção por merecimento (art. 38, IV).",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 30
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "inss22-cb-31",
+    "disciplina": "administrativo",
+    "assunto": "Administração pública: sentidos",
+    "enunciado": "No que diz respeito à administração pública, às fontes do direito administrativo, à organização administrativa da União, à Lei n.º 8.112/1990 e aos poderes administrativos, julgue o item que se segue.\n\nEm sentido subjetivo, formal ou orgânico, a administração pública consiste no conjunto de órgãos, entidades e agentes estatais no exercício da função administrativa do Estado. Já a administração pública em sentido objetivo, material ou funcional designa o conjunto de atividades administrativas exercidas pelo Estado para a consecução dos interesses coletivos.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. No sentido subjetivo, olha-se para QUEM exerce a função (órgãos, entidades e agentes); no sentido objetivo, para O QUE é feito (as atividades administrativas). Os dois conceitos estão corretos.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 31
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "inss22-cb-32",
+    "disciplina": "administrativo",
+    "assunto": "Poderes administrativos",
+    "enunciado": "No que diz respeito à administração pública, às fontes do direito administrativo, à organização administrativa da União, à Lei n.º 8.112/1990 e aos poderes administrativos, julgue o item que se segue.\n\nO abuso de poder é tratado pela doutrina majoritária como gênero cujas espécies são: o excesso de poder, que ocorre quando o agente público atua nos limites de sua competência legalmente definida, mas visando a um fim diverso da consecução do interesse público; e o desvio de poder, que se dá quando o agente público exorbita da competência que lhe foi legalmente atribuída.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. As definições estão trocadas. Excesso de poder é ir além da competência; desvio de poder (ou de finalidade) é agir dentro da competência, mas buscando um fim diferente do interesse público.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 32
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "inss22-cb-33",
+    "disciplina": "administrativo",
+    "assunto": "Fontes do direito administrativo",
+    "enunciado": "No que diz respeito à administração pública, às fontes do direito administrativo, à organização administrativa da União, à Lei n.º 8.112/1990 e aos poderes administrativos, julgue o item que se segue.\n\nA lei é considerada a fonte primordial do direito administrativo brasileiro, razão por que esse ramo do direito público nacional se encontra codificado, ou seja, as normas administrativas estão reunidas em um só corpo de leis.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. A lei é mesmo a fonte principal, mas o direito administrativo brasileiro não é codificado: suas normas estão espalhadas em muitas leis (8.112, 9.784, 14.133 e outras).",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 33
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "inss22-cb-34",
+    "disciplina": "administrativo",
+    "assunto": "Organização administrativa",
+    "enunciado": "No que diz respeito à administração pública, às fontes do direito administrativo, à organização administrativa da União, à Lei n.º 8.112/1990 e aos poderes administrativos, julgue o item que se segue.\n\nO INSS é uma autarquia federal subordinada ao Ministério do Trabalho e Previdência.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. Entre a administração direta e uma autarquia não há subordinação (hierarquia), e sim vinculação: o ministério exerce controle finalístico (supervisão), não comando hierárquico.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 34
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "inss22-cb-35",
+    "disciplina": "administrativo",
+    "assunto": "Lei n.º 8.112/1990",
+    "enunciado": "No que diz respeito à administração pública, às fontes do direito administrativo, à organização administrativa da União, à Lei n.º 8.112/1990 e aos poderes administrativos, julgue o item que se segue.\n\nDe acordo com a Lei n.º 8.112/1990, são formas de provimento de cargo público: nomeação, promoção, ascensão, transferência, readaptação, reversão, aproveitamento, reintegração e recondução.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. Ascensão e transferência não são mais formas de provimento (foram revogadas e consideradas inconstitucionais, por permitirem mudar de cargo sem concurso). Hoje são: nomeação, promoção, readaptação, reversão, aproveitamento, reintegração e recondução.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 35
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "inss22-cb-36",
+    "disciplina": "administrativo",
+    "assunto": "Atos administrativos",
+    "enunciado": "Julgue o próximo item, referente ao ato administrativo, aos serviços públicos, à responsabilidade civil do Estado e às Leis n.º 8.429/1992 e n.º 9.784/1999.\n\nA administração pode revogar seus próprios atos, quando eivados de vícios que os tornem ilegais, porque deles não se originam direitos, podendo, ainda, anulá-los por motivo de conveniência ou oportunidade, respeitados os direitos adquiridos.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. Os conceitos estão invertidos. Ato ilegal é ANULADO; ato válido que deixou de ser conveniente ou oportuno é REVOGADO, respeitados os direitos adquiridos (Súmula 473 do STF).",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 36
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "inss22-cb-37",
+    "disciplina": "administrativo",
+    "assunto": "Serviços públicos",
+    "enunciado": "Julgue o próximo item, referente ao ato administrativo, aos serviços públicos, à responsabilidade civil do Estado e às Leis n.º 8.429/1992 e n.º 9.784/1999.\n\nA concessão de serviço público consiste na delegação de sua prestação, feita pelo poder concedente, por meio de licitação, na modalidade concorrência ou diálogo competitivo, a pessoa jurídica ou a consórcio de empresas que demonstre capacidade para o seu desempenho, por sua conta e risco e por prazo determinado.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. É a definição da Lei n.º 8.987/1995 (art. 2.º, II), já com a redação dada pela Lei n.º 14.133/2021, que incluiu o diálogo competitivo ao lado da concorrência.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 37
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "inss22-cb-38",
+    "disciplina": "administrativo",
+    "assunto": "Processo administrativo (Lei n.º 9.784/1999)",
+    "enunciado": "Julgue o próximo item, referente ao ato administrativo, aos serviços públicos, à responsabilidade civil do Estado e às Leis n.º 8.429/1992 e n.º 9.784/1999.\n\nSerá impedido de atuar em processo administrativo o servidor público que tiver interesse direto ou indireto na matéria. Além disso, poderá ser arguida a suspeição de autoridade que tenha amizade íntima ou inimizade notória com algum dos interessados nesse processo.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. Interesse direto ou indireto na matéria é caso de impedimento (art. 18 da Lei n.º 9.784/1999); amizade íntima ou inimizade notória com interessado é caso de suspeição (art. 20).",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 38
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "inss22-cb-39",
+    "disciplina": "administrativo",
+    "assunto": "Responsabilidade civil do Estado",
+    "enunciado": "Julgue o próximo item, referente ao ato administrativo, aos serviços públicos, à responsabilidade civil do Estado e às Leis n.º 8.429/1992 e n.º 9.784/1999.\n\nCom base na teoria do risco administrativo, admite-se pesquisa em torno da culpa da vítima, a fim de abrandar ou excluir a responsabilidade civil objetiva das pessoas jurídicas de direito público e das pessoas jurídicas de direito privado prestadoras de serviço público.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. Na teoria do risco administrativo, a responsabilidade é objetiva, mas admite excludentes e atenuantes: a culpa exclusiva da vítima afasta a indenização, e a culpa concorrente a reduz.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 39
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "inss22-cb-40",
+    "disciplina": "administrativo",
+    "assunto": "Improbidade administrativa",
+    "enunciado": "Julgue o próximo item, referente ao ato administrativo, aos serviços públicos, à responsabilidade civil do Estado e às Leis n.º 8.429/1992 e n.º 9.784/1999.\n\nAinda que não seja agente público, aquele que induzir ou concorrer culposa ou dolosamente para a prática de ato de improbidade administrativa sujeitar-se-á, no que couber, às disposições da Lei n.º 8.429/1992.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. Depois da reforma de 2021 (Lei n.º 14.230), quem não é agente público só responde se induzir ou concorrer DOLOSAMENTE para o ato. Não existe mais improbidade culposa.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 40
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "inss22-cb-44",
+    "disciplina": "informatica",
+    "assunto": "Segurança da informação",
+    "enunciado": "Julgue o próximo item, acerca de Windows 10 e segurança da informação.\n\nPhishing é um tipo de invasão mediante o uso de software malicioso que torna inacessíveis os dados armazenados no equipamento invadido, geralmente usando criptografia, no qual o agente invasor exige o pagamento de resgate para restabelecer o acesso do usuário aos dados afetados.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. O item descreve o ransomware (sequestro de dados com pedido de resgate). Phishing é a tentativa de enganar a pessoa, com mensagens ou páginas falsas, para que ela entregue senhas e outros dados.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 44
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "inss22-cb-45",
+    "disciplina": "informatica",
+    "assunto": "Windows 10",
+    "enunciado": "Julgue o próximo item, acerca de Windows 10 e segurança da informação.\n\nO recurso BitLocker, ferramenta de criptografia presente no Windows 10, possibilita que o usuário proteja a privacidade de seus dados.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. O BitLocker criptografa unidades de disco do Windows: se o computador ou o disco for perdido ou roubado, os dados não podem ser lidos sem a chave.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 45
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "inss22-cb-46",
+    "disciplina": "rlm",
+    "assunto": "Porcentagem",
+    "enunciado": "Ao realizar um levantamento de informações solicitado por seu chefe, um técnico do seguro social verificou que, entre os segurados que apresentaram suas demandas ao longo da semana anterior, 75% receberam algum atendimento remoto (por telefone, aplicativo ou Internet) e 35% receberam atendimento presencial. Houve casos em que os atendimentos foram iniciados no modo remoto, mas, devido às suas complexidades, precisaram ser concluídos presencialmente.\n\nCom base nessa situação hipotética, julgue o item seguinte.\n\nSe 20% dos segurados que buscaram atendimento presencial o fizeram para solicitar a reativação do benefício de prestação continuada (BPC), então 10% do total de beneficiários que buscaram atendimento pleiteavam a reativação do BPC.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. 20% dos que foram ao presencial, que são 35% do total: 0,20 × 35% = 7% do total, e não 10%.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 46
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "inss22-cb-47",
+    "disciplina": "rlm",
+    "assunto": "Conjuntos",
+    "enunciado": "Ao realizar um levantamento de informações solicitado por seu chefe, um técnico do seguro social verificou que, entre os segurados que apresentaram suas demandas ao longo da semana anterior, 75% receberam algum atendimento remoto (por telefone, aplicativo ou Internet) e 35% receberam atendimento presencial. Houve casos em que os atendimentos foram iniciados no modo remoto, mas, devido às suas complexidades, precisaram ser concluídos presencialmente.\n\nCom base nessa situação hipotética, julgue o item seguinte.\n\nSe havia somente as duas modalidades de atendimento descritas, é correto concluir que 10% dos segurados passaram pelas duas modalidades de atendimento em suas demandas.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. Somando as duas modalidades: 75% + 35% = 110%. Como o total é 100%, os 10% a mais são as pessoas contadas duas vezes, ou seja, as que passaram pelas duas modalidades.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 47
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "inss22-cb-48",
+    "disciplina": "rlm",
+    "assunto": "Lógica proposicional",
+    "enunciado": "P: Nos processos de justificações administrativas, quando o segurado apresentar testemunhas com valor de prova, a agência fornecerá um servidor exclusivo para o atendimento.\n\nA partir da proposição precedente, julgue o item a seguir.\n\nA tabela-verdade associada à proposição P possui oito linhas.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. P é uma condicional com duas proposições simples (\"o segurado apresentar testemunhas com valor de prova\" e \"a agência fornecerá um servidor exclusivo\"). Com 2 proposições, a tabela tem 2² = 4 linhas.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 48
+    },
+    "status": "revisao"
+  },
+  {
+    "id": "inss22-cb-50",
+    "disciplina": "rlm",
+    "assunto": "Lógica proposicional",
+    "enunciado": "P: Nos processos de justificações administrativas, quando o segurado apresentar testemunhas com valor de prova, a agência fornecerá um servidor exclusivo para o atendimento.\n\nA partir da proposição precedente, julgue o item a seguir.\n\nHá apenas uma possibilidade de combinação de valores lógicos para as proposições simples que compõem P que a tornam falsa.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. P tem a forma \"se A, então B\". A condicional só é falsa quando A é verdadeira e B é falsa; nas outras três combinações, é verdadeira.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "INSS",
+      "cargo": "Técnico do Seguro Social",
+      "ano": 2022,
+      "prova": "inss-2022-cb",
+      "item": 50
+    },
+    "status": "revisao"
+  }
+]

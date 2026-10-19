@@ -50,6 +50,9 @@ a.phase-node:hover { border-color: var(--primary-soft-border); background: var(-
 .quiz-hearts { color: #e11d48; font-weight: 800; }
 .quiz-timer { font-weight: 800; font-variant-numeric: tabular-nums; color: var(--primary-strong); min-width: 44px; text-align: right; }
 .quiz-question { font-size: 21px; line-height: 1.35; margin: 4px 0 18px; color: var(--heading); }
+.quiz-contexto { margin: 4px 0 10px; font-size: 16px; line-height: 1.6; color: var(--fg); }
+.quiz-contexto p { margin: 0 0 10px; }
+.sim-review-q { white-space: pre-line; }
 .quiz-footer {
   display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
   padding: 16px 18px; border-radius: 18px; background: var(--surface); border: 2px solid var(--border);

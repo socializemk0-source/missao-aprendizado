@@ -17,7 +17,8 @@ for (const lote of lotes) {
   const bank = lote.arquivos.flatMap((f) => JSON.parse(readFileSync(`content/banco/${f}`, 'utf8')));
   const rows = linhas(bank);
   const out = `supabase/migrations/${lote.migracao}`;
-  writeFileSync(out, `-- Questões autorais em revisão (content/banco/${lote.arquivos.join(', ')}).
+  const tipo = bank.every((q) => q.fonte.tipo === 'oficial') ? 'de provas oficiais (gabarito definitivo em content/banco/provas-oficiais.json)' : 'autorais';
+  writeFileSync(out, `-- Questões ${tipo} em revisão (content/banco/${lote.arquivos.join(', ')}).
 -- Arquivo gerado por scripts/banco-sql.mjs. Não edite à mão.
 -- Entram com status 'revisao': só aparecem para o aluno quando um professor
 -- revisar e mudar para 'ativa'. Rodar de novo não sobrescreve nada.

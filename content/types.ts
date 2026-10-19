@@ -15,7 +15,9 @@ export type DisciplinaId = 'portugues' | 'rlm' | 'informatica' | 'constitucional
 export type Dificuldade = 1 | 2 | 3;
 
 export type Fonte =
-  | { tipo: 'oficial'; banca: Banca; orgao: string; cargo: string; ano: number }
+  // prova + item: de onde veio, para conferir com o gabarito definitivo
+  // (content/banco/provas-oficiais.json). As da trilha não têm.
+  | { tipo: 'oficial'; banca: Banca; orgao: string; cargo: string; ano: number; prova?: string; item?: number }
   | { tipo: 'autoral'; estilo?: Banca };
 
 export interface Questao {

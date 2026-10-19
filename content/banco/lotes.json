@@ -1,4 +1,5 @@
 [
   { "migracao": "0007_v2_questoes_autorais.sql", "arquivos": ["autorais.json"] },
-  { "migracao": "0008_v2_piloto_portugues_rlm.sql", "arquivos": ["piloto-portugues.json", "piloto-rlm.json"] }
+  { "migracao": "0008_v2_piloto_portugues_rlm.sql", "arquivos": ["piloto-portugues.json", "piloto-rlm.json"] },
+  { "migracao": "0018_v2_oficiais_inss_2022.sql", "arquivos": ["oficial-inss-2022-cb.json"] }
 ]
