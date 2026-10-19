@@ -363,5 +363,17 @@
     "provaUrl": "https://cdn.cebraspe.org.br/concursos/ICMBIO_24/arquivos/045_ICMBIO_CB1_01.pdf",
     "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/ICMBIO_24/arquivos/Gab_Definitivo_045_ICMBIO_CB1_01.PDF",
     "gabaritoDefinitivo": "CCEEEECCCEECEECCECEECCEECXCECECXECECEECEEECECECEEC"
+  },
+  "susep-2025-cg": {
+    "banca": "Cebraspe",
+    "orgao": "Superintendência de Seguros Privados (SUSEP)",
+    "cargo": "Analista Técnico",
+    "ano": 2025,
+    "aplicacao": "2025-06-08",
+    "caderno": "Conhecimentos Gerais para todos os cargos (065_SUSEP_CG1_01)",
+    "formato": "certo-errado",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/SUSEP_25/arquivos/065_SUSEP_CG1_01.pdf",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/SUSEP_25/arquivos/Gab_Definitivo_065_SUSEP_CG1_01.pdf",
+    "gabaritoDefinitivo": "EEEECCCEECCECEEEEECCECEECEECECCECECCCEEECCEECEECCE"
   }
 }

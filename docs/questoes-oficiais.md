@@ -97,3 +97,4 @@ gabarito de sites de questões (QConcursos, TecConcursos etc.).
 | Cebraspe · ANVISA 2024 · Especialista em Regulação, conhecimentos básicos | 11 (Português, Informática, Constitucional, Administrativo) | 18 e 19 (dependem de figura); inglês, gestão, saúde/SUS, legislação sanitária e regulação |
 | Cebraspe · MP-CE 2025 · Analista Ministerial, conhecimentos gerais | 30 (Português, ética, improbidade, conjuntos e probabilidade) | 18, 19 e 30 (anulados); legislação estadual e do MP-CE; gestão |
 | Cebraspe · ICMBio 2024 · Analista Administrativo, conhecimentos básicos | 40 (Português e redação oficial, Administrativo, Informática) | 26 e 32 (anulados); normas do ICMBio e legislação ambiental |
+| Cebraspe · SUSEP 2025 · Analista Técnico, conhecimentos gerais | 20 (Português, Administrativo, Constitucional) | 11 a 20 (histograma e fórmulas que não saem do PDF); legislação de seguros e previdência complementar |
