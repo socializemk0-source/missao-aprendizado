@@ -30,5 +30,6 @@
   {"migracao": "0046_v2_oficiais_anvisa_2024.sql", "arquivos": ["oficial-anvisa-2024-cb.json"]},
   {"migracao": "0047_v2_oficiais_mpce_2025.sql", "arquivos": ["oficial-mpce-2025-cg1.json"]},
   {"migracao": "0048_v2_oficiais_icmbio_2024.sql", "arquivos": ["oficial-icmbio-2024-cb1.json"]},
-  {"migracao": "0049_v2_oficiais_susep_2025.sql", "arquivos": ["oficial-susep-2025-cg.json"]}
+  {"migracao": "0049_v2_oficiais_susep_2025.sql", "arquivos": ["oficial-susep-2025-cg.json"]},
+  {"migracao": "0050_v2_oficiais_seplagce_2024.sql", "arquivos": ["oficial-seplagce-2024-cb.json"]}
 ]

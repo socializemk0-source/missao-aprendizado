@@ -375,5 +375,17 @@
     "provaUrl": "https://cdn.cebraspe.org.br/concursos/SUSEP_25/arquivos/065_SUSEP_CG1_01.pdf",
     "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/SUSEP_25/arquivos/Gab_Definitivo_065_SUSEP_CG1_01.pdf",
     "gabaritoDefinitivo": "EEEECCCEECCECEEEEECCECEECEECECCECECCCEEECCEECEECCE"
+  },
+  "seplagce-2024-cb": {
+    "banca": "Cebraspe",
+    "orgao": "Secretaria do Planejamento e Gestão do Estado do Ceará",
+    "cargo": "Analista de Gestão Pública e Analista de Planejamento e Orçamento",
+    "ano": 2024,
+    "aplicacao": "2024-07-21",
+    "caderno": "Conhecimentos Básicos para todos os cargos (982_SEPLAG_CE_CB1_01)",
+    "formato": "certo-errado",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/SEPLAG_CE_24/arquivos/982_SEPLAG_CE_CB1_01.PDF",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/SEPLAG_CE_24/arquivos/GAB_DEFINITIVO_982_SEPLAG_CE_CB1_01.PDF",
+    "gabaritoDefinitivo": "CECCECEECCEECEEXEECCEEEECCCEECCEECCCECCE"
   }
 }
