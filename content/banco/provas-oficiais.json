@@ -94,5 +94,17 @@
     "provaUrl": "https://cdn.cebraspe.org.br/concursos/cnj_24/arquivos/979_CNJ_CB1_01.PDF",
     "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/cnj_24/arquivos/GAB_DEFINITIVO_979_CNJ_CB1_01.PDF",
     "gabaritoDefinitivo": "ECCEECEECCCEEECECEEXCCECEECCEECEECCECCECEEEECECCEX"
+  },
+  "pcdf-2024-cb": {
+    "banca": "Cebraspe",
+    "orgao": "Polícia Civil do DF",
+    "cargo": "Cargos administrativos e técnicos",
+    "ano": 2024,
+    "aplicacao": "2024",
+    "caderno": "Conhecimentos básicos para todos os cargos, exceto 1, 2, 3, 7 e 17 (021_PCDF_CB1_01)",
+    "formato": "certo-errado",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/pc_df_24_adm/arquivos/021_PCDF_CB1_01.PDF",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/pc_df_24_adm/arquivos/GAB_DEFINITIVO_021_PCDF_CB1_01.PDF",
+    "gabaritoDefinitivo": "EECCEEECECEECCECECCCECCECECCCCXECCECEECECCECEEEEEC"
   }
 }

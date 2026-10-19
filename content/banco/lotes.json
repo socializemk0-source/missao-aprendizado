@@ -8,5 +8,6 @@
   {"migracao": "0024_v2_oficiais_stj_2024.sql", "arquivos": ["oficial-stj-2024-cb.json"]},
   {"migracao": "0025_v2_oficiais_trt10_2024.sql", "arquivos": ["oficial-trt10-2024-cb.json"]},
   {"migracao": "0026_v2_oficiais_tst_2023.sql", "arquivos": ["oficial-tst-2023-cb.json"]},
-  {"migracao": "0027_v2_oficiais_cnj_2024.sql", "arquivos": ["oficial-cnj-2024-cb.json"]}
+  {"migracao": "0027_v2_oficiais_cnj_2024.sql", "arquivos": ["oficial-cnj-2024-cb.json"]},
+  {"migracao": "0028_v2_oficiais_pcdf_2024.sql", "arquivos": ["oficial-pcdf-2024-cb.json"]}
 ]

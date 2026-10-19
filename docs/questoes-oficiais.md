@@ -74,3 +74,4 @@ gabarito de sites de questões (QConcursos, TecConcursos etc.).
 | Cebraspe · TRT 10.ª Região 2024 · conhecimentos básicos | 28 (Português, linguagem simples, Constitucional, Administrativo) | 1 e 10 (anulados); noções gerais de direito, direitos humanos e gestão |
 | Cebraspe · TST 2023 · conhecimentos básicos (múltipla escolha) | 13 (Português, Constitucional) | 13 e 17 (anuladas); 14–16 (símbolos que não saem do PDF); pessoa com deficiência e Regimento Interno do TST |
 | Cebraspe · CNJ 2024 · conhecimentos básicos | 31 (Português, RLM, Administrativo, Constitucional) | 20 e 50 (anulados); normas internas do CNJ e gestão |
+| Cebraspe · PCDF 2024 · conhecimentos básicos | 27 (Português, RLM) | 28 (tabela que não sai do PDF); 31 em diante (normas e realidade do DF). O caderno vem com as justificativas do gabarito preliminar: elas não são copiadas |
