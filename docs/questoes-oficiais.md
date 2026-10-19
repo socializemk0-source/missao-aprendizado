@@ -87,3 +87,4 @@ gabarito de sites de questões (QConcursos, TecConcursos etc.).
 | Cebraspe · Banco Central 2024 · Analista, conhecimentos básicos | 34 (Português, probabilidade, Administrativo, LGPD) | 44 (anulado); 12 (sem explicação segura); 31 a 35 (símbolos que não saem do PDF); economia (41 a 50) |
 | Cebraspe · CNMP 2023 · Analista, conhecimentos básicos (cargos 1, 2, 4 a 7) | 38 (Português, Administrativo, Constitucional, Informática) | 24 e 49 (anulados); LC 75/1993, Regimento Interno do CNMP e orçamento público |
 | Cebraspe · PF 2025 · cargos administrativos de nível superior, conhecimentos básicos | 48 (Português, lógica, Administrativo, Constitucional, Informática) | 37 (anulado); 31 (depende de figura) |
+| Cebraspe · PF 2025 · Agente Administrativo (cargo 15), conhecimentos básicos | 50 (Português e redação oficial, lógica, Administrativo, Informática) | nenhum |

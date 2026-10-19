@@ -266,5 +266,17 @@
     "provaUrl": "https://cdn.cebraspe.org.br/concursos/pf_25_adm/arquivos/094_PF_CB1_01.pdf",
     "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/pf_25_adm/arquivos/Gab_Definitivo_094_PF_CB1_01.pdf",
     "gabaritoDefinitivo": "CEEECECECCCCCEECCEEECCCCEEECEEECECEEXECECCCECCEEEC"
+  },
+  "pf-2025-cb2": {
+    "banca": "Cebraspe",
+    "orgao": "Polícia Federal",
+    "cargo": "Agente Administrativo (cargo 15)",
+    "ano": 2025,
+    "aplicacao": "2025",
+    "caderno": "Prova objetiva – Conhecimentos Básicos para o cargo 15 (094_PF_CB2_01)",
+    "formato": "certo-errado",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/pf_25_adm/arquivos/094_PF_CB2_01.pdf",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/pf_25_adm/arquivos/Gab_Definitivo_094_PF_CB2_01.pdf",
+    "gabaritoDefinitivo": "ECCEEECEEECEECCCEECECEECECCEECECCCECCCEECEECCCCEEE"
   }
 }
