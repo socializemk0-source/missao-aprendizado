@@ -217,5 +217,18 @@
     "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/tj_pa_25_servidor/arquivos/873AE3ACF6AABCBAB3E5B75B08B43AB1B3B3E683DD1A28706C6EC83D72B2230A.pdf",
     "gabaritoDescricao": "GABARITO DEFINITIVO – CONHECIMENTOS GERAIS PARA OS CARGOS 5, 7, 10, 12, 13, 14, 15 E 16 (página do concurso no Cebraspe)",
     "gabaritoDefinitivo": "CEEEEECECECCECECEEECCCCCECEECECCEECEECECCCEEECCECC"
+  },
+  "tcu-2025-cb": {
+    "banca": "Cebraspe",
+    "orgao": "Tribunal de Contas da União",
+    "cargo": "Técnico Federal de Controle Externo",
+    "ano": 2025,
+    "aplicacao": "2025-08-03",
+    "caderno": "Conhecimentos Básicos (108_TCUTEFC_CB1_01)",
+    "formato": "certo-errado",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/TCU_25_TEFC/arquivos/108_TCUTEFC_CB1_01.pdf",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/TCU_25_TEFC/arquivos/03531F6DDD1179877F8BB0D4D4BCA28516CFFFFBC414219B25C23B6CB12E2102.pdf",
+    "gabaritoDescricao": "GABARITO DEFINITIVO – CONHECIMENTOS BÁSICOS",
+    "gabaritoDefinitivo": "EEECCCXECEECCCEECEXEECECCEECCEEEEXECCEEXECEEECCCCE"
   }
 }

@@ -17,5 +17,6 @@
   {"migracao": "0033_v2_oficiais_ibama_2025.sql", "arquivos": ["oficial-ibama-2025-cb.json"]},
   {"migracao": "0034_v2_oficiais_trf6_2024.sql", "arquivos": ["oficial-trf6-2024-cg.json"]},
   {"migracao": "0035_v2_oficiais_cd_2025.sql", "arquivos": ["oficial-cd-2025-cg.json"]},
-  {"migracao": "0036_v2_oficiais_tjpa_2025.sql", "arquivos": ["oficial-tjpa-2025-cg1.json", "oficial-tjpa-2025-cg3.json"]}
+  {"migracao": "0036_v2_oficiais_tjpa_2025.sql", "arquivos": ["oficial-tjpa-2025-cg1.json", "oficial-tjpa-2025-cg3.json"]},
+  {"migracao": "0037_v2_oficiais_tcu_2025.sql", "arquivos": ["oficial-tcu-2025-cb.json"]}
 ]
