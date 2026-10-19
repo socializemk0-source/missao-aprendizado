@@ -72,7 +72,8 @@ describe('banco de questões autorais', () => {
       // O arquivo diz que é o definitivo no nome ou, quando a banca publica com
       // nome embaralhado, na descrição da página do concurso.
       expect(`${p.gabaritoUrl} ${p.gabaritoDescricao ?? ''}`, id).toMatch(/DEFINITIVO/i);
-      expect(p.gabaritoDefinitivo, id).toMatch(p.formato === 'certo-errado' ? /^[CEX]+$/ : /^[A-EX]+$/);
+      // "-": item que não está neste caderno (o gabarito da banca começa em outro número).
+      expect(p.gabaritoDefinitivo, id).toMatch(p.formato === 'certo-errado' ? /^-*[CEX]+$/ : /^-*[A-EX]+$/);
     }
     const oficiais = itens.filter((q) => q.fonte.tipo === 'oficial');
     expect(oficiais.length).toBeGreaterThan(0);
@@ -85,6 +86,7 @@ describe('banco de questões autorais', () => {
       expect(Number.isInteger(f.item) && f.item >= 1 && f.item <= p!.gabaritoDefinitivo.length, q.id).toBe(true);
       const gabarito = p!.gabaritoDefinitivo[f.item - 1];
       expect(gabarito, `${q.id}: item anulado não entra`).not.toBe('X');
+      expect(gabarito, `${q.id}: item fora do caderno`).not.toBe('-');
       if (p!.formato === 'certo-errado') {
         expect(q.alternativas, q.id).toEqual(['Certo', 'Errado']);
         expect(q.alternativas[q.correta], `${q.id}: gabarito definitivo é ${gabarito}`).toBe(gabarito === 'C' ? 'Certo' : 'Errado');
@@ -101,7 +103,15 @@ describe('banco de questões autorais', () => {
     // Item oficial pode lembrar uma autoral que ensina a mesma regra (ex.: a
     // Súmula 473): esse par é permitido. Autoral × autoral e oficial × oficial, não.
     // Na oficial, compara só o item (o último bloco): vários itens dividem o mesmo texto de apoio.
-    const item = (q: Questao) => (q.fonte.tipo === 'oficial' ? q.enunciado.split(/\n\s*\n/).pop()! : q.enunciado);
+    // Se o último bloco é só o comando ("Assinale a opção correta."), o item de verdade
+    // está no bloco anterior (a lista I, II, III): entra também, senão sobram só
+    // alternativas genéricas como "Apenas o item II está certo.".
+    const item = (q: Questao) => {
+      if (q.fonte.tipo !== 'oficial') return q.enunciado;
+      const blocos = q.enunciado.split(/\n\s*\n/);
+      const ultimo = blocos.pop()!;
+      return ultimo.length < 60 && blocos.length ? `${blocos.pop()} ${ultimo}` : ultimo;
+    };
     // Itens da mesma prova podem começar igual (o teste acima já impede o mesmo item duas vezes).
     const prova = (q: Questao) => (q.fonte.tipo === 'oficial' ? q.fonte.prova ?? null : null);
     const todas = [...QUESTOES, ...itens].map((q) => ({ id: q.id, oficial: q.fonte.tipo === 'oficial', prova: prova(q), t: trincas([item(q), ...q.alternativas].join(' ')) }));

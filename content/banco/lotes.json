@@ -24,5 +24,6 @@
   {"migracao": "0040_v2_oficiais_pf_2025_adm.sql", "arquivos": ["oficial-pf-2025-adm.json"]},
   {"migracao": "0041_v2_oficiais_pf_2025_cb2.sql", "arquivos": ["oficial-pf-2025-cb2.json"]},
   {"migracao": "0042_v2_oficiais_anatel_2024.sql", "arquivos": ["oficial-anatel-2024-cb.json"]},
-  {"migracao": "0043_v2_oficiais_tjes_2023.sql", "arquivos": ["oficial-tjes-2023-cg.json"]}
+  {"migracao": "0043_v2_oficiais_tjes_2023.sql", "arquivos": ["oficial-tjes-2023-cg.json"]},
+  {"migracao": "0044_v2_oficiais_pcpe_2023.sql", "arquivos": ["oficial-pcpe-2023-esc.json"]}
 ]

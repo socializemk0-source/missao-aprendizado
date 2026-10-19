@@ -10,7 +10,9 @@ gabarito de sites de questões (QConcursos, TecConcursos etc.).
 - `content/banco/provas-oficiais.json`: o registro de cada prova usada. Guarda
   banca, órgão, cargo, ano, data da aplicação, o caderno, os links do PDF da
   prova e do gabarito definitivo **no site da banca** e o gabarito definitivo
-  inteiro (`C`, `E` ou `X` para item anulado), na ordem dos itens.
+  inteiro (`C`, `E` ou `X` para item anulado), na ordem dos itens. Quando
+  o caderno começa em outro número (ex.: questões 21 a 60), as posições que
+  não são dele ficam com `-`.
 - Formato: `certo-errado` (gabarito com `C`/`E`) ou `multipla-escolha`
   (letras `A`–`E`; as alternativas ficam na ordem da prova e a certa é a
   letra do gabarito). `X` é item anulado nos dois.
@@ -90,3 +92,4 @@ gabarito de sites de questões (QConcursos, TecConcursos etc.).
 | Cebraspe · PF 2025 · Agente Administrativo (cargo 15), conhecimentos básicos | 50 (Português e redação oficial, lógica, Administrativo, Informática) | nenhum |
 | Cebraspe · ANATEL 2024 · Especialista em Regulação, conhecimentos básicos | 30 (Português, Administrativo, Constitucional) | 19, 35 e 39 (anulados); Inglês, teoria da regulação e Lei Geral de Telecomunicações |
 | Cebraspe · TJ-ES 2023 · Analista Judiciário, conhecimentos gerais | 36 (Português, ética, Administrativo, Informática, lógica e matemática) | 26 a 28 (dependem de planilha ou figura); 37 (sem explicação segura); leis estaduais e Regimento Interno do TJ-ES |
+| Cebraspe · PC-PE 2023 · Escrivão de Polícia, P2 (múltipla escolha) | 25 (Português e redação oficial, Informática, matemática e estatística) | 24, 36, 57 e 60 (anulados); 39, 42 e 43 (fórmulas que não saem do PDF); arquivologia e leis estaduais. O gabarito começa na questão 21: as posições 1 a 20 ficam com "-" no registro |

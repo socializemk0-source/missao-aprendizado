@@ -302,5 +302,17 @@
     "provaUrl": "https://cdn.cebraspe.org.br/concursos/TJ_ES_23/arquivos/803_TJ_ES_CG1_01.PDF",
     "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/TJ_ES_23/arquivos/GAB_DEFINITIVO_803_TJ_ES_CG1_01.PDF",
     "gabaritoDefinitivo": "CEEECEEECCECECCCEECCCECECCECEEECCCEECEEEEECCCEECCE"
+  },
+  "pcpe-2023-esc": {
+    "banca": "Cebraspe",
+    "orgao": "Polícia Civil de Pernambuco",
+    "cargo": "Escrivão de Polícia",
+    "ano": 2023,
+    "aplicacao": "2024-02-25",
+    "caderno": "Conhecimentos Específicos (P2) – Cargo 3 (MATRIZ_954PC_PE002_00): Língua Portuguesa, redação oficial, Informática, Raciocínio Lógico e Estatística",
+    "formato": "multipla-escolha",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/pc_pe_23/arquivos/MATRIZ_954PC_PE002_00_COM_JUSTIFICATIVA.PDF",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/pc_pe_23/arquivos/GAB_DEFINITIVO_MATRIZ_954PC_PE002_00.PDF",
+    "gabaritoDefinitivo": "--------------------BDAXEABBCBEAECDXCBDCDBAABABDCDEBDDDAXDAX"
   }
 }
