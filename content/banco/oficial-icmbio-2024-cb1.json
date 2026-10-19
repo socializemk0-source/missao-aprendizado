@@ -1,0 +1,922 @@
+[
+  {
+    "id": "icmbio24-001",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CB1A1\n\nO debate sobre o futuro da Amazônia depende essencialmente de como se define desenvolvimento. Diversas iniciativas governamentais — e privadas, muitas vezes ilegais — desde os anos 1970 estão centradas na ideia de ocupação do território para atividades agropecuárias e de mineração, além do uso dos rios para geração de energia elétrica, mesmo que isso implique a derrubada descontrolada da floresta. Na região Norte, o desmatamento contínuo, que já consumiu 20% da área original da floresta no Brasil, afeta negativamente o clima regional, com impacto no continente e no restante do planeta.\n\nA floresta amazônica exerce um papel fundamental na chamada química atmosférica: é uma gigantesca fonte de vapor d’água, que leva chuva da região Norte até a bacia do rio da Prata, favorecendo, por exemplo, a atividade agropecuária da região Centro-Oeste. Um estudo mostra que o desmatamento total ou parcial das três grandes florestas tropicais do mundo — a da bacia do Congo e a do Sudeste Asiático, além da amazônica, a maior delas — causaria um aumento da temperatura do planeta de 0,7 °C, o que equivale a boa parte do aquecimento gerado pela ação humana desde a Revolução Industrial.\n\nO ecossistema rico e delicado da Amazônia demanda um modelo de desenvolvimento próprio que privilegie as particularidades da floresta, aproveitando sua imensa biodiversidade e respeitando a população local — indígenas, ribeirinhos e moradores das cidades. A discussão deve contemplar questões como o manejo sustentável de recursos como pesca, madeira e frutos, a oferta de infraestrutura para seus habitantes (na região que concentra 20% de água doce de toda a Terra, 30% da população não tem acesso à água potável e 87% vive sem coleta de esgoto), o combate ao desmatamento ilegal, a grilagem de terras públicas, entre outros pontos. A ciência tem a contribuir no estudo da biodiversidade; na domesticação de espécies nativas com relevância comercial; e na recuperação de pastagens abandonadas para uso em uma agricultura mais tecnológica e uma pecuária mais intensiva, ou realizada em floresta.\n\nAlexandra O. de Almeida. Revista Pesquisa FAPESP, edição 285, nov./2019 (com adaptações).\n\nDe acordo com as ideias veiculadas no texto CB1A1, julgue o item a seguir.\n\nConclui-se da leitura do primeiro parágrafo do texto que o modelo de desenvolvimento até hoje empreendido na Amazônia é deletério ao futuro da floresta.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. O parágrafo diz que, desde os anos 1970, a ideia de desenvolvimento foi ocupar o território mesmo à custa da derrubada descontrolada da floresta, e que o desmatamento já consumiu 20% dela. Esse modelo é prejudicial (deletério) ao futuro da floresta.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 1
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-002",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CB1A1\n\nO debate sobre o futuro da Amazônia depende essencialmente de como se define desenvolvimento. Diversas iniciativas governamentais — e privadas, muitas vezes ilegais — desde os anos 1970 estão centradas na ideia de ocupação do território para atividades agropecuárias e de mineração, além do uso dos rios para geração de energia elétrica, mesmo que isso implique a derrubada descontrolada da floresta. Na região Norte, o desmatamento contínuo, que já consumiu 20% da área original da floresta no Brasil, afeta negativamente o clima regional, com impacto no continente e no restante do planeta.\n\nA floresta amazônica exerce um papel fundamental na chamada química atmosférica: é uma gigantesca fonte de vapor d’água, que leva chuva da região Norte até a bacia do rio da Prata, favorecendo, por exemplo, a atividade agropecuária da região Centro-Oeste. Um estudo mostra que o desmatamento total ou parcial das três grandes florestas tropicais do mundo — a da bacia do Congo e a do Sudeste Asiático, além da amazônica, a maior delas — causaria um aumento da temperatura do planeta de 0,7 °C, o que equivale a boa parte do aquecimento gerado pela ação humana desde a Revolução Industrial.\n\nO ecossistema rico e delicado da Amazônia demanda um modelo de desenvolvimento próprio que privilegie as particularidades da floresta, aproveitando sua imensa biodiversidade e respeitando a população local — indígenas, ribeirinhos e moradores das cidades. A discussão deve contemplar questões como o manejo sustentável de recursos como pesca, madeira e frutos, a oferta de infraestrutura para seus habitantes (na região que concentra 20% de água doce de toda a Terra, 30% da população não tem acesso à água potável e 87% vive sem coleta de esgoto), o combate ao desmatamento ilegal, a grilagem de terras públicas, entre outros pontos. A ciência tem a contribuir no estudo da biodiversidade; na domesticação de espécies nativas com relevância comercial; e na recuperação de pastagens abandonadas para uso em uma agricultura mais tecnológica e uma pecuária mais intensiva, ou realizada em floresta.\n\nAlexandra O. de Almeida. Revista Pesquisa FAPESP, edição 285, nov./2019 (com adaptações).\n\nDe acordo com as ideias veiculadas no texto CB1A1, julgue o item a seguir.\n\nDepreende-se da leitura do segundo parágrafo do texto que o desmatamento da floresta amazônica pode alterar um processo natural que é importante para a agropecuária brasileira.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. A floresta é fonte de vapor d’água que leva chuva até a bacia do Prata, favorecendo a agropecuária do Centro-Oeste. Desmatar pode afetar esse processo natural.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 2
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-003",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CB1A1\n\nO debate sobre o futuro da Amazônia depende essencialmente de como se define desenvolvimento. Diversas iniciativas governamentais — e privadas, muitas vezes ilegais — desde os anos 1970 estão centradas na ideia de ocupação do território para atividades agropecuárias e de mineração, além do uso dos rios para geração de energia elétrica, mesmo que isso implique a derrubada descontrolada da floresta. Na região Norte, o desmatamento contínuo, que já consumiu 20% da área original da floresta no Brasil, afeta negativamente o clima regional, com impacto no continente e no restante do planeta.\n\nA floresta amazônica exerce um papel fundamental na chamada química atmosférica: é uma gigantesca fonte de vapor d’água, que leva chuva da região Norte até a bacia do rio da Prata, favorecendo, por exemplo, a atividade agropecuária da região Centro-Oeste. Um estudo mostra que o desmatamento total ou parcial das três grandes florestas tropicais do mundo — a da bacia do Congo e a do Sudeste Asiático, além da amazônica, a maior delas — causaria um aumento da temperatura do planeta de 0,7 °C, o que equivale a boa parte do aquecimento gerado pela ação humana desde a Revolução Industrial.\n\nO ecossistema rico e delicado da Amazônia demanda um modelo de desenvolvimento próprio que privilegie as particularidades da floresta, aproveitando sua imensa biodiversidade e respeitando a população local — indígenas, ribeirinhos e moradores das cidades. A discussão deve contemplar questões como o manejo sustentável de recursos como pesca, madeira e frutos, a oferta de infraestrutura para seus habitantes (na região que concentra 20% de água doce de toda a Terra, 30% da população não tem acesso à água potável e 87% vive sem coleta de esgoto), o combate ao desmatamento ilegal, a grilagem de terras públicas, entre outros pontos. A ciência tem a contribuir no estudo da biodiversidade; na domesticação de espécies nativas com relevância comercial; e na recuperação de pastagens abandonadas para uso em uma agricultura mais tecnológica e uma pecuária mais intensiva, ou realizada em floresta.\n\nAlexandra O. de Almeida. Revista Pesquisa FAPESP, edição 285, nov./2019 (com adaptações).\n\nDe acordo com as ideias veiculadas no texto CB1A1, julgue o item a seguir.\n\nConclui-se das informações do texto que, devido à disponibilidade hídrica da região amazônica, seus habitantes são plenamente atendidos em serviços de infraestrutura de acesso a água potável e a rede de esgoto.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. O texto diz o contrário: apesar de a região concentrar 20% da água doce da Terra, 30% da população não tem água potável e 87% vive sem coleta de esgoto.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 3
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-004",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CB1A1\n\nO debate sobre o futuro da Amazônia depende essencialmente de como se define desenvolvimento. Diversas iniciativas governamentais — e privadas, muitas vezes ilegais — desde os anos 1970 estão centradas na ideia de ocupação do território para atividades agropecuárias e de mineração, além do uso dos rios para geração de energia elétrica, mesmo que isso implique a derrubada descontrolada da floresta. Na região Norte, o desmatamento contínuo, que já consumiu 20% da área original da floresta no Brasil, afeta negativamente o clima regional, com impacto no continente e no restante do planeta.\n\nA floresta amazônica exerce um papel fundamental na chamada química atmosférica: é uma gigantesca fonte de vapor d’água, que leva chuva da região Norte até a bacia do rio da Prata, favorecendo, por exemplo, a atividade agropecuária da região Centro-Oeste. Um estudo mostra que o desmatamento total ou parcial das três grandes florestas tropicais do mundo — a da bacia do Congo e a do Sudeste Asiático, além da amazônica, a maior delas — causaria um aumento da temperatura do planeta de 0,7 °C, o que equivale a boa parte do aquecimento gerado pela ação humana desde a Revolução Industrial.\n\nO ecossistema rico e delicado da Amazônia demanda um modelo de desenvolvimento próprio que privilegie as particularidades da floresta, aproveitando sua imensa biodiversidade e respeitando a população local — indígenas, ribeirinhos e moradores das cidades. A discussão deve contemplar questões como o manejo sustentável de recursos como pesca, madeira e frutos, a oferta de infraestrutura para seus habitantes (na região que concentra 20% de água doce de toda a Terra, 30% da população não tem acesso à água potável e 87% vive sem coleta de esgoto), o combate ao desmatamento ilegal, a grilagem de terras públicas, entre outros pontos. A ciência tem a contribuir no estudo da biodiversidade; na domesticação de espécies nativas com relevância comercial; e na recuperação de pastagens abandonadas para uso em uma agricultura mais tecnológica e uma pecuária mais intensiva, ou realizada em floresta.\n\nAlexandra O. de Almeida. Revista Pesquisa FAPESP, edição 285, nov./2019 (com adaptações).\n\nDe acordo com as ideias veiculadas no texto CB1A1, julgue o item a seguir.\n\nNo último período do texto, a autora hierarquiza, por ordem de importância, as contribuições da ciência para os ecossistemas amazônicos.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. A autora apenas enumera, separadas por ponto e vírgula, as áreas em que a ciência pode contribuir. Nada indica uma ordem de importância entre elas.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 4
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-005",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CB1A1\n\nO debate sobre o futuro da Amazônia depende essencialmente de como se define desenvolvimento. Diversas iniciativas governamentais — e privadas, muitas vezes ilegais — desde os anos 1970 estão centradas na ideia de ocupação do território para atividades agropecuárias e de mineração, além do uso dos rios para geração de energia elétrica, mesmo que isso implique a derrubada descontrolada da floresta. Na região Norte, o desmatamento contínuo, que já consumiu 20% da área original da floresta no Brasil, afeta negativamente o clima regional, com impacto no continente e no restante do planeta.\n\nA floresta amazônica exerce um papel fundamental na chamada química atmosférica: é uma gigantesca fonte de vapor d’água, que leva chuva da região Norte até a bacia do rio da Prata, favorecendo, por exemplo, a atividade agropecuária da região Centro-Oeste. Um estudo mostra que o desmatamento total ou parcial das três grandes florestas tropicais do mundo — a da bacia do Congo e a do Sudeste Asiático, além da amazônica, a maior delas — causaria um aumento da temperatura do planeta de 0,7 °C, o que equivale a boa parte do aquecimento gerado pela ação humana desde a Revolução Industrial.\n\nO ecossistema rico e delicado da Amazônia demanda um modelo de desenvolvimento próprio que privilegie as particularidades da floresta, aproveitando sua imensa biodiversidade e respeitando a população local — indígenas, ribeirinhos e moradores das cidades. A discussão deve contemplar questões como o manejo sustentável de recursos como pesca, madeira e frutos, a oferta de infraestrutura para seus habitantes (na região que concentra 20% de água doce de toda a Terra, 30% da população não tem acesso à água potável e 87% vive sem coleta de esgoto), o combate ao desmatamento ilegal, a grilagem de terras públicas, entre outros pontos. A ciência tem a contribuir no estudo da biodiversidade; na domesticação de espécies nativas com relevância comercial; e na recuperação de pastagens abandonadas para uso em uma agricultura mais tecnológica e uma pecuária mais intensiva, ou realizada em floresta.\n\nAlexandra O. de Almeida. Revista Pesquisa FAPESP, edição 285, nov./2019 (com adaptações).\n\nDe acordo com as ideias veiculadas no texto CB1A1, julgue o item a seguir.\n\nDe acordo com o texto, o índice de desmatamento das grandes florestas tropicais do mundo é inversamente proporcional à intensificação do aquecimento global.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. Segundo o estudo citado, desmatar as grandes florestas tropicais aumentaria a temperatura do planeta: quanto mais desmatamento, mais aquecimento. A relação seria direta, e não inversa.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 5
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-006",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CB1A1\n\nO debate sobre o futuro da Amazônia depende essencialmente de como se define desenvolvimento. Diversas iniciativas governamentais — e privadas, muitas vezes ilegais — desde os anos 1970 estão centradas na ideia de ocupação do território para atividades agropecuárias e de mineração, além do uso dos rios para geração de energia elétrica, mesmo que isso implique a derrubada descontrolada da floresta. Na região Norte, o desmatamento contínuo, que já consumiu 20% da área original da floresta no Brasil, afeta negativamente o clima regional, com impacto no continente e no restante do planeta.\n\nA floresta amazônica exerce um papel fundamental na chamada química atmosférica: é uma gigantesca fonte de vapor d’água, que leva chuva da região Norte até a bacia do rio da Prata, favorecendo, por exemplo, a atividade agropecuária da região Centro-Oeste. Um estudo mostra que o desmatamento total ou parcial das três grandes florestas tropicais do mundo — a da bacia do Congo e a do Sudeste Asiático, além da amazônica, a maior delas — causaria um aumento da temperatura do planeta de 0,7 °C, o que equivale a boa parte do aquecimento gerado pela ação humana desde a Revolução Industrial.\n\nO ecossistema rico e delicado da Amazônia demanda um modelo de desenvolvimento próprio que privilegie as particularidades da floresta, aproveitando sua imensa biodiversidade e respeitando a população local — indígenas, ribeirinhos e moradores das cidades. A discussão deve contemplar questões como o manejo sustentável de recursos como pesca, madeira e frutos, a oferta de infraestrutura para seus habitantes (na região que concentra 20% de água doce de toda a Terra, 30% da população não tem acesso à água potável e 87% vive sem coleta de esgoto), o combate ao desmatamento ilegal, a grilagem de terras públicas, entre outros pontos. A ciência tem a contribuir no estudo da biodiversidade; na domesticação de espécies nativas com relevância comercial; e na recuperação de pastagens abandonadas para uso em uma agricultura mais tecnológica e uma pecuária mais intensiva, ou realizada em floresta.\n\nAlexandra O. de Almeida. Revista Pesquisa FAPESP, edição 285, nov./2019 (com adaptações).\n\nDe acordo com as ideias veiculadas no texto CB1A1, julgue o item a seguir.\n\nInfere-se da leitura do texto que o desenvolvimento adequado para a região amazônica deve ser análogo ao preconizado durante o período da Revolução Industrial.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. A Revolução Industrial aparece só como marco do aquecimento causado pelo ser humano. O texto defende um modelo próprio para a Amazônia, que respeite a floresta e sua população.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 6
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-007",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CB1A1\n\nO debate sobre o futuro da Amazônia depende essencialmente de como se define desenvolvimento. Diversas iniciativas governamentais — e privadas, muitas vezes ilegais — desde os anos 1970 estão centradas na ideia de ocupação do território para atividades agropecuárias e de mineração, além do uso dos rios para geração de energia elétrica, mesmo que isso implique a derrubada descontrolada da floresta. Na região Norte, o desmatamento contínuo, que já consumiu 20% da área original da floresta no Brasil, afeta negativamente o clima regional, com impacto no continente e no restante do planeta.\n\nA floresta amazônica exerce um papel fundamental na chamada química atmosférica: é uma gigantesca fonte de vapor d’água, que leva chuva da região Norte até a bacia do rio da Prata, favorecendo, por exemplo, a atividade agropecuária da região Centro-Oeste. Um estudo mostra que o desmatamento total ou parcial das três grandes florestas tropicais do mundo — a da bacia do Congo e a do Sudeste Asiático, além da amazônica, a maior delas — causaria um aumento da temperatura do planeta de 0,7 °C, o que equivale a boa parte do aquecimento gerado pela ação humana desde a Revolução Industrial.\n\nO ecossistema rico e delicado da Amazônia demanda um modelo de desenvolvimento próprio que privilegie as particularidades da floresta, aproveitando sua imensa biodiversidade e respeitando a população local — indígenas, ribeirinhos e moradores das cidades. A discussão deve contemplar questões como o manejo sustentável de recursos como pesca, madeira e frutos, a oferta de infraestrutura para seus habitantes (na região que concentra 20% de água doce de toda a Terra, 30% da população não tem acesso à água potável e 87% vive sem coleta de esgoto), o combate ao desmatamento ilegal, a grilagem de terras públicas, entre outros pontos. A ciência tem a contribuir no estudo da biodiversidade; na domesticação de espécies nativas com relevância comercial; e na recuperação de pastagens abandonadas para uso em uma agricultura mais tecnológica e uma pecuária mais intensiva, ou realizada em floresta.\n\nAlexandra O. de Almeida. Revista Pesquisa FAPESP, edição 285, nov./2019 (com adaptações).\n\nDe acordo com as ideias veiculadas no texto CB1A1, julgue o item a seguir.\n\nDe acordo com as ideias do texto, a formulação de um novo modelo de desenvolvimento para a Amazônia pode ser beneficiada pelas contribuições da ciência.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. O texto termina dizendo que a ciência tem a contribuir no estudo da biodiversidade, na domesticação de espécies nativas e na recuperação de pastagens, ou seja, na construção do novo modelo.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 7
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-008",
+    "disciplina": "portugues",
+    "assunto": "Reescrita de frases",
+    "enunciado": "Texto CB1A1\n\nO debate sobre o futuro da Amazônia depende essencialmente de como se define desenvolvimento. Diversas iniciativas governamentais — e privadas, muitas vezes ilegais — desde os anos 1970 estão centradas na ideia de ocupação do território para atividades agropecuárias e de mineração, além do uso dos rios para geração de energia elétrica, mesmo que isso implique a derrubada descontrolada da floresta. Na região Norte, o desmatamento contínuo, que já consumiu 20% da área original da floresta no Brasil, afeta negativamente o clima regional, com impacto no continente e no restante do planeta.\n\nA floresta amazônica exerce um papel fundamental na chamada química atmosférica: é uma gigantesca fonte de vapor d’água, que leva chuva da região Norte até a bacia do rio da Prata, favorecendo, por exemplo, a atividade agropecuária da região Centro-Oeste. Um estudo mostra que o desmatamento total ou parcial das três grandes florestas tropicais do mundo — a da bacia do Congo e a do Sudeste Asiático, além da amazônica, a maior delas — causaria um aumento da temperatura do planeta de 0,7 °C, o que equivale a boa parte do aquecimento gerado pela ação humana desde a Revolução Industrial.\n\nO ecossistema rico e delicado da Amazônia demanda um modelo de desenvolvimento próprio que privilegie as particularidades da floresta, aproveitando sua imensa biodiversidade e respeitando a população local — indígenas, ribeirinhos e moradores das cidades. A discussão deve contemplar questões como o manejo sustentável de recursos como pesca, madeira e frutos, a oferta de infraestrutura para seus habitantes (na região que concentra 20% de água doce de toda a Terra, 30% da população não tem acesso à água potável e 87% vive sem coleta de esgoto), o combate ao desmatamento ilegal, a grilagem de terras públicas, entre outros pontos. A ciência tem a contribuir no estudo da biodiversidade; na domesticação de espécies nativas com relevância comercial; e na recuperação de pastagens abandonadas para uso em uma agricultura mais tecnológica e uma pecuária mais intensiva, ou realizada em floresta.\n\nAlexandra O. de Almeida. Revista Pesquisa FAPESP, edição 285, nov./2019 (com adaptações).\n\nEm relação ao texto CB1A1 e a seus aspectos linguísticos, julgue o item seguinte.\n\nSem prejuízo da correção gramatical e dos sentidos do texto, a expressão “por exemplo” poderia ser deslocada para o final do primeiro período do segundo parágrafo, da seguinte forma: ... favorecendo a atividade agropecuária da região Centro-Oeste, por exemplo.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. \"Por exemplo\" pode mudar de lugar na frase sem erro e sem mudar o sentido: continua indicando que a agropecuária do Centro-Oeste é um exemplo do que a chuva favorece.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 8
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-009",
+    "disciplina": "portugues",
+    "assunto": "Sentido das palavras",
+    "enunciado": "Texto CB1A1\n\nO debate sobre o futuro da Amazônia depende essencialmente de como se define desenvolvimento. Diversas iniciativas governamentais — e privadas, muitas vezes ilegais — desde os anos 1970 estão centradas na ideia de ocupação do território para atividades agropecuárias e de mineração, além do uso dos rios para geração de energia elétrica, mesmo que isso implique a derrubada descontrolada da floresta. Na região Norte, o desmatamento contínuo, que já consumiu 20% da área original da floresta no Brasil, afeta negativamente o clima regional, com impacto no continente e no restante do planeta.\n\nA floresta amazônica exerce um papel fundamental na chamada química atmosférica: é uma gigantesca fonte de vapor d’água, que leva chuva da região Norte até a bacia do rio da Prata, favorecendo, por exemplo, a atividade agropecuária da região Centro-Oeste. Um estudo mostra que o desmatamento total ou parcial das três grandes florestas tropicais do mundo — a da bacia do Congo e a do Sudeste Asiático, além da amazônica, a maior delas — causaria um aumento da temperatura do planeta de 0,7 °C, o que equivale a boa parte do aquecimento gerado pela ação humana desde a Revolução Industrial.\n\nO ecossistema rico e delicado da Amazônia demanda um modelo de desenvolvimento próprio que privilegie as particularidades da floresta, aproveitando sua imensa biodiversidade e respeitando a população local — indígenas, ribeirinhos e moradores das cidades. A discussão deve contemplar questões como o manejo sustentável de recursos como pesca, madeira e frutos, a oferta de infraestrutura para seus habitantes (na região que concentra 20% de água doce de toda a Terra, 30% da população não tem acesso à água potável e 87% vive sem coleta de esgoto), o combate ao desmatamento ilegal, a grilagem de terras públicas, entre outros pontos. A ciência tem a contribuir no estudo da biodiversidade; na domesticação de espécies nativas com relevância comercial; e na recuperação de pastagens abandonadas para uso em uma agricultura mais tecnológica e uma pecuária mais intensiva, ou realizada em floresta.\n\nAlexandra O. de Almeida. Revista Pesquisa FAPESP, edição 285, nov./2019 (com adaptações).\n\nEm relação ao texto CB1A1 e a seus aspectos linguísticos, julgue o item seguinte.\n\nO vocábulo “contemplar” (segundo período do terceiro parágrafo) poderia ser substituído, sem alteração do sentido original do texto, por observar.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. No trecho, \"a discussão deve contemplar questões\" quer dizer que a discussão deve levar em conta essas questões. \"Observar\", no sentido de considerar, atentar para, mantém esse sentido.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 9
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-010",
+    "disciplina": "portugues",
+    "assunto": "Tipologia textual",
+    "enunciado": "Texto CB1A1\n\nO debate sobre o futuro da Amazônia depende essencialmente de como se define desenvolvimento. Diversas iniciativas governamentais — e privadas, muitas vezes ilegais — desde os anos 1970 estão centradas na ideia de ocupação do território para atividades agropecuárias e de mineração, além do uso dos rios para geração de energia elétrica, mesmo que isso implique a derrubada descontrolada da floresta. Na região Norte, o desmatamento contínuo, que já consumiu 20% da área original da floresta no Brasil, afeta negativamente o clima regional, com impacto no continente e no restante do planeta.\n\nA floresta amazônica exerce um papel fundamental na chamada química atmosférica: é uma gigantesca fonte de vapor d’água, que leva chuva da região Norte até a bacia do rio da Prata, favorecendo, por exemplo, a atividade agropecuária da região Centro-Oeste. Um estudo mostra que o desmatamento total ou parcial das três grandes florestas tropicais do mundo — a da bacia do Congo e a do Sudeste Asiático, além da amazônica, a maior delas — causaria um aumento da temperatura do planeta de 0,7 °C, o que equivale a boa parte do aquecimento gerado pela ação humana desde a Revolução Industrial.\n\nO ecossistema rico e delicado da Amazônia demanda um modelo de desenvolvimento próprio que privilegie as particularidades da floresta, aproveitando sua imensa biodiversidade e respeitando a população local — indígenas, ribeirinhos e moradores das cidades. A discussão deve contemplar questões como o manejo sustentável de recursos como pesca, madeira e frutos, a oferta de infraestrutura para seus habitantes (na região que concentra 20% de água doce de toda a Terra, 30% da população não tem acesso à água potável e 87% vive sem coleta de esgoto), o combate ao desmatamento ilegal, a grilagem de terras públicas, entre outros pontos. A ciência tem a contribuir no estudo da biodiversidade; na domesticação de espécies nativas com relevância comercial; e na recuperação de pastagens abandonadas para uso em uma agricultura mais tecnológica e uma pecuária mais intensiva, ou realizada em floresta.\n\nAlexandra O. de Almeida. Revista Pesquisa FAPESP, edição 285, nov./2019 (com adaptações).\n\nEm relação ao texto CB1A1 e a seus aspectos linguísticos, julgue o item seguinte.\n\nPredominam no texto características da tipologia descritiva.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. O texto defende um ponto de vista (o desenvolvimento da Amazônia precisa de um modelo próprio) e apresenta argumentos: predomina a dissertação argumentativa, e não a descrição.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 10
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-011",
+    "disciplina": "portugues",
+    "assunto": "Concordância",
+    "enunciado": "Texto CB1A1\n\nO debate sobre o futuro da Amazônia depende essencialmente de como se define desenvolvimento. Diversas iniciativas governamentais — e privadas, muitas vezes ilegais — desde os anos 1970 estão centradas na ideia de ocupação do território para atividades agropecuárias e de mineração, além do uso dos rios para geração de energia elétrica, mesmo que isso implique a derrubada descontrolada da floresta. Na região Norte, o desmatamento contínuo, que já consumiu 20% da área original da floresta no Brasil, afeta negativamente o clima regional, com impacto no continente e no restante do planeta.\n\nA floresta amazônica exerce um papel fundamental na chamada química atmosférica: é uma gigantesca fonte de vapor d’água, que leva chuva da região Norte até a bacia do rio da Prata, favorecendo, por exemplo, a atividade agropecuária da região Centro-Oeste. Um estudo mostra que o desmatamento total ou parcial das três grandes florestas tropicais do mundo — a da bacia do Congo e a do Sudeste Asiático, além da amazônica, a maior delas — causaria um aumento da temperatura do planeta de 0,7 °C, o que equivale a boa parte do aquecimento gerado pela ação humana desde a Revolução Industrial.\n\nO ecossistema rico e delicado da Amazônia demanda um modelo de desenvolvimento próprio que privilegie as particularidades da floresta, aproveitando sua imensa biodiversidade e respeitando a população local — indígenas, ribeirinhos e moradores das cidades. A discussão deve contemplar questões como o manejo sustentável de recursos como pesca, madeira e frutos, a oferta de infraestrutura para seus habitantes (na região que concentra 20% de água doce de toda a Terra, 30% da população não tem acesso à água potável e 87% vive sem coleta de esgoto), o combate ao desmatamento ilegal, a grilagem de terras públicas, entre outros pontos. A ciência tem a contribuir no estudo da biodiversidade; na domesticação de espécies nativas com relevância comercial; e na recuperação de pastagens abandonadas para uso em uma agricultura mais tecnológica e uma pecuária mais intensiva, ou realizada em floresta.\n\nAlexandra O. de Almeida. Revista Pesquisa FAPESP, edição 285, nov./2019 (com adaptações).\n\nEm relação ao texto CB1A1 e a seus aspectos linguísticos, julgue o item seguinte.\n\nNo primeiro período do terceiro parágrafo, a forma verbal “demanda” poderia ser flexionada no plural — demandam — sem prejuízo da correção gramatical, dado o emprego da expressão anterior “rico e delicado”.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. O sujeito é \"O ecossistema rico e delicado da Amazônia\", cujo núcleo é \"ecossistema\", no singular. \"Rico e delicado\" só caracteriza esse núcleo; o verbo deve ficar no singular.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 11
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-012",
+    "disciplina": "portugues",
+    "assunto": "Crase",
+    "enunciado": "Texto CB1A1\n\nO debate sobre o futuro da Amazônia depende essencialmente de como se define desenvolvimento. Diversas iniciativas governamentais — e privadas, muitas vezes ilegais — desde os anos 1970 estão centradas na ideia de ocupação do território para atividades agropecuárias e de mineração, além do uso dos rios para geração de energia elétrica, mesmo que isso implique a derrubada descontrolada da floresta. Na região Norte, o desmatamento contínuo, que já consumiu 20% da área original da floresta no Brasil, afeta negativamente o clima regional, com impacto no continente e no restante do planeta.\n\nA floresta amazônica exerce um papel fundamental na chamada química atmosférica: é uma gigantesca fonte de vapor d’água, que leva chuva da região Norte até a bacia do rio da Prata, favorecendo, por exemplo, a atividade agropecuária da região Centro-Oeste. Um estudo mostra que o desmatamento total ou parcial das três grandes florestas tropicais do mundo — a da bacia do Congo e a do Sudeste Asiático, além da amazônica, a maior delas — causaria um aumento da temperatura do planeta de 0,7 °C, o que equivale a boa parte do aquecimento gerado pela ação humana desde a Revolução Industrial.\n\nO ecossistema rico e delicado da Amazônia demanda um modelo de desenvolvimento próprio que privilegie as particularidades da floresta, aproveitando sua imensa biodiversidade e respeitando a população local — indígenas, ribeirinhos e moradores das cidades. A discussão deve contemplar questões como o manejo sustentável de recursos como pesca, madeira e frutos, a oferta de infraestrutura para seus habitantes (na região que concentra 20% de água doce de toda a Terra, 30% da população não tem acesso à água potável e 87% vive sem coleta de esgoto), o combate ao desmatamento ilegal, a grilagem de terras públicas, entre outros pontos. A ciência tem a contribuir no estudo da biodiversidade; na domesticação de espécies nativas com relevância comercial; e na recuperação de pastagens abandonadas para uso em uma agricultura mais tecnológica e uma pecuária mais intensiva, ou realizada em floresta.\n\nAlexandra O. de Almeida. Revista Pesquisa FAPESP, edição 285, nov./2019 (com adaptações).\n\nEm relação ao texto CB1A1 e a seus aspectos linguísticos, julgue o item seguinte.\n\nA inserção do sinal indicativo de crase no vocábulo “a” em “implique a derrubada” (segundo período do primeiro parágrafo) prejudicaria a correção gramatical do trecho em questão.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. \"Implicar\", com o sentido de acarretar, pede complemento sem preposição: implica algo. Sem preposição \"a\", não há crase, e o acento seria erro.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 12
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-013",
+    "disciplina": "portugues",
+    "assunto": "Sintaxe: funções",
+    "enunciado": "Texto CB1A1\n\nO debate sobre o futuro da Amazônia depende essencialmente de como se define desenvolvimento. Diversas iniciativas governamentais — e privadas, muitas vezes ilegais — desde os anos 1970 estão centradas na ideia de ocupação do território para atividades agropecuárias e de mineração, além do uso dos rios para geração de energia elétrica, mesmo que isso implique a derrubada descontrolada da floresta. Na região Norte, o desmatamento contínuo, que já consumiu 20% da área original da floresta no Brasil, afeta negativamente o clima regional, com impacto no continente e no restante do planeta.\n\nA floresta amazônica exerce um papel fundamental na chamada química atmosférica: é uma gigantesca fonte de vapor d’água, que leva chuva da região Norte até a bacia do rio da Prata, favorecendo, por exemplo, a atividade agropecuária da região Centro-Oeste. Um estudo mostra que o desmatamento total ou parcial das três grandes florestas tropicais do mundo — a da bacia do Congo e a do Sudeste Asiático, além da amazônica, a maior delas — causaria um aumento da temperatura do planeta de 0,7 °C, o que equivale a boa parte do aquecimento gerado pela ação humana desde a Revolução Industrial.\n\nO ecossistema rico e delicado da Amazônia demanda um modelo de desenvolvimento próprio que privilegie as particularidades da floresta, aproveitando sua imensa biodiversidade e respeitando a população local — indígenas, ribeirinhos e moradores das cidades. A discussão deve contemplar questões como o manejo sustentável de recursos como pesca, madeira e frutos, a oferta de infraestrutura para seus habitantes (na região que concentra 20% de água doce de toda a Terra, 30% da população não tem acesso à água potável e 87% vive sem coleta de esgoto), o combate ao desmatamento ilegal, a grilagem de terras públicas, entre outros pontos. A ciência tem a contribuir no estudo da biodiversidade; na domesticação de espécies nativas com relevância comercial; e na recuperação de pastagens abandonadas para uso em uma agricultura mais tecnológica e uma pecuária mais intensiva, ou realizada em floresta.\n\nAlexandra O. de Almeida. Revista Pesquisa FAPESP, edição 285, nov./2019 (com adaptações).\n\nEm relação ao texto CB1A1 e a seus aspectos linguísticos, julgue o item seguinte.\n\nNo primeiro período do terceiro parágrafo, o termo “ecossistema” corresponde ao núcleo do sujeito da oração “que privilegie as particularidades da floresta”.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. O sujeito de \"privilegie\" é o pronome relativo \"que\", que retoma \"modelo de desenvolvimento próprio\". \"Ecossistema\" é o núcleo do sujeito da oração principal (\"O ecossistema ... demanda\").",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 13
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-014",
+    "disciplina": "portugues",
+    "assunto": "Coesão textual",
+    "enunciado": "Texto CB1A1\n\nO debate sobre o futuro da Amazônia depende essencialmente de como se define desenvolvimento. Diversas iniciativas governamentais — e privadas, muitas vezes ilegais — desde os anos 1970 estão centradas na ideia de ocupação do território para atividades agropecuárias e de mineração, além do uso dos rios para geração de energia elétrica, mesmo que isso implique a derrubada descontrolada da floresta. Na região Norte, o desmatamento contínuo, que já consumiu 20% da área original da floresta no Brasil, afeta negativamente o clima regional, com impacto no continente e no restante do planeta.\n\nA floresta amazônica exerce um papel fundamental na chamada química atmosférica: é uma gigantesca fonte de vapor d’água, que leva chuva da região Norte até a bacia do rio da Prata, favorecendo, por exemplo, a atividade agropecuária da região Centro-Oeste. Um estudo mostra que o desmatamento total ou parcial das três grandes florestas tropicais do mundo — a da bacia do Congo e a do Sudeste Asiático, além da amazônica, a maior delas — causaria um aumento da temperatura do planeta de 0,7 °C, o que equivale a boa parte do aquecimento gerado pela ação humana desde a Revolução Industrial.\n\nO ecossistema rico e delicado da Amazônia demanda um modelo de desenvolvimento próprio que privilegie as particularidades da floresta, aproveitando sua imensa biodiversidade e respeitando a população local — indígenas, ribeirinhos e moradores das cidades. A discussão deve contemplar questões como o manejo sustentável de recursos como pesca, madeira e frutos, a oferta de infraestrutura para seus habitantes (na região que concentra 20% de água doce de toda a Terra, 30% da população não tem acesso à água potável e 87% vive sem coleta de esgoto), o combate ao desmatamento ilegal, a grilagem de terras públicas, entre outros pontos. A ciência tem a contribuir no estudo da biodiversidade; na domesticação de espécies nativas com relevância comercial; e na recuperação de pastagens abandonadas para uso em uma agricultura mais tecnológica e uma pecuária mais intensiva, ou realizada em floresta.\n\nAlexandra O. de Almeida. Revista Pesquisa FAPESP, edição 285, nov./2019 (com adaptações).\n\nEm relação ao texto CB1A1 e a seus aspectos linguísticos, julgue o item seguinte.\n\nNo segundo período do primeiro parágrafo, o termo “ilegais” refere-se, por coesão, a “Diversas iniciativas governamentais”.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. \"Ilegais\" se refere às iniciativas \"privadas\", dentro dos travessões: \"e privadas, muitas vezes ilegais\". O texto não chama de ilegais as iniciativas governamentais.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 14
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-015",
+    "disciplina": "portugues",
+    "assunto": "Coesão textual",
+    "enunciado": "Texto CB1A1\n\nO debate sobre o futuro da Amazônia depende essencialmente de como se define desenvolvimento. Diversas iniciativas governamentais — e privadas, muitas vezes ilegais — desde os anos 1970 estão centradas na ideia de ocupação do território para atividades agropecuárias e de mineração, além do uso dos rios para geração de energia elétrica, mesmo que isso implique a derrubada descontrolada da floresta. Na região Norte, o desmatamento contínuo, que já consumiu 20% da área original da floresta no Brasil, afeta negativamente o clima regional, com impacto no continente e no restante do planeta.\n\nA floresta amazônica exerce um papel fundamental na chamada química atmosférica: é uma gigantesca fonte de vapor d’água, que leva chuva da região Norte até a bacia do rio da Prata, favorecendo, por exemplo, a atividade agropecuária da região Centro-Oeste. Um estudo mostra que o desmatamento total ou parcial das três grandes florestas tropicais do mundo — a da bacia do Congo e a do Sudeste Asiático, além da amazônica, a maior delas — causaria um aumento da temperatura do planeta de 0,7 °C, o que equivale a boa parte do aquecimento gerado pela ação humana desde a Revolução Industrial.\n\nO ecossistema rico e delicado da Amazônia demanda um modelo de desenvolvimento próprio que privilegie as particularidades da floresta, aproveitando sua imensa biodiversidade e respeitando a população local — indígenas, ribeirinhos e moradores das cidades. A discussão deve contemplar questões como o manejo sustentável de recursos como pesca, madeira e frutos, a oferta de infraestrutura para seus habitantes (na região que concentra 20% de água doce de toda a Terra, 30% da população não tem acesso à água potável e 87% vive sem coleta de esgoto), o combate ao desmatamento ilegal, a grilagem de terras públicas, entre outros pontos. A ciência tem a contribuir no estudo da biodiversidade; na domesticação de espécies nativas com relevância comercial; e na recuperação de pastagens abandonadas para uso em uma agricultura mais tecnológica e uma pecuária mais intensiva, ou realizada em floresta.\n\nAlexandra O. de Almeida. Revista Pesquisa FAPESP, edição 285, nov./2019 (com adaptações).\n\nEm relação ao texto CB1A1 e a seus aspectos linguísticos, julgue o item seguinte.\n\nNa expressão “além da amazônica” (último período do segundo parágrafo), está implícito o termo floresta imediatamente antes de “amazônica”.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. O texto fala das três grandes florestas tropicais: a da bacia do Congo, a do Sudeste Asiático e a amazônica. Em \"além da amazônica\", fica subentendido \"da floresta amazônica\".",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 15
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-016",
+    "disciplina": "portugues",
+    "assunto": "Redação oficial",
+    "enunciado": "Considerando os parâmetros estabelecidos no Manual de Redação da Presidência da República para a produção de documentos oficiais, julgue o próximo item.\n\nAtualmente, utiliza-se a terminologia padrão ofício para nomear os três tipos de expedientes que antes se diferenciavam mais pela finalidade que pela forma: o ofício, o aviso e o memorando.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. O Manual de Redação (3.ª edição) unificou ofício, aviso e memorando sob o nome padrão ofício, já que eles se diferenciavam mais pela finalidade que pela forma.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 16
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-017",
+    "disciplina": "portugues",
+    "assunto": "Redação oficial",
+    "enunciado": "Considerando os parâmetros estabelecidos no Manual de Redação da Presidência da República para a produção de documentos oficiais, julgue o próximo item.\n\nA finalidade da comunicação oficial impõe que se faça uso da língua de modo convergente com textos literários ou jornalísticos.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. A comunicação oficial busca clareza, objetividade e formalidade. Recursos de textos literários ou jornalísticos não combinam com essa finalidade.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 17
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-018",
+    "disciplina": "portugues",
+    "assunto": "Redação oficial",
+    "enunciado": "Considerando os parâmetros estabelecidos no Manual de Redação da Presidência da República para a produção de documentos oficiais, julgue o próximo item.\n\nSão atributos da redação oficial a precisão e o uso da modalidade padrão da língua portuguesa.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. O Manual lista entre os atributos da redação oficial a clareza, a precisão, a objetividade, a concisão, a impessoalidade, a formalidade e o uso da norma padrão da língua.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 18
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-019",
+    "disciplina": "portugues",
+    "assunto": "Redação oficial",
+    "enunciado": "Considerando os parâmetros estabelecidos no Manual de Redação da Presidência da República para a produção de documentos oficiais, julgue o próximo item.\n\nO vocativo que deve ser utilizado em comunicação dirigida a ministro de Estado é Vossa Excelência.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. Vossa Excelência é o pronome de tratamento usado no corpo do texto. O vocativo para ministro de Estado é \"Senhor Ministro\" (ou \"Senhora Ministra\").",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 19
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-020",
+    "disciplina": "portugues",
+    "assunto": "Redação oficial",
+    "enunciado": "Considerando os parâmetros estabelecidos no Manual de Redação da Presidência da República para a produção de documentos oficiais, julgue o próximo item.\n\nEm atendimento ao atributo da impessoalidade, essencial à correspondência oficial, devem-se evitar comentários e caracterizações supérfluos, o emprego de advérbios inúteis e a subordinação excessiva.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. Evitar comentários supérfluos, advérbios inúteis e subordinação excessiva são recomendações ligadas à concisão (dizer o máximo com o mínimo de palavras), e não à impessoalidade.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 20
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-021",
+    "disciplina": "administrativo",
+    "assunto": "Licitações e contratos (Lei n.º 14.133/2021)",
+    "enunciado": "Determinado órgão do Poder Judiciário, no desempenho de sua função administrativa, pretende realizar a compra de produto orçado no valor total de R$ 45.000.\n\nConsiderando a situação hipotética apresentada e o disposto na Lei n.º 14.133/2021, julgue o item a seguir.\n\nA contratação pretendida deverá ser paga preferencialmente por meio de cartão de pagamento.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. Uma compra desse valor cabe na dispensa de licitação por baixo valor, e a Lei n.º 14.133/2021 (art. 75, § 4.º) manda que essas contratações sejam pagas, de preferência, com cartão de pagamento.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 21
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-022",
+    "disciplina": "administrativo",
+    "assunto": "Licitações e contratos (Lei n.º 14.133/2021)",
+    "enunciado": "Determinado órgão do Poder Judiciário, no desempenho de sua função administrativa, pretende realizar a compra de produto orçado no valor total de R$ 45.000.\n\nConsiderando a situação hipotética apresentada e o disposto na Lei n.º 14.133/2021, julgue o item a seguir.\n\nAs normas gerais de licitações e contratos administrativos são plenamente aplicáveis ao caso em apreço.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. A Lei n.º 14.133/2021 vale também para os órgãos do Judiciário e do Legislativo quando exercem função administrativa (art. 1.º, I).",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 22
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-023",
+    "disciplina": "administrativo",
+    "assunto": "Licitações e contratos (Lei n.º 14.133/2021)",
+    "enunciado": "Determinado órgão do Poder Judiciário, no desempenho de sua função administrativa, pretende realizar a compra de produto orçado no valor total de R$ 45.000.\n\nConsiderando a situação hipotética apresentada e o disposto na Lei n.º 14.133/2021, julgue o item a seguir.\n\nA contratação pretendida constitui hipótese de contratação direta por inexigibilidade de licitação.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. A licitação até seria possível; a contratação direta, no caso, se justifica pelo baixo valor. Isso é dispensa (art. 75, II), e não inexigibilidade, que ocorre quando a competição é inviável.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 23
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-024",
+    "disciplina": "administrativo",
+    "assunto": "Controle da administração",
+    "enunciado": "Lucas, com sessenta e dois anos de idade, formalizou requerimento administrativo perante autoridade vinculada a uma autarquia federal. Dez dias após concluída a instrução do processo administrativo, como ainda não havia sido proferida a decisão do requerimento, Lucas interpôs recurso administrativo dirigido ao superior da autoridade a quem encaminhara o pedido e impetrou mandado de segurança sob a alegação de ilegalidade administrativa por omissão, já que não fora proferida decisão administrativa no prazo legal, especialmente por ser uma pessoa idosa.\n\nCom base na situação hipotética precedente e na lei que regula o processo administrativo no âmbito da administração pública, julgue o item seguinte.\n\nA impetração de mandado de segurança configura controle administrativo.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. O mandado de segurança é uma ação judicial: é controle judicial da administração. Controle administrativo é o que a própria administração faz sobre seus atos.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 24
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-025",
+    "disciplina": "administrativo",
+    "assunto": "Processo administrativo (Lei n.º 9.784/1999)",
+    "enunciado": "Lucas, com sessenta e dois anos de idade, formalizou requerimento administrativo perante autoridade vinculada a uma autarquia federal. Dez dias após concluída a instrução do processo administrativo, como ainda não havia sido proferida a decisão do requerimento, Lucas interpôs recurso administrativo dirigido ao superior da autoridade a quem encaminhara o pedido e impetrou mandado de segurança sob a alegação de ilegalidade administrativa por omissão, já que não fora proferida decisão administrativa no prazo legal, especialmente por ser uma pessoa idosa.\n\nCom base na situação hipotética precedente e na lei que regula o processo administrativo no âmbito da administração pública, julgue o item seguinte.\n\nPor ser pessoa jurídica de direito público e integrar a administração pública indireta, a referida autarquia federal sujeita-se às disposições legais que regulam o processo administrativo no âmbito da administração pública.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. A Lei n.º 9.784/1999 se aplica à administração federal direta e indireta (art. 1.º). A autarquia federal integra a indireta.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 25
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-027",
+    "disciplina": "administrativo",
+    "assunto": "Processo administrativo (Lei n.º 9.784/1999)",
+    "enunciado": "Lucas, com sessenta e dois anos de idade, formalizou requerimento administrativo perante autoridade vinculada a uma autarquia federal. Dez dias após concluída a instrução do processo administrativo, como ainda não havia sido proferida a decisão do requerimento, Lucas interpôs recurso administrativo dirigido ao superior da autoridade a quem encaminhara o pedido e impetrou mandado de segurança sob a alegação de ilegalidade administrativa por omissão, já que não fora proferida decisão administrativa no prazo legal, especialmente por ser uma pessoa idosa.\n\nCom base na situação hipotética precedente e na lei que regula o processo administrativo no âmbito da administração pública, julgue o item seguinte.\n\nA lei prevê expressamente prioridade na tramitação dos procedimentos administrativos quando figurar como parte pessoa com idade igual ou superior a sessenta anos, a exemplo de Lucas.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. O art. 69-A da Lei n.º 9.784/1999 dá prioridade na tramitação quando é parte pessoa com 60 anos ou mais. Lucas, com 62, tem esse direito.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 27
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-028",
+    "disciplina": "administrativo",
+    "assunto": "Processo administrativo (Lei n.º 9.784/1999)",
+    "enunciado": "Lucas, com sessenta e dois anos de idade, formalizou requerimento administrativo perante autoridade vinculada a uma autarquia federal. Dez dias após concluída a instrução do processo administrativo, como ainda não havia sido proferida a decisão do requerimento, Lucas interpôs recurso administrativo dirigido ao superior da autoridade a quem encaminhara o pedido e impetrou mandado de segurança sob a alegação de ilegalidade administrativa por omissão, já que não fora proferida decisão administrativa no prazo legal, especialmente por ser uma pessoa idosa.\n\nCom base na situação hipotética precedente e na lei que regula o processo administrativo no âmbito da administração pública, julgue o item seguinte.\n\nA interposição do recurso foi realizada conforme previsão legal, segundo a qual o recurso administrativo deverá ser dirigido à autoridade superior da que tenha praticado ou deveria ter praticado o ato.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. O recurso é dirigido à autoridade que proferiu a decisão; se ela não a reconsiderar em cinco dias, encaminha-o à autoridade superior (art. 56, § 1.º). Além disso, ainda não havia decisão a recorrer.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 28
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-029",
+    "disciplina": "informatica",
+    "assunto": "Editores de texto e apresentações",
+    "enunciado": "A respeito da edição de textos e apresentações nos ambientes Microsoft Office 365, julgue o item a seguir.\n\nNo PowerPoint 365, para remover a transição de um slide específico, o usuário deve selecionar o slide desejado, acessar a guia Transições e escolher a opção Nenhuma.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. No PowerPoint, basta selecionar o slide, ir à guia Transições e escolher Nenhuma para tirar a transição dele.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 29
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-030",
+    "disciplina": "informatica",
+    "assunto": "Editores de texto e apresentações",
+    "enunciado": "A respeito da edição de textos e apresentações nos ambientes Microsoft Office 365, julgue o item a seguir.\n\nNo Microsoft Word, caso um usuário queira citar uma fonte já adicionada, ele deverá posicionar o cursor no final do texto desejado, acessar a guia de menu Design, clicar sobre Inserir citação e selecionar a fonte.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. O comando Inserir Citação fica na guia Referências do Word, e não na guia Design.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 30
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-031",
+    "disciplina": "informatica",
+    "assunto": "Inteligência artificial",
+    "enunciado": "No que se refere a redes de computadores e ao uso transparente e imparcial de inteligência artificial (IA) no serviço público, julgue o item subsequente.\n\nUm dos objetivos da Estratégia Brasileira de Inteligência Artificial é contribuir para a elaboração de princípios éticos para o desenvolvimento e o uso responsáveis de IA.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. A Estratégia Brasileira de Inteligência Artificial tem entre seus objetivos contribuir para a elaboração de princípios éticos para o desenvolvimento e o uso responsáveis de IA.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 31
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-033",
+    "disciplina": "informatica",
+    "assunto": "Navegadores",
+    "enunciado": "No que se refere a redes de computadores e ao uso transparente e imparcial de inteligência artificial (IA) no serviço público, julgue o item subsequente.\n\nO Microsoft Edge permite que se ajuste o nível de prevenção de rastreamento para equilibrar privacidade e personalização, sendo o nível básico recomendado para a maioria dos usuários.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. O Edge oferece três níveis de prevenção de rastreamento: Básico, Equilibrado e Estrito. O recomendado para a maioria dos usuários é o Equilibrado.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 33
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-034",
+    "disciplina": "administrativo",
+    "assunto": "Ética no serviço público",
+    "enunciado": "Julgue o item a seguir, com base nas disposições do Código de Ética Profissional do Serviço Público (Decreto n.º 1.171/1994).\n\nA criação de comissão de ética é obrigatória para todos os órgãos e entidades da administração pública federal direta, indireta autárquica e fundacional, incluindo-se os que exerçam atribuições delegadas pelo poder público.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. O Decreto n.º 1.171/1994 manda criar comissão de ética em todos os órgãos e entidades da administração federal direta, indireta autárquica e fundacional, e em qualquer órgão ou entidade que exerça atribuições delegadas pelo poder público.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 34
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-035",
+    "disciplina": "administrativo",
+    "assunto": "Ética no serviço público",
+    "enunciado": "Julgue o item a seguir, com base nas disposições do Código de Ética Profissional do Serviço Público (Decreto n.º 1.171/1994).\n\nAs ausências injustificadas do servidor de seu local de trabalho, até o limite de três vezes ao ano, não constituem fator de desmoralização do serviço público.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. Para o Código de Ética, toda ausência injustificada do servidor do local de trabalho é fator de desmoralização do serviço público. Não existe uma cota de faltas toleradas.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 35
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-036",
+    "disciplina": "administrativo",
+    "assunto": "Lei Anticorrupção",
+    "enunciado": "Julgue o item seguinte, com base na Lei n.º 8.429/1992, que trata de improbidade administrativa, e na Lei n.º 12.846/2013, conhecida como Lei Anticorrupção.\n\nConforme previsto na Lei Anticorrupção, a celebração de acordo de leniência com as pessoas jurídicas responsáveis pela prática de atos lesivos contra a administração pública não tem o condão de eliminar totalmente a multa a elas imposta.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. O acordo de leniência reduz a multa em até dois terços (art. 16, § 2.º, da Lei n.º 12.846/2013). Ele não elimina a multa por inteiro.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 36
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-037",
+    "disciplina": "administrativo",
+    "assunto": "Improbidade administrativa",
+    "enunciado": "Julgue o item seguinte, com base na Lei n.º 8.429/1992, que trata de improbidade administrativa, e na Lei n.º 12.846/2013, conhecida como Lei Anticorrupção.\n\nHavendo indícios de ato de improbidade, a autoridade que conhecer dos fatos deve representar diretamente ao Poder Judiciário.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. A autoridade que souber dos fatos deve representar ao Ministério Público (art. 7.º da Lei n.º 8.429/1992), e não diretamente ao Poder Judiciário.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 37
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-038",
+    "disciplina": "administrativo",
+    "assunto": "Improbidade administrativa",
+    "enunciado": "Julgue o item seguinte, com base na Lei n.º 8.429/1992, que trata de improbidade administrativa, e na Lei n.º 12.846/2013, conhecida como Lei Anticorrupção.\n\nA configuração de ato de improbidade administrativa que atente contra os princípios da administração pública exige a caracterização de lesividade relevante que ocasione dano ao erário.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. Os atos contra os princípios exigem lesividade relevante ao bem jurídico protegido, mas não dependem de dano ao erário nem de enriquecimento ilícito (art. 11, § 4.º, da Lei n.º 8.429/1992).",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 38
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-041",
+    "disciplina": "administrativo",
+    "assunto": "Lei de Acesso à Informação",
+    "enunciado": "No que se refere ao acesso a informações e ao tratamento de dados pessoais, julgue o item seguinte.\n\nO serviço de informação ao cidadão (SIC) deve ser instalado em unidade física identificada, de fácil acesso e aberta ao público, necessariamente no órgão ou na entidade central que o criou, sendo inadmitida sua instalação em eventual unidade descentralizada.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. O decreto que regulamenta a LAI (Decreto n.º 7.724/2012) exige que o SIC fique em local identificado, de fácil acesso e aberto ao público, mas não proíbe instalá-lo em unidades descentralizadas. Onde não houver SIC, a unidade deve ao menos receber e registrar os pedidos.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 41
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-042",
+    "disciplina": "administrativo",
+    "assunto": "Lei de Acesso à Informação",
+    "enunciado": "No que se refere ao acesso a informações e ao tratamento de dados pessoais, julgue o item seguinte.\n\nInformações sobre condutas violadoras dos direitos humanos praticadas por agentes públicos ou a mando de autoridades públicas poderão ser objeto de restrição de acesso, com vistas à proteção do direito fundamental à intimidade da vítima.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. A LAI (art. 21, parágrafo único) diz que informações sobre condutas que violem direitos humanos, praticadas por agentes públicos ou a mando de autoridades, não podem ter o acesso restringido.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 42
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-043",
+    "disciplina": "informatica",
+    "assunto": "Proteção de dados (LGPD)",
+    "enunciado": "No que se refere ao acesso a informações e ao tratamento de dados pessoais, julgue o item seguinte.\n\nNão se aplica a Lei Geral de Proteção de Dados Pessoais (LGPD) ao tratamento de dados pessoais para fins exclusivamente jornalísticos e artísticos.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. A LGPD não se aplica ao tratamento de dados feito para fins exclusivamente jornalísticos e artísticos (art. 4.º, II, a).",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 43
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "icmbio24-050",
+    "disciplina": "administrativo",
+    "assunto": "Serviços públicos",
+    "enunciado": "Com base na Lei n.º 8.987/1995, que dispõe sobre o regime de concessão e permissão da prestação de serviços públicos, julgue o item a seguir.\n\nOs contratos de concessão admitem subconcessão, desde que prevista no contrato e expressamente autorizada pelo poder concedente, sendo a outorga de subconcessão sempre precedida de concorrência.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. A Lei n.º 8.987/1995 (art. 26) admite a subconcessão quando prevista no contrato e expressamente autorizada pelo poder concedente, e exige que ela seja sempre precedida de concorrência.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+      "cargo": "Analista Administrativo",
+      "ano": 2024,
+      "prova": "icmbio-2024-cb1",
+      "item": 50
+    },
+    "status": "ativa"
+  }
+]

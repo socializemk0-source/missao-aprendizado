@@ -90,6 +90,7 @@ export const LIMITES = {
   leadsPorIpHora: 3, // /api/leads: envios por IP por hora
   leadsPorEmailDia: 3, // /api/leads: envios do mesmo e-mail por dia
   configPorMinuto: 60, // /api/config/supabase por IP (o sucesso fica 5 min na CDN)
+  desafioPorMinuto: 60, // /api/desafio por IP (o desafio do dia, sem login)
   authPorIpHora: 10, // /api/auth (cadastro + esqueci a senha) por IP por hora
   authPorEmailHora: 3, // /api/auth: pedidos para o mesmo e-mail por hora
 } as const;

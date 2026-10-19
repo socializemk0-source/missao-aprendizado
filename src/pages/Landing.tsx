@@ -6,7 +6,7 @@ import { FREE_FEATURES, PRO_FEATURES, PRO_OPTIONS } from '../app/plans';
 import { Icon, type IconName } from '../components/Icon';
 import { Tico } from '../components/Tico';
 import { useAoAparecer } from '../lib/usar-visto';
-import { DemoQuestion } from './landing/DemoQuestion';
+import { DesafioDoDia } from './landing/DesafioDoDia';
 import { LeadForm } from './landing/LeadForm';
 
 const BANCAS = ['Cebraspe', 'FGV', 'FCC', 'Vunesp', 'Cesgranrio'];
@@ -89,7 +89,7 @@ export function Landing() {
               <p className="lp-lead">Questões no estilo das bancas, explicação em cada resposta e uma trilha que mostra exatamente o próximo passo. Com o Tico do seu lado todos os dias.</p>
               <div className="landing-cta">
                 {primaryCta}
-                {!signedIn && <a href="#experimente" className="btn btn-secondary btn-lg">Testar uma questão</a>}
+                <a href="#desafio" className="btn btn-secondary btn-lg">Jogar o desafio de hoje</a>
               </div>
               <p className="lp-trust"><Icon name="star" size={16} /> Grátis para começar · sem cartão de crédito</p>
             </div>
@@ -106,14 +106,14 @@ export function Landing() {
           <ul>{BANCAS.map((b) => <li key={b}>{b}</li>)}</ul>
         </section>
 
-        {/* 2. Experimentar sem cadastro */}
-        <section className="lp-section lp-try" id="experimente" aria-labelledby="try-title">
+        {/* 2. Desafio do dia, sem cadastro */}
+        <section className="lp-section lp-try" id="desafio" aria-labelledby="try-title">
           <div className="lp-try-text">
-            <p className="eyebrow">Sem cadastro</p>
-            <h2 id="try-title" className="lp-h2">Responda, confira, entenda.</h2>
-            <p className="muted">É assim em cada fase da trilha: poucas questões por vez e a explicação logo depois. Você aprende com o erro na hora, não uma semana depois.</p>
+            <p className="eyebrow">Sem cadastro · novo todo dia</p>
+            <h2 id="try-title" className="lp-h2">O desafio de hoje: 4 questões, 5 minutos.</h2>
+            <p className="muted">Uma de Português, uma de Raciocínio Lógico, uma de Informática e uma de Direito. Responda, confira e entenda o porquê na hora. Amanhã tem outro.</p>
           </div>
-          <DemoQuestion />
+          <DesafioDoDia />
         </section>
 
         {/* 3. Dores → solução */}

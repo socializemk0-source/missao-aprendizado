@@ -103,7 +103,7 @@ export interface RankingEntry {
 export type GameErrorCode =
   | 'QUESTAO_INEXISTENTE' | 'FASE_BLOQUEADA' | 'PLANO_PRO' | 'SEM_VIDAS' | 'ALTERNATIVA_INVALIDA' | 'MISSAO_INCOMPLETA'
   | 'MISSAO_RESGATADA' | 'SEM_CONTEUDO' | 'ACAO_INVALIDA' | 'LIMITE_SIMULADO' | 'POUCAS_QUESTOES' | 'SIMULADO_ABERTO'
-  | 'SIMULADO_INEXISTENTE' | 'JOGO_INEXISTENTE' | 'JOGO_ENCERRADO' | 'JOGO_RAPIDO';
+  | 'SIMULADO_INEXISTENTE' | 'JOGO_INEXISTENTE' | 'JOGO_ENCERRADO' | 'JOGO_RAPIDO' | 'ITEM_BLOQUEADO' | 'LUGAR_INVALIDO';
 
 // ---------------------------------------------------------------- Simulado
 export type Nivel = 'facil' | 'medio' | 'dificil' | 'misto';

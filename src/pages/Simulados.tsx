@@ -15,6 +15,7 @@ import { LoadState, useLoad } from '../game/useLoad';
 import { ApiError } from '../lib/api';
 import { formatDate } from '../lib/essay';
 import { fonteLabel, game } from '../lib/game';
+import { Enunciado } from '../game/Enunciado';
 
 const NIVEL_TEXTO: Record<Nivel, string> = {
   facil: 'Para aquecer e ganhar confiança.',
@@ -291,7 +292,7 @@ function Prova({ sessao, onDone }: { sessao: SimuladoSessao; onDone: (r: Simulad
 
       <article className="quiz-card card" aria-labelledby="sim-q">
         <p className="eyebrow">{q.assunto} · {fonteLabel(q.fonte)}</p>
-        <h2 id="sim-q" className="quiz-question">{q.enunciado}</h2>
+        <Enunciado id="sim-q" texto={q.enunciado} />
         <div className="demo-options" role="radiogroup" aria-label="Alternativas">
           {q.alternativas.map((alt, k) => (
             <button key={alt} type="button" role="radio" aria-checked={answers[q.id] === k}

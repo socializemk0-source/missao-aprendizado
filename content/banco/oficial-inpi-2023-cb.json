@@ -1,0 +1,554 @@
+[
+  {
+    "id": "inpi23-011",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CB1A1-I\n\nCom o avanço científico e tecnológico ocorrido na Europa durante o Renascimento, os inventores começaram a demandar reconhecimento oficial de suas criações, a fim de impedir a imitação de seus inventos. Assim, em 1421, foi concedida ao inventor Filippo Brunelleschi, em Veneza, a primeira patente, com prazo de três anos, pela invenção de um modelo de embarcação para transportar mármore. Nesse contexto de criação de um sistema de concessão de privilégios como forma de proteção de um invento, em 1474, foi promulgado na República de Veneza o Estatuto de Veneza, garantindo ao inventor a exploração comercial do seu invento pela concessão do privilégio da invenção pelo prazo de dez anos.\n\nNo começo do século XVII, em 1623, a Inglaterra promulgou o Estatuto dos Monopólios, que consistiu na primeira base legal para concessão de patentes no país para uma invenção efetivamente nova. O estatuto contribuiu para a promulgação da Lei de Patentes de 1624, que, por sua vez, instituiu o sistema de patentes britânico. Em 1790, os Estados Unidos da América promulgaram a sua primeira lei de patentes, intitulada Patent Act, na qual era autorizada a concessão de direitos exclusivos aos inventores sobre as suas obras, estabelecendo um prazo de quatorze anos de duração. Nessa mesma conjuntura, em 1791, a França promulgou sua primeira lei de patentes, denominada Décret d’Allarde, considerada uma das principais leis publicadas durante a Revolução Francesa.\n\nNo Brasil, o príncipe regente Dom João VI promulgou o Alvará de 28 de abril de 1809, tornando o país um dos primeiros no mundo a reconhecer a proteção dos direitos do inventor, atrás apenas da República de Veneza (1474), da Inglaterra (1623), dos Estados Unidos da América (1790) e da França (1791).\n\nFlávia Romano Villa Verde et al. As invenções no Brasil contadas a partir de documentos históricos de patentes. Rio de Janeiro: Instituto Nacional da Propriedade Industrial (Brasil) – INPI, Diretoria de Patentes, Programas de Computador e Topografia de Circuitos Integrados – DIRPA, Coordenação Geral de Estudos, Projetos e Disseminação da Informação Tecnológica – CEPIT e Divisão de Documentação Patentária – DIDOC, 2023, p. 20-21 (com adaptações).\n\nEm relação às ideias do texto CB1A1-I, julgue o item seguinte.\n\nInfere-se do texto que a Europa foi o berço das primeiras invenções científicas e tecnológicas, as quais demandaram reconhecimento e proteção para impedir sua apropriação e imitação.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. O texto diz que, com o avanço científico do Renascimento, os inventores europeus passaram a pedir proteção para suas criações. Ele não afirma que a Europa foi o berço das primeiras invenções científicas e tecnológicas.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Nacional da Propriedade Industrial (INPI)",
+      "cargo": "Analista de Planejamento, Gestão e Infraestrutura, Pesquisador e Tecnologista em Propriedade Industrial",
+      "ano": 2023,
+      "prova": "inpi-2023-cb",
+      "item": 11
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "inpi23-013",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CB1A1-I\n\nCom o avanço científico e tecnológico ocorrido na Europa durante o Renascimento, os inventores começaram a demandar reconhecimento oficial de suas criações, a fim de impedir a imitação de seus inventos. Assim, em 1421, foi concedida ao inventor Filippo Brunelleschi, em Veneza, a primeira patente, com prazo de três anos, pela invenção de um modelo de embarcação para transportar mármore. Nesse contexto de criação de um sistema de concessão de privilégios como forma de proteção de um invento, em 1474, foi promulgado na República de Veneza o Estatuto de Veneza, garantindo ao inventor a exploração comercial do seu invento pela concessão do privilégio da invenção pelo prazo de dez anos.\n\nNo começo do século XVII, em 1623, a Inglaterra promulgou o Estatuto dos Monopólios, que consistiu na primeira base legal para concessão de patentes no país para uma invenção efetivamente nova. O estatuto contribuiu para a promulgação da Lei de Patentes de 1624, que, por sua vez, instituiu o sistema de patentes britânico. Em 1790, os Estados Unidos da América promulgaram a sua primeira lei de patentes, intitulada Patent Act, na qual era autorizada a concessão de direitos exclusivos aos inventores sobre as suas obras, estabelecendo um prazo de quatorze anos de duração. Nessa mesma conjuntura, em 1791, a França promulgou sua primeira lei de patentes, denominada Décret d’Allarde, considerada uma das principais leis publicadas durante a Revolução Francesa.\n\nNo Brasil, o príncipe regente Dom João VI promulgou o Alvará de 28 de abril de 1809, tornando o país um dos primeiros no mundo a reconhecer a proteção dos direitos do inventor, atrás apenas da República de Veneza (1474), da Inglaterra (1623), dos Estados Unidos da América (1790) e da França (1791).\n\nFlávia Romano Villa Verde et al. As invenções no Brasil contadas a partir de documentos históricos de patentes. Rio de Janeiro: Instituto Nacional da Propriedade Industrial (Brasil) – INPI, Diretoria de Patentes, Programas de Computador e Topografia de Circuitos Integrados – DIRPA, Coordenação Geral de Estudos, Projetos e Disseminação da Informação Tecnológica – CEPIT e Divisão de Documentação Patentária – DIDOC, 2023, p. 20-21 (com adaptações).\n\nEm relação às ideias do texto CB1A1-I, julgue o item seguinte.\n\nConforme as informações do texto, a lei de patentes britânica, promulgada em 1624, instituiu o sistema de patentes inglês em substituição ao Estatuto dos Monopólios de 1623, que, até então, constituía a base legal de concessão de patentes na Inglaterra.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. O texto diz que o Estatuto dos Monopólios contribuiu para a promulgação da Lei de Patentes de 1624. Em nenhum momento diz que essa lei substituiu o estatuto.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Nacional da Propriedade Industrial (INPI)",
+      "cargo": "Analista de Planejamento, Gestão e Infraestrutura, Pesquisador e Tecnologista em Propriedade Industrial",
+      "ano": 2023,
+      "prova": "inpi-2023-cb",
+      "item": 13
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "inpi23-014",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CB1A1-I\n\nCom o avanço científico e tecnológico ocorrido na Europa durante o Renascimento, os inventores começaram a demandar reconhecimento oficial de suas criações, a fim de impedir a imitação de seus inventos. Assim, em 1421, foi concedida ao inventor Filippo Brunelleschi, em Veneza, a primeira patente, com prazo de três anos, pela invenção de um modelo de embarcação para transportar mármore. Nesse contexto de criação de um sistema de concessão de privilégios como forma de proteção de um invento, em 1474, foi promulgado na República de Veneza o Estatuto de Veneza, garantindo ao inventor a exploração comercial do seu invento pela concessão do privilégio da invenção pelo prazo de dez anos.\n\nNo começo do século XVII, em 1623, a Inglaterra promulgou o Estatuto dos Monopólios, que consistiu na primeira base legal para concessão de patentes no país para uma invenção efetivamente nova. O estatuto contribuiu para a promulgação da Lei de Patentes de 1624, que, por sua vez, instituiu o sistema de patentes britânico. Em 1790, os Estados Unidos da América promulgaram a sua primeira lei de patentes, intitulada Patent Act, na qual era autorizada a concessão de direitos exclusivos aos inventores sobre as suas obras, estabelecendo um prazo de quatorze anos de duração. Nessa mesma conjuntura, em 1791, a França promulgou sua primeira lei de patentes, denominada Décret d’Allarde, considerada uma das principais leis publicadas durante a Revolução Francesa.\n\nNo Brasil, o príncipe regente Dom João VI promulgou o Alvará de 28 de abril de 1809, tornando o país um dos primeiros no mundo a reconhecer a proteção dos direitos do inventor, atrás apenas da República de Veneza (1474), da Inglaterra (1623), dos Estados Unidos da América (1790) e da França (1791).\n\nFlávia Romano Villa Verde et al. As invenções no Brasil contadas a partir de documentos históricos de patentes. Rio de Janeiro: Instituto Nacional da Propriedade Industrial (Brasil) – INPI, Diretoria de Patentes, Programas de Computador e Topografia de Circuitos Integrados – DIRPA, Coordenação Geral de Estudos, Projetos e Disseminação da Informação Tecnológica – CEPIT e Divisão de Documentação Patentária – DIDOC, 2023, p. 20-21 (com adaptações).\n\nEm relação às ideias do texto CB1A1-I, julgue o item seguinte.\n\nDa leitura do texto conclui-se que a promulgação do Alvará de 28 de abril de 1809 colocou o Brasil em sintonia com um movimento de reconhecimento da proteção dos direitos dos inventores.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. O texto apresenta uma sequência de países que passaram a proteger os inventores (Veneza, Inglaterra, Estados Unidos, França) e diz que o alvará de 1809 pôs o Brasil entre os primeiros a fazer o mesmo.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Nacional da Propriedade Industrial (INPI)",
+      "cargo": "Analista de Planejamento, Gestão e Infraestrutura, Pesquisador e Tecnologista em Propriedade Industrial",
+      "ano": 2023,
+      "prova": "inpi-2023-cb",
+      "item": 14
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "inpi23-015",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CB1A1-I\n\nCom o avanço científico e tecnológico ocorrido na Europa durante o Renascimento, os inventores começaram a demandar reconhecimento oficial de suas criações, a fim de impedir a imitação de seus inventos. Assim, em 1421, foi concedida ao inventor Filippo Brunelleschi, em Veneza, a primeira patente, com prazo de três anos, pela invenção de um modelo de embarcação para transportar mármore. Nesse contexto de criação de um sistema de concessão de privilégios como forma de proteção de um invento, em 1474, foi promulgado na República de Veneza o Estatuto de Veneza, garantindo ao inventor a exploração comercial do seu invento pela concessão do privilégio da invenção pelo prazo de dez anos.\n\nNo começo do século XVII, em 1623, a Inglaterra promulgou o Estatuto dos Monopólios, que consistiu na primeira base legal para concessão de patentes no país para uma invenção efetivamente nova. O estatuto contribuiu para a promulgação da Lei de Patentes de 1624, que, por sua vez, instituiu o sistema de patentes britânico. Em 1790, os Estados Unidos da América promulgaram a sua primeira lei de patentes, intitulada Patent Act, na qual era autorizada a concessão de direitos exclusivos aos inventores sobre as suas obras, estabelecendo um prazo de quatorze anos de duração. Nessa mesma conjuntura, em 1791, a França promulgou sua primeira lei de patentes, denominada Décret d’Allarde, considerada uma das principais leis publicadas durante a Revolução Francesa.\n\nNo Brasil, o príncipe regente Dom João VI promulgou o Alvará de 28 de abril de 1809, tornando o país um dos primeiros no mundo a reconhecer a proteção dos direitos do inventor, atrás apenas da República de Veneza (1474), da Inglaterra (1623), dos Estados Unidos da América (1790) e da França (1791).\n\nFlávia Romano Villa Verde et al. As invenções no Brasil contadas a partir de documentos históricos de patentes. Rio de Janeiro: Instituto Nacional da Propriedade Industrial (Brasil) – INPI, Diretoria de Patentes, Programas de Computador e Topografia de Circuitos Integrados – DIRPA, Coordenação Geral de Estudos, Projetos e Disseminação da Informação Tecnológica – CEPIT e Divisão de Documentação Patentária – DIDOC, 2023, p. 20-21 (com adaptações).\n\nEm relação às ideias do texto CB1A1-I, julgue o item seguinte.\n\nEntende-se da leitura do texto que os Estados Unidos da América e a França promulgaram suas respectivas leis de patentes na mesma época e com o mesmo teor, tendo garantido aos inventores a exclusividade na exploração comercial de suas criações por um período de quatorze anos.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. As leis são de épocas próximas (1790 e 1791), mas o prazo de quatorze anos é citado só para a lei dos Estados Unidos. O texto não diz que a lei francesa tinha o mesmo teor nem o mesmo prazo.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Nacional da Propriedade Industrial (INPI)",
+      "cargo": "Analista de Planejamento, Gestão e Infraestrutura, Pesquisador e Tecnologista em Propriedade Industrial",
+      "ano": 2023,
+      "prova": "inpi-2023-cb",
+      "item": 15
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "inpi23-016",
+    "disciplina": "portugues",
+    "assunto": "Tempos verbais",
+    "enunciado": "Texto CB1A1-I\n\nCom o avanço científico e tecnológico ocorrido na Europa durante o Renascimento, os inventores começaram a demandar reconhecimento oficial de suas criações, a fim de impedir a imitação de seus inventos. Assim, em 1421, foi concedida ao inventor Filippo Brunelleschi, em Veneza, a primeira patente, com prazo de três anos, pela invenção de um modelo de embarcação para transportar mármore. Nesse contexto de criação de um sistema de concessão de privilégios como forma de proteção de um invento, em 1474, foi promulgado na República de Veneza o Estatuto de Veneza, garantindo ao inventor a exploração comercial do seu invento pela concessão do privilégio da invenção pelo prazo de dez anos.\n\nNo começo do século XVII, em 1623, a Inglaterra promulgou o Estatuto dos Monopólios, que consistiu na primeira base legal para concessão de patentes no país para uma invenção efetivamente nova. O estatuto contribuiu para a promulgação da Lei de Patentes de 1624, que, por sua vez, instituiu o sistema de patentes britânico. Em 1790, os Estados Unidos da América promulgaram a sua primeira lei de patentes, intitulada Patent Act, na qual era autorizada a concessão de direitos exclusivos aos inventores sobre as suas obras, estabelecendo um prazo de quatorze anos de duração. Nessa mesma conjuntura, em 1791, a França promulgou sua primeira lei de patentes, denominada Décret d’Allarde, considerada uma das principais leis publicadas durante a Revolução Francesa.\n\nNo Brasil, o príncipe regente Dom João VI promulgou o Alvará de 28 de abril de 1809, tornando o país um dos primeiros no mundo a reconhecer a proteção dos direitos do inventor, atrás apenas da República de Veneza (1474), da Inglaterra (1623), dos Estados Unidos da América (1790) e da França (1791).\n\nFlávia Romano Villa Verde et al. As invenções no Brasil contadas a partir de documentos históricos de patentes. Rio de Janeiro: Instituto Nacional da Propriedade Industrial (Brasil) – INPI, Diretoria de Patentes, Programas de Computador e Topografia de Circuitos Integrados – DIRPA, Coordenação Geral de Estudos, Projetos e Disseminação da Informação Tecnológica – CEPIT e Divisão de Documentação Patentária – DIDOC, 2023, p. 20-21 (com adaptações).\n\nConsiderando aspectos linguísticos do texto CB1A1-I, julgue o próximo item.\n\nO predomínio do emprego do pretérito perfeito do indicativo no texto justifica-se pela apresentação de uma série de eventos que ocorreram e se concluíram antes do processo de produção do texto.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. O texto narra fatos históricos já encerrados (foi concedida, promulgou, instituiu), por isso predomina o pretérito perfeito do indicativo.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Nacional da Propriedade Industrial (INPI)",
+      "cargo": "Analista de Planejamento, Gestão e Infraestrutura, Pesquisador e Tecnologista em Propriedade Industrial",
+      "ano": 2023,
+      "prova": "inpi-2023-cb",
+      "item": 16
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "inpi23-017",
+    "disciplina": "portugues",
+    "assunto": "Regência",
+    "enunciado": "Texto CB1A1-I\n\nCom o avanço científico e tecnológico ocorrido na Europa durante o Renascimento, os inventores começaram a demandar reconhecimento oficial de suas criações, a fim de impedir a imitação de seus inventos. Assim, em 1421, foi concedida ao inventor Filippo Brunelleschi, em Veneza, a primeira patente, com prazo de três anos, pela invenção de um modelo de embarcação para transportar mármore. Nesse contexto de criação de um sistema de concessão de privilégios como forma de proteção de um invento, em 1474, foi promulgado na República de Veneza o Estatuto de Veneza, garantindo ao inventor a exploração comercial do seu invento pela concessão do privilégio da invenção pelo prazo de dez anos.\n\nNo começo do século XVII, em 1623, a Inglaterra promulgou o Estatuto dos Monopólios, que consistiu na primeira base legal para concessão de patentes no país para uma invenção efetivamente nova. O estatuto contribuiu para a promulgação da Lei de Patentes de 1624, que, por sua vez, instituiu o sistema de patentes britânico. Em 1790, os Estados Unidos da América promulgaram a sua primeira lei de patentes, intitulada Patent Act, na qual era autorizada a concessão de direitos exclusivos aos inventores sobre as suas obras, estabelecendo um prazo de quatorze anos de duração. Nessa mesma conjuntura, em 1791, a França promulgou sua primeira lei de patentes, denominada Décret d’Allarde, considerada uma das principais leis publicadas durante a Revolução Francesa.\n\nNo Brasil, o príncipe regente Dom João VI promulgou o Alvará de 28 de abril de 1809, tornando o país um dos primeiros no mundo a reconhecer a proteção dos direitos do inventor, atrás apenas da República de Veneza (1474), da Inglaterra (1623), dos Estados Unidos da América (1790) e da França (1791).\n\nFlávia Romano Villa Verde et al. As invenções no Brasil contadas a partir de documentos históricos de patentes. Rio de Janeiro: Instituto Nacional da Propriedade Industrial (Brasil) – INPI, Diretoria de Patentes, Programas de Computador e Topografia de Circuitos Integrados – DIRPA, Coordenação Geral de Estudos, Projetos e Disseminação da Informação Tecnológica – CEPIT e Divisão de Documentação Patentária – DIDOC, 2023, p. 20-21 (com adaptações).\n\nConsiderando aspectos linguísticos do texto CB1A1-I, julgue o próximo item.\n\nA inserção da preposição por após o verbo “demandar” (primeiro período do texto) seria gramaticalmente correta, sem prejuízo dos sentidos originais, dada a regência variável desse verbo.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 3,
+    "explicacao": "Errado. No sentido de exigir, reivindicar, \"demandar\" é transitivo direto: os inventores \"demandavam reconhecimento\". A construção com a preposição \"por\" não é a da norma-padrão nesse sentido.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Nacional da Propriedade Industrial (INPI)",
+      "cargo": "Analista de Planejamento, Gestão e Infraestrutura, Pesquisador e Tecnologista em Propriedade Industrial",
+      "ano": 2023,
+      "prova": "inpi-2023-cb",
+      "item": 17
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "inpi23-018",
+    "disciplina": "portugues",
+    "assunto": "Sintaxe: funções",
+    "enunciado": "Texto CB1A1-I\n\nCom o avanço científico e tecnológico ocorrido na Europa durante o Renascimento, os inventores começaram a demandar reconhecimento oficial de suas criações, a fim de impedir a imitação de seus inventos. Assim, em 1421, foi concedida ao inventor Filippo Brunelleschi, em Veneza, a primeira patente, com prazo de três anos, pela invenção de um modelo de embarcação para transportar mármore. Nesse contexto de criação de um sistema de concessão de privilégios como forma de proteção de um invento, em 1474, foi promulgado na República de Veneza o Estatuto de Veneza, garantindo ao inventor a exploração comercial do seu invento pela concessão do privilégio da invenção pelo prazo de dez anos.\n\nNo começo do século XVII, em 1623, a Inglaterra promulgou o Estatuto dos Monopólios, que consistiu na primeira base legal para concessão de patentes no país para uma invenção efetivamente nova. O estatuto contribuiu para a promulgação da Lei de Patentes de 1624, que, por sua vez, instituiu o sistema de patentes britânico. Em 1790, os Estados Unidos da América promulgaram a sua primeira lei de patentes, intitulada Patent Act, na qual era autorizada a concessão de direitos exclusivos aos inventores sobre as suas obras, estabelecendo um prazo de quatorze anos de duração. Nessa mesma conjuntura, em 1791, a França promulgou sua primeira lei de patentes, denominada Décret d’Allarde, considerada uma das principais leis publicadas durante a Revolução Francesa.\n\nNo Brasil, o príncipe regente Dom João VI promulgou o Alvará de 28 de abril de 1809, tornando o país um dos primeiros no mundo a reconhecer a proteção dos direitos do inventor, atrás apenas da República de Veneza (1474), da Inglaterra (1623), dos Estados Unidos da América (1790) e da França (1791).\n\nFlávia Romano Villa Verde et al. As invenções no Brasil contadas a partir de documentos históricos de patentes. Rio de Janeiro: Instituto Nacional da Propriedade Industrial (Brasil) – INPI, Diretoria de Patentes, Programas de Computador e Topografia de Circuitos Integrados – DIRPA, Coordenação Geral de Estudos, Projetos e Disseminação da Informação Tecnológica – CEPIT e Divisão de Documentação Patentária – DIDOC, 2023, p. 20-21 (com adaptações).\n\nConsiderando aspectos linguísticos do texto CB1A1-I, julgue o próximo item.\n\nNo segundo período do primeiro parágrafo, o segmento “a primeira patente” funciona como complemento direto da locução verbal “foi concedida”.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. \"Foi concedida\" está na voz passiva. Nela, \"a primeira patente\" é o sujeito (a primeira patente foi concedida a Brunelleschi), e não um complemento do verbo.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Nacional da Propriedade Industrial (INPI)",
+      "cargo": "Analista de Planejamento, Gestão e Infraestrutura, Pesquisador e Tecnologista em Propriedade Industrial",
+      "ano": 2023,
+      "prova": "inpi-2023-cb",
+      "item": 18
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "inpi23-019",
+    "disciplina": "portugues",
+    "assunto": "Pontuação",
+    "enunciado": "Texto CB1A1-I\n\nCom o avanço científico e tecnológico ocorrido na Europa durante o Renascimento, os inventores começaram a demandar reconhecimento oficial de suas criações, a fim de impedir a imitação de seus inventos. Assim, em 1421, foi concedida ao inventor Filippo Brunelleschi, em Veneza, a primeira patente, com prazo de três anos, pela invenção de um modelo de embarcação para transportar mármore. Nesse contexto de criação de um sistema de concessão de privilégios como forma de proteção de um invento, em 1474, foi promulgado na República de Veneza o Estatuto de Veneza, garantindo ao inventor a exploração comercial do seu invento pela concessão do privilégio da invenção pelo prazo de dez anos.\n\nNo começo do século XVII, em 1623, a Inglaterra promulgou o Estatuto dos Monopólios, que consistiu na primeira base legal para concessão de patentes no país para uma invenção efetivamente nova. O estatuto contribuiu para a promulgação da Lei de Patentes de 1624, que, por sua vez, instituiu o sistema de patentes britânico. Em 1790, os Estados Unidos da América promulgaram a sua primeira lei de patentes, intitulada Patent Act, na qual era autorizada a concessão de direitos exclusivos aos inventores sobre as suas obras, estabelecendo um prazo de quatorze anos de duração. Nessa mesma conjuntura, em 1791, a França promulgou sua primeira lei de patentes, denominada Décret d’Allarde, considerada uma das principais leis publicadas durante a Revolução Francesa.\n\nNo Brasil, o príncipe regente Dom João VI promulgou o Alvará de 28 de abril de 1809, tornando o país um dos primeiros no mundo a reconhecer a proteção dos direitos do inventor, atrás apenas da República de Veneza (1474), da Inglaterra (1623), dos Estados Unidos da América (1790) e da França (1791).\n\nFlávia Romano Villa Verde et al. As invenções no Brasil contadas a partir de documentos históricos de patentes. Rio de Janeiro: Instituto Nacional da Propriedade Industrial (Brasil) – INPI, Diretoria de Patentes, Programas de Computador e Topografia de Circuitos Integrados – DIRPA, Coordenação Geral de Estudos, Projetos e Disseminação da Informação Tecnológica – CEPIT e Divisão de Documentação Patentária – DIDOC, 2023, p. 20-21 (com adaptações).\n\nConsiderando aspectos linguísticos do texto CB1A1-I, julgue o próximo item.\n\nHaveria prejuízo à correção gramatical do texto caso fosse inserida vírgula imediatamente após a expressão “República de Veneza” (terceiro período do primeiro parágrafo).",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. Depois de \"República de Veneza\" vem o sujeito da oração, \"o Estatuto de Veneza\", posposto ao verbo \"foi promulgado\". Uma vírgula ali separaria o verbo do seu sujeito, o que é erro.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Nacional da Propriedade Industrial (INPI)",
+      "cargo": "Analista de Planejamento, Gestão e Infraestrutura, Pesquisador e Tecnologista em Propriedade Industrial",
+      "ano": 2023,
+      "prova": "inpi-2023-cb",
+      "item": 19
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "inpi23-020",
+    "disciplina": "portugues",
+    "assunto": "Reescrita de frases",
+    "enunciado": "Texto CB1A1-I\n\nCom o avanço científico e tecnológico ocorrido na Europa durante o Renascimento, os inventores começaram a demandar reconhecimento oficial de suas criações, a fim de impedir a imitação de seus inventos. Assim, em 1421, foi concedida ao inventor Filippo Brunelleschi, em Veneza, a primeira patente, com prazo de três anos, pela invenção de um modelo de embarcação para transportar mármore. Nesse contexto de criação de um sistema de concessão de privilégios como forma de proteção de um invento, em 1474, foi promulgado na República de Veneza o Estatuto de Veneza, garantindo ao inventor a exploração comercial do seu invento pela concessão do privilégio da invenção pelo prazo de dez anos.\n\nNo começo do século XVII, em 1623, a Inglaterra promulgou o Estatuto dos Monopólios, que consistiu na primeira base legal para concessão de patentes no país para uma invenção efetivamente nova. O estatuto contribuiu para a promulgação da Lei de Patentes de 1624, que, por sua vez, instituiu o sistema de patentes britânico. Em 1790, os Estados Unidos da América promulgaram a sua primeira lei de patentes, intitulada Patent Act, na qual era autorizada a concessão de direitos exclusivos aos inventores sobre as suas obras, estabelecendo um prazo de quatorze anos de duração. Nessa mesma conjuntura, em 1791, a França promulgou sua primeira lei de patentes, denominada Décret d’Allarde, considerada uma das principais leis publicadas durante a Revolução Francesa.\n\nNo Brasil, o príncipe regente Dom João VI promulgou o Alvará de 28 de abril de 1809, tornando o país um dos primeiros no mundo a reconhecer a proteção dos direitos do inventor, atrás apenas da República de Veneza (1474), da Inglaterra (1623), dos Estados Unidos da América (1790) e da França (1791).\n\nFlávia Romano Villa Verde et al. As invenções no Brasil contadas a partir de documentos históricos de patentes. Rio de Janeiro: Instituto Nacional da Propriedade Industrial (Brasil) – INPI, Diretoria de Patentes, Programas de Computador e Topografia de Circuitos Integrados – DIRPA, Coordenação Geral de Estudos, Projetos e Disseminação da Informação Tecnológica – CEPIT e Divisão de Documentação Patentária – DIDOC, 2023, p. 20-21 (com adaptações).\n\nConsiderando aspectos linguísticos do texto CB1A1-I, julgue o próximo item.\n\nSem prejuízo da correção gramatical ou do sentido original do texto, o terceiro parágrafo poderia ser reescrito da seguinte forma: No Brasil, promulgou-se o Alvará de 28 de abril de 1809 por Dom João VI, o príncipe regente, tornando o Brasil um dos primeiros países do mundo a reconhecer a proteção dos direitos do inventor, seguido apenas pela República de Veneza (1474), pela Inglaterra (1623), pelos Estados Unidos da América (1790) e pela França (1791).",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. No original, o Brasil ficou \"atrás apenas\" desses países, ou seja, eles vieram antes. Dizer que o Brasil foi \"seguido\" por eles inverte a ordem: eles teriam vindo depois. O sentido muda.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Nacional da Propriedade Industrial (INPI)",
+      "cargo": "Analista de Planejamento, Gestão e Infraestrutura, Pesquisador e Tecnologista em Propriedade Industrial",
+      "ano": 2023,
+      "prova": "inpi-2023-cb",
+      "item": 20
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "inpi23-021",
+    "disciplina": "portugues",
+    "assunto": "Concordância",
+    "enunciado": "Texto CB1A1-I\n\nCom o avanço científico e tecnológico ocorrido na Europa durante o Renascimento, os inventores começaram a demandar reconhecimento oficial de suas criações, a fim de impedir a imitação de seus inventos. Assim, em 1421, foi concedida ao inventor Filippo Brunelleschi, em Veneza, a primeira patente, com prazo de três anos, pela invenção de um modelo de embarcação para transportar mármore. Nesse contexto de criação de um sistema de concessão de privilégios como forma de proteção de um invento, em 1474, foi promulgado na República de Veneza o Estatuto de Veneza, garantindo ao inventor a exploração comercial do seu invento pela concessão do privilégio da invenção pelo prazo de dez anos.\n\nNo começo do século XVII, em 1623, a Inglaterra promulgou o Estatuto dos Monopólios, que consistiu na primeira base legal para concessão de patentes no país para uma invenção efetivamente nova. O estatuto contribuiu para a promulgação da Lei de Patentes de 1624, que, por sua vez, instituiu o sistema de patentes britânico. Em 1790, os Estados Unidos da América promulgaram a sua primeira lei de patentes, intitulada Patent Act, na qual era autorizada a concessão de direitos exclusivos aos inventores sobre as suas obras, estabelecendo um prazo de quatorze anos de duração. Nessa mesma conjuntura, em 1791, a França promulgou sua primeira lei de patentes, denominada Décret d’Allarde, considerada uma das principais leis publicadas durante a Revolução Francesa.\n\nNo Brasil, o príncipe regente Dom João VI promulgou o Alvará de 28 de abril de 1809, tornando o país um dos primeiros no mundo a reconhecer a proteção dos direitos do inventor, atrás apenas da República de Veneza (1474), da Inglaterra (1623), dos Estados Unidos da América (1790) e da França (1791).\n\nFlávia Romano Villa Verde et al. As invenções no Brasil contadas a partir de documentos históricos de patentes. Rio de Janeiro: Instituto Nacional da Propriedade Industrial (Brasil) – INPI, Diretoria de Patentes, Programas de Computador e Topografia de Circuitos Integrados – DIRPA, Coordenação Geral de Estudos, Projetos e Disseminação da Informação Tecnológica – CEPIT e Divisão de Documentação Patentária – DIDOC, 2023, p. 20-21 (com adaptações).\n\nConsiderando aspectos linguísticos do texto CB1A1-I, julgue o próximo item.\n\nNo terceiro período do segundo parágrafo, a forma verbal “promulgaram” poderia ser substituída por promulgou, sem prejuízo da correção gramatical do texto.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. \"Os Estados Unidos da América\" vem com artigo no plural, e o verbo deve ir para o plural: \"promulgaram\". Com o verbo no singular, a frase fica errada.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Nacional da Propriedade Industrial (INPI)",
+      "cargo": "Analista de Planejamento, Gestão e Infraestrutura, Pesquisador e Tecnologista em Propriedade Industrial",
+      "ano": 2023,
+      "prova": "inpi-2023-cb",
+      "item": 21
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "inpi23-022",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CB1A1-II\n\nO conceito de civilização não pode ser precisamente definido, não apenas por ser um processo evolucionário, mas também por ter se manifestado de formas muito diferentes através dos tempos. Entre as civilizações antigas, havia múltiplas diferenças nas crenças religiosas, nos costumes sociais, nas formas de governo e na criação artística. Contudo, uma faceta de fundamental importância para todas elas era a tecnologia, que, em sentido mais amplo, pode significar a aplicação do conhecimento para finalidades práticas.\n\nHoje, a tecnologia é, na prática, sinônimo de ciência aplicada, mas as tecnologias básicas — tais como agricultura, construção, cerâmica, tecidos — foram originalmente empíricas e transmitidas de uma geração para outra, enquanto a ciência, no sentido de pesquisa sistemática das leis do universo, é um fenômeno relativamente recente. A tecnologia foi fundamental, já que proporcionava os recursos necessários para sociedades organizadas, e essas sociedades tornaram possíveis não apenas a divisão do trabalho — por exemplo, entre trabalhadores da terra, oleiros, marinheiros e similares —, como também um ambiente no qual puderam florescer as artes em geral, não necessárias à vida no dia a dia. A maioria dessas artes dependia de alguma espécie de suporte tecnológico: o escultor requeria ferramentas, o escritor necessitava de tinta e de papiro (ou papel, mais tarde), o dramaturgo precisava de teatros especialmente construídos.\n\nTrevor I. Williams. História das invenções: do machado de pedra às tecnologias da informação. Tradução de Cristina Antunes. Atualização e revisão de William E. Schaaf, Jr. e Arianne E. Burnette. Belo Horizonte: Gutenberg, 2009, p. 12-13 (com adaptações).\n\nJulgue o item seguinte com base nas ideias do texto CB1A1-II.\n\nDe acordo com o expresso no texto, a despeito das diferenças entre as sociedades antigas, a tecnologia era um elemento importante para todas elas.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. O texto diz que as civilizações antigas tinham muitas diferenças, mas que a tecnologia era de fundamental importância para todas elas.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Nacional da Propriedade Industrial (INPI)",
+      "cargo": "Analista de Planejamento, Gestão e Infraestrutura, Pesquisador e Tecnologista em Propriedade Industrial",
+      "ano": 2023,
+      "prova": "inpi-2023-cb",
+      "item": 22
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "inpi23-023",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CB1A1-II\n\nO conceito de civilização não pode ser precisamente definido, não apenas por ser um processo evolucionário, mas também por ter se manifestado de formas muito diferentes através dos tempos. Entre as civilizações antigas, havia múltiplas diferenças nas crenças religiosas, nos costumes sociais, nas formas de governo e na criação artística. Contudo, uma faceta de fundamental importância para todas elas era a tecnologia, que, em sentido mais amplo, pode significar a aplicação do conhecimento para finalidades práticas.\n\nHoje, a tecnologia é, na prática, sinônimo de ciência aplicada, mas as tecnologias básicas — tais como agricultura, construção, cerâmica, tecidos — foram originalmente empíricas e transmitidas de uma geração para outra, enquanto a ciência, no sentido de pesquisa sistemática das leis do universo, é um fenômeno relativamente recente. A tecnologia foi fundamental, já que proporcionava os recursos necessários para sociedades organizadas, e essas sociedades tornaram possíveis não apenas a divisão do trabalho — por exemplo, entre trabalhadores da terra, oleiros, marinheiros e similares —, como também um ambiente no qual puderam florescer as artes em geral, não necessárias à vida no dia a dia. A maioria dessas artes dependia de alguma espécie de suporte tecnológico: o escultor requeria ferramentas, o escritor necessitava de tinta e de papiro (ou papel, mais tarde), o dramaturgo precisava de teatros especialmente construídos.\n\nTrevor I. Williams. História das invenções: do machado de pedra às tecnologias da informação. Tradução de Cristina Antunes. Atualização e revisão de William E. Schaaf, Jr. e Arianne E. Burnette. Belo Horizonte: Gutenberg, 2009, p. 12-13 (com adaptações).\n\nJulgue o item seguinte com base nas ideias do texto CB1A1-II.\n\nNo texto, destacam-se duas concepções diferentes de tecnologia: a tecnologia como ciência empírica e oral (que floresceu nas civilizações antigas) e a tecnologia como ciência aplicada (que floresceu nas civilizações modernas).",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. O texto não opõe duas concepções de tecnologia. Ele diz que hoje tecnologia é quase sinônimo de ciência aplicada e que as tecnologias básicas foram empíricas; a ciência, como pesquisa sistemática, é que é recente.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Nacional da Propriedade Industrial (INPI)",
+      "cargo": "Analista de Planejamento, Gestão e Infraestrutura, Pesquisador e Tecnologista em Propriedade Industrial",
+      "ano": 2023,
+      "prova": "inpi-2023-cb",
+      "item": 23
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "inpi23-024",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CB1A1-II\n\nO conceito de civilização não pode ser precisamente definido, não apenas por ser um processo evolucionário, mas também por ter se manifestado de formas muito diferentes através dos tempos. Entre as civilizações antigas, havia múltiplas diferenças nas crenças religiosas, nos costumes sociais, nas formas de governo e na criação artística. Contudo, uma faceta de fundamental importância para todas elas era a tecnologia, que, em sentido mais amplo, pode significar a aplicação do conhecimento para finalidades práticas.\n\nHoje, a tecnologia é, na prática, sinônimo de ciência aplicada, mas as tecnologias básicas — tais como agricultura, construção, cerâmica, tecidos — foram originalmente empíricas e transmitidas de uma geração para outra, enquanto a ciência, no sentido de pesquisa sistemática das leis do universo, é um fenômeno relativamente recente. A tecnologia foi fundamental, já que proporcionava os recursos necessários para sociedades organizadas, e essas sociedades tornaram possíveis não apenas a divisão do trabalho — por exemplo, entre trabalhadores da terra, oleiros, marinheiros e similares —, como também um ambiente no qual puderam florescer as artes em geral, não necessárias à vida no dia a dia. A maioria dessas artes dependia de alguma espécie de suporte tecnológico: o escultor requeria ferramentas, o escritor necessitava de tinta e de papiro (ou papel, mais tarde), o dramaturgo precisava de teatros especialmente construídos.\n\nTrevor I. Williams. História das invenções: do machado de pedra às tecnologias da informação. Tradução de Cristina Antunes. Atualização e revisão de William E. Schaaf, Jr. e Arianne E. Burnette. Belo Horizonte: Gutenberg, 2009, p. 12-13 (com adaptações).\n\nJulgue o item seguinte com base nas ideias do texto CB1A1-II.\n\nConforme expresso no texto, não é possível apresentar de modo uno e preciso o conceito de civilização porque tal concepção é, por natureza, evolucionária, e também porque sofre influência de questões religiosas, sociais, políticas e artísticas.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. Segundo o texto, a civilização não se define com precisão por ser um processo evolucionário e por ter se manifestado de formas muito diferentes ao longo do tempo. As diferenças religiosas, sociais, políticas e artísticas aparecem como exemplos dessas variações, não como \"influência\" sobre o conceito.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Nacional da Propriedade Industrial (INPI)",
+      "cargo": "Analista de Planejamento, Gestão e Infraestrutura, Pesquisador e Tecnologista em Propriedade Industrial",
+      "ano": 2023,
+      "prova": "inpi-2023-cb",
+      "item": 24
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "inpi23-025",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CB1A1-II\n\nO conceito de civilização não pode ser precisamente definido, não apenas por ser um processo evolucionário, mas também por ter se manifestado de formas muito diferentes através dos tempos. Entre as civilizações antigas, havia múltiplas diferenças nas crenças religiosas, nos costumes sociais, nas formas de governo e na criação artística. Contudo, uma faceta de fundamental importância para todas elas era a tecnologia, que, em sentido mais amplo, pode significar a aplicação do conhecimento para finalidades práticas.\n\nHoje, a tecnologia é, na prática, sinônimo de ciência aplicada, mas as tecnologias básicas — tais como agricultura, construção, cerâmica, tecidos — foram originalmente empíricas e transmitidas de uma geração para outra, enquanto a ciência, no sentido de pesquisa sistemática das leis do universo, é um fenômeno relativamente recente. A tecnologia foi fundamental, já que proporcionava os recursos necessários para sociedades organizadas, e essas sociedades tornaram possíveis não apenas a divisão do trabalho — por exemplo, entre trabalhadores da terra, oleiros, marinheiros e similares —, como também um ambiente no qual puderam florescer as artes em geral, não necessárias à vida no dia a dia. A maioria dessas artes dependia de alguma espécie de suporte tecnológico: o escultor requeria ferramentas, o escritor necessitava de tinta e de papiro (ou papel, mais tarde), o dramaturgo precisava de teatros especialmente construídos.\n\nTrevor I. Williams. História das invenções: do machado de pedra às tecnologias da informação. Tradução de Cristina Antunes. Atualização e revisão de William E. Schaaf, Jr. e Arianne E. Burnette. Belo Horizonte: Gutenberg, 2009, p. 12-13 (com adaptações).\n\nJulgue o item seguinte com base nas ideias do texto CB1A1-II.\n\nDe acordo com o texto, graças à tecnologia, as sociedades organizadas criaram as condições para que as artes em geral pudessem se desenvolver.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. O texto diz que a tecnologia deu os recursos para as sociedades organizadas, e essas sociedades tornaram possível um ambiente em que as artes puderam florescer.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Nacional da Propriedade Industrial (INPI)",
+      "cargo": "Analista de Planejamento, Gestão e Infraestrutura, Pesquisador e Tecnologista em Propriedade Industrial",
+      "ano": 2023,
+      "prova": "inpi-2023-cb",
+      "item": 25
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "inpi23-026",
+    "disciplina": "portugues",
+    "assunto": "Sentido das palavras",
+    "enunciado": "Texto CB1A1-II\n\nO conceito de civilização não pode ser precisamente definido, não apenas por ser um processo evolucionário, mas também por ter se manifestado de formas muito diferentes através dos tempos. Entre as civilizações antigas, havia múltiplas diferenças nas crenças religiosas, nos costumes sociais, nas formas de governo e na criação artística. Contudo, uma faceta de fundamental importância para todas elas era a tecnologia, que, em sentido mais amplo, pode significar a aplicação do conhecimento para finalidades práticas.\n\nHoje, a tecnologia é, na prática, sinônimo de ciência aplicada, mas as tecnologias básicas — tais como agricultura, construção, cerâmica, tecidos — foram originalmente empíricas e transmitidas de uma geração para outra, enquanto a ciência, no sentido de pesquisa sistemática das leis do universo, é um fenômeno relativamente recente. A tecnologia foi fundamental, já que proporcionava os recursos necessários para sociedades organizadas, e essas sociedades tornaram possíveis não apenas a divisão do trabalho — por exemplo, entre trabalhadores da terra, oleiros, marinheiros e similares —, como também um ambiente no qual puderam florescer as artes em geral, não necessárias à vida no dia a dia. A maioria dessas artes dependia de alguma espécie de suporte tecnológico: o escultor requeria ferramentas, o escritor necessitava de tinta e de papiro (ou papel, mais tarde), o dramaturgo precisava de teatros especialmente construídos.\n\nTrevor I. Williams. História das invenções: do machado de pedra às tecnologias da informação. Tradução de Cristina Antunes. Atualização e revisão de William E. Schaaf, Jr. e Arianne E. Burnette. Belo Horizonte: Gutenberg, 2009, p. 12-13 (com adaptações).\n\nJulgue o item a seguir, referente a aspectos gramaticais do texto CB1A1-II.\n\nNas orações em que ocorrem, os vocábulos “precisamente” (primeiro período do texto) e “especialmente” (último período do texto) significam, respectivamente, de modo preciso e de modo especial, podendo ser deslocados para após o termo que modificam, sem prejuízo gramatical ou interpretativo.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 3,
+    "explicacao": "Errado. Em \"teatros especialmente construídos\", \"especialmente\" quer dizer construídos para esse fim específico, e não \"de modo especial\". A leitura proposta para esse advérbio não se sustenta.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Nacional da Propriedade Industrial (INPI)",
+      "cargo": "Analista de Planejamento, Gestão e Infraestrutura, Pesquisador e Tecnologista em Propriedade Industrial",
+      "ano": 2023,
+      "prova": "inpi-2023-cb",
+      "item": 26
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "inpi23-027",
+    "disciplina": "portugues",
+    "assunto": "Coesão textual",
+    "enunciado": "Texto CB1A1-II\n\nO conceito de civilização não pode ser precisamente definido, não apenas por ser um processo evolucionário, mas também por ter se manifestado de formas muito diferentes através dos tempos. Entre as civilizações antigas, havia múltiplas diferenças nas crenças religiosas, nos costumes sociais, nas formas de governo e na criação artística. Contudo, uma faceta de fundamental importância para todas elas era a tecnologia, que, em sentido mais amplo, pode significar a aplicação do conhecimento para finalidades práticas.\n\nHoje, a tecnologia é, na prática, sinônimo de ciência aplicada, mas as tecnologias básicas — tais como agricultura, construção, cerâmica, tecidos — foram originalmente empíricas e transmitidas de uma geração para outra, enquanto a ciência, no sentido de pesquisa sistemática das leis do universo, é um fenômeno relativamente recente. A tecnologia foi fundamental, já que proporcionava os recursos necessários para sociedades organizadas, e essas sociedades tornaram possíveis não apenas a divisão do trabalho — por exemplo, entre trabalhadores da terra, oleiros, marinheiros e similares —, como também um ambiente no qual puderam florescer as artes em geral, não necessárias à vida no dia a dia. A maioria dessas artes dependia de alguma espécie de suporte tecnológico: o escultor requeria ferramentas, o escritor necessitava de tinta e de papiro (ou papel, mais tarde), o dramaturgo precisava de teatros especialmente construídos.\n\nTrevor I. Williams. História das invenções: do machado de pedra às tecnologias da informação. Tradução de Cristina Antunes. Atualização e revisão de William E. Schaaf, Jr. e Arianne E. Burnette. Belo Horizonte: Gutenberg, 2009, p. 12-13 (com adaptações).\n\nJulgue o item a seguir, referente a aspectos gramaticais do texto CB1A1-II.\n\nNo primeiro período do texto, o conectivo “mas também” confere sentido aditivo à oração que introduz, de modo que são complementares entre si as informações veiculadas no trecho “não apenas por ser um processo evolucionário, mas também por ter se manifestado de formas muito diferentes através dos tempos”.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. A dupla \"não apenas ... mas também\" soma duas razões que se completam: o conceito é difícil de definir por ser evolucionário e por ter variado muito ao longo do tempo.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Nacional da Propriedade Industrial (INPI)",
+      "cargo": "Analista de Planejamento, Gestão e Infraestrutura, Pesquisador e Tecnologista em Propriedade Industrial",
+      "ano": 2023,
+      "prova": "inpi-2023-cb",
+      "item": 27
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "inpi23-028",
+    "disciplina": "portugues",
+    "assunto": "Concordância",
+    "enunciado": "Texto CB1A1-II\n\nO conceito de civilização não pode ser precisamente definido, não apenas por ser um processo evolucionário, mas também por ter se manifestado de formas muito diferentes através dos tempos. Entre as civilizações antigas, havia múltiplas diferenças nas crenças religiosas, nos costumes sociais, nas formas de governo e na criação artística. Contudo, uma faceta de fundamental importância para todas elas era a tecnologia, que, em sentido mais amplo, pode significar a aplicação do conhecimento para finalidades práticas.\n\nHoje, a tecnologia é, na prática, sinônimo de ciência aplicada, mas as tecnologias básicas — tais como agricultura, construção, cerâmica, tecidos — foram originalmente empíricas e transmitidas de uma geração para outra, enquanto a ciência, no sentido de pesquisa sistemática das leis do universo, é um fenômeno relativamente recente. A tecnologia foi fundamental, já que proporcionava os recursos necessários para sociedades organizadas, e essas sociedades tornaram possíveis não apenas a divisão do trabalho — por exemplo, entre trabalhadores da terra, oleiros, marinheiros e similares —, como também um ambiente no qual puderam florescer as artes em geral, não necessárias à vida no dia a dia. A maioria dessas artes dependia de alguma espécie de suporte tecnológico: o escultor requeria ferramentas, o escritor necessitava de tinta e de papiro (ou papel, mais tarde), o dramaturgo precisava de teatros especialmente construídos.\n\nTrevor I. Williams. História das invenções: do machado de pedra às tecnologias da informação. Tradução de Cristina Antunes. Atualização e revisão de William E. Schaaf, Jr. e Arianne E. Burnette. Belo Horizonte: Gutenberg, 2009, p. 12-13 (com adaptações).\n\nJulgue o item a seguir, referente a aspectos gramaticais do texto CB1A1-II.\n\nNo segundo período do primeiro parágrafo, a substituição de “havia” por existia manteria os sentidos do texto, mas prejudicaria a sua correção gramatical.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. \"Haver\", no sentido de existir, é impessoal e fica no singular. Já \"existir\" concorda com o sujeito: o certo seria \"existiam múltiplas diferenças\". Com \"existia\", o sentido se mantém, mas a concordância fica errada.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Nacional da Propriedade Industrial (INPI)",
+      "cargo": "Analista de Planejamento, Gestão e Infraestrutura, Pesquisador e Tecnologista em Propriedade Industrial",
+      "ano": 2023,
+      "prova": "inpi-2023-cb",
+      "item": 28
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "inpi23-029",
+    "disciplina": "portugues",
+    "assunto": "Concordância",
+    "enunciado": "Texto CB1A1-II\n\nO conceito de civilização não pode ser precisamente definido, não apenas por ser um processo evolucionário, mas também por ter se manifestado de formas muito diferentes através dos tempos. Entre as civilizações antigas, havia múltiplas diferenças nas crenças religiosas, nos costumes sociais, nas formas de governo e na criação artística. Contudo, uma faceta de fundamental importância para todas elas era a tecnologia, que, em sentido mais amplo, pode significar a aplicação do conhecimento para finalidades práticas.\n\nHoje, a tecnologia é, na prática, sinônimo de ciência aplicada, mas as tecnologias básicas — tais como agricultura, construção, cerâmica, tecidos — foram originalmente empíricas e transmitidas de uma geração para outra, enquanto a ciência, no sentido de pesquisa sistemática das leis do universo, é um fenômeno relativamente recente. A tecnologia foi fundamental, já que proporcionava os recursos necessários para sociedades organizadas, e essas sociedades tornaram possíveis não apenas a divisão do trabalho — por exemplo, entre trabalhadores da terra, oleiros, marinheiros e similares —, como também um ambiente no qual puderam florescer as artes em geral, não necessárias à vida no dia a dia. A maioria dessas artes dependia de alguma espécie de suporte tecnológico: o escultor requeria ferramentas, o escritor necessitava de tinta e de papiro (ou papel, mais tarde), o dramaturgo precisava de teatros especialmente construídos.\n\nTrevor I. Williams. História das invenções: do machado de pedra às tecnologias da informação. Tradução de Cristina Antunes. Atualização e revisão de William E. Schaaf, Jr. e Arianne E. Burnette. Belo Horizonte: Gutenberg, 2009, p. 12-13 (com adaptações).\n\nJulgue o item a seguir, referente a aspectos gramaticais do texto CB1A1-II.\n\nNo segundo parágrafo, a flexão de plural no termo “possíveis” (segundo período) justifica-se por sua concordância com “essas sociedades”, que é o sujeito da oração.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 3,
+    "explicacao": "Errado. \"Possíveis\" se refere ao que foi tornado possível: \"a divisão do trabalho\" e \"um ambiente\". É predicativo desses termos (o objeto), e não concorda com o sujeito \"essas sociedades\".",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Nacional da Propriedade Industrial (INPI)",
+      "cargo": "Analista de Planejamento, Gestão e Infraestrutura, Pesquisador e Tecnologista em Propriedade Industrial",
+      "ano": 2023,
+      "prova": "inpi-2023-cb",
+      "item": 29
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "inpi23-030",
+    "disciplina": "portugues",
+    "assunto": "Coesão textual",
+    "enunciado": "Texto CB1A1-II\n\nO conceito de civilização não pode ser precisamente definido, não apenas por ser um processo evolucionário, mas também por ter se manifestado de formas muito diferentes através dos tempos. Entre as civilizações antigas, havia múltiplas diferenças nas crenças religiosas, nos costumes sociais, nas formas de governo e na criação artística. Contudo, uma faceta de fundamental importância para todas elas era a tecnologia, que, em sentido mais amplo, pode significar a aplicação do conhecimento para finalidades práticas.\n\nHoje, a tecnologia é, na prática, sinônimo de ciência aplicada, mas as tecnologias básicas — tais como agricultura, construção, cerâmica, tecidos — foram originalmente empíricas e transmitidas de uma geração para outra, enquanto a ciência, no sentido de pesquisa sistemática das leis do universo, é um fenômeno relativamente recente. A tecnologia foi fundamental, já que proporcionava os recursos necessários para sociedades organizadas, e essas sociedades tornaram possíveis não apenas a divisão do trabalho — por exemplo, entre trabalhadores da terra, oleiros, marinheiros e similares —, como também um ambiente no qual puderam florescer as artes em geral, não necessárias à vida no dia a dia. A maioria dessas artes dependia de alguma espécie de suporte tecnológico: o escultor requeria ferramentas, o escritor necessitava de tinta e de papiro (ou papel, mais tarde), o dramaturgo precisava de teatros especialmente construídos.\n\nTrevor I. Williams. História das invenções: do machado de pedra às tecnologias da informação. Tradução de Cristina Antunes. Atualização e revisão de William E. Schaaf, Jr. e Arianne E. Burnette. Belo Horizonte: Gutenberg, 2009, p. 12-13 (com adaptações).\n\nJulgue o item a seguir, referente a aspectos gramaticais do texto CB1A1-II.\n\nNo segundo parágrafo, a oração introduzida por “já que” (segundo período) denota a razão que justifica a afirmação contida na oração imediatamente anterior.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. \"Já que\" introduz a causa: a tecnologia foi fundamental porque proporcionava os recursos necessários às sociedades organizadas.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Nacional da Propriedade Industrial (INPI)",
+      "cargo": "Analista de Planejamento, Gestão e Infraestrutura, Pesquisador e Tecnologista em Propriedade Industrial",
+      "ano": 2023,
+      "prova": "inpi-2023-cb",
+      "item": 30
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "inpi23-031",
+    "disciplina": "portugues",
+    "assunto": "Sintaxe: orações",
+    "enunciado": "Texto CB1A1-III\n\nToda língua satisfaz à necessidade humana de comunicação. Embora muitas pessoas do mundo de hoje sejam tentadas a gastar mais tempo em mídias sociais do que talvez deveriam, é o impulso das trocas linguísticas que as está levando a essa situação. Não importa o quão ocupadas algumas pessoas estejam, é difícil não participarem de alguma conversa na tela à sua frente, para opinar sobre assuntos dos quais elas sabem pouco e se importam menos ainda. Seja por meio de conversas informais, da absorção de informações vindas da televisão, da discussão de jogos ou da leitura/escrita de romances, falar e escrever conecta os humanos, de modo ainda mais íntimo, em uma comunidade.\n\nDaniel Everett. Linguagem: a história da maior invenção da humanidade. Tradução de Mauricio Resende. São Paulo: Editora Contexto, Belo Horizonte: Gutenberg, 2019, p. 12-13 (com adaptações).\n\nJulgue o item a seguir, relativo a aspectos linguísticos do texto CB1A1-III.\n\nApós a forma verbal “deveriam” (segundo período), está elíptico o verbo tentar.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. O verbo que está subentendido depois de \"deveriam\" é \"gastar\": as pessoas gastam mais tempo nas redes do que deveriam gastar. Não é \"tentar\".",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Nacional da Propriedade Industrial (INPI)",
+      "cargo": "Analista de Planejamento, Gestão e Infraestrutura, Pesquisador e Tecnologista em Propriedade Industrial",
+      "ano": 2023,
+      "prova": "inpi-2023-cb",
+      "item": 31
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "inpi23-032",
+    "disciplina": "portugues",
+    "assunto": "Colocação pronominal",
+    "enunciado": "Texto CB1A1-III\n\nToda língua satisfaz à necessidade humana de comunicação. Embora muitas pessoas do mundo de hoje sejam tentadas a gastar mais tempo em mídias sociais do que talvez deveriam, é o impulso das trocas linguísticas que as está levando a essa situação. Não importa o quão ocupadas algumas pessoas estejam, é difícil não participarem de alguma conversa na tela à sua frente, para opinar sobre assuntos dos quais elas sabem pouco e se importam menos ainda. Seja por meio de conversas informais, da absorção de informações vindas da televisão, da discussão de jogos ou da leitura/escrita de romances, falar e escrever conecta os humanos, de modo ainda mais íntimo, em uma comunidade.\n\nDaniel Everett. Linguagem: a história da maior invenção da humanidade. Tradução de Mauricio Resende. São Paulo: Editora Contexto, Belo Horizonte: Gutenberg, 2019, p. 12-13 (com adaptações).\n\nJulgue o item a seguir, relativo a aspectos linguísticos do texto CB1A1-III.\n\nNo trecho “é o impulso das trocas linguísticas que as está levando a essa situação” (segundo período), seria gramaticalmente correta a colocação da forma pronominal “as” em ênclise à forma de gerúndio “levando” — levando-as.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. Na locução \"está levando\", o pronome pode vir depois do gerúndio, ligado por hífen: \"está levando-as\". A frase continua correta.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Nacional da Propriedade Industrial (INPI)",
+      "cargo": "Analista de Planejamento, Gestão e Infraestrutura, Pesquisador e Tecnologista em Propriedade Industrial",
+      "ano": 2023,
+      "prova": "inpi-2023-cb",
+      "item": 32
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "inpi23-033",
+    "disciplina": "portugues",
+    "assunto": "Crase",
+    "enunciado": "Texto CB1A1-III\n\nToda língua satisfaz à necessidade humana de comunicação. Embora muitas pessoas do mundo de hoje sejam tentadas a gastar mais tempo em mídias sociais do que talvez deveriam, é o impulso das trocas linguísticas que as está levando a essa situação. Não importa o quão ocupadas algumas pessoas estejam, é difícil não participarem de alguma conversa na tela à sua frente, para opinar sobre assuntos dos quais elas sabem pouco e se importam menos ainda. Seja por meio de conversas informais, da absorção de informações vindas da televisão, da discussão de jogos ou da leitura/escrita de romances, falar e escrever conecta os humanos, de modo ainda mais íntimo, em uma comunidade.\n\nDaniel Everett. Linguagem: a história da maior invenção da humanidade. Tradução de Mauricio Resende. São Paulo: Editora Contexto, Belo Horizonte: Gutenberg, 2019, p. 12-13 (com adaptações).\n\nJulgue o item a seguir, relativo a aspectos linguísticos do texto CB1A1-III.\n\nNo segmento “a essa situação” (segundo período), poderia ser corretamente inserido o acento indicativo de crase no vocábulo “a”, em razão da presença do pronome “essa”.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. Não há crase antes de pronome demonstrativo como \"essa\", que não aceita artigo \"a\". O correto é \"a essa situação\", sem acento.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Nacional da Propriedade Industrial (INPI)",
+      "cargo": "Analista de Planejamento, Gestão e Infraestrutura, Pesquisador e Tecnologista em Propriedade Industrial",
+      "ano": 2023,
+      "prova": "inpi-2023-cb",
+      "item": 33
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "inpi23-034",
+    "disciplina": "portugues",
+    "assunto": "Sintaxe: funções",
+    "enunciado": "Texto CB1A1-III\n\nToda língua satisfaz à necessidade humana de comunicação. Embora muitas pessoas do mundo de hoje sejam tentadas a gastar mais tempo em mídias sociais do que talvez deveriam, é o impulso das trocas linguísticas que as está levando a essa situação. Não importa o quão ocupadas algumas pessoas estejam, é difícil não participarem de alguma conversa na tela à sua frente, para opinar sobre assuntos dos quais elas sabem pouco e se importam menos ainda. Seja por meio de conversas informais, da absorção de informações vindas da televisão, da discussão de jogos ou da leitura/escrita de romances, falar e escrever conecta os humanos, de modo ainda mais íntimo, em uma comunidade.\n\nDaniel Everett. Linguagem: a história da maior invenção da humanidade. Tradução de Mauricio Resende. São Paulo: Editora Contexto, Belo Horizonte: Gutenberg, 2019, p. 12-13 (com adaptações).\n\nJulgue o item a seguir, relativo a aspectos linguísticos do texto CB1A1-III.\n\nOs termos preposicionados “à necessidade” (primeiro período), “na tela” (terceiro período) e “de romances” (quarto período) desempenham diferentes funções sintáticas.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 3,
+    "explicacao": "Certo. \"À necessidade\" completa o verbo \"satisfazer\" (objeto indireto); \"na tela\" indica lugar; \"de romances\" completa os nomes \"leitura/escrita\" (complemento nominal). São funções diferentes.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Nacional da Propriedade Industrial (INPI)",
+      "cargo": "Analista de Planejamento, Gestão e Infraestrutura, Pesquisador e Tecnologista em Propriedade Industrial",
+      "ano": 2023,
+      "prova": "inpi-2023-cb",
+      "item": 34
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "inpi23-035",
+    "disciplina": "portugues",
+    "assunto": "Sintaxe: orações",
+    "enunciado": "Texto CB1A1-III\n\nToda língua satisfaz à necessidade humana de comunicação. Embora muitas pessoas do mundo de hoje sejam tentadas a gastar mais tempo em mídias sociais do que talvez deveriam, é o impulso das trocas linguísticas que as está levando a essa situação. Não importa o quão ocupadas algumas pessoas estejam, é difícil não participarem de alguma conversa na tela à sua frente, para opinar sobre assuntos dos quais elas sabem pouco e se importam menos ainda. Seja por meio de conversas informais, da absorção de informações vindas da televisão, da discussão de jogos ou da leitura/escrita de romances, falar e escrever conecta os humanos, de modo ainda mais íntimo, em uma comunidade.\n\nDaniel Everett. Linguagem: a história da maior invenção da humanidade. Tradução de Mauricio Resende. São Paulo: Editora Contexto, Belo Horizonte: Gutenberg, 2019, p. 12-13 (com adaptações).\n\nJulgue o item a seguir, relativo a aspectos linguísticos do texto CB1A1-III.\n\nAs orações “o quão ocupadas algumas pessoas estejam” e “não participarem de alguma conversa na tela à sua frente”, no terceiro período, são ambas orações que exercem a função de sujeito.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 3,
+    "explicacao": "Certo. O que \"não importa\" é \"o quão ocupadas algumas pessoas estejam\", e o que \"é difícil\" é \"não participarem de alguma conversa\". As duas orações são sujeito dessas construções.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Instituto Nacional da Propriedade Industrial (INPI)",
+      "cargo": "Analista de Planejamento, Gestão e Infraestrutura, Pesquisador e Tecnologista em Propriedade Industrial",
+      "ano": 2023,
+      "prova": "inpi-2023-cb",
+      "item": 35
+    },
+    "status": "ativa"
+  }
+]

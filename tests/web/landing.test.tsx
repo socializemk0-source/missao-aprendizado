@@ -15,7 +15,7 @@ describe('página inicial', () => {
   it('deslogado: chamada principal leva ao cadastro; tem todas as seções', () => {
     renderAt('/', { status: 'signedOut' });
     expect(screen.getAllByRole('link', { name: 'Começar grátis' })[0]).toHaveAttribute('href', '/cadastro');
-    for (const name of ['Responda, confira, entenda.', 'Como funciona', 'Tudo o que você precisa num lugar só', 'Comece grátis. Vire PRO quando quiser.', 'Dúvidas frequentes']) {
+    for (const name of ['O desafio de hoje: 4 questões, 5 minutos.', 'Como funciona', 'Tudo o que você precisa num lugar só', 'Comece grátis. Vire PRO quando quiser.', 'Dúvidas frequentes']) {
       expect(screen.getByRole('heading', { name })).toBeInTheDocument();
     }
   });
@@ -40,9 +40,13 @@ describe('página inicial', () => {
     expect(screen.queryByRole('link', { name: 'Entrar' })).toBeNull();
   });
 
+  // Sem o /api/desafio (servidor fora do ar), a questão de demonstração aparece no lugar.
+  const semDesafio = () => vi.stubGlobal('fetch', vi.fn(async () => new Response('{}', { status: 503 })));
+
   it('questão de demonstração: só confere depois de escolher; mostra acerto e explicação', async () => {
+    semDesafio();
     renderAt('/', { status: 'signedOut' });
-    const check = screen.getByRole('button', { name: 'Conferir resposta' });
+    const check = await screen.findByRole('button', { name: 'Conferir resposta' });
     expect(check).toBeDisabled();
     await userEvent.click(screen.getByRole('radio', { name: /75%/ }));
     await userEvent.click(check);
@@ -53,8 +57,9 @@ describe('página inicial', () => {
   });
 
   it('questão de demonstração: erro mostra a resposta certa', async () => {
+    semDesafio();
     renderAt('/', { status: 'signedOut' });
-    await userEvent.click(screen.getByRole('radio', { name: /80%/ }));
+    await userEvent.click(await screen.findByRole('radio', { name: /80%/ }));
     await userEvent.click(screen.getByRole('button', { name: 'Conferir resposta' }));
     expect(screen.getByRole('status')).toHaveTextContent('A resposta é 75%');
   });
@@ -85,7 +90,7 @@ describe('captura de e-mail', () => {
     await fill();
     await userEvent.click(screen.getByRole('button', { name: 'Quero receber' }));
     expect(screen.getByRole('alert')).toHaveTextContent('Marque a autorização');
-    expect(fetchMock).not.toHaveBeenCalled();
+    expect(fetchMock.mock.calls.filter((c) => c[0] === '/api/leads')).toHaveLength(0);
   });
 
   it('com autorização, envia e mostra a confirmação', async () => {
@@ -96,7 +101,7 @@ describe('captura de e-mail', () => {
     await userEvent.click(screen.getByLabelText(/Aceito receber e-mails/));
     await userEvent.click(screen.getByRole('button', { name: 'Quero receber' }));
     expect(await screen.findByText('Pronto! Você está na lista.')).toBeInTheDocument();
-    const [url, init] = fetchMock.mock.calls[0] as unknown as [string, RequestInit];
+    const [url, init] = fetchMock.mock.calls.find((c) => (c as unknown[])[0] === '/api/leads') as unknown as [string, RequestInit];
     expect(url).toBe('/api/leads');
     expect(JSON.parse(String(init.body))).toMatchObject({ email: 'maria@teste.dev', name: 'Maria', consent: true, website: '' });
   });
@@ -122,7 +127,7 @@ describe('captura de e-mail', () => {
     await waitFor(() => expect(screen.getByRole('button', { name: 'Quero receber' })).toBeEnabled());
     await userEvent.click(screen.getByRole('button', { name: 'Quero receber' }));
     expect(await screen.findByText('Pronto! Você está na lista.')).toBeInTheDocument();
-    const [, init] = fetchMock.mock.calls[0] as unknown as [string, RequestInit];
+    const [, init] = fetchMock.mock.calls.find((c) => (c as unknown[])[0] === '/api/leads') as unknown as [string, RequestInit];
     expect(JSON.parse(String(init.body))).toMatchObject({ email: 'maria@teste.dev', captchaToken: 'tok-lead' });
   });
 

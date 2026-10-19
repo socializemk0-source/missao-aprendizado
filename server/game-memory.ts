@@ -11,6 +11,7 @@ interface UserData {
   states: Map<string, QuestionState>;
   answers: { questionId: string; correct: boolean; mode: Mode; day: string }[];
   perfil: PerfilEstudo | null;
+  casa: Record<string, string> | null;
   phases: Map<string, string>;
   claims: Set<string>;
   simulados: SimuladoRow[];
@@ -22,7 +23,7 @@ export function memoryGameStore(options: { plan?: (userId: string) => Plan; name
   const qstats = new Map<string, QuestionStats>();
   const locks = new Map<string, Promise<unknown>>();
   const data = (id: string): UserData => {
-    if (!users.has(id)) users.set(id, { stats: null, states: new Map(), answers: [], phases: new Map(), claims: new Set(), simulados: [], rounds: [], perfil: null });
+    if (!users.has(id)) users.set(id, { stats: null, states: new Map(), answers: [], phases: new Map(), claims: new Set(), simulados: [], rounds: [], perfil: null, casa: null });
     return users.get(id)!;
   };
 
@@ -46,6 +47,8 @@ export function memoryGameStore(options: { plan?: (userId: string) => Plan; name
         answersSince: async (day) => d.answers.filter((a) => a.day >= day).map((a) => ({ ...a })),
         studyProfile: async () => (d.perfil ? structuredClone(d.perfil) : null),
         saveStudyProfile: async (p) => { d.perfil = structuredClone(p); },
+        casa: async () => (d.casa ? { ...d.casa } : null),
+        saveCasa: async (itens) => { d.casa = { ...itens }; },
         answersOnDay: async (day) => {
           const list = d.answers.filter((a) => a.day === day);
           return { total: list.length, correct: list.filter((a) => a.correct).length };

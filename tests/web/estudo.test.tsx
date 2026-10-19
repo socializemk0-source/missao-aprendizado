@@ -93,6 +93,26 @@ describe('onboarding', () => {
 });
 
 describe('Hoje', () => {
+  it('contagem da prova em destaque e atalho para o Desafio do Tico', async () => {
+    const store = setup();
+    const daqui20 = new Date(Date.now() + 20 * 86_400_000).toISOString().slice(0, 10);
+    await saveStudyProfile(store, 'u1', { ...PERFIL, dataProva: daqui20 });
+    renderAt('/hoje', signedIn, { progress: true });
+    const contagem = await screen.findByRole('note', { name: 'Contagem para a prova' });
+    const dias = Number(contagem.textContent!.match(/(\d+) dias para a prova/)![1]);
+    expect(dias).toBeGreaterThanOrEqual(19);
+    expect(dias).toBeLessThanOrEqual(21);
+    expect(screen.getByRole('link', { name: /Desafio do Tico/ })).toHaveAttribute('href', '/#desafio');
+  });
+
+  it('sem data de prova: sem contagem', async () => {
+    const store = setup();
+    await saveStudyProfile(store, 'u1', PERFIL);
+    renderAt('/hoje', signedIn, { progress: true });
+    await screen.findByRole('heading', { name: 'O que estudar hoje' });
+    expect(screen.queryByRole('note', { name: 'Contagem para a prova' })).toBeNull();
+  });
+
   it('mostra tarefas, como estou, onde erro, quanto falta e a semana', async () => {
     const store = setup();
     await saveStudyProfile(store, 'u1', { ...PERFIL, dataProva: null });

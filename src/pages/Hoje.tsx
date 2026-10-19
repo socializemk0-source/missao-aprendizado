@@ -37,12 +37,25 @@ function Painel({ plano }: { plano: Plano }) {
           <p className="eyebrow">{dataLonga(plano.hoje)}</p>
           <h1 className="page-title">O que estudar hoje</h1>
           <p className="muted">
-            {perfil.prova}{perfil.banca ? ` · ${perfil.banca}` : ''} ·{' '}
-            {diasParaProva === null ? 'sem data de prova' : diasParaProva === 0 ? 'a prova é hoje!' : `faltam ${plural(diasParaProva, 'dia', 'dias')} para a prova`}
+            {perfil.prova}{perfil.banca ? ` · ${perfil.banca}` : ''}{diasParaProva === null && ' · sem data de prova'}
           </p>
         </div>
         <Link to="/comecar" className="btn btn-secondary btn-sm">Ajustar plano</Link>
       </header>
+
+      {diasParaProva !== null && (
+        <p className="hoje-contagem" role="note" aria-label="Contagem para a prova">
+          <Icon name="calendar" size={20} />
+          {diasParaProva === 0 ? <strong>A prova é hoje! Boa prova!</strong> : <span><strong>{diasParaProva}</strong> {diasParaProva === 1 ? 'dia para a prova' : 'dias para a prova'}</span>}
+        </p>
+      )}
+
+      {/* Link comum (não do router): a página inicial abre já rolada até o desafio. */}
+      <a href="/#desafio" className="card hoje-desafio">
+        <Icon name="target" size={22} />
+        <span><strong>Desafio do Tico de hoje</strong><span className="muted">4 questões, uma de cada matéria. Mantenha a sequência!</span></span>
+        <span className="hoje-desafio-ir" aria-hidden="true">Jogar →</span>
+      </a>
 
       <section className="card hoje-meta" aria-label="Meta de hoje">
         <div className="hoje-meta-text">

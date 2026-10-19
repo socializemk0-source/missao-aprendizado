@@ -3,6 +3,7 @@ import type {
   RankingEntry, Session, SimuladoOpcoes, SimuladoResultado, SimuladoSessao, SubjectStats, TrailChapter,
 } from '../../shared/game';
 import type { DisciplinaId } from '../../content/types';
+import type { Casa } from '../../shared/casa';
 import type { DominioAssunto, PerfilEstudo, Plano, PlanoResposta } from '../../shared/estudo';
 import type { Fonte } from '../../content/types';
 import { api } from './api';
@@ -56,6 +57,8 @@ export const game = {
   startJogo: (tipo: JogoTipo, disciplina: DisciplinaId | null) => post<JogoRodada>('jogo-iniciar', { tipo, disciplina }),
   jogada: (id: string, jogada: Record<string, unknown>) => post<JogadaResultado>('jogo-jogada', { ...jogada, id }),
   endJogo: (id: string) => post<JogoFim>('jogo-terminar', { id }),
+  casa: () => get<Casa>('casa'),
+  colocarNaCasa: (item: string, lugar: string | null) => post<Casa>('casa-colocar', { item, lugar }),
 };
 
 export function fonteLabel(fonte: Fonte): string {

@@ -45,25 +45,33 @@ const aparecer = (el: Element) => {
 };
 
 describe('página inicial', () => {
+  // Sem o /api/desafio, a questão de demonstração aparece no lugar do desafio do dia.
+  const semDesafio = () => vi.stubGlobal('fetch', vi.fn(async () => new Response('{}', { status: 503 })));
+
   it('questão de demonstração: manda DemoQuestionAnswered com acertou sim/não', async () => {
+    semDesafio();
     renderAt('/', { status: 'signedOut' });
-    await userEvent.click(screen.getByRole('radio', { name: /75%/ }));
+    await userEvent.click(await screen.findByRole('radio', { name: /75%/ }));
     await userEvent.click(screen.getByRole('button', { name: 'Conferir resposta' }));
     expect(rastreio).toHaveBeenCalledWith('DemoQuestionAnswered', { correct: true }, { proprio: true });
   });
 
   it('questão de demonstração errada: correct = false', async () => {
+    semDesafio();
     renderAt('/', { status: 'signedOut' });
-    await userEvent.click(screen.getByRole('radio', { name: /60%/ }));
+    await userEvent.click(await screen.findByRole('radio', { name: /60%/ }));
     await userEvent.click(screen.getByRole('button', { name: 'Conferir resposta' }));
     expect(rastreio).toHaveBeenCalledWith('DemoQuestionAnswered', { correct: false }, { proprio: true });
   });
 
-  it('manda at_demo_question_viewed e at_plans_section_viewed quando aparecem na tela', () => {
+  it('manda at_daily_challenge_viewed e at_plans_section_viewed quando aparecem na tela', async () => {
+    const { createDesafioHandler } = await import('../../api/desafio');
+    bridgeApi({ '/api/desafio': createDesafioHandler() });
     const { container } = renderAt('/', { status: 'signedOut' });
-    aparecer(container.querySelector('.demo-question')!);
+    await screen.findByRole('button', { name: 'Conferir resposta' });
+    aparecer(container.querySelector('.desafio')!);
     aparecer(container.querySelector('#planos')!);
-    expect(rastreio).toHaveBeenCalledWith('at_demo_question_viewed', { page: '/' }, { proprio: true });
+    expect(rastreio).toHaveBeenCalledWith('at_daily_challenge_viewed', { page: '/' }, { proprio: true });
     expect(rastreio).toHaveBeenCalledWith('at_plans_section_viewed', { page: '/' }, { proprio: true });
   });
 

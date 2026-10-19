@@ -9,7 +9,7 @@ import type { JogoTipo, Mode, Nivel, Plan } from '../shared/game.js';
 import { db } from './db.js';
 import { PERCENTILE_MIN, StatsConflict, type GameStore, type RoundRow, type SimuladoRow, type SimuladoStored, type UserTx } from './game.js';
 import { postgresQuestions } from './questions-pg.js';
-import { answers, gameRounds, missionClaims, phaseCompletions, profiles, questionState, questionStats, simulados, studyPlans, userStats } from './schema.js';
+import { answers, casaTico, gameRounds, missionClaims, phaseCompletions, profiles, questionState, questionStats, simulados, studyPlans, userStats } from './schema.js';
 
 type Tx = Parameters<Parameters<ReturnType<typeof db>['transaction']>[0]>[0];
 
@@ -80,6 +80,13 @@ function userTx(tx: Tx, userId: string): UserTx {
     async saveStudyProfile(p) {
       const values = { prova: p.prova, banca: p.banca, dataProva: p.dataProva, minutosDia: p.minutosDia, nivel: p.nivel, disciplinas: p.disciplinas, updatedAt: new Date() };
       await tx.insert(studyPlans).values({ userId, ...values }).onConflictDoUpdate({ target: studyPlans.userId, set: values });
+    },
+    async casa() {
+      const [row] = await tx.select({ itens: casaTico.itens }).from(casaTico).where(eq(casaTico.userId, userId)).limit(1);
+      return row ? (row.itens as Record<string, string>) : null;
+    },
+    async saveCasa(itens) {
+      await tx.insert(casaTico).values({ userId, itens }).onConflictDoUpdate({ target: casaTico.userId, set: { itens, updatedAt: new Date() } });
     },
     async completedPhases() {
       const rows = await tx.select({ phaseId: phaseCompletions.phaseId, day: phaseCompletions.day }).from(phaseCompletions).where(eq(phaseCompletions.userId, userId));

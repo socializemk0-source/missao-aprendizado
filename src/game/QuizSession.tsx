@@ -13,6 +13,7 @@ import { ApiError } from '../lib/api';
 import { fonteLabel, game, timeUntil } from '../lib/game';
 import { play } from '../lib/sound';
 import { useProgress } from './ProgressProvider';
+import { Enunciado } from './Enunciado';
 
 interface Summary { answered: number; correct: number; xp: number; phaseDone: AnswerResult['faseConcluida'] }
 
@@ -171,7 +172,7 @@ export function QuizSession({ session, timeLimitSec, exitTo = '/jogar', nextLabe
 
       <article className="quiz-card card" aria-labelledby="quiz-q">
         <p className="eyebrow">{current.assunto} · {fonteLabel(current.fonte)}</p>
-        <h2 id="quiz-q" className="quiz-question">{current.enunciado}</h2>
+        <Enunciado id="quiz-q" texto={current.enunciado} />
         <div className="demo-options" role="radiogroup" aria-label="Alternativas">
           {current.alternativas.map((alt, i) => (
             <button

@@ -17,10 +17,18 @@ for (const lote of lotes) {
   const bank = lote.arquivos.flatMap((f) => JSON.parse(readFileSync(`content/banco/${f}`, 'utf8')));
   const rows = linhas(bank);
   const out = `supabase/migrations/${lote.migracao}`;
-  writeFileSync(out, `-- Questões autorais em revisão (content/banco/${lote.arquivos.join(', ')}).
+  const oficial = bank.every((q) => q.fonte.tipo === 'oficial');
+  const cabecalho = oficial
+    ? `-- Questões de provas oficiais (content/banco/${lote.arquivos.join(', ')}).
+-- Arquivo gerado por scripts/banco-sql.mjs. Não edite à mão.
+-- Entram com status 'ativa': o gabarito é o definitivo da banca, registrado em
+-- content/banco/provas-oficiais.json e conferido em teste. Rodar de novo não
+-- sobrescreve nada.`
+    : `-- Questões autorais em revisão (content/banco/${lote.arquivos.join(', ')}).
 -- Arquivo gerado por scripts/banco-sql.mjs. Não edite à mão.
 -- Entram com status 'revisao': só aparecem para o aluno quando um professor
--- revisar e mudar para 'ativa'. Rodar de novo não sobrescreve nada.
+-- revisar e mudar para 'ativa'. Rodar de novo não sobrescreve nada.`;
+  writeFileSync(out, `${cabecalho}
 INSERT INTO v2.questions (id, disciplina, assunto, enunciado, alternativas, correta, explicacao, fonte, dificuldade, status) VALUES
 ${rows.join(',\n')}
 ON CONFLICT (id) DO NOTHING;
@@ -35,14 +43,15 @@ const SYNC = 'supabase/migrations/0013_v2_banco_sincroniza.sql';
 const todas = lotes.flatMap((l) => l.arquivos).flatMap((f) => JSON.parse(readFileSync(`content/banco/${f}`, 'utf8')));
 writeFileSync(SYNC, `-- Sincroniza o texto das questões do banco com content/banco/*.json.
 -- Arquivo gerado por scripts/banco-sql.mjs. Não edite à mão.
--- Atualiza só as questões que ainda estão em 'revisao' (as aprovadas por um
--- professor ficam como estão). Pode rodar de novo sem estragar nada.
+-- Atualiza as autorais que ainda estão em 'revisao' (as aprovadas por um
+-- professor ficam como estão) e as oficiais (o texto e a explicação são os
+-- deste repositório). Não muda o status. Pode rodar de novo sem estragar nada.
 INSERT INTO v2.questions (id, disciplina, assunto, enunciado, alternativas, correta, explicacao, fonte, dificuldade, status) VALUES
 ${linhas(todas).join(',\n')}
 ON CONFLICT (id) DO UPDATE SET
   disciplina = EXCLUDED.disciplina, assunto = EXCLUDED.assunto, enunciado = EXCLUDED.enunciado,
   alternativas = EXCLUDED.alternativas, correta = EXCLUDED.correta, explicacao = EXCLUDED.explicacao,
   fonte = EXCLUDED.fonte, dificuldade = EXCLUDED.dificuldade, updated_at = now()
-WHERE v2.questions.status = 'revisao';
+WHERE v2.questions.status = 'revisao' OR v2.questions.fonte->>'tipo' = 'oficial';
 `);
 console.log(`${SYNC}: ${todas.length} questões (sincronização)`);

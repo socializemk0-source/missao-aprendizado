@@ -4,6 +4,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 import type { Session } from '@supabase/supabase-js';
 import { api, type Me, type Profile } from '../lib/api';
+import { registrarCadastroSocial } from '../lib/cadastro-social';
 import { getSupabase } from '../lib/supabase';
 
 type Status = 'loading' | 'signedOut' | 'signedIn' | 'unavailable';
@@ -65,6 +66,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (userId) void refreshMe();
   }, [userId, refreshMe]);
+
+  // Conta nova pelo Google conta como cadastro para os anúncios (uma vez só).
+  const user = session?.user;
+  useEffect(() => {
+    if (user) registrarCadastroSocial(user);
+  }, [user]);
 
   const updateProfile = useCallback(async (fields: Partial<Profile>) => {
     setMe(await api<Me>('/api/me', { method: 'PATCH', body: JSON.stringify(fields) }));

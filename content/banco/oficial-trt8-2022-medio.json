@@ -1,0 +1,366 @@
+[
+  {
+    "id": "trt8-22-nm-001",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CG2A1-I\n\nO trabalho é considerado algo central na vida dos sujeitos, ainda mais com o crescimento da expectativa de vida, sendo um mediador dos ciclos da existência dos trabalhadores. E algo que é considerado de extrema importância nesse contexto é o processo de aposentadoria. Nos últimos anos, a aposentadoria tornou-se um tema de grande relevância no estudo do planejamento de carreira.\n\nDo ponto de vista etimológico, a palavra “aposentadoria” carrega em si uma dualidade de significados inerentes a esse fenômeno. Enquanto, por um lado, a aposentadoria remete à alegria e à liberdade, por outro, ela está associada à ideia de retirar-se aos seus aposentos, ao espaço de não trabalho, podendo ser frequentemente associada ao abandono, à inatividade e à finitude.\n\nDesse modo, a aposentadoria pode ser interpretada de duas formas: a positiva e a negativa. A interpretação positiva, que, de forma geral, se relaciona à noção de uma conquista ou de uma recompensa do trabalhador, destaca a aposentadoria como uma liberdade de o indivíduo gerenciar sua própria vida, de maneira a moldar sua rotina como preferir, investindo mais em atividades pessoais, sociais e familiares. A interpretação negativa, por sua vez, está vinculada a problemas financeiros, perda de status social, perda de amigos, sensação de inutilidade ou desocupação, entre outras situações. Além disso, com a expectativa negativa em relação à aposentadoria, surgem sentimentos de ansiedade, incertezas e inquietações sobre o futuro.\n\nAniéli Pires. Aposentadoria, suas perspectivas e as repercussões da pandemia. In: Revista Científica Semana Acadêmica, Fortaleza, n.º 000223, 2022. Internet: <semanaacademica.org.br> (com adaptações).\n\nCom relação às ideias do texto CG2A1-I, assinale a opção correta.",
+    "alternativas": [
+      "O trabalho é considerado algo positivo na vida das pessoas, já a aposentadoria é interpretada de forma negativa pela maior parte dos trabalhadores.",
+      "A desocupação e a sensação de inutilidade são aspectos considerados positivos no fenômeno da aposentadoria.",
+      "Um dos aspectos negativos da aposentadoria é a questão financeira.",
+      "Com o crescimento da expectativa de vida, a aposentadoria tem sido considerada um fenômeno eminentemente positivo.",
+      "A carreira tornou-se, nos últimos anos, um tema de grande relevância no estudo do planejamento da aposentadoria."
+    ],
+    "correta": 2,
+    "dificuldade": 1,
+    "explicacao": "O texto lista, entre os aspectos negativos da aposentadoria, os problemas financeiros. As outras opções distorcem o texto: ele não diz que a maioria vê a aposentadoria de forma negativa, não trata desocupação e inutilidade como positivas, não afirma que a aposentadoria passou a ser vista como eminentemente positiva e diz que a aposentadoria (e não a carreira) virou tema relevante no planejamento de carreira.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "TRT 8.ª Região",
+      "cargo": "Técnico Judiciário (nível médio)",
+      "ano": 2022,
+      "prova": "trt8-2022-medio",
+      "item": 1
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "trt8-22-nm-002",
+    "disciplina": "portugues",
+    "assunto": "Acentuação gráfica",
+    "enunciado": "Texto CG2A1-I\n\nO trabalho é considerado algo central na vida dos sujeitos, ainda mais com o crescimento da expectativa de vida, sendo um mediador dos ciclos da existência dos trabalhadores. E algo que é considerado de extrema importância nesse contexto é o processo de aposentadoria. Nos últimos anos, a aposentadoria tornou-se um tema de grande relevância no estudo do planejamento de carreira.\n\nDo ponto de vista etimológico, a palavra “aposentadoria” carrega em si uma dualidade de significados inerentes a esse fenômeno. Enquanto, por um lado, a aposentadoria remete à alegria e à liberdade, por outro, ela está associada à ideia de retirar-se aos seus aposentos, ao espaço de não trabalho, podendo ser frequentemente associada ao abandono, à inatividade e à finitude.\n\nDesse modo, a aposentadoria pode ser interpretada de duas formas: a positiva e a negativa. A interpretação positiva, que, de forma geral, se relaciona à noção de uma conquista ou de uma recompensa do trabalhador, destaca a aposentadoria como uma liberdade de o indivíduo gerenciar sua própria vida, de maneira a moldar sua rotina como preferir, investindo mais em atividades pessoais, sociais e familiares. A interpretação negativa, por sua vez, está vinculada a problemas financeiros, perda de status social, perda de amigos, sensação de inutilidade ou desocupação, entre outras situações. Além disso, com a expectativa negativa em relação à aposentadoria, surgem sentimentos de ansiedade, incertezas e inquietações sobre o futuro.\n\nAniéli Pires. Aposentadoria, suas perspectivas e as repercussões da pandemia. In: Revista Científica Semana Acadêmica, Fortaleza, n.º 000223, 2022. Internet: <semanaacademica.org.br> (com adaptações).\n\nNo que se refere aos aspectos linguísticos do texto CG2A1-I, assinale a opção correta.",
+    "alternativas": [
+      "A correção gramatical e o sentido do texto seriam preservados caso a expressão “inerentes a” (primeiro período do segundo parágrafo) fosse substituído por inerentes à.",
+      "O emprego do acento nos vocábulos “etimológico” e “fenômeno” (primeiro período do segundo parágrafo) justifica-se pela mesma regra de acentuação gráfica.",
+      "A supressão da vírgula logo após “aposentos” (segundo período do segundo parágrafo) manteria a coesão e a correção gramatical do texto, uma vez que, no contexto dado, seu emprego é facultativo.",
+      "A substituição da palavra “dualidade” (primeiro período do segundo parágrafo) por ambiguidade manteria a coesão e o sentido original do texto.",
+      "O pronome “si” (primeiro período do segundo parágrafo) remete ao termo “dualidade”, no mesmo período."
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "\"Etimológico\" (e-ti-mo-ló-gi-co) e \"fenômeno\" (fe-nô-me-no) são proparoxítonas, e toda proparoxítona é acentuada: mesma regra. Nas outras: \"inerentes à\" ficaria errado (não há artigo antes de \"um fenômeno\"/\"esse fenômeno\"); a vírgula depois de \"aposentos\" isola um aposto e não pode sair; \"ambiguidade\" não tem o mesmo sentido de \"dualidade\"; e \"si\" retoma \"a palavra aposentadoria\", não \"dualidade\".",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "TRT 8.ª Região",
+      "cargo": "Técnico Judiciário (nível médio)",
+      "ano": 2022,
+      "prova": "trt8-2022-medio",
+      "item": 2
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "trt8-22-nm-003",
+    "disciplina": "portugues",
+    "assunto": "Reescrita de frases",
+    "enunciado": "Texto CG2A1-I\n\nO trabalho é considerado algo central na vida dos sujeitos, ainda mais com o crescimento da expectativa de vida, sendo um mediador dos ciclos da existência dos trabalhadores. E algo que é considerado de extrema importância nesse contexto é o processo de aposentadoria. Nos últimos anos, a aposentadoria tornou-se um tema de grande relevância no estudo do planejamento de carreira.\n\nDo ponto de vista etimológico, a palavra “aposentadoria” carrega em si uma dualidade de significados inerentes a esse fenômeno. Enquanto, por um lado, a aposentadoria remete à alegria e à liberdade, por outro, ela está associada à ideia de retirar-se aos seus aposentos, ao espaço de não trabalho, podendo ser frequentemente associada ao abandono, à inatividade e à finitude.\n\nDesse modo, a aposentadoria pode ser interpretada de duas formas: a positiva e a negativa. A interpretação positiva, que, de forma geral, se relaciona à noção de uma conquista ou de uma recompensa do trabalhador, destaca a aposentadoria como uma liberdade de o indivíduo gerenciar sua própria vida, de maneira a moldar sua rotina como preferir, investindo mais em atividades pessoais, sociais e familiares. A interpretação negativa, por sua vez, está vinculada a problemas financeiros, perda de status social, perda de amigos, sensação de inutilidade ou desocupação, entre outras situações. Além disso, com a expectativa negativa em relação à aposentadoria, surgem sentimentos de ansiedade, incertezas e inquietações sobre o futuro.\n\nAniéli Pires. Aposentadoria, suas perspectivas e as repercussões da pandemia. In: Revista Científica Semana Acadêmica, Fortaleza, n.º 000223, 2022. Internet: <semanaacademica.org.br> (com adaptações).\n\nEm cada uma das opções a seguir, é apresentada uma proposta de reescrita do trecho “E algo que é considerado de extrema importância nesse contexto é o processo de aposentadoria” (segundo período do primeiro parágrafo). Assinale a opção cuja proposta de reescrita mantém o sentido, a coerência e a correção gramatical do texto CG2A1-I.",
+    "alternativas": [
+      "E algo que é considerado nesse contexto de extrema importância, é o processo de aposentadoria.",
+      "E o processo, considerado de extrema importância nesse contexto, é o de aposentadoria.",
+      "E o processo de aposentadoria é algo considerado de extrema importância nesse contexto.",
+      "E o que é considerado de extrema importância nesse contexto é, o processo de aposentadoria.",
+      "E, algo que é considerado de extrema importância nesse contexto, é o processo de aposentadoria."
+    ],
+    "correta": 2,
+    "dificuldade": 2,
+    "explicacao": "\"E o processo de aposentadoria é algo considerado de extrema importância nesse contexto\" só inverte a ordem, sem mudar sentido nem correção. As demais erram ao separar o sujeito do verbo por vírgula (\"…de extrema importância, é\", \"…nesse contexto é, o processo\") ou mudam o sentido (dizer que \"o processo considerado importante é o de aposentadoria\").",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "TRT 8.ª Região",
+      "cargo": "Técnico Judiciário (nível médio)",
+      "ano": 2022,
+      "prova": "trt8-2022-medio",
+      "item": 3
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "trt8-22-nm-004",
+    "disciplina": "portugues",
+    "assunto": "Pontuação",
+    "enunciado": "Texto CG2A1-I\n\nO trabalho é considerado algo central na vida dos sujeitos, ainda mais com o crescimento da expectativa de vida, sendo um mediador dos ciclos da existência dos trabalhadores. E algo que é considerado de extrema importância nesse contexto é o processo de aposentadoria. Nos últimos anos, a aposentadoria tornou-se um tema de grande relevância no estudo do planejamento de carreira.\n\nDo ponto de vista etimológico, a palavra “aposentadoria” carrega em si uma dualidade de significados inerentes a esse fenômeno. Enquanto, por um lado, a aposentadoria remete à alegria e à liberdade, por outro, ela está associada à ideia de retirar-se aos seus aposentos, ao espaço de não trabalho, podendo ser frequentemente associada ao abandono, à inatividade e à finitude.\n\nDesse modo, a aposentadoria pode ser interpretada de duas formas: a positiva e a negativa. A interpretação positiva, que, de forma geral, se relaciona à noção de uma conquista ou de uma recompensa do trabalhador, destaca a aposentadoria como uma liberdade de o indivíduo gerenciar sua própria vida, de maneira a moldar sua rotina como preferir, investindo mais em atividades pessoais, sociais e familiares. A interpretação negativa, por sua vez, está vinculada a problemas financeiros, perda de status social, perda de amigos, sensação de inutilidade ou desocupação, entre outras situações. Além disso, com a expectativa negativa em relação à aposentadoria, surgem sentimentos de ansiedade, incertezas e inquietações sobre o futuro.\n\nAniéli Pires. Aposentadoria, suas perspectivas e as repercussões da pandemia. In: Revista Científica Semana Acadêmica, Fortaleza, n.º 000223, 2022. Internet: <semanaacademica.org.br> (com adaptações).\n\nO sinal de dois-pontos empregado após “duas formas” (primeiro período do terceiro parágrafo do texto CG2A1-I) introduz um(a)",
+    "alternativas": [
+      "citação.",
+      "conclusão.",
+      "diálogo.",
+      "enumeração.",
+      "concessão."
+    ],
+    "correta": 3,
+    "dificuldade": 1,
+    "explicacao": "Depois de \"pode ser interpretada de duas formas\", os dois-pontos anunciam quais são elas: \"a positiva e a negativa\". É uma enumeração.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "TRT 8.ª Região",
+      "cargo": "Técnico Judiciário (nível médio)",
+      "ano": 2022,
+      "prova": "trt8-2022-medio",
+      "item": 4
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "trt8-22-nm-005",
+    "disciplina": "portugues",
+    "assunto": "Orações adjetivas",
+    "enunciado": "Texto CG2A1-I\n\nO trabalho é considerado algo central na vida dos sujeitos, ainda mais com o crescimento da expectativa de vida, sendo um mediador dos ciclos da existência dos trabalhadores. E algo que é considerado de extrema importância nesse contexto é o processo de aposentadoria. Nos últimos anos, a aposentadoria tornou-se um tema de grande relevância no estudo do planejamento de carreira.\n\nDo ponto de vista etimológico, a palavra “aposentadoria” carrega em si uma dualidade de significados inerentes a esse fenômeno. Enquanto, por um lado, a aposentadoria remete à alegria e à liberdade, por outro, ela está associada à ideia de retirar-se aos seus aposentos, ao espaço de não trabalho, podendo ser frequentemente associada ao abandono, à inatividade e à finitude.\n\nDesse modo, a aposentadoria pode ser interpretada de duas formas: a positiva e a negativa. A interpretação positiva, que, de forma geral, se relaciona à noção de uma conquista ou de uma recompensa do trabalhador, destaca a aposentadoria como uma liberdade de o indivíduo gerenciar sua própria vida, de maneira a moldar sua rotina como preferir, investindo mais em atividades pessoais, sociais e familiares. A interpretação negativa, por sua vez, está vinculada a problemas financeiros, perda de status social, perda de amigos, sensação de inutilidade ou desocupação, entre outras situações. Além disso, com a expectativa negativa em relação à aposentadoria, surgem sentimentos de ansiedade, incertezas e inquietações sobre o futuro.\n\nAniéli Pires. Aposentadoria, suas perspectivas e as repercussões da pandemia. In: Revista Científica Semana Acadêmica, Fortaleza, n.º 000223, 2022. Internet: <semanaacademica.org.br> (com adaptações).\n\nA oração “que, de forma geral, se relaciona à noção de uma conquista ou de uma recompensa do trabalhador”, no segundo período do terceiro parágrafo,",
+    "alternativas": [
+      "explica a expressão “a interpretação positiva”.",
+      "restringe o sentido da expressão “a interpretação positiva”.",
+      "complementa o substantivo “interpretação”.",
+      "está subordinada ao termo “aposentadoria”, no período anterior.",
+      "está coordenada à expressão “a interpretação positiva”."
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "A oração \"que [...] se relaciona à noção de uma conquista\" vem entre vírgulas e acrescenta uma explicação sobre \"a interpretação positiva\", sem restringir o sentido: é oração adjetiva explicativa. Se fosse restritiva, viria sem vírgulas.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "TRT 8.ª Região",
+      "cargo": "Técnico Judiciário (nível médio)",
+      "ano": 2022,
+      "prova": "trt8-2022-medio",
+      "item": 5
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "trt8-22-nm-006",
+    "disciplina": "portugues",
+    "assunto": "Sentido das palavras",
+    "enunciado": "Texto CG2A1-I\n\nO trabalho é considerado algo central na vida dos sujeitos, ainda mais com o crescimento da expectativa de vida, sendo um mediador dos ciclos da existência dos trabalhadores. E algo que é considerado de extrema importância nesse contexto é o processo de aposentadoria. Nos últimos anos, a aposentadoria tornou-se um tema de grande relevância no estudo do planejamento de carreira.\n\nDo ponto de vista etimológico, a palavra “aposentadoria” carrega em si uma dualidade de significados inerentes a esse fenômeno. Enquanto, por um lado, a aposentadoria remete à alegria e à liberdade, por outro, ela está associada à ideia de retirar-se aos seus aposentos, ao espaço de não trabalho, podendo ser frequentemente associada ao abandono, à inatividade e à finitude.\n\nDesse modo, a aposentadoria pode ser interpretada de duas formas: a positiva e a negativa. A interpretação positiva, que, de forma geral, se relaciona à noção de uma conquista ou de uma recompensa do trabalhador, destaca a aposentadoria como uma liberdade de o indivíduo gerenciar sua própria vida, de maneira a moldar sua rotina como preferir, investindo mais em atividades pessoais, sociais e familiares. A interpretação negativa, por sua vez, está vinculada a problemas financeiros, perda de status social, perda de amigos, sensação de inutilidade ou desocupação, entre outras situações. Além disso, com a expectativa negativa em relação à aposentadoria, surgem sentimentos de ansiedade, incertezas e inquietações sobre o futuro.\n\nAniéli Pires. Aposentadoria, suas perspectivas e as repercussões da pandemia. In: Revista Científica Semana Acadêmica, Fortaleza, n.º 000223, 2022. Internet: <semanaacademica.org.br> (com adaptações).\n\nNo segundo período do segundo parágrafo, o verbo “retirar-se” poderia ser substituído, mantida a correção gramatical e os sentidos do texto CG2A1-I, por",
+    "alternativas": [
+      "tirar.",
+      "se remover.",
+      "retirar.",
+      "ausentar-se.",
+      "se recolher."
+    ],
+    "correta": 4,
+    "dificuldade": 1,
+    "explicacao": "\"Retirar-se aos seus aposentos\" é recolher-se ao quarto, ao espaço de descanso. \"Se recolher\" mantém o sentido e a correção. \"Tirar\" e \"retirar\" (sem o pronome) mudam o sentido, \"se remover\" não se usa assim e \"ausentar-se\" quer dizer sair de algum lugar.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "TRT 8.ª Região",
+      "cargo": "Técnico Judiciário (nível médio)",
+      "ano": 2022,
+      "prova": "trt8-2022-medio",
+      "item": 6
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "trt8-22-nm-009",
+    "disciplina": "rlm",
+    "assunto": "Lógica: argumentos",
+    "enunciado": "Considere o argumento presente no texto a seguir.\n\nO Rio Xingu é conhecido por ter sereias azuis com cabelos negros cacheados, pois todo rio com mais de 10 mil km de extensão cruza o estado do Pará, todos os rios que cruzam o estado do Pará são famosos por terem sereias azuis com cabelos negros cacheados, e o Rio Xingu tem 14 mil km de extensão.\n\nCom base nas informações apresentadas, assinale a opção correta.",
+    "alternativas": [
+      "Esse argumento é inválido, pois sua conclusão é falsa.",
+      "O trecho “todos os rios que cruzam o estado do Pará são famosos por terem sereias azuis com cabelos negros cacheados” é uma proposição lógica composta.",
+      "O trecho “o Rio Xingu tem 14 mil km de extensão” é a conclusão desse argumento.",
+      "Esse argumento é inválido, pois o Rio Xingu tem extensão menor que 3 mil km.",
+      "Esse argumento possui três premissas."
+    ],
+    "correta": 4,
+    "dificuldade": 2,
+    "explicacao": "O argumento tem três premissas: todo rio com mais de 10 mil km cruza o Pará; todos os rios que cruzam o Pará têm sereias azuis; e o Rio Xingu tem 14 mil km. A conclusão é o que vem antes do \"pois\": o Xingu é conhecido pelas sereias. O argumento é válido, mesmo com premissas falsas: validade depende só da forma.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "TRT 8.ª Região",
+      "cargo": "Técnico Judiciário (nível médio)",
+      "ano": 2022,
+      "prova": "trt8-2022-medio",
+      "item": 9
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "trt8-22-nm-011",
+    "disciplina": "rlm",
+    "assunto": "Lógica: equivalências",
+    "enunciado": "Considere que as proposições lógicas simples sejam representadas por letras maiúsculas e que os símbolos lógicos usuais sejam representados de acordo com a tabela a seguir.\nconjunção: ˄\ndisjunção: ˅\nnegação: ~\ncondicional: ⇒\nbicondicional: ⇔\n\nNessa situação hipotética, a proposição lógica\n((P ˅ Q) ˄ R) ⇒ (S ˅ T)\né equivalente à proposição lógica",
+    "alternativas": [
+      "(((P ˅ Q) ˄ R) ⇒ S) ˅ (((P ˅ Q) ˄ R) ⇒ T).",
+      "((P ˄ Q) ˅ R) ⇒ ~(S ˅ T).",
+      "(~(P ˄ Q) ˅ ~R) ⇒ ~(S ˅ T).",
+      "~(S ˅ T) ⇒ (~P ˅ ~Q) ˄~ R).",
+      "(~S ˄ ~T) ⇒ ~(Q ˄ R) ˄~ (P ˄ R)."
+    ],
+    "correta": 4,
+    "dificuldade": 3,
+    "explicacao": "Uma condicional equivale à sua contrapositiva: ~(S ˅ T) ⇒ ~((P ˅ Q) ˄ R). Pela lei de De Morgan, ~(S ˅ T) é ~S ˄ ~T. E (P ˅ Q) ˄ R é o mesmo que (P ˄ R) ˅ (Q ˄ R); negando, fica ~(P ˄ R) ˄ ~(Q ˄ R). Juntando: (~S ˄ ~T) ⇒ ~(Q ˄ R) ˄ ~(P ˄ R).",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "TRT 8.ª Região",
+      "cargo": "Técnico Judiciário (nível médio)",
+      "ano": 2022,
+      "prova": "trt8-2022-medio",
+      "item": 11
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "trt8-22-nm-012",
+    "disciplina": "informatica",
+    "assunto": "LibreOffice Writer",
+    "enunciado": "No LibreOffice Writer, para criar um novo documento a partir de alterações em um documento existente, mantendo-se a versão original do mesmo, usa-se a opção",
+    "alternativas": [
+      "Fechar → Não salvar.",
+      "Salvar.",
+      "Salvar como modelo.",
+      "Salvar como.",
+      "Exportar diretamente como PDF."
+    ],
+    "correta": 3,
+    "dificuldade": 1,
+    "explicacao": "\"Salvar como\" grava as alterações num arquivo novo, com outro nome, e deixa o original como estava. \"Salvar\" sobrescreveria o original.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "TRT 8.ª Região",
+      "cargo": "Técnico Judiciário (nível médio)",
+      "ano": 2022,
+      "prova": "trt8-2022-medio",
+      "item": 12
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "trt8-22-nm-013",
+    "disciplina": "informatica",
+    "assunto": "LibreOffice Calc",
+    "enunciado": "O LibreOffice Calc permite incluir, em tabelas, fórmulas para executar cálculos, retornar informações e manipular o conteúdo de outras células. Para realizar, por exemplo, operações de soma ou cálculo de média aritmética, as fórmulas são utilizadas com um conjunto de opções denominado",
+    "alternativas": [
+      "funções.",
+      "dados.",
+      "caracteres especiais.",
+      "campos.",
+      "formato numérico."
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Soma, média e outros cálculos prontos são funções (SOMA, MÉDIA etc.), usadas dentro das fórmulas.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "TRT 8.ª Região",
+      "cargo": "Técnico Judiciário (nível médio)",
+      "ano": 2022,
+      "prova": "trt8-2022-medio",
+      "item": 13
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "trt8-22-nm-014",
+    "disciplina": "informatica",
+    "assunto": "Navegadores",
+    "enunciado": "No navegador da web Google Chrome, é possível ter acesso aos endereços das páginas visitadas pelo usuário, por data de visitação e por jornadas, via a opção",
+    "alternativas": [
+      "Downloads.",
+      "Limpar dados de navegação.",
+      "Extensões.",
+      "Histórico.",
+      "Bookmarks."
+    ],
+    "correta": 3,
+    "dificuldade": 1,
+    "explicacao": "O Histórico do Chrome lista as páginas visitadas, por data, e também agrupa as visitas em \"jornadas\" por assunto.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "TRT 8.ª Região",
+      "cargo": "Técnico Judiciário (nível médio)",
+      "ano": 2022,
+      "prova": "trt8-2022-medio",
+      "item": 14
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "trt8-22-nm-015",
+    "disciplina": "informatica",
+    "assunto": "Navegadores",
+    "enunciado": "O Microsoft Edge é um navegador da Internet que, ao ser aberto, oferece um ambiente de consulta a conteúdos da Web. Esse ambiente é formado por",
+    "alternativas": [
+      "janelas e guias.",
+      "localizar na página.",
+      "captura da web.",
+      "ferramentas Microsoft Office.",
+      "caixas de entrada."
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "O Edge, como os outros navegadores, organiza a navegação em janelas, e cada janela pode ter várias guias (abas).",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "TRT 8.ª Região",
+      "cargo": "Técnico Judiciário (nível médio)",
+      "ano": 2022,
+      "prova": "trt8-2022-medio",
+      "item": 15
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "trt8-22-nm-016",
+    "disciplina": "informatica",
+    "assunto": "Ferramentas de reunião",
+    "enunciado": "Para participar de uma reunião no Google Meet, um usuário convidado recebe um link de acesso à reunião. Para entrar na reunião, o usuário deverá acionar a opção",
+    "alternativas": [
+      "Aplicar efeitos visuais.",
+      "Ativar legendas.",
+      "Ativar câmera.",
+      "Pedir para participar.",
+      "Ativar microfone."
+    ],
+    "correta": 3,
+    "dificuldade": 1,
+    "explicacao": "Quem é convidado e abre o link do Meet precisa clicar em \"Pedir para participar\"; o organizador então aceita a entrada. Câmera, microfone, legendas e efeitos são ajustes, não a entrada na reunião.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "TRT 8.ª Região",
+      "cargo": "Técnico Judiciário (nível médio)",
+      "ano": 2022,
+      "prova": "trt8-2022-medio",
+      "item": 16
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "trt8-22-nm-017",
+    "disciplina": "informatica",
+    "assunto": "Correio eletrônico",
+    "enunciado": "A ferramenta de correio eletrônico Gmail permite que, ao se criar uma nova mensagem, possa ser inserida uma imagem visível dentro do corpo da mensagem. Para acionar esse recurso, usa-se a opção",
+    "alternativas": [
+      "Anexar arquivos.",
+      "Editar fonte.",
+      "Inserir link.",
+      "Inserir arquivos com o Google Drive.",
+      "Inserir foto."
+    ],
+    "correta": 4,
+    "dificuldade": 1,
+    "explicacao": "No Gmail, \"Inserir foto\" coloca a imagem dentro do corpo da mensagem (no texto). \"Anexar arquivos\" a enviaria como anexo, fora do corpo.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "TRT 8.ª Região",
+      "cargo": "Técnico Judiciário (nível médio)",
+      "ano": 2022,
+      "prova": "trt8-2022-medio",
+      "item": 17
+    },
+    "status": "ativa"
+  }
+]
