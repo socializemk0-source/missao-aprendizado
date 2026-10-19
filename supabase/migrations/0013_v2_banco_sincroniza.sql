@@ -7306,7 +7306,774 @@ Daniel Everett. Linguagem: a história da maior invenção da humanidade. Tradu�
 
 Julgue o item a seguir, relativo a aspectos linguísticos do texto CB1A1-III.
 
-As orações “o quão ocupadas algumas pessoas estejam” e “não participarem de alguma conversa na tela à sua frente”, no terceiro período, são ambas orações que exercem a função de sujeito.', '["Certo","Errado"]'::jsonb, 0, 'Certo. O que "não importa" é "o quão ocupadas algumas pessoas estejam", e o que "é difícil" é "não participarem de alguma conversa". As duas orações são sujeito dessas construções.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Nacional da Propriedade Industrial (INPI)","cargo":"Analista de Planejamento, Gestão e Infraestrutura, Pesquisador e Tecnologista em Propriedade Industrial","ano":2023,"prova":"inpi-2023-cb","item":35}'::jsonb, 3, 'ativa')
+As orações “o quão ocupadas algumas pessoas estejam” e “não participarem de alguma conversa na tela à sua frente”, no terceiro período, são ambas orações que exercem a função de sujeito.', '["Certo","Errado"]'::jsonb, 0, 'Certo. O que "não importa" é "o quão ocupadas algumas pessoas estejam", e o que "é difícil" é "não participarem de alguma conversa". As duas orações são sujeito dessas construções.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Nacional da Propriedade Industrial (INPI)","cargo":"Analista de Planejamento, Gestão e Infraestrutura, Pesquisador e Tecnologista em Propriedade Industrial","ano":2023,"prova":"inpi-2023-cb","item":35}'::jsonb, 3, 'ativa'),
+  ('anvisa24-001', 'portugues', 'Crase', 'Texto (Happycracia)
+
+Devemos salientar mais uma vez o caráter essencial dos sentimentos negativos. Manifestações populares e mudança social advêm do acúmulo de muitos cidadãos irritados e ofendidos. Ocultar sentimentos negativos sob o tapete do pensamento positivo significa estigmatizar e tornar vexaminosa a estrutura emocional do mal-estar social e da instabilidade. Alguns dirão que optamos por privar trabalhadores dos benefícios da ciência do bem-estar em troca do aceno de uma ideia vaga de consciência coletiva. A felicidade, como alguns empiristas ferrenhos afirmarão, é o único bem tangível em que podemos pôr as mãos aqui e agora. Nossa resposta e nossa objeção final podem ser encontradas na famosa refutação do utilitarismo do filósofo Robert Nozick. Em 1974, ele pediu a seus leitores que participassem de um experimento mental que consistia em imaginar que estamos conectados a uma máquina que nos proporciona qualquer experiência prazerosa. Nossos cérebros seriam estimulados a acreditar que estaríamos vivendo a vida que desejamos. A pergunta de Nozick, então, era: dada a possibilidade de escolha, você preferiria a máquina prazerosa à vida real (e presumivelmente mais infeliz)? Uma resposta a essa questão parece hoje ainda mais relevante do que antes, sobretudo agora que a ciência da felicidade e as tecnologias virtuais se tornam tão predominantes. Nossa resposta, assim como a de Nozick, é a de que o prazer e a busca da felicidade não podem superar a realidade e a busca por conhecimento — o pensamento crítico sobre nós mesmos e sobre o mundo que nos rodeia. Uma “máquina da experiência” do tipo que Nozick imaginou tem hoje seu equivalente em uma indústria da felicidade que pretende nos controlar: ela não apenas borra e confunde a capacidade de conhecer as condições que moldam nossa existência, mas também faz que essas condições em si sejam irrelevantes. Conhecimento e justiça, e não felicidade, continuam a ser o propósito moral revolucionário da vida.
+
+Edgar Cabanas e Eva Illouiz. Happycracia: fabricando cidadãos felizes. São Paulo: Ubu, 2022, p. 274-275 (com adaptações).
+
+Acerca das ideias e de aspectos linguísticos do texto apresentado, julgue o item a seguir.
+
+Em “você preferiria a máquina prazerosa à vida real” (nono período), o emprego do acento indicativo de crase no vocábulo “à” justifica-se pela regência do termo “prazerosa” somada ao fato de a palavra “vida” ser do gênero feminino e estar empregada com sentido específico no texto, determinado pelo termo “real”.', '["Certo","Errado"]'::jsonb, 1, 'Errado. O acento vem da regência do verbo "preferir": prefere-se uma coisa "a" outra. Essa preposição "a" se junta ao artigo "a" de "vida". O adjetivo "prazerosa" não exige preposição nenhuma.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Agência Nacional de Vigilância Sanitária (ANVISA)","cargo":"Especialista em Regulação e Vigilância Sanitária","ano":2024,"prova":"anvisa-2024-cb","item":1}'::jsonb, 2, 'ativa'),
+  ('anvisa24-002', 'portugues', 'Interpretação de texto', 'Texto (Happycracia)
+
+Devemos salientar mais uma vez o caráter essencial dos sentimentos negativos. Manifestações populares e mudança social advêm do acúmulo de muitos cidadãos irritados e ofendidos. Ocultar sentimentos negativos sob o tapete do pensamento positivo significa estigmatizar e tornar vexaminosa a estrutura emocional do mal-estar social e da instabilidade. Alguns dirão que optamos por privar trabalhadores dos benefícios da ciência do bem-estar em troca do aceno de uma ideia vaga de consciência coletiva. A felicidade, como alguns empiristas ferrenhos afirmarão, é o único bem tangível em que podemos pôr as mãos aqui e agora. Nossa resposta e nossa objeção final podem ser encontradas na famosa refutação do utilitarismo do filósofo Robert Nozick. Em 1974, ele pediu a seus leitores que participassem de um experimento mental que consistia em imaginar que estamos conectados a uma máquina que nos proporciona qualquer experiência prazerosa. Nossos cérebros seriam estimulados a acreditar que estaríamos vivendo a vida que desejamos. A pergunta de Nozick, então, era: dada a possibilidade de escolha, você preferiria a máquina prazerosa à vida real (e presumivelmente mais infeliz)? Uma resposta a essa questão parece hoje ainda mais relevante do que antes, sobretudo agora que a ciência da felicidade e as tecnologias virtuais se tornam tão predominantes. Nossa resposta, assim como a de Nozick, é a de que o prazer e a busca da felicidade não podem superar a realidade e a busca por conhecimento — o pensamento crítico sobre nós mesmos e sobre o mundo que nos rodeia. Uma “máquina da experiência” do tipo que Nozick imaginou tem hoje seu equivalente em uma indústria da felicidade que pretende nos controlar: ela não apenas borra e confunde a capacidade de conhecer as condições que moldam nossa existência, mas também faz que essas condições em si sejam irrelevantes. Conhecimento e justiça, e não felicidade, continuam a ser o propósito moral revolucionário da vida.
+
+Edgar Cabanas e Eva Illouiz. Happycracia: fabricando cidadãos felizes. São Paulo: Ubu, 2022, p. 274-275 (com adaptações).
+
+Acerca das ideias e de aspectos linguísticos do texto apresentado, julgue o item a seguir.
+
+O uso do pensamento positivo com o fim de dissimular sentimentos negativos é condenado pelos autores no texto.', '["Certo","Errado"]'::jsonb, 0, 'Certo. Para os autores, esconder sentimentos negativos "sob o tapete do pensamento positivo" significa estigmatizar o mal-estar social. É uma crítica clara a esse uso.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Agência Nacional de Vigilância Sanitária (ANVISA)","cargo":"Especialista em Regulação e Vigilância Sanitária","ano":2024,"prova":"anvisa-2024-cb","item":2}'::jsonb, 1, 'ativa'),
+  ('anvisa24-003', 'portugues', 'Conectivos', 'Texto (Happycracia)
+
+Devemos salientar mais uma vez o caráter essencial dos sentimentos negativos. Manifestações populares e mudança social advêm do acúmulo de muitos cidadãos irritados e ofendidos. Ocultar sentimentos negativos sob o tapete do pensamento positivo significa estigmatizar e tornar vexaminosa a estrutura emocional do mal-estar social e da instabilidade. Alguns dirão que optamos por privar trabalhadores dos benefícios da ciência do bem-estar em troca do aceno de uma ideia vaga de consciência coletiva. A felicidade, como alguns empiristas ferrenhos afirmarão, é o único bem tangível em que podemos pôr as mãos aqui e agora. Nossa resposta e nossa objeção final podem ser encontradas na famosa refutação do utilitarismo do filósofo Robert Nozick. Em 1974, ele pediu a seus leitores que participassem de um experimento mental que consistia em imaginar que estamos conectados a uma máquina que nos proporciona qualquer experiência prazerosa. Nossos cérebros seriam estimulados a acreditar que estaríamos vivendo a vida que desejamos. A pergunta de Nozick, então, era: dada a possibilidade de escolha, você preferiria a máquina prazerosa à vida real (e presumivelmente mais infeliz)? Uma resposta a essa questão parece hoje ainda mais relevante do que antes, sobretudo agora que a ciência da felicidade e as tecnologias virtuais se tornam tão predominantes. Nossa resposta, assim como a de Nozick, é a de que o prazer e a busca da felicidade não podem superar a realidade e a busca por conhecimento — o pensamento crítico sobre nós mesmos e sobre o mundo que nos rodeia. Uma “máquina da experiência” do tipo que Nozick imaginou tem hoje seu equivalente em uma indústria da felicidade que pretende nos controlar: ela não apenas borra e confunde a capacidade de conhecer as condições que moldam nossa existência, mas também faz que essas condições em si sejam irrelevantes. Conhecimento e justiça, e não felicidade, continuam a ser o propósito moral revolucionário da vida.
+
+Edgar Cabanas e Eva Illouiz. Happycracia: fabricando cidadãos felizes. São Paulo: Ubu, 2022, p. 274-275 (com adaptações).
+
+Acerca das ideias e de aspectos linguísticos do texto apresentado, julgue o item a seguir.
+
+Na oração “como alguns empiristas ferrenhos afirmarão” (quinto período), os autores estabelecem uma comparação para emitir um juízo de valor pejorativo a respeito do que pensam os empiristas.', '["Certo","Errado"]'::jsonb, 1, 'Errado. Aqui "como" tem sentido de conformidade ("conforme alguns empiristas afirmarão"): os autores apenas atribuem a ideia aos empiristas. Não há comparação.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Agência Nacional de Vigilância Sanitária (ANVISA)","cargo":"Especialista em Regulação e Vigilância Sanitária","ano":2024,"prova":"anvisa-2024-cb","item":3}'::jsonb, 2, 'ativa'),
+  ('anvisa24-004', 'portugues', 'Emprego de pronomes', 'Texto (Happycracia)
+
+Devemos salientar mais uma vez o caráter essencial dos sentimentos negativos. Manifestações populares e mudança social advêm do acúmulo de muitos cidadãos irritados e ofendidos. Ocultar sentimentos negativos sob o tapete do pensamento positivo significa estigmatizar e tornar vexaminosa a estrutura emocional do mal-estar social e da instabilidade. Alguns dirão que optamos por privar trabalhadores dos benefícios da ciência do bem-estar em troca do aceno de uma ideia vaga de consciência coletiva. A felicidade, como alguns empiristas ferrenhos afirmarão, é o único bem tangível em que podemos pôr as mãos aqui e agora. Nossa resposta e nossa objeção final podem ser encontradas na famosa refutação do utilitarismo do filósofo Robert Nozick. Em 1974, ele pediu a seus leitores que participassem de um experimento mental que consistia em imaginar que estamos conectados a uma máquina que nos proporciona qualquer experiência prazerosa. Nossos cérebros seriam estimulados a acreditar que estaríamos vivendo a vida que desejamos. A pergunta de Nozick, então, era: dada a possibilidade de escolha, você preferiria a máquina prazerosa à vida real (e presumivelmente mais infeliz)? Uma resposta a essa questão parece hoje ainda mais relevante do que antes, sobretudo agora que a ciência da felicidade e as tecnologias virtuais se tornam tão predominantes. Nossa resposta, assim como a de Nozick, é a de que o prazer e a busca da felicidade não podem superar a realidade e a busca por conhecimento — o pensamento crítico sobre nós mesmos e sobre o mundo que nos rodeia. Uma “máquina da experiência” do tipo que Nozick imaginou tem hoje seu equivalente em uma indústria da felicidade que pretende nos controlar: ela não apenas borra e confunde a capacidade de conhecer as condições que moldam nossa existência, mas também faz que essas condições em si sejam irrelevantes. Conhecimento e justiça, e não felicidade, continuam a ser o propósito moral revolucionário da vida.
+
+Edgar Cabanas e Eva Illouiz. Happycracia: fabricando cidadãos felizes. São Paulo: Ubu, 2022, p. 274-275 (com adaptações).
+
+Acerca das ideias e de aspectos linguísticos do texto apresentado, julgue o item a seguir.
+
+Os sujeitos das formas verbais “optamos” (quarto período) e “podemos” (quinto período) têm referentes distintos.', '["Certo","Errado"]'::jsonb, 0, 'Certo. Em "optamos", o "nós" são os próprios autores, que respondem à crítica de outros. Em "podemos pôr as mãos", o "nós" é genérico: as pessoas em geral, na visão dos empiristas.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Agência Nacional de Vigilância Sanitária (ANVISA)","cargo":"Especialista em Regulação e Vigilância Sanitária","ano":2024,"prova":"anvisa-2024-cb","item":4}'::jsonb, 3, 'ativa'),
+  ('anvisa24-005', 'portugues', 'Interpretação de texto', 'Texto (Happycracia)
+
+Devemos salientar mais uma vez o caráter essencial dos sentimentos negativos. Manifestações populares e mudança social advêm do acúmulo de muitos cidadãos irritados e ofendidos. Ocultar sentimentos negativos sob o tapete do pensamento positivo significa estigmatizar e tornar vexaminosa a estrutura emocional do mal-estar social e da instabilidade. Alguns dirão que optamos por privar trabalhadores dos benefícios da ciência do bem-estar em troca do aceno de uma ideia vaga de consciência coletiva. A felicidade, como alguns empiristas ferrenhos afirmarão, é o único bem tangível em que podemos pôr as mãos aqui e agora. Nossa resposta e nossa objeção final podem ser encontradas na famosa refutação do utilitarismo do filósofo Robert Nozick. Em 1974, ele pediu a seus leitores que participassem de um experimento mental que consistia em imaginar que estamos conectados a uma máquina que nos proporciona qualquer experiência prazerosa. Nossos cérebros seriam estimulados a acreditar que estaríamos vivendo a vida que desejamos. A pergunta de Nozick, então, era: dada a possibilidade de escolha, você preferiria a máquina prazerosa à vida real (e presumivelmente mais infeliz)? Uma resposta a essa questão parece hoje ainda mais relevante do que antes, sobretudo agora que a ciência da felicidade e as tecnologias virtuais se tornam tão predominantes. Nossa resposta, assim como a de Nozick, é a de que o prazer e a busca da felicidade não podem superar a realidade e a busca por conhecimento — o pensamento crítico sobre nós mesmos e sobre o mundo que nos rodeia. Uma “máquina da experiência” do tipo que Nozick imaginou tem hoje seu equivalente em uma indústria da felicidade que pretende nos controlar: ela não apenas borra e confunde a capacidade de conhecer as condições que moldam nossa existência, mas também faz que essas condições em si sejam irrelevantes. Conhecimento e justiça, e não felicidade, continuam a ser o propósito moral revolucionário da vida.
+
+Edgar Cabanas e Eva Illouiz. Happycracia: fabricando cidadãos felizes. São Paulo: Ubu, 2022, p. 274-275 (com adaptações).
+
+Acerca das ideias e de aspectos linguísticos do texto apresentado, julgue o item a seguir.
+
+No texto, os autores estabelecem uma analogia entre a atual “indústria da felicidade” e a máquina de proporcionar experiências prazerosas idealizada no experimento de Nozick.', '["Certo","Errado"]'::jsonb, 0, 'Certo. O texto diz que a "máquina da experiência" imaginada por Nozick tem hoje seu equivalente na indústria da felicidade: os autores comparam as duas.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Agência Nacional de Vigilância Sanitária (ANVISA)","cargo":"Especialista em Regulação e Vigilância Sanitária","ano":2024,"prova":"anvisa-2024-cb","item":5}'::jsonb, 1, 'ativa'),
+  ('anvisa24-006', 'portugues', 'Interpretação de texto', 'Texto (Happycracia)
+
+Devemos salientar mais uma vez o caráter essencial dos sentimentos negativos. Manifestações populares e mudança social advêm do acúmulo de muitos cidadãos irritados e ofendidos. Ocultar sentimentos negativos sob o tapete do pensamento positivo significa estigmatizar e tornar vexaminosa a estrutura emocional do mal-estar social e da instabilidade. Alguns dirão que optamos por privar trabalhadores dos benefícios da ciência do bem-estar em troca do aceno de uma ideia vaga de consciência coletiva. A felicidade, como alguns empiristas ferrenhos afirmarão, é o único bem tangível em que podemos pôr as mãos aqui e agora. Nossa resposta e nossa objeção final podem ser encontradas na famosa refutação do utilitarismo do filósofo Robert Nozick. Em 1974, ele pediu a seus leitores que participassem de um experimento mental que consistia em imaginar que estamos conectados a uma máquina que nos proporciona qualquer experiência prazerosa. Nossos cérebros seriam estimulados a acreditar que estaríamos vivendo a vida que desejamos. A pergunta de Nozick, então, era: dada a possibilidade de escolha, você preferiria a máquina prazerosa à vida real (e presumivelmente mais infeliz)? Uma resposta a essa questão parece hoje ainda mais relevante do que antes, sobretudo agora que a ciência da felicidade e as tecnologias virtuais se tornam tão predominantes. Nossa resposta, assim como a de Nozick, é a de que o prazer e a busca da felicidade não podem superar a realidade e a busca por conhecimento — o pensamento crítico sobre nós mesmos e sobre o mundo que nos rodeia. Uma “máquina da experiência” do tipo que Nozick imaginou tem hoje seu equivalente em uma indústria da felicidade que pretende nos controlar: ela não apenas borra e confunde a capacidade de conhecer as condições que moldam nossa existência, mas também faz que essas condições em si sejam irrelevantes. Conhecimento e justiça, e não felicidade, continuam a ser o propósito moral revolucionário da vida.
+
+Edgar Cabanas e Eva Illouiz. Happycracia: fabricando cidadãos felizes. São Paulo: Ubu, 2022, p. 274-275 (com adaptações).
+
+Acerca das ideias e de aspectos linguísticos do texto apresentado, julgue o item a seguir.
+
+De acordo com a concepção defendida no texto, a felicidade não é o propósito moral revolucionário da vida.', '["Certo","Errado"]'::jsonb, 0, 'Certo. A frase final diz que "conhecimento e justiça, e não felicidade" são o propósito moral revolucionário da vida.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Agência Nacional de Vigilância Sanitária (ANVISA)","cargo":"Especialista em Regulação e Vigilância Sanitária","ano":2024,"prova":"anvisa-2024-cb","item":6}'::jsonb, 1, 'ativa'),
+  ('anvisa24-007', 'portugues', 'Conectivos', 'Texto (Happycracia)
+
+Devemos salientar mais uma vez o caráter essencial dos sentimentos negativos. Manifestações populares e mudança social advêm do acúmulo de muitos cidadãos irritados e ofendidos. Ocultar sentimentos negativos sob o tapete do pensamento positivo significa estigmatizar e tornar vexaminosa a estrutura emocional do mal-estar social e da instabilidade. Alguns dirão que optamos por privar trabalhadores dos benefícios da ciência do bem-estar em troca do aceno de uma ideia vaga de consciência coletiva. A felicidade, como alguns empiristas ferrenhos afirmarão, é o único bem tangível em que podemos pôr as mãos aqui e agora. Nossa resposta e nossa objeção final podem ser encontradas na famosa refutação do utilitarismo do filósofo Robert Nozick. Em 1974, ele pediu a seus leitores que participassem de um experimento mental que consistia em imaginar que estamos conectados a uma máquina que nos proporciona qualquer experiência prazerosa. Nossos cérebros seriam estimulados a acreditar que estaríamos vivendo a vida que desejamos. A pergunta de Nozick, então, era: dada a possibilidade de escolha, você preferiria a máquina prazerosa à vida real (e presumivelmente mais infeliz)? Uma resposta a essa questão parece hoje ainda mais relevante do que antes, sobretudo agora que a ciência da felicidade e as tecnologias virtuais se tornam tão predominantes. Nossa resposta, assim como a de Nozick, é a de que o prazer e a busca da felicidade não podem superar a realidade e a busca por conhecimento — o pensamento crítico sobre nós mesmos e sobre o mundo que nos rodeia. Uma “máquina da experiência” do tipo que Nozick imaginou tem hoje seu equivalente em uma indústria da felicidade que pretende nos controlar: ela não apenas borra e confunde a capacidade de conhecer as condições que moldam nossa existência, mas também faz que essas condições em si sejam irrelevantes. Conhecimento e justiça, e não felicidade, continuam a ser o propósito moral revolucionário da vida.
+
+Edgar Cabanas e Eva Illouiz. Happycracia: fabricando cidadãos felizes. São Paulo: Ubu, 2022, p. 274-275 (com adaptações).
+
+Acerca das ideias e de aspectos linguísticos do texto apresentado, julgue o item a seguir.
+
+O trecho “dada a possibilidade de escolha” (nono período) veicula ideia de explicação.', '["Certo","Errado"]'::jsonb, 1, 'Errado. "Dada a possibilidade de escolha" equivale a "se fosse possível escolher": exprime uma condição, uma hipótese, e não uma explicação.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Agência Nacional de Vigilância Sanitária (ANVISA)","cargo":"Especialista em Regulação e Vigilância Sanitária","ano":2024,"prova":"anvisa-2024-cb","item":7}'::jsonb, 2, 'ativa'),
+  ('anvisa24-020', 'informatica', 'Inteligência artificial', 'No que se refere a inteligência artificial (IA), julgue o item a seguir.
+
+Na versão mais recente do Microsoft Edge, o Copilot é um assistente inteligente com tecnologia de IA que oferece auxílio ao usuário na execução de tarefas.', '["Certo","Errado"]'::jsonb, 0, 'Certo. O Copilot, integrado ao Microsoft Edge, é um assistente com inteligência artificial que ajuda o usuário a resumir páginas, responder perguntas, escrever textos e realizar outras tarefas.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Agência Nacional de Vigilância Sanitária (ANVISA)","cargo":"Especialista em Regulação e Vigilância Sanitária","ano":2024,"prova":"anvisa-2024-cb","item":20}'::jsonb, 1, 'ativa'),
+  ('anvisa24-030', 'constitucional', 'Ordem econômica e social', 'Julgue o próximo item, relativo a saúde coletiva e direito sanitário.
+
+Conforme entendimento jurisprudencial do Supremo Tribunal Federal (STF), os entes federativos são solidariamente responsáveis nas demandas prestacionais da área de saúde.', '["Certo","Errado"]'::jsonb, 0, 'Certo. O STF firmou que União, estados, Distrito Federal e municípios respondem solidariamente nas ações que pedem prestações de saúde (Tema 793). Cabe ao juiz direcionar o cumprimento conforme a divisão de competências do SUS.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Agência Nacional de Vigilância Sanitária (ANVISA)","cargo":"Especialista em Regulação e Vigilância Sanitária","ano":2024,"prova":"anvisa-2024-cb","item":30}'::jsonb, 2, 'ativa'),
+  ('anvisa24-031', 'constitucional', 'Ordem econômica e social', 'Julgue o próximo item, relativo a saúde coletiva e direito sanitário.
+
+A Constituição Federal de 1988 estabelece que a assistência à saúde é livre à iniciativa privada, mas é vedada totalmente a participação de empresas ou capitais estrangeiros na assistência à saúde no País.', '["Certo","Errado"]'::jsonb, 1, 'Errado. A assistência à saúde é livre à iniciativa privada (art. 199 da CF), mas a vedação a empresas e capitais estrangeiros não é total: o § 3.º ressalva os casos previstos em lei.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Agência Nacional de Vigilância Sanitária (ANVISA)","cargo":"Especialista em Regulação e Vigilância Sanitária","ano":2024,"prova":"anvisa-2024-cb","item":31}'::jsonb, 2, 'ativa'),
+  ('anvisa24-048', 'administrativo', 'Administração indireta', 'Julgue o item a seguir, relativo a agências reguladoras.
+
+As agências reguladoras surgiram no Brasil na última metade da década de 90, quando o Estado brasileiro passou a dar ênfase à sua função reguladora, com o poder de intervir diretamente na ordem econômica.', '["Certo","Errado"]'::jsonb, 1, 'Errado. As agências reguladoras surgiram, de fato, a partir de 1996, quando o Estado passou a enfatizar a função reguladora. Mas regular é intervir de forma indireta na economia, como agente normativo e regulador (art. 174 da CF); intervir diretamente é explorar atividade econômica, papel que o Estado reduziu nessa época.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Agência Nacional de Vigilância Sanitária (ANVISA)","cargo":"Especialista em Regulação e Vigilância Sanitária","ano":2024,"prova":"anvisa-2024-cb","item":48}'::jsonb, 2, 'ativa'),
+  ('mpce25-001', 'portugues', 'Interpretação de texto', 'Texto CG1A1
+
+Em 2015, o professor Robert Waldinger participou de uma conferência apresentando uma palestra chamada “O que torna uma vida boa? Lições sobre o mais longo estudo sobre felicidade”. O tema se tornou, anos depois, um livro do palestrante sobre o assunto, que entrou na lista dos mais vendidos, segundo o jornal The New York Times.
+
+Professor de psiquiatria em Harvard, Waldinger é o quarto pesquisador a dirigir o Estudo sobre Desenvolvimento Adulto, que existe na universidade desde 1938 e está em andamento até hoje. O trabalho é o maior já realizado sobre o tema e monitora questões relativas a bem-estar, desenvolvimento e felicidade. Atualmente, a pesquisa está na segunda geração e dela participam os filhos dos primeiros participantes.
+
+O principal achado da pesquisa chama a atenção: a chave para uma vida mais feliz e saudável são os relacionamentos que cultivamos. Boas relações ajudam a reduzir os níveis de estresse e também influenciam a maneira como lidamos com dificuldades e situações desafiadoras.
+
+Waldinger afirma que cultivar relacionamentos recíprocos, que contam com apoio mútuo e espaço para crescimento, é o que traz mais felicidade. Por outro lado, passar muito tempo no trabalho é um constante arrependimento dos participantes do estudo.
+
+Além desses, há outros fatores que interferem na saúde mental e na sensação de felicidade — e um deles pode ser dinheiro.
+
+O pesquisador ressalta que ter muito dinheiro ou fama não tem relação direta com a felicidade. Contudo, a pobreza impacta a satisfação com a vida. Waldinger aponta que, enquanto não se tem as necessidades básicas garantidas, sentir-se feliz e pleno é uma tarefa difícil.
+
+Por outro lado, a partir do momento em que necessidades como alimentação, moradia e educação estão garantidas, ganhar mais dinheiro não significa sentir felicidade. É aí que está a importância de cultivar bons relacionamentos.
+
+Internet: <folha.uol.com.br> (com adaptações).
+
+Com base nas ideias veiculadas no texto CG1A1, julgue o item que se segue.
+
+De acordo com o estudo de Harvard apontado no texto, as pessoas que dedicam tempo excessivo ao trabalho são infelizes.', '["Certo","Errado"]'::jsonb, 1, 'Errado. O texto diz apenas que passar muito tempo no trabalho é um arrependimento frequente dos participantes. Não afirma que essas pessoas sejam infelizes.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Ministério Público do Estado do Ceará","cargo":"Analista Ministerial","ano":2025,"prova":"mpce-2025-cg1","item":1}'::jsonb, 1, 'ativa'),
+  ('mpce25-002', 'portugues', 'Interpretação de texto', 'Texto CG1A1
+
+Em 2015, o professor Robert Waldinger participou de uma conferência apresentando uma palestra chamada “O que torna uma vida boa? Lições sobre o mais longo estudo sobre felicidade”. O tema se tornou, anos depois, um livro do palestrante sobre o assunto, que entrou na lista dos mais vendidos, segundo o jornal The New York Times.
+
+Professor de psiquiatria em Harvard, Waldinger é o quarto pesquisador a dirigir o Estudo sobre Desenvolvimento Adulto, que existe na universidade desde 1938 e está em andamento até hoje. O trabalho é o maior já realizado sobre o tema e monitora questões relativas a bem-estar, desenvolvimento e felicidade. Atualmente, a pesquisa está na segunda geração e dela participam os filhos dos primeiros participantes.
+
+O principal achado da pesquisa chama a atenção: a chave para uma vida mais feliz e saudável são os relacionamentos que cultivamos. Boas relações ajudam a reduzir os níveis de estresse e também influenciam a maneira como lidamos com dificuldades e situações desafiadoras.
+
+Waldinger afirma que cultivar relacionamentos recíprocos, que contam com apoio mútuo e espaço para crescimento, é o que traz mais felicidade. Por outro lado, passar muito tempo no trabalho é um constante arrependimento dos participantes do estudo.
+
+Além desses, há outros fatores que interferem na saúde mental e na sensação de felicidade — e um deles pode ser dinheiro.
+
+O pesquisador ressalta que ter muito dinheiro ou fama não tem relação direta com a felicidade. Contudo, a pobreza impacta a satisfação com a vida. Waldinger aponta que, enquanto não se tem as necessidades básicas garantidas, sentir-se feliz e pleno é uma tarefa difícil.
+
+Por outro lado, a partir do momento em que necessidades como alimentação, moradia e educação estão garantidas, ganhar mais dinheiro não significa sentir felicidade. É aí que está a importância de cultivar bons relacionamentos.
+
+Internet: <folha.uol.com.br> (com adaptações).
+
+Com base nas ideias veiculadas no texto CG1A1, julgue o item que se segue.
+
+Conclui-se do texto que o livro publicado por Robert Waldinger trata de tema objeto da pesquisa mencionada no segundo parágrafo do texto.', '["Certo","Errado"]'::jsonb, 0, 'Certo. A palestra tratava das lições do mais longo estudo sobre felicidade, e o tema virou livro. Esse estudo é o Estudo sobre Desenvolvimento Adulto, apresentado no segundo parágrafo.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Ministério Público do Estado do Ceará","cargo":"Analista Ministerial","ano":2025,"prova":"mpce-2025-cg1","item":2}'::jsonb, 1, 'ativa'),
+  ('mpce25-003', 'portugues', 'Interpretação de texto', 'Texto CG1A1
+
+Em 2015, o professor Robert Waldinger participou de uma conferência apresentando uma palestra chamada “O que torna uma vida boa? Lições sobre o mais longo estudo sobre felicidade”. O tema se tornou, anos depois, um livro do palestrante sobre o assunto, que entrou na lista dos mais vendidos, segundo o jornal The New York Times.
+
+Professor de psiquiatria em Harvard, Waldinger é o quarto pesquisador a dirigir o Estudo sobre Desenvolvimento Adulto, que existe na universidade desde 1938 e está em andamento até hoje. O trabalho é o maior já realizado sobre o tema e monitora questões relativas a bem-estar, desenvolvimento e felicidade. Atualmente, a pesquisa está na segunda geração e dela participam os filhos dos primeiros participantes.
+
+O principal achado da pesquisa chama a atenção: a chave para uma vida mais feliz e saudável são os relacionamentos que cultivamos. Boas relações ajudam a reduzir os níveis de estresse e também influenciam a maneira como lidamos com dificuldades e situações desafiadoras.
+
+Waldinger afirma que cultivar relacionamentos recíprocos, que contam com apoio mútuo e espaço para crescimento, é o que traz mais felicidade. Por outro lado, passar muito tempo no trabalho é um constante arrependimento dos participantes do estudo.
+
+Além desses, há outros fatores que interferem na saúde mental e na sensação de felicidade — e um deles pode ser dinheiro.
+
+O pesquisador ressalta que ter muito dinheiro ou fama não tem relação direta com a felicidade. Contudo, a pobreza impacta a satisfação com a vida. Waldinger aponta que, enquanto não se tem as necessidades básicas garantidas, sentir-se feliz e pleno é uma tarefa difícil.
+
+Por outro lado, a partir do momento em que necessidades como alimentação, moradia e educação estão garantidas, ganhar mais dinheiro não significa sentir felicidade. É aí que está a importância de cultivar bons relacionamentos.
+
+Internet: <folha.uol.com.br> (com adaptações).
+
+Com base nas ideias veiculadas no texto CG1A1, julgue o item que se segue.
+
+Infere-se do texto que a satisfação das necessidades básicas é importante, mas não suficiente, para a garantia da felicidade.', '["Certo","Errado"]'::jsonb, 0, 'Certo. Sem as necessidades básicas garantidas, é difícil sentir-se feliz; mas, depois de garantidas, ganhar mais dinheiro não traz felicidade. Elas são importantes, mas não bastam.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Ministério Público do Estado do Ceará","cargo":"Analista Ministerial","ano":2025,"prova":"mpce-2025-cg1","item":3}'::jsonb, 1, 'ativa'),
+  ('mpce25-004', 'portugues', 'Interpretação de texto', 'Texto CG1A1
+
+Em 2015, o professor Robert Waldinger participou de uma conferência apresentando uma palestra chamada “O que torna uma vida boa? Lições sobre o mais longo estudo sobre felicidade”. O tema se tornou, anos depois, um livro do palestrante sobre o assunto, que entrou na lista dos mais vendidos, segundo o jornal The New York Times.
+
+Professor de psiquiatria em Harvard, Waldinger é o quarto pesquisador a dirigir o Estudo sobre Desenvolvimento Adulto, que existe na universidade desde 1938 e está em andamento até hoje. O trabalho é o maior já realizado sobre o tema e monitora questões relativas a bem-estar, desenvolvimento e felicidade. Atualmente, a pesquisa está na segunda geração e dela participam os filhos dos primeiros participantes.
+
+O principal achado da pesquisa chama a atenção: a chave para uma vida mais feliz e saudável são os relacionamentos que cultivamos. Boas relações ajudam a reduzir os níveis de estresse e também influenciam a maneira como lidamos com dificuldades e situações desafiadoras.
+
+Waldinger afirma que cultivar relacionamentos recíprocos, que contam com apoio mútuo e espaço para crescimento, é o que traz mais felicidade. Por outro lado, passar muito tempo no trabalho é um constante arrependimento dos participantes do estudo.
+
+Além desses, há outros fatores que interferem na saúde mental e na sensação de felicidade — e um deles pode ser dinheiro.
+
+O pesquisador ressalta que ter muito dinheiro ou fama não tem relação direta com a felicidade. Contudo, a pobreza impacta a satisfação com a vida. Waldinger aponta que, enquanto não se tem as necessidades básicas garantidas, sentir-se feliz e pleno é uma tarefa difícil.
+
+Por outro lado, a partir do momento em que necessidades como alimentação, moradia e educação estão garantidas, ganhar mais dinheiro não significa sentir felicidade. É aí que está a importância de cultivar bons relacionamentos.
+
+Internet: <folha.uol.com.br> (com adaptações).
+
+Com base nas ideias veiculadas no texto CG1A1, julgue o item que se segue.
+
+O texto sugere que os estudiosos da citada pesquisa de Harvard consideravam, inicialmente, que o nível de felicidade de uma pessoa dependeria de dinheiro e fama, mas não de seus relacionamentos interpessoais.', '["Certo","Errado"]'::jsonb, 1, 'Errado. O texto não diz o que os pesquisadores pensavam no início do estudo. Ele só apresenta o resultado: os relacionamentos são a chave, e dinheiro ou fama não têm relação direta com a felicidade.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Ministério Público do Estado do Ceará","cargo":"Analista Ministerial","ano":2025,"prova":"mpce-2025-cg1","item":4}'::jsonb, 2, 'ativa'),
+  ('mpce25-005', 'portugues', 'Reescrita de frases', 'Texto CG1A1
+
+Em 2015, o professor Robert Waldinger participou de uma conferência apresentando uma palestra chamada “O que torna uma vida boa? Lições sobre o mais longo estudo sobre felicidade”. O tema se tornou, anos depois, um livro do palestrante sobre o assunto, que entrou na lista dos mais vendidos, segundo o jornal The New York Times.
+
+Professor de psiquiatria em Harvard, Waldinger é o quarto pesquisador a dirigir o Estudo sobre Desenvolvimento Adulto, que existe na universidade desde 1938 e está em andamento até hoje. O trabalho é o maior já realizado sobre o tema e monitora questões relativas a bem-estar, desenvolvimento e felicidade. Atualmente, a pesquisa está na segunda geração e dela participam os filhos dos primeiros participantes.
+
+O principal achado da pesquisa chama a atenção: a chave para uma vida mais feliz e saudável são os relacionamentos que cultivamos. Boas relações ajudam a reduzir os níveis de estresse e também influenciam a maneira como lidamos com dificuldades e situações desafiadoras.
+
+Waldinger afirma que cultivar relacionamentos recíprocos, que contam com apoio mútuo e espaço para crescimento, é o que traz mais felicidade. Por outro lado, passar muito tempo no trabalho é um constante arrependimento dos participantes do estudo.
+
+Além desses, há outros fatores que interferem na saúde mental e na sensação de felicidade — e um deles pode ser dinheiro.
+
+O pesquisador ressalta que ter muito dinheiro ou fama não tem relação direta com a felicidade. Contudo, a pobreza impacta a satisfação com a vida. Waldinger aponta que, enquanto não se tem as necessidades básicas garantidas, sentir-se feliz e pleno é uma tarefa difícil.
+
+Por outro lado, a partir do momento em que necessidades como alimentação, moradia e educação estão garantidas, ganhar mais dinheiro não significa sentir felicidade. É aí que está a importância de cultivar bons relacionamentos.
+
+Internet: <folha.uol.com.br> (com adaptações).
+
+Em relação aos sentidos e a aspectos linguísticos do texto CG1A1, julgue o item a seguir.
+
+A correção gramatical do texto seria mantida caso o verbo “cultivar” (último período do texto) fosse substituído por se cultivarem.', '["Certo","Errado"]'::jsonb, 0, 'Certo. "A importância de se cultivarem bons relacionamentos" é correta: o "se" marca a voz passiva, e o infinitivo concorda com "bons relacionamentos" (bons relacionamentos são cultivados).', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Ministério Público do Estado do Ceará","cargo":"Analista Ministerial","ano":2025,"prova":"mpce-2025-cg1","item":5}'::jsonb, 2, 'ativa'),
+  ('mpce25-006', 'portugues', 'Sentido das palavras', 'Texto CG1A1
+
+Em 2015, o professor Robert Waldinger participou de uma conferência apresentando uma palestra chamada “O que torna uma vida boa? Lições sobre o mais longo estudo sobre felicidade”. O tema se tornou, anos depois, um livro do palestrante sobre o assunto, que entrou na lista dos mais vendidos, segundo o jornal The New York Times.
+
+Professor de psiquiatria em Harvard, Waldinger é o quarto pesquisador a dirigir o Estudo sobre Desenvolvimento Adulto, que existe na universidade desde 1938 e está em andamento até hoje. O trabalho é o maior já realizado sobre o tema e monitora questões relativas a bem-estar, desenvolvimento e felicidade. Atualmente, a pesquisa está na segunda geração e dela participam os filhos dos primeiros participantes.
+
+O principal achado da pesquisa chama a atenção: a chave para uma vida mais feliz e saudável são os relacionamentos que cultivamos. Boas relações ajudam a reduzir os níveis de estresse e também influenciam a maneira como lidamos com dificuldades e situações desafiadoras.
+
+Waldinger afirma que cultivar relacionamentos recíprocos, que contam com apoio mútuo e espaço para crescimento, é o que traz mais felicidade. Por outro lado, passar muito tempo no trabalho é um constante arrependimento dos participantes do estudo.
+
+Além desses, há outros fatores que interferem na saúde mental e na sensação de felicidade — e um deles pode ser dinheiro.
+
+O pesquisador ressalta que ter muito dinheiro ou fama não tem relação direta com a felicidade. Contudo, a pobreza impacta a satisfação com a vida. Waldinger aponta que, enquanto não se tem as necessidades básicas garantidas, sentir-se feliz e pleno é uma tarefa difícil.
+
+Por outro lado, a partir do momento em que necessidades como alimentação, moradia e educação estão garantidas, ganhar mais dinheiro não significa sentir felicidade. É aí que está a importância de cultivar bons relacionamentos.
+
+Internet: <folha.uol.com.br> (com adaptações).
+
+Em relação aos sentidos e a aspectos linguísticos do texto CG1A1, julgue o item a seguir.
+
+No quinto parágrafo, a locução verbal “pode ser” denota que os pesquisadores duvidam se o dinheiro interfere ou não na saúde mental e na sensação de felicidade.', '["Certo","Errado"]'::jsonb, 1, 'Errado. "Um deles pode ser dinheiro" apresenta o dinheiro como um dos fatores possíveis, entre outros. O texto não mostra os pesquisadores em dúvida sobre se o dinheiro interfere: logo depois, diz que a pobreza afeta a satisfação com a vida.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Ministério Público do Estado do Ceará","cargo":"Analista Ministerial","ano":2025,"prova":"mpce-2025-cg1","item":6}'::jsonb, 2, 'ativa'),
+  ('mpce25-007', 'portugues', 'Regência', 'Texto CG1A1
+
+Em 2015, o professor Robert Waldinger participou de uma conferência apresentando uma palestra chamada “O que torna uma vida boa? Lições sobre o mais longo estudo sobre felicidade”. O tema se tornou, anos depois, um livro do palestrante sobre o assunto, que entrou na lista dos mais vendidos, segundo o jornal The New York Times.
+
+Professor de psiquiatria em Harvard, Waldinger é o quarto pesquisador a dirigir o Estudo sobre Desenvolvimento Adulto, que existe na universidade desde 1938 e está em andamento até hoje. O trabalho é o maior já realizado sobre o tema e monitora questões relativas a bem-estar, desenvolvimento e felicidade. Atualmente, a pesquisa está na segunda geração e dela participam os filhos dos primeiros participantes.
+
+O principal achado da pesquisa chama a atenção: a chave para uma vida mais feliz e saudável são os relacionamentos que cultivamos. Boas relações ajudam a reduzir os níveis de estresse e também influenciam a maneira como lidamos com dificuldades e situações desafiadoras.
+
+Waldinger afirma que cultivar relacionamentos recíprocos, que contam com apoio mútuo e espaço para crescimento, é o que traz mais felicidade. Por outro lado, passar muito tempo no trabalho é um constante arrependimento dos participantes do estudo.
+
+Além desses, há outros fatores que interferem na saúde mental e na sensação de felicidade — e um deles pode ser dinheiro.
+
+O pesquisador ressalta que ter muito dinheiro ou fama não tem relação direta com a felicidade. Contudo, a pobreza impacta a satisfação com a vida. Waldinger aponta que, enquanto não se tem as necessidades básicas garantidas, sentir-se feliz e pleno é uma tarefa difícil.
+
+Por outro lado, a partir do momento em que necessidades como alimentação, moradia e educação estão garantidas, ganhar mais dinheiro não significa sentir felicidade. É aí que está a importância de cultivar bons relacionamentos.
+
+Internet: <folha.uol.com.br> (com adaptações).
+
+Em relação aos sentidos e a aspectos linguísticos do texto CG1A1, julgue o item a seguir.
+
+No segundo período do primeiro parágrafo, a substituição de “se tornou” por converteu-se, além de manter a coerência das ideias do texto, seria gramaticalmente correta, desde que inserida a preposição em imediatamente antes de “um livro”.', '["Certo","Errado"]'::jsonb, 0, 'Certo. "Converter-se" pede a preposição "em": "O tema converteu-se, anos depois, em um livro". O sentido de "se tornou" se mantém.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Ministério Público do Estado do Ceará","cargo":"Analista Ministerial","ano":2025,"prova":"mpce-2025-cg1","item":7}'::jsonb, 2, 'ativa'),
+  ('mpce25-008', 'portugues', 'Coesão textual', 'Texto CG1A1
+
+Em 2015, o professor Robert Waldinger participou de uma conferência apresentando uma palestra chamada “O que torna uma vida boa? Lições sobre o mais longo estudo sobre felicidade”. O tema se tornou, anos depois, um livro do palestrante sobre o assunto, que entrou na lista dos mais vendidos, segundo o jornal The New York Times.
+
+Professor de psiquiatria em Harvard, Waldinger é o quarto pesquisador a dirigir o Estudo sobre Desenvolvimento Adulto, que existe na universidade desde 1938 e está em andamento até hoje. O trabalho é o maior já realizado sobre o tema e monitora questões relativas a bem-estar, desenvolvimento e felicidade. Atualmente, a pesquisa está na segunda geração e dela participam os filhos dos primeiros participantes.
+
+O principal achado da pesquisa chama a atenção: a chave para uma vida mais feliz e saudável são os relacionamentos que cultivamos. Boas relações ajudam a reduzir os níveis de estresse e também influenciam a maneira como lidamos com dificuldades e situações desafiadoras.
+
+Waldinger afirma que cultivar relacionamentos recíprocos, que contam com apoio mútuo e espaço para crescimento, é o que traz mais felicidade. Por outro lado, passar muito tempo no trabalho é um constante arrependimento dos participantes do estudo.
+
+Além desses, há outros fatores que interferem na saúde mental e na sensação de felicidade — e um deles pode ser dinheiro.
+
+O pesquisador ressalta que ter muito dinheiro ou fama não tem relação direta com a felicidade. Contudo, a pobreza impacta a satisfação com a vida. Waldinger aponta que, enquanto não se tem as necessidades básicas garantidas, sentir-se feliz e pleno é uma tarefa difícil.
+
+Por outro lado, a partir do momento em que necessidades como alimentação, moradia e educação estão garantidas, ganhar mais dinheiro não significa sentir felicidade. É aí que está a importância de cultivar bons relacionamentos.
+
+Internet: <folha.uol.com.br> (com adaptações).
+
+Em relação aos sentidos e a aspectos linguísticos do texto CG1A1, julgue o item a seguir.
+
+No segundo período do primeiro parágrafo, o termo “que” retoma o segmento “um livro do palestrante sobre o assunto”.', '["Certo","Errado"]'::jsonb, 0, 'Certo. Quem "entrou na lista dos mais vendidos" foi o livro: o pronome relativo "que" retoma "um livro do palestrante sobre o assunto".', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Ministério Público do Estado do Ceará","cargo":"Analista Ministerial","ano":2025,"prova":"mpce-2025-cg1","item":8}'::jsonb, 1, 'ativa'),
+  ('mpce25-009', 'portugues', 'Reescrita de frases', 'Texto CG1A1
+
+Em 2015, o professor Robert Waldinger participou de uma conferência apresentando uma palestra chamada “O que torna uma vida boa? Lições sobre o mais longo estudo sobre felicidade”. O tema se tornou, anos depois, um livro do palestrante sobre o assunto, que entrou na lista dos mais vendidos, segundo o jornal The New York Times.
+
+Professor de psiquiatria em Harvard, Waldinger é o quarto pesquisador a dirigir o Estudo sobre Desenvolvimento Adulto, que existe na universidade desde 1938 e está em andamento até hoje. O trabalho é o maior já realizado sobre o tema e monitora questões relativas a bem-estar, desenvolvimento e felicidade. Atualmente, a pesquisa está na segunda geração e dela participam os filhos dos primeiros participantes.
+
+O principal achado da pesquisa chama a atenção: a chave para uma vida mais feliz e saudável são os relacionamentos que cultivamos. Boas relações ajudam a reduzir os níveis de estresse e também influenciam a maneira como lidamos com dificuldades e situações desafiadoras.
+
+Waldinger afirma que cultivar relacionamentos recíprocos, que contam com apoio mútuo e espaço para crescimento, é o que traz mais felicidade. Por outro lado, passar muito tempo no trabalho é um constante arrependimento dos participantes do estudo.
+
+Além desses, há outros fatores que interferem na saúde mental e na sensação de felicidade — e um deles pode ser dinheiro.
+
+O pesquisador ressalta que ter muito dinheiro ou fama não tem relação direta com a felicidade. Contudo, a pobreza impacta a satisfação com a vida. Waldinger aponta que, enquanto não se tem as necessidades básicas garantidas, sentir-se feliz e pleno é uma tarefa difícil.
+
+Por outro lado, a partir do momento em que necessidades como alimentação, moradia e educação estão garantidas, ganhar mais dinheiro não significa sentir felicidade. É aí que está a importância de cultivar bons relacionamentos.
+
+Internet: <folha.uol.com.br> (com adaptações).
+
+Em relação aos sentidos e a aspectos linguísticos do texto CG1A1, julgue o item a seguir.
+
+O trecho “que existe na universidade desde 1938 e está em andamento até hoje” (primeiro período do segundo parágrafo) poderia ser reescrito, sem prejuízo da correção gramatical e da coerência do texto, da seguinte forma: existente na universidade desde 1938 e ainda em andamento.', '["Certo","Errado"]'::jsonb, 0, 'Certo. "Existente na universidade desde 1938 e ainda em andamento" diz o mesmo que a oração original, agora com termos que caracterizam o estudo, e a frase continua correta.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Ministério Público do Estado do Ceará","cargo":"Analista Ministerial","ano":2025,"prova":"mpce-2025-cg1","item":9}'::jsonb, 1, 'ativa'),
+  ('mpce25-010', 'portugues', 'Sentido das palavras', 'Texto CG1A1
+
+Em 2015, o professor Robert Waldinger participou de uma conferência apresentando uma palestra chamada “O que torna uma vida boa? Lições sobre o mais longo estudo sobre felicidade”. O tema se tornou, anos depois, um livro do palestrante sobre o assunto, que entrou na lista dos mais vendidos, segundo o jornal The New York Times.
+
+Professor de psiquiatria em Harvard, Waldinger é o quarto pesquisador a dirigir o Estudo sobre Desenvolvimento Adulto, que existe na universidade desde 1938 e está em andamento até hoje. O trabalho é o maior já realizado sobre o tema e monitora questões relativas a bem-estar, desenvolvimento e felicidade. Atualmente, a pesquisa está na segunda geração e dela participam os filhos dos primeiros participantes.
+
+O principal achado da pesquisa chama a atenção: a chave para uma vida mais feliz e saudável são os relacionamentos que cultivamos. Boas relações ajudam a reduzir os níveis de estresse e também influenciam a maneira como lidamos com dificuldades e situações desafiadoras.
+
+Waldinger afirma que cultivar relacionamentos recíprocos, que contam com apoio mútuo e espaço para crescimento, é o que traz mais felicidade. Por outro lado, passar muito tempo no trabalho é um constante arrependimento dos participantes do estudo.
+
+Além desses, há outros fatores que interferem na saúde mental e na sensação de felicidade — e um deles pode ser dinheiro.
+
+O pesquisador ressalta que ter muito dinheiro ou fama não tem relação direta com a felicidade. Contudo, a pobreza impacta a satisfação com a vida. Waldinger aponta que, enquanto não se tem as necessidades básicas garantidas, sentir-se feliz e pleno é uma tarefa difícil.
+
+Por outro lado, a partir do momento em que necessidades como alimentação, moradia e educação estão garantidas, ganhar mais dinheiro não significa sentir felicidade. É aí que está a importância de cultivar bons relacionamentos.
+
+Internet: <folha.uol.com.br> (com adaptações).
+
+Em relação aos sentidos e a aspectos linguísticos do texto CG1A1, julgue o item a seguir.
+
+O vocábulo “achado” (primeiro período do terceiro parágrafo) tem o mesmo sentido de descoberta.', '["Certo","Errado"]'::jsonb, 0, 'Certo. No texto, "o principal achado da pesquisa" é o principal resultado encontrado, ou seja, a principal descoberta.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Ministério Público do Estado do Ceará","cargo":"Analista Ministerial","ano":2025,"prova":"mpce-2025-cg1","item":10}'::jsonb, 1, 'ativa'),
+  ('mpce25-011', 'portugues', 'Regência', 'Texto CG1A1
+
+Em 2015, o professor Robert Waldinger participou de uma conferência apresentando uma palestra chamada “O que torna uma vida boa? Lições sobre o mais longo estudo sobre felicidade”. O tema se tornou, anos depois, um livro do palestrante sobre o assunto, que entrou na lista dos mais vendidos, segundo o jornal The New York Times.
+
+Professor de psiquiatria em Harvard, Waldinger é o quarto pesquisador a dirigir o Estudo sobre Desenvolvimento Adulto, que existe na universidade desde 1938 e está em andamento até hoje. O trabalho é o maior já realizado sobre o tema e monitora questões relativas a bem-estar, desenvolvimento e felicidade. Atualmente, a pesquisa está na segunda geração e dela participam os filhos dos primeiros participantes.
+
+O principal achado da pesquisa chama a atenção: a chave para uma vida mais feliz e saudável são os relacionamentos que cultivamos. Boas relações ajudam a reduzir os níveis de estresse e também influenciam a maneira como lidamos com dificuldades e situações desafiadoras.
+
+Waldinger afirma que cultivar relacionamentos recíprocos, que contam com apoio mútuo e espaço para crescimento, é o que traz mais felicidade. Por outro lado, passar muito tempo no trabalho é um constante arrependimento dos participantes do estudo.
+
+Além desses, há outros fatores que interferem na saúde mental e na sensação de felicidade — e um deles pode ser dinheiro.
+
+O pesquisador ressalta que ter muito dinheiro ou fama não tem relação direta com a felicidade. Contudo, a pobreza impacta a satisfação com a vida. Waldinger aponta que, enquanto não se tem as necessidades básicas garantidas, sentir-se feliz e pleno é uma tarefa difícil.
+
+Por outro lado, a partir do momento em que necessidades como alimentação, moradia e educação estão garantidas, ganhar mais dinheiro não significa sentir felicidade. É aí que está a importância de cultivar bons relacionamentos.
+
+Internet: <folha.uol.com.br> (com adaptações).
+
+Em relação aos sentidos e a aspectos linguísticos do texto CG1A1, julgue o item a seguir.
+
+Estaria mantida a correção gramatical do texto caso se suprimisse a preposição “a” em “ajudam a reduzir os níveis de estresse” (segundo período do terceiro parágrafo).', '["Certo","Errado"]'::jsonb, 1, 'Errado. Na norma-padrão, "ajudar" seguido de infinitivo pede a preposição "a": "ajudam a reduzir". Sem ela, a construção fica incorreta.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Ministério Público do Estado do Ceará","cargo":"Analista Ministerial","ano":2025,"prova":"mpce-2025-cg1","item":11}'::jsonb, 2, 'ativa'),
+  ('mpce25-012', 'portugues', 'Reescrita de frases', 'Texto CG1A1
+
+Em 2015, o professor Robert Waldinger participou de uma conferência apresentando uma palestra chamada “O que torna uma vida boa? Lições sobre o mais longo estudo sobre felicidade”. O tema se tornou, anos depois, um livro do palestrante sobre o assunto, que entrou na lista dos mais vendidos, segundo o jornal The New York Times.
+
+Professor de psiquiatria em Harvard, Waldinger é o quarto pesquisador a dirigir o Estudo sobre Desenvolvimento Adulto, que existe na universidade desde 1938 e está em andamento até hoje. O trabalho é o maior já realizado sobre o tema e monitora questões relativas a bem-estar, desenvolvimento e felicidade. Atualmente, a pesquisa está na segunda geração e dela participam os filhos dos primeiros participantes.
+
+O principal achado da pesquisa chama a atenção: a chave para uma vida mais feliz e saudável são os relacionamentos que cultivamos. Boas relações ajudam a reduzir os níveis de estresse e também influenciam a maneira como lidamos com dificuldades e situações desafiadoras.
+
+Waldinger afirma que cultivar relacionamentos recíprocos, que contam com apoio mútuo e espaço para crescimento, é o que traz mais felicidade. Por outro lado, passar muito tempo no trabalho é um constante arrependimento dos participantes do estudo.
+
+Além desses, há outros fatores que interferem na saúde mental e na sensação de felicidade — e um deles pode ser dinheiro.
+
+O pesquisador ressalta que ter muito dinheiro ou fama não tem relação direta com a felicidade. Contudo, a pobreza impacta a satisfação com a vida. Waldinger aponta que, enquanto não se tem as necessidades básicas garantidas, sentir-se feliz e pleno é uma tarefa difícil.
+
+Por outro lado, a partir do momento em que necessidades como alimentação, moradia e educação estão garantidas, ganhar mais dinheiro não significa sentir felicidade. É aí que está a importância de cultivar bons relacionamentos.
+
+Internet: <folha.uol.com.br> (com adaptações).
+
+Em relação aos sentidos e a aspectos linguísticos do texto CG1A1, julgue o item a seguir.
+
+A correção gramatical do primeiro período do quarto parágrafo seria prejudicada caso se suprimisse o trecho “é o que”, em razão das alterações nas relações sintáticas entre as orações e os termos das orações do período em questão.', '["Certo","Errado"]'::jsonb, 1, 'Errado. "É o que" só dá destaque ao trecho. Sem ele, "cultivar relacionamentos recíprocos, que contam com apoio mútuo e espaço para crescimento, traz mais felicidade" continua correto: "cultivar relacionamentos" passa a ser o sujeito de "traz".', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Ministério Público do Estado do Ceará","cargo":"Analista Ministerial","ano":2025,"prova":"mpce-2025-cg1","item":12}'::jsonb, 3, 'ativa'),
+  ('mpce25-013', 'portugues', 'Concordância', 'Texto CG1A1
+
+Em 2015, o professor Robert Waldinger participou de uma conferência apresentando uma palestra chamada “O que torna uma vida boa? Lições sobre o mais longo estudo sobre felicidade”. O tema se tornou, anos depois, um livro do palestrante sobre o assunto, que entrou na lista dos mais vendidos, segundo o jornal The New York Times.
+
+Professor de psiquiatria em Harvard, Waldinger é o quarto pesquisador a dirigir o Estudo sobre Desenvolvimento Adulto, que existe na universidade desde 1938 e está em andamento até hoje. O trabalho é o maior já realizado sobre o tema e monitora questões relativas a bem-estar, desenvolvimento e felicidade. Atualmente, a pesquisa está na segunda geração e dela participam os filhos dos primeiros participantes.
+
+O principal achado da pesquisa chama a atenção: a chave para uma vida mais feliz e saudável são os relacionamentos que cultivamos. Boas relações ajudam a reduzir os níveis de estresse e também influenciam a maneira como lidamos com dificuldades e situações desafiadoras.
+
+Waldinger afirma que cultivar relacionamentos recíprocos, que contam com apoio mútuo e espaço para crescimento, é o que traz mais felicidade. Por outro lado, passar muito tempo no trabalho é um constante arrependimento dos participantes do estudo.
+
+Além desses, há outros fatores que interferem na saúde mental e na sensação de felicidade — e um deles pode ser dinheiro.
+
+O pesquisador ressalta que ter muito dinheiro ou fama não tem relação direta com a felicidade. Contudo, a pobreza impacta a satisfação com a vida. Waldinger aponta que, enquanto não se tem as necessidades básicas garantidas, sentir-se feliz e pleno é uma tarefa difícil.
+
+Por outro lado, a partir do momento em que necessidades como alimentação, moradia e educação estão garantidas, ganhar mais dinheiro não significa sentir felicidade. É aí que está a importância de cultivar bons relacionamentos.
+
+Internet: <folha.uol.com.br> (com adaptações).
+
+Em relação aos sentidos e a aspectos linguísticos do texto CG1A1, julgue o item a seguir.
+
+No quinto parágrafo, a forma verbal “há” poderia ser substituída por existem, mantendo-se a correção gramatical e a coerência textual.', '["Certo","Errado"]'::jsonb, 0, 'Certo. "Haver" no sentido de existir não varia, mas "existir" concorda com o sujeito: "existem outros fatores". A troca é correta e mantém o sentido.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Ministério Público do Estado do Ceará","cargo":"Analista Ministerial","ano":2025,"prova":"mpce-2025-cg1","item":13}'::jsonb, 1, 'ativa'),
+  ('mpce25-014', 'portugues', 'Pronomes relativos', 'Texto CG1A1
+
+Em 2015, o professor Robert Waldinger participou de uma conferência apresentando uma palestra chamada “O que torna uma vida boa? Lições sobre o mais longo estudo sobre felicidade”. O tema se tornou, anos depois, um livro do palestrante sobre o assunto, que entrou na lista dos mais vendidos, segundo o jornal The New York Times.
+
+Professor de psiquiatria em Harvard, Waldinger é o quarto pesquisador a dirigir o Estudo sobre Desenvolvimento Adulto, que existe na universidade desde 1938 e está em andamento até hoje. O trabalho é o maior já realizado sobre o tema e monitora questões relativas a bem-estar, desenvolvimento e felicidade. Atualmente, a pesquisa está na segunda geração e dela participam os filhos dos primeiros participantes.
+
+O principal achado da pesquisa chama a atenção: a chave para uma vida mais feliz e saudável são os relacionamentos que cultivamos. Boas relações ajudam a reduzir os níveis de estresse e também influenciam a maneira como lidamos com dificuldades e situações desafiadoras.
+
+Waldinger afirma que cultivar relacionamentos recíprocos, que contam com apoio mútuo e espaço para crescimento, é o que traz mais felicidade. Por outro lado, passar muito tempo no trabalho é um constante arrependimento dos participantes do estudo.
+
+Além desses, há outros fatores que interferem na saúde mental e na sensação de felicidade — e um deles pode ser dinheiro.
+
+O pesquisador ressalta que ter muito dinheiro ou fama não tem relação direta com a felicidade. Contudo, a pobreza impacta a satisfação com a vida. Waldinger aponta que, enquanto não se tem as necessidades básicas garantidas, sentir-se feliz e pleno é uma tarefa difícil.
+
+Por outro lado, a partir do momento em que necessidades como alimentação, moradia e educação estão garantidas, ganhar mais dinheiro não significa sentir felicidade. É aí que está a importância de cultivar bons relacionamentos.
+
+Internet: <folha.uol.com.br> (com adaptações).
+
+Em relação aos sentidos e a aspectos linguísticos do texto CG1A1, julgue o item a seguir.
+
+A substituição da expressão “em que” (primeiro período do último parágrafo) por onde manteria a correção gramatical e a coerência textual.', '["Certo","Errado"]'::jsonb, 1, 'Errado. "Onde" só se usa para lugar. Em "a partir do momento em que", a referência é de tempo, então "onde" seria incorreto.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Ministério Público do Estado do Ceará","cargo":"Analista Ministerial","ano":2025,"prova":"mpce-2025-cg1","item":14}'::jsonb, 1, 'ativa'),
+  ('mpce25-015', 'portugues', 'Pontuação', 'Texto CG1A1
+
+Em 2015, o professor Robert Waldinger participou de uma conferência apresentando uma palestra chamada “O que torna uma vida boa? Lições sobre o mais longo estudo sobre felicidade”. O tema se tornou, anos depois, um livro do palestrante sobre o assunto, que entrou na lista dos mais vendidos, segundo o jornal The New York Times.
+
+Professor de psiquiatria em Harvard, Waldinger é o quarto pesquisador a dirigir o Estudo sobre Desenvolvimento Adulto, que existe na universidade desde 1938 e está em andamento até hoje. O trabalho é o maior já realizado sobre o tema e monitora questões relativas a bem-estar, desenvolvimento e felicidade. Atualmente, a pesquisa está na segunda geração e dela participam os filhos dos primeiros participantes.
+
+O principal achado da pesquisa chama a atenção: a chave para uma vida mais feliz e saudável são os relacionamentos que cultivamos. Boas relações ajudam a reduzir os níveis de estresse e também influenciam a maneira como lidamos com dificuldades e situações desafiadoras.
+
+Waldinger afirma que cultivar relacionamentos recíprocos, que contam com apoio mútuo e espaço para crescimento, é o que traz mais felicidade. Por outro lado, passar muito tempo no trabalho é um constante arrependimento dos participantes do estudo.
+
+Além desses, há outros fatores que interferem na saúde mental e na sensação de felicidade — e um deles pode ser dinheiro.
+
+O pesquisador ressalta que ter muito dinheiro ou fama não tem relação direta com a felicidade. Contudo, a pobreza impacta a satisfação com a vida. Waldinger aponta que, enquanto não se tem as necessidades básicas garantidas, sentir-se feliz e pleno é uma tarefa difícil.
+
+Por outro lado, a partir do momento em que necessidades como alimentação, moradia e educação estão garantidas, ganhar mais dinheiro não significa sentir felicidade. É aí que está a importância de cultivar bons relacionamentos.
+
+Internet: <folha.uol.com.br> (com adaptações).
+
+Em relação aos sentidos e a aspectos linguísticos do texto CG1A1, julgue o item a seguir.
+
+No último período do penúltimo parágrafo, a vírgula empregada logo após o termo “que” poderia ser suprimida sem prejuízo da correção gramatical do texto.', '["Certo","Errado"]'::jsonb, 1, 'Errado. As vírgulas depois de "que" e depois de "garantidas" isolam a oração intercalada "enquanto não se tem as necessidades básicas garantidas". Tirar só uma delas deixaria a pontuação incorreta.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Ministério Público do Estado do Ceará","cargo":"Analista Ministerial","ano":2025,"prova":"mpce-2025-cg1","item":15}'::jsonb, 2, 'ativa'),
+  ('mpce25-016', 'portugues', 'Conectivos', 'Texto CG1A1
+
+Em 2015, o professor Robert Waldinger participou de uma conferência apresentando uma palestra chamada “O que torna uma vida boa? Lições sobre o mais longo estudo sobre felicidade”. O tema se tornou, anos depois, um livro do palestrante sobre o assunto, que entrou na lista dos mais vendidos, segundo o jornal The New York Times.
+
+Professor de psiquiatria em Harvard, Waldinger é o quarto pesquisador a dirigir o Estudo sobre Desenvolvimento Adulto, que existe na universidade desde 1938 e está em andamento até hoje. O trabalho é o maior já realizado sobre o tema e monitora questões relativas a bem-estar, desenvolvimento e felicidade. Atualmente, a pesquisa está na segunda geração e dela participam os filhos dos primeiros participantes.
+
+O principal achado da pesquisa chama a atenção: a chave para uma vida mais feliz e saudável são os relacionamentos que cultivamos. Boas relações ajudam a reduzir os níveis de estresse e também influenciam a maneira como lidamos com dificuldades e situações desafiadoras.
+
+Waldinger afirma que cultivar relacionamentos recíprocos, que contam com apoio mútuo e espaço para crescimento, é o que traz mais felicidade. Por outro lado, passar muito tempo no trabalho é um constante arrependimento dos participantes do estudo.
+
+Além desses, há outros fatores que interferem na saúde mental e na sensação de felicidade — e um deles pode ser dinheiro.
+
+O pesquisador ressalta que ter muito dinheiro ou fama não tem relação direta com a felicidade. Contudo, a pobreza impacta a satisfação com a vida. Waldinger aponta que, enquanto não se tem as necessidades básicas garantidas, sentir-se feliz e pleno é uma tarefa difícil.
+
+Por outro lado, a partir do momento em que necessidades como alimentação, moradia e educação estão garantidas, ganhar mais dinheiro não significa sentir felicidade. É aí que está a importância de cultivar bons relacionamentos.
+
+Internet: <folha.uol.com.br> (com adaptações).
+
+Em relação aos sentidos e a aspectos linguísticos do texto CG1A1, julgue o item a seguir.
+
+No último período do penúltimo parágrafo, o vocábulo “enquanto” expressa uma circunstância temporal.', '["Certo","Errado"]'::jsonb, 0, 'Certo. "Enquanto" indica tempo: durante o período em que as necessidades básicas não estão garantidas, é difícil sentir-se feliz.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Ministério Público do Estado do Ceará","cargo":"Analista Ministerial","ano":2025,"prova":"mpce-2025-cg1","item":16}'::jsonb, 1, 'ativa'),
+  ('mpce25-017', 'portugues', 'Crase', 'Texto CG1A1
+
+Em 2015, o professor Robert Waldinger participou de uma conferência apresentando uma palestra chamada “O que torna uma vida boa? Lições sobre o mais longo estudo sobre felicidade”. O tema se tornou, anos depois, um livro do palestrante sobre o assunto, que entrou na lista dos mais vendidos, segundo o jornal The New York Times.
+
+Professor de psiquiatria em Harvard, Waldinger é o quarto pesquisador a dirigir o Estudo sobre Desenvolvimento Adulto, que existe na universidade desde 1938 e está em andamento até hoje. O trabalho é o maior já realizado sobre o tema e monitora questões relativas a bem-estar, desenvolvimento e felicidade. Atualmente, a pesquisa está na segunda geração e dela participam os filhos dos primeiros participantes.
+
+O principal achado da pesquisa chama a atenção: a chave para uma vida mais feliz e saudável são os relacionamentos que cultivamos. Boas relações ajudam a reduzir os níveis de estresse e também influenciam a maneira como lidamos com dificuldades e situações desafiadoras.
+
+Waldinger afirma que cultivar relacionamentos recíprocos, que contam com apoio mútuo e espaço para crescimento, é o que traz mais felicidade. Por outro lado, passar muito tempo no trabalho é um constante arrependimento dos participantes do estudo.
+
+Além desses, há outros fatores que interferem na saúde mental e na sensação de felicidade — e um deles pode ser dinheiro.
+
+O pesquisador ressalta que ter muito dinheiro ou fama não tem relação direta com a felicidade. Contudo, a pobreza impacta a satisfação com a vida. Waldinger aponta que, enquanto não se tem as necessidades básicas garantidas, sentir-se feliz e pleno é uma tarefa difícil.
+
+Por outro lado, a partir do momento em que necessidades como alimentação, moradia e educação estão garantidas, ganhar mais dinheiro não significa sentir felicidade. É aí que está a importância de cultivar bons relacionamentos.
+
+Internet: <folha.uol.com.br> (com adaptações).
+
+Em relação aos sentidos e a aspectos linguísticos do texto CG1A1, julgue o item a seguir.
+
+É facultativo o emprego do sinal indicativo de crase no vocábulo “a” em “a partir do momento” (primeiro período do último parágrafo).', '["Certo","Errado"]'::jsonb, 1, 'Errado. Não há crase antes de verbo: em "a partir", o "a" é só preposição, pois "partir" é verbo. O acento seria erro, não opção.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Ministério Público do Estado do Ceará","cargo":"Analista Ministerial","ano":2025,"prova":"mpce-2025-cg1","item":17}'::jsonb, 1, 'ativa'),
+  ('mpce25-028', 'administrativo', 'Ética no serviço público', 'A respeito da ética, da moral, dos princípios e dos valores, bem como do exercício da cidadania e da função pública, julgue o item a seguir.
+
+No exercício da função pública, deve-se tratar a todos conforme valores e regras comuns, evitando-se distinções subjetivas, em observância ao princípio da impessoalidade.', '["Certo","Errado"]'::jsonb, 0, 'Certo. A impessoalidade exige tratar todos pelos mesmos critérios, sem favorecer nem prejudicar ninguém por preferências pessoais.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Ministério Público do Estado do Ceará","cargo":"Analista Ministerial","ano":2025,"prova":"mpce-2025-cg1","item":28}'::jsonb, 1, 'ativa'),
+  ('mpce25-029', 'administrativo', 'Ética no serviço público', 'A respeito da ética, da moral, dos princípios e dos valores, bem como do exercício da cidadania e da função pública, julgue o item a seguir.
+
+A dimensão ética da vida está relacionada exclusivamente ao entendimento subjetivo do que é certo ou errado.', '["Certo","Errado"]'::jsonb, 1, 'Errado. A ética não se resume ao que cada um acha certo ou errado: envolve valores e regras compartilhados, que orientam a convivência em sociedade.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Ministério Público do Estado do Ceará","cargo":"Analista Ministerial","ano":2025,"prova":"mpce-2025-cg1","item":29}'::jsonb, 1, 'ativa'),
+  ('mpce25-031', 'administrativo', 'Ética no serviço público', 'A respeito da ética, da moral, dos princípios e dos valores, bem como do exercício da cidadania e da função pública, julgue o item a seguir.
+
+Os valores morais são formados pelo hábito, a partir da ação repetitiva e meramente instintiva.', '["Certo","Errado"]'::jsonb, 1, 'Errado. Os valores morais se formam na convivência, pela educação e pela cultura, e envolvem reflexão e escolha consciente. Não nascem de ações repetitivas e meramente instintivas.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Ministério Público do Estado do Ceará","cargo":"Analista Ministerial","ano":2025,"prova":"mpce-2025-cg1","item":31}'::jsonb, 2, 'ativa'),
+  ('mpce25-032', 'administrativo', 'Improbidade administrativa', 'De acordo com as regras estabelecidas na Lei n.º 8.429/1992 (Lei de Improbidade Administrativa), julgue o item a seguir.
+
+Os atos de improbidade administrativa necessariamente importam no enriquecimento ilícito do agente público.', '["Certo","Errado"]'::jsonb, 1, 'Errado. A lei prevê três tipos de improbidade: atos que geram enriquecimento ilícito (art. 9.º), atos que causam prejuízo ao erário (art. 10) e atos que atentam contra os princípios da administração (art. 11). Nem todos envolvem enriquecimento.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Ministério Público do Estado do Ceará","cargo":"Analista Ministerial","ano":2025,"prova":"mpce-2025-cg1","item":32}'::jsonb, 1, 'ativa'),
+  ('mpce25-033', 'administrativo', 'Improbidade administrativa', 'De acordo com as regras estabelecidas na Lei n.º 8.429/1992 (Lei de Improbidade Administrativa), julgue o item a seguir.
+
+Permitir dolosamente que pessoa física utilize bens do acervo patrimonial do Estado, sem observância das formalidades legais, constitui ato de improbidade administrativa que causa prejuízo ao erário.', '["Certo","Errado"]'::jsonb, 0, 'Certo. Permitir, com dolo, que particular use bens públicos sem as formalidades legais é ato que causa prejuízo ao erário (art. 10, II, da Lei n.º 8.429/1992).', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Ministério Público do Estado do Ceará","cargo":"Analista Ministerial","ano":2025,"prova":"mpce-2025-cg1","item":33}'::jsonb, 2, 'ativa'),
+  ('mpce25-034', 'administrativo', 'Improbidade administrativa', 'De acordo com as regras estabelecidas na Lei n.º 8.429/1992 (Lei de Improbidade Administrativa), julgue o item a seguir.
+
+Para fins de configuração de ato de improbidade administrativa, o dolo é caracterizado como a vontade livre e consciente de se alcançar resultado ilícito tipificado na Lei de Improbidade Administrativa.', '["Certo","Errado"]'::jsonb, 0, 'Certo. É a definição do art. 1.º, § 2.º, da Lei n.º 8.429/1992: dolo é a vontade livre e consciente de alcançar o resultado ilícito previsto na lei.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Ministério Público do Estado do Ceará","cargo":"Analista Ministerial","ano":2025,"prova":"mpce-2025-cg1","item":34}'::jsonb, 1, 'ativa'),
+  ('mpce25-035', 'administrativo', 'Improbidade administrativa', 'De acordo com as regras estabelecidas na Lei n.º 8.429/1992 (Lei de Improbidade Administrativa), julgue o item a seguir.
+
+As regras da Lei de Improbidade Administrativa são inaplicáveis às condutas do agente político.', '["Certo","Errado"]'::jsonb, 1, 'Errado. A lei se aplica também ao agente político: o art. 2.º o inclui expressamente entre os agentes públicos sujeitos a ela.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Ministério Público do Estado do Ceará","cargo":"Analista Ministerial","ano":2025,"prova":"mpce-2025-cg1","item":35}'::jsonb, 1, 'ativa'),
+  ('mpce25-036', 'rlm', 'Conjuntos', 'Uma pesquisa realizada com 180 profissionais que trabalham no Ministério Público de determinado estado revelou que 95 deles gostam de atuar na área criminal, 125 gostam de atuar na defesa dos direitos coletivos e difusos, e 65 gostam de atuar na defesa do patrimônio público e social. Nessa mesma pesquisa, verificou-se também que 60 profissionais gostam de atuar nas áreas criminal e de defesa dos direitos coletivos e difusos, 40 gostam de atuar nas áreas criminal e de defesa do patrimônio público e social, 40 gostam de atuar nas áreas de defesa dos direitos coletivos e difusos e de defesa do patrimônio público e social, e 20 gostam de atuar nas três áreas citadas.
+
+Com base nessa situação hipotética, julgue o item seguinte.
+
+Considere que, em certo mês, sejam autuados 900 processos e que estes serão distribuídos, proporcionalmente, entre os conjuntos A (profissionais que gostam de atuar em apenas uma das áreas mencionadas), B (profissionais que gostam de atuar em apenas duas das áreas mencionadas) e C (profissionais que gostam de atuar nas três áreas). Nesse caso, caberá aos profissionais do conjunto A atuar em menos de 300 processos.', '["Certo","Errado"]'::jsonb, 1, 'Errado. Pelo diagrama de conjuntos: só uma área são 15 + 45 + 5 = 65; exatamente duas, 40 + 20 + 20 = 80; as três, 20. Total de 165. O conjunto A recebe 900 × 65 ÷ 165 ≈ 354 processos, mais que 300.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Ministério Público do Estado do Ceará","cargo":"Analista Ministerial","ano":2025,"prova":"mpce-2025-cg1","item":36}'::jsonb, 3, 'ativa'),
+  ('mpce25-037', 'rlm', 'Conjuntos', 'Uma pesquisa realizada com 180 profissionais que trabalham no Ministério Público de determinado estado revelou que 95 deles gostam de atuar na área criminal, 125 gostam de atuar na defesa dos direitos coletivos e difusos, e 65 gostam de atuar na defesa do patrimônio público e social. Nessa mesma pesquisa, verificou-se também que 60 profissionais gostam de atuar nas áreas criminal e de defesa dos direitos coletivos e difusos, 40 gostam de atuar nas áreas criminal e de defesa do patrimônio público e social, 40 gostam de atuar nas áreas de defesa dos direitos coletivos e difusos e de defesa do patrimônio público e social, e 20 gostam de atuar nas três áreas citadas.
+
+Com base nessa situação hipotética, julgue o item seguinte.
+
+Mais de 65% dos participantes da pesquisa gostam de atuar em exatamente duas das áreas mencionadas.', '["Certo","Errado"]'::jsonb, 1, 'Errado. Exatamente duas áreas: criminal e coletivos só (60 − 20 = 40), criminal e patrimônio só (40 − 20 = 20), coletivos e patrimônio só (40 − 20 = 20). São 80 de 180, cerca de 44%.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Ministério Público do Estado do Ceará","cargo":"Analista Ministerial","ano":2025,"prova":"mpce-2025-cg1","item":37}'::jsonb, 2, 'ativa'),
+  ('mpce25-038', 'rlm', 'Probabilidade', 'Uma pesquisa realizada com 180 profissionais que trabalham no Ministério Público de determinado estado revelou que 95 deles gostam de atuar na área criminal, 125 gostam de atuar na defesa dos direitos coletivos e difusos, e 65 gostam de atuar na defesa do patrimônio público e social. Nessa mesma pesquisa, verificou-se também que 60 profissionais gostam de atuar nas áreas criminal e de defesa dos direitos coletivos e difusos, 40 gostam de atuar nas áreas criminal e de defesa do patrimônio público e social, 40 gostam de atuar nas áreas de defesa dos direitos coletivos e difusos e de defesa do patrimônio público e social, e 20 gostam de atuar nas três áreas citadas.
+
+Com base nessa situação hipotética, julgue o item seguinte.
+
+A probabilidade de que um dos participantes da pesquisa, selecionado ao acaso, goste de atuar nas três áreas mencionadas é superior a 10%.', '["Certo","Errado"]'::jsonb, 0, 'Certo. São 20 profissionais entre 180: 20 ÷ 180 = 1/9 ≈ 11,1%, mais que 10%.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Ministério Público do Estado do Ceará","cargo":"Analista Ministerial","ano":2025,"prova":"mpce-2025-cg1","item":38}'::jsonb, 1, 'ativa'),
+  ('mpce25-039', 'rlm', 'Análise combinatória', 'Uma pesquisa realizada com 180 profissionais que trabalham no Ministério Público de determinado estado revelou que 95 deles gostam de atuar na área criminal, 125 gostam de atuar na defesa dos direitos coletivos e difusos, e 65 gostam de atuar na defesa do patrimônio público e social. Nessa mesma pesquisa, verificou-se também que 60 profissionais gostam de atuar nas áreas criminal e de defesa dos direitos coletivos e difusos, 40 gostam de atuar nas áreas criminal e de defesa do patrimônio público e social, 40 gostam de atuar nas áreas de defesa dos direitos coletivos e difusos e de defesa do patrimônio público e social, e 20 gostam de atuar nas três áreas citadas.
+
+Com base nessa situação hipotética, julgue o item seguinte.
+
+Considere que, entre os profissionais que afirmaram gostar de atuar nas três áreas mencionadas, sejam escolhidos quatro para formar uma comissão para fiscalização de certa política pública, todos com igual atribuição. Nesse caso, haverá mais de cinco mil maneiras de formar a comissão.', '["Certo","Errado"]'::jsonb, 1, 'Errado. A ordem não importa (todos têm a mesma atribuição): combinação de 20 escolhe 4 = (20 × 19 × 18 × 17) ÷ 24 = 4.845 maneiras, menos de cinco mil.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Ministério Público do Estado do Ceará","cargo":"Analista Ministerial","ano":2025,"prova":"mpce-2025-cg1","item":39}'::jsonb, 2, 'ativa'),
+  ('mpce25-040', 'rlm', 'Conjuntos', 'Uma pesquisa realizada com 180 profissionais que trabalham no Ministério Público de determinado estado revelou que 95 deles gostam de atuar na área criminal, 125 gostam de atuar na defesa dos direitos coletivos e difusos, e 65 gostam de atuar na defesa do patrimônio público e social. Nessa mesma pesquisa, verificou-se também que 60 profissionais gostam de atuar nas áreas criminal e de defesa dos direitos coletivos e difusos, 40 gostam de atuar nas áreas criminal e de defesa do patrimônio público e social, 40 gostam de atuar nas áreas de defesa dos direitos coletivos e difusos e de defesa do patrimônio público e social, e 20 gostam de atuar nas três áreas citadas.
+
+Com base nessa situação hipotética, julgue o item seguinte.
+
+A razão entre o número de profissionais que gostam de atuar em apenas uma das áreas mencionadas e o total de entrevistados não apresenta uma representação decimal exata.', '["Certo","Errado"]'::jsonb, 0, 'Certo. Só uma área: criminal 95 − 40 − 20 − 20 = 15, coletivos 125 − 40 − 20 − 20 = 45, patrimônio 65 − 20 − 20 − 20 = 5; total 65. A razão 65/180 = 13/36 = 0,3611..., uma dízima periódica, sem decimal exato.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Ministério Público do Estado do Ceará","cargo":"Analista Ministerial","ano":2025,"prova":"mpce-2025-cg1","item":40}'::jsonb, 3, 'ativa'),
+  ('mpce25-041', 'rlm', 'Conjuntos', 'Uma pesquisa realizada com 180 profissionais que trabalham no Ministério Público de determinado estado revelou que 95 deles gostam de atuar na área criminal, 125 gostam de atuar na defesa dos direitos coletivos e difusos, e 65 gostam de atuar na defesa do patrimônio público e social. Nessa mesma pesquisa, verificou-se também que 60 profissionais gostam de atuar nas áreas criminal e de defesa dos direitos coletivos e difusos, 40 gostam de atuar nas áreas criminal e de defesa do patrimônio público e social, 40 gostam de atuar nas áreas de defesa dos direitos coletivos e difusos e de defesa do patrimônio público e social, e 20 gostam de atuar nas três áreas citadas.
+
+Com base nessa situação hipotética, julgue o item seguinte.
+
+Há mais profissionais que não gostam de atuar em nenhuma das três áreas mencionadas do que os que gostam de atuar em todas as três áreas.', '["Certo","Errado"]'::jsonb, 1, 'Errado. Gostam de pelo menos uma área 65 + 80 + 20 = 165 profissionais; logo, 180 − 165 = 15 não gostam de nenhuma. São menos que os 20 que gostam das três.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Ministério Público do Estado do Ceará","cargo":"Analista Ministerial","ano":2025,"prova":"mpce-2025-cg1","item":41}'::jsonb, 2, 'ativa'),
+  ('icmbio24-001', 'portugues', 'Interpretação de texto', 'Texto CB1A1
+
+O debate sobre o futuro da Amazônia depende essencialmente de como se define desenvolvimento. Diversas iniciativas governamentais — e privadas, muitas vezes ilegais — desde os anos 1970 estão centradas na ideia de ocupação do território para atividades agropecuárias e de mineração, além do uso dos rios para geração de energia elétrica, mesmo que isso implique a derrubada descontrolada da floresta. Na região Norte, o desmatamento contínuo, que já consumiu 20% da área original da floresta no Brasil, afeta negativamente o clima regional, com impacto no continente e no restante do planeta.
+
+A floresta amazônica exerce um papel fundamental na chamada química atmosférica: é uma gigantesca fonte de vapor d’água, que leva chuva da região Norte até a bacia do rio da Prata, favorecendo, por exemplo, a atividade agropecuária da região Centro-Oeste. Um estudo mostra que o desmatamento total ou parcial das três grandes florestas tropicais do mundo — a da bacia do Congo e a do Sudeste Asiático, além da amazônica, a maior delas — causaria um aumento da temperatura do planeta de 0,7 °C, o que equivale a boa parte do aquecimento gerado pela ação humana desde a Revolução Industrial.
+
+O ecossistema rico e delicado da Amazônia demanda um modelo de desenvolvimento próprio que privilegie as particularidades da floresta, aproveitando sua imensa biodiversidade e respeitando a população local — indígenas, ribeirinhos e moradores das cidades. A discussão deve contemplar questões como o manejo sustentável de recursos como pesca, madeira e frutos, a oferta de infraestrutura para seus habitantes (na região que concentra 20% de água doce de toda a Terra, 30% da população não tem acesso à água potável e 87% vive sem coleta de esgoto), o combate ao desmatamento ilegal, a grilagem de terras públicas, entre outros pontos. A ciência tem a contribuir no estudo da biodiversidade; na domesticação de espécies nativas com relevância comercial; e na recuperação de pastagens abandonadas para uso em uma agricultura mais tecnológica e uma pecuária mais intensiva, ou realizada em floresta.
+
+Alexandra O. de Almeida. Revista Pesquisa FAPESP, edição 285, nov./2019 (com adaptações).
+
+De acordo com as ideias veiculadas no texto CB1A1, julgue o item a seguir.
+
+Conclui-se da leitura do primeiro parágrafo do texto que o modelo de desenvolvimento até hoje empreendido na Amazônia é deletério ao futuro da floresta.', '["Certo","Errado"]'::jsonb, 0, 'Certo. O parágrafo diz que, desde os anos 1970, a ideia de desenvolvimento foi ocupar o território mesmo à custa da derrubada descontrolada da floresta, e que o desmatamento já consumiu 20% dela. Esse modelo é prejudicial (deletério) ao futuro da floresta.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":1}'::jsonb, 1, 'ativa'),
+  ('icmbio24-002', 'portugues', 'Interpretação de texto', 'Texto CB1A1
+
+O debate sobre o futuro da Amazônia depende essencialmente de como se define desenvolvimento. Diversas iniciativas governamentais — e privadas, muitas vezes ilegais — desde os anos 1970 estão centradas na ideia de ocupação do território para atividades agropecuárias e de mineração, além do uso dos rios para geração de energia elétrica, mesmo que isso implique a derrubada descontrolada da floresta. Na região Norte, o desmatamento contínuo, que já consumiu 20% da área original da floresta no Brasil, afeta negativamente o clima regional, com impacto no continente e no restante do planeta.
+
+A floresta amazônica exerce um papel fundamental na chamada química atmosférica: é uma gigantesca fonte de vapor d’água, que leva chuva da região Norte até a bacia do rio da Prata, favorecendo, por exemplo, a atividade agropecuária da região Centro-Oeste. Um estudo mostra que o desmatamento total ou parcial das três grandes florestas tropicais do mundo — a da bacia do Congo e a do Sudeste Asiático, além da amazônica, a maior delas — causaria um aumento da temperatura do planeta de 0,7 °C, o que equivale a boa parte do aquecimento gerado pela ação humana desde a Revolução Industrial.
+
+O ecossistema rico e delicado da Amazônia demanda um modelo de desenvolvimento próprio que privilegie as particularidades da floresta, aproveitando sua imensa biodiversidade e respeitando a população local — indígenas, ribeirinhos e moradores das cidades. A discussão deve contemplar questões como o manejo sustentável de recursos como pesca, madeira e frutos, a oferta de infraestrutura para seus habitantes (na região que concentra 20% de água doce de toda a Terra, 30% da população não tem acesso à água potável e 87% vive sem coleta de esgoto), o combate ao desmatamento ilegal, a grilagem de terras públicas, entre outros pontos. A ciência tem a contribuir no estudo da biodiversidade; na domesticação de espécies nativas com relevância comercial; e na recuperação de pastagens abandonadas para uso em uma agricultura mais tecnológica e uma pecuária mais intensiva, ou realizada em floresta.
+
+Alexandra O. de Almeida. Revista Pesquisa FAPESP, edição 285, nov./2019 (com adaptações).
+
+De acordo com as ideias veiculadas no texto CB1A1, julgue o item a seguir.
+
+Depreende-se da leitura do segundo parágrafo do texto que o desmatamento da floresta amazônica pode alterar um processo natural que é importante para a agropecuária brasileira.', '["Certo","Errado"]'::jsonb, 0, 'Certo. A floresta é fonte de vapor d’água que leva chuva até a bacia do Prata, favorecendo a agropecuária do Centro-Oeste. Desmatar pode afetar esse processo natural.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":2}'::jsonb, 1, 'ativa'),
+  ('icmbio24-003', 'portugues', 'Interpretação de texto', 'Texto CB1A1
+
+O debate sobre o futuro da Amazônia depende essencialmente de como se define desenvolvimento. Diversas iniciativas governamentais — e privadas, muitas vezes ilegais — desde os anos 1970 estão centradas na ideia de ocupação do território para atividades agropecuárias e de mineração, além do uso dos rios para geração de energia elétrica, mesmo que isso implique a derrubada descontrolada da floresta. Na região Norte, o desmatamento contínuo, que já consumiu 20% da área original da floresta no Brasil, afeta negativamente o clima regional, com impacto no continente e no restante do planeta.
+
+A floresta amazônica exerce um papel fundamental na chamada química atmosférica: é uma gigantesca fonte de vapor d’água, que leva chuva da região Norte até a bacia do rio da Prata, favorecendo, por exemplo, a atividade agropecuária da região Centro-Oeste. Um estudo mostra que o desmatamento total ou parcial das três grandes florestas tropicais do mundo — a da bacia do Congo e a do Sudeste Asiático, além da amazônica, a maior delas — causaria um aumento da temperatura do planeta de 0,7 °C, o que equivale a boa parte do aquecimento gerado pela ação humana desde a Revolução Industrial.
+
+O ecossistema rico e delicado da Amazônia demanda um modelo de desenvolvimento próprio que privilegie as particularidades da floresta, aproveitando sua imensa biodiversidade e respeitando a população local — indígenas, ribeirinhos e moradores das cidades. A discussão deve contemplar questões como o manejo sustentável de recursos como pesca, madeira e frutos, a oferta de infraestrutura para seus habitantes (na região que concentra 20% de água doce de toda a Terra, 30% da população não tem acesso à água potável e 87% vive sem coleta de esgoto), o combate ao desmatamento ilegal, a grilagem de terras públicas, entre outros pontos. A ciência tem a contribuir no estudo da biodiversidade; na domesticação de espécies nativas com relevância comercial; e na recuperação de pastagens abandonadas para uso em uma agricultura mais tecnológica e uma pecuária mais intensiva, ou realizada em floresta.
+
+Alexandra O. de Almeida. Revista Pesquisa FAPESP, edição 285, nov./2019 (com adaptações).
+
+De acordo com as ideias veiculadas no texto CB1A1, julgue o item a seguir.
+
+Conclui-se das informações do texto que, devido à disponibilidade hídrica da região amazônica, seus habitantes são plenamente atendidos em serviços de infraestrutura de acesso a água potável e a rede de esgoto.', '["Certo","Errado"]'::jsonb, 1, 'Errado. O texto diz o contrário: apesar de a região concentrar 20% da água doce da Terra, 30% da população não tem água potável e 87% vive sem coleta de esgoto.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":3}'::jsonb, 1, 'ativa'),
+  ('icmbio24-004', 'portugues', 'Interpretação de texto', 'Texto CB1A1
+
+O debate sobre o futuro da Amazônia depende essencialmente de como se define desenvolvimento. Diversas iniciativas governamentais — e privadas, muitas vezes ilegais — desde os anos 1970 estão centradas na ideia de ocupação do território para atividades agropecuárias e de mineração, além do uso dos rios para geração de energia elétrica, mesmo que isso implique a derrubada descontrolada da floresta. Na região Norte, o desmatamento contínuo, que já consumiu 20% da área original da floresta no Brasil, afeta negativamente o clima regional, com impacto no continente e no restante do planeta.
+
+A floresta amazônica exerce um papel fundamental na chamada química atmosférica: é uma gigantesca fonte de vapor d’água, que leva chuva da região Norte até a bacia do rio da Prata, favorecendo, por exemplo, a atividade agropecuária da região Centro-Oeste. Um estudo mostra que o desmatamento total ou parcial das três grandes florestas tropicais do mundo — a da bacia do Congo e a do Sudeste Asiático, além da amazônica, a maior delas — causaria um aumento da temperatura do planeta de 0,7 °C, o que equivale a boa parte do aquecimento gerado pela ação humana desde a Revolução Industrial.
+
+O ecossistema rico e delicado da Amazônia demanda um modelo de desenvolvimento próprio que privilegie as particularidades da floresta, aproveitando sua imensa biodiversidade e respeitando a população local — indígenas, ribeirinhos e moradores das cidades. A discussão deve contemplar questões como o manejo sustentável de recursos como pesca, madeira e frutos, a oferta de infraestrutura para seus habitantes (na região que concentra 20% de água doce de toda a Terra, 30% da população não tem acesso à água potável e 87% vive sem coleta de esgoto), o combate ao desmatamento ilegal, a grilagem de terras públicas, entre outros pontos. A ciência tem a contribuir no estudo da biodiversidade; na domesticação de espécies nativas com relevância comercial; e na recuperação de pastagens abandonadas para uso em uma agricultura mais tecnológica e uma pecuária mais intensiva, ou realizada em floresta.
+
+Alexandra O. de Almeida. Revista Pesquisa FAPESP, edição 285, nov./2019 (com adaptações).
+
+De acordo com as ideias veiculadas no texto CB1A1, julgue o item a seguir.
+
+No último período do texto, a autora hierarquiza, por ordem de importância, as contribuições da ciência para os ecossistemas amazônicos.', '["Certo","Errado"]'::jsonb, 1, 'Errado. A autora apenas enumera, separadas por ponto e vírgula, as áreas em que a ciência pode contribuir. Nada indica uma ordem de importância entre elas.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":4}'::jsonb, 2, 'ativa'),
+  ('icmbio24-005', 'portugues', 'Interpretação de texto', 'Texto CB1A1
+
+O debate sobre o futuro da Amazônia depende essencialmente de como se define desenvolvimento. Diversas iniciativas governamentais — e privadas, muitas vezes ilegais — desde os anos 1970 estão centradas na ideia de ocupação do território para atividades agropecuárias e de mineração, além do uso dos rios para geração de energia elétrica, mesmo que isso implique a derrubada descontrolada da floresta. Na região Norte, o desmatamento contínuo, que já consumiu 20% da área original da floresta no Brasil, afeta negativamente o clima regional, com impacto no continente e no restante do planeta.
+
+A floresta amazônica exerce um papel fundamental na chamada química atmosférica: é uma gigantesca fonte de vapor d’água, que leva chuva da região Norte até a bacia do rio da Prata, favorecendo, por exemplo, a atividade agropecuária da região Centro-Oeste. Um estudo mostra que o desmatamento total ou parcial das três grandes florestas tropicais do mundo — a da bacia do Congo e a do Sudeste Asiático, além da amazônica, a maior delas — causaria um aumento da temperatura do planeta de 0,7 °C, o que equivale a boa parte do aquecimento gerado pela ação humana desde a Revolução Industrial.
+
+O ecossistema rico e delicado da Amazônia demanda um modelo de desenvolvimento próprio que privilegie as particularidades da floresta, aproveitando sua imensa biodiversidade e respeitando a população local — indígenas, ribeirinhos e moradores das cidades. A discussão deve contemplar questões como o manejo sustentável de recursos como pesca, madeira e frutos, a oferta de infraestrutura para seus habitantes (na região que concentra 20% de água doce de toda a Terra, 30% da população não tem acesso à água potável e 87% vive sem coleta de esgoto), o combate ao desmatamento ilegal, a grilagem de terras públicas, entre outros pontos. A ciência tem a contribuir no estudo da biodiversidade; na domesticação de espécies nativas com relevância comercial; e na recuperação de pastagens abandonadas para uso em uma agricultura mais tecnológica e uma pecuária mais intensiva, ou realizada em floresta.
+
+Alexandra O. de Almeida. Revista Pesquisa FAPESP, edição 285, nov./2019 (com adaptações).
+
+De acordo com as ideias veiculadas no texto CB1A1, julgue o item a seguir.
+
+De acordo com o texto, o índice de desmatamento das grandes florestas tropicais do mundo é inversamente proporcional à intensificação do aquecimento global.', '["Certo","Errado"]'::jsonb, 1, 'Errado. Segundo o estudo citado, desmatar as grandes florestas tropicais aumentaria a temperatura do planeta: quanto mais desmatamento, mais aquecimento. A relação seria direta, e não inversa.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":5}'::jsonb, 2, 'ativa'),
+  ('icmbio24-006', 'portugues', 'Interpretação de texto', 'Texto CB1A1
+
+O debate sobre o futuro da Amazônia depende essencialmente de como se define desenvolvimento. Diversas iniciativas governamentais — e privadas, muitas vezes ilegais — desde os anos 1970 estão centradas na ideia de ocupação do território para atividades agropecuárias e de mineração, além do uso dos rios para geração de energia elétrica, mesmo que isso implique a derrubada descontrolada da floresta. Na região Norte, o desmatamento contínuo, que já consumiu 20% da área original da floresta no Brasil, afeta negativamente o clima regional, com impacto no continente e no restante do planeta.
+
+A floresta amazônica exerce um papel fundamental na chamada química atmosférica: é uma gigantesca fonte de vapor d’água, que leva chuva da região Norte até a bacia do rio da Prata, favorecendo, por exemplo, a atividade agropecuária da região Centro-Oeste. Um estudo mostra que o desmatamento total ou parcial das três grandes florestas tropicais do mundo — a da bacia do Congo e a do Sudeste Asiático, além da amazônica, a maior delas — causaria um aumento da temperatura do planeta de 0,7 °C, o que equivale a boa parte do aquecimento gerado pela ação humana desde a Revolução Industrial.
+
+O ecossistema rico e delicado da Amazônia demanda um modelo de desenvolvimento próprio que privilegie as particularidades da floresta, aproveitando sua imensa biodiversidade e respeitando a população local — indígenas, ribeirinhos e moradores das cidades. A discussão deve contemplar questões como o manejo sustentável de recursos como pesca, madeira e frutos, a oferta de infraestrutura para seus habitantes (na região que concentra 20% de água doce de toda a Terra, 30% da população não tem acesso à água potável e 87% vive sem coleta de esgoto), o combate ao desmatamento ilegal, a grilagem de terras públicas, entre outros pontos. A ciência tem a contribuir no estudo da biodiversidade; na domesticação de espécies nativas com relevância comercial; e na recuperação de pastagens abandonadas para uso em uma agricultura mais tecnológica e uma pecuária mais intensiva, ou realizada em floresta.
+
+Alexandra O. de Almeida. Revista Pesquisa FAPESP, edição 285, nov./2019 (com adaptações).
+
+De acordo com as ideias veiculadas no texto CB1A1, julgue o item a seguir.
+
+Infere-se da leitura do texto que o desenvolvimento adequado para a região amazônica deve ser análogo ao preconizado durante o período da Revolução Industrial.', '["Certo","Errado"]'::jsonb, 1, 'Errado. A Revolução Industrial aparece só como marco do aquecimento causado pelo ser humano. O texto defende um modelo próprio para a Amazônia, que respeite a floresta e sua população.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":6}'::jsonb, 1, 'ativa'),
+  ('icmbio24-007', 'portugues', 'Interpretação de texto', 'Texto CB1A1
+
+O debate sobre o futuro da Amazônia depende essencialmente de como se define desenvolvimento. Diversas iniciativas governamentais — e privadas, muitas vezes ilegais — desde os anos 1970 estão centradas na ideia de ocupação do território para atividades agropecuárias e de mineração, além do uso dos rios para geração de energia elétrica, mesmo que isso implique a derrubada descontrolada da floresta. Na região Norte, o desmatamento contínuo, que já consumiu 20% da área original da floresta no Brasil, afeta negativamente o clima regional, com impacto no continente e no restante do planeta.
+
+A floresta amazônica exerce um papel fundamental na chamada química atmosférica: é uma gigantesca fonte de vapor d’água, que leva chuva da região Norte até a bacia do rio da Prata, favorecendo, por exemplo, a atividade agropecuária da região Centro-Oeste. Um estudo mostra que o desmatamento total ou parcial das três grandes florestas tropicais do mundo — a da bacia do Congo e a do Sudeste Asiático, além da amazônica, a maior delas — causaria um aumento da temperatura do planeta de 0,7 °C, o que equivale a boa parte do aquecimento gerado pela ação humana desde a Revolução Industrial.
+
+O ecossistema rico e delicado da Amazônia demanda um modelo de desenvolvimento próprio que privilegie as particularidades da floresta, aproveitando sua imensa biodiversidade e respeitando a população local — indígenas, ribeirinhos e moradores das cidades. A discussão deve contemplar questões como o manejo sustentável de recursos como pesca, madeira e frutos, a oferta de infraestrutura para seus habitantes (na região que concentra 20% de água doce de toda a Terra, 30% da população não tem acesso à água potável e 87% vive sem coleta de esgoto), o combate ao desmatamento ilegal, a grilagem de terras públicas, entre outros pontos. A ciência tem a contribuir no estudo da biodiversidade; na domesticação de espécies nativas com relevância comercial; e na recuperação de pastagens abandonadas para uso em uma agricultura mais tecnológica e uma pecuária mais intensiva, ou realizada em floresta.
+
+Alexandra O. de Almeida. Revista Pesquisa FAPESP, edição 285, nov./2019 (com adaptações).
+
+De acordo com as ideias veiculadas no texto CB1A1, julgue o item a seguir.
+
+De acordo com as ideias do texto, a formulação de um novo modelo de desenvolvimento para a Amazônia pode ser beneficiada pelas contribuições da ciência.', '["Certo","Errado"]'::jsonb, 0, 'Certo. O texto termina dizendo que a ciência tem a contribuir no estudo da biodiversidade, na domesticação de espécies nativas e na recuperação de pastagens, ou seja, na construção do novo modelo.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":7}'::jsonb, 1, 'ativa'),
+  ('icmbio24-008', 'portugues', 'Reescrita de frases', 'Texto CB1A1
+
+O debate sobre o futuro da Amazônia depende essencialmente de como se define desenvolvimento. Diversas iniciativas governamentais — e privadas, muitas vezes ilegais — desde os anos 1970 estão centradas na ideia de ocupação do território para atividades agropecuárias e de mineração, além do uso dos rios para geração de energia elétrica, mesmo que isso implique a derrubada descontrolada da floresta. Na região Norte, o desmatamento contínuo, que já consumiu 20% da área original da floresta no Brasil, afeta negativamente o clima regional, com impacto no continente e no restante do planeta.
+
+A floresta amazônica exerce um papel fundamental na chamada química atmosférica: é uma gigantesca fonte de vapor d’água, que leva chuva da região Norte até a bacia do rio da Prata, favorecendo, por exemplo, a atividade agropecuária da região Centro-Oeste. Um estudo mostra que o desmatamento total ou parcial das três grandes florestas tropicais do mundo — a da bacia do Congo e a do Sudeste Asiático, além da amazônica, a maior delas — causaria um aumento da temperatura do planeta de 0,7 °C, o que equivale a boa parte do aquecimento gerado pela ação humana desde a Revolução Industrial.
+
+O ecossistema rico e delicado da Amazônia demanda um modelo de desenvolvimento próprio que privilegie as particularidades da floresta, aproveitando sua imensa biodiversidade e respeitando a população local — indígenas, ribeirinhos e moradores das cidades. A discussão deve contemplar questões como o manejo sustentável de recursos como pesca, madeira e frutos, a oferta de infraestrutura para seus habitantes (na região que concentra 20% de água doce de toda a Terra, 30% da população não tem acesso à água potável e 87% vive sem coleta de esgoto), o combate ao desmatamento ilegal, a grilagem de terras públicas, entre outros pontos. A ciência tem a contribuir no estudo da biodiversidade; na domesticação de espécies nativas com relevância comercial; e na recuperação de pastagens abandonadas para uso em uma agricultura mais tecnológica e uma pecuária mais intensiva, ou realizada em floresta.
+
+Alexandra O. de Almeida. Revista Pesquisa FAPESP, edição 285, nov./2019 (com adaptações).
+
+Em relação ao texto CB1A1 e a seus aspectos linguísticos, julgue o item seguinte.
+
+Sem prejuízo da correção gramatical e dos sentidos do texto, a expressão “por exemplo” poderia ser deslocada para o final do primeiro período do segundo parágrafo, da seguinte forma: ... favorecendo a atividade agropecuária da região Centro-Oeste, por exemplo.', '["Certo","Errado"]'::jsonb, 0, 'Certo. "Por exemplo" pode mudar de lugar na frase sem erro e sem mudar o sentido: continua indicando que a agropecuária do Centro-Oeste é um exemplo do que a chuva favorece.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":8}'::jsonb, 2, 'ativa'),
+  ('icmbio24-009', 'portugues', 'Sentido das palavras', 'Texto CB1A1
+
+O debate sobre o futuro da Amazônia depende essencialmente de como se define desenvolvimento. Diversas iniciativas governamentais — e privadas, muitas vezes ilegais — desde os anos 1970 estão centradas na ideia de ocupação do território para atividades agropecuárias e de mineração, além do uso dos rios para geração de energia elétrica, mesmo que isso implique a derrubada descontrolada da floresta. Na região Norte, o desmatamento contínuo, que já consumiu 20% da área original da floresta no Brasil, afeta negativamente o clima regional, com impacto no continente e no restante do planeta.
+
+A floresta amazônica exerce um papel fundamental na chamada química atmosférica: é uma gigantesca fonte de vapor d’água, que leva chuva da região Norte até a bacia do rio da Prata, favorecendo, por exemplo, a atividade agropecuária da região Centro-Oeste. Um estudo mostra que o desmatamento total ou parcial das três grandes florestas tropicais do mundo — a da bacia do Congo e a do Sudeste Asiático, além da amazônica, a maior delas — causaria um aumento da temperatura do planeta de 0,7 °C, o que equivale a boa parte do aquecimento gerado pela ação humana desde a Revolução Industrial.
+
+O ecossistema rico e delicado da Amazônia demanda um modelo de desenvolvimento próprio que privilegie as particularidades da floresta, aproveitando sua imensa biodiversidade e respeitando a população local — indígenas, ribeirinhos e moradores das cidades. A discussão deve contemplar questões como o manejo sustentável de recursos como pesca, madeira e frutos, a oferta de infraestrutura para seus habitantes (na região que concentra 20% de água doce de toda a Terra, 30% da população não tem acesso à água potável e 87% vive sem coleta de esgoto), o combate ao desmatamento ilegal, a grilagem de terras públicas, entre outros pontos. A ciência tem a contribuir no estudo da biodiversidade; na domesticação de espécies nativas com relevância comercial; e na recuperação de pastagens abandonadas para uso em uma agricultura mais tecnológica e uma pecuária mais intensiva, ou realizada em floresta.
+
+Alexandra O. de Almeida. Revista Pesquisa FAPESP, edição 285, nov./2019 (com adaptações).
+
+Em relação ao texto CB1A1 e a seus aspectos linguísticos, julgue o item seguinte.
+
+O vocábulo “contemplar” (segundo período do terceiro parágrafo) poderia ser substituído, sem alteração do sentido original do texto, por observar.', '["Certo","Errado"]'::jsonb, 0, 'Certo. No trecho, "a discussão deve contemplar questões" quer dizer que a discussão deve levar em conta essas questões. "Observar", no sentido de considerar, atentar para, mantém esse sentido.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":9}'::jsonb, 2, 'ativa'),
+  ('icmbio24-010', 'portugues', 'Tipologia textual', 'Texto CB1A1
+
+O debate sobre o futuro da Amazônia depende essencialmente de como se define desenvolvimento. Diversas iniciativas governamentais — e privadas, muitas vezes ilegais — desde os anos 1970 estão centradas na ideia de ocupação do território para atividades agropecuárias e de mineração, além do uso dos rios para geração de energia elétrica, mesmo que isso implique a derrubada descontrolada da floresta. Na região Norte, o desmatamento contínuo, que já consumiu 20% da área original da floresta no Brasil, afeta negativamente o clima regional, com impacto no continente e no restante do planeta.
+
+A floresta amazônica exerce um papel fundamental na chamada química atmosférica: é uma gigantesca fonte de vapor d’água, que leva chuva da região Norte até a bacia do rio da Prata, favorecendo, por exemplo, a atividade agropecuária da região Centro-Oeste. Um estudo mostra que o desmatamento total ou parcial das três grandes florestas tropicais do mundo — a da bacia do Congo e a do Sudeste Asiático, além da amazônica, a maior delas — causaria um aumento da temperatura do planeta de 0,7 °C, o que equivale a boa parte do aquecimento gerado pela ação humana desde a Revolução Industrial.
+
+O ecossistema rico e delicado da Amazônia demanda um modelo de desenvolvimento próprio que privilegie as particularidades da floresta, aproveitando sua imensa biodiversidade e respeitando a população local — indígenas, ribeirinhos e moradores das cidades. A discussão deve contemplar questões como o manejo sustentável de recursos como pesca, madeira e frutos, a oferta de infraestrutura para seus habitantes (na região que concentra 20% de água doce de toda a Terra, 30% da população não tem acesso à água potável e 87% vive sem coleta de esgoto), o combate ao desmatamento ilegal, a grilagem de terras públicas, entre outros pontos. A ciência tem a contribuir no estudo da biodiversidade; na domesticação de espécies nativas com relevância comercial; e na recuperação de pastagens abandonadas para uso em uma agricultura mais tecnológica e uma pecuária mais intensiva, ou realizada em floresta.
+
+Alexandra O. de Almeida. Revista Pesquisa FAPESP, edição 285, nov./2019 (com adaptações).
+
+Em relação ao texto CB1A1 e a seus aspectos linguísticos, julgue o item seguinte.
+
+Predominam no texto características da tipologia descritiva.', '["Certo","Errado"]'::jsonb, 1, 'Errado. O texto defende um ponto de vista (o desenvolvimento da Amazônia precisa de um modelo próprio) e apresenta argumentos: predomina a dissertação argumentativa, e não a descrição.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":10}'::jsonb, 1, 'ativa'),
+  ('icmbio24-011', 'portugues', 'Concordância', 'Texto CB1A1
+
+O debate sobre o futuro da Amazônia depende essencialmente de como se define desenvolvimento. Diversas iniciativas governamentais — e privadas, muitas vezes ilegais — desde os anos 1970 estão centradas na ideia de ocupação do território para atividades agropecuárias e de mineração, além do uso dos rios para geração de energia elétrica, mesmo que isso implique a derrubada descontrolada da floresta. Na região Norte, o desmatamento contínuo, que já consumiu 20% da área original da floresta no Brasil, afeta negativamente o clima regional, com impacto no continente e no restante do planeta.
+
+A floresta amazônica exerce um papel fundamental na chamada química atmosférica: é uma gigantesca fonte de vapor d’água, que leva chuva da região Norte até a bacia do rio da Prata, favorecendo, por exemplo, a atividade agropecuária da região Centro-Oeste. Um estudo mostra que o desmatamento total ou parcial das três grandes florestas tropicais do mundo — a da bacia do Congo e a do Sudeste Asiático, além da amazônica, a maior delas — causaria um aumento da temperatura do planeta de 0,7 °C, o que equivale a boa parte do aquecimento gerado pela ação humana desde a Revolução Industrial.
+
+O ecossistema rico e delicado da Amazônia demanda um modelo de desenvolvimento próprio que privilegie as particularidades da floresta, aproveitando sua imensa biodiversidade e respeitando a população local — indígenas, ribeirinhos e moradores das cidades. A discussão deve contemplar questões como o manejo sustentável de recursos como pesca, madeira e frutos, a oferta de infraestrutura para seus habitantes (na região que concentra 20% de água doce de toda a Terra, 30% da população não tem acesso à água potável e 87% vive sem coleta de esgoto), o combate ao desmatamento ilegal, a grilagem de terras públicas, entre outros pontos. A ciência tem a contribuir no estudo da biodiversidade; na domesticação de espécies nativas com relevância comercial; e na recuperação de pastagens abandonadas para uso em uma agricultura mais tecnológica e uma pecuária mais intensiva, ou realizada em floresta.
+
+Alexandra O. de Almeida. Revista Pesquisa FAPESP, edição 285, nov./2019 (com adaptações).
+
+Em relação ao texto CB1A1 e a seus aspectos linguísticos, julgue o item seguinte.
+
+No primeiro período do terceiro parágrafo, a forma verbal “demanda” poderia ser flexionada no plural — demandam — sem prejuízo da correção gramatical, dado o emprego da expressão anterior “rico e delicado”.', '["Certo","Errado"]'::jsonb, 1, 'Errado. O sujeito é "O ecossistema rico e delicado da Amazônia", cujo núcleo é "ecossistema", no singular. "Rico e delicado" só caracteriza esse núcleo; o verbo deve ficar no singular.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":11}'::jsonb, 1, 'ativa'),
+  ('icmbio24-012', 'portugues', 'Crase', 'Texto CB1A1
+
+O debate sobre o futuro da Amazônia depende essencialmente de como se define desenvolvimento. Diversas iniciativas governamentais — e privadas, muitas vezes ilegais — desde os anos 1970 estão centradas na ideia de ocupação do território para atividades agropecuárias e de mineração, além do uso dos rios para geração de energia elétrica, mesmo que isso implique a derrubada descontrolada da floresta. Na região Norte, o desmatamento contínuo, que já consumiu 20% da área original da floresta no Brasil, afeta negativamente o clima regional, com impacto no continente e no restante do planeta.
+
+A floresta amazônica exerce um papel fundamental na chamada química atmosférica: é uma gigantesca fonte de vapor d’água, que leva chuva da região Norte até a bacia do rio da Prata, favorecendo, por exemplo, a atividade agropecuária da região Centro-Oeste. Um estudo mostra que o desmatamento total ou parcial das três grandes florestas tropicais do mundo — a da bacia do Congo e a do Sudeste Asiático, além da amazônica, a maior delas — causaria um aumento da temperatura do planeta de 0,7 °C, o que equivale a boa parte do aquecimento gerado pela ação humana desde a Revolução Industrial.
+
+O ecossistema rico e delicado da Amazônia demanda um modelo de desenvolvimento próprio que privilegie as particularidades da floresta, aproveitando sua imensa biodiversidade e respeitando a população local — indígenas, ribeirinhos e moradores das cidades. A discussão deve contemplar questões como o manejo sustentável de recursos como pesca, madeira e frutos, a oferta de infraestrutura para seus habitantes (na região que concentra 20% de água doce de toda a Terra, 30% da população não tem acesso à água potável e 87% vive sem coleta de esgoto), o combate ao desmatamento ilegal, a grilagem de terras públicas, entre outros pontos. A ciência tem a contribuir no estudo da biodiversidade; na domesticação de espécies nativas com relevância comercial; e na recuperação de pastagens abandonadas para uso em uma agricultura mais tecnológica e uma pecuária mais intensiva, ou realizada em floresta.
+
+Alexandra O. de Almeida. Revista Pesquisa FAPESP, edição 285, nov./2019 (com adaptações).
+
+Em relação ao texto CB1A1 e a seus aspectos linguísticos, julgue o item seguinte.
+
+A inserção do sinal indicativo de crase no vocábulo “a” em “implique a derrubada” (segundo período do primeiro parágrafo) prejudicaria a correção gramatical do trecho em questão.', '["Certo","Errado"]'::jsonb, 0, 'Certo. "Implicar", com o sentido de acarretar, pede complemento sem preposição: implica algo. Sem preposição "a", não há crase, e o acento seria erro.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":12}'::jsonb, 1, 'ativa'),
+  ('icmbio24-013', 'portugues', 'Sintaxe: funções', 'Texto CB1A1
+
+O debate sobre o futuro da Amazônia depende essencialmente de como se define desenvolvimento. Diversas iniciativas governamentais — e privadas, muitas vezes ilegais — desde os anos 1970 estão centradas na ideia de ocupação do território para atividades agropecuárias e de mineração, além do uso dos rios para geração de energia elétrica, mesmo que isso implique a derrubada descontrolada da floresta. Na região Norte, o desmatamento contínuo, que já consumiu 20% da área original da floresta no Brasil, afeta negativamente o clima regional, com impacto no continente e no restante do planeta.
+
+A floresta amazônica exerce um papel fundamental na chamada química atmosférica: é uma gigantesca fonte de vapor d’água, que leva chuva da região Norte até a bacia do rio da Prata, favorecendo, por exemplo, a atividade agropecuária da região Centro-Oeste. Um estudo mostra que o desmatamento total ou parcial das três grandes florestas tropicais do mundo — a da bacia do Congo e a do Sudeste Asiático, além da amazônica, a maior delas — causaria um aumento da temperatura do planeta de 0,7 °C, o que equivale a boa parte do aquecimento gerado pela ação humana desde a Revolução Industrial.
+
+O ecossistema rico e delicado da Amazônia demanda um modelo de desenvolvimento próprio que privilegie as particularidades da floresta, aproveitando sua imensa biodiversidade e respeitando a população local — indígenas, ribeirinhos e moradores das cidades. A discussão deve contemplar questões como o manejo sustentável de recursos como pesca, madeira e frutos, a oferta de infraestrutura para seus habitantes (na região que concentra 20% de água doce de toda a Terra, 30% da população não tem acesso à água potável e 87% vive sem coleta de esgoto), o combate ao desmatamento ilegal, a grilagem de terras públicas, entre outros pontos. A ciência tem a contribuir no estudo da biodiversidade; na domesticação de espécies nativas com relevância comercial; e na recuperação de pastagens abandonadas para uso em uma agricultura mais tecnológica e uma pecuária mais intensiva, ou realizada em floresta.
+
+Alexandra O. de Almeida. Revista Pesquisa FAPESP, edição 285, nov./2019 (com adaptações).
+
+Em relação ao texto CB1A1 e a seus aspectos linguísticos, julgue o item seguinte.
+
+No primeiro período do terceiro parágrafo, o termo “ecossistema” corresponde ao núcleo do sujeito da oração “que privilegie as particularidades da floresta”.', '["Certo","Errado"]'::jsonb, 1, 'Errado. O sujeito de "privilegie" é o pronome relativo "que", que retoma "modelo de desenvolvimento próprio". "Ecossistema" é o núcleo do sujeito da oração principal ("O ecossistema ... demanda").', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":13}'::jsonb, 2, 'ativa'),
+  ('icmbio24-014', 'portugues', 'Coesão textual', 'Texto CB1A1
+
+O debate sobre o futuro da Amazônia depende essencialmente de como se define desenvolvimento. Diversas iniciativas governamentais — e privadas, muitas vezes ilegais — desde os anos 1970 estão centradas na ideia de ocupação do território para atividades agropecuárias e de mineração, além do uso dos rios para geração de energia elétrica, mesmo que isso implique a derrubada descontrolada da floresta. Na região Norte, o desmatamento contínuo, que já consumiu 20% da área original da floresta no Brasil, afeta negativamente o clima regional, com impacto no continente e no restante do planeta.
+
+A floresta amazônica exerce um papel fundamental na chamada química atmosférica: é uma gigantesca fonte de vapor d’água, que leva chuva da região Norte até a bacia do rio da Prata, favorecendo, por exemplo, a atividade agropecuária da região Centro-Oeste. Um estudo mostra que o desmatamento total ou parcial das três grandes florestas tropicais do mundo — a da bacia do Congo e a do Sudeste Asiático, além da amazônica, a maior delas — causaria um aumento da temperatura do planeta de 0,7 °C, o que equivale a boa parte do aquecimento gerado pela ação humana desde a Revolução Industrial.
+
+O ecossistema rico e delicado da Amazônia demanda um modelo de desenvolvimento próprio que privilegie as particularidades da floresta, aproveitando sua imensa biodiversidade e respeitando a população local — indígenas, ribeirinhos e moradores das cidades. A discussão deve contemplar questões como o manejo sustentável de recursos como pesca, madeira e frutos, a oferta de infraestrutura para seus habitantes (na região que concentra 20% de água doce de toda a Terra, 30% da população não tem acesso à água potável e 87% vive sem coleta de esgoto), o combate ao desmatamento ilegal, a grilagem de terras públicas, entre outros pontos. A ciência tem a contribuir no estudo da biodiversidade; na domesticação de espécies nativas com relevância comercial; e na recuperação de pastagens abandonadas para uso em uma agricultura mais tecnológica e uma pecuária mais intensiva, ou realizada em floresta.
+
+Alexandra O. de Almeida. Revista Pesquisa FAPESP, edição 285, nov./2019 (com adaptações).
+
+Em relação ao texto CB1A1 e a seus aspectos linguísticos, julgue o item seguinte.
+
+No segundo período do primeiro parágrafo, o termo “ilegais” refere-se, por coesão, a “Diversas iniciativas governamentais”.', '["Certo","Errado"]'::jsonb, 1, 'Errado. "Ilegais" se refere às iniciativas "privadas", dentro dos travessões: "e privadas, muitas vezes ilegais". O texto não chama de ilegais as iniciativas governamentais.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":14}'::jsonb, 2, 'ativa'),
+  ('icmbio24-015', 'portugues', 'Coesão textual', 'Texto CB1A1
+
+O debate sobre o futuro da Amazônia depende essencialmente de como se define desenvolvimento. Diversas iniciativas governamentais — e privadas, muitas vezes ilegais — desde os anos 1970 estão centradas na ideia de ocupação do território para atividades agropecuárias e de mineração, além do uso dos rios para geração de energia elétrica, mesmo que isso implique a derrubada descontrolada da floresta. Na região Norte, o desmatamento contínuo, que já consumiu 20% da área original da floresta no Brasil, afeta negativamente o clima regional, com impacto no continente e no restante do planeta.
+
+A floresta amazônica exerce um papel fundamental na chamada química atmosférica: é uma gigantesca fonte de vapor d’água, que leva chuva da região Norte até a bacia do rio da Prata, favorecendo, por exemplo, a atividade agropecuária da região Centro-Oeste. Um estudo mostra que o desmatamento total ou parcial das três grandes florestas tropicais do mundo — a da bacia do Congo e a do Sudeste Asiático, além da amazônica, a maior delas — causaria um aumento da temperatura do planeta de 0,7 °C, o que equivale a boa parte do aquecimento gerado pela ação humana desde a Revolução Industrial.
+
+O ecossistema rico e delicado da Amazônia demanda um modelo de desenvolvimento próprio que privilegie as particularidades da floresta, aproveitando sua imensa biodiversidade e respeitando a população local — indígenas, ribeirinhos e moradores das cidades. A discussão deve contemplar questões como o manejo sustentável de recursos como pesca, madeira e frutos, a oferta de infraestrutura para seus habitantes (na região que concentra 20% de água doce de toda a Terra, 30% da população não tem acesso à água potável e 87% vive sem coleta de esgoto), o combate ao desmatamento ilegal, a grilagem de terras públicas, entre outros pontos. A ciência tem a contribuir no estudo da biodiversidade; na domesticação de espécies nativas com relevância comercial; e na recuperação de pastagens abandonadas para uso em uma agricultura mais tecnológica e uma pecuária mais intensiva, ou realizada em floresta.
+
+Alexandra O. de Almeida. Revista Pesquisa FAPESP, edição 285, nov./2019 (com adaptações).
+
+Em relação ao texto CB1A1 e a seus aspectos linguísticos, julgue o item seguinte.
+
+Na expressão “além da amazônica” (último período do segundo parágrafo), está implícito o termo floresta imediatamente antes de “amazônica”.', '["Certo","Errado"]'::jsonb, 0, 'Certo. O texto fala das três grandes florestas tropicais: a da bacia do Congo, a do Sudeste Asiático e a amazônica. Em "além da amazônica", fica subentendido "da floresta amazônica".', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":15}'::jsonb, 1, 'ativa'),
+  ('icmbio24-016', 'portugues', 'Redação oficial', 'Considerando os parâmetros estabelecidos no Manual de Redação da Presidência da República para a produção de documentos oficiais, julgue o próximo item.
+
+Atualmente, utiliza-se a terminologia padrão ofício para nomear os três tipos de expedientes que antes se diferenciavam mais pela finalidade que pela forma: o ofício, o aviso e o memorando.', '["Certo","Errado"]'::jsonb, 0, 'Certo. O Manual de Redação (3.ª edição) unificou ofício, aviso e memorando sob o nome padrão ofício, já que eles se diferenciavam mais pela finalidade que pela forma.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":16}'::jsonb, 1, 'ativa'),
+  ('icmbio24-017', 'portugues', 'Redação oficial', 'Considerando os parâmetros estabelecidos no Manual de Redação da Presidência da República para a produção de documentos oficiais, julgue o próximo item.
+
+A finalidade da comunicação oficial impõe que se faça uso da língua de modo convergente com textos literários ou jornalísticos.', '["Certo","Errado"]'::jsonb, 1, 'Errado. A comunicação oficial busca clareza, objetividade e formalidade. Recursos de textos literários ou jornalísticos não combinam com essa finalidade.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":17}'::jsonb, 1, 'ativa'),
+  ('icmbio24-018', 'portugues', 'Redação oficial', 'Considerando os parâmetros estabelecidos no Manual de Redação da Presidência da República para a produção de documentos oficiais, julgue o próximo item.
+
+São atributos da redação oficial a precisão e o uso da modalidade padrão da língua portuguesa.', '["Certo","Errado"]'::jsonb, 0, 'Certo. O Manual lista entre os atributos da redação oficial a clareza, a precisão, a objetividade, a concisão, a impessoalidade, a formalidade e o uso da norma padrão da língua.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":18}'::jsonb, 1, 'ativa'),
+  ('icmbio24-019', 'portugues', 'Redação oficial', 'Considerando os parâmetros estabelecidos no Manual de Redação da Presidência da República para a produção de documentos oficiais, julgue o próximo item.
+
+O vocativo que deve ser utilizado em comunicação dirigida a ministro de Estado é Vossa Excelência.', '["Certo","Errado"]'::jsonb, 1, 'Errado. Vossa Excelência é o pronome de tratamento usado no corpo do texto. O vocativo para ministro de Estado é "Senhor Ministro" (ou "Senhora Ministra").', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":19}'::jsonb, 2, 'ativa'),
+  ('icmbio24-020', 'portugues', 'Redação oficial', 'Considerando os parâmetros estabelecidos no Manual de Redação da Presidência da República para a produção de documentos oficiais, julgue o próximo item.
+
+Em atendimento ao atributo da impessoalidade, essencial à correspondência oficial, devem-se evitar comentários e caracterizações supérfluos, o emprego de advérbios inúteis e a subordinação excessiva.', '["Certo","Errado"]'::jsonb, 1, 'Errado. Evitar comentários supérfluos, advérbios inúteis e subordinação excessiva são recomendações ligadas à concisão (dizer o máximo com o mínimo de palavras), e não à impessoalidade.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":20}'::jsonb, 2, 'ativa'),
+  ('icmbio24-021', 'administrativo', 'Licitações e contratos (Lei n.º 14.133/2021)', 'Determinado órgão do Poder Judiciário, no desempenho de sua função administrativa, pretende realizar a compra de produto orçado no valor total de R$ 45.000.
+
+Considerando a situação hipotética apresentada e o disposto na Lei n.º 14.133/2021, julgue o item a seguir.
+
+A contratação pretendida deverá ser paga preferencialmente por meio de cartão de pagamento.', '["Certo","Errado"]'::jsonb, 0, 'Certo. Uma compra desse valor cabe na dispensa de licitação por baixo valor, e a Lei n.º 14.133/2021 (art. 75, § 4.º) manda que essas contratações sejam pagas, de preferência, com cartão de pagamento.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":21}'::jsonb, 2, 'ativa'),
+  ('icmbio24-022', 'administrativo', 'Licitações e contratos (Lei n.º 14.133/2021)', 'Determinado órgão do Poder Judiciário, no desempenho de sua função administrativa, pretende realizar a compra de produto orçado no valor total de R$ 45.000.
+
+Considerando a situação hipotética apresentada e o disposto na Lei n.º 14.133/2021, julgue o item a seguir.
+
+As normas gerais de licitações e contratos administrativos são plenamente aplicáveis ao caso em apreço.', '["Certo","Errado"]'::jsonb, 0, 'Certo. A Lei n.º 14.133/2021 vale também para os órgãos do Judiciário e do Legislativo quando exercem função administrativa (art. 1.º, I).', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":22}'::jsonb, 1, 'ativa'),
+  ('icmbio24-023', 'administrativo', 'Licitações e contratos (Lei n.º 14.133/2021)', 'Determinado órgão do Poder Judiciário, no desempenho de sua função administrativa, pretende realizar a compra de produto orçado no valor total de R$ 45.000.
+
+Considerando a situação hipotética apresentada e o disposto na Lei n.º 14.133/2021, julgue o item a seguir.
+
+A contratação pretendida constitui hipótese de contratação direta por inexigibilidade de licitação.', '["Certo","Errado"]'::jsonb, 1, 'Errado. A licitação até seria possível; a contratação direta, no caso, se justifica pelo baixo valor. Isso é dispensa (art. 75, II), e não inexigibilidade, que ocorre quando a competição é inviável.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":23}'::jsonb, 2, 'ativa'),
+  ('icmbio24-024', 'administrativo', 'Controle da administração', 'Lucas, com sessenta e dois anos de idade, formalizou requerimento administrativo perante autoridade vinculada a uma autarquia federal. Dez dias após concluída a instrução do processo administrativo, como ainda não havia sido proferida a decisão do requerimento, Lucas interpôs recurso administrativo dirigido ao superior da autoridade a quem encaminhara o pedido e impetrou mandado de segurança sob a alegação de ilegalidade administrativa por omissão, já que não fora proferida decisão administrativa no prazo legal, especialmente por ser uma pessoa idosa.
+
+Com base na situação hipotética precedente e na lei que regula o processo administrativo no âmbito da administração pública, julgue o item seguinte.
+
+A impetração de mandado de segurança configura controle administrativo.', '["Certo","Errado"]'::jsonb, 1, 'Errado. O mandado de segurança é uma ação judicial: é controle judicial da administração. Controle administrativo é o que a própria administração faz sobre seus atos.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":24}'::jsonb, 1, 'ativa'),
+  ('icmbio24-025', 'administrativo', 'Processo administrativo (Lei n.º 9.784/1999)', 'Lucas, com sessenta e dois anos de idade, formalizou requerimento administrativo perante autoridade vinculada a uma autarquia federal. Dez dias após concluída a instrução do processo administrativo, como ainda não havia sido proferida a decisão do requerimento, Lucas interpôs recurso administrativo dirigido ao superior da autoridade a quem encaminhara o pedido e impetrou mandado de segurança sob a alegação de ilegalidade administrativa por omissão, já que não fora proferida decisão administrativa no prazo legal, especialmente por ser uma pessoa idosa.
+
+Com base na situação hipotética precedente e na lei que regula o processo administrativo no âmbito da administração pública, julgue o item seguinte.
+
+Por ser pessoa jurídica de direito público e integrar a administração pública indireta, a referida autarquia federal sujeita-se às disposições legais que regulam o processo administrativo no âmbito da administração pública.', '["Certo","Errado"]'::jsonb, 0, 'Certo. A Lei n.º 9.784/1999 se aplica à administração federal direta e indireta (art. 1.º). A autarquia federal integra a indireta.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":25}'::jsonb, 1, 'ativa'),
+  ('icmbio24-027', 'administrativo', 'Processo administrativo (Lei n.º 9.784/1999)', 'Lucas, com sessenta e dois anos de idade, formalizou requerimento administrativo perante autoridade vinculada a uma autarquia federal. Dez dias após concluída a instrução do processo administrativo, como ainda não havia sido proferida a decisão do requerimento, Lucas interpôs recurso administrativo dirigido ao superior da autoridade a quem encaminhara o pedido e impetrou mandado de segurança sob a alegação de ilegalidade administrativa por omissão, já que não fora proferida decisão administrativa no prazo legal, especialmente por ser uma pessoa idosa.
+
+Com base na situação hipotética precedente e na lei que regula o processo administrativo no âmbito da administração pública, julgue o item seguinte.
+
+A lei prevê expressamente prioridade na tramitação dos procedimentos administrativos quando figurar como parte pessoa com idade igual ou superior a sessenta anos, a exemplo de Lucas.', '["Certo","Errado"]'::jsonb, 0, 'Certo. O art. 69-A da Lei n.º 9.784/1999 dá prioridade na tramitação quando é parte pessoa com 60 anos ou mais. Lucas, com 62, tem esse direito.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":27}'::jsonb, 1, 'ativa'),
+  ('icmbio24-028', 'administrativo', 'Processo administrativo (Lei n.º 9.784/1999)', 'Lucas, com sessenta e dois anos de idade, formalizou requerimento administrativo perante autoridade vinculada a uma autarquia federal. Dez dias após concluída a instrução do processo administrativo, como ainda não havia sido proferida a decisão do requerimento, Lucas interpôs recurso administrativo dirigido ao superior da autoridade a quem encaminhara o pedido e impetrou mandado de segurança sob a alegação de ilegalidade administrativa por omissão, já que não fora proferida decisão administrativa no prazo legal, especialmente por ser uma pessoa idosa.
+
+Com base na situação hipotética precedente e na lei que regula o processo administrativo no âmbito da administração pública, julgue o item seguinte.
+
+A interposição do recurso foi realizada conforme previsão legal, segundo a qual o recurso administrativo deverá ser dirigido à autoridade superior da que tenha praticado ou deveria ter praticado o ato.', '["Certo","Errado"]'::jsonb, 1, 'Errado. O recurso é dirigido à autoridade que proferiu a decisão; se ela não a reconsiderar em cinco dias, encaminha-o à autoridade superior (art. 56, § 1.º). Além disso, ainda não havia decisão a recorrer.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":28}'::jsonb, 2, 'ativa'),
+  ('icmbio24-029', 'informatica', 'Editores de texto e apresentações', 'A respeito da edição de textos e apresentações nos ambientes Microsoft Office 365, julgue o item a seguir.
+
+No PowerPoint 365, para remover a transição de um slide específico, o usuário deve selecionar o slide desejado, acessar a guia Transições e escolher a opção Nenhuma.', '["Certo","Errado"]'::jsonb, 0, 'Certo. No PowerPoint, basta selecionar o slide, ir à guia Transições e escolher Nenhuma para tirar a transição dele.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":29}'::jsonb, 1, 'ativa'),
+  ('icmbio24-030', 'informatica', 'Editores de texto e apresentações', 'A respeito da edição de textos e apresentações nos ambientes Microsoft Office 365, julgue o item a seguir.
+
+No Microsoft Word, caso um usuário queira citar uma fonte já adicionada, ele deverá posicionar o cursor no final do texto desejado, acessar a guia de menu Design, clicar sobre Inserir citação e selecionar a fonte.', '["Certo","Errado"]'::jsonb, 1, 'Errado. O comando Inserir Citação fica na guia Referências do Word, e não na guia Design.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":30}'::jsonb, 1, 'ativa'),
+  ('icmbio24-031', 'informatica', 'Inteligência artificial', 'No que se refere a redes de computadores e ao uso transparente e imparcial de inteligência artificial (IA) no serviço público, julgue o item subsequente.
+
+Um dos objetivos da Estratégia Brasileira de Inteligência Artificial é contribuir para a elaboração de princípios éticos para o desenvolvimento e o uso responsáveis de IA.', '["Certo","Errado"]'::jsonb, 0, 'Certo. A Estratégia Brasileira de Inteligência Artificial tem entre seus objetivos contribuir para a elaboração de princípios éticos para o desenvolvimento e o uso responsáveis de IA.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":31}'::jsonb, 1, 'ativa'),
+  ('icmbio24-033', 'informatica', 'Navegadores', 'No que se refere a redes de computadores e ao uso transparente e imparcial de inteligência artificial (IA) no serviço público, julgue o item subsequente.
+
+O Microsoft Edge permite que se ajuste o nível de prevenção de rastreamento para equilibrar privacidade e personalização, sendo o nível básico recomendado para a maioria dos usuários.', '["Certo","Errado"]'::jsonb, 1, 'Errado. O Edge oferece três níveis de prevenção de rastreamento: Básico, Equilibrado e Estrito. O recomendado para a maioria dos usuários é o Equilibrado.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":33}'::jsonb, 2, 'ativa'),
+  ('icmbio24-034', 'administrativo', 'Ética no serviço público', 'Julgue o item a seguir, com base nas disposições do Código de Ética Profissional do Serviço Público (Decreto n.º 1.171/1994).
+
+A criação de comissão de ética é obrigatória para todos os órgãos e entidades da administração pública federal direta, indireta autárquica e fundacional, incluindo-se os que exerçam atribuições delegadas pelo poder público.', '["Certo","Errado"]'::jsonb, 0, 'Certo. O Decreto n.º 1.171/1994 manda criar comissão de ética em todos os órgãos e entidades da administração federal direta, indireta autárquica e fundacional, e em qualquer órgão ou entidade que exerça atribuições delegadas pelo poder público.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":34}'::jsonb, 1, 'ativa'),
+  ('icmbio24-035', 'administrativo', 'Ética no serviço público', 'Julgue o item a seguir, com base nas disposições do Código de Ética Profissional do Serviço Público (Decreto n.º 1.171/1994).
+
+As ausências injustificadas do servidor de seu local de trabalho, até o limite de três vezes ao ano, não constituem fator de desmoralização do serviço público.', '["Certo","Errado"]'::jsonb, 1, 'Errado. Para o Código de Ética, toda ausência injustificada do servidor do local de trabalho é fator de desmoralização do serviço público. Não existe uma cota de faltas toleradas.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":35}'::jsonb, 1, 'ativa'),
+  ('icmbio24-036', 'administrativo', 'Lei Anticorrupção', 'Julgue o item seguinte, com base na Lei n.º 8.429/1992, que trata de improbidade administrativa, e na Lei n.º 12.846/2013, conhecida como Lei Anticorrupção.
+
+Conforme previsto na Lei Anticorrupção, a celebração de acordo de leniência com as pessoas jurídicas responsáveis pela prática de atos lesivos contra a administração pública não tem o condão de eliminar totalmente a multa a elas imposta.', '["Certo","Errado"]'::jsonb, 0, 'Certo. O acordo de leniência reduz a multa em até dois terços (art. 16, § 2.º, da Lei n.º 12.846/2013). Ele não elimina a multa por inteiro.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":36}'::jsonb, 2, 'ativa'),
+  ('icmbio24-037', 'administrativo', 'Improbidade administrativa', 'Julgue o item seguinte, com base na Lei n.º 8.429/1992, que trata de improbidade administrativa, e na Lei n.º 12.846/2013, conhecida como Lei Anticorrupção.
+
+Havendo indícios de ato de improbidade, a autoridade que conhecer dos fatos deve representar diretamente ao Poder Judiciário.', '["Certo","Errado"]'::jsonb, 1, 'Errado. A autoridade que souber dos fatos deve representar ao Ministério Público (art. 7.º da Lei n.º 8.429/1992), e não diretamente ao Poder Judiciário.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":37}'::jsonb, 1, 'ativa'),
+  ('icmbio24-038', 'administrativo', 'Improbidade administrativa', 'Julgue o item seguinte, com base na Lei n.º 8.429/1992, que trata de improbidade administrativa, e na Lei n.º 12.846/2013, conhecida como Lei Anticorrupção.
+
+A configuração de ato de improbidade administrativa que atente contra os princípios da administração pública exige a caracterização de lesividade relevante que ocasione dano ao erário.', '["Certo","Errado"]'::jsonb, 1, 'Errado. Os atos contra os princípios exigem lesividade relevante ao bem jurídico protegido, mas não dependem de dano ao erário nem de enriquecimento ilícito (art. 11, § 4.º, da Lei n.º 8.429/1992).', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":38}'::jsonb, 2, 'ativa'),
+  ('icmbio24-041', 'administrativo', 'Lei de Acesso à Informação', 'No que se refere ao acesso a informações e ao tratamento de dados pessoais, julgue o item seguinte.
+
+O serviço de informação ao cidadão (SIC) deve ser instalado em unidade física identificada, de fácil acesso e aberta ao público, necessariamente no órgão ou na entidade central que o criou, sendo inadmitida sua instalação em eventual unidade descentralizada.', '["Certo","Errado"]'::jsonb, 1, 'Errado. O decreto que regulamenta a LAI (Decreto n.º 7.724/2012) exige que o SIC fique em local identificado, de fácil acesso e aberto ao público, mas não proíbe instalá-lo em unidades descentralizadas. Onde não houver SIC, a unidade deve ao menos receber e registrar os pedidos.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":41}'::jsonb, 2, 'ativa'),
+  ('icmbio24-042', 'administrativo', 'Lei de Acesso à Informação', 'No que se refere ao acesso a informações e ao tratamento de dados pessoais, julgue o item seguinte.
+
+Informações sobre condutas violadoras dos direitos humanos praticadas por agentes públicos ou a mando de autoridades públicas poderão ser objeto de restrição de acesso, com vistas à proteção do direito fundamental à intimidade da vítima.', '["Certo","Errado"]'::jsonb, 1, 'Errado. A LAI (art. 21, parágrafo único) diz que informações sobre condutas que violem direitos humanos, praticadas por agentes públicos ou a mando de autoridades, não podem ter o acesso restringido.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":42}'::jsonb, 1, 'ativa'),
+  ('icmbio24-043', 'informatica', 'Proteção de dados (LGPD)', 'No que se refere ao acesso a informações e ao tratamento de dados pessoais, julgue o item seguinte.
+
+Não se aplica a Lei Geral de Proteção de Dados Pessoais (LGPD) ao tratamento de dados pessoais para fins exclusivamente jornalísticos e artísticos.', '["Certo","Errado"]'::jsonb, 0, 'Certo. A LGPD não se aplica ao tratamento de dados feito para fins exclusivamente jornalísticos e artísticos (art. 4.º, II, a).', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":43}'::jsonb, 1, 'ativa'),
+  ('icmbio24-050', 'administrativo', 'Serviços públicos', 'Com base na Lei n.º 8.987/1995, que dispõe sobre o regime de concessão e permissão da prestação de serviços públicos, julgue o item a seguir.
+
+Os contratos de concessão admitem subconcessão, desde que prevista no contrato e expressamente autorizada pelo poder concedente, sendo a outorga de subconcessão sempre precedida de concorrência.', '["Certo","Errado"]'::jsonb, 0, 'Certo. A Lei n.º 8.987/1995 (art. 26) admite a subconcessão quando prevista no contrato e expressamente autorizada pelo poder concedente, e exige que ela seja sempre precedida de concorrência.', '{"tipo":"oficial","banca":"Cebraspe","orgao":"Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)","cargo":"Analista Administrativo","ano":2024,"prova":"icmbio-2024-cb1","item":50}'::jsonb, 2, 'ativa')
 ON CONFLICT (id) DO UPDATE SET
   disciplina = EXCLUDED.disciplina, assunto = EXCLUDED.assunto, enunciado = EXCLUDED.enunciado,
   alternativas = EXCLUDED.alternativas, correta = EXCLUDED.correta, explicacao = EXCLUDED.explicacao,

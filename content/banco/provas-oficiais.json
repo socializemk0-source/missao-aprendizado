@@ -326,5 +326,42 @@
     "provaUrl": "https://cdn.cebraspe.org.br/concursos/inpi_23/arquivos/930_INPI_CB1_01.PDF",
     "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/inpi_23/arquivos/GAB_DEFINITIVO_930_INPI_CB1_01.PDF",
     "gabaritoDefinitivo": "CECEEEECCCEXECECEECEECEECECCECECECCEEECECCECCCCEEC"
+  },
+  "anvisa-2024-cb": {
+    "banca": "Cebraspe",
+    "orgao": "Agência Nacional de Vigilância Sanitária (ANVISA)",
+    "cargo": "Especialista em Regulação e Vigilância Sanitária",
+    "ano": 2024,
+    "aplicacao": "2024",
+    "caderno": "Conhecimentos Básicos para todos os cargos (956_ANVISA_CB1_01)",
+    "formato": "certo-errado",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/ANVISA_24/arquivos/956_ANVISA_CB1_01.PDF",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/ANVISA_24/arquivos/GAB_DEFINITIVO_956_ANVISA_CB1_01.PDF",
+    "gabaritoDefinitivo": "ECECCCECCECCCEECEEECCCECECCEECECCECCEEECCCEEECCECC"
+  },
+  "mpce-2025-cg1": {
+    "banca": "Cebraspe",
+    "orgao": "Ministério Público do Estado do Ceará",
+    "cargo": "Analista Ministerial",
+    "ano": 2025,
+    "aplicacao": "2025-04-13",
+    "caderno": "Conhecimentos Gerais para todos os cargos de Analista (055_MPCE_CG1_01)",
+    "formato": "certo-errado",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/MP_CE_25_SERVIDOR/arquivos/055_MPCE_CG1_01.pdf",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/MP_CE_25_SERVIDOR/arquivos/Gab_Definitivo_055_MPCE_CG1_01.PDF",
+    "gabaritoDescricao": "GABARITO DEFINITIVO - CONHECIMENTOS GERAIS PARA TODOS OS CARGOS DE ANALISTA",
+    "gabaritoDefinitivo": "ECCECECCCCEECEECEXXCECECECECEXEECCEEECECEEEECEECCC"
+  },
+  "icmbio-2024-cb1": {
+    "banca": "Cebraspe",
+    "orgao": "Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)",
+    "cargo": "Analista Administrativo",
+    "ano": 2024,
+    "aplicacao": "2025-03-30",
+    "caderno": "Conhecimentos Básicos para o Cargo 1 (045_ICMBIO_CB1_01)",
+    "formato": "certo-errado",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/ICMBIO_24/arquivos/045_ICMBIO_CB1_01.pdf",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/ICMBIO_24/arquivos/Gab_Definitivo_045_ICMBIO_CB1_01.PDF",
+    "gabaritoDefinitivo": "CCEEEECCCEECEECCECEECCEECXCECECXECECEECEEECECECEEC"
   }
 }
