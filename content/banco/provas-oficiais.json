@@ -154,5 +154,17 @@
     "provaUrl": "https://cdn.cebraspe.org.br/concursos/stm_25/arquivos/072_STM_CG1_01.pdf",
     "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/stm_25/arquivos/Gab_Definitivo_072_STM_CG1_01.pdf",
     "gabaritoDefinitivo": "ECCEEEECEECCEEECCEECCEXCXCCEECEEEECECEECCECCCEEEEC"
+  },
+  "ibama-2025-cb": {
+    "banca": "Cebraspe",
+    "orgao": "IBAMA",
+    "cargo": "Analista Ambiental",
+    "ano": 2025,
+    "aplicacao": "2025",
+    "caderno": "Conhecimentos básicos, cargos 2 e 3 (057_IBAMA_CB2_01)",
+    "formato": "certo-errado",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/ibama_25/arquivos/057_IBAMA_CB2_01.pdf",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/ibama_25/arquivos/Gab_Definitivo_057_IBAMA_CB2_01.PDF",
+    "gabaritoDefinitivo": "ECEEECCEECCCCCEEEEEXECEECCCEECCCECECECCEECCEECECEC"
   }
 }
