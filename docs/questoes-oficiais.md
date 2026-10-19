@@ -88,3 +88,5 @@ gabarito de sites de questões (QConcursos, TecConcursos etc.).
 | Cebraspe · CNMP 2023 · Analista, conhecimentos básicos (cargos 1, 2, 4 a 7) | 38 (Português, Administrativo, Constitucional, Informática) | 24 e 49 (anulados); LC 75/1993, Regimento Interno do CNMP e orçamento público |
 | Cebraspe · PF 2025 · cargos administrativos de nível superior, conhecimentos básicos | 48 (Português, lógica, Administrativo, Constitucional, Informática) | 37 (anulado); 31 (depende de figura) |
 | Cebraspe · PF 2025 · Agente Administrativo (cargo 15), conhecimentos básicos | 50 (Português e redação oficial, lógica, Administrativo, Informática) | nenhum |
+| Cebraspe · ANATEL 2024 · Especialista em Regulação, conhecimentos básicos | 30 (Português, Administrativo, Constitucional) | 19, 35 e 39 (anulados); Inglês, teoria da regulação e Lei Geral de Telecomunicações |
+| Cebraspe · TJ-ES 2023 · Analista Judiciário, conhecimentos gerais | 36 (Português, ética, Administrativo, Informática, lógica e matemática) | 26 a 28 (dependem de planilha ou figura); 37 (sem explicação segura); leis estaduais e Regimento Interno do TJ-ES |

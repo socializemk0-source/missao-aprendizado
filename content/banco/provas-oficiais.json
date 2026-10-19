@@ -278,5 +278,29 @@
     "provaUrl": "https://cdn.cebraspe.org.br/concursos/pf_25_adm/arquivos/094_PF_CB2_01.pdf",
     "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/pf_25_adm/arquivos/Gab_Definitivo_094_PF_CB2_01.pdf",
     "gabaritoDefinitivo": "ECCEEECEEECEECCCEECECEECECCEECECCCECCCEECEECCCCEEE"
+  },
+  "anatel-2024-cb": {
+    "banca": "Cebraspe",
+    "orgao": "Agência Nacional de Telecomunicações (ANATEL)",
+    "cargo": "Especialista em Regulação de Serviços Públicos de Telecomunicações",
+    "ano": 2024,
+    "aplicacao": "2024-09-15",
+    "caderno": "Conhecimentos Básicos para todos os cargos (961_ANATEL_CB1_01)",
+    "formato": "certo-errado",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/ANATEL_24/arquivos/961_ANATEL_CB1_01.PDF",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/ANATEL_24/arquivos/GAB_DEFINITIVO_961_ANATEL_CB1_01.PDF",
+    "gabaritoDefinitivo": "EECCCEECECEECECCECXEEECCECCCEECCECXECCXEEEEEECEEEC"
+  },
+  "tjes-2023-cg": {
+    "banca": "Cebraspe",
+    "orgao": "TJ-ES",
+    "cargo": "Analista Judiciário (todos os cargos)",
+    "ano": 2023,
+    "aplicacao": "2023-03-19",
+    "caderno": "Conhecimentos Gerais para todos os cargos (803_TJ_ES_CG1_01)",
+    "formato": "certo-errado",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/TJ_ES_23/arquivos/803_TJ_ES_CG1_01.PDF",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/TJ_ES_23/arquivos/GAB_DEFINITIVO_803_TJ_ES_CG1_01.PDF",
+    "gabaritoDefinitivo": "CEEECEEECCECECCCEECCCECECCECEEECCCEECEEEEECCCEECCE"
   }
 }
