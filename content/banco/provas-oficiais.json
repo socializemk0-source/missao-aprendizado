@@ -436,5 +436,43 @@
     "provaUrl": "https://cdn.cebraspe.org.br/concursos/FUB_25/arquivos/088_FUB_CB1_01.pdf",
     "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/FUB_25/arquivos/Gab_Definitivo_088_FUB_CB1_01.pdf",
     "gabaritoDefinitivo": "EECCEEECECECCCECECCEEECCCEECECEECCEECCCCCEECXCECCC"
+  },
+  "telebras-2025-cb": {
+    "banca": "Cebraspe",
+    "orgao": "Telecomunicações Brasileiras S.A. (TELEBRAS)",
+    "cargo": "Especialista em Gestão de Telecomunicações",
+    "ano": 2025,
+    "aplicacao": "2026-02-08",
+    "caderno": "Conhecimentos Básicos para todos os cargos (153_TELEBRAS_CB1_01)",
+    "formato": "certo-errado",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/TELEBRAS_25/arquivos/EBA0393B46705ED9FA8370B249D93C6351B12ABED98840C43E2E13A1B377A982.pdf",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/TELEBRAS_25/arquivos/374364890113AA9043F5CFCB1F6D6D6BDA5D587A62B89219DFC71B40BA5F948E.pdf",
+    "gabaritoDescricao": "GABARITO DEFINITIVO – CONHECIMENTOS BÁSICOS PARA TODOS OS CARGOS",
+    "gabaritoDefinitivo": "ECECCCEEECECEECCEECECEEXCECEECECEEECEECCCCEECCECEC"
+  },
+  "mpto-2024-cg2": {
+    "banca": "Cebraspe",
+    "orgao": "Ministério Público do Estado do Tocantins",
+    "cargo": "Técnico Ministerial Especializado e Técnico Ministerial",
+    "ano": 2024,
+    "aplicacao": "2024-03-03",
+    "caderno": "Conhecimentos Gerais para os cargos de nível médio (952_MP_TO_CG2_01)",
+    "formato": "certo-errado",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/MP_TO_24_SERVIDOR/arquivos/952_MP_TO_CG2_01.PDF",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/MP_TO_24_SERVIDOR/arquivos/GAB_DEFINITIVO_952_MP_TO_CG2_01.PDF",
+    "gabaritoDefinitivo": "CEECEECXECCCCEECCECECECECXXECEEECCECEEEECCCEEECECE"
+  },
+  "tcemg-2025-cg": {
+    "banca": "Cebraspe",
+    "orgao": "Tribunal de Contas do Estado de Minas Gerais",
+    "cargo": "Analista de Controle Externo e demais cargos",
+    "ano": 2025,
+    "aplicacao": "2026-01-25",
+    "caderno": "Conhecimentos Gerais para todos os cargos (prova objetiva, múltipla escolha)",
+    "formato": "multipla-escolha",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/TCE_MG_25/arquivos/320D70B97CC0EDBE166890B55FCDA7A4D04AC4E219402DE1DDEE1BDC051EC6F5.pdf",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/TCE_MG_25/arquivos/F6CF40CFC4CE65D590EE9EC52331D1C4C35D052F368F3B2E8C8631E4DDA7330E.pdf",
+    "gabaritoDescricao": "GABARITO DEFINITIVO – CONHECIMENTOS GERAIS PARA TODOS OS CARGOS",
+    "gabaritoDefinitivo": "CCCAACDCDEBCAEBBAXBDXCDADECEEB"
   }
 }

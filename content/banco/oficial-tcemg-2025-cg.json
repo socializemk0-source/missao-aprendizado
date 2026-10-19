@@ -1,0 +1,574 @@
+[
+  {
+    "id": "tcemg25-001",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CG1A1-I\n\nEm 5 de junho, comemora-se o Dia Mundial do Meio Ambiente. Por isso, destaca-se, neste texto, a importância da água para a economia brasileira. Segundo o terceiro número das Contas econômicas ambientais da água: Brasil 2018-2020, lançado, em 2023, pelo IBGE em parceria com a Agência Nacional de Águas e Saneamento Básico, foram retirados, em 2020, do meio ambiente brasileiro 4,1 milhões de hectômetros cúbicos (hm3 ) de água para integrar o sistema econômico do país. A atividade de eletricidade e gás foi a que mais captou água (85,1%), mas não a consumiu, pois apenas a utilizou para movimentar turbinas geradoras de energia elétrica e a devolveu à natureza. As atividades de coleta de águas pluviais tampouco consomem a água que captam.\n\nExcluídas essas duas atividades, chega-se às que consomem a água captada (14% do total). As principais atividades econômicas que consomem a água que captam são a agricultura, a pecuária, a produção florestal, a pesca e a aquicultura (95,2%); e a captação, o tratamento e a distribuição de água (3,5%). Os volumes consumidos são, de uma forma ou de outra, devolvidos à natureza, mas muitas vezes tão modificados que seu reúso depende de grandes esforços de recuperação.\n\nNo caso das atividades da agricultura, pecuária, produção florestal, pesca e aquicultura, 92,4% do volume retirado em 2020 originou-se da água armazenada no solo, usada principalmente para a agricultura não irrigada. Essa atividade também retirou a maior parte das águas superficiais e subterrâneas, pois respondeu por 58,2% dos 71,2 mil hm3 diretamente captados naquele ano, seguida pelas de captação, tratamento e distribuição de água (27,9%) e pelas indústrias de transformação e construção (8,4%).\n\nPesquisa FAPESP, n.º 340, ano 25, jun./2024, p. 37 (com adaptações).\n\nDa leitura do texto CG1A1-I infere-se que",
+    "alternativas": [
+      "os procedimentos de recuperação voltados para o reúso da água são onerosos e, portanto, indesejáveis.",
+      "o uso da água pelos diferentes setores da economia brasileira varia de acordo com a capacidade de captação dos recursos hídricos.",
+      "as atividades que mais consomem as águas que captam devolvem os volumes à natureza praticamente sem condições de uso.",
+      "as águas pluviais coletadas são distribuídas de acordo com a demanda.",
+      "as indústrias de transformação e construção superam as atividades de captação, tratamento e distribuição de água no que se refere à retirada direta das águas superficiais e subterrâneas."
+    ],
+    "correta": 2,
+    "dificuldade": 2,
+    "explicacao": "O texto diz que os volumes consumidos voltam à natureza, \"mas muitas vezes tão modificados que seu reúso depende de grandes esforços de recuperação\", ou seja, quase sem condições de uso. Ele não chama a recuperação de indesejável, e as indústrias (8,4%) retiram menos que a captação e distribuição de água (27,9%).",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Tribunal de Contas do Estado de Minas Gerais",
+      "cargo": "Analista de Controle Externo e demais cargos",
+      "ano": 2025,
+      "prova": "tcemg-2025-cg",
+      "item": 1
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "tcemg25-002",
+    "disciplina": "portugues",
+    "assunto": "Sintaxe: funções do \"se\"",
+    "enunciado": "Texto CG1A1-I\n\nEm 5 de junho, comemora-se o Dia Mundial do Meio Ambiente. Por isso, destaca-se, neste texto, a importância da água para a economia brasileira. Segundo o terceiro número das Contas econômicas ambientais da água: Brasil 2018-2020, lançado, em 2023, pelo IBGE em parceria com a Agência Nacional de Águas e Saneamento Básico, foram retirados, em 2020, do meio ambiente brasileiro 4,1 milhões de hectômetros cúbicos (hm3 ) de água para integrar o sistema econômico do país. A atividade de eletricidade e gás foi a que mais captou água (85,1%), mas não a consumiu, pois apenas a utilizou para movimentar turbinas geradoras de energia elétrica e a devolveu à natureza. As atividades de coleta de águas pluviais tampouco consomem a água que captam.\n\nExcluídas essas duas atividades, chega-se às que consomem a água captada (14% do total). As principais atividades econômicas que consomem a água que captam são a agricultura, a pecuária, a produção florestal, a pesca e a aquicultura (95,2%); e a captação, o tratamento e a distribuição de água (3,5%). Os volumes consumidos são, de uma forma ou de outra, devolvidos à natureza, mas muitas vezes tão modificados que seu reúso depende de grandes esforços de recuperação.\n\nNo caso das atividades da agricultura, pecuária, produção florestal, pesca e aquicultura, 92,4% do volume retirado em 2020 originou-se da água armazenada no solo, usada principalmente para a agricultura não irrigada. Essa atividade também retirou a maior parte das águas superficiais e subterrâneas, pois respondeu por 58,2% dos 71,2 mil hm3 diretamente captados naquele ano, seguida pelas de captação, tratamento e distribuição de água (27,9%) e pelas indústrias de transformação e construção (8,4%).\n\nPesquisa FAPESP, n.º 340, ano 25, jun./2024, p. 37 (com adaptações).\n\nJulgue os seguintes itens, que se referem a aspectos gramaticais do seguinte trecho do texto CG1A1-I: “Em 5 de junho, comemora-se o Dia Mundial do Meio Ambiente. Por isso, destaca-se, neste texto, a importância da água para a economia brasileira.” (primeiro e segundo períodos do primeiro parágrafo).\nI O pronome “se” tem a mesma função gramatical em suas duas ocorrências no trecho.\nII No primeiro período, a vírgula separa o sujeito do predicado.\nIII No segundo período, o verbo da oração estabelece concordância com o termo “importância”.\n\nAssinale a opção correta.",
+    "alternativas": [
+      "Apenas o item I está certo.",
+      "Apenas o item II está certo.",
+      "Apenas os itens I e III estão certos.",
+      "Apenas os itens II e III estão certos.",
+      "Todos os itens estão certos."
+    ],
+    "correta": 2,
+    "dificuldade": 3,
+    "explicacao": "I está certo: nas duas ocorrências o \"se\" é partícula apassivadora (\"o Dia é comemorado\", \"a importância é destacada\"). II está errado: a vírgula separa o adjunto adverbial deslocado (\"Em 5 de junho\"), e não o sujeito. III está certo: \"destaca-se\" concorda com o sujeito \"a importância\".",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Tribunal de Contas do Estado de Minas Gerais",
+      "cargo": "Analista de Controle Externo e demais cargos",
+      "ano": 2025,
+      "prova": "tcemg-2025-cg",
+      "item": 2
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "tcemg25-003",
+    "disciplina": "portugues",
+    "assunto": "Ortografia e crase",
+    "enunciado": "Texto CG1A1-I\n\nEm 5 de junho, comemora-se o Dia Mundial do Meio Ambiente. Por isso, destaca-se, neste texto, a importância da água para a economia brasileira. Segundo o terceiro número das Contas econômicas ambientais da água: Brasil 2018-2020, lançado, em 2023, pelo IBGE em parceria com a Agência Nacional de Águas e Saneamento Básico, foram retirados, em 2020, do meio ambiente brasileiro 4,1 milhões de hectômetros cúbicos (hm3 ) de água para integrar o sistema econômico do país. A atividade de eletricidade e gás foi a que mais captou água (85,1%), mas não a consumiu, pois apenas a utilizou para movimentar turbinas geradoras de energia elétrica e a devolveu à natureza. As atividades de coleta de águas pluviais tampouco consomem a água que captam.\n\nExcluídas essas duas atividades, chega-se às que consomem a água captada (14% do total). As principais atividades econômicas que consomem a água que captam são a agricultura, a pecuária, a produção florestal, a pesca e a aquicultura (95,2%); e a captação, o tratamento e a distribuição de água (3,5%). Os volumes consumidos são, de uma forma ou de outra, devolvidos à natureza, mas muitas vezes tão modificados que seu reúso depende de grandes esforços de recuperação.\n\nNo caso das atividades da agricultura, pecuária, produção florestal, pesca e aquicultura, 92,4% do volume retirado em 2020 originou-se da água armazenada no solo, usada principalmente para a agricultura não irrigada. Essa atividade também retirou a maior parte das águas superficiais e subterrâneas, pois respondeu por 58,2% dos 71,2 mil hm3 diretamente captados naquele ano, seguida pelas de captação, tratamento e distribuição de água (27,9%) e pelas indústrias de transformação e construção (8,4%).\n\nPesquisa FAPESP, n.º 340, ano 25, jun./2024, p. 37 (com adaptações).\n\nJulgue os itens a seguir, no que se refere à ortografia oficial e ao emprego do sinal indicativo de crase no texto CG1A1-I.\nI Os vocábulos “agência”, “indústria” e “subterrânea” são acentuados graficamente de acordo com regras distintas de acentuação gráfica.\nII No trecho “devolvidos à natureza” (último período do segundo parágrafo), o emprego do acento indicativo de crase é facultativo.\nIII De acordo com a ortografia oficial vigente, o vocábulo “aquicultura” pode ser grafado também com trema — aqüicultura.\nIV O numeral “14” pode ser corretamente grafado de duas formas: quatorze e catorze.\n\nAssinale a opção correta.",
+    "alternativas": [
+      "Apenas o item I está certo.",
+      "Apenas o item III está certo.",
+      "Apenas o item IV está certo.",
+      "Apenas os itens II e IV estão certos.",
+      "Apenas os itens I, II e III estão certos."
+    ],
+    "correta": 2,
+    "dificuldade": 2,
+    "explicacao": "Só IV está certo: \"quatorze\" e \"catorze\" são formas aceitas. \"Agência\", \"indústria\" e \"subterrânea\" seguem a mesma regra (paroxítonas terminadas em ditongo). Em \"devolvidos à natureza\" a crase é obrigatória (devolver a + a natureza). E o trema foi abolido pelo Acordo Ortográfico: escreve-se só \"aquicultura\".",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Tribunal de Contas do Estado de Minas Gerais",
+      "cargo": "Analista de Controle Externo e demais cargos",
+      "ano": 2025,
+      "prova": "tcemg-2025-cg",
+      "item": 3
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "tcemg25-004",
+    "disciplina": "portugues",
+    "assunto": "Reescrita de frases",
+    "enunciado": "Texto CG1A1-I\n\nEm 5 de junho, comemora-se o Dia Mundial do Meio Ambiente. Por isso, destaca-se, neste texto, a importância da água para a economia brasileira. Segundo o terceiro número das Contas econômicas ambientais da água: Brasil 2018-2020, lançado, em 2023, pelo IBGE em parceria com a Agência Nacional de Águas e Saneamento Básico, foram retirados, em 2020, do meio ambiente brasileiro 4,1 milhões de hectômetros cúbicos (hm3 ) de água para integrar o sistema econômico do país. A atividade de eletricidade e gás foi a que mais captou água (85,1%), mas não a consumiu, pois apenas a utilizou para movimentar turbinas geradoras de energia elétrica e a devolveu à natureza. As atividades de coleta de águas pluviais tampouco consomem a água que captam.\n\nExcluídas essas duas atividades, chega-se às que consomem a água captada (14% do total). As principais atividades econômicas que consomem a água que captam são a agricultura, a pecuária, a produção florestal, a pesca e a aquicultura (95,2%); e a captação, o tratamento e a distribuição de água (3,5%). Os volumes consumidos são, de uma forma ou de outra, devolvidos à natureza, mas muitas vezes tão modificados que seu reúso depende de grandes esforços de recuperação.\n\nNo caso das atividades da agricultura, pecuária, produção florestal, pesca e aquicultura, 92,4% do volume retirado em 2020 originou-se da água armazenada no solo, usada principalmente para a agricultura não irrigada. Essa atividade também retirou a maior parte das águas superficiais e subterrâneas, pois respondeu por 58,2% dos 71,2 mil hm3 diretamente captados naquele ano, seguida pelas de captação, tratamento e distribuição de água (27,9%) e pelas indústrias de transformação e construção (8,4%).\n\nPesquisa FAPESP, n.º 340, ano 25, jun./2024, p. 37 (com adaptações).\n\nEm cada uma das opções a seguir, é apresentada uma proposta de reescrita do penúltimo período do primeiro parágrafo do texto CG1A1-I. Assinale a opção em que a proposta de reescrita é gramaticalmente correta e coerente com as ideias do texto.",
+    "alternativas": [
+      "A atividade de eletricidade e gás foi a que mais captou água (85,1%), embora não a tenha consumido, pois apenas a utilizou para movimentar turbinas geradoras de energia elétrica, tendo-a devolvido à natureza.",
+      "A atividade de eletricidade e gás foram as que mais captaram água (85,1%), mas não a consumiram, pois a utilizaram apenas para movimentar turbinas geradoras de energia elétrica e a devolveram à natureza.",
+      "A atividade de eletricidade e gás, a que mais captou água (85,1%), apesar de não ter consumido-a, apenas utilizou-a para movimentar turbinas geradoras de energia elétrica, devolvendo-a para a natureza.",
+      "Foi a atividade de eletricidade e gás quem mais captou água (85,1%), mas não a consumiu, pois apenas a utilizou para movimentar turbinas geradoras de energia elétrica e a devolveu à natureza.",
+      "A atividade de eletricidade e gás foi a que mais captou água (85,1%), conquanto não a consumiu, pois apenas a utilizou para movimentar turbinas geradoras de energia elétrica, devolvendo-a à natureza."
+    ],
+    "correta": 0,
+    "dificuldade": 3,
+    "explicacao": "A reescrita com \"embora não a tenha consumido\" e \"tendo-a devolvido\" está correta e mantém o sentido. As outras erram: \"foram as que\" não concorda com o sujeito singular; o pronome não pode vir depois do particípio (\"consumido-a\"); \"quem\" se refere a pessoas, e não a uma atividade; e \"conquanto\" pede o subjuntivo (\"conquanto não a tenha consumido\").",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Tribunal de Contas do Estado de Minas Gerais",
+      "cargo": "Analista de Controle Externo e demais cargos",
+      "ano": 2025,
+      "prova": "tcemg-2025-cg",
+      "item": 4
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "tcemg25-005",
+    "disciplina": "portugues",
+    "assunto": "Pontuação",
+    "enunciado": "Texto CG1A1-I\n\nEm 5 de junho, comemora-se o Dia Mundial do Meio Ambiente. Por isso, destaca-se, neste texto, a importância da água para a economia brasileira. Segundo o terceiro número das Contas econômicas ambientais da água: Brasil 2018-2020, lançado, em 2023, pelo IBGE em parceria com a Agência Nacional de Águas e Saneamento Básico, foram retirados, em 2020, do meio ambiente brasileiro 4,1 milhões de hectômetros cúbicos (hm3 ) de água para integrar o sistema econômico do país. A atividade de eletricidade e gás foi a que mais captou água (85,1%), mas não a consumiu, pois apenas a utilizou para movimentar turbinas geradoras de energia elétrica e a devolveu à natureza. As atividades de coleta de águas pluviais tampouco consomem a água que captam.\n\nExcluídas essas duas atividades, chega-se às que consomem a água captada (14% do total). As principais atividades econômicas que consomem a água que captam são a agricultura, a pecuária, a produção florestal, a pesca e a aquicultura (95,2%); e a captação, o tratamento e a distribuição de água (3,5%). Os volumes consumidos são, de uma forma ou de outra, devolvidos à natureza, mas muitas vezes tão modificados que seu reúso depende de grandes esforços de recuperação.\n\nNo caso das atividades da agricultura, pecuária, produção florestal, pesca e aquicultura, 92,4% do volume retirado em 2020 originou-se da água armazenada no solo, usada principalmente para a agricultura não irrigada. Essa atividade também retirou a maior parte das águas superficiais e subterrâneas, pois respondeu por 58,2% dos 71,2 mil hm3 diretamente captados naquele ano, seguida pelas de captação, tratamento e distribuição de água (27,9%) e pelas indústrias de transformação e construção (8,4%).\n\nPesquisa FAPESP, n.º 340, ano 25, jun./2024, p. 37 (com adaptações).\n\nEstariam preservadas a correção gramatical e a coerência do texto CG1A1-I caso fosse inserida uma vírgula imediatamente após o termo",
+    "alternativas": [
+      "“modificados” (último período do segundo parágrafo).",
+      "“econômicas” (segundo período do segundo parágrafo).",
+      "“2020” (primeiro período do terceiro parágrafo).",
+      "“tampouco” (último período do primeiro parágrafo).",
+      "“vezes” (último período do segundo parágrafo)."
+    ],
+    "correta": 0,
+    "dificuldade": 3,
+    "explicacao": "Depois de \"modificados\", a vírgula separa a oração que expressa consequência (\"tão modificados, que seu reúso depende...\"), o que é aceito. Depois de \"2020\", a vírgula separaria o sujeito do verbo \"originou-se\"; depois de \"tampouco\", separaria o advérbio do verbo; depois de \"econômicas\", mudaria o sentido da oração \"que consomem a água que captam\".",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Tribunal de Contas do Estado de Minas Gerais",
+      "cargo": "Analista de Controle Externo e demais cargos",
+      "ano": 2025,
+      "prova": "tcemg-2025-cg",
+      "item": 5
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "tcemg25-006",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CG1A1-II\n\nNo admirável mundo novo da inteligência artificial (IA), o ano de 2025 representou um salto — os robôs movidos a algoritmos, que já faziam parte do cotidiano das relações profissionais, invadiram, sem pompa nem circunstância, recantos íntimos, em meio ao intenso e inescapável debate ético. “O risco é criar uma intimidade sem reciprocidade, em que parece haver relação humana, mas não há”, dizem os psicólogos. A IA trabalha com uma proximidade confortável e sem consequências, mas carrega o risco de afastar usuários das complexidades dos relacionamentos reais. O estrondoso debate que atravessou o ano deixa uma questão central: o que perdemos ao delegar a vida aos algoritmos? No caso das consultas médicas, um argumento a favor da IA tem sido o acesso aos profissionais. “Talvez o melhor médico do mundo seja muito melhor do que o ChatGPT. Mas, se não há alternativa, se não é possível pagar por um médico, especialmente em regiões mais pobres, será muito melhor do que nada”. É um ponto, mas não há dúvida: a IA precisa ser levada ao divã.\n\nLígia Morais. A IA no divã. In: Veja, 24/12/2025, p. 49 (com adaptações).\n\nDa leitura do texto CG1A1-II conclui-se que",
+    "alternativas": [
+      "a IA recorre aos algoritmos a fim de simplificar as relações sociais.",
+      "a IA é a melhor solução para a escassez de profissionais na atualidade.",
+      "a IA estabelece relação sem reciprocidade com o usuário.",
+      "a procura da IA é uma ameaça à reputação dos profissionais da saúde.",
+      "a IA está ultrapassada quando comparada aos profissionais que atuam presencialmente."
+    ],
+    "correta": 2,
+    "dificuldade": 1,
+    "explicacao": "O texto cita o alerta dos psicólogos: a IA cria \"uma intimidade sem reciprocidade, em que parece haver relação humana, mas não há\". O texto não diz que a IA é a melhor solução, nem que está ultrapassada ou ameaça a reputação dos profissionais.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Tribunal de Contas do Estado de Minas Gerais",
+      "cargo": "Analista de Controle Externo e demais cargos",
+      "ano": 2025,
+      "prova": "tcemg-2025-cg",
+      "item": 6
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "tcemg25-007",
+    "disciplina": "portugues",
+    "assunto": "Interpretação de texto",
+    "enunciado": "Texto CG1A1-II\n\nNo admirável mundo novo da inteligência artificial (IA), o ano de 2025 representou um salto — os robôs movidos a algoritmos, que já faziam parte do cotidiano das relações profissionais, invadiram, sem pompa nem circunstância, recantos íntimos, em meio ao intenso e inescapável debate ético. “O risco é criar uma intimidade sem reciprocidade, em que parece haver relação humana, mas não há”, dizem os psicólogos. A IA trabalha com uma proximidade confortável e sem consequências, mas carrega o risco de afastar usuários das complexidades dos relacionamentos reais. O estrondoso debate que atravessou o ano deixa uma questão central: o que perdemos ao delegar a vida aos algoritmos? No caso das consultas médicas, um argumento a favor da IA tem sido o acesso aos profissionais. “Talvez o melhor médico do mundo seja muito melhor do que o ChatGPT. Mas, se não há alternativa, se não é possível pagar por um médico, especialmente em regiões mais pobres, será muito melhor do que nada”. É um ponto, mas não há dúvida: a IA precisa ser levada ao divã.\n\nLígia Morais. A IA no divã. In: Veja, 24/12/2025, p. 49 (com adaptações).\n\nEm relação às ideias e às características do texto CG1A1-II, julgue os itens a seguir.\nI Conforme o texto, a IA tem ajudado a população que reside em regiões mais pobres a conseguir atendimento por profissionais de saúde.\nII Das características discursivas do texto é correto concluir que ele se enquadra na tipologia dissertativa.\nIII É possível inferir do texto que a IA foi usada como ferramenta profissional no ano de 2025.\n\nAssinale a opção correta.",
+    "alternativas": [
+      "Apenas o item I está certo.",
+      "Apenas o item II está certo.",
+      "Apenas os itens I e III estão certos.",
+      "Apenas os itens II e III estão certos.",
+      "Todos os itens estão certos."
+    ],
+    "correta": 3,
+    "dificuldade": 2,
+    "explicacao": "I está errado: o acesso aos médicos aparece só como argumento a favor da IA; o texto não diz que ela já tem ajudado quem mora em regiões pobres. II está certo: o texto expõe um tema, traz opiniões e argumentos e conclui, por isso é dissertativo. III está certo: os robôs \"já faziam parte do cotidiano das relações profissionais\".",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Tribunal de Contas do Estado de Minas Gerais",
+      "cargo": "Analista de Controle Externo e demais cargos",
+      "ano": 2025,
+      "prova": "tcemg-2025-cg",
+      "item": 7
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "tcemg25-008",
+    "disciplina": "portugues",
+    "assunto": "Sentido e sintaxe",
+    "enunciado": "Texto CG1A1-II\n\nNo admirável mundo novo da inteligência artificial (IA), o ano de 2025 representou um salto — os robôs movidos a algoritmos, que já faziam parte do cotidiano das relações profissionais, invadiram, sem pompa nem circunstância, recantos íntimos, em meio ao intenso e inescapável debate ético. “O risco é criar uma intimidade sem reciprocidade, em que parece haver relação humana, mas não há”, dizem os psicólogos. A IA trabalha com uma proximidade confortável e sem consequências, mas carrega o risco de afastar usuários das complexidades dos relacionamentos reais. O estrondoso debate que atravessou o ano deixa uma questão central: o que perdemos ao delegar a vida aos algoritmos? No caso das consultas médicas, um argumento a favor da IA tem sido o acesso aos profissionais. “Talvez o melhor médico do mundo seja muito melhor do que o ChatGPT. Mas, se não há alternativa, se não é possível pagar por um médico, especialmente em regiões mais pobres, será muito melhor do que nada”. É um ponto, mas não há dúvida: a IA precisa ser levada ao divã.\n\nLígia Morais. A IA no divã. In: Veja, 24/12/2025, p. 49 (com adaptações).\n\nAssinale a opção correta em relação ao seguinte trecho do texto CG1A1-II: ‘Talvez o melhor médico do mundo seja muito melhor do que o ChatGPT. Mas, se não há alternativa, se não é possível pagar por um médico, especialmente em regiões mais pobres, será muito melhor do que nada’.",
+    "alternativas": [
+      "O vocábulo ‘nada’, na oração em que ocorre, é comparado à ideia de ‘pagar por um médico’.",
+      "O sujeito referencial da oração ‘será muito melhor do que nada’ é ‘o melhor médico do mundo’.",
+      "O vocábulo ‘melhor’, em sua segunda ocorrência, veicula uma ideia de comparação entre os termos ‘o melhor médico do mundo’ e ‘o ChatGPT’.",
+      "O segundo período do trecho representa uma justificativa para a ideia expressa no primeiro período.",
+      "O primeiro período do trecho estabelece uma noção de condição em relação ao segundo."
+    ],
+    "correta": 2,
+    "dificuldade": 3,
+    "explicacao": "Em \"muito melhor do que o ChatGPT\", \"melhor\" compara o melhor médico do mundo com o ChatGPT. O sujeito de \"será muito melhor do que nada\" é o ChatGPT (subentendido), e é ele que se compara com \"nada\". O segundo período faz uma ressalva ao primeiro (\"Mas\"), e a condição (\"se não há alternativa\") está nele, não no primeiro.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Tribunal de Contas do Estado de Minas Gerais",
+      "cargo": "Analista de Controle Externo e demais cargos",
+      "ano": 2025,
+      "prova": "tcemg-2025-cg",
+      "item": 8
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "tcemg25-009",
+    "disciplina": "portugues",
+    "assunto": "Reescrita de frases",
+    "enunciado": "Texto CG1A1-II\n\nNo admirável mundo novo da inteligência artificial (IA), o ano de 2025 representou um salto — os robôs movidos a algoritmos, que já faziam parte do cotidiano das relações profissionais, invadiram, sem pompa nem circunstância, recantos íntimos, em meio ao intenso e inescapável debate ético. “O risco é criar uma intimidade sem reciprocidade, em que parece haver relação humana, mas não há”, dizem os psicólogos. A IA trabalha com uma proximidade confortável e sem consequências, mas carrega o risco de afastar usuários das complexidades dos relacionamentos reais. O estrondoso debate que atravessou o ano deixa uma questão central: o que perdemos ao delegar a vida aos algoritmos? No caso das consultas médicas, um argumento a favor da IA tem sido o acesso aos profissionais. “Talvez o melhor médico do mundo seja muito melhor do que o ChatGPT. Mas, se não há alternativa, se não é possível pagar por um médico, especialmente em regiões mais pobres, será muito melhor do que nada”. É um ponto, mas não há dúvida: a IA precisa ser levada ao divã.\n\nLígia Morais. A IA no divã. In: Veja, 24/12/2025, p. 49 (com adaptações).\n\nNo quarto período do texto CG1A1-II, a expressão “ao delegar a vida aos algoritmos” poderia ser substituída, preservados os sentidos do texto e a correção gramatical, por",
+    "alternativas": [
+      "quando é delegado aos algoritmos a vida.",
+      "quando são delegados à vida os algoritmos.",
+      "quando os algoritmos delegam a vida.",
+      "quando delegamos a vida aos algoritmos.",
+      "quando se delegam aos algoritmos a vida."
+    ],
+    "correta": 3,
+    "dificuldade": 2,
+    "explicacao": "\"Ao delegar a vida aos algoritmos\" equivale a \"quando delegamos a vida aos algoritmos\", com o mesmo sujeito de \"perdemos\". Nas outras, o sentido muda (os algoritmos delegando, ou a vida recebendo os algoritmos) ou a concordância falha: o certo seria \"é delegada aos algoritmos a vida\" e \"se delega aos algoritmos a vida\".",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Tribunal de Contas do Estado de Minas Gerais",
+      "cargo": "Analista de Controle Externo e demais cargos",
+      "ano": 2025,
+      "prova": "tcemg-2025-cg",
+      "item": 9
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "tcemg25-010",
+    "disciplina": "portugues",
+    "assunto": "Sintaxe: termos da oração",
+    "enunciado": "Texto CG1A1-II\n\nNo admirável mundo novo da inteligência artificial (IA), o ano de 2025 representou um salto — os robôs movidos a algoritmos, que já faziam parte do cotidiano das relações profissionais, invadiram, sem pompa nem circunstância, recantos íntimos, em meio ao intenso e inescapável debate ético. “O risco é criar uma intimidade sem reciprocidade, em que parece haver relação humana, mas não há”, dizem os psicólogos. A IA trabalha com uma proximidade confortável e sem consequências, mas carrega o risco de afastar usuários das complexidades dos relacionamentos reais. O estrondoso debate que atravessou o ano deixa uma questão central: o que perdemos ao delegar a vida aos algoritmos? No caso das consultas médicas, um argumento a favor da IA tem sido o acesso aos profissionais. “Talvez o melhor médico do mundo seja muito melhor do que o ChatGPT. Mas, se não há alternativa, se não é possível pagar por um médico, especialmente em regiões mais pobres, será muito melhor do que nada”. É um ponto, mas não há dúvida: a IA precisa ser levada ao divã.\n\nLígia Morais. A IA no divã. In: Veja, 24/12/2025, p. 49 (com adaptações).\n\nAssinale a opção correta acerca de aspectos linguísticos pertinentes ao seguinte trecho do texto CG1A1-II: “A IA trabalha com uma proximidade confortável e sem consequências, mas carrega o risco de afastar usuários das complexidades dos relacionamentos reais”.",
+    "alternativas": [
+      "O vocábulo “confortável” exprime uma circunstância adverbial de modo no predicado verbal.",
+      "As formas verbais “trabalha” e “carrega” descrevem eventos pretéritos.",
+      "Os vocábulos “com” e “sem” introduzem segmentos que funcionam sintaticamente como complementos da forma verbal “trabalha”.",
+      "O segmento “das complexidades” funciona como complemento nominal de “usuários”.",
+      "O vocábulo “usuários” funciona sintaticamente como complemento da forma verbal “afastar”."
+    ],
+    "correta": 4,
+    "dificuldade": 3,
+    "explicacao": "Em \"afastar usuários das complexidades\", \"usuários\" é o objeto direto de \"afastar\" (afasta-se alguém de algo); \"das complexidades\" também se liga ao verbo, e não a \"usuários\". \"Confortável\" é adjetivo de \"proximidade\", os verbos estão no presente e \"sem consequências\" caracteriza \"proximidade\", não completa \"trabalha\".",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Tribunal de Contas do Estado de Minas Gerais",
+      "cargo": "Analista de Controle Externo e demais cargos",
+      "ano": 2025,
+      "prova": "tcemg-2025-cg",
+      "item": 10
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "tcemg25-011",
+    "disciplina": "administrativo",
+    "assunto": "Organização administrativa",
+    "enunciado": "Em relação à organização administrativa, assinale a opção correta.",
+    "alternativas": [
+      "Os ministérios, as secretarias, as autarquias e as fundações públicas compõem a administração pública direta, ao passo que as empresas públicas e as sociedades de economia mista compõem a administração pública indireta.",
+      "As empresas públicas são criadas após autorização legislativa e têm personalidade jurídica de direito privado.",
+      "As empresas públicas e as sociedades de economia mista devem ter capital social inteiramente público, visto que se submetem aos princípios da administração pública.",
+      "A criação de ministério ou secretaria representa ato de descentralização administrativa, uma vez que estabelece competências próprias para o novo órgão.",
+      "As autarquias são pessoas jurídicas de direito público criadas pelo Poder Executivo após autorização legislativa."
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Empresas públicas têm personalidade jurídica de direito privado e são criadas depois de autorização em lei específica (art. 37, XIX, da Constituição). Autarquias e fundações são da administração indireta; autarquia é criada diretamente por lei; sociedade de economia mista tem capital privado; criar ministério ou secretaria é desconcentração.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Tribunal de Contas do Estado de Minas Gerais",
+      "cargo": "Analista de Controle Externo e demais cargos",
+      "ano": 2025,
+      "prova": "tcemg-2025-cg",
+      "item": 11
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "tcemg25-012",
+    "disciplina": "administrativo",
+    "assunto": "Agentes públicos",
+    "enunciado": "No que concerne aos agentes públicos, assinale a opção correta.",
+    "alternativas": [
+      "Somente são considerados agentes políticos aqueles que gozem de mandato obtido por intermédio de eleição popular.",
+      "A vedação de acumulação de cargos públicos prevista na Constituição Federal de 1988 não se estende a empregos em empresas públicas e sociedades de economia mista.",
+      "As funções de confiança devem ser exercidas exclusivamente por servidores ocupantes de cargo efetivo.",
+      "O servidor investido no mandato de prefeito poderá continuar a exercer cargo efetivo, emprego ou função, devendo, entretanto, optar por apenas uma das remunerações.",
+      "Incorporam-se à remuneração do cargo efetivo, após o seu exercício pelo prazo mínimo de dez anos, as vantagens vinculadas ao exercício de função de confiança ou de cargo em comissão."
+    ],
+    "correta": 2,
+    "dificuldade": 2,
+    "explicacao": "Pelo art. 37, V, da Constituição, as funções de confiança são exercidas exclusivamente por servidores ocupantes de cargo efetivo. A proibição de acumular alcança empregos em empresas públicas e sociedades de economia mista (art. 37, XVII); o servidor eleito prefeito é afastado do cargo (art. 38, II); e a incorporação de vantagens de função ou cargo em comissão é proibida (art. 39, § 9.º).",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Tribunal de Contas do Estado de Minas Gerais",
+      "cargo": "Analista de Controle Externo e demais cargos",
+      "ano": 2025,
+      "prova": "tcemg-2025-cg",
+      "item": 12
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "tcemg25-013",
+    "disciplina": "administrativo",
+    "assunto": "Licitações (Lei n.º 14.133/2021)",
+    "enunciado": "Assinale a opção em que é corretamente apresentada a modalidade de licitação adequada para a contratação de obras, serviços e compras em que a administração pública realiza conversas com licitantes previamente selecionados mediante critérios objetivos, com o intuito de desenvolver uma ou mais alternativas capazes de atender às suas necessidades, devendo os licitantes apresentar proposta final após o encerramento das conversas.",
+    "alternativas": [
+      "diálogo competitivo",
+      "pregão",
+      "concurso",
+      "leilão",
+      "concorrência"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "É o diálogo competitivo (art. 6.º, XLII, da Lei n.º 14.133/2021): a administração dialoga com licitantes selecionados por critérios objetivos para desenvolver alternativas, e eles apresentam proposta final depois do fim dos diálogos.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Tribunal de Contas do Estado de Minas Gerais",
+      "cargo": "Analista de Controle Externo e demais cargos",
+      "ano": 2025,
+      "prova": "tcemg-2025-cg",
+      "item": 13
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "tcemg25-014",
+    "disciplina": "administrativo",
+    "assunto": "Controle externo",
+    "enunciado": "Acerca das competências do tribunal de contas, assinale a opção correta.",
+    "alternativas": [
+      "O Tribunal de Contas da União deve julgar anualmente, com base em relatório elaborado em até sessenta dias a contar de seu recebimento, as contas prestadas pelo presidente da República.",
+      "A competência do tribunal de contas para fiscalizar a aplicação de recursos repassados a particulares pela unidade da Federação mediante convênio, acordo, ajuste ou outros instrumentos congêneres não alcança as hipóteses em que esse repasse de recursos é realizado entre entes públicos.",
+      "Compete ao tribunal de contas aplicar aos responsáveis, em caso de ilegalidade de despesa ou irregularidade de contas, as sanções previstas em lei, além de propor ação de improbidade administrativa.",
+      "O tribunal de contas pode sustar contrato no qual se tenha verificado ilegalidade quando não atendido o prazo determinado para as providências necessárias, informando a decisão à respectiva casa do Poder Legislativo.",
+      "Compete ao tribunal de contas apreciar, para fins de registro, a legalidade dos atos de admissão de pessoal, a qualquer título, na administração direta e indireta, incluídas as fundações instituídas e mantidas pelo poder público, excetuadas as nomeações para cargo de provimento em comissão."
+    ],
+    "correta": 4,
+    "dificuldade": 2,
+    "explicacao": "É o art. 71, III, da Constituição: o tribunal de contas aprecia, para registro, a legalidade das admissões de pessoal na administração direta e indireta, menos as nomeações para cargo em comissão. As contas do presidente são julgadas pelo Congresso (o TCU só dá parecer prévio) e a sustação de contrato cabe ao Legislativo.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Tribunal de Contas do Estado de Minas Gerais",
+      "cargo": "Analista de Controle Externo e demais cargos",
+      "ano": 2025,
+      "prova": "tcemg-2025-cg",
+      "item": 14
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "tcemg25-015",
+    "disciplina": "administrativo",
+    "assunto": "Responsabilidade civil do Estado",
+    "enunciado": "No que diz respeito à responsabilidade civil do Estado no direito brasileiro, assinale a opção correta.",
+    "alternativas": [
+      "Não há possibilidade de responsabilidade civil do Estado por omissão.",
+      "Segundo a teoria do dano imediato, a responsabilidade civil se estabelece em relação aos efeitos diretos e imediatos causados pela conduta do agente para atribuição de responsabilidade objetiva do Estado.",
+      "No direito brasileiro, adota-se a teoria da culpa integral como fundamento para a caracterização da responsabilidade civil do Estado.",
+      "A culpa concorrente da vítima é causa excludente de responsabilidade civil do Estado.",
+      "É prescindível a análise da culpa da vítima para a demonstração da responsabilidade civil do Estado, haja vista que esta é objetiva, ou seja, independente de dolo ou culpa."
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Pela teoria do dano direto e imediato, só há nexo de causalidade entre a conduta do agente e os danos que dela decorrem diretamente; é essa ligação que se exige na responsabilidade objetiva do Estado. O Estado também responde por omissão, e a culpa da vítima importa: se exclusiva, afasta a responsabilidade; se concorrente, reduz a indenização.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Tribunal de Contas do Estado de Minas Gerais",
+      "cargo": "Analista de Controle Externo e demais cargos",
+      "ano": 2025,
+      "prova": "tcemg-2025-cg",
+      "item": 15
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "tcemg25-016",
+    "disciplina": "administrativo",
+    "assunto": "Lei de Acesso à Informação",
+    "enunciado": "Assinale a opção correta em relação à proteção de dados e ao acesso à informação.",
+    "alternativas": [
+      "O uso compartilhado de dados pessoais de pessoa jurídica de direito público a pessoa jurídica de direito privado deve, em todos os casos, ser informado à autoridade nacional e depende sempre de consentimento do titular.",
+      "Sem prejuízo da segurança e da proteção das informações e do cumprimento da legislação aplicável, o órgão ou a entidade poderá oferecer meios para que o próprio requerente possa pesquisar a informação de que necessitar.",
+      "Deverão ser objeto de restrição de acesso informações ou documentos que versem sobre condutas que impliquem violação dos direitos humanos praticada por agentes públicos ou a mando de autoridades públicas.",
+      "Há necessidade de consentimento do titular para o tratamento de seus dados pessoais, independentemente de eles terem sido tornados manifestamente públicos pelo titular.",
+      "No que concerne ao tratamento de dados pessoais, os serviços notariais e de registro exercidos em caráter privado por delegação do poder público devem obedecer às mesmas normas estabelecidas para pessoas jurídicas de direito privado."
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "É o que diz a Lei de Acesso à Informação (art. 11, § 3.º, da Lei n.º 12.527/2011): o órgão pode oferecer meios para que o próprio requerente pesquise a informação. Informações sobre violação de direitos humanos por agentes públicos não podem ter acesso restrito (art. 21), e a LGPD dispensa o consentimento para dados tornados manifestamente públicos pelo titular e dá aos cartórios o tratamento das pessoas de direito público.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Tribunal de Contas do Estado de Minas Gerais",
+      "cargo": "Analista de Controle Externo e demais cargos",
+      "ano": 2025,
+      "prova": "tcemg-2025-cg",
+      "item": 16
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "tcemg25-017",
+    "disciplina": "constitucional",
+    "assunto": "Controle externo",
+    "enunciado": "Assinale a opção correta em relação à disciplina constitucional do Poder Legislativo e dos tribunais de contas estaduais.",
+    "alternativas": [
+      "Os tribunais de contas possuem competência constitucional para julgar as contas de gestão de prefeito que atue como ordenador de despesas, competindo a eles, em caso de irregularidade, imputar-lhe débitos e sanções fora da esfera eleitoral, independentemente de ratificação pelas câmaras municipais.",
+      "A fiscalização contábil, financeira, orçamentária, operacional e patrimonial dos entes federados, tanto das entidades da administração direta quanto das entidades da administração indireta, é exercida pelo Poder Legislativo mediante controle externo, salvo quando instituído sistema de controle interno.",
+      "O aspecto da legitimidade da fiscalização contábil, financeira, orçamentária, operacional e patrimonial exercida pelo Poder Legislativo sobre as entidades da administração pública diz respeito ao critério de uso da menor quantidade de recursos públicos para atingir a maior gama de benefícios ou de beneficiários.",
+      "Em razão de seu caráter vinculativo, o parecer do tribunal de contas estadual configura condição para que a assembleia legislativa aprecie as contas prestadas pelo governador.",
+      "Quando não existir auditores ou membros do Ministério Público junto ao Tribunal de Contas aptos ao preenchimento das vagas reservadas ao cargo, a nomeação de conselheiro do tribunal de contas local poderá ser feita a partir de livre escolha do governador."
+    ],
+    "correta": 0,
+    "dificuldade": 3,
+    "explicacao": "O STF decidiu (2025) que o tribunal de contas pode julgar as contas de gestão do prefeito que atua como ordenador de despesas e lhe aplicar débito e multa, sem depender da câmara municipal; só os efeitos eleitorais (inelegibilidade) dependem do julgamento da câmara. O controle interno não substitui o externo, o parecer sobre as contas do governador não vincula a assembleia e economicidade é diferente de legitimidade.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Tribunal de Contas do Estado de Minas Gerais",
+      "cargo": "Analista de Controle Externo e demais cargos",
+      "ano": 2025,
+      "prova": "tcemg-2025-cg",
+      "item": 17
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "tcemg25-019",
+    "disciplina": "constitucional",
+    "assunto": "Direitos e garantias fundamentais",
+    "enunciado": "O modo de fazer queijo minas artesanal tornou-se patrimônio cultural imaterial da humanidade, título recentemente concedido pela Organização das Nações Unidas para a Educação, a Ciência e a Cultura (UNESCO), em Assunção, no Paraguai. O preparo desse queijo já é reconhecido como patrimônio cultural do Brasil desde 2008.\n\nO Instituto do Patrimônio Histórico e Artístico Nacional (IPHAN) apresentou a candidatura para a UNESCO em março de 2023, a partir de um requerimento da Associação Mineira de Produtores de Queijo Artesanal (AMIQUEIJO).\n\nInternet: <g1.globo.com> (com adaptações).\n\nTendo como referência o texto precedente, assinale a opção correta de acordo com o disposto na Constituição Federal de 1988 e na Constituição do Estado de Minas Gerais.",
+    "alternativas": [
+      "Coube à AMIQUEIJO e não ao estado de Minas Gerais requerer a apresentação da candidatura para a UNESCO porque a proteção ao modo de fazer queijos minas artesanal não decorre de nenhum objetivo prioritário do estado.",
+      "Desde que expressamente autorizada, a AMIQUEIJO tem legitimidade constitucional para representar judicialmente os interesses de seus filiados.",
+      "O título concedido pela UNESCO cria para o estado de Minas Gerais a obrigação constitucional de subsidiar integralmente a produção artesanal de queijos em todas as regiões mineiras, como forma de cumprir o objetivo prioritário de promover as condições necessárias para a fixação do homem no campo, conforme previsto na Constituição do estado.",
+      "A partir da proteção conferida pela UNESCO, passa a ser obrigatória a filiação à AMIQUEIJO de todos aqueles que produzam queijo minas artesanal em território mineiro.",
+      "Caso os filiados à AMIQUEIJO desejem se reunir em uma praça pública de Belo Horizonte para comemorar o título concedido pela UNESCO, a reunião dependerá de autorização do município."
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Pelo art. 5.º, XXI, da Constituição, as associações, quando expressamente autorizadas, podem representar seus filiados judicial ou extrajudicialmente. Ninguém pode ser obrigado a se associar (art. 5.º, XX), e a reunião pacífica em local público não depende de autorização, só de aviso prévio à autoridade (art. 5.º, XVI).",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Tribunal de Contas do Estado de Minas Gerais",
+      "cargo": "Analista de Controle Externo e demais cargos",
+      "ano": 2025,
+      "prova": "tcemg-2025-cg",
+      "item": 19
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "tcemg25-020",
+    "disciplina": "constitucional",
+    "assunto": "Funções essenciais à justiça",
+    "enunciado": "No que diz respeito às funções essenciais à justiça, assinale a opção correta.",
+    "alternativas": [
+      "A Advocacia-Geral da União tem por chefe o advogado-geral da União, que deve ser nomeado entre os integrantes da carreira pelo presidente da República.",
+      "Para a defesa da ordem jurídica, do regime democrático e dos interesses sociais e individuais indisponíveis, a atuação do Ministério Público é restrita ao âmbito judicial.",
+      "O estado de Minas Gerais é representado judicial e extrajudicialmente pela advocacia-geral do estado, cujas atribuições incluem a defesa em juízo dos atos praticados pelos Poderes Executivo e Legislativo.",
+      "A independência funcional é constitucionalmente assegurada aos defensores públicos e aos membros do Ministério Público.",
+      "Os Ministérios Públicos junto aos tribunais de contas não possuem autonomia administrativa, razão por que a independência funcional de seus membros é mitigada."
+    ],
+    "correta": 3,
+    "dificuldade": 2,
+    "explicacao": "A Constituição garante a independência funcional aos membros do Ministério Público (art. 127, § 1.º) e às Defensorias Públicas (art. 134, § 4.º). O advogado-geral da União é de livre nomeação entre cidadãos maiores de 35 anos, e o Ministério Público também atua fora do Judiciário (inquérito civil, recomendações).",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Tribunal de Contas do Estado de Minas Gerais",
+      "cargo": "Analista de Controle Externo e demais cargos",
+      "ano": 2025,
+      "prova": "tcemg-2025-cg",
+      "item": 20
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "tcemg25-022",
+    "disciplina": "administrativo",
+    "assunto": "Controle da administração",
+    "enunciado": "No que diz respeito às características do controle jurisdicional da administração pública brasileira, assinale a opção correta.",
+    "alternativas": [
+      "O Poder Judiciário poderá, no exercício do controle jurisdicional, julgar as contas dos administradores públicos federais em seu mérito, caso o Tribunal de Contas da União as julgue irregulares.",
+      "O controle jurisdicional é primariamente exercido de ofício pelo Poder Judiciário, quando verificados indícios de ilegalidade ou inoportunidade na atuação administrativa.",
+      "O controle jurisdicional é primariamente exercido a posteriori, de forma corretiva, mas pode ser exercido de forma preventiva em casos excepcionais, como na emissão de ordens judiciais para se coibirem ilegalidades iminentes.",
+      "O Poder Judiciário pode substituir o juízo de conveniência e oportunidade do administrador (mérito administrativo) sempre que constatar ofensa aos princípios da moralidade e da publicidade.",
+      "O controle jurisdicional se restringe ao exame da legalidade formal (cumprimento da norma escrita), sendo vedado que ele analise a legalidade principiológica de determinado ato, como sua razoabilidade e sua proporcionalidade."
+    ],
+    "correta": 2,
+    "dificuldade": 2,
+    "explicacao": "Em regra, o Judiciário controla atos já praticados, mas também pode agir antes, para impedir uma ilegalidade iminente (art. 5.º, XXXV, da Constituição: lesão ou ameaça a direito). Ele só age quando provocado, não julga as contas no lugar do tribunal de contas, não substitui o mérito administrativo e pode examinar razoabilidade e proporcionalidade.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Tribunal de Contas do Estado de Minas Gerais",
+      "cargo": "Analista de Controle Externo e demais cargos",
+      "ano": 2025,
+      "prova": "tcemg-2025-cg",
+      "item": 22
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "tcemg25-024",
+    "disciplina": "administrativo",
+    "assunto": "Controle da administração",
+    "enunciado": "No âmbito do controle administrativo, o recurso hierárquico impróprio é",
+    "alternativas": [
+      "o recurso dirigido a uma autoridade que não possui relação hierárquica superior com quem praticou o ato objeto de controle, sendo somente cabível quando houver previsão legal expressa.",
+      "o recurso endereçado a uma autoridade do Poder Judiciário, para que reveja um ato administrativo.",
+      "o recurso autuado de ofício pela própria autoridade que adotou a decisão original.",
+      "o recurso endereçado à mesma autoridade que praticou o ato objeto de controle, para que reconsidere sua decisão.",
+      "o recurso padrão dirigido à autoridade que, dentro da estrutura de um mesmo órgão, é imediatamente superior a quem praticou o ato objeto de controle."
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Recurso hierárquico impróprio é dirigido a uma autoridade que não é superior hierárquica de quem praticou o ato (por exemplo, de uma autarquia para o ministério que a supervisiona). Como não há hierarquia, ele só cabe quando a lei prevê expressamente.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Tribunal de Contas do Estado de Minas Gerais",
+      "cargo": "Analista de Controle Externo e demais cargos",
+      "ano": 2025,
+      "prova": "tcemg-2025-cg",
+      "item": 24
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "tcemg25-026",
+    "disciplina": "administrativo",
+    "assunto": "Improbidade administrativa",
+    "enunciado": "De acordo com a Lei de Improbidade Administrativa (Lei n.º 8.429/1992), em regra, é elemento subjetivo necessário e suficiente para a configuração de ato de improbidade administrativa",
+    "alternativas": [
+      "a culpa grave, nos casos de ato de improbidade que cause prejuízo ao erário.",
+      "a culpa exclusiva, admitindo-se a presunção do elemento subjetivo em atos de omissão grave.",
+      "o dolo ou a culpa, conforme o grau de lesão ao patrimônio público e a complexidade da função exercida.",
+      "o dolo específico, que corresponde à intenção de obter proveito próprio ou alheio indevido, exigível em todas as espécies de improbidade.",
+      "o dolo, entendido como a vontade livre e consciente de alcançar o resultado ilícito ou anuir com ele, em qualquer das modalidades de improbidade."
+    ],
+    "correta": 4,
+    "dificuldade": 2,
+    "explicacao": "Desde a Lei n.º 14.230/2021, todo ato de improbidade exige dolo: a vontade livre e consciente de alcançar o resultado ilícito (art. 1.º, §§ 1.º e 2.º, da Lei n.º 8.429/1992). Não existe mais improbidade culposa, e não basta o mero exercício da função sem a intenção ilícita.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Tribunal de Contas do Estado de Minas Gerais",
+      "cargo": "Analista de Controle Externo e demais cargos",
+      "ano": 2025,
+      "prova": "tcemg-2025-cg",
+      "item": 26
+    },
+    "status": "ativa"
+  }
+]
