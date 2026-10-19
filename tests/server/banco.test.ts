@@ -63,12 +63,15 @@ describe('banco de questões autorais', () => {
   // pela banca (content/banco/provas-oficiais.json). O gabarito de cada item é
   // conferido aqui contra o definitivo; item anulado (X) não entra.
   it('questão oficial: igual à prova registrada e com o gabarito definitivo da banca', () => {
-    type Registro = { banca: string; orgao: string; cargo: string; ano: number; formato: 'certo-errado' | 'multipla-escolha'; provaUrl: string; gabaritoUrl: string; gabaritoDefinitivo: string };
+    type Registro = { banca: string; orgao: string; cargo: string; ano: number; formato: 'certo-errado' | 'multipla-escolha'; provaUrl: string; gabaritoUrl: string; gabaritoDescricao?: string; gabaritoDefinitivo: string };
     const registro = provas as Record<string, Registro>;
     for (const [id, p] of Object.entries(registro)) {
       expect(ESTILOS, id).toContain(p.banca);
       expect(p.provaUrl, id).toMatch(/^https:\/\//);
-      expect(p.gabaritoUrl, id).toMatch(/^https:\/\/.*DEFINITIVO/i);
+      expect(p.gabaritoUrl, id).toMatch(/^https:\/\//);
+      // O arquivo diz que é o definitivo no nome ou, quando a banca publica com
+      // nome embaralhado, na descrição da página do concurso.
+      expect(`${p.gabaritoUrl} ${p.gabaritoDescricao ?? ''}`, id).toMatch(/DEFINITIVO/i);
       expect(p.gabaritoDefinitivo, id).toMatch(p.formato === 'certo-errado' ? /^[CEX]+$/ : /^[A-EX]+$/);
     }
     const oficiais = itens.filter((q) => q.fonte.tipo === 'oficial');

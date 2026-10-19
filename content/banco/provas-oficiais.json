@@ -178,5 +178,18 @@
     "provaUrl": "https://cdn.cebraspe.org.br/concursos/trf6_24/arquivos/034_TRF6_CG1_01.PDF",
     "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/trf6_24/arquivos/GAB_DEFINITIVO_034_TRF6_CG1_01.PDF",
     "gabaritoDefinitivo": "CEEEEECCECCECECEECCECCCECECECCEECCXCEECXEECECCCCEE"
+  },
+  "cd-2025-cg": {
+    "banca": "Cebraspe",
+    "orgao": "Câmara dos Deputados",
+    "cargo": "Analista Legislativo e Técnico Legislativo",
+    "ano": 2025,
+    "aplicacao": "2025",
+    "caderno": "Conhecimentos gerais (Analista Legislativo e Técnico Legislativo)",
+    "formato": "certo-errado",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/cd_25_ns/arquivos/E61A04B682ABA7AF746F702D22B1516C4A4BC005855CE5CFFF5D2280F3E790CE.pdf",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/cd_25_ns/arquivos/BE7F1F9B1F3F90750D44E63070FDE8505D71F1BADD7F9A2096BB953B32081694.pdf",
+    "gabaritoDescricao": "GABARITO DEFINITIVO – CONHECIMENTOS GERAIS PARA OS CARGOS 1 E 2 (página do concurso no Cebraspe)",
+    "gabaritoDefinitivo": "ECECEEECEEEECECEECCCCCEEXEECCXECCCEEECECCCECECCCECECCEEEEEECCECCEECCCCEECCECCECEEECCCCECEC"
   }
 }

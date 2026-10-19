@@ -15,5 +15,6 @@
   {"migracao": "0031_v2_oficiais_mpo_2024.sql", "arquivos": ["oficial-mpo-2024-cg.json"]},
   {"migracao": "0032_v2_oficiais_stm_2025.sql", "arquivos": ["oficial-stm-2025-cg.json"]},
   {"migracao": "0033_v2_oficiais_ibama_2025.sql", "arquivos": ["oficial-ibama-2025-cb.json"]},
-  {"migracao": "0034_v2_oficiais_trf6_2024.sql", "arquivos": ["oficial-trf6-2024-cg.json"]}
+  {"migracao": "0034_v2_oficiais_trf6_2024.sql", "arquivos": ["oficial-trf6-2024-cg.json"]},
+  {"migracao": "0035_v2_oficiais_cd_2025.sql", "arquivos": ["oficial-cd-2025-cg.json"]}
 ]
