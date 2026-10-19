@@ -33,7 +33,9 @@ gabarito de sites de questões (QConcursos, TecConcursos etc.).
    misturam.
 2. Registrar a prova em `provas-oficiais.json`. Copiar o gabarito definitivo
    lendo o PDF por programa (`pdftotext -layout`), não à mão.
-3. Transcrever os itens **sem mudar uma palavra**. Conferir por programa que o
+3. Transcrever os itens **sem mudar uma palavra** (o item pode ser tirado pela
+   posição das palavras na página: número na margem, texto recuado; texto
+   justificado se confere com a leitura `pdftotext -raw`). Conferir por programa que o
    texto de cada item aparece igual no texto extraído da prova.
 4. O contexto vai antes do item, em blocos separados por uma linha em branco:
    - o texto de apoio (título como "Texto CB1A1", um bloco por parágrafo e a
@@ -66,3 +68,5 @@ gabarito de sites de questões (QConcursos, TecConcursos etc.).
 | Cebraspe · Polícia Federal 2021 · Agente de Polícia Federal | 62 (Português, redação oficial, Administrativo, Constitucional, RLM, Informática) | 28 e 92 (anulados); 31–48 (Direito Penal, legislação especial e Estatística com fórmulas); 63 e 65 (ícone); 73–78 (teoria de sistemas e gráfico); 84–85 (código); 93 em diante (outras áreas) |
 | Cebraspe · TRT 8.ª Região 2022 · nível médio (conhecimentos gerais, múltipla escolha) | 14 (Português, RLM, Informática) | 7 e 10 (fórmulas que não saem do PDF), 8 e 19 (anuladas), 18–20 (normas internas do TRT) |
 | Cebraspe · TRT 8.ª Região 2022 · nível superior (conhecimentos gerais, múltipla escolha) | 16 (Português, RLM, Informática) | 15 (anulada), 18–20 (normas internas do TRT) |
+| Cebraspe · STJ 2024 · conhecimentos básicos | 25 (Português, redação oficial, Constitucional, Administrativo, Informática) | 8, 15, 49, 50 (anulados); normas internas do STJ, Funpresp, direitos humanos, LGPD do STJ e sustentabilidade |
+| Cebraspe · TRT 10.ª Região 2024 · conhecimentos básicos | 28 (Português, linguagem simples, Constitucional, Administrativo) | 1 e 10 (anulados); noções gerais de direito, direitos humanos e gestão |

@@ -46,5 +46,29 @@
     "provaUrl": "https://cdn.cebraspe.org.br/concursos/trt8_22/arquivos/759_TRT8_CG1_01.PDF",
     "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/trt8_22/arquivos/GAB_DEFINITIVO_759_TRT8_CG1_01.PDF",
     "gabaritoDefinitivo": "DACCECBCBDDBEDXDCCBC"
+  },
+  "stj-2024-cb": {
+    "banca": "Cebraspe",
+    "orgao": "STJ",
+    "cargo": "Analista e Técnico Judiciário",
+    "ano": 2024,
+    "aplicacao": "2024",
+    "caderno": "Conhecimentos básicos para todos os cargos, exceto 1, 3, 18 e 19 (018_STJ_CB1_01)",
+    "formato": "certo-errado",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/stj_24/arquivos/018_STJ_CB1_01.PDF",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/stj_24/arquivos/GAB_DEFINITIVO_018_STJ_CB1_01.PDF",
+    "gabaritoDefinitivo": "CECCEECXECECECXECCECECEECEECCCEEECEECECECCECCECCXX"
+  },
+  "trt10-2024-cb": {
+    "banca": "Cebraspe",
+    "orgao": "TRT 10.ª Região",
+    "cargo": "Analista e Técnico Judiciário",
+    "ano": 2024,
+    "aplicacao": "2024",
+    "caderno": "Conhecimentos básicos para todos os cargos, exceto 11 a 15 (050_TRT10_CB1_01)",
+    "formato": "certo-errado",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/trt10_24/arquivos/050_TRT10_CB1_01.pdf",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/trt10_24/arquivos/Gab_Definitivo_050_TRT10_CB1_01.pdf",
+    "gabaritoDefinitivo": "XEECCECECXCEECCCECCEEECECCEECCECECEEECCCECECCECCCE"
   }
 }
