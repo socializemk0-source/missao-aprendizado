@@ -11,5 +11,6 @@
   {"migracao": "0027_v2_oficiais_cnj_2024.sql", "arquivos": ["oficial-cnj-2024-cb.json"]},
   {"migracao": "0028_v2_oficiais_pcdf_2024.sql", "arquivos": ["oficial-pcdf-2024-cb.json"]},
   {"migracao": "0029_v2_oficiais_tjce_2023.sql", "arquivos": ["oficial-tjce-2023-cg.json"]},
-  {"migracao": "0030_v2_oficiais_mps_2024.sql", "arquivos": ["oficial-mps-2024-cg.json"]}
+  {"migracao": "0030_v2_oficiais_mps_2024.sql", "arquivos": ["oficial-mps-2024-cg.json"]},
+  {"migracao": "0031_v2_oficiais_mpo_2024.sql", "arquivos": ["oficial-mpo-2024-cg.json"]}
 ]

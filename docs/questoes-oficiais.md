@@ -77,3 +77,4 @@ gabarito de sites de questões (QConcursos, TecConcursos etc.).
 | Cebraspe · PCDF 2024 · conhecimentos básicos | 27 (Português, RLM) | 28 (tabela que não sai do PDF); 31 em diante (normas e realidade do DF). O caderno vem com as justificativas do gabarito preliminar: elas não são copiadas |
 | Cebraspe · TJ-CE 2023 · conhecimentos gerais (múltipla escolha) | 20 (Português, Informática, RLM) | — |
 | Cebraspe · Ministério da Previdência Social 2024 · Perito Médico Federal, conhecimentos gerais | 46 (Português, redação oficial, ética, LAI, Constitucional, Lei n.º 8.112/1990, improbidade) | 44 e 47 (anulados); 49–50 (SEI) |
+| Cebraspe · Ministério do Planejamento e Orçamento 2024 · Analista de Planejamento e Orçamento, conhecimentos gerais | 30 (Constitucional, Administrativo, ética, Informática e dados) | 5, 21 e outros anulados; inglês, espanhol, gestão pública, realidade brasileira, direitos humanos e o plano de integridade do MPO |

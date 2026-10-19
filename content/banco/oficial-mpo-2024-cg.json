@@ -1,0 +1,692 @@
+[
+  {
+    "id": "mpo24-cg-015",
+    "disciplina": "constitucional",
+    "assunto": "Direitos e garantias fundamentais",
+    "enunciado": "Considerando o direito constitucional contemporâneo e os direitos e as garantias fundamentais, julgue o item que se segue.\n\nA defesa judicial de direitos e garantias fundamentais cabe exclusivamente aos próprios titulares desses direitos.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. A defesa judicial de direitos fundamentais não cabe só aos titulares: o Ministério Público, a Defensoria, associações, sindicatos e partidos podem agir em várias situações (ação civil pública, mandado de segurança coletivo etc.).",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério do Planejamento e Orçamento",
+      "cargo": "Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "mpo-2024-cg",
+      "item": 15
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mpo24-cg-016",
+    "disciplina": "constitucional",
+    "assunto": "Interpretação constitucional",
+    "enunciado": "Considerando o direito constitucional contemporâneo e os direitos e as garantias fundamentais, julgue o item que se segue.\n\nO fenômeno da mutação constitucional, causado, entre outras razões, por mudança dos valores da sociedade, possibilita novas interpretações do texto constitucional sem que ele seja alterado.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. Mutação constitucional é a mudança de sentido de uma norma da Constituição sem mudança no texto, por exemplo por novos valores da sociedade ou nova interpretação dos tribunais.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério do Planejamento e Orçamento",
+      "cargo": "Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "mpo-2024-cg",
+      "item": 16
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mpo24-cg-017",
+    "disciplina": "constitucional",
+    "assunto": "Poder Judiciário",
+    "enunciado": "No que se refere à organização do Estado e às suas funções, julgue o item a seguir.\n\nNem todos os tribunais do Poder Judiciário se submetem à regra do quinto constitucional.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. O quinto constitucional (um quinto das vagas para advogados e membros do Ministério Público) vale para os TRFs e os TJs (art. 94) e também para o TST e os TRTs. Outros tribunais não seguem essa regra: o STF tem livre escolha entre juristas, e o STJ reserva um terço das vagas, não um quinto.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério do Planejamento e Orçamento",
+      "cargo": "Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "mpo-2024-cg",
+      "item": 17
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mpo24-cg-018",
+    "disciplina": "constitucional",
+    "assunto": "Poder Executivo",
+    "enunciado": "No que se refere à organização do Estado e às suas funções, julgue o item a seguir.\n\nTodos os atos dos ministros de Estado, antes de publicados, devem ter aprovação prévia do presidente da República, haja vista a condição dos ministros de auxiliares do presidente e a possibilidade de eles serem livremente exonerados.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. Os ministros de Estado praticam atos próprios (como referendar decretos, expedir instruções e apresentar relatórios) sem precisar de aprovação prévia do presidente para cada ato. Serem demissíveis livremente não muda isso.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério do Planejamento e Orçamento",
+      "cargo": "Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "mpo-2024-cg",
+      "item": 18
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mpo24-cg-019",
+    "disciplina": "constitucional",
+    "assunto": "Organização do Estado",
+    "enunciado": "No que se refere à organização do Estado e às suas funções, julgue o item a seguir.\n\nNa organização federativa brasileira, devido à condição peculiar do Distrito Federal, sua divisão em municípios depende de lei federal.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. A Constituição (art. 32) proíbe a divisão do Distrito Federal em municípios. Não há lei federal que possa autorizar isso.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério do Planejamento e Orçamento",
+      "cargo": "Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "mpo-2024-cg",
+      "item": 19
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mpo24-cg-020",
+    "disciplina": "constitucional",
+    "assunto": "Processo legislativo",
+    "enunciado": "No que se refere à organização do Estado e às suas funções, julgue o item a seguir.\n\nA sanção de uma lei pelo presidente da República não afasta possíveis defeitos jurídicos do projeto que a tenha originado.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. Para o STF, a sanção não corrige vício de iniciativa nem outros defeitos jurídicos do projeto: a lei continua inconstitucional.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério do Planejamento e Orçamento",
+      "cargo": "Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "mpo-2024-cg",
+      "item": 20
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mpo24-cg-022",
+    "disciplina": "administrativo",
+    "assunto": "Serviços públicos",
+    "enunciado": "A respeito da descentralização administrativa, da administração pública direta, dos serviços públicos e dos agentes públicos, julgue o item a seguir.\n\nO princípio da modicidade determina que o Estado preste seus serviços públicos com a maior eficiência possível.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. Modicidade é cobrar tarifas razoáveis, acessíveis ao usuário. Prestar o serviço com a maior eficiência possível é outro princípio (eficiência).",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério do Planejamento e Orçamento",
+      "cargo": "Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "mpo-2024-cg",
+      "item": 22
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mpo24-cg-023",
+    "disciplina": "administrativo",
+    "assunto": "Descentralização administrativa",
+    "enunciado": "A respeito da descentralização administrativa, da administração pública direta, dos serviços públicos e dos agentes públicos, julgue o item a seguir.\n\nA descentralização administrativa por serviços ocorre quando o poder público atribui a titularidade e a execução de determinado serviço público a uma pessoa jurídica de direito público criada por ele, sendo vedada a criação de pessoa jurídica de direito privado para essa finalidade.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. Na descentralização por serviços (outorga), o Estado cria uma entidade e lhe passa a titularidade e a execução do serviço, e essa entidade pode ser de direito privado, como empresas públicas e sociedades de economia mista. Não é vedado.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério do Planejamento e Orçamento",
+      "cargo": "Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "mpo-2024-cg",
+      "item": 23
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mpo24-cg-024",
+    "disciplina": "administrativo",
+    "assunto": "Administração direta",
+    "enunciado": "A respeito da descentralização administrativa, da administração pública direta, dos serviços públicos e dos agentes públicos, julgue o item a seguir.\n\nA administração direta da União, em se tratando do Poder Executivo, é composta pela Presidência da República e pelos ministérios.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. No Poder Executivo federal, a administração direta é formada pela Presidência da República e pelos ministérios (e seus órgãos).",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério do Planejamento e Orçamento",
+      "cargo": "Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "mpo-2024-cg",
+      "item": 24
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mpo24-cg-025",
+    "disciplina": "administrativo",
+    "assunto": "Poderes administrativos",
+    "enunciado": "Acerca dos atos administrativos, dos poderes administrativos e do uso e abuso do poder, julgue o item subsequente.\n\nO abuso de poder pode ser caracterizado pelo excesso de poder, situação em que o agente público atua fora dos limites de sua competência.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. O abuso de poder tem duas formas: excesso de poder (o agente vai além da sua competência) e desvio de poder (age dentro da competência, mas com outra finalidade).",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério do Planejamento e Orçamento",
+      "cargo": "Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "mpo-2024-cg",
+      "item": 25
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mpo24-cg-026",
+    "disciplina": "administrativo",
+    "assunto": "Atos administrativos",
+    "enunciado": "Acerca dos atos administrativos, dos poderes administrativos e do uso e abuso do poder, julgue o item subsequente.\n\nA homologação, o parecer, o visto e a licença são atos administrativos negociais.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. A licença é ato negocial, mas o parecer é ato enunciativo, e o visto e a homologação são atos de controle (ou enunciativos, conforme o autor). Não são todos negociais.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério do Planejamento e Orçamento",
+      "cargo": "Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "mpo-2024-cg",
+      "item": 26
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mpo24-cg-027",
+    "disciplina": "administrativo",
+    "assunto": "Poderes administrativos",
+    "enunciado": "Acerca dos atos administrativos, dos poderes administrativos e do uso e abuso do poder, julgue o item subsequente.\n\nO poder de polícia é uma prerrogativa delegável do poder público.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 3,
+    "explicacao": "Certo. O STF admite delegar fases do poder de polícia (como consentimento e fiscalização, e até a sanção em certos casos) a entidades de direito privado da administração indireta que prestem serviço público em regime não concorrencial. Ele é, em parte, delegável.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério do Planejamento e Orçamento",
+      "cargo": "Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "mpo-2024-cg",
+      "item": 27
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mpo24-cg-028",
+    "disciplina": "administrativo",
+    "assunto": "Poderes administrativos",
+    "enunciado": "Acerca dos atos administrativos, dos poderes administrativos e do uso e abuso do poder, julgue o item subsequente.\n\nO poder regulamentar confere aos agentes administrativos a faculdade de elegerem, entre várias condutas possíveis, a mais conveniente e oportuna para o interesse público, dado que o objetivo desse poder administrativo é atender aos interesses da coletividade.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. Escolher a conduta mais conveniente e oportuna é poder discricionário. O poder regulamentar é o de editar regulamentos para a fiel execução das leis.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério do Planejamento e Orçamento",
+      "cargo": "Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "mpo-2024-cg",
+      "item": 28
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mpo24-cg-029",
+    "disciplina": "administrativo",
+    "assunto": "Licitações (Lei n.º 14.133/2021)",
+    "enunciado": "Julgue o próximo item, referente a princípios básicos de licitações.\n\nO princípio licitatório da vinculação ao edital obriga tanto a administração pública quanto os licitantes.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. O edital é a lei da licitação: vincula a administração, que não pode mudar as regras no meio do caminho, e os licitantes, que devem cumprir suas exigências.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério do Planejamento e Orçamento",
+      "cargo": "Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "mpo-2024-cg",
+      "item": 29
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mpo24-cg-030",
+    "disciplina": "administrativo",
+    "assunto": "Licitações (Lei n.º 14.133/2021)",
+    "enunciado": "Julgue o próximo item, referente a princípios básicos de licitações.\n\nUm dos princípios básicos de licitações é a segregação de funções.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. A Lei n.º 14.133/2021 (art. 5.º) inclui a segregação de funções entre os princípios das licitações: a mesma pessoa não deve cuidar de etapas que se fiscalizam entre si.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério do Planejamento e Orçamento",
+      "cargo": "Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "mpo-2024-cg",
+      "item": 30
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mpo24-cg-092",
+    "disciplina": "administrativo",
+    "assunto": "Processo administrativo (Lei n.º 9.784/1999)",
+    "enunciado": "Com fundamento nas Leis n.º 8.112/1990, n.º 8.429/1992, n.º 9.784/1999 e no Decreto n.º 1.171/1994, julgue o item a seguir.\n\nA finalidade, a motivação, a segurança jurídica, a razoabilidade e o interesse público são princípios expressamente previstos na Lei n.º 9.784/1999.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. O art. 2.º da Lei n.º 9.784/1999 lista, entre outros, os princípios da finalidade, motivação, razoabilidade, segurança jurídica e interesse público.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério do Planejamento e Orçamento",
+      "cargo": "Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "mpo-2024-cg",
+      "item": 92
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mpo24-cg-093",
+    "disciplina": "administrativo",
+    "assunto": "Ética no serviço público",
+    "enunciado": "Com fundamento nas Leis n.º 8.112/1990, n.º 8.429/1992, n.º 9.784/1999 e no Decreto n.º 1.171/1994, julgue o item a seguir.\n\nSegundo o Decreto n.º 1.171/1994, é imprescindível para a caracterização como servidor público a prestação de serviços de natureza permanente, com retribuição financeira, no âmbito do poder estatal.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. Para o Código de Ética, servidor público é quem presta serviço ao Estado, de natureza permanente, temporária ou excepcional, ainda que sem retribuição financeira.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério do Planejamento e Orçamento",
+      "cargo": "Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "mpo-2024-cg",
+      "item": 93
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mpo24-cg-094",
+    "disciplina": "administrativo",
+    "assunto": "Lei n.º 8.112/1990: penalidades",
+    "enunciado": "Com fundamento nas Leis n.º 8.112/1990, n.º 8.429/1992, n.º 9.784/1999 e no Decreto n.º 1.171/1994, julgue o item a seguir.\n\nA Lei n.º 8.112/1990 prevê a aplicação da penalidade de suspensão, por até 90 dias, ao servidor reincidente na prática da usura sob qualquer de suas formas.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. A prática de usura sob qualquer forma é punida com DEMISSÃO (arts. 117, XIV, e 132, XIII, da Lei n.º 8.112/1990), já na primeira vez, e não com suspensão.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério do Planejamento e Orçamento",
+      "cargo": "Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "mpo-2024-cg",
+      "item": 94
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mpo24-cg-095",
+    "disciplina": "administrativo",
+    "assunto": "Improbidade administrativa",
+    "enunciado": "Com fundamento nas Leis n.º 8.112/1990, n.º 8.429/1992, n.º 9.784/1999 e no Decreto n.º 1.171/1994, julgue o item a seguir.\n\nOs atos de improbidade administrativa que atentem contra os princípios da administração pública independem do reconhecimento da produção de danos ao erário e de enriquecimento ilícito dos agentes públicos, assim como exigem lesividade relevante ao bem jurídico tutelado para poderem ser sancionados.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. Os atos que atentam contra os princípios (art. 11) não dependem de dano ao erário nem de enriquecimento ilícito, mas, desde 2021, exigem lesividade relevante ao bem jurídico tutelado.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério do Planejamento e Orçamento",
+      "cargo": "Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "mpo-2024-cg",
+      "item": 95
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mpo24-cg-076",
+    "disciplina": "informatica",
+    "assunto": "Proteção de dados (LGPD)",
+    "enunciado": "Com base na Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o item seguinte.\n\nA anonimização consiste no processo de transformação de um dado para que não seja possível associá-lo, direta ou indiretamente, a um indivíduo.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. Pela LGPD, anonimização é usar meios técnicos para que um dado perca a possibilidade de ser associado, direta ou indiretamente, a uma pessoa.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério do Planejamento e Orçamento",
+      "cargo": "Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "mpo-2024-cg",
+      "item": 76
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mpo24-cg-077",
+    "disciplina": "informatica",
+    "assunto": "Proteção de dados (LGPD)",
+    "enunciado": "Com base na Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o item seguinte.\n\nA identidade e as informações de contato do encarregado pelo tratamento de dados pessoais deverão ser mantidas em sigilo, para a garantia da segurança e privacidade do encarregado.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. A LGPD manda divulgar publicamente, de forma clara e objetiva, a identidade e o contato do encarregado, de preferência no site do controlador. Ele é o canal de comunicação com os titulares.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério do Planejamento e Orçamento",
+      "cargo": "Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "mpo-2024-cg",
+      "item": 77
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mpo24-cg-079",
+    "disciplina": "informatica",
+    "assunto": "Programação",
+    "enunciado": "Julgue o item a seguir, relativo à linguagem R.\n\nEm R, o sinal de cerquilha (#), no início de uma linha, transforma essa linha em comentário.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. Em R (como em Python), tudo o que vem depois de # na linha é comentário e não é executado.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério do Planejamento e Orçamento",
+      "cargo": "Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "mpo-2024-cg",
+      "item": 79
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mpo24-cg-080",
+    "disciplina": "informatica",
+    "assunto": "Inteligência artificial",
+    "enunciado": "Julgue o item a seguir, a respeito de conceitos de inteligência artificial.\n\nA regressão tem como objetivo a obtenção de uma equação que relacione uma variável de resposta a uma ou mais variáveis explicativas.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. Regressão busca uma função (equação) que relacione uma variável de resposta numérica a uma ou mais variáveis explicativas, para prever valores.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério do Planejamento e Orçamento",
+      "cargo": "Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "mpo-2024-cg",
+      "item": 80
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mpo24-cg-081",
+    "disciplina": "informatica",
+    "assunto": "Inteligência artificial",
+    "enunciado": "Julgue o item a seguir, a respeito de conceitos de inteligência artificial.\n\nO aprendizado supervisionado é definido pelo uso de conjuntos de dados rotulados para treinar algoritmos que classificam dados ou preveem resultados com precisão.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. No aprendizado supervisionado, o algoritmo aprende com exemplos rotulados (com a resposta certa conhecida) para depois classificar dados ou prever resultados.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério do Planejamento e Orçamento",
+      "cargo": "Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "mpo-2024-cg",
+      "item": 81
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mpo24-cg-085",
+    "disciplina": "informatica",
+    "assunto": "Banco de dados",
+    "enunciado": "Em relação a banco de dados relacionais, julgue o seguinte item.\n\nTriggers são procedimentos armazenados que são ativados automaticamente em resposta a eventos específicos em tabelas ou views.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 2,
+    "explicacao": "Certo. Triggers (gatilhos) são procedimentos guardados no banco que disparam sozinhos quando ocorre um evento numa tabela ou view, como inserir, alterar ou apagar registros.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério do Planejamento e Orçamento",
+      "cargo": "Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "mpo-2024-cg",
+      "item": 85
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mpo24-cg-086",
+    "disciplina": "informatica",
+    "assunto": "Banco de dados",
+    "enunciado": "Em relação a banco de dados relacionais, julgue o seguinte item.\n\nA normalização de dados em um banco de dados é uma técnica que organiza os dados desse banco em uma escala específica, como valores entre 0 e 1.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. Normalização, em banco de dados, é organizar as tabelas (formas normais) para evitar redundância e anomalias. Pôr valores numa escala entre 0 e 1 é a normalização de dados usada em estatística e aprendizado de máquina.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério do Planejamento e Orçamento",
+      "cargo": "Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "mpo-2024-cg",
+      "item": 86
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mpo24-cg-087",
+    "disciplina": "informatica",
+    "assunto": "Banco de dados",
+    "enunciado": "Em relação a banco de dados relacionais, julgue o seguinte item.\n\nA chave estrangeira é definida como um conjunto de um ou mais campos para definir, univocamente, um único registro.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 1,
+    "explicacao": "Errado. O item descreve a chave primária (identifica cada registro de forma única). Chave estrangeira é o campo que referencia a chave primária de outra tabela, ligando as duas.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério do Planejamento e Orçamento",
+      "cargo": "Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "mpo-2024-cg",
+      "item": 87
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mpo24-cg-088",
+    "disciplina": "informatica",
+    "assunto": "Dados",
+    "enunciado": "Julgue o item a seguir, a respeito de conceitos e fundamentos de dados.\n\nETL (extract, transform, load) envolve a extração de dados de múltiplas fontes de dados, inclusive fontes de dados orçamentários.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. No ETL, os dados são extraídos de várias fontes (inclusive orçamentárias), transformados (limpos, padronizados) e carregados num destino, como um data warehouse.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério do Planejamento e Orçamento",
+      "cargo": "Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "mpo-2024-cg",
+      "item": 88
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mpo24-cg-089",
+    "disciplina": "informatica",
+    "assunto": "Dados abertos",
+    "enunciado": "Julgue o item a seguir, a respeito de conceitos e fundamentos de dados.\n\nEm um portal de dados abertos, como o do governo federal, é o atributo da inclusão que permite aos usuários dos dados abertos incluir e publicar, a qualquer tempo, informações para enriquecer o portal.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 1,
+    "dificuldade": 2,
+    "explicacao": "Errado. Num portal de dados abertos, o governo publica os dados para qualquer um usar e reutilizar. Os usuários não ganham o direito de incluir e publicar informações no portal a qualquer tempo.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério do Planejamento e Orçamento",
+      "cargo": "Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "mpo-2024-cg",
+      "item": 89
+    },
+    "status": "ativa"
+  },
+  {
+    "id": "mpo24-cg-090",
+    "disciplina": "informatica",
+    "assunto": "Dados",
+    "enunciado": "Julgue o item a seguir, a respeito de conceitos e fundamentos de dados.\n\nDados estruturados são aqueles que se encaixam perfeitamente nas tabelas de dados e incluem tipos de dados discretos, como números, textos curtos e datas.",
+    "alternativas": [
+      "Certo",
+      "Errado"
+    ],
+    "correta": 0,
+    "dificuldade": 1,
+    "explicacao": "Certo. Dados estruturados têm formato fixo e cabem em linhas e colunas de tabelas: números, textos curtos, datas. Imagens, áudios e textos livres são não estruturados.",
+    "fonte": {
+      "tipo": "oficial",
+      "banca": "Cebraspe",
+      "orgao": "Ministério do Planejamento e Orçamento",
+      "cargo": "Analista de Planejamento e Orçamento",
+      "ano": 2024,
+      "prova": "mpo-2024-cg",
+      "item": 90
+    },
+    "status": "ativa"
+  }
+]

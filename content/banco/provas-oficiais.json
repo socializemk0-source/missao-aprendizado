@@ -130,5 +130,17 @@
     "provaUrl": "https://cdn.cebraspe.org.br/concursos/mps_24/arquivos/049_MPS_CG1_01.PDF",
     "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/mps_24/arquivos/Gab_Definitivo_049_MPS_CG1_01.PDF",
     "gabaritoDefinitivo": "CECCEEECECECEECCCCEECECEEEECEECECCCEECECECEXCEXEEC"
+  },
+  "mpo-2024-cg": {
+    "banca": "Cebraspe",
+    "orgao": "Ministério do Planejamento e Orçamento",
+    "cargo": "Analista de Planejamento e Orçamento",
+    "ano": 2024,
+    "aplicacao": "2024",
+    "caderno": "Conhecimentos gerais para todas as especialidades (958_MPO_ANALISTA_CG1_01)",
+    "formato": "certo-errado",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/mpo_24/arquivos/958_MPO_ANALISTA_CG1_01.PDF",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/mpo_24/arquivos/GAB_DEFINITIVO_958_MPO_ANALISTA_CG1_01.PDF",
+    "gabaritoDefinitivo": "CEEEXCCEEECEECECCEECXEECCECECCECECEECCECCECEEECECCCECEECXCECCECEEECECEXECCCCEECCCECCCEECECCCEECCEECX"
   }
 }
