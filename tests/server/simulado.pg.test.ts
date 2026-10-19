@@ -1,6 +1,5 @@
 // Simulado e dificuldade real no Postgres de verdade (PG_TEST=1).
 import { describe, expect, it } from 'vitest';
-import { questao } from '../../content/trilha.js';
 
 const run = process.env.PG_TEST === '1';
 
@@ -18,7 +17,12 @@ describe.runIf(run)('simulado no Postgres', async () => {
     const u = id('a');
     const s = await startSimulado(postgresGame, u, input);
     const ids = s.questoes.map((q) => q.id);
-    const respostas = Object.fromEntries(ids.map((q, i) => [q, i === 0 ? (questao(q)!.correta + 1) % questao(q)!.alternativas.length : questao(q)!.correta]));
+    // O simulado sorteia da trilha e do banco (as oficiais já estão ativas): o gabarito vem do mesmo catálogo.
+    const gabarito = await postgresGame.questions.get(ids);
+    const respostas = Object.fromEntries(ids.map((q, i) => {
+      const g = gabarito.get(q)!;
+      return [q, i === 0 ? (g.correta + 1) % g.alternativas.length : g.correta];
+    }));
     const [a, b] = await Promise.all([deliverSimulado(postgresGame, u, s.id, respostas), deliverSimulado(postgresGame, u, s.id, respostas)]);
     expect(a.resultado.acertos).toBe(4);
     expect(b.progress.xp).toBe(a.progress.xp);

@@ -31,6 +31,7 @@ describe.runIf(run)('excluir conta no Postgres', async () => {
       // Conclui a 1ª fase: gera estado, respostas, estatísticas e fase concluída.
       for (const q of fase('fase-01-1')!.questoes) await answer(postgresGame, id, { questionId: q, choice: questao(q)!.correta, mode: 'trilha' });
       await saveStudyProfile(postgresGame, id, { prova: 'TJ', banca: null, dataProva: null, minutosDia: 30, nivel: 'iniciante', disciplinas: ['portugues'] });
+      await postgresGame.withUser(id, (tx) => tx.saveCasa({ cama: 'chao-3' }));
     }
     await postgresLeads.save({ email, name: null, source: 'landing' });
     await postgresPayments.grant({ paymentId: `pay-${u}`, userId: u, cycle: 'monthly', days: 30, amount: 29.9, now: new Date() });

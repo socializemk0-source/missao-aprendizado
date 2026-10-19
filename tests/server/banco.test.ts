@@ -145,14 +145,24 @@ describe('banco de questões autorais', () => {
   });
 });
 
-describe.runIf(process.env.PG_TEST === '1')('banco autoral no Postgres', async () => {
+describe.runIf(process.env.PG_TEST === '1')('banco no Postgres', async () => {
   const { postgresGame } = await import('../../server/game-pg.js');
 
   it('questão em revisão não aparece no catálogo nem pode ser respondida', async () => {
     const catalogo = await postgresGame.questions.catalog();
-    for (const id of [itens[0]!.id, itens[itens.length - 1]!.id]) {
+    const autorais = itens.filter((q) => q.fonte.tipo === 'autoral');
+    for (const id of [autorais[0]!.id, autorais[autorais.length - 1]!.id]) {
       expect(catalogo.some((c) => c.id === id), id).toBe(false);
       expect((await postgresGame.questions.get([id])).has(id), id).toBe(false);
+    }
+  });
+
+  it('questão oficial (já ativa) aparece no catálogo e pode ser respondida', async () => {
+    const catalogo = await postgresGame.questions.catalog();
+    const oficiais = itens.filter((q) => q.fonte.tipo === 'oficial');
+    for (const id of [oficiais[0]!.id, oficiais[oficiais.length - 1]!.id]) {
+      expect(catalogo.some((c) => c.id === id), id).toBe(true);
+      expect((await postgresGame.questions.get([id])).has(id), id).toBe(true);
     }
   });
 });
