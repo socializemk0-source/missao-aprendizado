@@ -11,6 +11,9 @@ gabarito de sites de questões (QConcursos, TecConcursos etc.).
   banca, órgão, cargo, ano, data da aplicação, o caderno, os links do PDF da
   prova e do gabarito definitivo **no site da banca** e o gabarito definitivo
   inteiro (`C`, `E` ou `X` para item anulado), na ordem dos itens.
+- Formato: `certo-errado` (gabarito com `C`/`E`) ou `multipla-escolha`
+  (letras `A`–`E`; as alternativas ficam na ordem da prova e a certa é a
+  letra do gabarito). `X` é item anulado nos dois.
 - `content/banco/oficial-<prova>.json`: as questões. Cada uma tem
   `fonte: { tipo: 'oficial', banca, orgao, cargo, ano, prova, item }`.
 - `tests/server/banco.test.ts` confere cada questão oficial contra o registro:
@@ -61,3 +64,5 @@ gabarito de sites de questões (QConcursos, TecConcursos etc.).
 |---|---|---|
 | Cebraspe · INSS 2022 · Técnico do Seguro Social · Conhecimentos Básicos | 46 (Português, Ética, Constitucional, Administrativo, Informática, RLM) | 41–43 (figura), 49 (anulado) |
 | Cebraspe · Polícia Federal 2021 · Agente de Polícia Federal | 62 (Português, redação oficial, Administrativo, Constitucional, RLM, Informática) | 28 e 92 (anulados); 31–48 (Direito Penal, legislação especial e Estatística com fórmulas); 63 e 65 (ícone); 73–78 (teoria de sistemas e gráfico); 84–85 (código); 93 em diante (outras áreas) |
+| Cebraspe · TRT 8.ª Região 2022 · nível médio (conhecimentos gerais, múltipla escolha) | 14 (Português, RLM, Informática) | 7 e 10 (fórmulas que não saem do PDF), 8 e 19 (anuladas), 18–20 (normas internas do TRT) |
+| Cebraspe · TRT 8.ª Região 2022 · nível superior (conhecimentos gerais, múltipla escolha) | 16 (Português, RLM, Informática) | 15 (anulada), 18–20 (normas internas do TRT) |

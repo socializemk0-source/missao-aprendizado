@@ -1,6 +1,8 @@
 [
-  { "migracao": "0007_v2_questoes_autorais.sql", "arquivos": ["autorais.json"] },
-  { "migracao": "0008_v2_piloto_portugues_rlm.sql", "arquivos": ["piloto-portugues.json", "piloto-rlm.json"] },
-  { "migracao": "0018_v2_oficiais_inss_2022.sql", "arquivos": ["oficial-inss-2022-cb.json"] },
-  { "migracao": "0019_v2_oficiais_pf_2021.sql", "arquivos": ["oficial-pf-2021-agente.json"] }
+  {"migracao": "0007_v2_questoes_autorais.sql", "arquivos": ["autorais.json"]},
+  {"migracao": "0008_v2_piloto_portugues_rlm.sql", "arquivos": ["piloto-portugues.json", "piloto-rlm.json"]},
+  {"migracao": "0018_v2_oficiais_inss_2022.sql", "arquivos": ["oficial-inss-2022-cb.json"]},
+  {"migracao": "0019_v2_oficiais_pf_2021.sql", "arquivos": ["oficial-pf-2021-agente.json"]},
+  {"migracao": "0022_v2_oficiais_trt8_2022.sql", "arquivos": ["oficial-trt8-2022-medio.json"]},
+  {"migracao": "0023_v2_oficiais_trt8_2022_superior.sql", "arquivos": ["oficial-trt8-2022-superior.json"]}
 ]

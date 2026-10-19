@@ -8,6 +8,7 @@
     "caderno": "Conhecimentos Básicos (exceto GEX Guarulhos), 760_INSS_CB1_01",
     "provaUrl": "https://cdn.cebraspe.org.br/concursos/inss_22/arquivos/760_INSS_CB1_01.PDF",
     "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/inss_22/arquivos/GAB_DEFINITIVO_760_INSS_CB1_01.PDF",
+    "formato": "certo-errado",
     "gabaritoDefinitivo": "ECEEECCCCEECEEECEECCEECEECCECCCEEEEECCCECECECECEXC"
   },
   "pf-2021-agente": {
@@ -19,6 +20,31 @@
     "caderno": "Prova objetiva, cargo 2 (CARGO_2_AGENTE_DE_POLCIA_FEDERAL)",
     "provaUrl": "https://cdn.cebraspe.org.br/concursos/pf_21/arquivos/CARGO_2_AGENTE_DE_POLCIA_FEDERAL.PDF",
     "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/pf_21/arquivos/GAB_DEFINITIVO_MATRIZ_577_PF_002_00.PDF",
+    "formato": "certo-errado",
     "gabaritoDefinitivo": "ECEEECECCEEEECCCEECCEECECEEXCEECCEECCCEEEEECEECCCCEEECCECCEEECEECCCEEEEECCECEECCEEEEECEEECCXECCECCEEECCECXEXECECCEEECCXC"
+  },
+  "trt8-2022-medio": {
+    "banca": "Cebraspe",
+    "orgao": "TRT 8.ª Região",
+    "cargo": "Técnico Judiciário (nível médio)",
+    "ano": 2022,
+    "aplicacao": "2022-11-06",
+    "caderno": "Conhecimentos gerais, todos os cargos de nível médio (759_TRT8_CG2_01)",
+    "formato": "multipla-escolha",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/trt8_22/arquivos/759_TRT8_CG2_01.PDF",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/trt8_22/arquivos/GAB_DEFINITIVO_759_TRT8_CG2_01.PDF",
+    "gabaritoDefinitivo": "CBCDAECXEBEDADADECXA"
+  },
+  "trt8-2022-superior": {
+    "banca": "Cebraspe",
+    "orgao": "TRT 8.ª Região",
+    "cargo": "Analista Judiciário (nível superior)",
+    "ano": 2022,
+    "aplicacao": "2022-11-06",
+    "caderno": "Conhecimentos gerais, todos os cargos de nível superior (759_TRT8_CG1_01)",
+    "formato": "multipla-escolha",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/trt8_22/arquivos/759_TRT8_CG1_01.PDF",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/trt8_22/arquivos/GAB_DEFINITIVO_759_TRT8_CG1_01.PDF",
+    "gabaritoDefinitivo": "DACCECBCBDDBEDXDCCBC"
   }
 }

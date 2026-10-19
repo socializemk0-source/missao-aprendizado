@@ -63,12 +63,13 @@ describe('banco de questões autorais', () => {
   // pela banca (content/banco/provas-oficiais.json). O gabarito de cada item é
   // conferido aqui contra o definitivo; item anulado (X) não entra.
   it('questão oficial: igual à prova registrada e com o gabarito definitivo da banca', () => {
-    const registro = provas as Record<string, { banca: string; orgao: string; cargo: string; ano: number; provaUrl: string; gabaritoUrl: string; gabaritoDefinitivo: string }>;
+    type Registro = { banca: string; orgao: string; cargo: string; ano: number; formato: 'certo-errado' | 'multipla-escolha'; provaUrl: string; gabaritoUrl: string; gabaritoDefinitivo: string };
+    const registro = provas as Record<string, Registro>;
     for (const [id, p] of Object.entries(registro)) {
       expect(ESTILOS, id).toContain(p.banca);
       expect(p.provaUrl, id).toMatch(/^https:\/\//);
       expect(p.gabaritoUrl, id).toMatch(/^https:\/\/.*DEFINITIVO/i);
-      expect(p.gabaritoDefinitivo, id).toMatch(/^[CEX]+$/);
+      expect(p.gabaritoDefinitivo, id).toMatch(p.formato === 'certo-errado' ? /^[CEX]+$/ : /^[A-EX]+$/);
     }
     const oficiais = itens.filter((q) => q.fonte.tipo === 'oficial');
     expect(oficiais.length).toBeGreaterThan(0);
@@ -81,8 +82,13 @@ describe('banco de questões autorais', () => {
       expect(Number.isInteger(f.item) && f.item >= 1 && f.item <= p!.gabaritoDefinitivo.length, q.id).toBe(true);
       const gabarito = p!.gabaritoDefinitivo[f.item - 1];
       expect(gabarito, `${q.id}: item anulado não entra`).not.toBe('X');
-      expect(q.alternativas, q.id).toEqual(['Certo', 'Errado']);
-      expect(q.alternativas[q.correta], `${q.id}: gabarito definitivo é ${gabarito}`).toBe(gabarito === 'C' ? 'Certo' : 'Errado');
+      if (p!.formato === 'certo-errado') {
+        expect(q.alternativas, q.id).toEqual(['Certo', 'Errado']);
+        expect(q.alternativas[q.correta], `${q.id}: gabarito definitivo é ${gabarito}`).toBe(gabarito === 'C' ? 'Certo' : 'Errado');
+      } else {
+        // As alternativas ficam na ordem da prova: a certa é a letra do gabarito.
+        expect(q.correta, `${q.id}: gabarito definitivo é ${gabarito}`).toBe(gabarito!.charCodeAt(0) - 65);
+      }
       expect(vistos.has(`${f.prova}:${f.item}`), `${q.id}: item repetido`).toBe(false);
       vistos.add(`${f.prova}:${f.item}`);
     }
@@ -108,8 +114,9 @@ describe('banco de questões autorais', () => {
   });
 
   it('a resposta certa não se concentra numa mesma letra', () => {
+    // Só nas autorais: nas oficiais, a letra certa é a da prova.
     for (const [arquivo, lista] of porArquivo) {
-      const cinco = lista.filter((q) => q.alternativas.length === 5);
+      const cinco = lista.filter((q) => q.alternativas.length === 5 && q.fonte.tipo === 'autoral');
       if (cinco.length < 20) continue;
       const porLetra = [0, 1, 2, 3, 4].map((l) => cinco.filter((q) => q.correta === l).length);
       expect(Math.max(...porLetra) / cinco.length, `${arquivo}: ${porLetra.join(' ')}`).toBeLessThanOrEqual(0.3);
