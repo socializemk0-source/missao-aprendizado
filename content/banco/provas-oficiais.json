@@ -9,5 +9,16 @@
     "provaUrl": "https://cdn.cebraspe.org.br/concursos/inss_22/arquivos/760_INSS_CB1_01.PDF",
     "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/inss_22/arquivos/GAB_DEFINITIVO_760_INSS_CB1_01.PDF",
     "gabaritoDefinitivo": "ECEEECCCCEECEEECEECCEECEECCECCCEEEEECCCECECECECEXC"
+  },
+  "pf-2021-agente": {
+    "banca": "Cebraspe",
+    "orgao": "Polícia Federal",
+    "cargo": "Agente de Polícia Federal",
+    "ano": 2021,
+    "aplicacao": "2021",
+    "caderno": "Prova objetiva, cargo 2 (CARGO_2_AGENTE_DE_POLCIA_FEDERAL)",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/pf_21/arquivos/CARGO_2_AGENTE_DE_POLCIA_FEDERAL.PDF",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/pf_21/arquivos/GAB_DEFINITIVO_MATRIZ_577_PF_002_00.PDF",
+    "gabaritoDefinitivo": "ECEEECECCEEEECCCEECCEECECEEXCEECCEECCCEEEEECEECCCCEEECCECCEEECEECCCEEEEECCECEECCEEEEECEEECCXECCECCEEECCECXEXECECCEEECCXC"
   }
 }

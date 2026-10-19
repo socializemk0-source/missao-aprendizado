@@ -23,8 +23,11 @@ gabarito de sites de questões (QConcursos, TecConcursos etc.).
 ## Como importar uma prova
 
 1. Baixar a prova e o gabarito **definitivo** do site da banca (Cebraspe:
-   `cdn.cebraspe.org.br/concursos/<concurso>/arquivos/...`). O preliminar não
-   serve: ele muda depois dos recursos.
+   `cdn.cebraspe.org.br/concursos/<concurso>/arquivos/...`; a lista de arquivos
+   de um concurso sai em `apis.cebraspe.org.br/cebraspe/eventos/<concurso>`). O
+   preliminar não serve: ele muda depois dos recursos. Caderno em duas colunas:
+   extrair cada coluna separada (`pdftotext -x -y -W -H`), senão as colunas se
+   misturam.
 2. Registrar a prova em `provas-oficiais.json`. Copiar o gabarito definitivo
    lendo o PDF por programa (`pdftotext -layout`), não à mão.
 3. Transcrever os itens **sem mudar uma palavra**. Conferir por programa que o
@@ -53,3 +56,4 @@ gabarito de sites de questões (QConcursos, TecConcursos etc.).
 | Prova | Itens usados | Fora |
 |---|---|---|
 | Cebraspe · INSS 2022 · Técnico do Seguro Social · Conhecimentos Básicos | 46 (Português, Ética, Constitucional, Administrativo, Informática, RLM) | 41–43 (figura), 49 (anulado) |
+| Cebraspe · Polícia Federal 2021 · Agente de Polícia Federal | 62 (Português, redação oficial, Administrativo, Constitucional, RLM, Informática) | 28 e 92 (anulados); 31–48 (Direito Penal, legislação especial e Estatística com fórmulas); 63 e 65 (ícone); 73–78 (teoria de sistemas e gráfico); 84–85 (código); 93 em diante (outras áreas) |

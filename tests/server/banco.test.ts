@@ -91,11 +91,14 @@ describe('banco de questões autorais', () => {
     // Súmula 473): esse par é permitido. Autoral × autoral e oficial × oficial, não.
     // Na oficial, compara só o item (o último bloco): vários itens dividem o mesmo texto de apoio.
     const item = (q: Questao) => (q.fonte.tipo === 'oficial' ? q.enunciado.split(/\n\s*\n/).pop()! : q.enunciado);
-    const todas = [...QUESTOES, ...itens].map((q) => ({ id: q.id, oficial: q.fonte.tipo === 'oficial', t: trincas([item(q), ...q.alternativas].join(' ')) }));
+    // Itens da mesma prova podem começar igual (o teste acima já impede o mesmo item duas vezes).
+    const prova = (q: Questao) => (q.fonte.tipo === 'oficial' ? q.fonte.prova ?? null : null);
+    const todas = [...QUESTOES, ...itens].map((q) => ({ id: q.id, oficial: q.fonte.tipo === 'oficial', prova: prova(q), t: trincas([item(q), ...q.alternativas].join(' ')) }));
     const repetidas: string[] = [];
     for (let i = 0; i < todas.length; i++) {
       for (let j = i + 1; j < todas.length; j++) {
         if (todas[i]!.oficial !== todas[j]!.oficial) continue;
+        if (todas[i]!.prova && todas[i]!.prova === todas[j]!.prova) continue;
         if (todas[i]!.t.size >= 4 && parecido(todas[i]!.t, todas[j]!.t) > 0.8) repetidas.push(`${todas[i]!.id} ~ ${todas[j]!.id}`);
       }
     }
