@@ -49,11 +49,13 @@ gabarito de sites de questões (QConcursos, TecConcursos etc.).
 5. Ficam de fora:
    - itens anulados (`X`);
    - itens que dependem de figura, tabela ou planilha que não dá para reproduzir.
-6. Escrever uma explicação nossa para cada item. Nos itens de Certo/Errado, ela
+6. Item cujo gabarito definitivo contradiz a lei em vigor hoje (lei mudou
+   depois da prova) fica de fora: a explicação não pode ensinar o errado.
+7. Escrever uma explicação nossa para cada item. Nos itens de Certo/Errado, ela
    começa com "Certo." ou "Errado.".
-7. Adicionar o arquivo a um lote em `content/banco/lotes.json`, rodar
+8. Adicionar o arquivo a um lote em `content/banco/lotes.json`, rodar
    `node scripts/banco-sql.mjs` e `npm run ci`.
-8. Rodar a migração no Supabase. As questões oficiais entram já como `ativa`
+9. Rodar a migração no Supabase. As questões oficiais entram já como `ativa`
    (decisão do dono, 19/10/2026): o gabarito é o definitivo da banca e está
    conferido em teste. As explicações são nossas. Se um professor apontar
    problema numa delas, corrija o JSON, rode `node scripts/banco-sql.mjs` e
@@ -70,3 +72,5 @@ gabarito de sites de questões (QConcursos, TecConcursos etc.).
 | Cebraspe · TRT 8.ª Região 2022 · nível superior (conhecimentos gerais, múltipla escolha) | 16 (Português, RLM, Informática) | 15 (anulada), 18–20 (normas internas do TRT) |
 | Cebraspe · STJ 2024 · conhecimentos básicos | 25 (Português, redação oficial, Constitucional, Administrativo, Informática) | 8, 15, 49, 50 (anulados); normas internas do STJ, Funpresp, direitos humanos, LGPD do STJ e sustentabilidade |
 | Cebraspe · TRT 10.ª Região 2024 · conhecimentos básicos | 28 (Português, linguagem simples, Constitucional, Administrativo) | 1 e 10 (anulados); noções gerais de direito, direitos humanos e gestão |
+| Cebraspe · TST 2023 · conhecimentos básicos (múltipla escolha) | 13 (Português, Constitucional) | 13 e 17 (anuladas); 14–16 (símbolos que não saem do PDF); pessoa com deficiência e Regimento Interno do TST |
+| Cebraspe · CNJ 2024 · conhecimentos básicos | 31 (Português, RLM, Administrativo, Constitucional) | 20 e 50 (anulados); normas internas do CNJ e gestão |

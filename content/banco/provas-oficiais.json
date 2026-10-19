@@ -70,5 +70,29 @@
     "provaUrl": "https://cdn.cebraspe.org.br/concursos/trt10_24/arquivos/050_TRT10_CB1_01.pdf",
     "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/trt10_24/arquivos/Gab_Definitivo_050_TRT10_CB1_01.pdf",
     "gabaritoDefinitivo": "XEECCECECXCEECCCECCEEECECCEECCECECEEECCCECECCECCCE"
+  },
+  "tst-2023-cb": {
+    "banca": "Cebraspe",
+    "orgao": "TST",
+    "cargo": "Analista e Técnico Judiciário",
+    "ano": 2023,
+    "aplicacao": "2023",
+    "caderno": "Conhecimentos básicos, cargos 1 e 2 (918_TST_SERVIDOR_CB1_01)",
+    "formato": "multipla-escolha",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/tst_23/arquivos/918_TST_SERVIDOR_CB1_01.PDF",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/tst_23/arquivos/GAB_DEFINITIVO_918_TST_SERVIDOR_CB1_01.PDF",
+    "gabaritoDefinitivo": "EADBDACDDBEDXBECXBXDDACBBDEDCA"
+  },
+  "cnj-2024-cb": {
+    "banca": "Cebraspe",
+    "orgao": "CNJ",
+    "cargo": "Analista e Técnico Judiciário",
+    "ano": 2024,
+    "aplicacao": "2024",
+    "caderno": "Conhecimentos básicos, cargos 1 a 5 (979_CNJ_CB1_01)",
+    "formato": "certo-errado",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/cnj_24/arquivos/979_CNJ_CB1_01.PDF",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/cnj_24/arquivos/GAB_DEFINITIVO_979_CNJ_CB1_01.PDF",
+    "gabaritoDefinitivo": "ECCEECEECCCEEECECEEXCCECEECCEECEECCECCECEEEECECCEX"
   }
 }
