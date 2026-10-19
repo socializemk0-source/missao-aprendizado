@@ -35,7 +35,7 @@ describe('banco de questões autorais', () => {
     expect(ids.filter((id) => trilha.has(id))).toEqual([]);
   });
 
-  it('cada questão é jogável, tem origem limpa e entra em revisão', () => {
+  it('cada questão é jogável, tem origem limpa e entra com o status certo', () => {
     for (const q of itens) {
       expect(DISCIPLINAS, q.id).toContain(q.disciplina);
       expect(q.assunto.trim().length, q.id).toBeGreaterThan(2);
@@ -48,7 +48,9 @@ describe('banco de questões autorais', () => {
       expect([1, 2, 3], q.id).toContain(q.dificuldade);
       expect(['autoral', 'oficial'], q.id).toContain(q.fonte.tipo);
       if (q.fonte.tipo === 'autoral' && q.fonte.estilo) expect(ESTILOS, q.id).toContain(q.fonte.estilo);
-      expect(q.status, q.id).toBe('revisao');
+      // Oficial entra já liberada (decisão do dono, 19/10/2026): o gabarito é o
+      // definitivo da banca, conferido no teste abaixo. Autoral espera o professor.
+      expect(q.status, q.id).toBe(q.fonte.tipo === 'oficial' ? 'ativa' : 'revisao');
       if (q.alternativas.join() === 'Certo,Errado') expect(q.explicacao.startsWith(q.alternativas[q.correta]!), q.id).toBe(true);
       // As alternativas são embaralhadas: a explicação não pode citar letra.
       expect(q.explicacao, q.id).not.toMatch(/\b(letra|alternativa|op[cç][aã]o) [A-E]\b/);
@@ -145,5 +147,19 @@ describe.runIf(process.env.PG_TEST === '1')('banco autoral no Postgres', async (
       expect(catalogo.some((c) => c.id === id), id).toBe(false);
       expect((await postgresGame.questions.get([id])).has(id), id).toBe(false);
     }
+  });
+});
+
+describe('liberação das oficiais', () => {
+  it('migração 0020 libera as oficiais que já estavam no banco como revisão', () => {
+    const sql = readFileSync('supabase/migrations/0020_v2_oficiais_ativas.sql', 'utf8');
+    expect(sql).toMatch(/update v2\.questions\s+set status = 'ativa'/i);
+    expect(sql).toMatch(/fonte->>'tipo' = 'oficial'/);
+    expect(sql).toMatch(/status = 'revisao'/);
+  });
+
+  it('a sincronização também corrige o texto das oficiais já liberadas', () => {
+    const sql = readFileSync('supabase/migrations/0013_v2_banco_sincroniza.sql', 'utf8');
+    expect(sql).toMatch(/WHERE v2\.questions\.status = 'revisao' OR v2\.questions\.fonte->>'tipo' = 'oficial';/);
   });
 });

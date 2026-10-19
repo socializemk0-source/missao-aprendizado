@@ -48,8 +48,12 @@ gabarito de sites de questões (QConcursos, TecConcursos etc.).
    começa com "Certo." ou "Errado.".
 7. Adicionar o arquivo a um lote em `content/banco/lotes.json`, rodar
    `node scripts/banco-sql.mjs` e `npm run ci`.
-8. Rodar a migração no Supabase. As questões entram como `revisao` e chegam ao
-   aluno depois que um professor aprova em `/professor`.
+8. Rodar a migração no Supabase. As questões oficiais entram já como `ativa`
+   (decisão do dono, 19/10/2026): o gabarito é o definitivo da banca e está
+   conferido em teste. As explicações são nossas. Se um professor apontar
+   problema numa delas, corrija o JSON, rode `node scripts/banco-sql.mjs` e
+   rode a `0013_v2_banco_sincroniza.sql` (ela atualiza o texto das oficiais).
+   A `0020_v2_oficiais_ativas.sql` libera as que entraram antes como `revisao`.
 
 ## Provas importadas
 

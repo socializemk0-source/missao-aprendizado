@@ -50,9 +50,11 @@ cada PR).
   `src/game/` progresso e sessão de questões · `src/layouts/` moldura do app ·
   `src/lib/` cliente Supabase, `api()` e clientes de cada rota
 - `content/` questões, trilha e temas de redação · `content/banco/` questões
-  autorais que entram em `v2.questions` como `revisao` e só chegam ao aluno
-  depois que um professor aprova em `/professor` (`ativa`; ver
-  `docs/revisao-professores.md`) · `shared/` tipos usados
+  do banco (`v2.questions`): as autorais entram como `revisao` e só chegam ao
+  aluno depois que um professor aprova em `/professor` (`ativa`; ver
+  `docs/revisao-professores.md`); as de prova oficial entram já como `ativa`,
+  com o gabarito definitivo da banca conferido em teste (ver
+  `docs/questoes-oficiais.md`) · `shared/` tipos usados
   pelo servidor e pelas telas
 - `api/` uma função por rota (plano Hobby da Vercel: no máximo 12) ·
   `server/` auth, banco, regras (cada store tem versão Postgres e em memória)
