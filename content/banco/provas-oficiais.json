@@ -314,5 +314,17 @@
     "provaUrl": "https://cdn.cebraspe.org.br/concursos/pc_pe_23/arquivos/MATRIZ_954PC_PE002_00_COM_JUSTIFICATIVA.PDF",
     "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/pc_pe_23/arquivos/GAB_DEFINITIVO_MATRIZ_954PC_PE002_00.PDF",
     "gabaritoDefinitivo": "--------------------BDAXEABBCBEAECDXCBDCDBAABABDCDEBDDDAXDAX"
+  },
+  "inpi-2023-cb": {
+    "banca": "Cebraspe",
+    "orgao": "Instituto Nacional da Propriedade Industrial (INPI)",
+    "cargo": "Analista de Planejamento, Gestão e Infraestrutura, Pesquisador e Tecnologista em Propriedade Industrial",
+    "ano": 2023,
+    "aplicacao": "2024-01-14",
+    "caderno": "Conhecimentos Básicos para todos os cargos (930_INPI_CB1_01)",
+    "formato": "certo-errado",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/inpi_23/arquivos/930_INPI_CB1_01.PDF",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/inpi_23/arquivos/GAB_DEFINITIVO_930_INPI_CB1_01.PDF",
+    "gabaritoDefinitivo": "CECEEEECCCEXECECEECEECEECECCECECECCEEECECCECCCCEEC"
   }
 }
