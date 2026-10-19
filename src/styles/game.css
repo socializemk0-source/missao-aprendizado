@@ -434,6 +434,16 @@ html[data-motion='on'] .mem-carta.is-aberta { animation: pop .3s ease-out; }
 .hoje-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
 .hoje-head .page-title { margin: 2px 0 4px; }
 .hoje-head .eyebrow::first-letter { text-transform: uppercase; }
+.hoje-contagem {
+  display: flex; align-items: center; gap: 10px; margin: 0 0 12px; padding: 12px 16px; border-radius: 14px;
+  background: var(--primary-soft); color: var(--heading); font-size: 16px;
+}
+.hoje-contagem strong { font-size: 22px; font-weight: 900; color: var(--primary-deep); }
+.hoje-desafio { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; text-decoration: none; color: inherit; }
+.hoje-desafio > span:nth-child(2) { display: grid; gap: 2px; flex: 1; }
+.hoje-desafio .muted { font-size: 14px; }
+.hoje-desafio-ir { font-weight: 800; color: var(--primary-deep); white-space: nowrap; }
+.hoje-desafio:hover { border-color: var(--primary-soft-border); }
 .hoje-meta { display: grid; gap: 10px; padding: 18px 20px; max-width: 760px; margin-bottom: 12px; }
 .hoje-meta-text { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
 .hoje-tarefas { margin-bottom: 10px; }

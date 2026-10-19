@@ -98,6 +98,9 @@ html { scroll-behavior: smooth; }
 .desafio-sequencia { font-size: 18px; font-weight: 800; color: var(--heading); }
 .desafio-fim .btn { margin-top: 8px; }
 .desafio-nota { font-size: 13px; }
+.desafio-compartilhar { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; width: 100%; }
+.desafio-compartilhar .btn { flex: 1 1 180px; display: inline-flex; align-items: center; justify-content: center; gap: 6px; margin-top: 4px; }
+.desafio-aviso { font-size: 14px; font-weight: 700; color: var(--ok-fg); }
 html[data-motion='off'] :is(.desafio-placar li, .desafio-fim) { animation: none; }
 @media (prefers-reduced-motion: reduce) { :is(.desafio-placar li, .desafio-fim) { animation: none; } }
 

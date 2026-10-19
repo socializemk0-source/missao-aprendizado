@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import { useAuth } from '../../auth/AuthProvider';
 import { Confetti } from '../../components/Confetti';
+import { Icon } from '../../components/Icon';
 import { Tico } from '../../components/Tico';
 import { ApiError } from '../../lib/api';
 import {
   buscarDesafio, concluirDia, conferirResposta, lerProgresso, salvarProgresso,
-  type Desafio, type ProgressoDesafio,
+  textoParaCompartilhar, type Desafio, type ProgressoDesafio,
 } from '../../lib/desafio';
 import { track } from '../../lib/marketing';
 import { play } from '../../lib/sound';
@@ -28,6 +29,7 @@ export function DesafioDoDia() {
   const [escolha, setEscolha] = useState<number | null>(null);
   const [enviando, setEnviando] = useState(false);
   const [erro, setErro] = useState<string | null>(null);
+  const [aviso, setAviso] = useState<string | null>(null);
   const visto = useAoAparecer('at_daily_challenge_viewed');
 
   useEffect(() => {
@@ -80,6 +82,30 @@ export function DesafioDoDia() {
       setErro(err instanceof ApiError ? err.message : 'Não foi possível conferir agora. Tente de novo.');
     } finally {
       setEnviando(false);
+    }
+  }
+
+  const texto = textoParaCompartilhar(desafio, progresso, window.location.origin);
+  const compartilhado = (method: string) => track('at_daily_challenge_shared', { challenge: desafio.numero, method }, { proprio: true });
+
+  // No celular, abre o "compartilhar" do aparelho; no computador, copia o texto.
+  async function compartilhar() {
+    setAviso(null);
+    if (typeof navigator.share === 'function') {
+      try {
+        await navigator.share({ text: texto });
+        compartilhado('share');
+      } catch {
+        // A pessoa fechou a janela de compartilhar: nada a fazer.
+      }
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(texto);
+      setAviso('Copiado! Agora é só colar no WhatsApp ou no Instagram.');
+      compartilhado('copiar');
+    } catch {
+      setAviso('Não deu para copiar. Use o botão do WhatsApp.');
     }
   }
 
@@ -148,6 +174,18 @@ export function DesafioDoDia() {
             <span aria-hidden="true">🔥 </span>{progresso.sequencia === 1 ? '1 dia seguido' : `${progresso.sequencia} dias seguidos`}
           </p>
           <p className="muted">Amanhã tem desafio novo. Volte para não perder a sequência.</p>
+          <div className="desafio-compartilhar">
+            <button type="button" className="btn btn-secondary" onClick={() => void compartilhar()}>
+              <Icon name="share" size={18} /> Compartilhar resultado
+            </button>
+            <a
+              className="btn btn-secondary" href={`https://wa.me/?text=${encodeURIComponent(texto)}`}
+              target="_blank" rel="noopener noreferrer" onClick={() => compartilhado('whatsapp')}
+            >
+              Mandar no WhatsApp
+            </a>
+          </div>
+          {aviso && <p className="desafio-aviso" role="status">{aviso}</p>}
           {status === 'signedIn' ? (
             <Link to="/hoje" className="btn btn-primary btn-block">Continuar estudando</Link>
           ) : (

@@ -129,4 +129,46 @@ describe('Desafio do Tico na página inicial', () => {
     for (let i = 1; i < 4; i++) await responder(i, certa(i));
     await waitFor(() => expect(rastreio).toHaveBeenCalledWith('at_daily_challenge_completed', { challenge: hoje.numero, score: 3, streak: 1 }, { proprio: true }));
   });
+
+  it('compartilhar: manda o placar em quadradinhos, a nota, a sequência e o link do desafio', async () => {
+    const share = vi.fn(async () => {});
+    vi.stubGlobal('navigator', { ...navigator, share });
+    ligar();
+    renderAt('/', { status: 'signedOut' });
+    await responder(0, certa(0));
+    await responder(1, errada(1));
+    await responder(2, certa(2));
+    await responder(3, certa(3));
+    await userEvent.click(await screen.findByRole('button', { name: 'Compartilhar resultado' }));
+    const { text } = (share.mock.calls[0] as unknown as [{ text: string }])[0];
+    expect(text).toContain(`Desafio do Tico nº ${hoje.numero}: 3/4`);
+    expect(text).toContain('🟩🟥🟩🟩');
+    expect(text).toContain('🔥 1 dia seguido');
+    expect(text).toContain(`${window.location.origin}/?utm_source=desafio&utm_medium=compartilhar#desafio`);
+    expect(rastreio).toHaveBeenCalledWith('at_daily_challenge_shared', { challenge: hoje.numero, method: 'share' }, { proprio: true });
+  });
+
+  it('sem o compartilhar do celular: copia o texto e avisa', async () => {
+    const writeText = vi.fn(async () => {});
+    vi.stubGlobal('navigator', { ...navigator, share: undefined, clipboard: { writeText } });
+    ligar();
+    renderAt('/', { status: 'signedOut' });
+    for (let i = 0; i < 4; i++) await responder(i, certa(i));
+    await userEvent.click(await screen.findByRole('button', { name: 'Compartilhar resultado' }));
+    expect(writeText).toHaveBeenCalledWith(expect.stringContaining('🟩🟩🟩🟩'));
+    expect(await screen.findByText('Copiado! Agora é só colar no WhatsApp ou no Instagram.')).toBeInTheDocument();
+    expect(rastreio).toHaveBeenCalledWith('at_daily_challenge_shared', { challenge: hoje.numero, method: 'copiar' }, { proprio: true });
+  });
+
+  it('botão do WhatsApp já leva o texto pronto', async () => {
+    ligar();
+    renderAt('/', { status: 'signedOut' });
+    for (let i = 0; i < 4; i++) await responder(i, certa(i));
+    const zap = await screen.findByRole('link', { name: 'Mandar no WhatsApp' });
+    const href = zap.getAttribute('href')!;
+    expect(href.startsWith('https://wa.me/?text=')).toBe(true);
+    expect(decodeURIComponent(href.slice('https://wa.me/?text='.length))).toContain(`Desafio do Tico nº ${hoje.numero}: 4/4`);
+    expect(zap).toHaveAttribute('target', '_blank');
+    expect(zap).toHaveAttribute('rel', 'noopener noreferrer');
+  });
 });

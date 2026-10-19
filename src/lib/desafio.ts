@@ -67,3 +67,16 @@ export function concluirDia(p: ProgressoDesafio): ProgressoDesafio {
   const sequencia = p.ultimoDia === diaAnterior(p.dia) ? p.sequencia + 1 : 1;
   return { ...p, ultimoDia: p.dia, sequencia };
 }
+
+/** O resultado para mandar aos amigos: placar em quadradinhos (sem revelar as questões) e o link do desafio. */
+export function textoParaCompartilhar(d: Desafio, p: ProgressoDesafio, origem: string): string {
+  const quadros = d.questoes.map((q) => (p.respostas[q.id]?.acertou ? '🟩' : '🟥')).join('');
+  const acertos = d.questoes.filter((q) => p.respostas[q.id]?.acertou).length;
+  const sequencia = p.sequencia === 1 ? '1 dia seguido' : `${p.sequencia} dias seguidos`;
+  return [
+    `Desafio do Tico nº ${d.numero}: ${acertos}/${d.questoes.length}`,
+    quadros,
+    `🔥 ${sequencia}`,
+    `Jogue o de hoje: ${origem}/?utm_source=desafio&utm_medium=compartilhar#desafio`,
+  ].join('\n');
+}
