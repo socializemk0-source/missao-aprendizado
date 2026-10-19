@@ -78,3 +78,4 @@ gabarito de sites de questões (QConcursos, TecConcursos etc.).
 | Cebraspe · TJ-CE 2023 · conhecimentos gerais (múltipla escolha) | 20 (Português, Informática, RLM) | — |
 | Cebraspe · Ministério da Previdência Social 2024 · Perito Médico Federal, conhecimentos gerais | 46 (Português, redação oficial, ética, LAI, Constitucional, Lei n.º 8.112/1990, improbidade) | 44 e 47 (anulados); 49–50 (SEI) |
 | Cebraspe · Ministério do Planejamento e Orçamento 2024 · Analista de Planejamento e Orçamento, conhecimentos gerais | 30 (Constitucional, Administrativo, ética, Informática e dados) | 5, 21 e outros anulados; inglês, espanhol, gestão pública, realidade brasileira, direitos humanos e o plano de integridade do MPO |
+| Cebraspe · STM 2025 · Analista Judiciário, conhecimentos gerais | 27 (Português, redação oficial, Administrativo, Constitucional) | 23 e 25 (anulados); justiça militar, resoluções do CNJ e código de ética do STM |

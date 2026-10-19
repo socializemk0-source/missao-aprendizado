@@ -142,5 +142,17 @@
     "provaUrl": "https://cdn.cebraspe.org.br/concursos/mpo_24/arquivos/958_MPO_ANALISTA_CG1_01.PDF",
     "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/mpo_24/arquivos/GAB_DEFINITIVO_958_MPO_ANALISTA_CG1_01.PDF",
     "gabaritoDefinitivo": "CEEEXCCEEECEECECCEECXEECCECECCECECEECCECCECEEECECCCECEECXCECCECEEECECEXECCCCEECCCECCCEECECCCEECCEECX"
+  },
+  "stm-2025-cg": {
+    "banca": "Cebraspe",
+    "orgao": "STM",
+    "cargo": "Analista Judiciário",
+    "ano": 2025,
+    "aplicacao": "2025",
+    "caderno": "Conhecimentos gerais, cargos 2, 4, 5 e 7 (072_STM_CG1_01)",
+    "formato": "certo-errado",
+    "provaUrl": "https://cdn.cebraspe.org.br/concursos/stm_25/arquivos/072_STM_CG1_01.pdf",
+    "gabaritoUrl": "https://cdn.cebraspe.org.br/concursos/stm_25/arquivos/Gab_Definitivo_072_STM_CG1_01.pdf",
+    "gabaritoDefinitivo": "ECCEEEECEECCEEECCEECCEXCXCCEECEEEECECEECCECCCEEEEC"
   }
 }
