@@ -30,7 +30,7 @@ jobs:
           BACKUP_PASSPHRASE: ${{ secrets.BACKUP_PASSPHRASE }}
           PG_BIN: /usr/lib/postgresql/17/bin
           BACKUP_DIR: backups
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: backup-${{ github.run_number }}
           path: backups/*.gpg
